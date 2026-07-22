@@ -20,9 +20,15 @@
     <div class="summary-box"><div class="summary-value">4</div><div class="small">domaines</div></div>
   </div>
   <div class="actions">
-    <button class="btn btn-primary" onclick="startTest()">Commencer</button>
-    <button class="btn btn-secondary" onclick="resumeTest()">Reprendre</button>
+    <button class="btn btn-primary" id="startDiagnosticBtn" onclick="startTest()">Commencer un nouveau diagnostic</button>
+    <button class="btn btn-secondary" id="resumeDiagnosticBtn" onclick="resumeTest()">Reprendre le diagnostic</button>
     <a class='btn btn-secondary' href='index.html'>Retour à l’accueil</a>
+  </div>
+  <div id="savedProgressNotice" class="notice hidden" aria-live="polite"></div>
+  <div class="actions">
+    <button class="btn btn-secondary" id="exportProgressBtn" onclick="exportProgress()">Exporter ma progression</button>
+    <button class="btn btn-secondary" onclick="document.getElementById('importProgressFile').click()">Importer une progression</button>
+    <input id="importProgressFile" type="file" accept="application/json,.json" hidden onchange="importProgress(event)">
   </div>
 </section>
 
