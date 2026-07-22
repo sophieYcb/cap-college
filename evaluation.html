@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnostic Français 6e — Cap Collège</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page">
+<header class="topbar">
+  <a class='brand' href='index.html'><div class="logo">C</div><span>Cap Collège</span></a>
+  <div class="badge">Français 6e</div>
+</header>
+
+<section id="intro" class="card">
+  <h1>Diagnostic Français 6e</h1>
+  <p>Le diagnostic tire 100 questions équilibrées dans une banque de 380 questions. Le domaine, le thème et, en conjugaison, le temps attendu sont affichés clairement avant chaque question.</p>
+  <div class="summary-grid">
+    <div class="summary-box"><div class="summary-value" id="qCount">0</div><div class="small">questions par diagnostic</div></div>
+    <div class="summary-box"><div class="summary-value">80 %</div><div class="small">seuil de maîtrise</div></div>
+    <div class="summary-box"><div class="summary-value">4</div><div class="small">domaines</div></div>
+  </div>
+  <div class="actions">
+    <button class="btn btn-primary" onclick="startTest()">Commencer</button>
+    <button class="btn btn-secondary" onclick="resumeTest()">Reprendre</button>
+    <a class='btn btn-secondary' href='index.html'>Retour à l’accueil</a>
+  </div>
+</section>
+
+<section id="test" class="hidden test-layout">
+  <div class="card test-status-card">
+    <div class="question-top"><strong id="counter"></strong><span id="topDomain"></span></div>
+    <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+  </div>
+
+  <div class="card question-card">
+    <div class="question-meta">
+      <span class="meta meta-domain" id="domainBadge"></span>
+      <span class="meta meta-skill" id="skillBadge"></span>
+      <span class="meta meta-tense hidden" id="tenseBadge"></span>
+    </div>
+    <h2 id="questionText"></h2>
+    <div id="choices"></div>
+    <div class="actions question-actions">
+      <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()">Précédente</button>
+      <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Suivante</button>
+      <button class="btn btn-danger stop-test-btn" onclick="stopTest()">Arrêter et voir le bilan</button>
+    </div>
+  </div>
+</section>
+</main>
+<script src="data.js"></script><script src="corrections-v5.1.js"></script><script src="corrections-v5.2.js"></script><script src="corrections-v5.4.js"></script><script src="evaluation.js"></script>
+</body>
+</html>
