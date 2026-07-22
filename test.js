@@ -1,5 +1,5 @@
 const REVIEW_KEY='capCollegeV50aReviews';
-const APP_VERSION='5.6';
+const APP_VERSION='6.0';
 let reviews=loadReviews();
 let filteredQuestions=[...QUESTIONS];
 let currentIndex=0;
@@ -8,6 +8,9 @@ function loadReviews(){try{return JSON.parse(localStorage.getItem(REVIEW_KEY))||
 function persist(){localStorage.setItem(REVIEW_KEY,JSON.stringify(reviews));renderSummary();renderDashboard();}
 function currentQuestion(){return filteredQuestions[currentIndex];}
 function reviewFor(id){return reviews[String(id)]||{};}
+function isCurrentReview(q,r=reviewFor(q.id)){
+ return Boolean(r.rating)&&Number(r.questionVersion||1)===Number(q.version||1);
+}
 
 function initialise(){
  const skills=[...new Set(QUESTIONS.map(q=>q.competence))].sort((a,b)=>a.localeCompare(b,'fr'));
@@ -26,7 +29,8 @@ function applyFilters(){
  const currentId=currentQuestion()?.id;
  filteredQuestions=QUESTIONS.filter(q=>{
    const r=reviewFor(q.id);
-   const statusOk=status==='all'||(status==='unreviewed'&&!r.rating)||r.rating===status;
+   const currentRating=isCurrentReview(q,r)?r.rating:'';
+   const statusOk=status==='all'||(status==='unreviewed'&&!currentRating)||currentRating===status;
    const skillOk=skill==='all'||q.competence===skill;
    const versionOk=version==='all'||String(q.version||1)===version;
    const searchOk=!search||String(q.id)===search||q.question.toLowerCase().includes(search)||q.competence.toLowerCase().includes(search);
@@ -61,6 +65,8 @@ function renderQuestion(){
  reviewPanel.hidden=false;
  navigation.hidden=false;
  const r=reviewFor(q.id);
+ const currentReview=isCurrentReview(q,r);
+ const staleReview=Boolean(r.rating)&&!currentReview;
  document.getElementById('testCounter').textContent=`Question ${currentIndex+1} / ${filteredQuestions.length}`;
  document.getElementById('questionIdentity').textContent=`ID permanent Q${q.id}`;
  document.getElementById('testProgress').style.width=`${((currentIndex+1)/filteredQuestions.length)*100}%`;
@@ -69,28 +75,38 @@ function renderQuestion(){
  document.getElementById('testVersion').textContent=`Version ${q.version||1}`;
  document.getElementById('testQuestion').textContent=q.question;
  document.getElementById('testChoices').innerHTML=q.choix.map((c,i)=>`<div class="choice test-choice ${i===q.reponse?'correct-choice':''}"><span>${String.fromCharCode(65+i)}.</span> ${escapeHtml(c)} ${i===q.reponse?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
- document.querySelectorAll('.rating').forEach(b=>b.classList.toggle('active',b.dataset.rating===r.rating));
+ document.querySelectorAll('.rating').forEach(b=>b.classList.toggle('active',currentReview&&b.dataset.rating===r.rating));
  document.getElementById('reviewComment').value=r.comment||'';
+ const staleNotice=document.getElementById('staleReviewNotice');
+ staleNotice.classList.toggle('hidden',!staleReview);
+ staleNotice.textContent=staleReview
+  ?`Question modifiée : l'ancienne validation ${r.rating} (version ${r.questionVersion||1}) est conservée dans l'historique. Cette version doit être retestée.`
+  :'';
  window.scrollTo({top:0,behavior:'smooth'});
 }
 function setRating(rating){
  const q=currentQuestion();if(!q)return;
  const old=reviewFor(q.id);
- reviews[String(q.id)]={...old,rating,updatedAt:new Date().toISOString(),questionVersion:q.version||1};
+ const history=Array.isArray(old.history)?[...old.history]:[];
+ if(old.rating&&!isCurrentReview(q,old)){
+  const alreadySaved=history.some(item=>Number(item.questionVersion||1)===Number(old.questionVersion||1)&&item.rating===old.rating&&item.updatedAt===old.updatedAt);
+  if(!alreadySaved)history.push({rating:old.rating,comment:old.comment||'',updatedAt:old.updatedAt||'',questionVersion:old.questionVersion||1});
+ }
+ reviews[String(q.id)]={...old,history,rating,updatedAt:new Date().toISOString(),questionVersion:q.version||1};
  persist();renderQuestion();
 }
 function saveComment(){
  const q=currentQuestion();if(!q)return;
  const comment=document.getElementById('reviewComment').value;
  const old=reviewFor(q.id);
- reviews[String(q.id)]={...old,comment,updatedAt:new Date().toISOString(),questionVersion:q.version||1};
+ reviews[String(q.id)]={...old,comment,updatedAt:new Date().toISOString(),questionVersion:old.questionVersion||q.version||1};
  persist();
 }
 function nextTestQuestion(){if(currentIndex<filteredQuestions.length-1){currentIndex++;renderQuestion();}}
 function previousTestQuestion(){if(currentIndex>0){currentIndex--;renderQuestion();}}
 function renderSummary(){
  const counts={A:0,B:0,C:0,D:0};let tested=0;
- QUESTIONS.forEach(q=>{const r=reviewFor(q.id);if(r.rating){tested++;counts[r.rating]=(counts[r.rating]||0)+1;}});
+ QUESTIONS.forEach(q=>{const r=reviewFor(q.id);if(isCurrentReview(q,r)){tested++;counts[r.rating]=(counts[r.rating]||0)+1;}});
  document.getElementById('qualitySummary').innerHTML=`
  <div class="summary-box"><div class="summary-value">${tested} / ${QUESTIONS.length}</div><div class="small">questions testées</div></div>
  <div class="summary-box"><div class="summary-value">${counts.A}</div><div class="small">A — excellentes</div></div>
@@ -99,18 +115,18 @@ function renderSummary(){
  <div class="summary-box"><div class="summary-value">${counts.D}</div><div class="small">D — à supprimer</div></div>`;
 }
 function renderDashboard(){
- const groups={};QUESTIONS.forEach(q=>{if(!groups[q.competence])groups[q.competence]={total:0,tested:0,A:0,B:0,C:0,D:0};const g=groups[q.competence];g.total++;const r=reviewFor(q.id);if(r.rating){g.tested++;g[r.rating]++;}});
+ const groups={};QUESTIONS.forEach(q=>{if(!groups[q.competence])groups[q.competence]={total:0,tested:0,A:0,B:0,C:0,D:0};const g=groups[q.competence];g.total++;const r=reviewFor(q.id);if(isCurrentReview(q,r)){g.tested++;g[r.rating]++;}});
  document.getElementById('skillDashboard').innerHTML=Object.entries(groups).map(([name,g])=>`<div class="skill-quality"><div><strong>${escapeHtml(name)}</strong><span>${g.tested}/${g.total} testées</span></div><div class="mini-counts"><span>A ${g.A}</span><span>B ${g.B}</span><span>C ${g.C}</span><span>D ${g.D}</span></div><div class="meter"><span style="width:${g.tested/g.total*100}%"></span></div></div>`).join('');
 }
 function exportRows(){
  return QUESTIONS.filter(q=>{const r=reviewFor(q.id);return r.rating||r.comment;}).map(q=>{
-  const r=reviewFor(q.id);return {applicationVersion:APP_VERSION,questionId:q.id,questionVersion:q.version||1,domaine:q.domaine,competenceId:q.competenceId,competence:q.competence,difficulte:q.difficulte,question:q.question,choix:q.choix,reponseIndex:q.reponse,reponseTexte:q.choix[q.reponse],note:r.rating||'',commentaire:r.comment||'',dateModification:r.updatedAt||''};
+  const r=reviewFor(q.id);return {applicationVersion:APP_VERSION,questionId:q.id,questionVersion:q.version||1,domaine:q.domaine,competenceId:q.competenceId,competence:q.competence,difficulte:q.difficulte,question:q.question,choix:q.choix,reponseIndex:q.reponse,reponseTexte:q.choix[q.reponse],note:isCurrentReview(q,r)?r.rating||'':'',statutValidation:isCurrentReview(q,r)?'validée':(r.rating?'à retester':'non testée'),ancienneNote:!isCurrentReview(q,r)&&r.rating?r.rating:'',ancienneVersion:!isCurrentReview(q,r)&&r.rating?r.questionVersion||1:'',commentaire:r.comment||'',dateModification:r.updatedAt||'',historique:r.history||[]};
  });
 }
 function download(content,type,name){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);}
 function exportJSON(){const payload={format:'cap-college-quality-review',applicationVersion:APP_VERSION,exportedAt:new Date().toISOString(),questionBankSize:QUESTIONS.length,reviews:exportRows()};download(JSON.stringify(payload,null,2),'application/json;charset=utf-8',`cap-college-retours-${new Date().toISOString().slice(0,10)}.json`);setExportStatus('Export JSON téléchargé.');}
 function csvCell(v){const s=Array.isArray(v)?v.join(' | '):String(v??'');return '"'+s.replace(/"/g,'""')+'"';}
-function exportCSV(){const rows=exportRows();const headers=['applicationVersion','questionId','questionVersion','domaine','competenceId','competence','difficulte','question','choix','reponseIndex','reponseTexte','note','commentaire','dateModification'];const csv='\ufeff'+[headers.map(csvCell).join(';'),...rows.map(r=>headers.map(h=>csvCell(r[h])).join(';'))].join('\r\n');download(csv,'text/csv;charset=utf-8',`cap-college-retours-${new Date().toISOString().slice(0,10)}.csv`);setExportStatus('Export CSV téléchargé.');}
+function exportCSV(){const rows=exportRows();const headers=['applicationVersion','questionId','questionVersion','domaine','competenceId','competence','difficulte','question','choix','reponseIndex','reponseTexte','note','statutValidation','ancienneNote','ancienneVersion','commentaire','dateModification'];const csv='\ufeff'+[headers.map(csvCell).join(';'),...rows.map(r=>headers.map(h=>csvCell(r[h])).join(';'))].join('\r\n');download(csv,'text/csv;charset=utf-8',`cap-college-retours-${new Date().toISOString().slice(0,10)}.csv`);setExportStatus('Export CSV téléchargé.');}
 async function importJSONFile(event){
  const file=event.target.files&&event.target.files[0];
  if(!file)return;

@@ -1,9 +1,9 @@
 const STORAGE_PROGRESS='capCollegeV43Progress';
 const STORAGE_PROGRESS_BACKUP='capCollegeDiagnosticProgressBackup';
 const STORAGE_RESULT='capCollegeV43Result';
-const DIAGNOSTIC_SIZE=100;
-const BASE_PER_SKILL=5;
 const MIN_ANSWERS_PER_SKILL=3;
+const BASE_PER_SKILL=MIN_ANSWERS_PER_SKILL;
+const DIAGNOSTIC_SIZE=new Set(QUESTIONS.map(q=>q.competenceId)).size*MIN_ANSWERS_PER_SKILL;
 
 let current=0;
 let answers=[];
@@ -22,9 +22,16 @@ function initialiseThemeSelector(){
 }
 
 function refreshDiagnosticSize(){
-  const selected=document.getElementById('diagnosticSkill').value;
+  const select=document.getElementById('diagnosticSkill');
+  const selected=select.value;
   const count=selected==='all'?DIAGNOSTIC_SIZE:QUESTIONS.filter(q=>q.competenceId===selected).length;
   document.getElementById('qCount').textContent=count;
+  const hint=document.getElementById('themeSelectionHint');
+  if(hint){
+    hint.textContent=selected==='all'
+      ?`${count} questions équilibrées · ${new Set(QUESTIONS.map(q=>q.competenceId)).size} thèmes couverts`
+      :`${select.options[select.selectedIndex].text} · toutes les questions du thème`;
+  }
 }
 
 function shuffle(array){
@@ -135,7 +142,7 @@ function readSavedProgress(){
 function saveProgress(){
   const payload={
     format:'cap-college-diagnostic-progress',
-    version:'5.6',
+    version:'6.0',
     current,
     answers,
     questionIds:diagnosticQuestions.map(q=>q.id),
@@ -332,7 +339,7 @@ function finishTest(stoppedEarly=false){
   });
 
   const result={
-    version:'4.3',
+    version:'6.0',
     bankSize:QUESTIONS.length,
     stats,
     totalOk,

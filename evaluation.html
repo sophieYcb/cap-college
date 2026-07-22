@@ -14,11 +14,20 @@
 <section id="intro" class="card">
   <h1>Diagnostic Français 6e</h1>
   <p>Choisis un diagnostic complet ou un thème précis. Le domaine, le thème et, en conjugaison, le temps attendu sont affichés clairement avant chaque question.</p>
-  <label class="comment-label">Thème à évaluer
-    <select id="diagnosticSkill" onchange="refreshDiagnosticSize()">
-      <option value="all">Tous les thèmes — diagnostic complet</option>
-    </select>
-  </label>
+  <div class="theme-picker">
+    <div class="theme-picker-heading">
+      <span class="theme-picker-icon" aria-hidden="true">◎</span>
+      <div><strong>Choisir le périmètre du diagnostic</strong><span>Tout le programme ou une notion précise</span></div>
+    </div>
+    <label class="theme-select-wrap">
+      <span class="sr-only">Thème à évaluer</span>
+      <select id="diagnosticSkill" onchange="refreshDiagnosticSize()">
+        <option value="all">Tous les thèmes — diagnostic complet</option>
+      </select>
+      <span class="theme-chevron" aria-hidden="true">⌄</span>
+    </label>
+    <p id="themeSelectionHint" class="theme-selection-hint"></p>
+  </div>
   <div class="summary-grid">
     <div class="summary-box"><div class="summary-value" id="qCount">0</div><div class="small">questions prévues</div></div>
     <div class="summary-box"><div class="summary-value">80 %</div><div class="small">seuil de maîtrise</div></div>
@@ -59,6 +68,6 @@
   </div>
 </section>
 </main>
-<script src="data.js"></script><script src="corrections-v5.1.js"></script><script src="corrections-v5.2.js"></script><script src="corrections-v5.4.js"></script><script src="evaluation.js"></script>
+<script src="data.js"></script><script src="corrections-v5.1.js"></script><script src="corrections-v5.2.js"></script><script src="corrections-v5.4.js"></script><script src="programme-v6.js"></script><script src="evaluation.js"></script>
 </body>
 </html>
