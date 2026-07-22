@@ -8,8 +8,24 @@ const MIN_ANSWERS_PER_SKILL=3;
 let current=0;
 let answers=[];
 let diagnosticQuestions=[];
+let autoAdvanceTimer=null;
 
-document.getElementById('qCount').textContent=DIAGNOSTIC_SIZE;
+function initialiseThemeSelector(){
+  const select=document.getElementById('diagnosticSkill');
+  const themes=[...new Map(QUESTIONS.map(q=>[q.competenceId,{id:q.competenceId,name:q.competence,domain:q.domaine}])).values()]
+    .sort((a,b)=>a.domain.localeCompare(b.domain,'fr')||a.name.localeCompare(b.name,'fr'));
+  select.innerHTML='<option value="all">Tous les thèmes — diagnostic complet</option>'+themes.map(theme=>{
+    const count=QUESTIONS.filter(q=>q.competenceId===theme.id).length;
+    return `<option value="${theme.id}">${theme.domain} · ${theme.name} (${count} questions)</option>`;
+  }).join('');
+  refreshDiagnosticSize();
+}
+
+function refreshDiagnosticSize(){
+  const selected=document.getElementById('diagnosticSkill').value;
+  const count=selected==='all'?DIAGNOSTIC_SIZE:QUESTIONS.filter(q=>q.competenceId===selected).length;
+  document.getElementById('qCount').textContent=count;
+}
 
 function shuffle(array){
   const copy=[...array];
@@ -25,7 +41,10 @@ function shuffle(array){
   Chaque thème apparaît une fois par tour afin que les premières questions
   couvrent rapidement l'ensemble des compétences.
 */
-function buildBalancedDiagnostic(){
+function buildBalancedDiagnostic(selectedSkill='all'){
+  if(selectedSkill!=='all'){
+    return shuffle(QUESTIONS.filter(q=>q.competenceId===selectedSkill));
+  }
   const groups={};
   QUESTIONS.forEach(q=>{
     if(!groups[q.competenceId])groups[q.competenceId]=[];
@@ -58,13 +77,15 @@ function showTest(){
 }
 
 function startTest(){
+  clearTimeout(autoAdvanceTimer);
   const saved=readSavedProgress();
   if(saved){
     const answered=Array.isArray(saved.answers)?saved.answers.filter(answer=>answer!==null).length:0;
     const replace=confirm(`Un diagnostic en cours contient ${answered} réponse${answered>1?'s':''}.\n\nOK : l’effacer et recommencer.\nAnnuler : reprendre le diagnostic.`);
     if(!replace){resumeTest();return;}
   }
-  diagnosticQuestions=buildBalancedDiagnostic();
+  const selectedSkill=document.getElementById('diagnosticSkill').value;
+  diagnosticQuestions=buildBalancedDiagnostic(selectedSkill);
   current=0;
   answers=Array(diagnosticQuestions.length).fill(null);
   saveProgress();
@@ -73,6 +94,7 @@ function startTest(){
 }
 
 function resumeTest(){
+  clearTimeout(autoAdvanceTimer);
   const data=readSavedProgress();
   if(!data){
     alert('Aucune progression enregistrée sur cet appareil. Clique sur « Commencer un nouveau diagnostic ».');
@@ -86,6 +108,11 @@ function resumeTest(){
     current=Math.min(Number.isInteger(data.current)?data.current:0,diagnosticQuestions.length-1);
     answers=Array.isArray(data.answers)?data.answers:Array(diagnosticQuestions.length).fill(null);
     while(answers.length<diagnosticQuestions.length)answers.push(null);
+    const restoredSkill=data.selectedSkill||'all';
+    if(document.querySelector(`#diagnosticSkill option[value="${restoredSkill}"]`)){
+      document.getElementById('diagnosticSkill').value=restoredSkill;
+      refreshDiagnosticSize();
+    }
     showTest();
     renderQuestion();
   }catch(e){
@@ -108,10 +135,11 @@ function readSavedProgress(){
 function saveProgress(){
   const payload={
     format:'cap-college-diagnostic-progress',
-    version:'5.5',
+    version:'5.6',
     current,
     answers,
     questionIds:diagnosticQuestions.map(q=>q.id),
+    selectedSkill:document.getElementById('diagnosticSkill').value,
     savedAt:new Date().toISOString()
   };
   const serialized=JSON.stringify(payload);
@@ -176,9 +204,18 @@ async function importProgress(event){
 }
 
 function selectAnswer(index){
+  clearTimeout(autoAdvanceTimer);
   answers[current]=index;
   saveProgress();
   renderChoices();
+  if(current<diagnosticQuestions.length-1){
+    autoAdvanceTimer=setTimeout(()=>{
+      current++;
+      saveProgress();
+      renderQuestion();
+      window.scrollTo(0,0);
+    },350);
+  }
 }
 
 function renderChoices(){
@@ -216,6 +253,7 @@ function renderQuestion(){
 }
 
 function nextQuestion(){
+  clearTimeout(autoAdvanceTimer);
   if(answers[current]===null){
     alert('Choisis une réponse avant de continuer.');
     return;
@@ -231,6 +269,7 @@ function nextQuestion(){
 }
 
 function prevQuestion(){
+  clearTimeout(autoAdvanceTimer);
   if(current>0){
     current--;
     saveProgress();
@@ -240,6 +279,7 @@ function prevQuestion(){
 }
 
 function stopTest(){
+  clearTimeout(autoAdvanceTimer);
   const answeredCount=answers.filter(answer=>answer!==null).length;
   if(answeredCount===0){
     alert('Réponds au moins à une question avant de demander un bilan.');
@@ -320,3 +360,4 @@ document.addEventListener('visibilitychange',()=>{
   if(document.visibilityState==='hidden'&&diagnosticQuestions.length)saveProgress();
 });
 refreshProgressUI();
+initialiseThemeSelector();

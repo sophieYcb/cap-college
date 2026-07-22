@@ -1,5 +1,5 @@
 const REVIEW_KEY='capCollegeV50aReviews';
-const APP_VERSION='5.4';
+const APP_VERSION='5.6';
 let reviews=loadReviews();
 let filteredQuestions=[...QUESTIONS];
 let currentIndex=0;

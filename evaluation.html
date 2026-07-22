@@ -13,9 +13,14 @@
 
 <section id="intro" class="card">
   <h1>Diagnostic Français 6e</h1>
-  <p>Le diagnostic tire 100 questions équilibrées dans une banque de 380 questions. Le domaine, le thème et, en conjugaison, le temps attendu sont affichés clairement avant chaque question.</p>
+  <p>Choisis un diagnostic complet ou un thème précis. Le domaine, le thème et, en conjugaison, le temps attendu sont affichés clairement avant chaque question.</p>
+  <label class="comment-label">Thème à évaluer
+    <select id="diagnosticSkill" onchange="refreshDiagnosticSize()">
+      <option value="all">Tous les thèmes — diagnostic complet</option>
+    </select>
+  </label>
   <div class="summary-grid">
-    <div class="summary-box"><div class="summary-value" id="qCount">0</div><div class="small">questions par diagnostic</div></div>
+    <div class="summary-box"><div class="summary-value" id="qCount">0</div><div class="small">questions prévues</div></div>
     <div class="summary-box"><div class="summary-value">80 %</div><div class="small">seuil de maîtrise</div></div>
     <div class="summary-box"><div class="summary-value">4</div><div class="small">domaines</div></div>
   </div>
