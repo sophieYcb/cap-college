@@ -13,7 +13,26 @@
 
 <section id="intro" class="card">
   <h1>Diagnostic Français 6e</h1>
-  <p>Choisis un diagnostic complet ou un thème précis. Le domaine, le thème et, en conjugaison, le temps attendu sont affichés clairement avant chaque question.</p>
+  <p>Choisis le temps que tu souhaites consacrer à cette séance. Le diagnostic se construit tranquillement, au fil de tes visites.</p>
+  <div class="active-session-home hidden" id="activeSessionIntro">
+    <span class="small">Séance en cours</span>
+    <h2 id="activeSessionIntroTitle"></h2>
+    <p id="activeSessionIntroDetails"></p>
+    <div class="actions">
+      <button class="btn btn-primary" id="continueActiveSessionButton">Continuer cette séance</button>
+      <button class="btn btn-secondary" id="closeActiveSessionButton">Choisir une nouvelle séance</button>
+    </div>
+  </div>
+  <div id="newSessionConfiguration">
+  <div class="duration-picker">
+    <strong>Durée souhaitée</strong>
+    <div class="duration-options" role="radiogroup" aria-label="Durée de la séance">
+      <label><input type="radio" name="sessionDuration" value="10"> <span>10 min</span></label>
+      <label><input type="radio" name="sessionDuration" value="20"> <span>20 min</span></label>
+      <label><input type="radio" name="sessionDuration" value="30" checked> <span>30 min</span></label>
+    </div>
+    <p class="small">Aucun chronomètre et aucune pénalité : tu avances à ton rythme.</p>
+  </div>
   <div class="theme-picker">
     <div class="theme-picker-heading">
       <span class="theme-picker-icon" aria-hidden="true">◎</span>
@@ -29,8 +48,8 @@
     <p id="themeSelectionHint" class="theme-selection-hint"></p>
   </div>
   <div class="summary-grid">
-    <div class="summary-box"><div class="summary-value" id="qCount">0</div><div class="small">questions prévues</div></div>
-    <div class="summary-box"><div class="summary-value">80 %</div><div class="small">seuil de maîtrise</div></div>
+    <div class="summary-box"><div class="summary-value" id="durationSummary">30 min</div><div class="small">durée choisie</div></div>
+    <div class="summary-box"><div class="summary-value">Progressif</div><div class="small">reprends une autre fois</div></div>
     <div class="summary-box"><div class="summary-value">4</div><div class="small">domaines</div></div>
   </div>
   <div class="actions">
@@ -44,12 +63,12 @@
     <button class="btn btn-secondary" onclick="document.getElementById('importProgressFile').click()">Importer une progression</button>
     <input id="importProgressFile" type="file" accept="application/json,.json" hidden onchange="importProgress(event)">
   </div>
+  </div>
 </section>
 
 <section id="test" class="hidden test-layout">
   <div class="card test-status-card">
     <div class="question-top"><strong id="counter"></strong><span id="topDomain"></span></div>
-    <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
   </div>
 
   <div class="card question-card">
@@ -63,11 +82,15 @@
     <div class="actions question-actions">
       <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()">Précédente</button>
       <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Suivante</button>
-      <button class="btn btn-danger stop-test-btn" onclick="stopTest()">Arrêter et voir le bilan</button>
+      <button class="btn btn-secondary stop-test-btn" onclick="pauseTest()">Mettre en pause</button>
     </div>
   </div>
 </section>
 </main>
-<script src="data.js"></script><script src="corrections-v5.1.js"></script><script src="corrections-v5.2.js"></script><script src="corrections-v5.4.js"></script><script src="programme-v6.js"></script><script src="evaluation.js"></script>
+<script src="data.js"></script><script src="corrections-v5.1.js"></script><script src="corrections-v5.2.js"></script><script src="corrections-v5.4.js"></script><script src="programme-v6.js"></script>
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-app.js"></script>
+<script src="evaluation-loader.js"></script>
 </body>
 </html>

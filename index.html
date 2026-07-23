@@ -16,9 +16,20 @@
     <h1>Des bases solides avant le lycée.</h1>
     <p>Cap Collège évalue précisément les acquis, repère les lacunes et propose une remise à niveau ciblée. L’objectif n’est pas de refaire tout le programme, mais de travailler uniquement ce qui doit l’être.</p>
     <div class="actions">
-      <a class='btn btn-primary' href='evaluation.html'>Commencer le diagnostic</a>
+      <a class='btn btn-primary' id="diagnosticStartLink" href='evaluation.html'>Commencer mon diagnostic</a>
+      <a class="btn btn-secondary" id="loginLink" href="login.html">Se connecter</a>
+      <button class="btn btn-secondary hidden" id="logoutButton" type="button">Se déconnecter</button>
       <a class="btn btn-secondary" href="#matieres">Voir les matières</a>
       <a class='btn btn-test' href='test.html'>Mode Test pédagogique</a>
+    </div>
+    <div class="active-session-home hidden" id="activeSessionHome">
+      <span class="small">Ta séance t’attend</span>
+      <h2 id="activeSessionTitle"></h2>
+      <p id="activeSessionDetails"></p>
+      <div class="actions">
+        <a class="btn btn-primary" href="evaluation.html?resume=1">Continuer ma séance</a>
+        <button class="btn btn-secondary" id="chooseNewSessionButton" type="button">Choisir une nouvelle séance</button>
+      </div>
     </div>
   </article>
 
@@ -52,5 +63,9 @@
 </section>
 <footer>Cap Collège — diagnostic et remise à niveau personnalisée.</footer>
 </main>
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-app.js"></script>
+<script src="home-auth.js"></script>
 </body>
 </html>

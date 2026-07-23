@@ -1,44 +1,63 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mode Test pédagogique — Cap Collège</title><link rel="stylesheet" href="styles.css"></head>
-<body><main class="page quality-page">
-
-
-<section class="quality-summary" id="qualitySummary"></section>
-<section class="card quality-toolbar">
- <label>Filtrer <select id="statusFilter" onchange="applyFilters()"><option value="all">Toutes</option><option value="unreviewed">Non testées</option><option value="A">A — excellente</option><option value="B">B — améliorable</option><option value="C">C — à réécrire</option><option value="D">D — à supprimer</option></select></label>
- <label>Thème <select id="skillFilter" onchange="applyFilters()"><option value="all">Tous les thèmes</option></select></label>
- <label>Version <select id="versionFilter" onchange="applyFilters()"><option value="all">Toutes</option></select></label>
- <label>Trier <select id="sortOrder" onchange="applyFilters()"><option value="id">N° de question</option><option value="version-desc">Version récente</option><option value="version-asc">Version ancienne</option></select></label>
- <label>Rechercher <input id="searchFilter" type="search" placeholder="mot ou numéro" oninput="applyFilters()"></label>
-</section>
-<section class="card quality-question">
- <div class="question-top"><strong id="testCounter"></strong><span id="questionIdentity"></span></div>
- <div class="progress"><div class="progress-bar" id="testProgress"></div></div>
- <div class="question-meta"><span class="meta meta-domain" id="testDomain"></span><span class="meta meta-skill" id="testSkill"></span><span class="meta" id="testVersion"></span></div>
- <h2 id="testQuestion"></h2><div id="testChoices"></div>
- <div id="staleReviewNotice" class="notice stale-review-notice hidden" role="status"></div>
- <div class="review-panel"><h3>Évaluation de la qualité</h3>
-  <div class="rating-grid">
-   <button class="rating rating-a" data-rating="A" onclick="setRating('A')"><strong>A</strong><span>Excellente</span></button>
-   <button class="rating rating-b" data-rating="B" onclick="setRating('B')"><strong>B</strong><span>À améliorer</span></button>
-   <button class="rating rating-c" data-rating="C" onclick="setRating('C')"><strong>C</strong><span>À réécrire</span></button>
-   <button class="rating rating-d" data-rating="D" onclick="setRating('D')"><strong>D</strong><span>À supprimer</span></button>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Mode Validation — Cap Collège</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page quality-page">
+ <section class="quality-summary" id="qualitySummary"></section>
+ <section class="card quality-toolbar">
+  <label>Filtrer <select id="statusFilter" onchange="applyFilters()"><option value="all">Toutes</option><option value="unreviewed">Non testées</option><option value="A">A — excellente</option><option value="B">B — améliorable</option><option value="C">C — à réécrire</option><option value="D">D — à supprimer</option></select></label>
+  <label>Thème <select id="skillFilter" onchange="applyFilters()"><option value="all">Tous les thèmes</option></select></label>
+  <label>Version <select id="versionFilter" onchange="applyFilters()"><option value="all">Toutes</option></select></label>
+  <label>Trier <select id="sortOrder" onchange="applyFilters()"><option value="id">N° de question</option><option value="version-desc">Version récente</option><option value="version-asc">Version ancienne</option></select></label>
+  <label>Rechercher <input id="searchFilter" type="search" placeholder="mot ou numéro" oninput="applyFilters()"></label>
+ </section>
+ <section class="card quality-question">
+  <div class="question-top"><strong id="testCounter"></strong><span id="questionIdentity"></span></div>
+  <div class="progress"><div class="progress-bar" id="testProgress"></div></div>
+  <div class="question-meta"><span class="meta meta-domain" id="testDomain"></span><span class="meta meta-skill" id="testSkill"></span><span class="meta" id="testVersion"></span></div>
+  <h2 id="testQuestion"></h2>
+  <div id="testChoices"></div>
+  <details id="previousVersionPanel" class="previous-version-panel hidden">
+   <summary>Comparer avec la version précédente</summary>
+   <div class="previous-version-content">
+    <p class="small" id="previousVersionLabel"></p>
+    <h3 id="previousQuestion"></h3>
+    <div id="previousChoices"></div>
+   </div>
+  </details>
+  <div id="staleReviewNotice" class="notice stale-review-notice hidden" role="status"></div>
+  <div class="review-panel">
+   <h3>Évaluation de la qualité</h3>
+   <div class="rating-grid">
+    <button class="rating rating-a" data-rating="A" onclick="setRating('A')"><strong>A</strong><span>Excellente</span></button>
+    <button class="rating rating-b" data-rating="B" onclick="setRating('B')"><strong>B</strong><span>À améliorer</span></button>
+    <button class="rating rating-c" data-rating="C" onclick="setRating('C')"><strong>C</strong><span>À réécrire</span></button>
+    <button class="rating rating-d" data-rating="D" onclick="setRating('D')"><strong>D</strong><span>À supprimer</span></button>
+   </div>
+   <label class="comment-label">Commentaire<textarea id="reviewComment" rows="3" placeholder="Ex. distracteurs peu crédibles, question ambiguë…" oninput="saveComment()"></textarea></label>
+   <p class="small review-save-status" id="reviewSaveStatus" aria-live="polite"></p>
   </div>
-  <label class="comment-label">Commentaire<textarea id="reviewComment" rows="3" placeholder="Ex. distracteurs peu crédibles, question ambiguë…" oninput="saveComment()"></textarea></label>
- </div>
- <div class="actions question-actions quality-nav"><button class="btn btn-secondary" onclick="previousTestQuestion()">Précédente</button><button class="btn btn-primary" onclick="nextTestQuestion()">Suivante</button></div>
-</section>
-<section class="card quality-export-card" aria-label="Export des retours">
- <div class="compact-export-bar">
-  <button class="btn btn-secondary" onclick="exportJSON()">Exporter JSON</button>
-  <button class="btn btn-secondary" onclick="exportCSV()">Exporter CSV</button>
-  <button class="btn btn-secondary" onclick="document.getElementById('importJsonFile').click()">Importer JSON</button>
-  <input id="importJsonFile" type="file" accept="application/json,.json" hidden onchange="importJSONFile(event)">
-  <button class="btn btn-secondary" onclick="copyReviews()">Copier les retours</button>
-  <button class="btn btn-secondary" onclick="exportHTMLReport()">Rapport HTML</button>
- </div>
- <p class="small export-status" id="exportStatus" aria-live="polite"></p>
-</section>
-<section class="card"><h2>Avancement par thème</h2><div id="skillDashboard" class="skill-dashboard"></div></section>
-</main><script src="data.js"></script><script src="corrections-v5.1.js"></script><script src="corrections-v5.2.js"></script><script src="corrections-v5.4.js"></script><script src="programme-v6.js"></script><script src="test.js"></script></body></html>
+  <div class="actions question-actions quality-nav"><button class="btn btn-secondary" onclick="previousTestQuestion()">Précédente</button><button class="btn btn-primary" onclick="nextTestQuestion()">Suivante</button></div>
+ </section>
+ <section class="card quality-export-card" aria-label="Export des retours">
+  <div class="compact-export-bar">
+   <button class="btn btn-secondary" onclick="exportJSON()">Exporter JSON</button>
+   <button class="btn btn-secondary" onclick="exportCSV()">Exporter CSV</button>
+   <button class="btn btn-secondary" onclick="copyReviews()">Copier les retours</button>
+   <button class="btn btn-secondary" onclick="exportHTMLReport()">Rapport HTML</button>
+  </div>
+  <p class="small export-status" id="exportStatus" aria-live="polite"></p>
+ </section>
+ <section class="card"><h2>Avancement par thème</h2><div id="skillDashboard" class="skill-dashboard"></div></section>
+</main>
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-app.js"></script>
+<script src="test-loader.js"></script>
+</body>
+</html>

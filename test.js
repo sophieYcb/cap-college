@@ -1,11 +1,61 @@
 const REVIEW_KEY='capCollegeV50aReviews';
-const APP_VERSION='6.0';
+const APP_VERSION='5.3.7';
+const QUESTIONS=(window.VALIDATION_QUESTIONS||[]).map(item=>{
+ const choices=item.current?.choices||[];
+ return {
+  id:Number(item.id),questionId:item.questionId,
+  questionVersionId:item.current?.id,
+  domaine:item.domain,competenceId:item.competenceId,
+  competence:item.competence,difficulte:Number(item.difficulty),
+  question:item.current?.prompt||'',
+  choix:choices.map(choice=>choice.text),
+  reponse:choices.findIndex(choice=>choice.isCorrect),
+  version:Number(item.current?.number||1),
+  previous:item.previous,status:item.status,
+  openFlags:Number(item.openFlags||0)
+ };
+});
 let reviews=loadReviews();
 let filteredQuestions=[...QUESTIONS];
 let currentIndex=0;
+let saveTimer=null;
 
-function loadReviews(){try{return JSON.parse(localStorage.getItem(REVIEW_KEY))||{};}catch(e){return {};}}
-function persist(){localStorage.setItem(REVIEW_KEY,JSON.stringify(reviews));renderSummary();renderDashboard();}
+function loadReviews(){
+ return Object.fromEntries((window.VALIDATION_QUESTIONS||[])
+  .filter(item=>item.review?.grade)
+  .map(item=>[String(item.id),{
+   rating:item.review.grade,
+   comment:item.review.comment||'',
+   updatedAt:item.review.reviewedAt||'',
+   questionVersion:Number(item.current?.number||1)
+  }]));
+}
+function saveStatus(message,isError=false){
+ const el=document.getElementById('reviewSaveStatus');
+ if(!el)return;
+ el.textContent=message;
+ el.classList.toggle('save-error',isError);
+}
+async function persist(question=currentQuestion()){
+ renderSummary();renderDashboard();
+ const q=question;if(!q)return;
+ const review=reviewFor(q.id);
+ if(!review.rating){
+  saveStatus('Choisis d’abord une note pour enregistrer le commentaire.',true);
+  return;
+ }
+ saveStatus('Enregistrement…');
+ try{
+  const saved=await CapCollegeSupabase.saveQuestionReview(
+   q.questionVersionId,review.rating,review.comment||''
+  );
+  review.updatedAt=saved?.reviewed_at||new Date().toISOString();
+  review.questionVersion=q.version||1;
+  saveStatus('Enregistré dans Supabase.');
+ }catch(error){
+  saveStatus(`Échec de l’enregistrement : ${error.message}`,true);
+ }
+}
 function currentQuestion(){return filteredQuestions[currentIndex];}
 function reviewFor(id){return reviews[String(id)]||{};}
 function isCurrentReview(q,r=reviewFor(q.id)){
@@ -68,7 +118,7 @@ function renderQuestion(){
  const currentReview=isCurrentReview(q,r);
  const staleReview=Boolean(r.rating)&&!currentReview;
  document.getElementById('testCounter').textContent=`Question ${currentIndex+1} / ${filteredQuestions.length}`;
- document.getElementById('questionIdentity').textContent=`ID permanent Q${q.id}`;
+ document.getElementById('questionIdentity').textContent=`ID permanent Q${q.id}${q.openFlags?` · 🚩 ${q.openFlags}`:''}`;
  document.getElementById('testProgress').style.width=`${((currentIndex+1)/filteredQuestions.length)*100}%`;
  document.getElementById('testDomain').textContent=q.domaine;
  document.getElementById('testSkill').textContent=q.competence;
@@ -77,6 +127,16 @@ function renderQuestion(){
  document.getElementById('testChoices').innerHTML=q.choix.map((c,i)=>`<div class="choice test-choice ${i===q.reponse?'correct-choice':''}"><span>${String.fromCharCode(65+i)}.</span> ${escapeHtml(c)} ${i===q.reponse?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
  document.querySelectorAll('.rating').forEach(b=>b.classList.toggle('active',currentReview&&b.dataset.rating===r.rating));
  document.getElementById('reviewComment').value=r.comment||'';
+ saveStatus(currentReview?'Validation enregistrée dans Supabase.':'');
+ const previousPanel=document.getElementById('previousVersionPanel');
+ previousPanel.classList.toggle('hidden',!q.previous);
+ if(q.previous){
+  const previousChoices=q.previous.choices||[];
+  document.getElementById('previousVersionLabel').textContent=`Version ${q.previous.number} — immédiatement antérieure`;
+  document.getElementById('previousQuestion').textContent=q.previous.prompt||'';
+  const previousCorrect=previousChoices.findIndex(choice=>choice.isCorrect);
+  document.getElementById('previousChoices').innerHTML=previousChoices.map((choice,index)=>`<div class="choice test-choice ${index===previousCorrect?'correct-choice':''}"><span>${String.fromCharCode(65+index)}.</span> ${escapeHtml(choice.text)} ${index===previousCorrect?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
+ }
  const staleNotice=document.getElementById('staleReviewNotice');
  staleNotice.classList.toggle('hidden',!staleReview);
  staleNotice.textContent=staleReview
@@ -93,14 +153,16 @@ function setRating(rating){
   if(!alreadySaved)history.push({rating:old.rating,comment:old.comment||'',updatedAt:old.updatedAt||'',questionVersion:old.questionVersion||1});
  }
  reviews[String(q.id)]={...old,history,rating,updatedAt:new Date().toISOString(),questionVersion:q.version||1};
- persist();renderQuestion();
+ renderQuestion();persist(q);
 }
 function saveComment(){
  const q=currentQuestion();if(!q)return;
  const comment=document.getElementById('reviewComment').value;
  const old=reviewFor(q.id);
  reviews[String(q.id)]={...old,comment,updatedAt:new Date().toISOString(),questionVersion:old.questionVersion||q.version||1};
- persist();
+ clearTimeout(saveTimer);
+ saveStatus('Modification en attente…');
+ saveTimer=setTimeout(()=>persist(q),700);
 }
 function nextTestQuestion(){if(currentIndex<filteredQuestions.length-1){currentIndex++;renderQuestion();}}
 function previousTestQuestion(){if(currentIndex>0){currentIndex--;renderQuestion();}}

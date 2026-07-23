@@ -1,14 +1,24 @@
 const STORAGE_PROGRESS='capCollegeV43Progress';
 const STORAGE_PROGRESS_BACKUP='capCollegeDiagnosticProgressBackup';
 const STORAGE_RESULT='capCollegeV43Result';
+const PROGRESS_FORMAT_VERSION='6.1';
 const MIN_ANSWERS_PER_SKILL=3;
 const BASE_PER_SKILL=MIN_ANSWERS_PER_SKILL;
 const DIAGNOSTIC_SIZE=new Set(QUESTIONS.map(q=>q.competenceId)).size*MIN_ANSWERS_PER_SKILL;
+const APPROXIMATE_QUESTIONS_PER_MINUTE=2;
 
 let current=0;
 let answers=[];
+let answerResults=[];
+let answerFeedback=[];
 let diagnosticQuestions=[];
 let autoAdvanceTimer=null;
+let remoteSessionId=null;
+let remoteDiagnosticId=null;
+let plannedMinutes=30;
+let diagnosticFinished=false;
+let remoteSequenceOffset=0;
+let discoveredRemoteSession=null;
 
 function initialiseThemeSelector(){
   const select=document.getElementById('diagnosticSkill');
@@ -24,14 +34,22 @@ function initialiseThemeSelector(){
 function refreshDiagnosticSize(){
   const select=document.getElementById('diagnosticSkill');
   const selected=select.value;
-  const count=selected==='all'?DIAGNOSTIC_SIZE:QUESTIONS.filter(q=>q.competenceId===selected).length;
-  document.getElementById('qCount').textContent=count;
   const hint=document.getElementById('themeSelectionHint');
   if(hint){
     hint.textContent=selected==='all'
-      ?`${count} questions équilibrées · ${new Set(QUESTIONS.map(q=>q.competenceId)).size} thèmes couverts`
-      :`${select.options[select.selectedIndex].text} · toutes les questions du thème`;
+      ?`${new Set(QUESTIONS.map(q=>q.competenceId)).size} thèmes disponibles · le diagnostic avancera progressivement`
+      :`${select.options[select.selectedIndex].text} · séance ciblée sur ce thème`;
   }
+}
+
+function selectedDuration(){
+  const selected=document.querySelector('input[name="sessionDuration"]:checked');
+  return selected?Number(selected.value):30;
+}
+
+function refreshDurationSummary(){
+  plannedMinutes=selectedDuration();
+  document.getElementById('durationSummary').textContent=`${plannedMinutes} min`;
 }
 
 function shuffle(array){
@@ -48,9 +66,11 @@ function shuffle(array){
   Chaque thème apparaît une fois par tour afin que les premières questions
   couvrent rapidement l'ensemble des compétences.
 */
-function buildBalancedDiagnostic(selectedSkill='all'){
+function buildBalancedDiagnostic(selectedSkill='all',limit=DIAGNOSTIC_SIZE){
   if(selectedSkill!=='all'){
-    return shuffle(QUESTIONS.filter(q=>q.competenceId===selectedSkill));
+    return prioritiseQuestions(
+      QUESTIONS.filter(q=>q.competenceId===selectedSkill)
+    ).slice(0,limit);
   }
   const groups={};
   QUESTIONS.forEach(q=>{
@@ -58,23 +78,43 @@ function buildBalancedDiagnostic(selectedSkill='all'){
     groups[q.competenceId].push(q);
   });
 
-  const prepared=Object.values(groups).map(group=>{
-    const easy=shuffle(group.filter(q=>q.difficulte===1));
-    const harder=shuffle(group.filter(q=>q.difficulte>=2));
-    return shuffle([...easy.slice(0,3),...harder.slice(0,2)]).slice(0,BASE_PER_SKILL);
-  });
+  const prepared=Object.values(groups).map(group=>({
+    attempts:group.reduce((total,q)=>total+(q.history?.attempts||0),0),
+    random:Math.random(),
+    questions:prioritiseQuestions(group).slice(0,BASE_PER_SKILL)
+  })).sort((a,b)=>a.attempts-b.attempts||a.random-b.random);
 
   let selected=[];
   for(let round=0;round<BASE_PER_SKILL;round++){
-    const roundQuestions=prepared.map(group=>group[round]).filter(Boolean);
-    selected.push(...shuffle(roundQuestions));
+    const roundQuestions=prepared.map(group=>group.questions[round]).filter(Boolean);
+    selected.push(...roundQuestions);
   }
 
   const selectedIds=new Set(selected.map(q=>q.id));
   const remaining=shuffle(QUESTIONS.filter(q=>!selectedIds.has(q.id)));
   selected.push(...remaining.slice(0,DIAGNOSTIC_SIZE-selected.length));
 
-  return selected.slice(0,DIAGNOSTIC_SIZE);
+  return selected.slice(0,Math.min(limit,DIAGNOSTIC_SIZE));
+}
+
+function prioritiseQuestions(questions){
+  return questions
+    .map(question=>({question,random:Math.random()}))
+    .sort((a,b)=>{
+      const aAttempts=a.question.history?.attempts||0;
+      const bAttempts=b.question.history?.attempts||0;
+      if(aAttempts!==bAttempts)return aAttempts-bAttempts;
+
+      const aRate=aAttempts?(a.question.history?.correctAnswers||0)/aAttempts:0;
+      const bRate=bAttempts?(b.question.history?.correctAnswers||0)/bAttempts:0;
+      if(aRate!==bRate)return aRate-bRate;
+
+      if(a.question.difficulte!==b.question.difficulte){
+        return a.question.difficulte-b.question.difficulte;
+      }
+      return a.random-b.random;
+    })
+    .map(item=>item.question);
 }
 
 function showTest(){
@@ -83,8 +123,9 @@ function showTest(){
   window.scrollTo(0,0);
 }
 
-function startTest(){
+async function startTest(){
   clearTimeout(autoAdvanceTimer);
+  diagnosticFinished=false;
   const saved=readSavedProgress();
   if(saved){
     const answered=Array.isArray(saved.answers)?saved.answers.filter(answer=>answer!==null).length:0;
@@ -92,21 +133,86 @@ function startTest(){
     if(!replace){resumeTest();return;}
   }
   const selectedSkill=document.getElementById('diagnosticSkill').value;
-  diagnosticQuestions=buildBalancedDiagnostic(selectedSkill);
+  plannedMinutes=selectedDuration();
+  const questionLimit=plannedMinutes*APPROXIMATE_QUESTIONS_PER_MINUTE;
+  diagnosticQuestions=buildBalancedDiagnostic(selectedSkill,questionLimit);
   current=0;
   answers=Array(diagnosticQuestions.length).fill(null);
+  answerResults=Array(diagnosticQuestions.length).fill(null);
+  answerFeedback=Array(diagnosticQuestions.length).fill(null);
+  remoteSessionId=null;
+  remoteDiagnosticId=null;
+  remoteSequenceOffset=0;
+  if(CapCollegeSupabase.configured()){
+    try{
+      const remote=await CapCollegeSupabase.startDiagnostic(plannedMinutes,selectedSkill);
+      remoteSessionId=remote.session_id;
+      remoteDiagnosticId=remote.diagnostic_id;
+    }catch(error){
+      alert('Le diagnostic en ligne n’a pas pu démarrer. Réessaie dans un instant.');
+      return;
+    }
+  }
   saveProgress();
   showTest();
   renderQuestion();
 }
 
-function resumeTest(){
+async function resumeTest(){
   clearTimeout(autoAdvanceTimer);
+  diagnosticFinished=false;
   const data=readSavedProgress();
   if(!data){
-    alert('Aucune progression enregistrée sur cet appareil. Clique sur « Commencer un nouveau diagnostic ».');
-    refreshProgressUI();
+    const remote=discoveredRemoteSession||
+      (CapCollegeSupabase.configured()
+        ?await CapCollegeSupabase.getActiveDiagnosticSession():null);
+    if(!remote){
+      alert('Aucune séance active à reprendre.');
+      refreshProgressUI();
+      return;
+    }
+    plannedMinutes=Number(remote.planned_minutes)||30;
+    remoteSequenceOffset=Number(remote.recorded_answers)||0;
+    remoteSessionId=remote.session_id;
+    remoteDiagnosticId=remote.diagnostic_id;
+    const remoteSkill=remote.focus_competence_id||'all';
+    const remaining=Math.max(
+      1,
+      plannedMinutes*APPROXIMATE_QUESTIONS_PER_MINUTE-remoteSequenceOffset
+    );
+    diagnosticQuestions=buildBalancedDiagnostic(remoteSkill,remaining);
+    current=0;
+    answers=Array(diagnosticQuestions.length).fill(null);
+    answerResults=Array(diagnosticQuestions.length).fill(null);
+    answerFeedback=Array(diagnosticQuestions.length).fill(null);
+    const durationRadio=document.querySelector(`input[name="sessionDuration"][value="${plannedMinutes}"]`);
+    if(durationRadio)durationRadio.checked=true;
+    if(document.querySelector(`#diagnosticSkill option[value="${remoteSkill}"]`)){
+      document.getElementById('diagnosticSkill').value=remoteSkill;
+      refreshDiagnosticSize();
+    }
+    refreshDurationSummary();
+    saveProgress();
+    showTest();
+    renderQuestion();
     return;
+  }
+  if(CapCollegeSupabase.configured()&&data.remoteSessionId){
+    try{
+      const remoteState=await CapCollegeSupabase.getDiagnosticSessionState(
+        data.remoteSessionId
+      );
+      if(!remoteState||remoteState.session_status!=='active'){
+        localStorage.removeItem(STORAGE_PROGRESS);
+        localStorage.removeItem(STORAGE_PROGRESS_BACKUP);
+        refreshProgressUI();
+        alert('Cette séance est déjà terminée. La sauvegarde locale a été supprimée : commence un nouveau diagnostic.');
+        return;
+      }
+    }catch(error){
+      alert('Impossible de vérifier la séance enregistrée. Vérifie ta connexion puis réessaie.');
+      return;
+    }
   }
   try{
     const byId=new Map(QUESTIONS.map(q=>[q.id,q]));
@@ -114,7 +220,18 @@ function resumeTest(){
     if(!diagnosticQuestions.length)throw new Error('Progression vide');
     current=Math.min(Number.isInteger(data.current)?data.current:0,diagnosticQuestions.length-1);
     answers=Array.isArray(data.answers)?data.answers:Array(diagnosticQuestions.length).fill(null);
+    answerResults=Array.isArray(data.answerResults)?data.answerResults:Array(diagnosticQuestions.length).fill(null);
+    answerFeedback=Array.isArray(data.answerFeedback)?data.answerFeedback:Array(diagnosticQuestions.length).fill(null);
     while(answers.length<diagnosticQuestions.length)answers.push(null);
+    while(answerResults.length<diagnosticQuestions.length)answerResults.push(null);
+    while(answerFeedback.length<diagnosticQuestions.length)answerFeedback.push(null);
+    remoteSessionId=data.remoteSessionId||null;
+    remoteDiagnosticId=data.remoteDiagnosticId||null;
+    remoteSequenceOffset=Number(data.remoteSequenceOffset)||0;
+    plannedMinutes=Number(data.plannedMinutes)||30;
+    const durationRadio=document.querySelector(`input[name="sessionDuration"][value="${plannedMinutes}"]`);
+    if(durationRadio)durationRadio.checked=true;
+    refreshDurationSummary();
     const restoredSkill=data.selectedSkill||'all';
     if(document.querySelector(`#diagnosticSkill option[value="${restoredSkill}"]`)){
       document.getElementById('diagnosticSkill').value=restoredSkill;
@@ -133,6 +250,14 @@ function readSavedProgress(){
       const raw=localStorage.getItem(key);
       if(!raw)continue;
       const data=JSON.parse(raw);
+      if(
+        CapCollegeSupabase.configured()&&
+        data.remoteSessionId&&
+        data.version!==PROGRESS_FORMAT_VERSION
+      ){
+        localStorage.removeItem(key);
+        continue;
+      }
       if(Array.isArray(data.questionIds)&&data.questionIds.length)return data;
     }catch(e){}
   }
@@ -142,9 +267,15 @@ function readSavedProgress(){
 function saveProgress(){
   const payload={
     format:'cap-college-diagnostic-progress',
-    version:'6.0',
+    version:PROGRESS_FORMAT_VERSION,
     current,
     answers,
+    answerResults,
+    answerFeedback,
+    remoteSessionId,
+    remoteDiagnosticId,
+    remoteSequenceOffset,
+    plannedMinutes,
     questionIds:diagnosticQuestions.map(q=>q.id),
     selectedSkill:document.getElementById('diagnosticSkill').value,
     savedAt:new Date().toISOString()
@@ -210,8 +341,45 @@ async function importProgress(event){
   }
 }
 
-function selectAnswer(index){
+async function selectAnswer(index){
   clearTimeout(autoAdvanceTimer);
+  const q=diagnosticQuestions[current];
+  if(q.source==='supabase'){
+    if(!remoteSessionId){
+      alert('Cette séance en ligne n’est plus disponible. Recommence le diagnostic.');
+      return;
+    }
+    try{
+      const result=await CapCollegeSupabase.submitAnswer(
+        remoteSessionId,
+        q.questionVersionId,
+        q.choiceIds[index],
+        remoteSequenceOffset+current+1
+      );
+      answerResults[current]=Boolean(result.is_correct);
+      answerFeedback[current]={
+        correctIndex:q.choiceIds.indexOf(result.correct_choice_id),
+        explanation:result.correction_explanation||SKILL_LESSONS[q.competence]||''
+      };
+    }catch(error){
+      const reason=String(error?.message||'Erreur inconnue');
+      console.error('Enregistrement Supabase refusé :',error);
+      if(/session|available|active/i.test(reason)){
+        localStorage.removeItem(STORAGE_PROGRESS);
+        localStorage.removeItem(STORAGE_PROGRESS_BACKUP);
+        alert('Cette ancienne séance est déjà terminée. Sa sauvegarde locale vient d’être supprimée. Retourne à l’accueil du diagnostic et commence une nouvelle séance.');
+      }else{
+        alert(`La réponse n’a pas pu être enregistrée.\n\nDétail : ${reason}`);
+      }
+      return;
+    }
+  }else{
+    answerResults[current]=index===q.reponse;
+    answerFeedback[current]={
+      correctIndex:q.reponse,
+      explanation:SKILL_LESSONS[q.competence]||''
+    };
+  }
   answers[current]=index;
   saveProgress();
   renderChoices();
@@ -237,9 +405,10 @@ function renderChoices(){
 function renderQuestion(){
   const q=diagnosticQuestions[current];
   const answeredCount=answers.filter(answer=>answer!==null).length;
-  document.getElementById('counter').textContent=`Question ${current+1} / ${diagnosticQuestions.length} · ${answeredCount} répondue${answeredCount>1?'s':''}`;
+  const displayedNumber=remoteSequenceOffset+current+1;
+  const displayedAnswered=remoteSequenceOffset+answeredCount;
+  document.getElementById('counter').textContent=`Question ${displayedNumber} · ${displayedAnswered} réponse${displayedAnswered>1?'s':''} enregistrée${displayedAnswered>1?'s':''}`;
   document.getElementById('topDomain').textContent=q.domaine;
-  document.getElementById('progressBar').style.width=`${((current+1)/diagnosticQuestions.length)*100}%`;
   document.getElementById('domainBadge').textContent=`Domaine : ${q.domaine}`;
   document.getElementById('skillBadge').textContent=`Thème : ${q.competence}`;
 
@@ -255,7 +424,7 @@ function renderQuestion(){
   }
 
   document.getElementById('prevBtn').disabled=current===0;
-  document.getElementById('nextBtn').textContent=current===diagnosticQuestions.length-1?'Voir le bilan':'Suivante';
+  document.getElementById('nextBtn').textContent=current===diagnosticQuestions.length-1?'Terminer la séance':'Suivante';
   renderChoices();
 }
 
@@ -285,25 +454,21 @@ function prevQuestion(){
   }
 }
 
-function stopTest(){
+function pauseTest(){
   clearTimeout(autoAdvanceTimer);
   const answeredCount=answers.filter(answer=>answer!==null).length;
-  if(answeredCount===0){
-    alert('Réponds au moins à une question avant de demander un bilan.');
-    return;
-  }
-
-  const message=
-    `Tu as répondu à ${answeredCount} question${answeredCount>1?'s':''}.\n\n`+
-    `Le bilan évaluera uniquement ces réponses. Les thèmes comportant moins de ${MIN_ANSWERS_PER_SKILL} réponses seront indiqués « En attente d’évaluation ».\n\n`+
-    `Veux-tu arrêter maintenant ?`;
-
-  if(confirm(message)){
-    finishTest(true);
-  }
+  saveProgress();
+  document.getElementById('test').classList.add('hidden');
+  document.getElementById('intro').classList.remove('hidden');
+  refreshProgressUI();
+  const notice=document.getElementById('savedProgressNotice');
+  notice.textContent=`Séance mise en pause après ${remoteSequenceOffset+answeredCount} réponse${remoteSequenceOffset+answeredCount>1?'s':''}. Tu pourras reprendre exactement ici.`;
+  notice.classList.remove('hidden');
+  window.scrollTo(0,0);
 }
 
-function finishTest(stoppedEarly=false){
+async function finishTest(stoppedEarly=false){
+  diagnosticFinished=true;
   const stats={};
 
   // Tous les thèmes existent dans le bilan, même ceux qui n'ont pas été suffisamment testés.
@@ -328,7 +493,7 @@ function finishTest(stoppedEarly=false){
     stats[q.competence].total++;
     answeredTotal++;
 
-    if(answers[index]===q.reponse){
+    if(answerResults[index]===true){
       stats[q.competence].ok++;
       totalOk++;
     }
@@ -348,6 +513,21 @@ function finishTest(stoppedEarly=false){
     stoppedEarly,
     minimumAnswersPerSkill:MIN_ANSWERS_PER_SKILL,
     answers,
+    answerResults,
+    reviewItems:diagnosticQuestions.map((q,index)=>{
+      if(answers[index]===null)return null;
+      const feedback=answerFeedback[index]||{};
+      return {
+        questionId:q.id,
+        domain:q.domaine,
+        skill:q.competence,
+        prompt:q.question,
+        selectedAnswer:q.choix[answers[index]],
+        correctAnswer:q.choix[feedback.correctIndex],
+        explanation:feedback.explanation||'',
+        isCorrect:answerResults[index]===true
+      };
+    }).filter(Boolean),
     questionIds:diagnosticQuestions.map(q=>q.id),
     date:new Date().toISOString()
   };
@@ -357,14 +537,65 @@ function finishTest(stoppedEarly=false){
   localStorage.setItem('capCollegeV4Result',JSON.stringify(result));
   localStorage.removeItem(STORAGE_PROGRESS);
   localStorage.removeItem(STORAGE_PROGRESS_BACKUP);
+  if(remoteSessionId){
+    try{
+      await CapCollegeSupabase.finishDiagnostic(remoteSessionId);
+    }catch(error){
+      console.warn('La séance distante n’a pas pu être clôturée.',error);
+    }
+  }
   window.location.href='resultats.html';
 }
 
 window.addEventListener('pagehide',()=>{
-  if(diagnosticQuestions.length&&document.getElementById('test')&&!document.getElementById('test').classList.contains('hidden'))saveProgress();
+  if(!diagnosticFinished&&diagnosticQuestions.length&&document.getElementById('test')&&!document.getElementById('test').classList.contains('hidden'))saveProgress();
 });
 document.addEventListener('visibilitychange',()=>{
-  if(document.visibilityState==='hidden'&&diagnosticQuestions.length)saveProgress();
+  if(!diagnosticFinished&&document.visibilityState==='hidden'&&diagnosticQuestions.length)saveProgress();
 });
 refreshProgressUI();
 initialiseThemeSelector();
+document.querySelectorAll('input[name="sessionDuration"]').forEach(input=>{
+  input.addEventListener('change',refreshDurationSummary);
+});
+refreshDurationSummary();
+
+async function discoverRemoteResume(){
+  const wantsImmediateResume=new URLSearchParams(location.search).get('resume')==='1';
+  if(!CapCollegeSupabase.configured()){
+    if(wantsImmediateResume&&readSavedProgress())await resumeTest();
+    return;
+  }
+  try{
+    discoveredRemoteSession=await CapCollegeSupabase.getActiveDiagnosticSession();
+    if(!discoveredRemoteSession)return;
+    const resume=document.getElementById('resumeDiagnosticBtn');
+    const notice=document.getElementById('savedProgressNotice');
+    const panel=document.getElementById('activeSessionIntro');
+    document.getElementById('newSessionConfiguration').classList.add('hidden');
+    panel.classList.remove('hidden');
+    document.getElementById('activeSessionIntroTitle').textContent=
+      discoveredRemoteSession.focus_name;
+    document.getElementById('activeSessionIntroDetails').textContent=
+      `${discoveredRemoteSession.recorded_answers} réponse${discoveredRemoteSession.recorded_answers>1?'s':''} enregistrée${discoveredRemoteSession.recorded_answers>1?'s':''} · séance de ${discoveredRemoteSession.planned_minutes} min`;
+    resume.disabled=false;
+    notice.textContent=`Séance en ligne retrouvée : ${discoveredRemoteSession.focus_name}.`;
+    notice.classList.remove('hidden');
+    document.getElementById('continueActiveSessionButton').onclick=resumeTest;
+    document.getElementById('closeActiveSessionButton').onclick=async()=>{
+      const close=confirm('Ta progression générale sera conservée, mais cette séance sera clôturée. Veux-tu choisir un nouveau thème et une nouvelle durée ?');
+      if(!close)return;
+      await CapCollegeSupabase.closeDiagnosticSession(discoveredRemoteSession.session_id);
+      localStorage.removeItem(STORAGE_PROGRESS);
+      localStorage.removeItem(STORAGE_PROGRESS_BACKUP);
+      discoveredRemoteSession=null;
+      panel.classList.add('hidden');
+      document.getElementById('newSessionConfiguration').classList.remove('hidden');
+      refreshProgressUI();
+    };
+    if(wantsImmediateResume)await resumeTest();
+  }catch(error){
+    console.warn('Recherche de séance active impossible.',error);
+  }
+}
+discoverRemoteResume();

@@ -2,17 +2,17 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Résultats — Cap Collège</title><link rel="stylesheet" href="styles.css">
+<title>Bilan de la séance — Cap Collège</title><link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <main class="page">
 <header class="topbar">
   <a class='brand' href='index.html'><div class="logo">C</div><span>Cap Collège</span></a>
-  <div class="badge">Bilan du diagnostic</div>
+  <div class="badge">Bilan de la séance</div>
 </header>
 
 <section class="card">
-  <h1>Bilan du diagnostic</h1>
+  <h1>Bilan de la séance</h1>
   <p id="globalText"></p>
   <div class="summary-grid" id="summary"></div>
   <div class="actions">
@@ -22,9 +22,25 @@
   </div>
 </section>
 
+<section class="card" id="recommendationSection">
+  <h2>Compétence conseillée</h2>
+  <div id="recommendation"></div>
+</section>
+
+<section class="card" id="mistakesSection">
+  <div class="result-head">
+    <h2>Revoir mes erreurs</h2>
+    <span class="badge" id="mistakesCount"></span>
+  </div>
+  <div id="mistakesList"></div>
+</section>
+
 <section class="card"><h2>Priorités</h2><div id="priorities"></div></section>
-<section class="card"><h2>Résultats par compétence</h2><div id="skillsResults"></div></section>
+<section class="card"><h2>Thèmes rencontrés pendant cette séance</h2><div id="skillsResults"></div></section>
 </main>
-<script src="resultats.js"></script>
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-app.js"></script>
+<script src="resultats-loader.js"></script>
 </body>
 </html>

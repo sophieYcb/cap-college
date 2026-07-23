@@ -11,16 +11,53 @@
   <div class="badge">Remise à niveau</div>
 </header>
 
-<section class="card">
-  <h1>Remise à niveau ciblée</h1>
-  <p>Les compétences sont classées de la plus urgente à la moins urgente. Commence par la première.</p>
-  <div id="remediationList"></div>
+<section class="card" id="remediationLoading">
+  <h1>Préparation de ta séance…</h1>
+  <p>Cap Collège prépare une seule compétence, sans mélanger les notions.</p>
+</section>
+
+<section class="hidden" id="remediationSession">
+  <div class="card remediation-heading">
+    <div>
+      <span class="badge" id="remediationDuration"></span>
+      <h1 id="remediationTitle"></h1>
+      <p id="phaseMessage"></p>
+    </div>
+  </div>
+
+  <aside class="card lesson-panel" id="lessonPanel">
+    <div class="lesson-label">Rappel toujours visible pour le moment</div>
+    <h2>La règle</h2>
+    <p id="lessonReminder"></p>
+    <h3>Exemple</h3>
+    <p id="workedExample"></p>
+  </aside>
+
+  <section class="card question-card">
+    <div class="question-top"><strong id="remediationCounter"></strong><span id="assistanceBadge"></span></div>
+    <h2 id="remediationQuestion"></h2>
+    <div id="remediationChoices"></div>
+    <div id="remediationFeedback" class="notice hidden" aria-live="polite"></div>
+    <div class="actions">
+      <button class="btn btn-primary hidden" id="nextRemediationButton">Question suivante</button>
+      <button class="btn btn-danger" id="stopRemediationButton">Terminer la séance</button>
+    </div>
+  </section>
+</section>
+
+<section class="card hidden" id="remediationComplete">
+  <h1>Séance terminée</h1>
+  <p id="remediationSummary"></p>
   <div class="actions">
     <a class='btn btn-secondary' href='resultats.html'>Retour au bilan</a>
     <a class='btn btn-secondary' href='index.html'>Accueil</a>
   </div>
 </section>
 </main>
-<script src="data.js"></script><script src="corrections-v5.1.js"></script><script src="corrections-v5.2.js"></script><script src="corrections-v5.4.js"></script><script src="programme-v6.js"></script><script src="remediation.js"></script>
+<script src="data.js"></script><script src="corrections-v5.1.js"></script><script src="corrections-v5.2.js"></script><script src="corrections-v5.4.js"></script><script src="programme-v6.js"></script>
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-app.js"></script>
+<script src="remediation.js"></script>
 </body>
 </html>
