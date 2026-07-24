@@ -1,6 +1,8 @@
-const STORAGE_PROGRESS='capCollegeV43Progress';
-const STORAGE_PROGRESS_BACKUP='capCollegeDiagnosticProgressBackup';
-const STORAGE_RESULT='capCollegeV43Result';
+const VALIDATION_CAMPAIGN_ID=window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID||null;
+const STORAGE_SUFFIX=VALIDATION_CAMPAIGN_ID?`:validation:${VALIDATION_CAMPAIGN_ID}`:'';
+const STORAGE_PROGRESS=`capCollegeV43Progress${STORAGE_SUFFIX}`;
+const STORAGE_PROGRESS_BACKUP=`capCollegeDiagnosticProgressBackup${STORAGE_SUFFIX}`;
+const STORAGE_RESULT=`capCollegeV43Result${STORAGE_SUFFIX}`;
 const PROGRESS_FORMAT_VERSION='6.1';
 const MIN_ANSWERS_PER_SKILL=3;
 const BASE_PER_SKILL=MIN_ANSWERS_PER_SKILL;
@@ -145,7 +147,11 @@ async function startTest(){
   remoteSequenceOffset=0;
   if(CapCollegeSupabase.configured()){
     try{
-      const remote=await CapCollegeSupabase.startDiagnostic(plannedMinutes,selectedSkill);
+      const remote=await CapCollegeSupabase.startDiagnostic(
+        plannedMinutes,
+        selectedSkill,
+        VALIDATION_CAMPAIGN_ID
+      );
       remoteSessionId=remote.session_id;
       remoteDiagnosticId=remote.diagnostic_id;
     }catch(error){
@@ -165,7 +171,7 @@ async function resumeTest(){
   if(!data){
     const remote=discoveredRemoteSession||
       (CapCollegeSupabase.configured()
-        ?await CapCollegeSupabase.getActiveDiagnosticSession():null);
+        ?await CapCollegeSupabase.getActiveDiagnosticSession(VALIDATION_CAMPAIGN_ID):null);
     if(!remote){
       alert('Aucune séance active à reprendre.');
       refreshProgressUI();
@@ -533,8 +539,10 @@ async function finishTest(stoppedEarly=false){
   };
 
   localStorage.setItem(STORAGE_RESULT,JSON.stringify(result));
-  localStorage.setItem('capCollegeV41Result',JSON.stringify(result));
-  localStorage.setItem('capCollegeV4Result',JSON.stringify(result));
+  if(!VALIDATION_CAMPAIGN_ID){
+    localStorage.setItem('capCollegeV41Result',JSON.stringify(result));
+    localStorage.setItem('capCollegeV4Result',JSON.stringify(result));
+  }
   localStorage.removeItem(STORAGE_PROGRESS);
   localStorage.removeItem(STORAGE_PROGRESS_BACKUP);
   if(remoteSessionId){
@@ -544,7 +552,9 @@ async function finishTest(stoppedEarly=false){
       console.warn('La séance distante n’a pas pu être clôturée.',error);
     }
   }
-  window.location.href='resultats.html';
+  window.location.href=VALIDATION_CAMPAIGN_ID
+    ?`resultats.html?validationCampaign=${encodeURIComponent(VALIDATION_CAMPAIGN_ID)}`
+    :'resultats.html';
 }
 
 window.addEventListener('pagehide',()=>{
@@ -567,7 +577,9 @@ async function discoverRemoteResume(){
     return;
   }
   try{
-    discoveredRemoteSession=await CapCollegeSupabase.getActiveDiagnosticSession();
+    discoveredRemoteSession=await CapCollegeSupabase.getActiveDiagnosticSession(
+      VALIDATION_CAMPAIGN_ID
+    );
     if(!discoveredRemoteSession)return;
     const resume=document.getElementById('resumeDiagnosticBtn');
     const notice=document.getElementById('savedProgressNotice');

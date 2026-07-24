@@ -75,10 +75,13 @@
     }));
   }
 
-  async function loadDiagnosticHistory() {
-    const { data, error } = await getClient().rpc(
-      "get_my_diagnostic_history"
-    );
+  async function loadDiagnosticHistory(validationCampaignId = null) {
+    const { data, error } = validationCampaignId
+      ? await getClient().rpc(
+          "get_my_validation_diagnostic_history",
+          { requested_campaign_id: validationCampaignId }
+        )
+      : await getClient().rpc("get_my_diagnostic_history");
     if (error) throw error;
     diagnosticHistory = Array.isArray(data) ? data : [];
     const historyByQuestion = new Map(
@@ -105,7 +108,8 @@
     const {
       requireAuth = false,
       requiredRoles = [],
-      loadQuestions = false
+      loadQuestions = false,
+      validationCampaignId = null
     } = options;
 
     if (!configured()) {
@@ -132,7 +136,7 @@
 
     if (loadQuestions) {
       await loadPublishedQuestions();
-      await loadDiagnosticHistory();
+      await loadDiagnosticHistory(validationCampaignId);
     }
     return { mode: "supabase", session, roles };
   }
@@ -163,17 +167,32 @@
     location.replace("index.html");
   }
 
-  async function startDiagnostic(plannedMinutes, competenceId = "all") {
+  async function startDiagnostic(
+    plannedMinutes,
+    competenceId = "all",
+    validationCampaignId = null
+  ) {
     if (!configured()) return null;
-    const { data, error } = await getClient().rpc(
-      "start_diagnostic_session_v2",
-      {
-        planned_minutes: plannedMinutes,
-        requested_subject_code: "french",
-        requested_level_code: "6e",
-        requested_competence_id: competenceId
-      }
-    );
+    const { data, error } = validationCampaignId
+      ? await getClient().rpc(
+          "start_validation_diagnostic_session",
+          {
+            requested_campaign_id: validationCampaignId,
+            planned_minutes: plannedMinutes,
+            requested_subject_code: "french",
+            requested_level_code: "6e",
+            requested_competence_id: competenceId
+          }
+        )
+      : await getClient().rpc(
+          "start_diagnostic_session_v2",
+          {
+            planned_minutes: plannedMinutes,
+            requested_subject_code: "french",
+            requested_level_code: "6e",
+            requested_competence_id: competenceId
+          }
+        );
     if (error) throw error;
     return Array.isArray(data) ? data[0] : data;
   }
@@ -225,11 +244,14 @@
     return Array.isArray(data) ? (data[0] || null) : data;
   }
 
-  async function getActiveDiagnosticSession() {
+  async function getActiveDiagnosticSession(validationCampaignId = null) {
     if (!configured()) return null;
-    const { data, error } = await getClient().rpc(
-      "get_my_active_diagnostic_session_v2"
-    );
+    const { data, error } = validationCampaignId
+      ? await getClient().rpc(
+          "get_my_active_validation_session",
+          { requested_campaign_id: validationCampaignId }
+        )
+      : await getClient().rpc("get_my_active_diagnostic_session_v2");
     if (error) throw error;
     return Array.isArray(data) ? (data[0] || null) : data;
   }

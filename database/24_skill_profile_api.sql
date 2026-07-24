@@ -51,6 +51,7 @@ as $function$
     join public.skills s on s.id = ms.skill_id
     join public.domains dmn on dmn.id = s.domain_id
     where diagnostic.student_id = auth.uid()
+      and ds.validation_campaign_id is null
       and di.answered_at is not null
     group by ms.id, ms.code, ms.student_name, dmn.name
   )

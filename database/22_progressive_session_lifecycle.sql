@@ -52,6 +52,12 @@ begin
     and d.subject_id = selected_subject_id
     and d.level_id = selected_level_id
     and d.status = 'active'
+    and not exists (
+      select 1
+      from public.diagnostic_sessions validation_session
+      where validation_session.diagnostic_id = d.id
+        and validation_session.validation_campaign_id is not null
+    )
   order by d.started_at
   limit 1;
 
@@ -70,6 +76,12 @@ begin
         and duplicate.level_id = selected_level_id
         and duplicate.status = 'active'
         and duplicate.id <> active_diagnostic_id
+        and not exists (
+          select 1
+          from public.diagnostic_sessions validation_session
+          where validation_session.diagnostic_id = duplicate.id
+            and validation_session.validation_campaign_id is not null
+        )
     );
 
     update public.diagnostics duplicate
@@ -79,7 +91,13 @@ begin
       and duplicate.subject_id = selected_subject_id
       and duplicate.level_id = selected_level_id
       and duplicate.status = 'active'
-      and duplicate.id <> active_diagnostic_id;
+      and duplicate.id <> active_diagnostic_id
+      and not exists (
+        select 1
+        from public.diagnostic_sessions validation_session
+        where validation_session.diagnostic_id = duplicate.id
+          and validation_session.validation_campaign_id is not null
+      );
   end if;
 
   update public.diagnostic_sessions ds

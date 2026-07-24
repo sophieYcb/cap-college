@@ -100,6 +100,7 @@ as $function$
   where d.student_id = auth.uid()
     and d.status = 'active'
     and ds.status = 'active'
+    and ds.validation_campaign_id is null
   group by
     d.id,
     ds.id,

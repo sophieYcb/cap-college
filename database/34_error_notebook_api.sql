@@ -37,6 +37,7 @@ as $function$
     join public.diagnostics d on d.id = ds.diagnostic_id
     join public.questions q on q.id = di.question_id
     where d.student_id = auth.uid()
+      and ds.validation_campaign_id is null
       and di.answered_at is not null
     group by q.micro_skill_id
   ), errors as (
@@ -72,6 +73,7 @@ as $function$
     join public.domains dmn on dmn.id = s.domain_id
     left join evidence e on e.micro_skill_id = q.micro_skill_id
     where diagnostic.student_id = auth.uid()
+      and ds.validation_campaign_id is null
       and di.is_correct is false
       and di.answered_at is not null
     order by di.answered_at desc
@@ -106,4 +108,3 @@ revoke all on function public.get_my_error_notebook() from public;
 grant execute on function public.get_my_error_notebook() to authenticated;
 
 commit;
-

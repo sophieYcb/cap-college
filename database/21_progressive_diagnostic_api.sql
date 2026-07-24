@@ -42,6 +42,7 @@ as $function$
     join public.diagnostics d
       on d.id = ds.diagnostic_id
     where d.student_id = auth.uid()
+      and ds.validation_campaign_id is null
       and di.answered_at is not null
     group by di.question_id
   ) history;

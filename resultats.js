@@ -1,9 +1,21 @@
+const VALIDATION_RESULT_SUFFIX=window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID
+  ?`:validation:${window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID}`:'';
+const VALIDATION_RESULT_KEY=`capCollegeV43Result${VALIDATION_RESULT_SUFFIX}`;
 const STORAGE_RESULT=
+  localStorage.getItem(VALIDATION_RESULT_KEY)?VALIDATION_RESULT_KEY:
   localStorage.getItem('capCollegeV43Result')?'capCollegeV43Result':
   localStorage.getItem('capCollegeV41Result')?'capCollegeV41Result':
   'capCollegeV4Result';
 
 const raw=localStorage.getItem(STORAGE_RESULT);
+
+if(window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID){
+  const restartLink=document.querySelector('a[href="evaluation.html"]');
+  if(restartLink){
+    restartLink.href=`evaluation.html?validationCampaign=${encodeURIComponent(window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID)}`;
+    restartLink.textContent='Nouvelle séance dans cette campagne';
+  }
+}
 
 if(!raw){
   document.getElementById('globalText').innerHTML='Aucun résultat enregistré. <a href="evaluation.html"><strong>Commencer le diagnostic</strong></a>.';
@@ -67,6 +79,10 @@ function renderRecommendation(){
   const profile=Array.isArray(window.CAP_COLLEGE_SKILL_PROFILE)
     ?window.CAP_COLLEGE_SKILL_PROFILE:[];
   const target=document.getElementById('recommendation');
+  if(window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID){
+    target.innerHTML='<div class="notice">Campagne de validation : ces réponses sont isolées du profil réel.</div>';
+    return;
+  }
   const eligible=profile
     .filter(item=>item.sufficientEvidence && item.masteryScore<80)
     .sort((a,b)=>a.masteryScore-b.masteryScore||b.confidenceScore-a.confidenceScore);
