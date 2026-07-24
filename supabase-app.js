@@ -319,6 +319,50 @@
     return Array.isArray(data) ? data : [];
   }
 
+  async function getValidationCampaigns() {
+    const { data, error } = await getClient().rpc(
+      "get_my_validation_campaigns"
+    );
+    if (error) throw error;
+    return Array.isArray(data) ? data : [];
+  }
+
+  async function createValidationCampaign(name, description = "") {
+    const { data, error } = await getClient().rpc(
+      "create_validation_campaign",
+      {
+        requested_name: name,
+        requested_description: description || null
+      }
+    );
+    if (error) throw error;
+    return data;
+  }
+
+  async function archiveValidationCampaign(campaignId) {
+    const { error } = await getClient().rpc(
+      "archive_my_validation_campaign",
+      { requested_campaign_id: campaignId }
+    );
+    if (error) throw error;
+  }
+
+  async function resetValidationCampaign(campaignId) {
+    const { error } = await getClient().rpc(
+      "reset_my_validation_campaign",
+      { requested_campaign_id: campaignId }
+    );
+    if (error) throw error;
+  }
+
+  async function deleteValidationCampaign(campaignId) {
+    const { error } = await getClient().rpc(
+      "delete_my_validation_campaign",
+      { requested_campaign_id: campaignId }
+    );
+    if (error) throw error;
+  }
+
   async function saveQuestionReview(questionVersionId, grade, comment) {
     const { data, error } = await getClient().rpc(
       "save_question_review",
@@ -363,11 +407,16 @@
     getDiagnosticSessionState,
     getErrorNotebook,
     getSkillProfile,
+    getValidationCampaigns,
     getValidationQuestionBank,
     getRemediationQuestions,
     getRoles: () => [...roles],
     getSession: () => session,
     showFatalError,
+    archiveValidationCampaign,
+    createValidationCampaign,
+    deleteValidationCampaign,
+    resetValidationCampaign,
     saveQuestionReview,
     signIn,
     signOut,

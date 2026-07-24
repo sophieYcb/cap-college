@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Campagnes de validation — Cap Collège</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page quality-page">
+  <header class="topbar">
+    <a class="brand" href="index.html"><div class="logo">C</div><span>Cap Collège</span></a>
+    <div class="badge">Espace Validateur</div>
+  </header>
+
+  <section class="card">
+    <h1>Campagnes de validation</h1>
+    <p>Crée des scénarios indépendants pour tester l’application sans modifier ton véritable profil pédagogique.</p>
+    <form id="campaignForm" class="campaign-form">
+      <label>Nom de la campagne
+        <input id="campaignName" required maxlength="120" placeholder="Ex. Beaucoup d’erreurs — V5.4">
+      </label>
+      <label>Commentaire facultatif
+        <textarea id="campaignDescription" maxlength="500" rows="2" placeholder="Objectif ou scénario testé"></textarea>
+      </label>
+      <button class="btn btn-primary" type="submit">Créer la campagne</button>
+    </form>
+    <p id="campaignStatus" class="small" aria-live="polite"></p>
+  </section>
+
+  <section class="card">
+    <div class="result-head">
+      <h2>Mes campagnes</h2>
+      <a class="btn btn-secondary" href="test.html">Validation des questions</a>
+    </div>
+    <div id="campaignList"><p>Chargement…</p></div>
+  </section>
+</main>
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-app.js"></script>
+<script src="campagnes-validation.js"></script>
+</body>
+</html>
+

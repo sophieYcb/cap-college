@@ -230,3 +230,4 @@ footer{margin-top:36px;text-align:center;color:var(--muted);font-size:.9rem}
 .previous-version-content h3{font-size:1.05rem}
 .review-save-status{min-height:1.2em;margin:8px 0 0;color:#177244;font-weight:700}
 .review-save-status.save-error{color:#a52a2a}
+.campaign-form{display:grid;gap:14px;max-width:720px}.campaign-form label{display:flex;flex-direction:column;gap:6px;font-weight:700}.campaign-form input,.campaign-form textarea{font:inherit;border:1px solid var(--border);border-radius:12px;padding:12px}.campaign-card{border:1px solid var(--border);border-radius:16px;padding:16px;margin:12px 0}.campaign-card h3{margin:4px 0}.campaign-archived{opacity:.72;background:#f7f8fa}
