@@ -17,12 +17,16 @@
     <p>Retrouve tes diagnostics et ta progression sur tous tes appareils.</p>
     <form id="loginForm">
       <label>Adresse e-mail
-        <input id="email" type="email" autocomplete="email" required>
+        <input id="email" type="email" autocomplete="email" autocapitalize="none" spellcheck="false" inputmode="email" required>
       </label>
       <label>Mot de passe
         <input id="password" type="password" autocomplete="current-password" required>
       </label>
-      <button class="btn btn-primary" type="submit">Se connecter</button>
+      <label class="password-visibility">
+        <input id="showPassword" type="checkbox">
+        <span>Afficher le mot de passe</span>
+      </label>
+      <button class="btn btn-primary" id="loginButton" type="submit">Se connecter</button>
     </form>
     <p id="loginMessage" class="notice hidden" aria-live="polite"></p>
   </section>
@@ -33,13 +37,64 @@
 <script>
   const form = document.getElementById("loginForm");
   const message = document.getElementById("loginMessage");
+  const button = document.getElementById("loginButton");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const showPassword = document.getElementById("showPassword");
+
+  showPassword.addEventListener("change", () => {
+    passwordInput.type = showPassword.checked ? "text" : "password";
+  });
+
+  function loginErrorMessage(error) {
+    const code = String(error?.code || "").toLowerCase();
+    const details = String(error?.message || "").toLowerCase();
+    const status = Number(error?.status || 0);
+
+    if (
+      code === "email_not_confirmed" ||
+      details.includes("email not confirmed")
+    ) {
+      return "Cette adresse e-mail n’a pas encore été confirmée.";
+    }
+    if (
+      status === 429 ||
+      code.includes("rate_limit") ||
+      details.includes("too many")
+    ) {
+      return "Trop de tentatives ont été effectuées. Attends quelques minutes avant de réessayer.";
+    }
+    if (
+      code === "invalid_credentials" ||
+      details.includes("invalid login credentials")
+    ) {
+      return "L’adresse e-mail ou le mot de passe n’est pas reconnu. Vérifie aussi les majuscules du mot de passe.";
+    }
+    if (
+      details.includes("failed to fetch") ||
+      details.includes("network") ||
+      details.includes("load failed")
+    ) {
+      return "Le service de connexion est inaccessible depuis cet ordinateur. Vérifie la connexion Internet ou un éventuel bloqueur.";
+    }
+    if (
+      details.includes("client supabase") ||
+      details.includes("pas encore configurée")
+    ) {
+      return "Le module de connexion n’a pas pu être chargé. Recharge la page avec Ctrl + F5.";
+    }
+    return "Connexion impossible pour le moment. Recharge la page, puis réessaie.";
+  }
+
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     message.classList.add("hidden");
+    button.disabled = true;
+    button.textContent = "Connexion…";
     try {
       await CapCollegeSupabase.signIn(
-        document.getElementById("email").value,
-        document.getElementById("password").value
+        emailInput.value,
+        passwordInput.value
       );
       const requested = new URLSearchParams(location.search).get("next");
       const safeNext = /^[a-z0-9-]+\.html$/i.test(requested || "")
@@ -47,8 +102,11 @@
         : "index.html";
       location.replace(safeNext);
     } catch (error) {
-      message.textContent = "Connexion impossible. Vérifie tes identifiants.";
+      message.textContent = loginErrorMessage(error);
       message.classList.remove("hidden");
+    } finally {
+      button.disabled = false;
+      button.textContent = "Se connecter";
     }
   });
 </script>

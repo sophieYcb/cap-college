@@ -185,6 +185,9 @@ footer{margin-top:36px;text-align:center;color:var(--muted);font-size:.9rem}
 }
 .auth-card input:focus{outline:3px solid rgba(81,107,255,.18);border-color:#516bff}
 .auth-card .btn{width:100%;margin-top:4px}
+.auth-card .password-visibility{display:flex;grid-template-columns:auto 1fr;align-items:center;gap:9px;font-weight:400;color:var(--muted)}
+.auth-card .password-visibility input{width:18px;min-height:18px;height:18px;margin:0}
+.auth-card .btn:disabled{cursor:wait;opacity:.65}
 .connection-error{max-width:620px;margin:48px auto}
 .mistake-card{padding:18px 0;border-top:1px solid var(--border)}
 .mistake-card:first-child{border-top:0}

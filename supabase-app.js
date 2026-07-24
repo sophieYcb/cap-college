@@ -142,8 +142,12 @@
     if (!supabaseClient) {
       throw new Error("La connexion Supabase n’est pas encore configurée.");
     }
+    const normalizedEmail = String(email || "").trim().toLowerCase();
+    if (!normalizedEmail || !password) {
+      throw new Error("L’adresse e-mail et le mot de passe sont obligatoires.");
+    }
     const { data, error } = await supabaseClient.auth.signInWithPassword({
-      email,
+      email: normalizedEmail,
       password
     });
     if (error) throw error;

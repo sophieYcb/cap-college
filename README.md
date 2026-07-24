@@ -5,7 +5,7 @@ pour le français en 6e.
 
 ## Version actuelle
 
-Cette branche contient la V5.3.7 :
+Cette branche contient la V5.3.8 :
 
 - authentification et profils Supabase ;
 - banque de 590 questions ;
@@ -17,6 +17,7 @@ Cette branche contient la V5.3.7 :
 - remédiation guidée par micro-compétence ;
 - mode Validateur connecté à Supabase ;
 - comparaison d’une question avec sa version précédente.
+- diagnostic détaillé des erreurs de connexion sur un nouvel appareil.
 
 ## Organisation
 
