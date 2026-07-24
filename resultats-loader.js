@@ -11,6 +11,6 @@ CapCollegeSupabase.bootstrap({ requireAuth: true })
       console.warn("Le profil cumulé n’a pas pu être chargé.", error);
       window.CAP_COLLEGE_SKILL_PROFILE = [];
     }
-    await CapCollegeSupabase.appendScript("resultats.js");
+    await CapCollegeSupabase.appendScript("resultats.js?v=5.3.11");
   })
   .catch(CapCollegeSupabase.showFatalError);
