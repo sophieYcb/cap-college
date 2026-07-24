@@ -23,7 +23,9 @@ function renderNotebook() {
     <div class="summary-box"><div class="summary-value">${notebookItems.length}</div><div class="small">erreurs conservées</div></div>`;
 
   status.textContent = visible.length
-    ? `${visible.length} erreur${visible.length > 1 ? "s" : ""} ${showResolved ? "consolidée" : "à retravailler"}${visible.length > 1 ? "s" : ""}.`
+    ? showResolved
+      ? `${visible.length} erreur${visible.length > 1 ? "s" : ""} consolidée${visible.length > 1 ? "s" : ""}.`
+      : `${visible.length} erreur${visible.length > 1 ? "s" : ""} à retravailler.`
     : showResolved
       ? "Aucune erreur n’est encore classée comme consolidée."
       : "Aucune erreur à retravailler. Bravo !";
@@ -72,4 +74,3 @@ CapCollegeSupabase.bootstrap({ requireAuth: true })
     renderNotebook();
   })
   .catch(CapCollegeSupabase.showFatalError);
-
