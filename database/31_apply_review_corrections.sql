@@ -14,15 +14,20 @@
 
 begin;
 
-create temporary table correction_payload (
+create table if not exists public._cap_college_correction_payload (
   legacy_id bigint primary key,
   prompt text,
   choices jsonb not null,
   correct_index smallint not null,
   change_comment text not null
-) on commit drop;
+);
 
-insert into correction_payload (legacy_id, prompt, choices, correct_index, change_comment)
+alter table public._cap_college_correction_payload enable row level security;
+revoke all on public._cap_college_correction_payload from anon, authenticated;
+
+insert into public._cap_college_correction_payload (
+  legacy_id, prompt, choices, correct_index, change_comment
+)
 values
   (161, 'Choisis la forme du verbe « chanter » au passé composé avec « je ».',
     '["suis chanté","ai chanté","chantais","chanterai"]', 2,
@@ -143,7 +148,12 @@ values
     'Le distracteur non homophone est remplacé par une graphie homophone.'),
   (589, null,
     '["mer","mère","maire","mèr"]', 1,
-    '« mare », possible dans le contexte et non homophone, est remplacé.');
+    '« mare », possible dans le contexte et non homophone, est remplacé.')
+on conflict (legacy_id) do update
+set prompt = excluded.prompt,
+    choices = excluded.choices,
+    correct_index = excluded.correct_index,
+    change_comment = excluded.change_comment;
 
 with source as (
   select
@@ -153,7 +163,7 @@ with source as (
     qv.prompt as previous_prompt,
     coalesce(q.created_by, vc.owner_id) as author_id,
     md5('cap-college:review-correction:2026-07-24:' || p.legacy_id)::uuid as version_id
-  from correction_payload p
+  from public._cap_college_correction_payload p
   join public.questions q on q.legacy_id = p.legacy_id
   join public.question_versions qv
     on qv.question_id = q.id
@@ -192,7 +202,7 @@ select
   choice.content,
   choice.ordinality = p.correct_index,
   choice.ordinality
-from correction_payload p
+from public._cap_college_correction_payload p
 cross join lateral jsonb_array_elements_text(p.choices)
   with ordinality as choice(content, ordinality)
 join public.question_versions qv
@@ -203,17 +213,16 @@ update public.questions q
 set current_version_number = qv.version_number,
     status = 'in_review',
     updated_at = statement_timestamp()
-from correction_payload p
+from public._cap_college_correction_payload p
 join public.question_versions qv
   on qv.id = md5('cap-college:review-correction:2026-07-24:' || p.legacy_id)::uuid
 where q.legacy_id = p.legacy_id;
 
 update public.question_flags qf
 set status = 'in_progress'
-from correction_payload p
+from public._cap_college_correction_payload p
 join public.questions q on q.legacy_id = p.legacy_id
 where qf.question_id = q.id
   and qf.status = 'open';
 
 commit;
-
