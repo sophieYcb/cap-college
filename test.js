@@ -1,5 +1,5 @@
 const REVIEW_KEY='capCollegeV50aReviews';
-const APP_VERSION='5.3.7';
+const APP_VERSION='5.3.9';
 const QUESTIONS=(window.VALIDATION_QUESTIONS||[]).map(item=>{
  const choices=item.current?.choices||[];
  return {
@@ -187,6 +187,63 @@ function exportRows(){
 }
 function download(content,type,name){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);}
 function exportJSON(){const payload={format:'cap-college-quality-review',applicationVersion:APP_VERSION,exportedAt:new Date().toISOString(),questionBankSize:QUESTIONS.length,reviews:exportRows()};download(JSON.stringify(payload,null,2),'application/json;charset=utf-8',`cap-college-retours-${new Date().toISOString().slice(0,10)}.json`);setExportStatus('Export JSON téléchargé.');}
+function correctionRows(){
+ return QUESTIONS.filter(q=>{
+  const r=reviewFor(q.id);
+  return isCurrentReview(q,r)&&(['B','C','D'].includes(r.rating)||Boolean((r.comment||'').trim()));
+ }).map(q=>{
+  const r=reviewFor(q.id);
+  const previousChoices=q.previous?.choices||[];
+  const previousCorrectIndex=previousChoices.findIndex(choice=>choice.isCorrect);
+  return {
+   questionId:q.id,
+   questionUuid:q.questionId,
+   domaine:q.domaine,
+   competenceId:q.competenceId,
+   competence:q.competence,
+   difficulte:q.difficulte,
+   note:r.rating||'',
+   commentaire:r.comment||'',
+   dateValidation:r.updatedAt||'',
+   versionActuelle:{
+    numero:q.version||1,
+    id:q.questionVersionId,
+    question:q.question,
+    choix:q.choix,
+    reponseIndex:q.reponse,
+    reponseTexte:q.choix[q.reponse]
+   },
+   versionPrecedente:q.previous?{
+    numero:q.previous.number,
+    id:q.previous.id,
+    question:q.previous.prompt||'',
+    choix:previousChoices.map(choice=>choice.text),
+    reponseIndex:previousCorrectIndex,
+    reponseTexte:previousCorrectIndex>=0?previousChoices[previousCorrectIndex].text:''
+   }:null
+  };
+ });
+}
+function exportCorrections(){
+ const questions=correctionRows();
+ if(!questions.length){
+  setExportStatus('Aucune question B, C, D ou commentée à exporter.');
+  return;
+ }
+ const payload={
+  format:'cap-college-corrections-request',
+  applicationVersion:APP_VERSION,
+  exportedAt:new Date().toISOString(),
+  questionCount:questions.length,
+  questions
+ };
+ download(
+  JSON.stringify(payload,null,2),
+  'application/json;charset=utf-8',
+  `cap-college-questions-a-corriger-${new Date().toISOString().slice(0,10)}.json`
+ );
+ setExportStatus(`${questions.length} question${questions.length>1?'s':''} à corriger exportée${questions.length>1?'s':''}.`);
+}
 function csvCell(v){const s=Array.isArray(v)?v.join(' | '):String(v??'');return '"'+s.replace(/"/g,'""')+'"';}
 function exportCSV(){const rows=exportRows();const headers=['applicationVersion','questionId','questionVersion','domaine','competenceId','competence','difficulte','question','choix','reponseIndex','reponseTexte','note','statutValidation','ancienneNote','ancienneVersion','commentaire','dateModification'];const csv='\ufeff'+[headers.map(csvCell).join(';'),...rows.map(r=>headers.map(h=>csvCell(r[h])).join(';'))].join('\r\n');download(csv,'text/csv;charset=utf-8',`cap-college-retours-${new Date().toISOString().slice(0,10)}.csv`);setExportStatus('Export CSV téléchargé.');}
 async function importJSONFile(event){
