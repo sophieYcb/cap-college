@@ -50,6 +50,8 @@ la feuille de route validée.
 32. `31_apply_review_corrections.sql`
 33. `32_verify_review_corrections.sql`
 34. `33_cleanup_correction_staging.sql`
+35. `34_error_notebook_api.sql`
+36. `35_verify_error_notebook_api.sql`
 
 Exécuter les fichiers dans cet ordre depuis le SQL Editor de Supabase. Ne pas
 exécuter le pack avant la validation finale et la sauvegarde du projet.

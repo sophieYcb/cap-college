@@ -21,6 +21,7 @@ CapCollegeSupabase.bootstrap()
       : "Compte connecté";
     loginLink.href = "evaluation.html";
     logoutButton.classList.remove("hidden");
+    document.getElementById("errorNotebookLink").classList.remove("hidden");
     logoutButton.addEventListener("click", () => {
       CapCollegeSupabase.signOut();
     });

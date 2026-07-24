@@ -311,6 +311,14 @@
     return data;
   }
 
+  async function getErrorNotebook() {
+    const { data, error } = await getClient().rpc(
+      "get_my_error_notebook"
+    );
+    if (error) throw error;
+    return Array.isArray(data) ? data : [];
+  }
+
   async function saveQuestionReview(questionVersionId, grade, comment) {
     const { data, error } = await getClient().rpc(
       "save_question_review",
@@ -353,6 +361,7 @@
     getDiagnosticHistory: () => [...diagnosticHistory],
     getActiveDiagnosticSession,
     getDiagnosticSessionState,
+    getErrorNotebook,
     getSkillProfile,
     getValidationQuestionBank,
     getRemediationQuestions,

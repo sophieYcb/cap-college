@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mon carnet d’erreurs — Cap Collège</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page">
+  <header class="topbar">
+    <a class="brand" href="index.html"><div class="logo">C</div><span>Cap Collège</span></a>
+    <div class="badge">Carnet d’erreurs</div>
+  </header>
+
+  <section class="card">
+    <h1>Mon carnet d’erreurs</h1>
+    <p>Retrouve les erreurs rencontrées pendant tes diagnostics, même depuis un autre appareil.</p>
+    <div class="summary-grid" id="notebookSummary"></div>
+    <div class="actions">
+      <button class="btn btn-primary" id="currentErrorsButton" type="button">À retravailler</button>
+      <button class="btn btn-secondary" id="resolvedErrorsButton" type="button">Déjà consolidées</button>
+      <a class="btn btn-secondary" href="index.html">Accueil</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <div id="notebookStatus" class="notice">Chargement du carnet…</div>
+    <div id="notebookList"></div>
+  </section>
+</main>
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-app.js"></script>
+<script src="carnet-erreurs.js"></script>
+</body>
+</html>
+
