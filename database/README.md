@@ -36,6 +36,19 @@ la feuille de route validée.
 18. `17_cleanup_review_staging.sql`
 19. `18_application_api.sql`
 20. `19_verify_application_api.sql`
+21. `20_verify_first_online_answer.sql`
+22. `21_progressive_diagnostic_api.sql`
+23. `22_progressive_session_lifecycle.sql`
+24. `23_verify_progressive_session.sql`
+25. `24_skill_profile_api.sql`
+26. `25_remediation_api.sql`
+27. `26_diagnose_answer_8.sql`
+28. `27_resume_diagnostic_api.sql`
+29. `28_active_diagnostic_session_api.sql`
+30. `29_session_focus_and_home_resume.sql`
+31. `30_validator_question_api.sql`
+32. `31_apply_review_corrections.sql`
+33. `32_verify_review_corrections.sql`
 
 Exécuter les fichiers dans cet ordre depuis le SQL Editor de Supabase. Ne pas
 exécuter le pack avant la validation finale et la sauvegarde du projet.
