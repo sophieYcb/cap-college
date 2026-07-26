@@ -423,6 +423,18 @@
     return Array.isArray(data) ? data[0] : data;
   }
 
+  async function resolveQuestionFlags(questionId, resolutionComment) {
+    const { data, error } = await getClient().rpc(
+      "resolve_question_flags",
+      {
+        requested_question_id: questionId,
+        requested_resolution_comment: resolutionComment || null
+      }
+    );
+    if (error) throw error;
+    return Array.isArray(data) ? data[0] : data;
+  }
+
   function appendScript(source) {
     return new Promise((resolve, reject) => {
       const script = document.createElement("script");
@@ -464,6 +476,7 @@
     createValidationCampaign,
     deleteValidationCampaign,
     resetValidationCampaign,
+    resolveQuestionFlags,
     saveQuestionReview,
     signIn,
     signOut,

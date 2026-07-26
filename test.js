@@ -143,7 +143,11 @@ function renderQuestion(){
       <div class="flag-detail">
         <p>${escapeHtml(flag.comment||'Aucun commentaire')}</p>
         <span class="small">${escapeHtml(flag.reporter||'Validateur')} · ${new Date(flag.reportedAt).toLocaleString('fr-FR')}</span>
-      </div>`).join('')}`
+      </div>`).join('')}
+      <div class="actions">
+        <button class="btn btn-secondary" type="button" onclick="resolveCurrentQuestionFlags()">Marquer comme traitée</button>
+      </div>
+      <p class="small" id="flagResolutionStatus" aria-live="polite"></p>`
    :'';
  document.querySelectorAll('.rating').forEach(b=>b.classList.toggle('active',currentReview&&b.dataset.rating===r.rating));
  document.getElementById('reviewComment').value=r.comment||'';
@@ -243,6 +247,24 @@ function correctionRows(){
    }:null
   };
  });
+}
+
+async function resolveCurrentQuestionFlags(){
+ const q=currentQuestion();if(!q||!q.openFlags)return;
+ if(!confirm('Marquer tous les signalements ouverts de cette question comme traités ?'))return;
+ const status=document.getElementById('flagResolutionStatus');
+ status.textContent='Enregistrement…';
+ try{
+  await CapCollegeSupabase.resolveQuestionFlags(
+   q.questionId,
+   'Question vérifiée dans le mode Validation.'
+  );
+  q.openFlags=0;
+  q.openFlagDetails=[];
+  applyFilters();
+ }catch(error){
+  status.textContent=`Échec : ${error.message||error}`;
+ }
 }
 function exportCorrections(){
  const questions=correctionRows();
