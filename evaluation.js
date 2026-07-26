@@ -22,6 +22,16 @@ let diagnosticFinished=false;
 let remoteSequenceOffset=0;
 let discoveredRemoteSession=null;
 
+if(VALIDATION_CAMPAIGN_ID){
+  document.getElementById('validationModeNotice').classList.remove('hidden');
+  document.getElementById('validationCampaignName').textContent=
+    window.CAP_COLLEGE_VALIDATION_CAMPAIGN_NAME||'Campagne de validation';
+  document.getElementById('evaluationModeBadge').textContent='Mode validation';
+  document.querySelector('#intro h1').textContent='Diagnostic de validation';
+  document.getElementById('startDiagnosticBtn').textContent='Commencer ce scénario';
+  document.getElementById('resumeDiagnosticBtn').textContent='Reprendre ce scénario';
+}
+
 function initialiseThemeSelector(){
   const select=document.getElementById('diagnosticSkill');
   const themes=[...new Map(QUESTIONS.map(q=>[q.competenceId,{id:q.competenceId,name:q.competence,domain:q.domaine}])).values()]

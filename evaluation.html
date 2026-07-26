@@ -8,10 +8,18 @@
 <main class="page">
 <header class="topbar">
   <a class='brand' href='index.html'><div class="logo">C</div><span>Cap Collège</span></a>
-  <div class="badge">Français 6e</div>
+  <div class="badge" id="evaluationModeBadge">Français 6e</div>
 </header>
 
 <section id="intro" class="card">
+  <div class="validation-mode-notice hidden" id="validationModeNotice">
+    <div>
+      <strong>Mode validation — données isolées</strong>
+      <p id="validationCampaignName"></p>
+      <span>Les réponses de ce scénario ne modifieront ni le profil réel ni le carnet d’erreurs.</span>
+    </div>
+    <a class="btn btn-secondary" href="campagnes-validation.html">Changer de campagne</a>
+  </div>
   <h1>Diagnostic Français 6e</h1>
   <p>Choisis le temps que tu souhaites consacrer à cette séance. Le diagnostic se construit tranquillement, au fil de tes visites.</p>
   <div class="active-session-home hidden" id="activeSessionIntro">
@@ -90,7 +98,7 @@
 <script src="data.js"></script><script src="corrections-v5.1.js"></script><script src="corrections-v5.2.js"></script><script src="corrections-v5.4.js"></script><script src="programme-v6.js"></script>
 <script src="supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-app.js?v=5.3.11"></script>
-<script src="evaluation-loader.js?v=5.3.11"></script>
+<script src="supabase-app.js?v=5.3.12"></script>
+<script src="evaluation-loader.js?v=5.3.12"></script>
 </body>
 </html>

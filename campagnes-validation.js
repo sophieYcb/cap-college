@@ -49,6 +49,8 @@ async function reloadCampaigns() {
 
 document.getElementById("campaignForm").addEventListener("submit", async (event) => {
   event.preventDefault();
+  const submitButton = event.submitter;
+  if (submitButton) submitButton.disabled = true;
   campaignStatus("Création…");
   try {
     await CapCollegeSupabase.createValidationCampaign(
@@ -60,6 +62,8 @@ document.getElementById("campaignForm").addEventListener("submit", async (event)
     campaignStatus("Campagne créée.");
   } catch (error) {
     campaignStatus(`Création impossible : ${error.message}`, true);
+  } finally {
+    if (submitButton) submitButton.disabled = false;
   }
 });
 
@@ -82,11 +86,15 @@ async function deleteCampaign(id) {
 }
 
 function chooseCampaign(id) {
+  const campaign = validationCampaigns.find((item) => item.id === id);
   sessionStorage.setItem("capCollegeValidationCampaignId", id);
+  sessionStorage.setItem(
+    "capCollegeValidationCampaignName",
+    campaign?.name || "Campagne de validation"
+  );
   location.href = `evaluation.html?validationCampaign=${encodeURIComponent(id)}`;
 }
 
 CapCollegeSupabase.bootstrap({ requiredRoles: ["validator", "administrator"] })
   .then(reloadCampaigns)
   .catch(CapCollegeSupabase.showFatalError);
-

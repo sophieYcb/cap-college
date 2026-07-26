@@ -4,8 +4,12 @@ const validationCampaignId =
 if (validationCampaignId) {
   sessionStorage.setItem("capCollegeValidationCampaignId", validationCampaignId);
   window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID = validationCampaignId;
+  window.CAP_COLLEGE_VALIDATION_CAMPAIGN_NAME =
+    sessionStorage.getItem("capCollegeValidationCampaignName") ||
+    "Campagne de validation";
 } else {
   sessionStorage.removeItem("capCollegeValidationCampaignId");
+  sessionStorage.removeItem("capCollegeValidationCampaignName");
 }
 
 CapCollegeSupabase.bootstrap({
@@ -14,5 +18,5 @@ CapCollegeSupabase.bootstrap({
   loadQuestions: true,
   validationCampaignId
 })
-  .then(() => CapCollegeSupabase.appendScript("evaluation.js?v=5.3.11"))
+  .then(() => CapCollegeSupabase.appendScript("evaluation.js?v=5.3.12"))
   .catch(CapCollegeSupabase.showFatalError);
