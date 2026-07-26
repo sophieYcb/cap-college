@@ -92,7 +92,7 @@ function chooseCampaign(id) {
     "capCollegeValidationCampaignName",
     campaign?.name || "Campagne de validation"
   );
-  location.href = `evaluation.html?validationCampaign=${encodeURIComponent(id)}`;
+  location.href = `evaluation.html?validationCampaign=${encodeURIComponent(id)}&v=5313`;
 }
 
 CapCollegeSupabase.bootstrap({ requiredRoles: ["validator", "administrator"] })
