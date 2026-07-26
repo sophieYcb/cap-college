@@ -1,33 +1,99 @@
+const ROLE_NAMES = {
+  administrator: "Administrateur",
+  validator: "Validateur",
+  teacher: "Enseignant",
+  guardian: "Parent",
+  student: "Élève"
+};
+
+const ROLE_ORDER = [
+  "student",
+  "guardian",
+  "teacher",
+  "validator",
+  "administrator"
+];
+
+function configureProfileSwitcher(roles, activeRole) {
+  const button = document.getElementById("changeProfileButton");
+  const switcher = document.getElementById("profileSwitcher");
+  const options = document.getElementById("profileOptions");
+  const close = document.getElementById("closeProfileSwitcher");
+
+  if (roles.length < 2) return;
+
+  button.classList.remove("hidden");
+  options.innerHTML = ROLE_ORDER
+    .filter(role => roles.includes(role))
+    .map(role => `
+      <button
+        class="profile-option${role === activeRole ? " active" : ""}"
+        type="button"
+        data-role="${role}"
+        ${role === activeRole ? "disabled" : ""}
+      >${ROLE_NAMES[role] || role}${role === activeRole ? " · actif" : ""}</button>
+    `)
+    .join("");
+
+  button.addEventListener("click", () => {
+    switcher.classList.toggle("hidden");
+  });
+  close.addEventListener("click", () => switcher.classList.add("hidden"));
+
+  options.addEventListener("click", async event => {
+    const option = event.target.closest("[data-role]");
+    if (!option || option.disabled) return;
+    option.disabled = true;
+    try {
+      await CapCollegeSupabase.setActiveRole(option.dataset.role);
+      location.reload();
+    } catch (error) {
+      option.disabled = false;
+      alert("Le profil n’a pas pu être changé. Réessaie dans un instant.");
+    }
+  });
+}
+
 CapCollegeSupabase.bootstrap()
-  .then(({ session, roles }) => {
-    if (!session) return;
+  .then(({ session, roles, activeRole }) => {
+    if (!session) return null;
 
     const loginLink = document.getElementById("loginLink");
     const logoutButton = document.getElementById("logoutButton");
-    const roleNames = {
-      administrator: "Administrateur",
-      validator: "Validateur",
-      teacher: "Enseignant",
-      parent: "Parent",
-      student: "Élève"
-    };
-    const visibleRole = roles
-      .map((role) => roleNames[role])
-      .filter(Boolean)
-      .join(" · ");
+    const activeRoleName = ROLE_NAMES[activeRole] || "Compte connecté";
 
-    loginLink.textContent = visibleRole
-      ? `Connecté · ${visibleRole}`
-      : "Compte connecté";
+    loginLink.textContent = `Profil actif · ${activeRoleName}`;
     loginLink.href = "evaluation.html";
     logoutButton.classList.remove("hidden");
-    document.getElementById("errorNotebookLink").classList.remove("hidden");
+    configureProfileSwitcher(roles, activeRole);
+
+    if (activeRole === "student") {
+      document.getElementById("errorNotebookLink").classList.remove("hidden");
+    } else {
+      document.getElementById("diagnosticStartLink").classList.add("hidden");
+      document.getElementById("subjectsLink").classList.add("hidden");
+      document.getElementById("matieres").classList.add("hidden");
+    }
+    if (activeRole === "validator" || activeRole === "administrator") {
+      document.getElementById("pedagogicalTestLink").classList.remove("hidden");
+    }
+    if (activeRole === "guardian" || activeRole === "teacher") {
+      const notice = document.getElementById("profileWorkspaceNotice");
+      notice.textContent = activeRole === "guardian"
+        ? "L’espace Parent sera ajouté dans une prochaine étape."
+        : "L’espace Enseignant sera ajouté dans une prochaine étape.";
+      notice.classList.remove("hidden");
+    }
+
     logoutButton.addEventListener("click", () => {
       CapCollegeSupabase.signOut();
     });
-    return CapCollegeSupabase.getActiveDiagnosticSession();
+
+    return activeRole === "student"
+      ? CapCollegeSupabase.getActiveDiagnosticSession()
+      : null;
   })
-  .then((activeSession) => {
+  .then(activeSession => {
     if (!activeSession) return;
     document.getElementById("diagnosticStartLink").classList.add("hidden");
     const panel = document.getElementById("activeSessionHome");

@@ -67,6 +67,8 @@ la feuille de route validée.
 49. `48_verify_maths_6e_lot_01.sql`
 50. `49_question_bank_hierarchy_api.sql`
 51. `50_verify_question_bank_hierarchy_api.sql`
+52. `51_active_profile_role.sql`
+53. `52_verify_active_profile_role.sql`
 
 Exécuter les fichiers dans cet ordre depuis le SQL Editor de Supabase. Ne pas
 exécuter le pack avant la validation finale et la sauvegarde du projet.

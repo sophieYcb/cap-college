@@ -2,6 +2,7 @@
   let client = null;
   let session = null;
   let roles = [];
+  let activeRole = null;
   let diagnosticHistory = [];
 
   function configured() {
@@ -42,11 +43,15 @@
   async function loadRoles() {
     if (!session) {
       roles = [];
+      activeRole = null;
       return roles;
     }
     const { data, error } = await getClient().rpc("get_my_roles");
     if (error) throw error;
     roles = Array.isArray(data) ? data : [];
+    const activeResult = await getClient().rpc("get_my_active_role");
+    if (activeResult.error) throw activeResult.error;
+    activeRole = activeResult.data || roles[0] || null;
     return roles;
   }
 
@@ -117,7 +122,12 @@
 
     if (!configured()) {
       document.documentElement.dataset.dataSource = "local";
-      return { mode: "local", session: null, roles: [] };
+      return {
+        mode: "local",
+        session: null,
+        roles: [],
+        activeRole: null
+      };
     }
 
     document.documentElement.dataset.dataSource = "supabase";
@@ -132,7 +142,7 @@
 
     if (
       requiredRoles.length &&
-      !requiredRoles.some((role) => roles.includes(role))
+      !requiredRoles.includes(activeRole)
     ) {
       throw new Error("Ce compte n’a pas accès à cet espace.");
     }
@@ -141,7 +151,12 @@
       await loadPublishedQuestions();
       await loadDiagnosticHistory(validationCampaignId);
     }
-    return { mode: "supabase", session, roles };
+    return {
+      mode: "supabase",
+      session,
+      roles,
+      activeRole
+    };
   }
 
   async function signIn(email, password) {
@@ -167,7 +182,19 @@
     if (getClient()) await getClient().auth.signOut();
     session = null;
     roles = [];
+    activeRole = null;
     location.replace("index.html");
+  }
+
+  async function setActiveRole(role) {
+    if (!session) throw new Error("Authentication required");
+    const { data, error } = await getClient().rpc(
+      "set_my_active_role",
+      { requested_role: role }
+    );
+    if (error) throw error;
+    activeRole = data;
+    return activeRole;
   }
 
   async function startDiagnostic(
@@ -483,7 +510,9 @@
     getValidationQuestionBank,
     importDraftQuestionLot,
     getRemediationQuestions,
-    getRoles: () => [...roles],
+    getRoles: () => activeRole ? [activeRole] : [],
+    getAvailableRoles: () => [...roles],
+    getActiveRole: () => activeRole,
     getSession: () => session,
     showFatalError,
     archiveValidationCampaign,
@@ -492,6 +521,7 @@
     resetValidationCampaign,
     resolveQuestionFlags,
     saveQuestionReview,
+    setActiveRole,
     signIn,
     signOut,
     finishDiagnostic,

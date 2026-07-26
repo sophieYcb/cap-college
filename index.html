@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cap Collège</title><link rel="stylesheet" href="styles.css">
+<title>Cap Collège</title><link rel="stylesheet" href="styles.css?v=5.3.20">
 </head>
 <body>
 <main class="page">
@@ -18,11 +18,23 @@
     <div class="actions">
       <a class='btn btn-primary' id="diagnosticStartLink" href='evaluation.html'>Commencer mon diagnostic</a>
       <a class="btn btn-secondary" id="loginLink" href="login.html">Se connecter</a>
+      <button class="btn btn-secondary hidden" id="changeProfileButton" type="button">Changer de profil</button>
       <button class="btn btn-secondary hidden" id="logoutButton" type="button">Se déconnecter</button>
       <a class="btn btn-secondary hidden" id="errorNotebookLink" href="carnet-erreurs.html">Mon carnet d’erreurs</a>
-      <a class="btn btn-secondary" href="#matieres">Voir les matières</a>
-      <a class='btn btn-test' href='test.html'>Mode Test pédagogique</a>
+      <a class="btn btn-secondary" id="subjectsLink" href="#matieres">Voir les matières</a>
+      <a class='btn btn-test hidden' id="pedagogicalTestLink" href='test.html'>Mode Test pédagogique</a>
     </div>
+    <div class="profile-switcher hidden" id="profileSwitcher">
+      <div class="profile-switcher-heading">
+        <div>
+          <strong>Choisir le profil utilisé</strong>
+          <p>Un seul profil est actif à la fois.</p>
+        </div>
+        <button class="profile-switcher-close" id="closeProfileSwitcher" type="button" aria-label="Fermer">×</button>
+      </div>
+      <div class="profile-options" id="profileOptions"></div>
+    </div>
+    <div class="notice hidden" id="profileWorkspaceNotice"></div>
     <div class="active-session-home hidden" id="activeSessionHome">
       <span class="small">Ta séance t’attend</span>
       <h2 id="activeSessionTitle"></h2>
@@ -66,7 +78,7 @@
 </main>
 <script src="supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-app.js"></script>
-<script src="home-auth.js"></script>
+<script src="supabase-app.js?v=5.3.20"></script>
+<script src="home-auth.js?v=5.3.20"></script>
 </body>
 </html>
