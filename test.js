@@ -7,6 +7,8 @@ const QUESTIONS=(window.VALIDATION_QUESTIONS||[]).map(item=>{
   questionVersionId:item.current?.id,
   subjectCode:item.subjectCode||'french',subject:item.subject||'Français',
   domainCode:item.domainCode||item.domain,
+  subcategoryCode:item.subcategoryCode||item.competenceId,
+  subcategory:item.subcategory||item.competence,
   domaine:item.domain,competenceId:item.competenceId,
   competence:item.competence,difficulte:Number(item.difficulty),
   question:item.current?.prompt||'',
@@ -98,7 +100,7 @@ function updateSubcategoryFilter(refresh=true){
  const domain=document.getElementById('domainFilter').value;
  const skills=[...new Map(
   QUESTIONS.filter(q=>q.subjectCode===subject&&(domain==='all'||q.domainCode===domain))
-   .map(q=>[q.competenceId,q.competence])
+   .map(q=>[q.subcategoryCode,q.subcategory])
  ).entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr'));
  document.getElementById('skillFilter').innerHTML=
   '<option value="all">Toutes les sous-catégories</option>'+
@@ -123,7 +125,7 @@ function applyFilters(){
      ||currentRating===status;
    const subjectOk=q.subjectCode===subject;
    const domainOk=domain==='all'||q.domainCode===domain;
-   const skillOk=skill==='all'||q.competenceId===skill;
+   const skillOk=skill==='all'||q.subcategoryCode===skill;
    const versionOk=version==='all'||String(q.version||1)===version;
    const searchOk=!search||String(q.id)===search||q.question.toLowerCase().includes(search)||q.competence.toLowerCase().includes(search);
    return statusOk&&subjectOk&&domainOk&&skillOk&&versionOk&&searchOk;

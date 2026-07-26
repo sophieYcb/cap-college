@@ -6,6 +6,6 @@ CapCollegeSupabase.bootstrap({
   .then(async () => {
     window.VALIDATION_QUESTIONS =
       await CapCollegeSupabase.getValidationQuestionBank();
-    await CapCollegeSupabase.appendScript("test.js?v=5.3.21");
+    await CapCollegeSupabase.appendScript("test.js?v=5.3.23");
   })
   .catch(CapCollegeSupabase.showFatalError);

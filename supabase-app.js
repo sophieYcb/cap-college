@@ -62,7 +62,7 @@
 
   async function loadPublishedQuestions() {
     const { data, error } = await getClient().rpc(
-      "get_published_question_bank"
+      "get_published_question_bank_v2"
     );
     if (error) throw error;
     if (!Array.isArray(data)) {
@@ -75,6 +75,8 @@
       subjectCode: question.subjectCode || "french",
       subject: question.subject || "Français",
       domainCode: question.domainCode || question.domaine,
+      subcategoryCode: question.subcategoryCode || question.competenceId,
+      subcategory: question.subcategory || question.competence,
       competenceId: question.competenceId,
       domaine: question.domaine,
       competence: question.competence,
@@ -361,7 +363,7 @@
 
   async function getValidationQuestionBank() {
     const [bankResult, flagsResult] = await Promise.all([
-      getClient().rpc("get_validation_question_bank"),
+      getClient().rpc("get_validation_question_bank_v2"),
       getClient().rpc("get_open_question_flags")
     ]);
     if (bankResult.error) throw bankResult.error;
