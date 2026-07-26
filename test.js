@@ -385,4 +385,23 @@ function exportHTMLReport(){
  setExportStatus('Rapport HTML téléchargé.');
 }
 
+document.addEventListener('keydown',event=>{
+ const target=event.target;
+ if(target instanceof HTMLInputElement||target instanceof HTMLTextAreaElement||target instanceof HTMLSelectElement)return;
+ const key=event.key.toUpperCase();
+ if(['A','B','C','D'].includes(key)){
+  event.preventDefault();
+  setRating(key);
+  return;
+ }
+ if(event.key==='ArrowRight'){
+  event.preventDefault();
+  nextTestQuestion();
+ }
+ if(event.key==='ArrowLeft'){
+  event.preventDefault();
+  previousTestQuestion();
+ }
+});
+
 initialise();

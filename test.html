@@ -4,20 +4,24 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Mode Validation — Cap Collège</title>
- <link rel="stylesheet" href="styles.css?v=5.3.19">
+ <link rel="stylesheet" href="styles.css?v=5.3.21">
 </head>
-<body>
+<body class="validation-page">
 <main class="page quality-page">
- <div class="actions"><a class="btn btn-secondary" href="campagnes-validation.html">Campagnes de validation</a><a class="btn btn-secondary" href="importer-contenus.html">Importer des contenus</a></div>
- <section class="quality-summary" id="qualitySummary"></section>
  <section class="card quality-toolbar">
-  <label>Filtrer <select id="statusFilter" onchange="applyFilters()"><option value="all">Toutes</option><option value="flagged">🚩 Questions signalées</option><option value="unreviewed">Non testées</option><option value="A">A — excellente</option><option value="B">B — améliorable</option><option value="C">C — à réécrire</option><option value="D">D — à supprimer</option></select></label>
   <label>Matière <select id="subjectFilter" onchange="updateCategoryFilters()"></select></label>
   <label>Catégorie <select id="domainFilter" onchange="updateSubcategoryFilter()"></select></label>
   <label>Sous-catégorie <select id="skillFilter" onchange="applyFilters()"></select></label>
-  <label>Version <select id="versionFilter" onchange="applyFilters()"><option value="all">Toutes</option></select></label>
-  <label>Trier <select id="sortOrder" onchange="applyFilters()"><option value="id">N° de question</option><option value="version-desc">Version récente</option><option value="version-asc">Version ancienne</option></select></label>
-  <label>Rechercher <input id="searchFilter" type="search" placeholder="mot ou numéro" oninput="applyFilters()"></label>
+  <details class="advanced-quality-filters">
+   <summary>Filtres avancés</summary>
+   <div class="advanced-quality-filter-grid">
+    <label>État <select id="statusFilter" onchange="applyFilters()"><option value="all">Toutes</option><option value="flagged">🚩 Questions signalées</option><option value="unreviewed">Non testées</option><option value="A">A — excellente</option><option value="B">B — améliorable</option><option value="C">C — à réécrire</option><option value="D">D — à supprimer</option></select></label>
+    <label>Version <select id="versionFilter" onchange="applyFilters()"><option value="all">Toutes</option></select></label>
+    <label>Trier <select id="sortOrder" onchange="applyFilters()"><option value="id">N° de question</option><option value="version-desc">Version récente</option><option value="version-asc">Version ancienne</option></select></label>
+    <label>Rechercher <input id="searchFilter" type="search" placeholder="mot ou numéro" oninput="applyFilters()"></label>
+    <a class="btn btn-secondary advanced-import-link" href="importer-contenus.html">Importer des contenus</a>
+   </div>
+  </details>
  </section>
  <section class="card quality-question">
   <div class="question-top"><strong id="testCounter"></strong><span id="questionIdentity"></span></div>
@@ -36,19 +40,22 @@
   </details>
   <div id="staleReviewNotice" class="notice stale-review-notice hidden" role="status"></div>
   <div class="review-panel">
-   <h3>Évaluation de la qualité</h3>
+   <h3 class="review-title">Évaluation de la qualité <span>Raccourcis : A, B, C ou D</span></h3>
    <div class="rating-grid">
     <button class="rating rating-a" data-rating="A" onclick="setRating('A')"><strong>A</strong><span>Excellente</span></button>
     <button class="rating rating-b" data-rating="B" onclick="setRating('B')"><strong>B</strong><span>À améliorer</span></button>
     <button class="rating rating-c" data-rating="C" onclick="setRating('C')"><strong>C</strong><span>À réécrire</span></button>
     <button class="rating rating-d" data-rating="D" onclick="setRating('D')"><strong>D</strong><span>À supprimer</span></button>
    </div>
-   <label class="comment-label">Commentaire<textarea id="reviewComment" rows="3" placeholder="Ex. distracteurs peu crédibles, question ambiguë…" oninput="saveComment()"></textarea></label>
+   <label class="comment-label">Commentaire<textarea id="reviewComment" rows="2" placeholder="Ex. distracteurs peu crédibles, question ambiguë…" oninput="saveComment()"></textarea></label>
    <p class="small review-save-status" id="reviewSaveStatus" aria-live="polite"></p>
   </div>
   <div class="actions question-actions quality-nav"><button class="btn btn-secondary" onclick="previousTestQuestion()">Précédente</button><button class="btn btn-primary" onclick="nextTestQuestion()">Suivante</button></div>
  </section>
- <section class="card quality-export-card" aria-label="Export des retours">
+ <details class="card quality-tools-panel">
+  <summary>Suivi, exports et avancement</summary>
+  <section class="quality-summary" id="qualitySummary"></section>
+  <section class="quality-export-card" aria-label="Export des retours">
   <div class="compact-export-bar">
    <button class="btn btn-primary" onclick="exportCorrections()">Exporter les questions à corriger</button>
    <button class="btn btn-secondary" onclick="exportJSON()">Exporter JSON</button>
@@ -57,13 +64,14 @@
    <button class="btn btn-secondary" onclick="exportHTMLReport()">Rapport HTML</button>
   </div>
   <p class="small export-status" id="exportStatus" aria-live="polite"></p>
- </section>
- <section class="card"><h2>Avancement par thème</h2><div id="skillDashboard" class="skill-dashboard"></div></section>
+  </section>
+  <section><h2>Avancement par thème</h2><div id="skillDashboard" class="skill-dashboard"></div></section>
+ </details>
 </main>
 <script src="site-navigation.js?v=5.3.19"></script>
 <script src="supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase-app.js?v=5.3.20"></script>
-<script src="test-loader.js?v=5.3.18"></script>
+<script src="test-loader.js?v=5.3.21"></script>
 </body>
 </html>
