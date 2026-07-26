@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Importer des contenus — Cap Collège</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="page quality-page">
+ <header class="topbar">
+  <a class="brand" href="index.html"><div class="logo">C</div><span>Cap Collège</span></a>
+  <div class="badge">Administration</div>
+ </header>
+
+ <section class="card">
+  <h1>Importer un lot de questions</h1>
+  <p>Sélectionne un fichier préparé au format Cap Collège. Les questions seront ajoutées en attente de validation et resteront invisibles pour les élèves.</p>
+
+  <label class="content-import-picker">
+   <strong>Fichier JSON du lot</strong>
+   <input id="contentFile" type="file" accept="application/json,.json" onchange="previewContentLot(event)">
+  </label>
+
+  <div id="contentPreview" class="notice hidden" aria-live="polite"></div>
+
+  <div class="actions">
+   <button class="btn btn-primary" id="importContentButton" type="button" onclick="importContentLot()" disabled>Importer dans Supabase</button>
+   <a class="btn btn-secondary" href="test.html">Validation des questions</a>
+   <a class="btn btn-secondary" href="index.html">Accueil</a>
+  </div>
+  <p id="contentImportStatus" class="small" aria-live="polite"></p>
+ </section>
+</main>
+<script src="supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-app.js?v=5.3.17"></script>
+<script src="importer-contenus.js?v=5.3.17"></script>
+</body>
+</html>

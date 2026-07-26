@@ -435,6 +435,15 @@
     return Array.isArray(data) ? data[0] : data;
   }
 
+  async function importDraftQuestionLot(payload) {
+    const { data, error } = await getClient().rpc(
+      "import_draft_question_lot",
+      { requested_payload: payload }
+    );
+    if (error) throw error;
+    return Array.isArray(data) ? data[0] : data;
+  }
+
   function appendScript(source) {
     return new Promise((resolve, reject) => {
       const script = document.createElement("script");
@@ -468,6 +477,7 @@
     getSkillProfile,
     getValidationCampaigns,
     getValidationQuestionBank,
+    importDraftQuestionLot,
     getRemediationQuestions,
     getRoles: () => [...roles],
     getSession: () => session,

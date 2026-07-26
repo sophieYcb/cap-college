@@ -2,6 +2,14 @@
   "format": "cap-college-question-draft-v1",
   "subject": "mathematics",
   "level": "6e",
+  "domain": {
+    "code": "numbers_calculation",
+    "name": "Nombres, calcul et résolution de problèmes"
+  },
+  "skill": {
+    "code": "numeration",
+    "name": "Numération"
+  },
   "lot": "M6-NUM-01",
   "status": "draft",
   "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",

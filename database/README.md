@@ -62,6 +62,8 @@ la feuille de route validée.
 44. `43_verify_open_question_flags_api.sql`
 45. `44_resolve_question_flags_api.sql`
 46. `45_verify_resolve_question_flags_api.sql`
+47. `46_draft_content_import_api.sql`
+48. `47_verify_draft_content_import_api.sql`
 
 Exécuter les fichiers dans cet ordre depuis le SQL Editor de Supabase. Ne pas
 exécuter le pack avant la validation finale et la sauvegarde du projet.

@@ -238,3 +238,5 @@ footer{margin-top:36px;text-align:center;color:var(--muted);font-size:.9rem}
 .flag-details{margin-top:16px;border-color:#f0b84b;background:#fff8e8}
 .flag-detail{margin-top:10px;padding-top:10px;border-top:1px solid #efd59a}
 .flag-detail p{margin:0 0 4px}
+.content-import-picker{display:grid;gap:10px;margin:24px 0}
+.content-import-picker input{box-sizing:border-box;width:100%;padding:14px;border:1px solid #d8deea;border-radius:12px;background:#fff;font:inherit}
