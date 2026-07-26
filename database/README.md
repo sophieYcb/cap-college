@@ -71,6 +71,7 @@ la feuille de route validée.
 53. `52_verify_active_profile_role.sql`
 54. `53_test_profile_question_reporting.sql`
 55. `54_verify_test_profile_question_reporting.sql`
+56. `55_verify_test_account_profiles.sql`
 
 Exécuter les fichiers dans cet ordre depuis le SQL Editor de Supabase. Ne pas
 exécuter le pack avant la validation finale et la sauvegarde du projet.
