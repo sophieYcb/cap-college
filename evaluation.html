@@ -87,10 +87,20 @@
     </div>
     <h2 id="questionText"></h2>
     <div id="choices"></div>
+    <div id="questionFlagPanel" class="question-flag-panel hidden">
+      <label for="questionFlagComment"><strong>Pourquoi cette question est-elle à revoir ?</strong></label>
+      <textarea id="questionFlagComment" rows="2" maxlength="500" placeholder="Commentaire facultatif"></textarea>
+      <div class="actions">
+        <button class="btn btn-primary" id="saveQuestionFlagBtn" type="button" onclick="saveQuestionFlag()">Enregistrer le signalement</button>
+        <button class="btn btn-secondary" type="button" onclick="closeQuestionFlagPanel()">Annuler</button>
+      </div>
+      <p id="questionFlagStatus" class="small" aria-live="polite"></p>
+    </div>
     <div class="actions question-actions">
       <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()">Précédente</button>
       <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Suivante</button>
       <button class="btn btn-secondary stop-test-btn" onclick="pauseTest()">Mettre en pause</button>
+      <button class="btn btn-secondary hidden" id="flagQuestionBtn" type="button" onclick="openQuestionFlagPanel()">🚩 Signaler cette question</button>
     </div>
   </div>
 </section>
@@ -98,7 +108,7 @@
 <script src="data.js"></script><script src="corrections-v5.1.js"></script><script src="corrections-v5.2.js"></script><script src="corrections-v5.4.js"></script><script src="programme-v6.js"></script>
 <script src="supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-app.js?v=5.3.12"></script>
-<script src="evaluation-loader.js?v=5.3.12"></script>
+<script src="supabase-app.js?v=5.3.14"></script>
+<script src="evaluation-loader.js?v=5.3.14"></script>
 </body>
 </html>

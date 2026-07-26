@@ -398,6 +398,20 @@
     return Array.isArray(data) ? data[0] : data;
   }
 
+  async function flagQuestion(questionId, questionVersionId, campaignId, comment) {
+    const { data, error } = await getClient().rpc(
+      "flag_question_for_review",
+      {
+        requested_question_id: questionId,
+        requested_question_version_id: questionVersionId || null,
+        requested_campaign_id: campaignId || null,
+        requested_comment: comment || null
+      }
+    );
+    if (error) throw error;
+    return Array.isArray(data) ? data[0] : data;
+  }
+
   function appendScript(source) {
     return new Promise((resolve, reject) => {
       const script = document.createElement("script");
@@ -444,6 +458,7 @@
     signOut,
     finishDiagnostic,
     finishRemediation,
+    flagQuestion,
     startDiagnostic,
     startRemediation,
     submitAnswer,

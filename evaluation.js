@@ -21,6 +21,12 @@ let plannedMinutes=30;
 let diagnosticFinished=false;
 let remoteSequenceOffset=0;
 let discoveredRemoteSession=null;
+const CAN_FLAG_QUESTIONS=CapCollegeSupabase.getRoles()
+  .some(role=>role==='validator'||role==='administrator');
+
+if(CAN_FLAG_QUESTIONS){
+  document.getElementById('flagQuestionBtn').classList.remove('hidden');
+}
 
 if(VALIDATION_CAMPAIGN_ID){
   document.getElementById('validationModeNotice').classList.remove('hidden');
@@ -441,7 +447,42 @@ function renderQuestion(){
 
   document.getElementById('prevBtn').disabled=current===0;
   document.getElementById('nextBtn').textContent=current===diagnosticQuestions.length-1?'Terminer la séance':'Suivante';
+  closeQuestionFlagPanel();
   renderChoices();
+}
+
+function openQuestionFlagPanel(){
+  document.getElementById('questionFlagComment').value='';
+  document.getElementById('questionFlagStatus').textContent='';
+  document.getElementById('questionFlagPanel').classList.remove('hidden');
+  document.getElementById('questionFlagComment').focus();
+}
+
+function closeQuestionFlagPanel(){
+  document.getElementById('questionFlagPanel').classList.add('hidden');
+  document.getElementById('questionFlagStatus').textContent='';
+}
+
+async function saveQuestionFlag(){
+  const question=diagnosticQuestions[current];
+  const button=document.getElementById('saveQuestionFlagBtn');
+  const status=document.getElementById('questionFlagStatus');
+  button.disabled=true;
+  status.textContent='Enregistrement…';
+  try{
+    await CapCollegeSupabase.flagQuestion(
+      question.questionId,
+      question.questionVersionId,
+      VALIDATION_CAMPAIGN_ID,
+      document.getElementById('questionFlagComment').value
+    );
+    status.textContent='Question signalée. Tu peux poursuivre le diagnostic.';
+    setTimeout(closeQuestionFlagPanel,900);
+  }catch(error){
+    status.textContent=`Le signalement n’a pas été enregistré : ${error.message||error}`;
+  }finally{
+    button.disabled=false;
+  }
 }
 
 function nextQuestion(){
