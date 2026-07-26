@@ -21,8 +21,7 @@ let plannedMinutes=30;
 let diagnosticFinished=false;
 let remoteSequenceOffset=0;
 let discoveredRemoteSession=null;
-const CAN_FLAG_QUESTIONS=CapCollegeSupabase.getRoles()
-  .some(role=>role==='validator'||role==='administrator');
+const CAN_FLAG_QUESTIONS=CapCollegeSupabase.canReportQuestions();
 
 if(CAN_FLAG_QUESTIONS){
   document.getElementById('flagQuestionBtn').classList.remove('hidden');

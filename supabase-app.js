@@ -3,6 +3,7 @@
   let session = null;
   let roles = [];
   let activeRole = null;
+  let canReportQuestions = false;
   let diagnosticHistory = [];
 
   function configured() {
@@ -44,6 +45,7 @@
     if (!session) {
       roles = [];
       activeRole = null;
+      canReportQuestions = false;
       return roles;
     }
     const { data, error } = await getClient().rpc("get_my_roles");
@@ -52,6 +54,9 @@
     const activeResult = await getClient().rpc("get_my_active_role");
     if (activeResult.error) throw activeResult.error;
     activeRole = activeResult.data || roles[0] || null;
+    const reportingResult = await getClient().rpc("can_report_questions");
+    if (reportingResult.error) throw reportingResult.error;
+    canReportQuestions = reportingResult.data === true;
     return roles;
   }
 
@@ -183,6 +188,7 @@
     session = null;
     roles = [];
     activeRole = null;
+    canReportQuestions = false;
     location.replace("index.html");
   }
 
@@ -513,6 +519,7 @@
     getRoles: () => activeRole ? [activeRole] : [],
     getAvailableRoles: () => [...roles],
     getActiveRole: () => activeRole,
+    canReportQuestions: () => canReportQuestions,
     getSession: () => session,
     showFatalError,
     archiveValidationCampaign,
