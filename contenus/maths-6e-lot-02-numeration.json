@@ -205,7 +205,7 @@
       "code": "M6-0058",
       "microSkill": "m6_num_reconnaitre_decimal",
       "difficulty": 3,
-      "prompt": "Lequel de ces quotients a une écriture à virgule qui s’arrête ?",
+      "prompt": "Lequel de ces nombres est un nombre décimal ?",
       "choices": ["7/25", "2/15", "5/18", "8/21"],
       "correctIndex": 0,
       "explanation": "7/25 = 28/100 = 0,28 : son écriture décimale est finie."
