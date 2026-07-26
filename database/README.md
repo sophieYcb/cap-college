@@ -8,6 +8,7 @@ la feuille de route validée.
 - La micro-compétence, et non la question, est au centre du suivi.
 - Une question évalue exactement une micro-compétence.
 - Les anciennes identités V5.1 sont conservées dans `questions.legacy_id`.
+- `56_verify_maths_6e_lot_02.sql` contrôle l’intégrité du deuxième lot de mathématiques 6e après son import.
 - Chaque modification crée une version chronologique comparable à N−1.
 - Le diagnostic se construit au fil de séances d’une durée choisie.
 - La rapidité de réponse n’entre jamais dans l’évaluation.
