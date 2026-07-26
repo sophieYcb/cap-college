@@ -1,0 +1,412 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {
+    "code": "numbers_calculation",
+    "name": "Nombres, calcul et résolution de problèmes"
+  },
+  "skill": {
+    "code": "numeration",
+    "name": "Numération"
+  },
+  "lot": "M6-NUM-02",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_num_grands_nombres",
+      "teacherName": "Lire et écrire des entiers jusqu’aux milliards",
+      "studentName": "Lire et écrire les grands nombres",
+      "lessonReminder": "Pour lire un grand nombre, on sépare ses chiffres par classes de trois : unités, milliers, millions et milliards.",
+      "workedExample": "4 025 300 se lit « quatre millions vingt-cinq mille trois cents ».",
+      "masteryCriteria": "Passer sans erreur de l’écriture en chiffres à l’écriture en lettres, et réciproquement."
+    },
+    {
+      "code": "m6_num_reconnaitre_decimal",
+      "teacherName": "Reconnaître un nombre décimal",
+      "studentName": "Reconnaître un nombre décimal",
+      "lessonReminder": "Un nombre décimal peut s’écrire avec un nombre fini de chiffres après la virgule. Un nombre entier est aussi un nombre décimal.",
+      "workedExample": "3/4 = 0,75 : le nombre 3/4 est donc décimal.",
+      "masteryCriteria": "Reconnaître un nombre décimal quelle que soit son écriture."
+    },
+    {
+      "code": "m6_num_fraction_decimale",
+      "teacherName": "Passer d’une fraction décimale à une écriture à virgule",
+      "studentName": "Écrire une fraction décimale avec une virgule",
+      "lessonReminder": "Une fraction décimale a pour dénominateur 10, 100, 1 000… Le nombre de zéros indique le nombre de chiffres à placer après la virgule.",
+      "workedExample": "347/100 = 3,47.",
+      "masteryCriteria": "Convertir correctement des fractions de dénominateur 10, 100 ou 1 000 en écritures à virgule."
+    },
+    {
+      "code": "m6_num_decimal_fraction",
+      "teacherName": "Passer d’une écriture à virgule à une fraction décimale",
+      "studentName": "Écrire un nombre à virgule sous forme de fraction décimale",
+      "lessonReminder": "Pour écrire un décimal sous forme de fraction décimale, on retire la virgule au numérateur et on choisit 10, 100, 1 000… selon le nombre de chiffres après la virgule.",
+      "workedExample": "5,26 = 526/100.",
+      "masteryCriteria": "Convertir correctement des écritures à virgule en fractions décimales."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M6-0041",
+      "microSkill": "m6_num_grands_nombres",
+      "difficulty": 1,
+      "prompt": "Quelle est l’écriture en chiffres de « trois millions deux cent mille » ?",
+      "choices": ["3 200 000", "3 020 000", "3 002 000", "320 000"],
+      "correctIndex": 0,
+      "explanation": "Trois millions et deux cent mille s’écrit 3 200 000."
+    },
+    {
+      "code": "M6-0042",
+      "microSkill": "m6_num_grands_nombres",
+      "difficulty": 1,
+      "prompt": "Comment se lit le nombre 7 000 000 ?",
+      "choices": ["sept mille", "soixante-dix mille", "sept cent mille", "sept millions"],
+      "correctIndex": 3,
+      "explanation": "7 000 000 correspond à sept millions."
+    },
+    {
+      "code": "M6-0043",
+      "microSkill": "m6_num_grands_nombres",
+      "difficulty": 1,
+      "prompt": "Quelle est l’écriture en chiffres de « neuf cent mille » ?",
+      "choices": ["9 000", "90 000", "900 000", "9 000 000"],
+      "correctIndex": 2,
+      "explanation": "Neuf cent mille s’écrit 900 000."
+    },
+    {
+      "code": "M6-0044",
+      "microSkill": "m6_num_grands_nombres",
+      "difficulty": 2,
+      "prompt": "Comment se lit le nombre 12 045 000 ?",
+      "choices": ["douze millions quarante-cinq mille", "douze millions quatre cent cinquante mille", "cent vingt millions quarante-cinq mille", "douze mille quarante-cinq"],
+      "correctIndex": 0,
+      "explanation": "12 045 000 contient 12 millions et 45 milliers."
+    },
+    {
+      "code": "M6-0045",
+      "microSkill": "m6_num_grands_nombres",
+      "difficulty": 2,
+      "prompt": "Quelle est l’écriture en chiffres de « quatre-vingt-trois millions six mille » ?",
+      "choices": ["83 600 000", "83 060 000", "83 006 000", "8 306 000"],
+      "correctIndex": 2,
+      "explanation": "Quatre-vingt-trois millions et six mille s’écrit 83 006 000."
+    },
+    {
+      "code": "M6-0046",
+      "microSkill": "m6_num_grands_nombres",
+      "difficulty": 2,
+      "prompt": "Comment se lit le nombre 305 020 004 ?",
+      "choices": ["trois cent cinq millions vingt mille quatre", "trente-cinq millions deux mille quatre", "trois cent cinq millions deux cent mille quatre", "trois milliards cinquante millions vingt mille quatre"],
+      "correctIndex": 0,
+      "explanation": "Les classes donnent 305 millions, 20 milliers et 4 unités."
+    },
+    {
+      "code": "M6-0047",
+      "microSkill": "m6_num_grands_nombres",
+      "difficulty": 2,
+      "prompt": "Quelle est l’écriture en chiffres de « un milliard deux millions trente mille » ?",
+      "choices": ["1 200 030 000", "1 020 030 000", "1 002 030 000", "1 002 300 000"],
+      "correctIndex": 2,
+      "explanation": "Un milliard, deux millions et trente mille s’écrit 1 002 030 000."
+    },
+    {
+      "code": "M6-0048",
+      "microSkill": "m6_num_grands_nombres",
+      "difficulty": 3,
+      "prompt": "Quelle écriture correspond à « neuf milliards quarante millions cinq cent deux » ?",
+      "choices": ["9 400 000 502", "9 040 000 502", "9 004 000 502", "9 040 500 002"],
+      "correctIndex": 1,
+      "explanation": "Il y a 9 milliards, 40 millions, aucun millier et 502 unités."
+    },
+    {
+      "code": "M6-0049",
+      "microSkill": "m6_num_grands_nombres",
+      "difficulty": 3,
+      "prompt": "Comment se lit le nombre 2 008 070 015 ?",
+      "choices": ["deux milliards huit millions soixante-dix mille quinze", "deux milliards quatre-vingts millions sept mille quinze", "deux milliards huit cent millions soixante-dix mille quinze", "vingt milliards huit millions soixante-dix mille quinze"],
+      "correctIndex": 0,
+      "explanation": "Les classes sont : 2 milliards, 8 millions, 70 milliers et 15 unités."
+    },
+    {
+      "code": "M6-0050",
+      "microSkill": "m6_num_grands_nombres",
+      "difficulty": 3,
+      "prompt": "Quelle est l’écriture en chiffres de « six milliards trois cent mille vingt » ?",
+      "choices": ["6 300 000 020", "6 030 000 020", "6 000 300 020", "6 000 030 020"],
+      "correctIndex": 2,
+      "explanation": "Six milliards, trois cent mille et vingt s’écrit 6 000 300 020."
+    },
+    {
+      "code": "M6-0051",
+      "microSkill": "m6_num_reconnaitre_decimal",
+      "difficulty": 1,
+      "prompt": "Parmi ces nombres, lequel est écrit avec un nombre fini de chiffres après la virgule ?",
+      "choices": ["2,75", "0,333…", "1,414213…", "3,141592…"],
+      "correctIndex": 0,
+      "explanation": "2,75 possède seulement deux chiffres après la virgule : c’est un nombre décimal."
+    },
+    {
+      "code": "M6-0052",
+      "microSkill": "m6_num_reconnaitre_decimal",
+      "difficulty": 1,
+      "prompt": "Lequel de ces nombres est un nombre décimal ?",
+      "choices": ["5/10", "1/3", "2/3", "7/6"],
+      "correctIndex": 0,
+      "explanation": "5/10 = 0,5, qui a une écriture décimale finie."
+    },
+    {
+      "code": "M6-0053",
+      "microSkill": "m6_num_reconnaitre_decimal",
+      "difficulty": 1,
+      "prompt": "Pourquoi le nombre 8 est-il aussi un nombre décimal ?",
+      "choices": ["Parce qu’il est pair", "Parce qu’il peut s’écrire 8,0", "Parce qu’il est supérieur à 1", "Parce qu’il n’a pas de virgule"],
+      "correctIndex": 1,
+      "explanation": "Tout entier peut s’écrire avec une partie décimale nulle : 8 = 8,0."
+    },
+    {
+      "code": "M6-0054",
+      "microSkill": "m6_num_reconnaitre_decimal",
+      "difficulty": 2,
+      "prompt": "Quelle égalité montre que 7/20 est un nombre décimal ?",
+      "choices": ["7/20 = 0,35", "7/20 = 0,777…", "7/20 = 3,5", "7/20 = 35"],
+      "correctIndex": 0,
+      "explanation": "7/20 = 0,35 : cette écriture à virgule est finie."
+    },
+    {
+      "code": "M6-0055",
+      "microSkill": "m6_num_reconnaitre_decimal",
+      "difficulty": 2,
+      "prompt": "Parmi ces fractions, laquelle représente un nombre décimal ?",
+      "choices": ["1/6", "3/8", "4/9", "5/12"],
+      "correctIndex": 1,
+      "explanation": "3/8 = 0,375, qui possède une écriture décimale finie."
+    },
+    {
+      "code": "M6-0056",
+      "microSkill": "m6_num_reconnaitre_decimal",
+      "difficulty": 2,
+      "prompt": "Lequel de ces nombres n’est pas décimal ?",
+      "choices": ["0,125", "12", "3/4", "1/3"],
+      "correctIndex": 3,
+      "explanation": "1/3 = 0,333… : son écriture après la virgule ne se termine pas."
+    },
+    {
+      "code": "M6-0057",
+      "microSkill": "m6_num_reconnaitre_decimal",
+      "difficulty": 2,
+      "prompt": "Quelle affirmation est correcte ?",
+      "choices": ["Aucun entier n’est décimal", "Tous les nombres décimaux sont entiers", "Tous les entiers sont des nombres décimaux", "Un nombre avec une virgule n’est jamais décimal"],
+      "correctIndex": 2,
+      "explanation": "Tout entier possède une écriture décimale finie, par exemple 12 = 12,0."
+    },
+    {
+      "code": "M6-0058",
+      "microSkill": "m6_num_reconnaitre_decimal",
+      "difficulty": 3,
+      "prompt": "Parmi ces quotients, lequel a une écriture décimale finie ?",
+      "choices": ["2/15", "7/25", "5/18", "8/21"],
+      "correctIndex": 1,
+      "explanation": "7/25 = 28/100 = 0,28 : son écriture décimale est finie."
+    },
+    {
+      "code": "M6-0059",
+      "microSkill": "m6_num_reconnaitre_decimal",
+      "difficulty": 3,
+      "prompt": "Quel nombre peut s’écrire exactement avec trois chiffres après la virgule ?",
+      "choices": ["9/8", "2/3", "5/6", "7/9"],
+      "correctIndex": 0,
+      "explanation": "9/8 = 1,125, une écriture exacte avec trois chiffres après la virgule."
+    },
+    {
+      "code": "M6-0060",
+      "microSkill": "m6_num_reconnaitre_decimal",
+      "difficulty": 3,
+      "prompt": "Quelle fraction ne représente pas un nombre décimal ?",
+      "choices": ["11/20", "13/50", "7/40", "11/30"],
+      "correctIndex": 3,
+      "explanation": "11/30 = 0,3666… : son écriture décimale ne se termine pas."
+    },
+    {
+      "code": "M6-0061",
+      "microSkill": "m6_num_fraction_decimale",
+      "difficulty": 1,
+      "prompt": "Quelle est l’écriture à virgule de 7/10 ?",
+      "choices": ["0,07", "0,7", "7,0", "70"],
+      "correctIndex": 1,
+      "explanation": "Sept dixièmes s’écrit 0,7."
+    },
+    {
+      "code": "M6-0062",
+      "microSkill": "m6_num_fraction_decimale",
+      "difficulty": 1,
+      "prompt": "Quelle est l’écriture à virgule de 23/100 ?",
+      "choices": ["0,023", "0,23", "2,3", "23,0"],
+      "correctIndex": 1,
+      "explanation": "Vingt-trois centièmes s’écrit 0,23."
+    },
+    {
+      "code": "M6-0063",
+      "microSkill": "m6_num_fraction_decimale",
+      "difficulty": 1,
+      "prompt": "Quelle est l’écriture à virgule de 5/1 000 ?",
+      "choices": ["0,5", "0,05", "0,005", "5,000"],
+      "correctIndex": 2,
+      "explanation": "Cinq millièmes s’écrit 0,005."
+    },
+    {
+      "code": "M6-0064",
+      "microSkill": "m6_num_fraction_decimale",
+      "difficulty": 2,
+      "prompt": "Quelle est l’écriture à virgule de 47/10 ?",
+      "choices": ["0,47", "4,7", "47,0", "470"],
+      "correctIndex": 1,
+      "explanation": "47 dixièmes correspondent à 4 unités et 7 dixièmes, soit 4,7."
+    },
+    {
+      "code": "M6-0065",
+      "microSkill": "m6_num_fraction_decimale",
+      "difficulty": 2,
+      "prompt": "Quelle est l’écriture à virgule de 608/100 ?",
+      "choices": ["0,608", "6,08", "60,8", "608,0"],
+      "correctIndex": 1,
+      "explanation": "Avec un dénominateur 100, on place deux chiffres après la virgule : 6,08."
+    },
+    {
+      "code": "M6-0066",
+      "microSkill": "m6_num_fraction_decimale",
+      "difficulty": 2,
+      "prompt": "Quelle est l’écriture à virgule de 2 035/1 000 ?",
+      "choices": ["0,2035", "2,035", "20,35", "203,5"],
+      "correctIndex": 1,
+      "explanation": "Avec un dénominateur 1 000, on place trois chiffres après la virgule : 2,035."
+    },
+    {
+      "code": "M6-0067",
+      "microSkill": "m6_num_fraction_decimale",
+      "difficulty": 2,
+      "prompt": "Quelle est l’écriture à virgule de 80/100 ?",
+      "choices": ["0,08", "0,8", "8,0", "80,0"],
+      "correctIndex": 1,
+      "explanation": "80/100 représente quatre-vingts centièmes, soit 0,80 = 0,8."
+    },
+    {
+      "code": "M6-0068",
+      "microSkill": "m6_num_fraction_decimale",
+      "difficulty": 3,
+      "prompt": "Quelle est l’écriture à virgule de 40 007/1 000 ?",
+      "choices": ["4,0007", "40,007", "400,07", "4 000,7"],
+      "correctIndex": 1,
+      "explanation": "Le dénominateur 1 000 impose trois chiffres après la virgule : 40,007."
+    },
+    {
+      "code": "M6-0069",
+      "microSkill": "m6_num_fraction_decimale",
+      "difficulty": 3,
+      "prompt": "Quelle est l’écriture à virgule de 9/10 000 ?",
+      "choices": ["0,09", "0,009", "0,0009", "0,00009"],
+      "correctIndex": 2,
+      "explanation": "Neuf dix-millièmes s’écrit 0,0009."
+    },
+    {
+      "code": "M6-0070",
+      "microSkill": "m6_num_fraction_decimale",
+      "difficulty": 3,
+      "prompt": "Quelle est l’écriture à virgule de 125 004/10 000 ?",
+      "choices": ["1,25004", "12,5004", "125,004", "1 250,04"],
+      "correctIndex": 1,
+      "explanation": "Le dénominateur 10 000 impose quatre chiffres après la virgule : 12,5004."
+    },
+    {
+      "code": "M6-0071",
+      "microSkill": "m6_num_decimal_fraction",
+      "difficulty": 1,
+      "prompt": "Quelle fraction décimale est égale à 0,6 ?",
+      "choices": ["6/10", "6/100", "60/100", "600/10"],
+      "correctIndex": 0,
+      "explanation": "0,6 représente six dixièmes, donc 6/10."
+    },
+    {
+      "code": "M6-0072",
+      "microSkill": "m6_num_decimal_fraction",
+      "difficulty": 1,
+      "prompt": "Quelle fraction décimale est égale à 0,34 ?",
+      "choices": ["34/10", "34/100", "34/1 000", "340/10"],
+      "correctIndex": 1,
+      "explanation": "0,34 possède deux chiffres après la virgule : 0,34 = 34/100."
+    },
+    {
+      "code": "M6-0073",
+      "microSkill": "m6_num_decimal_fraction",
+      "difficulty": 1,
+      "prompt": "Quelle fraction décimale est égale à 0,008 ?",
+      "choices": ["8/10", "8/100", "8/1 000", "80/100"],
+      "correctIndex": 2,
+      "explanation": "0,008 représente huit millièmes, donc 8/1 000."
+    },
+    {
+      "code": "M6-0074",
+      "microSkill": "m6_num_decimal_fraction",
+      "difficulty": 2,
+      "prompt": "Quelle fraction décimale est égale à 3,7 ?",
+      "choices": ["37/10", "37/100", "307/10", "3/7"],
+      "correctIndex": 0,
+      "explanation": "3,7 possède un chiffre après la virgule : 3,7 = 37/10."
+    },
+    {
+      "code": "M6-0075",
+      "microSkill": "m6_num_decimal_fraction",
+      "difficulty": 2,
+      "prompt": "Quelle fraction décimale est égale à 12,05 ?",
+      "choices": ["125/10", "1 205/100", "12 050/100", "1 205/1 000"],
+      "correctIndex": 1,
+      "explanation": "12,05 possède deux chiffres après la virgule : 12,05 = 1 205/100."
+    },
+    {
+      "code": "M6-0076",
+      "microSkill": "m6_num_decimal_fraction",
+      "difficulty": 2,
+      "prompt": "Quelle fraction décimale est égale à 4,009 ?",
+      "choices": ["4 009/10", "4 009/100", "4 009/1 000", "409/1 000"],
+      "correctIndex": 2,
+      "explanation": "4,009 possède trois chiffres après la virgule : 4,009 = 4 009/1 000."
+    },
+    {
+      "code": "M6-0077",
+      "microSkill": "m6_num_decimal_fraction",
+      "difficulty": 2,
+      "prompt": "Quelle fraction décimale est égale à 20,4 ?",
+      "choices": ["204/10", "204/100", "2 004/10", "20/4"],
+      "correctIndex": 0,
+      "explanation": "20,4 possède un chiffre après la virgule : 20,4 = 204/10."
+    },
+    {
+      "code": "M6-0078",
+      "microSkill": "m6_num_decimal_fraction",
+      "difficulty": 3,
+      "prompt": "Quelle fraction décimale est égale à 0,0705 ?",
+      "choices": ["705/100", "705/1 000", "705/10 000", "7 005/1 000"],
+      "correctIndex": 2,
+      "explanation": "0,0705 possède quatre chiffres après la virgule : 0,0705 = 705/10 000."
+    },
+    {
+      "code": "M6-0079",
+      "microSkill": "m6_num_decimal_fraction",
+      "difficulty": 3,
+      "prompt": "Quelle fraction décimale est égale à 103,006 ?",
+      "choices": ["103 006/100", "103 006/1 000", "10 306/1 000", "1 030 006/1 000"],
+      "correctIndex": 1,
+      "explanation": "103,006 possède trois chiffres après la virgule : 103,006 = 103 006/1 000."
+    },
+    {
+      "code": "M6-0080",
+      "microSkill": "m6_num_decimal_fraction",
+      "difficulty": 3,
+      "prompt": "Quelle fraction décimale est égale à 7,0004 ?",
+      "choices": ["70 004/1 000", "70 004/10 000", "7 004/10 000", "700 004/10 000"],
+      "correctIndex": 1,
+      "explanation": "7,0004 possède quatre chiffres après la virgule : 7,0004 = 70 004/10 000."
+    }
+  ]
+}
