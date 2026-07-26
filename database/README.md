@@ -58,6 +58,8 @@ la feuille de route validée.
 40. `39_verify_validation_diagnostic_isolation.sql`
 41. `40_question_flag_api.sql`
 42. `41_verify_question_flag_api.sql`
+43. `42_open_question_flags_api.sql`
+44. `43_verify_open_question_flags_api.sql`
 
 Exécuter les fichiers dans cet ordre depuis le SQL Editor de Supabase. Ne pas
 exécuter le pack avant la validation finale et la sauvegarde du projet.

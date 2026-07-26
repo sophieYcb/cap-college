@@ -323,14 +323,25 @@
   }
 
   async function getValidationQuestionBank() {
-    const { data, error } = await getClient().rpc(
-      "get_validation_question_bank"
-    );
-    if (error) throw error;
-    if (!Array.isArray(data)) {
+    const [bankResult, flagsResult] = await Promise.all([
+      getClient().rpc("get_validation_question_bank"),
+      getClient().rpc("get_open_question_flags")
+    ]);
+    if (bankResult.error) throw bankResult.error;
+    if (flagsResult.error) throw flagsResult.error;
+    if (!Array.isArray(bankResult.data)) {
       throw new Error("La banque de validation reçue est invalide.");
     }
-    return data;
+    const flagsByQuestion = new Map(
+      (flagsResult.data || []).map(item => [
+        item.question_id,
+        item.flags || []
+      ])
+    );
+    return bankResult.data.map(question => ({
+      ...question,
+      openFlagDetails: flagsByQuestion.get(question.questionId) || []
+    }));
   }
 
   async function getErrorNotebook() {

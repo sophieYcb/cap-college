@@ -12,7 +12,8 @@ const QUESTIONS=(window.VALIDATION_QUESTIONS||[]).map(item=>{
   reponse:choices.findIndex(choice=>choice.isCorrect),
   version:Number(item.current?.number||1),
   previous:item.previous,status:item.status,
-  openFlags:Number(item.openFlags||0)
+  openFlags:Number(item.openFlags||0),
+  openFlagDetails:Array.isArray(item.openFlagDetails)?item.openFlagDetails:[]
  };
 });
 let reviews=loadReviews();
@@ -135,6 +136,15 @@ function renderQuestion(){
  document.getElementById('testVersion').textContent=`Version ${q.version||1}`;
  document.getElementById('testQuestion').textContent=q.question;
  document.getElementById('testChoices').innerHTML=q.choix.map((c,i)=>`<div class="choice test-choice ${i===q.reponse?'correct-choice':''}"><span>${String.fromCharCode(65+i)}.</span> ${escapeHtml(c)} ${i===q.reponse?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
+ const flagDetails=document.getElementById('openFlagDetails');
+ flagDetails.classList.toggle('hidden',!q.openFlagDetails.length);
+ flagDetails.innerHTML=q.openFlagDetails.length
+   ?`<strong>🚩 Pourquoi cette question a été signalée</strong>${q.openFlagDetails.map(flag=>`
+      <div class="flag-detail">
+        <p>${escapeHtml(flag.comment||'Aucun commentaire')}</p>
+        <span class="small">${escapeHtml(flag.reporter||'Validateur')} · ${new Date(flag.reportedAt).toLocaleString('fr-FR')}</span>
+      </div>`).join('')}`
+   :'';
  document.querySelectorAll('.rating').forEach(b=>b.classList.toggle('active',currentReview&&b.dataset.rating===r.rating));
  document.getElementById('reviewComment').value=r.comment||'';
  saveStatus(currentReview?'Validation enregistrée dans Supabase.':'');
