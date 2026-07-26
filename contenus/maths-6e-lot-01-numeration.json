@@ -1,0 +1,407 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "lot": "M6-NUM-01",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_num_rang_entier",
+      "teacherName": "Déterminer la valeur d’un chiffre dans un entier",
+      "studentName": "Comprendre le rang d’un chiffre dans un entier",
+      "lessonReminder": "Dans un nombre entier, la valeur d’un chiffre dépend de sa position : unités, dizaines, centaines, milliers…",
+      "workedExample": "Dans 47 253, le chiffre 7 est au rang des milliers : il vaut 7 000.",
+      "masteryCriteria": "Identifier correctement le rang et la valeur d’un chiffre dans plusieurs nombres entiers."
+    },
+    {
+      "code": "m6_num_rang_decimal",
+      "teacherName": "Déterminer la valeur d’un chiffre dans un décimal",
+      "studentName": "Comprendre le rang d’un chiffre après la virgule",
+      "lessonReminder": "Après la virgule, le premier chiffre indique les dixièmes, le deuxième les centièmes et le troisième les millièmes.",
+      "workedExample": "Dans 12,345, le chiffre 4 est au rang des centièmes : il vaut 0,04.",
+      "masteryCriteria": "Identifier correctement le rang et la valeur d’un chiffre dans plusieurs nombres décimaux."
+    },
+    {
+      "code": "m6_num_unites",
+      "teacherName": "Relier unité, dizaine, centaine et millier",
+      "studentName": "Passer entre unités, dizaines, centaines et milliers",
+      "lessonReminder": "Une dizaine vaut 10 unités, une centaine vaut 10 dizaines et un millier vaut 10 centaines.",
+      "workedExample": "3 centaines valent 30 dizaines ou 300 unités.",
+      "masteryCriteria": "Convertir sans erreur entre les unités de numération entières."
+    },
+    {
+      "code": "m6_num_sous_unites",
+      "teacherName": "Relier unité, dixième, centième et millième",
+      "studentName": "Passer entre unités, dixièmes, centièmes et millièmes",
+      "lessonReminder": "Une unité vaut 10 dixièmes, 100 centièmes ou 1 000 millièmes.",
+      "workedExample": "4 dixièmes valent 40 centièmes ou 400 millièmes.",
+      "masteryCriteria": "Convertir sans erreur entre unités, dixièmes, centièmes et millièmes."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M6-0001",
+      "microSkill": "m6_num_rang_entier",
+      "difficulty": 1,
+      "prompt": "Dans le nombre 4 582, quel est le rang du chiffre 5 ?",
+      "choices": ["unités", "dizaines", "centaines", "milliers"],
+      "correctIndex": 2,
+      "explanation": "Dans 4 582, le chiffre 5 est au rang des centaines."
+    },
+    {
+      "code": "M6-0002",
+      "microSkill": "m6_num_rang_entier",
+      "difficulty": 1,
+      "prompt": "Dans le nombre 73 126, quel est le rang du chiffre 3 ?",
+      "choices": ["dizaines", "centaines", "milliers", "dizaines de milliers"],
+      "correctIndex": 2,
+      "explanation": "Dans 73 126, le chiffre 3 est au rang des milliers."
+    },
+    {
+      "code": "M6-0003",
+      "microSkill": "m6_num_rang_entier",
+      "difficulty": 1,
+      "prompt": "Dans le nombre 8 491, quelle est la valeur du chiffre 9 ?",
+      "choices": ["9", "90", "900", "9 000"],
+      "correctIndex": 1,
+      "explanation": "Le chiffre 9 est au rang des dizaines, il vaut donc 90."
+    },
+    {
+      "code": "M6-0004",
+      "microSkill": "m6_num_rang_entier",
+      "difficulty": 2,
+      "prompt": "Dans le nombre 406 715, quelle est la valeur du chiffre 6 ?",
+      "choices": ["6", "600", "6 000", "60 000"],
+      "correctIndex": 2,
+      "explanation": "Le chiffre 6 est au rang des milliers, il vaut donc 6 000."
+    },
+    {
+      "code": "M6-0005",
+      "microSkill": "m6_num_rang_entier",
+      "difficulty": 2,
+      "prompt": "Dans le nombre 2 038 451, quel chiffre occupe le rang des dizaines de milliers ?",
+      "choices": ["2", "3", "8", "4"],
+      "correctIndex": 1,
+      "explanation": "Dans 2 038 451, le chiffre des dizaines de milliers est 3."
+    },
+    {
+      "code": "M6-0006",
+      "microSkill": "m6_num_rang_entier",
+      "difficulty": 2,
+      "prompt": "Dans le nombre 51 704 293, quelle est la valeur du chiffre 7 ?",
+      "choices": ["7 000", "70 000", "700 000", "7 000 000"],
+      "correctIndex": 2,
+      "explanation": "Le chiffre 7 est au rang des centaines de milliers, il vaut 700 000."
+    },
+    {
+      "code": "M6-0007",
+      "microSkill": "m6_num_rang_entier",
+      "difficulty": 2,
+      "prompt": "Dans le nombre 905 060 412, quel chiffre occupe le rang des millions ?",
+      "choices": ["9", "5", "6", "4"],
+      "correctIndex": 1,
+      "explanation": "Dans 905 060 412, le chiffre des millions est 5."
+    },
+    {
+      "code": "M6-0008",
+      "microSkill": "m6_num_rang_entier",
+      "difficulty": 3,
+      "prompt": "Dans 3 040 506 072, quelle est la valeur du chiffre 4 ?",
+      "choices": ["4 000 000", "40 000 000", "400 000 000", "4 000 000 000"],
+      "correctIndex": 1,
+      "explanation": "Le chiffre 4 est au rang des dizaines de millions, il vaut 40 000 000."
+    },
+    {
+      "code": "M6-0009",
+      "microSkill": "m6_num_rang_entier",
+      "difficulty": 3,
+      "prompt": "Dans 8 007 030 205, quel chiffre occupe le rang des centaines de milliers ?",
+      "choices": ["7", "3", "2", "0"],
+      "correctIndex": 3,
+      "explanation": "Le groupe des milliers est 030 : le chiffre des centaines de milliers est donc 0."
+    },
+    {
+      "code": "M6-0010",
+      "microSkill": "m6_num_rang_entier",
+      "difficulty": 3,
+      "prompt": "Quel nombre possède un 6 dont la valeur est 60 000 000 ?",
+      "choices": ["6 704 231", "26 048 500", "163 204 000", "608 410 200"],
+      "correctIndex": 2,
+      "explanation": "Dans 163 204 000, le chiffre 6 est au rang des dizaines de millions : il vaut 60 000 000."
+    },
+
+    {
+      "code": "M6-0011",
+      "microSkill": "m6_num_rang_decimal",
+      "difficulty": 1,
+      "prompt": "Dans le nombre 7,35, quel est le rang du chiffre 3 ?",
+      "choices": ["unités", "dixièmes", "centièmes", "millièmes"],
+      "correctIndex": 1,
+      "explanation": "Le premier chiffre après la virgule est celui des dixièmes."
+    },
+    {
+      "code": "M6-0012",
+      "microSkill": "m6_num_rang_decimal",
+      "difficulty": 1,
+      "prompt": "Dans le nombre 12,408, quel est le rang du chiffre 8 ?",
+      "choices": ["unités", "dixièmes", "centièmes", "millièmes"],
+      "correctIndex": 3,
+      "explanation": "Le troisième chiffre après la virgule est celui des millièmes."
+    },
+    {
+      "code": "M6-0013",
+      "microSkill": "m6_num_rang_decimal",
+      "difficulty": 1,
+      "prompt": "Dans le nombre 5,72, quelle est la valeur du chiffre 7 ?",
+      "choices": ["7", "0,7", "0,07", "0,007"],
+      "correctIndex": 1,
+      "explanation": "Le chiffre 7 est au rang des dixièmes, il vaut 0,7."
+    },
+    {
+      "code": "M6-0014",
+      "microSkill": "m6_num_rang_decimal",
+      "difficulty": 2,
+      "prompt": "Dans le nombre 48,063, quelle est la valeur du chiffre 6 ?",
+      "choices": ["0,6", "0,06", "0,006", "6"],
+      "correctIndex": 1,
+      "explanation": "Le chiffre 6 est au rang des centièmes, il vaut 0,06."
+    },
+    {
+      "code": "M6-0015",
+      "microSkill": "m6_num_rang_decimal",
+      "difficulty": 2,
+      "prompt": "Dans le nombre 0,529, quel chiffre occupe le rang des centièmes ?",
+      "choices": ["0", "5", "2", "9"],
+      "correctIndex": 2,
+      "explanation": "Le deuxième chiffre après la virgule est 2."
+    },
+    {
+      "code": "M6-0016",
+      "microSkill": "m6_num_rang_decimal",
+      "difficulty": 2,
+      "prompt": "Dans le nombre 103,407, quelle est la valeur du chiffre 7 ?",
+      "choices": ["0,7", "0,07", "0,007", "7"],
+      "correctIndex": 2,
+      "explanation": "Le chiffre 7 est au rang des millièmes, il vaut 0,007."
+    },
+    {
+      "code": "M6-0017",
+      "microSkill": "m6_num_rang_decimal",
+      "difficulty": 2,
+      "prompt": "Quel chiffre occupe le rang des dixièmes dans 62,048 ?",
+      "choices": ["0", "4", "8", "6"],
+      "correctIndex": 0,
+      "explanation": "Le premier chiffre après la virgule est 0."
+    },
+    {
+      "code": "M6-0018",
+      "microSkill": "m6_num_rang_decimal",
+      "difficulty": 3,
+      "prompt": "Dans quel nombre le chiffre 4 vaut-il 0,004 ?",
+      "choices": ["7,4", "7,04", "7,004", "7,0004"],
+      "correctIndex": 2,
+      "explanation": "Dans 7,004, le chiffre 4 est au rang des millièmes."
+    },
+    {
+      "code": "M6-0019",
+      "microSkill": "m6_num_rang_decimal",
+      "difficulty": 3,
+      "prompt": "Dans 905,070, quelle est la valeur du premier chiffre 0 placé après la virgule ?",
+      "choices": ["0 unité", "0 dixième", "0 centième", "0 millième"],
+      "correctIndex": 1,
+      "explanation": "Ce zéro est le premier chiffre après la virgule : il est au rang des dixièmes."
+    },
+    {
+      "code": "M6-0020",
+      "microSkill": "m6_num_rang_decimal",
+      "difficulty": 3,
+      "prompt": "Quel nombre possède un 8 au rang des centièmes ?",
+      "choices": ["14,803", "14,083", "14,038", "14,008"],
+      "correctIndex": 1,
+      "explanation": "Dans 14,083, le deuxième chiffre après la virgule est 8."
+    },
+
+    {
+      "code": "M6-0021",
+      "microSkill": "m6_num_unites",
+      "difficulty": 1,
+      "prompt": "Combien d’unités y a-t-il dans 4 dizaines ?",
+      "choices": ["4", "14", "40", "400"],
+      "correctIndex": 2,
+      "explanation": "Une dizaine vaut 10 unités, donc 4 dizaines valent 40 unités."
+    },
+    {
+      "code": "M6-0022",
+      "microSkill": "m6_num_unites",
+      "difficulty": 1,
+      "prompt": "Combien de dizaines y a-t-il dans 3 centaines ?",
+      "choices": ["3", "30", "300", "3 000"],
+      "correctIndex": 1,
+      "explanation": "Une centaine vaut 10 dizaines, donc 3 centaines valent 30 dizaines."
+    },
+    {
+      "code": "M6-0023",
+      "microSkill": "m6_num_unites",
+      "difficulty": 1,
+      "prompt": "Une unité de millier vaut combien de centaines ?",
+      "choices": ["1", "10", "100", "1 000"],
+      "correctIndex": 1,
+      "explanation": "Un millier vaut 10 centaines."
+    },
+    {
+      "code": "M6-0024",
+      "microSkill": "m6_num_unites",
+      "difficulty": 2,
+      "prompt": "Combien de dizaines représentent 2 500 unités ?",
+      "choices": ["25", "250", "2 500", "25 000"],
+      "correctIndex": 1,
+      "explanation": "Une dizaine vaut 10 unités : 2 500 ÷ 10 = 250 dizaines."
+    },
+    {
+      "code": "M6-0025",
+      "microSkill": "m6_num_unites",
+      "difficulty": 2,
+      "prompt": "Combien d’unités représentent 18 centaines ?",
+      "choices": ["180", "1 800", "18 000", "180 000"],
+      "correctIndex": 1,
+      "explanation": "Une centaine vaut 100 unités : 18 × 100 = 1 800 unités."
+    },
+    {
+      "code": "M6-0026",
+      "microSkill": "m6_num_unites",
+      "difficulty": 2,
+      "prompt": "Combien de centaines représentent 7 milliers ?",
+      "choices": ["7", "70", "700", "7 000"],
+      "correctIndex": 1,
+      "explanation": "Un millier vaut 10 centaines : 7 milliers valent 70 centaines."
+    },
+    {
+      "code": "M6-0027",
+      "microSkill": "m6_num_unites",
+      "difficulty": 2,
+      "prompt": "Quelle égalité est correcte ?",
+      "choices": ["6 centaines = 60 unités", "6 centaines = 600 unités", "6 centaines = 6 000 unités", "6 centaines = 60 000 unités"],
+      "correctIndex": 1,
+      "explanation": "Une centaine vaut 100 unités, donc 6 centaines valent 600 unités."
+    },
+    {
+      "code": "M6-0028",
+      "microSkill": "m6_num_unites",
+      "difficulty": 3,
+      "prompt": "Combien de dizaines représentent 34 milliers ?",
+      "choices": ["340", "3 400", "34 000", "340 000"],
+      "correctIndex": 1,
+      "explanation": "34 milliers valent 34 000 unités, soit 3 400 dizaines."
+    },
+    {
+      "code": "M6-0029",
+      "microSkill": "m6_num_unites",
+      "difficulty": 3,
+      "prompt": "Quelle quantité est égale à 125 centaines ?",
+      "choices": ["1 250 unités", "12 500 unités", "125 000 unités", "1 250 000 unités"],
+      "correctIndex": 1,
+      "explanation": "125 × 100 = 12 500 unités."
+    },
+    {
+      "code": "M6-0030",
+      "microSkill": "m6_num_unites",
+      "difficulty": 3,
+      "prompt": "Combien de centaines faut-il pour former 2 millions ?",
+      "choices": ["2 000", "20 000", "200 000", "2 000 000"],
+      "correctIndex": 1,
+      "explanation": "2 000 000 ÷ 100 = 20 000 centaines."
+    },
+
+    {
+      "code": "M6-0031",
+      "microSkill": "m6_num_sous_unites",
+      "difficulty": 1,
+      "prompt": "Combien de dixièmes y a-t-il dans une unité ?",
+      "choices": ["1", "10", "100", "1 000"],
+      "correctIndex": 1,
+      "explanation": "Une unité vaut 10 dixièmes."
+    },
+    {
+      "code": "M6-0032",
+      "microSkill": "m6_num_sous_unites",
+      "difficulty": 1,
+      "prompt": "Combien de centièmes y a-t-il dans une unité ?",
+      "choices": ["10", "100", "1 000", "10 000"],
+      "correctIndex": 1,
+      "explanation": "Une unité vaut 100 centièmes."
+    },
+    {
+      "code": "M6-0033",
+      "microSkill": "m6_num_sous_unites",
+      "difficulty": 1,
+      "prompt": "Combien de centièmes y a-t-il dans 3 dixièmes ?",
+      "choices": ["3", "30", "300", "3 000"],
+      "correctIndex": 1,
+      "explanation": "Un dixième vaut 10 centièmes, donc 3 dixièmes valent 30 centièmes."
+    },
+    {
+      "code": "M6-0034",
+      "microSkill": "m6_num_sous_unites",
+      "difficulty": 2,
+      "prompt": "Combien de millièmes y a-t-il dans 8 centièmes ?",
+      "choices": ["8", "80", "800", "8 000"],
+      "correctIndex": 1,
+      "explanation": "Un centième vaut 10 millièmes, donc 8 centièmes valent 80 millièmes."
+    },
+    {
+      "code": "M6-0035",
+      "microSkill": "m6_num_sous_unites",
+      "difficulty": 2,
+      "prompt": "Combien de centièmes représentent 250 millièmes ?",
+      "choices": ["2,5", "25", "250", "2 500"],
+      "correctIndex": 1,
+      "explanation": "Dix millièmes forment un centième : 250 ÷ 10 = 25 centièmes."
+    },
+    {
+      "code": "M6-0036",
+      "microSkill": "m6_num_sous_unites",
+      "difficulty": 2,
+      "prompt": "Quelle égalité est correcte ?",
+      "choices": ["4 dixièmes = 4 centièmes", "4 dixièmes = 40 centièmes", "4 dixièmes = 400 centièmes", "4 dixièmes = 4 000 centièmes"],
+      "correctIndex": 1,
+      "explanation": "Un dixième vaut 10 centièmes, donc 4 dixièmes valent 40 centièmes."
+    },
+    {
+      "code": "M6-0037",
+      "microSkill": "m6_num_sous_unites",
+      "difficulty": 2,
+      "prompt": "Combien de millièmes représentent 6 dixièmes ?",
+      "choices": ["60", "600", "6 000", "60 000"],
+      "correctIndex": 1,
+      "explanation": "Un dixième vaut 100 millièmes, donc 6 dixièmes valent 600 millièmes."
+    },
+    {
+      "code": "M6-0038",
+      "microSkill": "m6_num_sous_unites",
+      "difficulty": 3,
+      "prompt": "Combien d’unités représentent 3 500 millièmes ?",
+      "choices": ["0,35", "3,5", "35", "350"],
+      "correctIndex": 1,
+      "explanation": "1 000 millièmes valent une unité : 3 500 millièmes valent 3,5 unités."
+    },
+    {
+      "code": "M6-0039",
+      "microSkill": "m6_num_sous_unites",
+      "difficulty": 3,
+      "prompt": "Quelle quantité est égale à 2,4 unités ?",
+      "choices": ["24 millièmes", "240 millièmes", "2 400 millièmes", "24 000 millièmes"],
+      "correctIndex": 2,
+      "explanation": "Une unité vaut 1 000 millièmes : 2,4 unités valent 2 400 millièmes."
+    },
+    {
+      "code": "M6-0040",
+      "microSkill": "m6_num_sous_unites",
+      "difficulty": 3,
+      "prompt": "Combien de dixièmes représentent 4 750 centièmes ?",
+      "choices": ["47,5", "475", "4 750", "47 500"],
+      "correctIndex": 1,
+      "explanation": "Dix centièmes forment un dixième : 4 750 ÷ 10 = 475 dixièmes."
+    }
+  ]
+}
