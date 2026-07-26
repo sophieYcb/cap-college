@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Diagnostic Français 6e — Cap Collège</title><link rel="stylesheet" href="styles.css">
+<title>Diagnostic Français 6e — Cap Collège</title><link rel="stylesheet" href="styles.css?v=5.3.18">
 </head>
 <body>
 <main class="page">
@@ -46,13 +46,25 @@
       <span class="theme-picker-icon" aria-hidden="true">◎</span>
       <div><strong>Choisir le périmètre du diagnostic</strong><span>Tout le programme ou une notion précise</span></div>
     </div>
+    <div class="diagnostic-hierarchy">
     <label class="theme-select-wrap">
-      <span class="sr-only">Thème à évaluer</span>
+      <span class="filter-label">Matière</span>
+      <select id="diagnosticSubject" onchange="updateDiagnosticDomains()"></select>
+      <span class="theme-chevron" aria-hidden="true">⌄</span>
+    </label>
+    <label class="theme-select-wrap">
+      <span class="filter-label">Catégorie</span>
+      <select id="diagnosticDomain" onchange="updateDiagnosticSkills()"></select>
+      <span class="theme-chevron" aria-hidden="true">⌄</span>
+    </label>
+    <label class="theme-select-wrap">
+      <span class="filter-label">Sous-catégorie</span>
       <select id="diagnosticSkill" onchange="refreshDiagnosticSize()">
-        <option value="all">Tous les thèmes — diagnostic complet</option>
+        <option value="all">Toutes les sous-catégories</option>
       </select>
       <span class="theme-chevron" aria-hidden="true">⌄</span>
     </label>
+    </div>
     <p id="themeSelectionHint" class="theme-selection-hint"></p>
   </div>
   <div class="summary-grid">
@@ -108,7 +120,7 @@
 <script src="data.js"></script><script src="corrections-v5.1.js"></script><script src="corrections-v5.2.js"></script><script src="corrections-v5.4.js"></script><script src="programme-v6.js"></script>
 <script src="supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-app.js?v=5.3.14"></script>
-<script src="evaluation-loader.js?v=5.3.14"></script>
+<script src="supabase-app.js?v=5.3.18"></script>
+<script src="evaluation-loader.js?v=5.3.18"></script>
 </body>
 </html>

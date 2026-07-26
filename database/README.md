@@ -65,6 +65,8 @@ la feuille de route validée.
 47. `46_draft_content_import_api.sql`
 48. `47_verify_draft_content_import_api.sql`
 49. `48_verify_maths_6e_lot_01.sql`
+50. `49_question_bank_hierarchy_api.sql`
+51. `50_verify_question_bank_hierarchy_api.sql`
 
 Exécuter les fichiers dans cet ordre depuis le SQL Editor de Supabase. Ne pas
 exécuter le pack avant la validation finale et la sauvegarde du projet.

@@ -62,6 +62,9 @@
       id: Number(question.id),
       questionId: question.questionId,
       questionVersionId: question.questionVersionId,
+      subjectCode: question.subjectCode || "french",
+      subject: question.subject || "Français",
+      domainCode: question.domainCode || question.domaine,
       competenceId: question.competenceId,
       domaine: question.domaine,
       competence: question.competence,
@@ -170,7 +173,8 @@
   async function startDiagnostic(
     plannedMinutes,
     competenceId = "all",
-    validationCampaignId = null
+    validationCampaignId = null,
+    subjectCode = "french"
   ) {
     if (!configured()) return null;
     const { data, error } = validationCampaignId
@@ -179,7 +183,7 @@
           {
             requested_campaign_id: validationCampaignId,
             planned_minutes: plannedMinutes,
-            requested_subject_code: "french",
+            requested_subject_code: subjectCode,
             requested_level_code: "6e",
             requested_competence_id: competenceId
           }
@@ -188,7 +192,7 @@
           "start_diagnostic_session_v2",
           {
             planned_minutes: plannedMinutes,
-            requested_subject_code: "french",
+            requested_subject_code: subjectCode,
             requested_level_code: "6e",
             requested_competence_id: competenceId
           }

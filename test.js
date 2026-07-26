@@ -5,6 +5,8 @@ const QUESTIONS=(window.VALIDATION_QUESTIONS||[]).map(item=>{
  return {
   id:Number(item.id),questionId:item.questionId,
   questionVersionId:item.current?.id,
+  subjectCode:item.subjectCode||'french',subject:item.subject||'Français',
+  domainCode:item.domainCode||item.domain,
   domaine:item.domain,competenceId:item.competenceId,
   competence:item.competence,difficulte:Number(item.difficulty),
   question:item.current?.prompt||'',
@@ -64,8 +66,11 @@ function isCurrentReview(q,r=reviewFor(q.id)){
 }
 
 function initialise(){
- const skills=[...new Set(QUESTIONS.map(q=>q.competence))].sort((a,b)=>a.localeCompare(b,'fr'));
- document.getElementById('skillFilter').innerHTML+=""+skills.map(s=>`<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
+ const subjects=[...new Map(QUESTIONS.map(q=>[q.subjectCode,q.subject])).entries()]
+  .sort((a,b)=>a[1].localeCompare(b[1],'fr'));
+ document.getElementById('subjectFilter').innerHTML=
+  subjects.map(([code,name])=>`<option value="${escapeHtml(code)}">${escapeHtml(name)}</option>`).join('');
+ updateCategoryFilters(false);
  const versions=[...new Set(QUESTIONS.map(q=>q.version||1))].sort((a,b)=>a-b);
  document.getElementById('versionFilter').innerHTML+=versions.map(v=>`<option value="${v}">Version ${v}</option>`).join('');
  const query=new URLSearchParams(location.search);
@@ -78,8 +83,32 @@ function initialise(){
  }
 }
 function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
+function updateCategoryFilters(refresh=true){
+ const subject=document.getElementById('subjectFilter').value;
+ const domains=[...new Map(
+  QUESTIONS.filter(q=>q.subjectCode===subject).map(q=>[q.domainCode,q.domaine])
+ ).entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr'));
+ document.getElementById('domainFilter').innerHTML=
+  '<option value="all">Toutes les catégories</option>'+
+  domains.map(([code,name])=>`<option value="${escapeHtml(code)}">${escapeHtml(name)}</option>`).join('');
+ updateSubcategoryFilter(refresh);
+}
+function updateSubcategoryFilter(refresh=true){
+ const subject=document.getElementById('subjectFilter').value;
+ const domain=document.getElementById('domainFilter').value;
+ const skills=[...new Map(
+  QUESTIONS.filter(q=>q.subjectCode===subject&&(domain==='all'||q.domainCode===domain))
+   .map(q=>[q.competenceId,q.competence])
+ ).entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr'));
+ document.getElementById('skillFilter').innerHTML=
+  '<option value="all">Toutes les sous-catégories</option>'+
+  skills.map(([id,name])=>`<option value="${escapeHtml(id)}">${escapeHtml(name)}</option>`).join('');
+ if(refresh)applyFilters();
+}
 function applyFilters(){
  const status=document.getElementById('statusFilter').value;
+ const subject=document.getElementById('subjectFilter').value;
+ const domain=document.getElementById('domainFilter').value;
  const skill=document.getElementById('skillFilter').value;
  const version=document.getElementById('versionFilter').value;
  const sortOrder=document.getElementById('sortOrder').value;
@@ -92,10 +121,12 @@ function applyFilters(){
      ||(status==='flagged'&&q.openFlags>0)
      ||(status==='unreviewed'&&!currentRating)
      ||currentRating===status;
-   const skillOk=skill==='all'||q.competence===skill;
+   const subjectOk=q.subjectCode===subject;
+   const domainOk=domain==='all'||q.domainCode===domain;
+   const skillOk=skill==='all'||q.competenceId===skill;
    const versionOk=version==='all'||String(q.version||1)===version;
    const searchOk=!search||String(q.id)===search||q.question.toLowerCase().includes(search)||q.competence.toLowerCase().includes(search);
-   return statusOk&&skillOk&&versionOk&&searchOk;
+   return statusOk&&subjectOk&&domainOk&&skillOk&&versionOk&&searchOk;
  });
  filteredQuestions.sort((a,b)=>{
    if(sortOrder==='version-desc') return (b.version||1)-(a.version||1)||a.id-b.id;

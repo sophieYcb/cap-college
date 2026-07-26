@@ -39,13 +39,37 @@ if(VALIDATION_CAMPAIGN_ID){
 }
 
 function initialiseThemeSelector(){
-  const select=document.getElementById('diagnosticSkill');
-  const themes=[...new Map(QUESTIONS.map(q=>[q.competenceId,{id:q.competenceId,name:q.competence,domain:q.domaine}])).values()]
-    .sort((a,b)=>a.domain.localeCompare(b.domain,'fr')||a.name.localeCompare(b.name,'fr'));
-  select.innerHTML='<option value="all">Tous les thèmes — diagnostic complet</option>'+themes.map(theme=>{
-    const count=QUESTIONS.filter(q=>q.competenceId===theme.id).length;
-    return `<option value="${theme.id}">${theme.domain} · ${theme.name} (${count} questions)</option>`;
-  }).join('');
+  const subjects=[...new Map(
+    QUESTIONS.map(q=>[q.subjectCode||'french',q.subject||'Français'])
+  ).entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr'));
+  document.getElementById('diagnosticSubject').innerHTML=subjects
+    .map(([code,name])=>`<option value="${code}">${name}</option>`).join('');
+  updateDiagnosticDomains();
+}
+
+function updateDiagnosticDomains(){
+  const subject=document.getElementById('diagnosticSubject').value;
+  const domains=[...new Map(
+    QUESTIONS.filter(q=>(q.subjectCode||'french')===subject)
+      .map(q=>[q.domainCode||q.domaine,q.domaine])
+  ).entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr'));
+  document.getElementById('diagnosticDomain').innerHTML=
+    '<option value="all">Toutes les catégories</option>'+
+    domains.map(([code,name])=>`<option value="${code}">${name}</option>`).join('');
+  updateDiagnosticSkills();
+}
+
+function updateDiagnosticSkills(){
+  const subject=document.getElementById('diagnosticSubject').value;
+  const domain=document.getElementById('diagnosticDomain').value;
+  const themes=[...new Map(
+    QUESTIONS.filter(q=>(q.subjectCode||'french')===subject)
+      .filter(q=>domain==='all'||(q.domainCode||q.domaine)===domain)
+      .map(q=>[q.competenceId,q.competence])
+  ).entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr'));
+  document.getElementById('diagnosticSkill').innerHTML=
+    '<option value="all">Toutes les sous-catégories</option>'+
+    themes.map(([id,name])=>`<option value="${id}">${name}</option>`).join('');
   refreshDiagnosticSize();
 }
 
@@ -55,7 +79,7 @@ function refreshDiagnosticSize(){
   const hint=document.getElementById('themeSelectionHint');
   if(hint){
     hint.textContent=selected==='all'
-      ?`${new Set(QUESTIONS.map(q=>q.competenceId)).size} thèmes disponibles · le diagnostic avancera progressivement`
+      ?`${select.options.length-1} sous-catégories disponibles · le diagnostic avancera progressivement`
       :`${select.options[select.selectedIndex].text} · séance ciblée sur ce thème`;
   }
 }
@@ -85,13 +109,18 @@ function shuffle(array){
   couvrent rapidement l'ensemble des compétences.
 */
 function buildBalancedDiagnostic(selectedSkill='all',limit=DIAGNOSTIC_SIZE){
+  const subject=document.getElementById('diagnosticSubject')?.value||'french';
+  const domain=document.getElementById('diagnosticDomain')?.value||'all';
+  const scopedQuestions=QUESTIONS
+    .filter(q=>(q.subjectCode||'french')===subject)
+    .filter(q=>domain==='all'||(q.domainCode||q.domaine)===domain);
   if(selectedSkill!=='all'){
     return prioritiseQuestions(
-      QUESTIONS.filter(q=>q.competenceId===selectedSkill)
+      scopedQuestions.filter(q=>q.competenceId===selectedSkill)
     ).slice(0,limit);
   }
   const groups={};
-  QUESTIONS.forEach(q=>{
+  scopedQuestions.forEach(q=>{
     if(!groups[q.competenceId])groups[q.competenceId]=[];
     groups[q.competenceId].push(q);
   });
@@ -109,10 +138,36 @@ function buildBalancedDiagnostic(selectedSkill='all',limit=DIAGNOSTIC_SIZE){
   }
 
   const selectedIds=new Set(selected.map(q=>q.id));
-  const remaining=shuffle(QUESTIONS.filter(q=>!selectedIds.has(q.id)));
-  selected.push(...remaining.slice(0,DIAGNOSTIC_SIZE-selected.length));
+  const targetSize=Math.min(limit,Math.max(selected.length,scopedQuestions.length));
+  const remaining=shuffle(scopedQuestions.filter(q=>!selectedIds.has(q.id)));
+  selected.push(...remaining.slice(0,targetSize-selected.length));
 
-  return selected.slice(0,Math.min(limit,DIAGNOSTIC_SIZE));
+  return selected.slice(0,targetSize);
+}
+
+function restoreDiagnosticSelection(skillId='all',subjectCode=null){
+  const matching=skillId==='all'
+    ?QUESTIONS.find(q=>(q.subjectCode||'french')===(subjectCode||'french'))
+    :QUESTIONS.find(q=>q.competenceId===skillId);
+  const subject=subjectCode||matching?.subjectCode||'french';
+  const subjectSelect=document.getElementById('diagnosticSubject');
+  if(subjectSelect.querySelector(`option[value="${subject}"]`)){
+    subjectSelect.value=subject;
+    updateDiagnosticDomains();
+  }
+  if(matching){
+    const domain=matching.domainCode||matching.domaine;
+    const domainSelect=document.getElementById('diagnosticDomain');
+    if(domainSelect.querySelector(`option[value="${domain}"]`)){
+      domainSelect.value=domain;
+      updateDiagnosticSkills();
+    }
+  }
+  const skillSelect=document.getElementById('diagnosticSkill');
+  if(skillSelect.querySelector(`option[value="${skillId}"]`)){
+    skillSelect.value=skillId;
+  }
+  refreshDiagnosticSize();
 }
 
 function prioritiseQuestions(questions){
@@ -151,6 +206,7 @@ async function startTest(){
     if(!replace){resumeTest();return;}
   }
   const selectedSkill=document.getElementById('diagnosticSkill').value;
+  const selectedSubject=document.getElementById('diagnosticSubject').value;
   plannedMinutes=selectedDuration();
   const questionLimit=plannedMinutes*APPROXIMATE_QUESTIONS_PER_MINUTE;
   diagnosticQuestions=buildBalancedDiagnostic(selectedSkill,questionLimit);
@@ -166,7 +222,8 @@ async function startTest(){
       const remote=await CapCollegeSupabase.startDiagnostic(
         plannedMinutes,
         selectedSkill,
-        VALIDATION_CAMPAIGN_ID
+        VALIDATION_CAMPAIGN_ID,
+        selectedSubject
       );
       remoteSessionId=remote.session_id;
       remoteDiagnosticId=remote.diagnostic_id;
@@ -209,10 +266,7 @@ async function resumeTest(){
     answerFeedback=Array(diagnosticQuestions.length).fill(null);
     const durationRadio=document.querySelector(`input[name="sessionDuration"][value="${plannedMinutes}"]`);
     if(durationRadio)durationRadio.checked=true;
-    if(document.querySelector(`#diagnosticSkill option[value="${remoteSkill}"]`)){
-      document.getElementById('diagnosticSkill').value=remoteSkill;
-      refreshDiagnosticSize();
-    }
+    restoreDiagnosticSelection(remoteSkill);
     refreshDurationSummary();
     saveProgress();
     showTest();
@@ -255,10 +309,7 @@ async function resumeTest(){
     if(durationRadio)durationRadio.checked=true;
     refreshDurationSummary();
     const restoredSkill=data.selectedSkill||'all';
-    if(document.querySelector(`#diagnosticSkill option[value="${restoredSkill}"]`)){
-      document.getElementById('diagnosticSkill').value=restoredSkill;
-      refreshDiagnosticSize();
-    }
+    restoreDiagnosticSelection(restoredSkill,data.selectedSubject||null);
     showTest();
     renderQuestion();
   }catch(e){
@@ -300,6 +351,7 @@ function saveProgress(){
     plannedMinutes,
     questionIds:diagnosticQuestions.map(q=>q.id),
     selectedSkill:document.getElementById('diagnosticSkill').value,
+    selectedSubject:document.getElementById('diagnosticSubject').value,
     savedAt:new Date().toISOString()
   };
   const serialized=JSON.stringify(payload);

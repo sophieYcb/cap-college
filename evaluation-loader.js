@@ -18,5 +18,5 @@ CapCollegeSupabase.bootstrap({
   loadQuestions: true,
   validationCampaignId
 })
-  .then(() => CapCollegeSupabase.appendScript("evaluation.js?v=5.3.14"))
+  .then(() => CapCollegeSupabase.appendScript("evaluation.js?v=5.3.18"))
   .catch(CapCollegeSupabase.showFatalError);
