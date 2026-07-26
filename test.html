@@ -11,7 +11,7 @@
  <div class="actions"><a class="btn btn-secondary" href="campagnes-validation.html">Campagnes de validation</a><a class="btn btn-secondary" href="index.html">Accueil</a></div>
  <section class="quality-summary" id="qualitySummary"></section>
  <section class="card quality-toolbar">
-  <label>Filtrer <select id="statusFilter" onchange="applyFilters()"><option value="all">Toutes</option><option value="unreviewed">Non testées</option><option value="A">A — excellente</option><option value="B">B — améliorable</option><option value="C">C — à réécrire</option><option value="D">D — à supprimer</option></select></label>
+  <label>Filtrer <select id="statusFilter" onchange="applyFilters()"><option value="all">Toutes</option><option value="flagged">🚩 Questions signalées</option><option value="unreviewed">Non testées</option><option value="A">A — excellente</option><option value="B">B — améliorable</option><option value="C">C — à réécrire</option><option value="D">D — à supprimer</option></select></label>
   <label>Thème <select id="skillFilter" onchange="applyFilters()"><option value="all">Tous les thèmes</option></select></label>
   <label>Version <select id="versionFilter" onchange="applyFilters()"><option value="all">Toutes</option></select></label>
   <label>Trier <select id="sortOrder" onchange="applyFilters()"><option value="id">N° de question</option><option value="version-desc">Version récente</option><option value="version-asc">Version ancienne</option></select></label>
@@ -59,7 +59,7 @@
 </main>
 <script src="supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-app.js?v=5.3.11"></script>
-<script src="test-loader.js?v=5.3.11"></script>
+<script src="supabase-app.js?v=5.3.14"></script>
+<script src="test-loader.js?v=5.3.14"></script>
 </body>
 </html>

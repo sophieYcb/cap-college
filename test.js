@@ -67,7 +67,14 @@ function initialise(){
  document.getElementById('skillFilter').innerHTML+=""+skills.map(s=>`<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
  const versions=[...new Set(QUESTIONS.map(q=>q.version||1))].sort((a,b)=>a-b);
  document.getElementById('versionFilter').innerHTML+=versions.map(v=>`<option value="${v}">Version ${v}</option>`).join('');
+ const query=new URLSearchParams(location.search);
+ if(query.get('filter')==='flagged')document.getElementById('statusFilter').value='flagged';
  applyFilters();
+ const requestedQuestion=query.get('question');
+ if(requestedQuestion){
+  const requestedIndex=filteredQuestions.findIndex(q=>String(q.id)===requestedQuestion);
+  if(requestedIndex>=0){currentIndex=requestedIndex;renderQuestion();}
+ }
 }
 function escapeHtml(v){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
 function applyFilters(){
@@ -80,7 +87,10 @@ function applyFilters(){
  filteredQuestions=QUESTIONS.filter(q=>{
    const r=reviewFor(q.id);
    const currentRating=isCurrentReview(q,r)?r.rating:'';
-   const statusOk=status==='all'||(status==='unreviewed'&&!currentRating)||currentRating===status;
+   const statusOk=status==='all'
+     ||(status==='flagged'&&q.openFlags>0)
+     ||(status==='unreviewed'&&!currentRating)
+     ||currentRating===status;
    const skillOk=skill==='all'||q.competence===skill;
    const versionOk=version==='all'||String(q.version||1)===version;
    const searchOk=!search||String(q.id)===search||q.question.toLowerCase().includes(search)||q.competence.toLowerCase().includes(search);
