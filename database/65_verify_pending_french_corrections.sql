@@ -2,7 +2,7 @@
 -------------------------------------------------------
 CAP-COLLEGE DATABASE
 Version : 1.0.0
-Fichier : 63_verify_pending_french_corrections.sql
+Fichier : 65_verify_pending_french_corrections.sql
 Objet   : Vérifier les corrections françaises en attente
 -------------------------------------------------------
 */

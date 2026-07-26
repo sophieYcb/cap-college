@@ -12,7 +12,7 @@ la feuille de route validée.
 - `57_question_bank_subcategories.sql` expose le niveau Compétence comme sous-catégorie visible, sans perdre les micro-compétences atomiques.
 - `59_count_maths_6e_correct_answers.sql` contrôle la répartition des bonnes réponses A/B/C/D des 80 premières questions de mathématiques 6e.
 - `60_correct_maths_6e_numeration.sql` applique les retours de validation et rééquilibre les réponses sans écraser la version précédente.
-- `62_correct_pending_french_questions.sql` aligne les types de phrases sur le programme 2025 et applique les derniers commentaires.
+- `64_correct_pending_french_questions.sql` aligne les types de phrases sur le programme 2025 et applique les derniers commentaires.
 - Chaque modification crée une version chronologique comparable à N−1.
 - Le diagnostic se construit au fil de séances d’une durée choisie.
 - La rapidité de réponse n’entre jamais dans l’évaluation.

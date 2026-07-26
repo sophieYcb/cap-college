@@ -3,7 +3,7 @@
  CAP-COLLEGE DATABASE - PENDING FRENCH QUESTION CORRECTIONS
 -------------------------------------------------------------------------------
  Version      : 1.0.0
- File         : database/62_correct_pending_french_questions.sql
+ File         : database/64_correct_pending_french_questions.sql
  Purpose      : Align sentence types with the 2025 cycle 3 curriculum and
                 apply the remaining validator comments.
  Idempotent   : Yes
@@ -212,18 +212,8 @@ begin
     set prompt = excluded.prompt,
         correction_explanation = excluded.correction_explanation,
         change_comment = excluded.change_comment,
-        review_status = excluded.review_status;
-
-    /*
-     * Une version portant déjà ce numéro peut avoir été créée par une
-     * migration antérieure avec un autre UUID. On récupère donc toujours
-     * l'identifiant réellement présent avant d'insérer ses réponses.
-     */
-    select version.id
-    into target_version_id
-    from public.question_versions version
-    where version.question_id = selected_question_id
-      and version.version_number = correction.target_version_number;
+        review_status = excluded.review_status
+    returning id into target_version_id;
 
     delete from public.answer_choices
     where question_version_id = target_version_id;
