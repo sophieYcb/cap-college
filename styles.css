@@ -87,6 +87,7 @@ p{line-height:1.6;color:var(--muted)}
 .theme-chevron{position:absolute;right:15px;top:50%;transform:translateY(-55%);pointer-events:none;color:var(--primary);font-size:1.35rem;font-weight:900}
 .theme-selection-hint{margin:9px 2px 0;color:#53627a;font-size:.83rem;line-height:1.35}
 .diagnostic-hierarchy{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.filter-label{display:block;margin:0 0 6px 2px;color:var(--text);font-size:.82rem;font-weight:800}
+.page-navigation{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 18px;padding:10px 14px;border:1px solid #dbe2ef;border-radius:14px;background:rgba(255,255,255,.78);box-shadow:0 6px 18px rgba(23,32,51,.05)}.breadcrumbs{display:flex;align-items:center;gap:8px;min-width:0;color:#647189;font-size:.86rem}.breadcrumbs a{color:var(--primary);font-weight:700;text-decoration:none}.breadcrumbs a:hover{text-decoration:underline}.breadcrumbs [aria-current="page"]{overflow:hidden;color:var(--text);font-weight:800;text-overflow:ellipsis;white-space:nowrap}.breadcrumb-separator{color:#9aa5b7;font-size:1.1rem}.page-navigation-actions{display:flex;gap:8px;flex:0 0 auto}.nav-button{min-height:38px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #d6deeb;border-radius:10px;padding:8px 13px;background:#f3f6fb;color:var(--text);font:800 .85rem/1 Arial,Helvetica,sans-serif;text-decoration:none;cursor:pointer}.nav-button:hover{border-color:#aebbd5;background:#eaf0f9}
 .duration-picker{margin:22px 0 0;padding:18px;border:1px solid #dfe5f2;border-radius:18px;background:#fafbfe}
 .duration-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 4px}
 .duration-options label{cursor:pointer}
@@ -129,6 +130,7 @@ footer{margin-top:36px;text-align:center;color:var(--muted);font-size:.9rem}
   .theme-picker-heading span:not(.theme-picker-icon){font-size:.76rem}
   .theme-select-wrap select{min-height:48px;padding-left:12px;font-size:.88rem}
   .diagnostic-hierarchy{grid-template-columns:1fr}
+  .page-navigation{align-items:stretch;flex-direction:column-reverse;padding:10px}.page-navigation-actions{display:grid;grid-template-columns:1fr 1fr}.breadcrumbs{overflow:hidden}
   .duration-picker{margin-top:16px;padding:13px}
   .duration-options{gap:7px}
   .duration-options span{min-height:44px}
