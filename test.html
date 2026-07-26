@@ -4,11 +4,14 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width,initial-scale=1">
  <title>Mode Validation — Cap Collège</title>
- <link rel="stylesheet" href="styles.css?v=5.3.21">
+ <link rel="stylesheet" href="styles.css?v=5.3.22">
 </head>
 <body class="validation-page">
 <main class="page quality-page">
  <section class="card quality-toolbar">
+  <div class="quality-primary-actions">
+   <a class="btn btn-secondary" href="importer-contenus.html">Importer des questions</a>
+  </div>
   <label>Matière <select id="subjectFilter" onchange="updateCategoryFilters()"></select></label>
   <label>Catégorie <select id="domainFilter" onchange="updateSubcategoryFilter()"></select></label>
   <label>Sous-catégorie <select id="skillFilter" onchange="applyFilters()"></select></label>
@@ -19,7 +22,6 @@
     <label>Version <select id="versionFilter" onchange="applyFilters()"><option value="all">Toutes</option></select></label>
     <label>Trier <select id="sortOrder" onchange="applyFilters()"><option value="id">N° de question</option><option value="version-desc">Version récente</option><option value="version-asc">Version ancienne</option></select></label>
     <label>Rechercher <input id="searchFilter" type="search" placeholder="mot ou numéro" oninput="applyFilters()"></label>
-    <a class="btn btn-secondary advanced-import-link" href="importer-contenus.html">Importer des contenus</a>
    </div>
   </details>
  </section>

@@ -76,6 +76,7 @@ CapCollegeSupabase.bootstrap()
     }
     if (activeRole === "validator" || activeRole === "administrator") {
       document.getElementById("pedagogicalTestLink").classList.remove("hidden");
+      document.getElementById("contentImportLink").classList.remove("hidden");
     }
     if (activeRole === "guardian" || activeRole === "teacher") {
       const notice = document.getElementById("profileWorkspaceNotice");

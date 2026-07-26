@@ -60,11 +60,11 @@
       ]
     },
     "importer-contenus.html": {
-      parent: "test.html",
+      parent: "campagnes-validation.html",
       crumbs: [
         ["index.html", "Accueil"],
-        ["test.html", "Validation des questions"],
-        [null, "Importer des contenus"]
+        ["campagnes-validation.html", "Espace de validation"],
+        [null, "Importer des questions"]
       ]
     }
   };
