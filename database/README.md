@@ -11,6 +11,7 @@ la feuille de route validée.
 - `56_verify_maths_6e_lot_02.sql` contrôle l’intégrité du deuxième lot de mathématiques 6e après son import.
 - `57_question_bank_subcategories.sql` expose le niveau Compétence comme sous-catégorie visible, sans perdre les micro-compétences atomiques.
 - `59_count_maths_6e_correct_answers.sql` contrôle la répartition des bonnes réponses A/B/C/D des 80 premières questions de mathématiques 6e.
+- `60_correct_maths_6e_numeration.sql` applique les retours de validation et rééquilibre les réponses sans écraser la version précédente.
 - Chaque modification crée une version chronologique comparable à N−1.
 - Le diagnostic se construit au fil de séances d’une durée choisie.
 - La rapidité de réponse n’entre jamais dans l’évaluation.

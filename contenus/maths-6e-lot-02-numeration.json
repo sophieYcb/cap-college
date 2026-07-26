@@ -161,15 +161,15 @@
       "microSkill": "m6_num_reconnaitre_decimal",
       "difficulty": 1,
       "prompt": "Pourquoi le nombre 8 est-il aussi un nombre décimal ?",
-      "choices": ["Parce qu’il est pair", "Parce qu’il peut s’écrire 8,0", "Parce qu’il est supérieur à 1", "Parce qu’il n’a pas de virgule"],
-      "correctIndex": 1,
+      "choices": ["Parce qu’il est pair", "Parce qu’il n’a pas de virgule", "Parce qu’il est supérieur à 1", "Parce qu’il peut s’écrire 8,0"],
+      "correctIndex": 3,
       "explanation": "Tout entier peut s’écrire avec une partie décimale nulle : 8 = 8,0."
     },
     {
       "code": "M6-0054",
       "microSkill": "m6_num_reconnaitre_decimal",
       "difficulty": 2,
-      "prompt": "Quelle égalité montre que 7/20 est un nombre décimal ?",
+      "prompt": "Quel résultat exact obtient-on en calculant 7 ÷ 20 ?",
       "choices": ["7/20 = 0,35", "7/20 = 0,777…", "7/20 = 3,5", "7/20 = 35"],
       "correctIndex": 0,
       "explanation": "7/20 = 0,35 : cette écriture à virgule est finie."
@@ -205,9 +205,9 @@
       "code": "M6-0058",
       "microSkill": "m6_num_reconnaitre_decimal",
       "difficulty": 3,
-      "prompt": "Parmi ces quotients, lequel a une écriture décimale finie ?",
-      "choices": ["2/15", "7/25", "5/18", "8/21"],
-      "correctIndex": 1,
+      "prompt": "Lequel de ces quotients a une écriture à virgule qui s’arrête ?",
+      "choices": ["7/25", "2/15", "5/18", "8/21"],
+      "correctIndex": 0,
       "explanation": "7/25 = 28/100 = 0,28 : son écriture décimale est finie."
     },
     {
@@ -233,8 +233,8 @@
       "microSkill": "m6_num_fraction_decimale",
       "difficulty": 1,
       "prompt": "Quelle est l’écriture à virgule de 7/10 ?",
-      "choices": ["0,07", "0,7", "7,0", "70"],
-      "correctIndex": 1,
+      "choices": ["0,07", "70", "7,0", "0,7"],
+      "correctIndex": 3,
       "explanation": "Sept dixièmes s’écrit 0,7."
     },
     {
