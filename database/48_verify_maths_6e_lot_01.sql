@@ -8,7 +8,7 @@ Objet   : Vérifier le premier lot de mathématiques 6e
 */
 
 with lot_questions as (
-    select q.id, q.status, q.active, q.current_question_version_id
+    select q.id, q.status, q.active, q.current_version_number
     from public.questions q
     where q.legacy_id between 600001 and 600040
 ),
@@ -23,7 +23,7 @@ choice_counts as (
         count(qc.id) as choice_count,
         count(qc.id) filter (where qc.is_correct) as correct_choice_count
     from lot_versions qv
-    left join public.question_choices qc
+    left join public.answer_choices qc
         on qc.question_version_id = qv.id
     group by qv.question_id
 )
@@ -59,7 +59,12 @@ select jsonb_build_object(
     ),
     'current_versions_linked', (
         select count(*)
-        from lot_questions
-        where current_question_version_id is not null
+        from lot_questions q
+        where exists (
+            select 1
+            from public.question_versions qv
+            where qv.question_id = q.id
+              and qv.version_number = q.current_version_number
+        )
     )
 ) as verification;
