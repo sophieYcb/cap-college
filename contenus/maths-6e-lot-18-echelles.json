@@ -1,0 +1,168 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {
+    "code": "proportionality",
+    "name": "Proportionnalité"
+  },
+  "skill": {
+    "code": "scales",
+    "name": "Échelles"
+  },
+  "lot": "M6-PROP-03",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_prop_echelle",
+      "teacherName": "Résoudre un problème simple d’échelle",
+      "studentName": "Utiliser une échelle",
+      "lessonReminder": "Une échelle indique la correspondance entre une longueur sur le dessin et la longueur réelle.",
+      "workedExample": "À l’échelle 1 cm pour 5 m, 3 cm représentent 15 m.",
+      "masteryCriteria": "Calculer une longueur réelle ou représentée avec une échelle simple."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M6-0631",
+      "microSkill": "m6_prop_echelle",
+      "difficulty": 1,
+      "prompt": "Sur un plan, 1 cm représente 5 m. Que représentent 3 cm ?",
+      "choices": [
+        "15 m",
+        "20 m",
+        "7,5 m",
+        "15 cm"
+      ],
+      "correctIndex": 0,
+      "explanation": "On applique la même proportion : 3 cm représentent 15 m."
+    },
+    {
+      "code": "M6-0632",
+      "microSkill": "m6_prop_echelle",
+      "difficulty": 1,
+      "prompt": "Sur un plan, 1 cm représente 10 m. Que représentent 4 cm ?",
+      "choices": [
+        "50 m",
+        "40 m",
+        "20 m",
+        "40 cm"
+      ],
+      "correctIndex": 1,
+      "explanation": "On applique la même proportion : 4 cm représentent 40 m."
+    },
+    {
+      "code": "M6-0633",
+      "microSkill": "m6_prop_echelle",
+      "difficulty": 1,
+      "prompt": "Sur un plan, 1 cm représente 20 m. Que représentent 6 cm ?",
+      "choices": [
+        "140 m",
+        "60 m",
+        "120 m",
+        "120 cm"
+      ],
+      "correctIndex": 2,
+      "explanation": "On applique la même proportion : 6 cm représentent 120 m."
+    },
+    {
+      "code": "M6-0634",
+      "microSkill": "m6_prop_echelle",
+      "difficulty": 2,
+      "prompt": "Sur un plan, 2 cm représente 10 m. Que représentent 7 cm ?",
+      "choices": [
+        "45 m",
+        "17,5 m",
+        "70 cm",
+        "35 m"
+      ],
+      "correctIndex": 3,
+      "explanation": "On applique la même proportion : 7 cm représentent 35 m."
+    },
+    {
+      "code": "M6-0635",
+      "microSkill": "m6_prop_echelle",
+      "difficulty": 2,
+      "prompt": "Sur un plan, 1 cm représente 50 m. Que représentent 2,5 cm ?",
+      "choices": [
+        "125 m",
+        "175 m",
+        "62,5 m",
+        "125 cm"
+      ],
+      "correctIndex": 0,
+      "explanation": "On applique la même proportion : 2,5 cm représentent 125 m."
+    },
+    {
+      "code": "M6-0636",
+      "microSkill": "m6_prop_echelle",
+      "difficulty": 2,
+      "prompt": "Sur un plan, 1 cm représente 100 m. Que représentent 3,2 cm ?",
+      "choices": [
+        "420 m",
+        "320 m",
+        "160 m",
+        "320 cm"
+      ],
+      "correctIndex": 1,
+      "explanation": "On applique la même proportion : 3,2 cm représentent 320 m."
+    },
+    {
+      "code": "M6-0637",
+      "microSkill": "m6_prop_echelle",
+      "difficulty": 2,
+      "prompt": "Sur un plan, 2 cm représente 5 m. Que représentent 12 cm ?",
+      "choices": [
+        "35 m",
+        "15 m",
+        "30 m",
+        "60 cm"
+      ],
+      "correctIndex": 2,
+      "explanation": "On applique la même proportion : 12 cm représentent 30 m."
+    },
+    {
+      "code": "M6-0638",
+      "microSkill": "m6_prop_echelle",
+      "difficulty": 3,
+      "prompt": "Sur un plan, 5 cm représente 20 m. Que représentent 8 cm ?",
+      "choices": [
+        "52 m",
+        "16 m",
+        "160 cm",
+        "32 m"
+      ],
+      "correctIndex": 3,
+      "explanation": "On applique la même proportion : 8 cm représentent 32 m."
+    },
+    {
+      "code": "M6-0639",
+      "microSkill": "m6_prop_echelle",
+      "difficulty": 3,
+      "prompt": "Sur un plan, 1 cm représente 250 m. Que représentent 1,6 cm ?",
+      "choices": [
+        "400 m",
+        "650 m",
+        "200 m",
+        "400 cm"
+      ],
+      "correctIndex": 0,
+      "explanation": "On applique la même proportion : 1,6 cm représentent 400 m."
+    },
+    {
+      "code": "M6-0640",
+      "microSkill": "m6_prop_echelle",
+      "difficulty": 3,
+      "prompt": "Sur un plan, 4 cm représente 100 m. Que représentent 7 cm ?",
+      "choices": [
+        "275 m",
+        "175 m",
+        "87,5 m",
+        "700 cm"
+      ],
+      "correctIndex": 1,
+      "explanation": "On applique la même proportion : 7 cm représentent 175 m."
+    }
+  ]
+}

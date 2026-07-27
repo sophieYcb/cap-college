@@ -1,0 +1,612 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {
+    "code": "data_management",
+    "name": "Organisation et gestion de données"
+  },
+  "skill": {
+    "code": "data_reading",
+    "name": "Lecture de données"
+  },
+  "lot": "M6-DATA-01",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_data_lire_tableau",
+      "teacherName": "Lire une donnée dans un tableau",
+      "studentName": "Lire une information dans un tableau",
+      "lessonReminder": "On repère la ligne et la colonne demandées, puis on lit la valeur à leur intersection.",
+      "workedExample": "À la ligne Mardi et dans la colonne Livres, on lit le nombre de livres du mardi.",
+      "masteryCriteria": "Lire une valeur dans un tableau décrit clairement."
+    },
+    {
+      "code": "m6_data_lire_barres",
+      "teacherName": "Lire une donnée dans un diagramme en barres",
+      "studentName": "Lire un diagramme en barres",
+      "lessonReminder": "La hauteur de chaque barre correspond à une valeur indiquée par l’axe gradué.",
+      "workedExample": "Une barre atteignant la graduation 12 représente la valeur 12.",
+      "masteryCriteria": "Lire et comparer des valeurs dans un diagramme en barres décrit par écrit."
+    },
+    {
+      "code": "m6_data_lire_circulaire",
+      "teacherName": "Lire une donnée dans un diagramme circulaire",
+      "studentName": "Lire un diagramme circulaire",
+      "lessonReminder": "Un disque entier représente 100 % ; un demi-disque 50 % et un quart de disque 25 %.",
+      "workedExample": "Un demi-disque colorié représente 50 %.",
+      "masteryCriteria": "Lire des proportions simples dans un diagramme circulaire décrit par écrit."
+    },
+    {
+      "code": "m6_data_lire_courbe",
+      "teacherName": "Lire une donnée sur une courbe",
+      "studentName": "Lire une courbe",
+      "lessonReminder": "On repère l’abscisse demandée puis on lit la valeur correspondante sur l’axe vertical.",
+      "workedExample": "À 10 h, un point placé à 18 indique une valeur de 18.",
+      "masteryCriteria": "Lire et comparer des points sur une courbe décrite par écrit."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M6-0641",
+      "microSkill": "m6_data_lire_tableau",
+      "difficulty": 1,
+      "prompt": "Un tableau indique pour lundi : 6 livres et 3 jeux. Combien de livres sont indiqués pour lundi ?",
+      "choices": [
+        "6",
+        "3",
+        "9",
+        "4"
+      ],
+      "correctIndex": 0,
+      "explanation": "À la ligne lundi, dans la colonne des livres, on lit 6."
+    },
+    {
+      "code": "M6-0642",
+      "microSkill": "m6_data_lire_tableau",
+      "difficulty": 1,
+      "prompt": "Un tableau indique pour mardi : 8 livres et 4 jeux. Combien de livres sont indiqués pour mardi ?",
+      "choices": [
+        "4",
+        "8",
+        "12",
+        "6"
+      ],
+      "correctIndex": 1,
+      "explanation": "À la ligne mardi, dans la colonne des livres, on lit 8."
+    },
+    {
+      "code": "M6-0643",
+      "microSkill": "m6_data_lire_tableau",
+      "difficulty": 1,
+      "prompt": "Un tableau indique pour mercredi : 10 livres et 5 jeux. Combien de livres sont indiqués pour mercredi ?",
+      "choices": [
+        "5",
+        "15",
+        "10",
+        "8"
+      ],
+      "correctIndex": 2,
+      "explanation": "À la ligne mercredi, dans la colonne des livres, on lit 10."
+    },
+    {
+      "code": "M6-0644",
+      "microSkill": "m6_data_lire_tableau",
+      "difficulty": 2,
+      "prompt": "Un tableau indique pour jeudi : 12 livres et 6 jeux. Combien de livres sont indiqués pour jeudi ?",
+      "choices": [
+        "6",
+        "18",
+        "10",
+        "12"
+      ],
+      "correctIndex": 3,
+      "explanation": "À la ligne jeudi, dans la colonne des livres, on lit 12."
+    },
+    {
+      "code": "M6-0645",
+      "microSkill": "m6_data_lire_tableau",
+      "difficulty": 2,
+      "prompt": "Un tableau indique pour vendredi : 14 livres et 7 jeux. Combien de livres sont indiqués pour vendredi ?",
+      "choices": [
+        "14",
+        "7",
+        "21",
+        "12"
+      ],
+      "correctIndex": 0,
+      "explanation": "À la ligne vendredi, dans la colonne des livres, on lit 14."
+    },
+    {
+      "code": "M6-0646",
+      "microSkill": "m6_data_lire_tableau",
+      "difficulty": 2,
+      "prompt": "Un tableau indique pour lundi : 16 livres et 8 jeux. Combien de livres sont indiqués pour lundi ?",
+      "choices": [
+        "8",
+        "16",
+        "24",
+        "14"
+      ],
+      "correctIndex": 1,
+      "explanation": "À la ligne lundi, dans la colonne des livres, on lit 16."
+    },
+    {
+      "code": "M6-0647",
+      "microSkill": "m6_data_lire_tableau",
+      "difficulty": 2,
+      "prompt": "Un tableau indique pour mardi : 18 livres et 9 jeux. Combien de livres sont indiqués pour mardi ?",
+      "choices": [
+        "9",
+        "27",
+        "18",
+        "16"
+      ],
+      "correctIndex": 2,
+      "explanation": "À la ligne mardi, dans la colonne des livres, on lit 18."
+    },
+    {
+      "code": "M6-0648",
+      "microSkill": "m6_data_lire_tableau",
+      "difficulty": 3,
+      "prompt": "Un tableau indique pour mercredi : 20 livres et 10 jeux. Combien de livres sont indiqués pour mercredi ?",
+      "choices": [
+        "10",
+        "30",
+        "18",
+        "20"
+      ],
+      "correctIndex": 3,
+      "explanation": "À la ligne mercredi, dans la colonne des livres, on lit 20."
+    },
+    {
+      "code": "M6-0649",
+      "microSkill": "m6_data_lire_tableau",
+      "difficulty": 3,
+      "prompt": "Un tableau indique pour jeudi : 22 livres et 11 jeux. Combien de livres sont indiqués pour jeudi ?",
+      "choices": [
+        "22",
+        "11",
+        "33",
+        "20"
+      ],
+      "correctIndex": 0,
+      "explanation": "À la ligne jeudi, dans la colonne des livres, on lit 22."
+    },
+    {
+      "code": "M6-0650",
+      "microSkill": "m6_data_lire_tableau",
+      "difficulty": 3,
+      "prompt": "Un tableau indique pour vendredi : 24 livres et 12 jeux. Combien de livres sont indiqués pour vendredi ?",
+      "choices": [
+        "12",
+        "24",
+        "36",
+        "22"
+      ],
+      "correctIndex": 1,
+      "explanation": "À la ligne vendredi, dans la colonne des livres, on lit 24."
+    },
+    {
+      "code": "M6-0651",
+      "microSkill": "m6_data_lire_barres",
+      "difficulty": 1,
+      "prompt": "Dans un diagramme en barres, la barre A atteint 5 et la barre B atteint 9. Quelle valeur représente la barre B ?",
+      "choices": [
+        "5",
+        "4",
+        "9",
+        "14"
+      ],
+      "correctIndex": 2,
+      "explanation": "La hauteur de la barre B atteint la graduation 9."
+    },
+    {
+      "code": "M6-0652",
+      "microSkill": "m6_data_lire_barres",
+      "difficulty": 1,
+      "prompt": "Dans un diagramme en barres, la barre A atteint 6 et la barre B atteint 11. Quelle valeur représente la barre B ?",
+      "choices": [
+        "6",
+        "5",
+        "17",
+        "11"
+      ],
+      "correctIndex": 3,
+      "explanation": "La hauteur de la barre B atteint la graduation 11."
+    },
+    {
+      "code": "M6-0653",
+      "microSkill": "m6_data_lire_barres",
+      "difficulty": 1,
+      "prompt": "Dans un diagramme en barres, la barre A atteint 7 et la barre B atteint 13. Quelle valeur représente la barre B ?",
+      "choices": [
+        "13",
+        "7",
+        "6",
+        "20"
+      ],
+      "correctIndex": 0,
+      "explanation": "La hauteur de la barre B atteint la graduation 13."
+    },
+    {
+      "code": "M6-0654",
+      "microSkill": "m6_data_lire_barres",
+      "difficulty": 2,
+      "prompt": "Dans un diagramme en barres, la barre A atteint 8 et la barre B atteint 15. Quelle valeur représente la barre B ?",
+      "choices": [
+        "8",
+        "15",
+        "7",
+        "23"
+      ],
+      "correctIndex": 1,
+      "explanation": "La hauteur de la barre B atteint la graduation 15."
+    },
+    {
+      "code": "M6-0655",
+      "microSkill": "m6_data_lire_barres",
+      "difficulty": 2,
+      "prompt": "Dans un diagramme en barres, la barre A atteint 9 et la barre B atteint 17. Quelle valeur représente la barre B ?",
+      "choices": [
+        "9",
+        "8",
+        "17",
+        "26"
+      ],
+      "correctIndex": 2,
+      "explanation": "La hauteur de la barre B atteint la graduation 17."
+    },
+    {
+      "code": "M6-0656",
+      "microSkill": "m6_data_lire_barres",
+      "difficulty": 2,
+      "prompt": "Dans un diagramme en barres, la barre A atteint 10 et la barre B atteint 19. Quelle valeur représente la barre B ?",
+      "choices": [
+        "10",
+        "9",
+        "29",
+        "19"
+      ],
+      "correctIndex": 3,
+      "explanation": "La hauteur de la barre B atteint la graduation 19."
+    },
+    {
+      "code": "M6-0657",
+      "microSkill": "m6_data_lire_barres",
+      "difficulty": 2,
+      "prompt": "Dans un diagramme en barres, la barre A atteint 11 et la barre B atteint 21. Quelle valeur représente la barre B ?",
+      "choices": [
+        "21",
+        "11",
+        "10",
+        "32"
+      ],
+      "correctIndex": 0,
+      "explanation": "La hauteur de la barre B atteint la graduation 21."
+    },
+    {
+      "code": "M6-0658",
+      "microSkill": "m6_data_lire_barres",
+      "difficulty": 3,
+      "prompt": "Dans un diagramme en barres, la barre A atteint 12 et la barre B atteint 23. Quelle valeur représente la barre B ?",
+      "choices": [
+        "12",
+        "23",
+        "11",
+        "35"
+      ],
+      "correctIndex": 1,
+      "explanation": "La hauteur de la barre B atteint la graduation 23."
+    },
+    {
+      "code": "M6-0659",
+      "microSkill": "m6_data_lire_barres",
+      "difficulty": 3,
+      "prompt": "Dans un diagramme en barres, la barre A atteint 13 et la barre B atteint 25. Quelle valeur représente la barre B ?",
+      "choices": [
+        "13",
+        "12",
+        "25",
+        "38"
+      ],
+      "correctIndex": 2,
+      "explanation": "La hauteur de la barre B atteint la graduation 25."
+    },
+    {
+      "code": "M6-0660",
+      "microSkill": "m6_data_lire_barres",
+      "difficulty": 3,
+      "prompt": "Dans un diagramme en barres, la barre A atteint 14 et la barre B atteint 27. Quelle valeur représente la barre B ?",
+      "choices": [
+        "14",
+        "13",
+        "41",
+        "27"
+      ],
+      "correctIndex": 3,
+      "explanation": "La hauteur de la barre B atteint la graduation 27."
+    },
+    {
+      "code": "M6-0661",
+      "microSkill": "m6_data_lire_circulaire",
+      "difficulty": 1,
+      "prompt": "Dans un diagramme circulaire, la moitié du disque est colorée. Quelle proportion cela représente-t-il ?",
+      "choices": [
+        "50 %",
+        "10 %",
+        "20 %",
+        "80 %"
+      ],
+      "correctIndex": 0,
+      "explanation": "La moitié du disque est colorée : cela correspond à 50 %."
+    },
+    {
+      "code": "M6-0662",
+      "microSkill": "m6_data_lire_circulaire",
+      "difficulty": 1,
+      "prompt": "Dans un diagramme circulaire, un quart du disque est coloré. Quelle proportion cela représente-t-il ?",
+      "choices": [
+        "10 %",
+        "25 %",
+        "20 %",
+        "80 %"
+      ],
+      "correctIndex": 1,
+      "explanation": "Un quart du disque est coloré : cela correspond à 25 %."
+    },
+    {
+      "code": "M6-0663",
+      "microSkill": "m6_data_lire_circulaire",
+      "difficulty": 1,
+      "prompt": "Dans un diagramme circulaire, trois quarts du disque sont colorés. Quelle proportion cela représente-t-il ?",
+      "choices": [
+        "10 %",
+        "20 %",
+        "75 %",
+        "80 %"
+      ],
+      "correctIndex": 2,
+      "explanation": "Trois quarts du disque sont colorés : cela correspond à 75 %."
+    },
+    {
+      "code": "M6-0664",
+      "microSkill": "m6_data_lire_circulaire",
+      "difficulty": 2,
+      "prompt": "Dans un diagramme circulaire, le disque entier est coloré. Quelle proportion cela représente-t-il ?",
+      "choices": [
+        "10 %",
+        "20 %",
+        "80 %",
+        "100 %"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le disque entier est coloré : cela correspond à 100 %."
+    },
+    {
+      "code": "M6-0665",
+      "microSkill": "m6_data_lire_circulaire",
+      "difficulty": 2,
+      "prompt": "Dans un diagramme circulaire, un dixième du disque est coloré. Quelle proportion cela représente-t-il ?",
+      "choices": [
+        "10 %",
+        "20 %",
+        "80 %",
+        "0 %"
+      ],
+      "correctIndex": 0,
+      "explanation": "Un dixième du disque est coloré : cela correspond à 10 %."
+    },
+    {
+      "code": "M6-0666",
+      "microSkill": "m6_data_lire_circulaire",
+      "difficulty": 2,
+      "prompt": "Dans un diagramme circulaire, deux quarts du disque sont colorés. Quelle proportion cela représente-t-il ?",
+      "choices": [
+        "10 %",
+        "50 %",
+        "20 %",
+        "80 %"
+      ],
+      "correctIndex": 1,
+      "explanation": "Deux quarts du disque sont colorés : cela correspond à 50 %."
+    },
+    {
+      "code": "M6-0667",
+      "microSkill": "m6_data_lire_circulaire",
+      "difficulty": 2,
+      "prompt": "Dans un diagramme circulaire, un demi-disque est coloré. Quelle proportion cela représente-t-il ?",
+      "choices": [
+        "10 %",
+        "20 %",
+        "50 %",
+        "80 %"
+      ],
+      "correctIndex": 2,
+      "explanation": "Un demi-disque est coloré : cela correspond à 50 %."
+    },
+    {
+      "code": "M6-0668",
+      "microSkill": "m6_data_lire_circulaire",
+      "difficulty": 3,
+      "prompt": "Dans un diagramme circulaire, un secteur représentant 20 parts sur 100 est coloré. Quelle proportion cela représente-t-il ?",
+      "choices": [
+        "10 %",
+        "80 %",
+        "0 %",
+        "20 %"
+      ],
+      "correctIndex": 3,
+      "explanation": "Un secteur représentant 20 parts sur 100 est coloré : cela correspond à 20 %."
+    },
+    {
+      "code": "M6-0669",
+      "microSkill": "m6_data_lire_circulaire",
+      "difficulty": 3,
+      "prompt": "Dans un diagramme circulaire, quatre quarts du disque sont colorés. Quelle proportion cela représente-t-il ?",
+      "choices": [
+        "100 %",
+        "10 %",
+        "20 %",
+        "80 %"
+      ],
+      "correctIndex": 0,
+      "explanation": "Quatre quarts du disque sont colorés : cela correspond à 100 %."
+    },
+    {
+      "code": "M6-0670",
+      "microSkill": "m6_data_lire_circulaire",
+      "difficulty": 3,
+      "prompt": "Dans un diagramme circulaire, un secteur représentant 5 parts sur 100 est coloré. Quelle proportion cela représente-t-il ?",
+      "choices": [
+        "10 %",
+        "5 %",
+        "20 %",
+        "80 %"
+      ],
+      "correctIndex": 1,
+      "explanation": "Un secteur représentant 5 parts sur 100 est coloré : cela correspond à 5 %."
+    },
+    {
+      "code": "M6-0671",
+      "microSkill": "m6_data_lire_courbe",
+      "difficulty": 1,
+      "prompt": "Une courbe passe par le point (8 h ; 12). Quelle valeur lit-on à 8 h ?",
+      "choices": [
+        "8",
+        "9",
+        "12",
+        "15"
+      ],
+      "correctIndex": 2,
+      "explanation": "À l’abscisse 8 h, l’ordonnée vaut 12."
+    },
+    {
+      "code": "M6-0672",
+      "microSkill": "m6_data_lire_courbe",
+      "difficulty": 1,
+      "prompt": "Une courbe passe par le point (9 h ; 15). Quelle valeur lit-on à 9 h ?",
+      "choices": [
+        "9",
+        "12",
+        "18",
+        "15"
+      ],
+      "correctIndex": 3,
+      "explanation": "À l’abscisse 9 h, l’ordonnée vaut 15."
+    },
+    {
+      "code": "M6-0673",
+      "microSkill": "m6_data_lire_courbe",
+      "difficulty": 1,
+      "prompt": "Une courbe passe par le point (10 h ; 18). Quelle valeur lit-on à 10 h ?",
+      "choices": [
+        "18",
+        "10",
+        "15",
+        "21"
+      ],
+      "correctIndex": 0,
+      "explanation": "À l’abscisse 10 h, l’ordonnée vaut 18."
+    },
+    {
+      "code": "M6-0674",
+      "microSkill": "m6_data_lire_courbe",
+      "difficulty": 2,
+      "prompt": "Une courbe passe par le point (11 h ; 21). Quelle valeur lit-on à 11 h ?",
+      "choices": [
+        "11",
+        "21",
+        "18",
+        "24"
+      ],
+      "correctIndex": 1,
+      "explanation": "À l’abscisse 11 h, l’ordonnée vaut 21."
+    },
+    {
+      "code": "M6-0675",
+      "microSkill": "m6_data_lire_courbe",
+      "difficulty": 2,
+      "prompt": "Une courbe passe par le point (12 h ; 24). Quelle valeur lit-on à 12 h ?",
+      "choices": [
+        "12",
+        "21",
+        "24",
+        "27"
+      ],
+      "correctIndex": 2,
+      "explanation": "À l’abscisse 12 h, l’ordonnée vaut 24."
+    },
+    {
+      "code": "M6-0676",
+      "microSkill": "m6_data_lire_courbe",
+      "difficulty": 2,
+      "prompt": "Une courbe passe par le point (13 h ; 27). Quelle valeur lit-on à 13 h ?",
+      "choices": [
+        "13",
+        "24",
+        "30",
+        "27"
+      ],
+      "correctIndex": 3,
+      "explanation": "À l’abscisse 13 h, l’ordonnée vaut 27."
+    },
+    {
+      "code": "M6-0677",
+      "microSkill": "m6_data_lire_courbe",
+      "difficulty": 2,
+      "prompt": "Une courbe passe par le point (14 h ; 30). Quelle valeur lit-on à 14 h ?",
+      "choices": [
+        "30",
+        "14",
+        "27",
+        "33"
+      ],
+      "correctIndex": 0,
+      "explanation": "À l’abscisse 14 h, l’ordonnée vaut 30."
+    },
+    {
+      "code": "M6-0678",
+      "microSkill": "m6_data_lire_courbe",
+      "difficulty": 3,
+      "prompt": "Une courbe passe par le point (15 h ; 33). Quelle valeur lit-on à 15 h ?",
+      "choices": [
+        "15",
+        "33",
+        "30",
+        "36"
+      ],
+      "correctIndex": 1,
+      "explanation": "À l’abscisse 15 h, l’ordonnée vaut 33."
+    },
+    {
+      "code": "M6-0679",
+      "microSkill": "m6_data_lire_courbe",
+      "difficulty": 3,
+      "prompt": "Une courbe passe par le point (16 h ; 36). Quelle valeur lit-on à 16 h ?",
+      "choices": [
+        "16",
+        "33",
+        "36",
+        "39"
+      ],
+      "correctIndex": 2,
+      "explanation": "À l’abscisse 16 h, l’ordonnée vaut 36."
+    },
+    {
+      "code": "M6-0680",
+      "microSkill": "m6_data_lire_courbe",
+      "difficulty": 3,
+      "prompt": "Une courbe passe par le point (17 h ; 39). Quelle valeur lit-on à 17 h ?",
+      "choices": [
+        "17",
+        "36",
+        "42",
+        "39"
+      ],
+      "correctIndex": 3,
+      "explanation": "À l’abscisse 17 h, l’ordonnée vaut 39."
+    }
+  ]
+}

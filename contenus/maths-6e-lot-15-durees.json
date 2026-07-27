@@ -1,0 +1,168 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {
+    "code": "quantities_measurement",
+    "name": "Grandeurs et mesures"
+  },
+  "skill": {
+    "code": "durations",
+    "name": "Durées"
+  },
+  "lot": "M6-MES-04",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_mes_convertir_duree",
+      "teacherName": "Convertir des durées",
+      "studentName": "Convertir des durées",
+      "lessonReminder": "Une heure vaut 60 minutes et une minute vaut 60 secondes.",
+      "workedExample": "2 h 30 min = 150 min.",
+      "masteryCriteria": "Convertir des heures, minutes et secondes."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M6-0541",
+      "microSkill": "m6_mes_convertir_duree",
+      "difficulty": 1,
+      "prompt": "Convertis 2 h.",
+      "choices": [
+        "120 min",
+        "60 min",
+        "2 h",
+        "200 min"
+      ],
+      "correctIndex": 0,
+      "explanation": "2 h correspond à 120 min."
+    },
+    {
+      "code": "M6-0542",
+      "microSkill": "m6_mes_convertir_duree",
+      "difficulty": 1,
+      "prompt": "Convertis 3 h 30 min.",
+      "choices": [
+        "150 min",
+        "210 min",
+        "180 min",
+        "90 s"
+      ],
+      "correctIndex": 1,
+      "explanation": "3 h 30 min correspond à 210 min."
+    },
+    {
+      "code": "M6-0543",
+      "microSkill": "m6_mes_convertir_duree",
+      "difficulty": 1,
+      "prompt": "Convertis 90 min.",
+      "choices": [
+        "60 min",
+        "180 min",
+        "1 h 30 min",
+        "200 min"
+      ],
+      "correctIndex": 2,
+      "explanation": "90 min correspond à 1 h 30 min."
+    },
+    {
+      "code": "M6-0544",
+      "microSkill": "m6_mes_convertir_duree",
+      "difficulty": 2,
+      "prompt": "Convertis 4 min.",
+      "choices": [
+        "150 min",
+        "2 h",
+        "90 s",
+        "240 s"
+      ],
+      "correctIndex": 3,
+      "explanation": "4 min correspond à 240 s."
+    },
+    {
+      "code": "M6-0545",
+      "microSkill": "m6_mes_convertir_duree",
+      "difficulty": 2,
+      "prompt": "Convertis 150 s.",
+      "choices": [
+        "2 min 30 s",
+        "60 min",
+        "180 min",
+        "200 min"
+      ],
+      "correctIndex": 0,
+      "explanation": "150 s correspond à 2 min 30 s."
+    },
+    {
+      "code": "M6-0546",
+      "microSkill": "m6_mes_convertir_duree",
+      "difficulty": 2,
+      "prompt": "Convertis 1 h 15 min.",
+      "choices": [
+        "150 min",
+        "75 min",
+        "180 min",
+        "90 s"
+      ],
+      "correctIndex": 1,
+      "explanation": "1 h 15 min correspond à 75 min."
+    },
+    {
+      "code": "M6-0547",
+      "microSkill": "m6_mes_convertir_duree",
+      "difficulty": 2,
+      "prompt": "Convertis 300 min.",
+      "choices": [
+        "60 min",
+        "2 h",
+        "5 h",
+        "200 min"
+      ],
+      "correctIndex": 2,
+      "explanation": "300 min correspond à 5 h."
+    },
+    {
+      "code": "M6-0548",
+      "microSkill": "m6_mes_convertir_duree",
+      "difficulty": 3,
+      "prompt": "Convertis 2 h 05 min.",
+      "choices": [
+        "150 min",
+        "180 min",
+        "90 s",
+        "125 min"
+      ],
+      "correctIndex": 3,
+      "explanation": "2 h 05 min correspond à 125 min."
+    },
+    {
+      "code": "M6-0549",
+      "microSkill": "m6_mes_convertir_duree",
+      "difficulty": 3,
+      "prompt": "Convertis 3 600 s.",
+      "choices": [
+        "1 h",
+        "60 min",
+        "180 min",
+        "200 min"
+      ],
+      "correctIndex": 0,
+      "explanation": "3 600 s correspond à 1 h."
+    },
+    {
+      "code": "M6-0550",
+      "microSkill": "m6_mes_convertir_duree",
+      "difficulty": 3,
+      "prompt": "Convertis 1,5 h.",
+      "choices": [
+        "150 min",
+        "90 min",
+        "2 h",
+        "90 s"
+      ],
+      "correctIndex": 1,
+      "explanation": "1,5 h correspond à 90 min."
+    }
+  ]
+}

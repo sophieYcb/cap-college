@@ -1,0 +1,612 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {
+    "code": "proportionality",
+    "name": "Proportionnalité"
+  },
+  "skill": {
+    "code": "proportionality_methods",
+    "name": "Méthodes de proportionnalité"
+  },
+  "lot": "M6-PROP-02",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_prop_linearite_additive",
+      "teacherName": "Utiliser la linéarité additive",
+      "studentName": "Additionner dans un tableau de proportionnalité",
+      "lessonReminder": "Dans une situation proportionnelle, on peut additionner deux quantités et additionner leurs valeurs associées.",
+      "workedExample": "2 objets coûtent 6 € et 3 objets coûtent 9 € ; 5 objets coûtent 15 €.",
+      "masteryCriteria": "Utiliser l’addition de colonnes dans une situation proportionnelle."
+    },
+    {
+      "code": "m6_prop_retour_unite",
+      "teacherName": "Résoudre par retour à l’unité",
+      "studentName": "Passer par la valeur pour une unité",
+      "lessonReminder": "On cherche d’abord la valeur pour une unité, puis on la multiplie par la quantité demandée.",
+      "workedExample": "5 cahiers coûtent 15 € : un cahier coûte 3 €, donc 8 cahiers coûtent 24 €.",
+      "masteryCriteria": "Résoudre une situation proportionnelle par retour à l’unité."
+    },
+    {
+      "code": "m6_prop_lire_tableau",
+      "teacherName": "Lire un tableau de proportionnalité",
+      "studentName": "Lire un tableau de proportionnalité",
+      "lessonReminder": "Dans un tableau de proportionnalité, les valeurs d’une même colonne sont associées.",
+      "workedExample": "Si la colonne indique 4 objets et 12 €, alors 4 objets coûtent 12 €.",
+      "masteryCriteria": "Lire une valeur ou une association dans un tableau proportionnel décrit par écrit."
+    },
+    {
+      "code": "m6_prop_completer_tableau",
+      "teacherName": "Compléter un tableau de proportionnalité",
+      "studentName": "Compléter un tableau de proportionnalité",
+      "lessonReminder": "On utilise le même coefficient de proportionnalité dans toutes les colonnes.",
+      "workedExample": "Si le prix vaut 4 fois la quantité, 7 objets coûtent 28 €.",
+      "masteryCriteria": "Calculer une valeur manquante dans un tableau proportionnel."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M6-0591",
+      "microSkill": "m6_prop_linearite_additive",
+      "difficulty": 1,
+      "prompt": "2 objets coûtent 6 € et 3 objets coûtent 9 €. Combien coûtent 5 objets ?",
+      "choices": [
+        "15 €",
+        "16 €",
+        "10 €",
+        "20 €"
+      ],
+      "correctIndex": 0,
+      "explanation": "On additionne les colonnes : 2 + 3 = 5 et 6 + 9 = 15."
+    },
+    {
+      "code": "M6-0592",
+      "microSkill": "m6_prop_linearite_additive",
+      "difficulty": 1,
+      "prompt": "4 objets coûtent 12 € et 5 objets coûtent 15 €. Combien coûtent 9 objets ?",
+      "choices": [
+        "28 €",
+        "27 €",
+        "18 €",
+        "36 €"
+      ],
+      "correctIndex": 1,
+      "explanation": "On additionne les colonnes : 4 + 5 = 9 et 12 + 15 = 27."
+    },
+    {
+      "code": "M6-0593",
+      "microSkill": "m6_prop_linearite_additive",
+      "difficulty": 1,
+      "prompt": "3 objets coûtent 8 € et 6 objets coûtent 16 €. Combien coûtent 9 objets ?",
+      "choices": [
+        "25 €",
+        "15 €",
+        "24 €",
+        "33 €"
+      ],
+      "correctIndex": 2,
+      "explanation": "On additionne les colonnes : 3 + 6 = 9 et 8 + 16 = 24."
+    },
+    {
+      "code": "M6-0594",
+      "microSkill": "m6_prop_linearite_additive",
+      "difficulty": 2,
+      "prompt": "5 objets coûtent 20 € et 2 objets coûtent 8 €. Combien coûtent 7 objets ?",
+      "choices": [
+        "29 €",
+        "21 €",
+        "35 €",
+        "28 €"
+      ],
+      "correctIndex": 3,
+      "explanation": "On additionne les colonnes : 5 + 2 = 7 et 20 + 8 = 28."
+    },
+    {
+      "code": "M6-0595",
+      "microSkill": "m6_prop_linearite_additive",
+      "difficulty": 2,
+      "prompt": "7 objets coûtent 14 € et 3 objets coûtent 6 €. Combien coûtent 10 objets ?",
+      "choices": [
+        "20 €",
+        "21 €",
+        "10 €",
+        "30 €"
+      ],
+      "correctIndex": 0,
+      "explanation": "On additionne les colonnes : 7 + 3 = 10 et 14 + 6 = 20."
+    },
+    {
+      "code": "M6-0596",
+      "microSkill": "m6_prop_linearite_additive",
+      "difficulty": 2,
+      "prompt": "4 objets coûtent 10 € et 8 objets coûtent 20 €. Combien coûtent 12 objets ?",
+      "choices": [
+        "31 €",
+        "30 €",
+        "18 €",
+        "42 €"
+      ],
+      "correctIndex": 1,
+      "explanation": "On additionne les colonnes : 4 + 8 = 12 et 10 + 20 = 30."
+    },
+    {
+      "code": "M6-0597",
+      "microSkill": "m6_prop_linearite_additive",
+      "difficulty": 2,
+      "prompt": "6 objets coûtent 18 € et 5 objets coûtent 15 €. Combien coûtent 11 objets ?",
+      "choices": [
+        "34 €",
+        "22 €",
+        "33 €",
+        "44 €"
+      ],
+      "correctIndex": 2,
+      "explanation": "On additionne les colonnes : 6 + 5 = 11 et 18 + 15 = 33."
+    },
+    {
+      "code": "M6-0598",
+      "microSkill": "m6_prop_linearite_additive",
+      "difficulty": 3,
+      "prompt": "9 objets coûtent 27 € et 4 objets coûtent 12 €. Combien coûtent 13 objets ?",
+      "choices": [
+        "40 €",
+        "26 €",
+        "52 €",
+        "39 €"
+      ],
+      "correctIndex": 3,
+      "explanation": "On additionne les colonnes : 9 + 4 = 13 et 27 + 12 = 39."
+    },
+    {
+      "code": "M6-0599",
+      "microSkill": "m6_prop_linearite_additive",
+      "difficulty": 3,
+      "prompt": "12 objets coûtent 30 € et 8 objets coûtent 20 €. Combien coûtent 20 objets ?",
+      "choices": [
+        "50 €",
+        "51 €",
+        "30 €",
+        "70 €"
+      ],
+      "correctIndex": 0,
+      "explanation": "On additionne les colonnes : 12 + 8 = 20 et 30 + 20 = 50."
+    },
+    {
+      "code": "M6-0600",
+      "microSkill": "m6_prop_linearite_additive",
+      "difficulty": 3,
+      "prompt": "15 objets coûtent 45 € et 7 objets coûtent 21 €. Combien coûtent 22 objets ?",
+      "choices": [
+        "67 €",
+        "66 €",
+        "44 €",
+        "88 €"
+      ],
+      "correctIndex": 1,
+      "explanation": "On additionne les colonnes : 15 + 7 = 22 et 45 + 21 = 66."
+    },
+    {
+      "code": "M6-0601",
+      "microSkill": "m6_prop_retour_unite",
+      "difficulty": 1,
+      "prompt": "5 objets coûtent 15 €. Combien coûtent 8 objets ?",
+      "choices": [
+        "29 €",
+        "19 €",
+        "24 €",
+        "15 €"
+      ],
+      "correctIndex": 2,
+      "explanation": "Une unité coûte 3 €, puis on multiplie par 8."
+    },
+    {
+      "code": "M6-0602",
+      "microSkill": "m6_prop_retour_unite",
+      "difficulty": 1,
+      "prompt": "4 objets coûtent 20 €. Combien coûtent 7 objets ?",
+      "choices": [
+        "39 €",
+        "31 €",
+        "20 €",
+        "35 €"
+      ],
+      "correctIndex": 3,
+      "explanation": "Une unité coûte 5 €, puis on multiplie par 7."
+    },
+    {
+      "code": "M6-0603",
+      "microSkill": "m6_prop_retour_unite",
+      "difficulty": 1,
+      "prompt": "6 objets coûtent 18 €. Combien coûtent 10 objets ?",
+      "choices": [
+        "30 €",
+        "36 €",
+        "24 €",
+        "18 €"
+      ],
+      "correctIndex": 0,
+      "explanation": "Une unité coûte 3 €, puis on multiplie par 10."
+    },
+    {
+      "code": "M6-0604",
+      "microSkill": "m6_prop_retour_unite",
+      "difficulty": 2,
+      "prompt": "8 objets coûtent 32 €. Combien coûtent 3 objets ?",
+      "choices": [
+        "20 €",
+        "12 €",
+        "4 €",
+        "32 €"
+      ],
+      "correctIndex": 1,
+      "explanation": "Une unité coûte 4 €, puis on multiplie par 3."
+    },
+    {
+      "code": "M6-0605",
+      "microSkill": "m6_prop_retour_unite",
+      "difficulty": 2,
+      "prompt": "5 objets coûtent 12,5 €. Combien coûtent 12 objets ?",
+      "choices": [
+        "35 €",
+        "25 €",
+        "30 €",
+        "12,5 €"
+      ],
+      "correctIndex": 2,
+      "explanation": "Une unité coûte 2,5 €, puis on multiplie par 12."
+    },
+    {
+      "code": "M6-0606",
+      "microSkill": "m6_prop_retour_unite",
+      "difficulty": 2,
+      "prompt": "9 objets coûtent 27 €. Combien coûtent 14 objets ?",
+      "choices": [
+        "51 €",
+        "33 €",
+        "27 €",
+        "42 €"
+      ],
+      "correctIndex": 3,
+      "explanation": "Une unité coûte 3 €, puis on multiplie par 14."
+    },
+    {
+      "code": "M6-0607",
+      "microSkill": "m6_prop_retour_unite",
+      "difficulty": 2,
+      "prompt": "7 objets coûtent 21 €. Combien coûtent 20 objets ?",
+      "choices": [
+        "60 €",
+        "67 €",
+        "53 €",
+        "21 €"
+      ],
+      "correctIndex": 0,
+      "explanation": "Une unité coûte 3 €, puis on multiplie par 20."
+    },
+    {
+      "code": "M6-0608",
+      "microSkill": "m6_prop_retour_unite",
+      "difficulty": 3,
+      "prompt": "12 objets coûtent 48 €. Combien coûtent 5 objets ?",
+      "choices": [
+        "32 €",
+        "20 €",
+        "8 €",
+        "48 €"
+      ],
+      "correctIndex": 1,
+      "explanation": "Une unité coûte 4 €, puis on multiplie par 5."
+    },
+    {
+      "code": "M6-0609",
+      "microSkill": "m6_prop_retour_unite",
+      "difficulty": 3,
+      "prompt": "15 objets coûtent 30 €. Combien coûtent 22 objets ?",
+      "choices": [
+        "59 €",
+        "29 €",
+        "44 €",
+        "30 €"
+      ],
+      "correctIndex": 2,
+      "explanation": "Une unité coûte 2 €, puis on multiplie par 22."
+    },
+    {
+      "code": "M6-0610",
+      "microSkill": "m6_prop_retour_unite",
+      "difficulty": 3,
+      "prompt": "25 objets coûtent 75 €. Combien coûtent 16 objets ?",
+      "choices": [
+        "73 €",
+        "23 €",
+        "75 €",
+        "48 €"
+      ],
+      "correctIndex": 3,
+      "explanation": "Une unité coûte 3 €, puis on multiplie par 16."
+    },
+    {
+      "code": "M6-0611",
+      "microSkill": "m6_prop_lire_tableau",
+      "difficulty": 1,
+      "prompt": "Tableau : quantité 2 → prix 6 € ; quantité 5 → prix 15 €. Quel prix est associé à la quantité 5 ?",
+      "choices": [
+        "15 €",
+        "6 €",
+        "5 €",
+        "17 €"
+      ],
+      "correctIndex": 0,
+      "explanation": "Dans la colonne de la quantité 5, on lit le prix 15 €."
+    },
+    {
+      "code": "M6-0612",
+      "microSkill": "m6_prop_lire_tableau",
+      "difficulty": 1,
+      "prompt": "Tableau : quantité 3 → prix 12 € ; quantité 7 → prix 28 €. Quel prix est associé à la quantité 7 ?",
+      "choices": [
+        "12 €",
+        "28 €",
+        "7 €",
+        "31 €"
+      ],
+      "correctIndex": 1,
+      "explanation": "Dans la colonne de la quantité 7, on lit le prix 28 €."
+    },
+    {
+      "code": "M6-0613",
+      "microSkill": "m6_prop_lire_tableau",
+      "difficulty": 1,
+      "prompt": "Tableau : quantité 4 → prix 10 € ; quantité 8 → prix 20 €. Quel prix est associé à la quantité 8 ?",
+      "choices": [
+        "10 €",
+        "8 €",
+        "20 €",
+        "24 €"
+      ],
+      "correctIndex": 2,
+      "explanation": "Dans la colonne de la quantité 8, on lit le prix 20 €."
+    },
+    {
+      "code": "M6-0614",
+      "microSkill": "m6_prop_lire_tableau",
+      "difficulty": 2,
+      "prompt": "Tableau : quantité 5 → prix 20 € ; quantité 9 → prix 36 €. Quel prix est associé à la quantité 9 ?",
+      "choices": [
+        "20 €",
+        "9 €",
+        "41 €",
+        "36 €"
+      ],
+      "correctIndex": 3,
+      "explanation": "Dans la colonne de la quantité 9, on lit le prix 36 €."
+    },
+    {
+      "code": "M6-0615",
+      "microSkill": "m6_prop_lire_tableau",
+      "difficulty": 2,
+      "prompt": "Tableau : quantité 6 → prix 18 € ; quantité 11 → prix 33 €. Quel prix est associé à la quantité 11 ?",
+      "choices": [
+        "33 €",
+        "18 €",
+        "11 €",
+        "39 €"
+      ],
+      "correctIndex": 0,
+      "explanation": "Dans la colonne de la quantité 11, on lit le prix 33 €."
+    },
+    {
+      "code": "M6-0616",
+      "microSkill": "m6_prop_lire_tableau",
+      "difficulty": 2,
+      "prompt": "Tableau : quantité 7 → prix 14 € ; quantité 15 → prix 30 €. Quel prix est associé à la quantité 15 ?",
+      "choices": [
+        "14 €",
+        "30 €",
+        "15 €",
+        "37 €"
+      ],
+      "correctIndex": 1,
+      "explanation": "Dans la colonne de la quantité 15, on lit le prix 30 €."
+    },
+    {
+      "code": "M6-0617",
+      "microSkill": "m6_prop_lire_tableau",
+      "difficulty": 2,
+      "prompt": "Tableau : quantité 8 → prix 24 € ; quantité 12 → prix 36 €. Quel prix est associé à la quantité 12 ?",
+      "choices": [
+        "24 €",
+        "12 €",
+        "36 €",
+        "44 €"
+      ],
+      "correctIndex": 2,
+      "explanation": "Dans la colonne de la quantité 12, on lit le prix 36 €."
+    },
+    {
+      "code": "M6-0618",
+      "microSkill": "m6_prop_lire_tableau",
+      "difficulty": 3,
+      "prompt": "Tableau : quantité 9 → prix 45 € ; quantité 13 → prix 65 €. Quel prix est associé à la quantité 13 ?",
+      "choices": [
+        "45 €",
+        "13 €",
+        "74 €",
+        "65 €"
+      ],
+      "correctIndex": 3,
+      "explanation": "Dans la colonne de la quantité 13, on lit le prix 65 €."
+    },
+    {
+      "code": "M6-0619",
+      "microSkill": "m6_prop_lire_tableau",
+      "difficulty": 3,
+      "prompt": "Tableau : quantité 10 → prix 25 € ; quantité 18 → prix 45 €. Quel prix est associé à la quantité 18 ?",
+      "choices": [
+        "45 €",
+        "25 €",
+        "18 €",
+        "55 €"
+      ],
+      "correctIndex": 0,
+      "explanation": "Dans la colonne de la quantité 18, on lit le prix 45 €."
+    },
+    {
+      "code": "M6-0620",
+      "microSkill": "m6_prop_lire_tableau",
+      "difficulty": 3,
+      "prompt": "Tableau : quantité 12 → prix 36 € ; quantité 20 → prix 60 €. Quel prix est associé à la quantité 20 ?",
+      "choices": [
+        "36 €",
+        "60 €",
+        "20 €",
+        "72 €"
+      ],
+      "correctIndex": 1,
+      "explanation": "Dans la colonne de la quantité 20, on lit le prix 60 €."
+    },
+    {
+      "code": "M6-0621",
+      "microSkill": "m6_prop_completer_tableau",
+      "difficulty": 1,
+      "prompt": "Tableau proportionnel : 2 correspond à 6. Quelle valeur correspond à 7 ?",
+      "choices": [
+        "23",
+        "19",
+        "21",
+        "13"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le coefficient vaut 3; 7 × 3 = 21."
+    },
+    {
+      "code": "M6-0622",
+      "microSkill": "m6_prop_completer_tableau",
+      "difficulty": 1,
+      "prompt": "Tableau proportionnel : 3 correspond à 12. Quelle valeur correspond à 8 ?",
+      "choices": [
+        "35",
+        "29",
+        "20",
+        "32"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le coefficient vaut 4; 8 × 4 = 32."
+    },
+    {
+      "code": "M6-0623",
+      "microSkill": "m6_prop_completer_tableau",
+      "difficulty": 1,
+      "prompt": "Tableau proportionnel : 4 correspond à 10. Quelle valeur correspond à 12 ?",
+      "choices": [
+        "30",
+        "34",
+        "26",
+        "22"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le coefficient vaut 2.5; 12 × 2.5 = 30."
+    },
+    {
+      "code": "M6-0624",
+      "microSkill": "m6_prop_completer_tableau",
+      "difficulty": 2,
+      "prompt": "Tableau proportionnel : 5 correspond à 20. Quelle valeur correspond à 9 ?",
+      "choices": [
+        "41",
+        "36",
+        "31",
+        "29"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le coefficient vaut 4; 9 × 4 = 36."
+    },
+    {
+      "code": "M6-0625",
+      "microSkill": "m6_prop_completer_tableau",
+      "difficulty": 2,
+      "prompt": "Tableau proportionnel : 6 correspond à 18. Quelle valeur correspond à 14 ?",
+      "choices": [
+        "48",
+        "36",
+        "42",
+        "32"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le coefficient vaut 3; 14 × 3 = 42."
+    },
+    {
+      "code": "M6-0626",
+      "microSkill": "m6_prop_completer_tableau",
+      "difficulty": 2,
+      "prompt": "Tableau proportionnel : 7 correspond à 14. Quelle valeur correspond à 25 ?",
+      "choices": [
+        "57",
+        "43",
+        "39",
+        "50"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le coefficient vaut 2; 25 × 2 = 50."
+    },
+    {
+      "code": "M6-0627",
+      "microSkill": "m6_prop_completer_tableau",
+      "difficulty": 2,
+      "prompt": "Tableau proportionnel : 8 correspond à 24. Quelle valeur correspond à 15 ?",
+      "choices": [
+        "45",
+        "53",
+        "37",
+        "39"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le coefficient vaut 3; 15 × 3 = 45."
+    },
+    {
+      "code": "M6-0628",
+      "microSkill": "m6_prop_completer_tableau",
+      "difficulty": 3,
+      "prompt": "Tableau proportionnel : 9 correspond à 45. Quelle valeur correspond à 16 ?",
+      "choices": [
+        "89",
+        "80",
+        "71",
+        "61"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le coefficient vaut 5; 16 × 5 = 80."
+    },
+    {
+      "code": "M6-0629",
+      "microSkill": "m6_prop_completer_tableau",
+      "difficulty": 3,
+      "prompt": "Tableau proportionnel : 10 correspond à 25. Quelle valeur correspond à 22 ?",
+      "choices": [
+        "65",
+        "45",
+        "55",
+        "47"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le coefficient vaut 2.5; 22 × 2.5 = 55."
+    },
+    {
+      "code": "M6-0630",
+      "microSkill": "m6_prop_completer_tableau",
+      "difficulty": 3,
+      "prompt": "Tableau proportionnel : 12 correspond à 36. Quelle valeur correspond à 30 ?",
+      "choices": [
+        "102",
+        "78",
+        "66",
+        "90"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le coefficient vaut 3; 30 × 3 = 90."
+    }
+  ]
+}

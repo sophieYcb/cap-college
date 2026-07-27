@@ -1,0 +1,612 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {
+    "code": "proportionality",
+    "name": "Proportionnalité"
+  },
+  "skill": {
+    "code": "proportionality_basics",
+    "name": "Fondamentaux de la proportionnalité"
+  },
+  "lot": "M6-PROP-01",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_prop_definition",
+      "teacherName": "Reconnaître la définition de deux grandeurs proportionnelles",
+      "studentName": "Comprendre la proportionnalité",
+      "lessonReminder": "Deux grandeurs sont proportionnelles lorsque l’on passe de l’une à l’autre en multipliant toujours par le même nombre.",
+      "workedExample": "Si chaque carnet coûte 3 €, le prix est toujours le nombre de carnets multiplié par 3.",
+      "masteryCriteria": "Identifier la définition d’une relation de proportionnalité."
+    },
+    {
+      "code": "m6_prop_identifier",
+      "teacherName": "Identifier une situation de proportionnalité",
+      "studentName": "Reconnaître une situation proportionnelle",
+      "lessonReminder": "Dans une situation proportionnelle, le même coefficient multiplicateur relie toutes les valeurs.",
+      "workedExample": "À prix unitaire constant, le prix est proportionnel à la quantité.",
+      "masteryCriteria": "Identifier des situations usuelles de proportionnalité."
+    },
+    {
+      "code": "m6_prop_non_proportionnelle",
+      "teacherName": "Identifier une situation non proportionnelle",
+      "studentName": "Reconnaître une situation non proportionnelle",
+      "lessonReminder": "Une situation n’est pas proportionnelle si le rapport entre les deux grandeurs n’est pas constant.",
+      "workedExample": "L’âge et la taille d’une personne ne sont pas proportionnels.",
+      "masteryCriteria": "Identifier des situations qui ne relèvent pas de la proportionnalité."
+    },
+    {
+      "code": "m6_prop_linearite_multiplicative",
+      "teacherName": "Utiliser la linéarité multiplicative",
+      "studentName": "Multiplier dans un tableau de proportionnalité",
+      "lessonReminder": "Dans une situation proportionnelle, si une quantité est multipliée par un nombre, la grandeur associée est multipliée par le même nombre.",
+      "workedExample": "3 objets coûtent 12 € ; 6 objets coûtent 24 €.",
+      "masteryCriteria": "Utiliser un facteur multiplicatif pour compléter une situation proportionnelle."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M6-0551",
+      "microSkill": "m6_prop_definition",
+      "difficulty": 1,
+      "prompt": "Quelle phrase définit deux grandeurs proportionnelles ?",
+      "choices": [
+        "On passe toujours de l’une à l’autre en multipliant par le même nombre.",
+        "Elles augmentent toujours de 1.",
+        "Elles ont toujours la même unité.",
+        "Elles sont toujours égales."
+      ],
+      "correctIndex": 0,
+      "explanation": "La présence d’un coefficient multiplicateur constant définit la proportionnalité."
+    },
+    {
+      "code": "M6-0552",
+      "microSkill": "m6_prop_definition",
+      "difficulty": 1,
+      "prompt": "Dans une situation proportionnelle, le coefficient de proportionnalité est…",
+      "choices": [
+        "variable",
+        "constant",
+        "toujours égal à 1",
+        "une unité de longueur"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le même coefficient relie toutes les valeurs."
+    },
+    {
+      "code": "M6-0553",
+      "microSkill": "m6_prop_definition",
+      "difficulty": 2,
+      "prompt": "Si y est proportionnel à x, quelle relation convient ?",
+      "choices": [
+        "y = x + k",
+        "y = x − k",
+        "y = k × x",
+        "y = k ÷ x"
+      ],
+      "correctIndex": 2,
+      "explanation": "Une relation proportionnelle s’écrit y = k × x."
+    },
+    {
+      "code": "M6-0554",
+      "microSkill": "m6_prop_definition",
+      "difficulty": 2,
+      "prompt": "Dans un tableau de proportionnalité, comment passe-t-on d’une ligne à l’autre ?",
+      "choices": [
+        "En ajoutant toujours 1.",
+        "En changeant d’opération à chaque colonne.",
+        "En recopiant les valeurs.",
+        "En multipliant toutes les valeurs par un même nombre."
+      ],
+      "correctIndex": 3,
+      "explanation": "Le coefficient est identique dans toutes les colonnes."
+    },
+    {
+      "code": "M6-0555",
+      "microSkill": "m6_prop_definition",
+      "difficulty": 2,
+      "prompt": "Quel élément permet de vérifier une proportionnalité ?",
+      "choices": [
+        "Un rapport constant",
+        "Une différence constante",
+        "Un total égal à 100",
+        "Une même unité"
+      ],
+      "correctIndex": 0,
+      "explanation": "Les rapports entre valeurs associées doivent être constants."
+    },
+    {
+      "code": "M6-0556",
+      "microSkill": "m6_prop_definition",
+      "difficulty": 2,
+      "prompt": "Deux grandeurs sont proportionnelles si doubler l’une…",
+      "choices": [
+        "ajoute 2 à l’autre",
+        "double l’autre",
+        "divise l’autre par 2",
+        "ne change pas l’autre"
+      ],
+      "correctIndex": 1,
+      "explanation": "La multiplication d’une grandeur entraîne la même multiplication de l’autre."
+    },
+    {
+      "code": "M6-0557",
+      "microSkill": "m6_prop_definition",
+      "difficulty": 2,
+      "prompt": "Dans une proportionnalité, tripler une quantité revient à…",
+      "choices": [
+        "ajouter 3 à la valeur",
+        "retirer 3 à la valeur",
+        "tripler la valeur associée",
+        "mettre la valeur au carré"
+      ],
+      "correctIndex": 2,
+      "explanation": "La linéarité multiplicative conserve le même facteur."
+    },
+    {
+      "code": "M6-0558",
+      "microSkill": "m6_prop_definition",
+      "difficulty": 3,
+      "prompt": "Quel mot caractérise le nombre qui relie deux grandeurs proportionnelles ?",
+      "choices": [
+        "périmètre",
+        "reste",
+        "fréquence",
+        "coefficient"
+      ],
+      "correctIndex": 3,
+      "explanation": "On parle de coefficient de proportionnalité."
+    },
+    {
+      "code": "M6-0559",
+      "microSkill": "m6_prop_definition",
+      "difficulty": 3,
+      "prompt": "Si 1 unité correspond à k, alors n unités correspondent à…",
+      "choices": [
+        "n × k",
+        "n + k",
+        "n − k",
+        "k ÷ n"
+      ],
+      "correctIndex": 0,
+      "explanation": "On multiplie la valeur unitaire par la quantité."
+    },
+    {
+      "code": "M6-0560",
+      "microSkill": "m6_prop_definition",
+      "difficulty": 3,
+      "prompt": "Une relation proportionnelle signifie-t-elle que les valeurs augmentent toujours de 1 ?",
+      "choices": [
+        "Oui, elles augmentent toujours de 1.",
+        "Non, elles sont multipliées par un coefficient constant.",
+        "Oui, les deux valeurs sont toujours identiques.",
+        "Non, car aucun coefficient n’existe."
+      ],
+      "correctIndex": 1,
+      "explanation": "Ce qui compte est le coefficient multiplicateur constant, pas une augmentation constante de 1."
+    },
+    {
+      "code": "M6-0561",
+      "microSkill": "m6_prop_identifier",
+      "difficulty": 1,
+      "prompt": "La situation suivante est-elle proportionnelle ? À prix unitaire fixe, le prix et le nombre de cahiers.",
+      "choices": [
+        "non proportionnelle",
+        "impossible à étudier",
+        "proportionnelle",
+        "toujours égale"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le même coefficient relie les deux grandeurs."
+    },
+    {
+      "code": "M6-0562",
+      "microSkill": "m6_prop_identifier",
+      "difficulty": 1,
+      "prompt": "La situation suivante est-elle proportionnelle ? La distance parcourue à vitesse constante et la durée.",
+      "choices": [
+        "non proportionnelle",
+        "impossible à étudier",
+        "toujours égale",
+        "proportionnelle"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le même coefficient relie les deux grandeurs."
+    },
+    {
+      "code": "M6-0563",
+      "microSkill": "m6_prop_identifier",
+      "difficulty": 1,
+      "prompt": "La situation suivante est-elle proportionnelle ? La masse de pommes et leur prix au kilogramme fixe.",
+      "choices": [
+        "proportionnelle",
+        "non proportionnelle",
+        "impossible à étudier",
+        "toujours égale"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le même coefficient relie les deux grandeurs."
+    },
+    {
+      "code": "M6-0564",
+      "microSkill": "m6_prop_identifier",
+      "difficulty": 2,
+      "prompt": "La situation suivante est-elle proportionnelle ? Le nombre de recettes identiques et la quantité de farine.",
+      "choices": [
+        "non proportionnelle",
+        "proportionnelle",
+        "impossible à étudier",
+        "toujours égale"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le même coefficient relie les deux grandeurs."
+    },
+    {
+      "code": "M6-0565",
+      "microSkill": "m6_prop_identifier",
+      "difficulty": 2,
+      "prompt": "La situation suivante est-elle proportionnelle ? Le nombre de litres versés et le volume total obtenu.",
+      "choices": [
+        "non proportionnelle",
+        "impossible à étudier",
+        "proportionnelle",
+        "toujours égale"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le même coefficient relie les deux grandeurs."
+    },
+    {
+      "code": "M6-0566",
+      "microSkill": "m6_prop_identifier",
+      "difficulty": 2,
+      "prompt": "La situation suivante est-elle proportionnelle ? Le côté d’un carré et son périmètre.",
+      "choices": [
+        "non proportionnelle",
+        "impossible à étudier",
+        "toujours égale",
+        "proportionnelle"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le même coefficient relie les deux grandeurs."
+    },
+    {
+      "code": "M6-0567",
+      "microSkill": "m6_prop_identifier",
+      "difficulty": 2,
+      "prompt": "La situation suivante est-elle proportionnelle ? Le nombre de billets identiques et leur prix total.",
+      "choices": [
+        "proportionnelle",
+        "non proportionnelle",
+        "impossible à étudier",
+        "toujours égale"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le même coefficient relie les deux grandeurs."
+    },
+    {
+      "code": "M6-0568",
+      "microSkill": "m6_prop_identifier",
+      "difficulty": 3,
+      "prompt": "La situation suivante est-elle proportionnelle ? La durée d’une location sans forfait fixe et son coût horaire.",
+      "choices": [
+        "non proportionnelle",
+        "proportionnelle",
+        "impossible à étudier",
+        "toujours égale"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le même coefficient relie les deux grandeurs."
+    },
+    {
+      "code": "M6-0569",
+      "microSkill": "m6_prop_identifier",
+      "difficulty": 3,
+      "prompt": "La situation suivante est-elle proportionnelle ? Le nombre de tours identiques et la distance parcourue.",
+      "choices": [
+        "non proportionnelle",
+        "impossible à étudier",
+        "proportionnelle",
+        "toujours égale"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le même coefficient relie les deux grandeurs."
+    },
+    {
+      "code": "M6-0570",
+      "microSkill": "m6_prop_identifier",
+      "difficulty": 3,
+      "prompt": "La situation suivante est-elle proportionnelle ? Le nombre de boîtes identiques et le nombre total d’objets.",
+      "choices": [
+        "non proportionnelle",
+        "impossible à étudier",
+        "toujours égale",
+        "proportionnelle"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le même coefficient relie les deux grandeurs."
+    },
+    {
+      "code": "M6-0571",
+      "microSkill": "m6_prop_non_proportionnelle",
+      "difficulty": 1,
+      "prompt": "Quelle qualification convient ? L’âge d’une personne et sa taille.",
+      "choices": [
+        "non proportionnelle",
+        "proportionnelle",
+        "toujours égale",
+        "impossible à mesurer"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le rapport entre les deux grandeurs n’est pas constant."
+    },
+    {
+      "code": "M6-0572",
+      "microSkill": "m6_prop_non_proportionnelle",
+      "difficulty": 1,
+      "prompt": "Quelle qualification convient ? Le côté d’un carré et son aire.",
+      "choices": [
+        "proportionnelle",
+        "non proportionnelle",
+        "toujours égale",
+        "impossible à mesurer"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le rapport entre les deux grandeurs n’est pas constant."
+    },
+    {
+      "code": "M6-0573",
+      "microSkill": "m6_prop_non_proportionnelle",
+      "difficulty": 1,
+      "prompt": "Quelle qualification convient ? La température extérieure et l’heure de la journée.",
+      "choices": [
+        "proportionnelle",
+        "toujours égale",
+        "non proportionnelle",
+        "impossible à mesurer"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le rapport entre les deux grandeurs n’est pas constant."
+    },
+    {
+      "code": "M6-0574",
+      "microSkill": "m6_prop_non_proportionnelle",
+      "difficulty": 2,
+      "prompt": "Quelle qualification convient ? Le nombre d’années et la pointure d’un enfant.",
+      "choices": [
+        "proportionnelle",
+        "toujours égale",
+        "impossible à mesurer",
+        "non proportionnelle"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le rapport entre les deux grandeurs n’est pas constant."
+    },
+    {
+      "code": "M6-0575",
+      "microSkill": "m6_prop_non_proportionnelle",
+      "difficulty": 2,
+      "prompt": "Quelle qualification convient ? Le prix d’une course de taxi avec un forfait de départ.",
+      "choices": [
+        "non proportionnelle",
+        "proportionnelle",
+        "toujours égale",
+        "impossible à mesurer"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le rapport entre les deux grandeurs n’est pas constant."
+    },
+    {
+      "code": "M6-0576",
+      "microSkill": "m6_prop_non_proportionnelle",
+      "difficulty": 2,
+      "prompt": "Quelle qualification convient ? Le nombre de personnes et leur âge moyen.",
+      "choices": [
+        "proportionnelle",
+        "non proportionnelle",
+        "toujours égale",
+        "impossible à mesurer"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le rapport entre les deux grandeurs n’est pas constant."
+    },
+    {
+      "code": "M6-0577",
+      "microSkill": "m6_prop_non_proportionnelle",
+      "difficulty": 2,
+      "prompt": "Quelle qualification convient ? La durée d’un trajet et la vitesse lorsque la distance est fixe.",
+      "choices": [
+        "proportionnelle",
+        "toujours égale",
+        "non proportionnelle",
+        "impossible à mesurer"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le rapport entre les deux grandeurs n’est pas constant."
+    },
+    {
+      "code": "M6-0578",
+      "microSkill": "m6_prop_non_proportionnelle",
+      "difficulty": 3,
+      "prompt": "Quelle qualification convient ? Le rayon d’un disque et son aire.",
+      "choices": [
+        "proportionnelle",
+        "toujours égale",
+        "impossible à mesurer",
+        "non proportionnelle"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le rapport entre les deux grandeurs n’est pas constant."
+    },
+    {
+      "code": "M6-0579",
+      "microSkill": "m6_prop_non_proportionnelle",
+      "difficulty": 3,
+      "prompt": "Quelle qualification convient ? Le nombre de pages lues et le nombre de pages restant dans un livre.",
+      "choices": [
+        "non proportionnelle",
+        "proportionnelle",
+        "toujours égale",
+        "impossible à mesurer"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le rapport entre les deux grandeurs n’est pas constant."
+    },
+    {
+      "code": "M6-0580",
+      "microSkill": "m6_prop_non_proportionnelle",
+      "difficulty": 3,
+      "prompt": "Quelle qualification convient ? L’altitude et la température sans règle constante.",
+      "choices": [
+        "proportionnelle",
+        "non proportionnelle",
+        "toujours égale",
+        "impossible à mesurer"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le rapport entre les deux grandeurs n’est pas constant."
+    },
+    {
+      "code": "M6-0581",
+      "microSkill": "m6_prop_linearite_multiplicative",
+      "difficulty": 1,
+      "prompt": "3 objets correspondent à 12 unités. Par multiplication, à combien correspondent 6 objets ?",
+      "choices": [
+        "12",
+        "27",
+        "24",
+        "36"
+      ],
+      "correctIndex": 2,
+      "explanation": "6 = 3 × 2, donc 12 × 2 = 24."
+    },
+    {
+      "code": "M6-0582",
+      "microSkill": "m6_prop_linearite_multiplicative",
+      "difficulty": 1,
+      "prompt": "4 objets correspondent à 10 unités. Par multiplication, à combien correspondent 12 objets ?",
+      "choices": [
+        "15",
+        "34",
+        "40",
+        "30"
+      ],
+      "correctIndex": 3,
+      "explanation": "12 = 4 × 3, donc 10 × 3 = 30."
+    },
+    {
+      "code": "M6-0583",
+      "microSkill": "m6_prop_linearite_multiplicative",
+      "difficulty": 1,
+      "prompt": "5 objets correspondent à 15 unités. Par multiplication, à combien correspondent 20 objets ?",
+      "choices": [
+        "60",
+        "30",
+        "65",
+        "75"
+      ],
+      "correctIndex": 0,
+      "explanation": "20 = 5 × 4, donc 15 × 4 = 60."
+    },
+    {
+      "code": "M6-0584",
+      "microSkill": "m6_prop_linearite_multiplicative",
+      "difficulty": 2,
+      "prompt": "2 objets correspondent à 7 unités. Par multiplication, à combien correspondent 10 objets ?",
+      "choices": [
+        "17.5",
+        "35",
+        "37",
+        "42"
+      ],
+      "correctIndex": 1,
+      "explanation": "10 = 2 × 5, donc 7 × 5 = 35."
+    },
+    {
+      "code": "M6-0585",
+      "microSkill": "m6_prop_linearite_multiplicative",
+      "difficulty": 2,
+      "prompt": "6 objets correspondent à 18 unités. Par multiplication, à combien correspondent 12 objets ?",
+      "choices": [
+        "18",
+        "42",
+        "36",
+        "54"
+      ],
+      "correctIndex": 2,
+      "explanation": "12 = 6 × 2, donc 18 × 2 = 36."
+    },
+    {
+      "code": "M6-0586",
+      "microSkill": "m6_prop_linearite_multiplicative",
+      "difficulty": 2,
+      "prompt": "3 objets correspondent à 8 unités. Par multiplication, à combien correspondent 15 objets ?",
+      "choices": [
+        "20",
+        "43",
+        "48",
+        "40"
+      ],
+      "correctIndex": 3,
+      "explanation": "15 = 3 × 5, donc 8 × 5 = 40."
+    },
+    {
+      "code": "M6-0587",
+      "microSkill": "m6_prop_linearite_multiplicative",
+      "difficulty": 2,
+      "prompt": "7 objets correspondent à 21 unités. Par multiplication, à combien correspondent 28 objets ?",
+      "choices": [
+        "84",
+        "42",
+        "91",
+        "105"
+      ],
+      "correctIndex": 0,
+      "explanation": "28 = 7 × 4, donc 21 × 4 = 84."
+    },
+    {
+      "code": "M6-0588",
+      "microSkill": "m6_prop_linearite_multiplicative",
+      "difficulty": 3,
+      "prompt": "5 objets correspondent à 12 unités. Par multiplication, à combien correspondent 25 objets ?",
+      "choices": [
+        "30",
+        "60",
+        "65",
+        "72"
+      ],
+      "correctIndex": 1,
+      "explanation": "25 = 5 × 5, donc 12 × 5 = 60."
+    },
+    {
+      "code": "M6-0589",
+      "microSkill": "m6_prop_linearite_multiplicative",
+      "difficulty": 3,
+      "prompt": "8 objets correspondent à 14 unités. Par multiplication, à combien correspondent 40 objets ?",
+      "choices": [
+        "35",
+        "78",
+        "70",
+        "84"
+      ],
+      "correctIndex": 2,
+      "explanation": "40 = 8 × 5, donc 14 × 5 = 70."
+    },
+    {
+      "code": "M6-0590",
+      "microSkill": "m6_prop_linearite_multiplicative",
+      "difficulty": 3,
+      "prompt": "9 objets correspondent à 27 unités. Par multiplication, à combien correspondent 63 objets ?",
+      "choices": [
+        "94.5",
+        "198",
+        "216",
+        "189"
+      ],
+      "correctIndex": 3,
+      "explanation": "63 = 9 × 7, donc 27 × 7 = 189."
+    }
+  ]
+}

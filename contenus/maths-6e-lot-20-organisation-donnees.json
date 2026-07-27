@@ -1,0 +1,464 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {
+    "code": "data_management",
+    "name": "Organisation et gestion de données"
+  },
+  "skill": {
+    "code": "data_organization",
+    "name": "Organisation de données"
+  },
+  "lot": "M6-DATA-02",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_data_planifier_enquete",
+      "teacherName": "Identifier les étapes d’une enquête",
+      "studentName": "Organiser une enquête",
+      "lessonReminder": "On définit la question, recueille les réponses, organise les données puis présente les résultats.",
+      "workedExample": "Questionner, recueillir, classer puis représenter.",
+      "masteryCriteria": "Reconnaître l’ordre et le rôle des étapes d’une enquête."
+    },
+    {
+      "code": "m6_data_construire_tableau",
+      "teacherName": "Choisir un tableau adapté à des données",
+      "studentName": "Choisir comment organiser des données",
+      "lessonReminder": "Un tableau doit présenter des intitulés clairs et une ligne ou une colonne pour chaque catégorie utile.",
+      "workedExample": "Pour comparer les sports par classe, on prévoit les classes et les sports dans les en-têtes.",
+      "masteryCriteria": "Choisir une organisation de tableau adaptée à une question."
+    },
+    {
+      "code": "m6_data_filtrer",
+      "teacherName": "Filtrer les données d’un tableau selon un critère",
+      "studentName": "Filtrer des données",
+      "lessonReminder": "Filtrer consiste à ne conserver que les lignes qui respectent un critère donné.",
+      "workedExample": "Pour garder les scores supérieurs à 10, on écarte 10 et les valeurs plus petites.",
+      "masteryCriteria": "Sélectionner les données correspondant à un ou plusieurs critères."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M6-0681",
+      "microSkill": "m6_data_planifier_enquete",
+      "difficulty": 1,
+      "prompt": "Quelle est la première étape d’une enquête ?",
+      "choices": [
+        "Définir la question étudiée",
+        "Tracer un graphique",
+        "Inventer les résultats",
+        "Supprimer des réponses"
+      ],
+      "correctIndex": 0,
+      "explanation": "On commence par définir précisément ce que l’on cherche."
+    },
+    {
+      "code": "M6-0682",
+      "microSkill": "m6_data_planifier_enquete",
+      "difficulty": 1,
+      "prompt": "Après avoir défini la question, que faut-il faire ?",
+      "choices": [
+        "Publier une conclusion",
+        "Recueillir les données",
+        "Effacer le questionnaire",
+        "Choisir le résultat préféré"
+      ],
+      "correctIndex": 1,
+      "explanation": "On recueille ensuite les réponses ou mesures."
+    },
+    {
+      "code": "M6-0683",
+      "microSkill": "m6_data_planifier_enquete",
+      "difficulty": 1,
+      "prompt": "Après le recueil, quelle étape facilite l’analyse ?",
+      "choices": [
+        "Modifier les réponses",
+        "Recommencer sans raison",
+        "Organiser les données",
+        "Ignorer les catégories"
+      ],
+      "correctIndex": 2,
+      "explanation": "Les données doivent être classées dans un tableau ou des catégories."
+    },
+    {
+      "code": "M6-0684",
+      "microSkill": "m6_data_planifier_enquete",
+      "difficulty": 2,
+      "prompt": "Quelle étape vient généralement après l’organisation des données ?",
+      "choices": [
+        "Les cacher",
+        "Changer la question",
+        "Supprimer les valeurs élevées",
+        "Les représenter"
+      ],
+      "correctIndex": 3,
+      "explanation": "Une représentation aide à communiquer les résultats."
+    },
+    {
+      "code": "M6-0685",
+      "microSkill": "m6_data_planifier_enquete",
+      "difficulty": 2,
+      "prompt": "À quoi sert une conclusion d’enquête ?",
+      "choices": [
+        "Répondre à la question de départ",
+        "Ajouter des participants fictifs",
+        "Changer toutes les données",
+        "Choisir une couleur"
+      ],
+      "correctIndex": 0,
+      "explanation": "La conclusion interprète les résultats pour répondre à la question."
+    },
+    {
+      "code": "M6-0686",
+      "microSkill": "m6_data_planifier_enquete",
+      "difficulty": 2,
+      "prompt": "Quel ordre est cohérent ?",
+      "choices": [
+        "Représenter, inventer, questionner, effacer",
+        "Questionner, recueillir, organiser, représenter",
+        "Conclure, recueillir, questionner, modifier",
+        "Organiser, supprimer, inventer, conclure"
+      ],
+      "correctIndex": 1,
+      "explanation": "C’est l’ordre logique d’une enquête."
+    },
+    {
+      "code": "M6-0687",
+      "microSkill": "m6_data_planifier_enquete",
+      "difficulty": 2,
+      "prompt": "Pourquoi définir les catégories avant de classer les réponses ?",
+      "choices": [
+        "Pour obtenir toujours 100 réponses",
+        "Pour rendre toutes les réponses identiques",
+        "Pour organiser les données de façon cohérente",
+        "Pour éviter de poser une question"
+      ],
+      "correctIndex": 2,
+      "explanation": "Des catégories claires permettent un classement fiable."
+    },
+    {
+      "code": "M6-0688",
+      "microSkill": "m6_data_planifier_enquete",
+      "difficulty": 3,
+      "prompt": "Avant de diffuser un questionnaire, que doit-on vérifier ?",
+      "choices": [
+        "Que toutes les réponses seront identiques",
+        "Que le graphique est déjà terminé",
+        "Que la conclusion est écrite",
+        "Que les questions sont claires"
+      ],
+      "correctIndex": 3,
+      "explanation": "Les questions doivent être compréhensibles et adaptées à l’objectif."
+    },
+    {
+      "code": "M6-0689",
+      "microSkill": "m6_data_planifier_enquete",
+      "difficulty": 3,
+      "prompt": "Pourquoi noter toutes les réponses recueillies ?",
+      "choices": [
+        "Pour ne pas fausser les résultats",
+        "Pour obtenir le résultat souhaité",
+        "Pour réduire arbitrairement l’effectif",
+        "Pour éviter tout tableau"
+      ],
+      "correctIndex": 0,
+      "explanation": "Écarter des réponses sans raison introduirait un biais."
+    },
+    {
+      "code": "M6-0690",
+      "microSkill": "m6_data_planifier_enquete",
+      "difficulty": 3,
+      "prompt": "Quelle action termine normalement l’enquête ?",
+      "choices": [
+        "Inventer de nouvelles données",
+        "Interpréter et communiquer les résultats",
+        "Changer les réponses",
+        "Supprimer la question initiale"
+      ],
+      "correctIndex": 1,
+      "explanation": "On termine par une conclusion et une présentation des résultats."
+    },
+    {
+      "code": "M6-0691",
+      "microSkill": "m6_data_construire_tableau",
+      "difficulty": 1,
+      "prompt": "Pour organiser les sports préférés d’une classe, quel tableau est le plus adapté ?",
+      "choices": [
+        "Un tableau sans titre ni en-têtes",
+        "Une seule case vide",
+        "Un tableau avec une ligne par sport et son effectif",
+        "Un tableau mélangeant sports et tailles"
+      ],
+      "correctIndex": 2,
+      "explanation": "Chaque sport forme une catégorie à laquelle on associe un effectif."
+    },
+    {
+      "code": "M6-0692",
+      "microSkill": "m6_data_construire_tableau",
+      "difficulty": 1,
+      "prompt": "Pour organiser les moyens de transport utilisés par les élèves, quels en-têtes conviennent ?",
+      "choices": [
+        "Prénom et température",
+        "Date et longueur",
+        "Prix et masse",
+        "Moyen de transport et nombre d’élèves"
+      ],
+      "correctIndex": 3,
+      "explanation": "Les en-têtes doivent nommer la catégorie étudiée et son effectif."
+    },
+    {
+      "code": "M6-0693",
+      "microSkill": "m6_data_construire_tableau",
+      "difficulty": 1,
+      "prompt": "Pour noter le nombre de livres lus chaque mois, quels en-têtes conviennent ?",
+      "choices": [
+        "Mois et nombre de livres",
+        "Couleur et masse",
+        "Élève et pointure",
+        "Jour et température"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le tableau associe chaque mois au nombre de livres lus."
+    },
+    {
+      "code": "M6-0694",
+      "microSkill": "m6_data_construire_tableau",
+      "difficulty": 2,
+      "prompt": "Pour relever la température chaque jour, quels en-têtes conviennent ?",
+      "choices": [
+        "Sport et effectif",
+        "Date et température en °C",
+        "Livre et prix",
+        "Distance et masse"
+      ],
+      "correctIndex": 1,
+      "explanation": "Une série chronologique associe ici une date à une température."
+    },
+    {
+      "code": "M6-0695",
+      "microSkill": "m6_data_construire_tableau",
+      "difficulty": 2,
+      "prompt": "Pour compter les animaux observés, quel tableau est adapté ?",
+      "choices": [
+        "Un tableau sans nom d’espèce",
+        "Une liste qui oublie les effectifs",
+        "Un tableau avec une ligne par espèce et son nombre d’observations",
+        "Un tableau de températures"
+      ],
+      "correctIndex": 2,
+      "explanation": "On associe chaque espèce à son effectif observé."
+    },
+    {
+      "code": "M6-0696",
+      "microSkill": "m6_data_construire_tableau",
+      "difficulty": 2,
+      "prompt": "Pour comparer les repas choisis à la cantine, quels en-têtes conviennent ?",
+      "choices": [
+        "Heure et longueur",
+        "Classe et température",
+        "Prénom et masse",
+        "Repas et nombre de choix"
+      ],
+      "correctIndex": 3,
+      "explanation": "Chaque repas constitue une catégorie dont on compte les choix."
+    },
+    {
+      "code": "M6-0697",
+      "microSkill": "m6_data_construire_tableau",
+      "difficulty": 2,
+      "prompt": "Pour noter le temps de trajet de chaque élève, quels en-têtes conviennent ?",
+      "choices": [
+        "Élève et durée du trajet en minutes",
+        "Sport et effectif",
+        "Date et température",
+        "Livre et prix"
+      ],
+      "correctIndex": 0,
+      "explanation": "Chaque élève doit être associé à une durée exprimée avec son unité."
+    },
+    {
+      "code": "M6-0698",
+      "microSkill": "m6_data_construire_tableau",
+      "difficulty": 3,
+      "prompt": "Pour présenter les points obtenus par chaque équipe, quels en-têtes conviennent ?",
+      "choices": [
+        "Jour et température",
+        "Équipe et nombre de points",
+        "Objet et masse",
+        "Prénom et durée"
+      ],
+      "correctIndex": 1,
+      "explanation": "On associe le nom de chaque équipe à son score."
+    },
+    {
+      "code": "M6-0699",
+      "microSkill": "m6_data_construire_tableau",
+      "difficulty": 3,
+      "prompt": "Pour suivre la taille d’une plante chaque semaine, quels en-têtes conviennent ?",
+      "choices": [
+        "Sport et nombre d’élèves",
+        "Couleur et prix",
+        "Semaine et taille en centimètres",
+        "Livre et température"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le tableau associe chaque semaine à une mesure avec son unité."
+    },
+    {
+      "code": "M6-0700",
+      "microSkill": "m6_data_construire_tableau",
+      "difficulty": 3,
+      "prompt": "Pour comparer les masses de déchets collectés selon leur type, quels en-têtes conviennent ?",
+      "choices": [
+        "Date et température",
+        "Élève et durée",
+        "Sport et effectif",
+        "Type de déchet et masse en kilogrammes"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le tableau associe chaque type de déchet à une masse exprimée avec son unité."
+    },
+    {
+      "code": "M6-0701",
+      "microSkill": "m6_data_filtrer",
+      "difficulty": 1,
+      "prompt": "On conserve uniquement les valeurs strictement supérieures à 5. Laquelle est conservée ?",
+      "choices": [
+        "6",
+        "3",
+        "5",
+        "4"
+      ],
+      "correctIndex": 0,
+      "explanation": "6 est strictement supérieur à 5."
+    },
+    {
+      "code": "M6-0702",
+      "microSkill": "m6_data_filtrer",
+      "difficulty": 1,
+      "prompt": "On conserve uniquement les valeurs strictement supérieures à 6. Laquelle est conservée ?",
+      "choices": [
+        "4",
+        "7",
+        "6",
+        "5"
+      ],
+      "correctIndex": 1,
+      "explanation": "7 est strictement supérieur à 6."
+    },
+    {
+      "code": "M6-0703",
+      "microSkill": "m6_data_filtrer",
+      "difficulty": 1,
+      "prompt": "On conserve uniquement les valeurs strictement supérieures à 7. Laquelle est conservée ?",
+      "choices": [
+        "5",
+        "7",
+        "8",
+        "6"
+      ],
+      "correctIndex": 2,
+      "explanation": "8 est strictement supérieur à 7."
+    },
+    {
+      "code": "M6-0704",
+      "microSkill": "m6_data_filtrer",
+      "difficulty": 2,
+      "prompt": "On conserve uniquement les valeurs strictement supérieures à 8. Laquelle est conservée ?",
+      "choices": [
+        "6",
+        "8",
+        "7",
+        "9"
+      ],
+      "correctIndex": 3,
+      "explanation": "9 est strictement supérieur à 8."
+    },
+    {
+      "code": "M6-0705",
+      "microSkill": "m6_data_filtrer",
+      "difficulty": 2,
+      "prompt": "On conserve uniquement les valeurs strictement supérieures à 9. Laquelle est conservée ?",
+      "choices": [
+        "10",
+        "7",
+        "9",
+        "8"
+      ],
+      "correctIndex": 0,
+      "explanation": "10 est strictement supérieur à 9."
+    },
+    {
+      "code": "M6-0706",
+      "microSkill": "m6_data_filtrer",
+      "difficulty": 2,
+      "prompt": "On conserve uniquement les valeurs strictement supérieures à 10. Laquelle est conservée ?",
+      "choices": [
+        "8",
+        "11",
+        "10",
+        "9"
+      ],
+      "correctIndex": 1,
+      "explanation": "11 est strictement supérieur à 10."
+    },
+    {
+      "code": "M6-0707",
+      "microSkill": "m6_data_filtrer",
+      "difficulty": 2,
+      "prompt": "On conserve uniquement les valeurs strictement supérieures à 11. Laquelle est conservée ?",
+      "choices": [
+        "9",
+        "11",
+        "12",
+        "10"
+      ],
+      "correctIndex": 2,
+      "explanation": "12 est strictement supérieur à 11."
+    },
+    {
+      "code": "M6-0708",
+      "microSkill": "m6_data_filtrer",
+      "difficulty": 3,
+      "prompt": "On conserve uniquement les valeurs strictement supérieures à 12. Laquelle est conservée ?",
+      "choices": [
+        "10",
+        "12",
+        "11",
+        "13"
+      ],
+      "correctIndex": 3,
+      "explanation": "13 est strictement supérieur à 12."
+    },
+    {
+      "code": "M6-0709",
+      "microSkill": "m6_data_filtrer",
+      "difficulty": 3,
+      "prompt": "On conserve uniquement les valeurs strictement supérieures à 13. Laquelle est conservée ?",
+      "choices": [
+        "14",
+        "11",
+        "13",
+        "12"
+      ],
+      "correctIndex": 0,
+      "explanation": "14 est strictement supérieur à 13."
+    },
+    {
+      "code": "M6-0710",
+      "microSkill": "m6_data_filtrer",
+      "difficulty": 3,
+      "prompt": "On conserve uniquement les valeurs strictement supérieures à 14. Laquelle est conservée ?",
+      "choices": [
+        "12",
+        "15",
+        "14",
+        "13"
+      ],
+      "correctIndex": 1,
+      "explanation": "15 est strictement supérieur à 14."
+    }
+  ]
+}
