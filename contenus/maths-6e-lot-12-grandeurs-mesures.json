@@ -1,0 +1,95 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {
+    "code": "quantities_measurement",
+    "name": "Grandeurs et mesures"
+  },
+  "skill": {
+    "code": "lengths_perimeters",
+    "name": "Longueurs et périmètres"
+  },
+  "lot": "M6-MES-01",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_mes_prefixes",
+      "teacherName": "Connaître le sens des préfixes kilo à milli",
+      "studentName": "Comprendre les préfixes des unités",
+      "lessonReminder": "Kilo signifie 1 000, hecto 100, déca 10, déci un dixième, centi un centième et milli un millième.",
+      "workedExample": "Un kilomètre vaut 1 000 mètres.",
+      "masteryCriteria": "Associer chaque préfixe métrique courant à sa valeur."
+    },
+    {
+      "code": "m6_mes_convertir_longueur",
+      "teacherName": "Convertir une longueur",
+      "studentName": "Convertir des longueurs",
+      "lessonReminder": "À chaque changement d’unité vers une unité immédiatement plus petite, on multiplie par 10 ; vers une unité plus grande, on divise par 10.",
+      "workedExample": "3,5 m = 350 cm.",
+      "masteryCriteria": "Convertir des longueurs entre kilomètres, mètres, décimètres, centimètres et millimètres."
+    },
+    {
+      "code": "m6_mes_perimetre_carre",
+      "teacherName": "Calculer le périmètre d’un carré",
+      "studentName": "Calculer le périmètre d’un carré",
+      "lessonReminder": "Le périmètre d’un carré est égal à quatre fois la longueur d’un côté : P = 4 × côté.",
+      "workedExample": "Pour un côté de 6 cm : P = 4 × 6 = 24 cm.",
+      "masteryCriteria": "Calculer le périmètre d’un carré à partir de la longueur de son côté."
+    },
+    {
+      "code": "m6_mes_perimetre_rectangle",
+      "teacherName": "Calculer le périmètre d’un rectangle",
+      "studentName": "Calculer le périmètre d’un rectangle",
+      "lessonReminder": "Le périmètre d’un rectangle est la somme de ses quatre côtés : P = 2 × (longueur + largeur).",
+      "workedExample": "Pour 8 cm sur 3 cm : P = 2 × (8 + 3) = 22 cm.",
+      "masteryCriteria": "Calculer le périmètre d’un rectangle à partir de sa longueur et de sa largeur exprimées dans la même unité."
+    }
+  ],
+  "questions": [
+    {"code":"M6-0421","microSkill":"m6_mes_prefixes","difficulty":1,"prompt":"Dans « kilomètre », que signifie le préfixe « kilo » ?","choices":["1 000","100","10","1/1 000"],"correctIndex":0,"explanation":"Le préfixe « kilo » signifie 1 000."},
+    {"code":"M6-0422","microSkill":"m6_mes_prefixes","difficulty":1,"prompt":"Dans « centimètre », que signifie le préfixe « centi » ?","choices":["Un dixième","Un centième","Un millième","Cent fois l’unité"],"correctIndex":1,"explanation":"Le préfixe « centi » signifie un centième."},
+    {"code":"M6-0423","microSkill":"m6_mes_prefixes","difficulty":1,"prompt":"Dans « millimètre », que signifie le préfixe « milli » ?","choices":["Un dixième","Un centième","Un millième","Mille fois l’unité"],"correctIndex":2,"explanation":"Le préfixe « milli » signifie un millième."},
+    {"code":"M6-0424","microSkill":"m6_mes_prefixes","difficulty":2,"prompt":"Dans « décimètre », que signifie le préfixe « déci » ?","choices":["Dix fois l’unité","Un centième","Un millième","Un dixième"],"correctIndex":3,"explanation":"Le préfixe « déci » signifie un dixième."},
+    {"code":"M6-0425","microSkill":"m6_mes_prefixes","difficulty":2,"prompt":"Dans « hectomètre », que signifie le préfixe « hecto » ?","choices":["100","1 000","10","Un centième"],"correctIndex":0,"explanation":"Le préfixe « hecto » signifie 100."},
+    {"code":"M6-0426","microSkill":"m6_mes_prefixes","difficulty":2,"prompt":"Dans « décamètre », que signifie le préfixe « déca » ?","choices":["100","10","Un dixième","1 000"],"correctIndex":1,"explanation":"Le préfixe « déca » signifie 10."},
+    {"code":"M6-0427","microSkill":"m6_mes_prefixes","difficulty":2,"prompt":"Quel préfixe signifie « un centième » ?","choices":["déci","milli","centi","déca"],"correctIndex":2,"explanation":"« Centi » signifie un centième."},
+    {"code":"M6-0428","microSkill":"m6_mes_prefixes","difficulty":3,"prompt":"Quel préfixe signifie « cent fois l’unité » ?","choices":["kilo","déca","déci","hecto"],"correctIndex":3,"explanation":"« Hecto » signifie cent fois l’unité."},
+    {"code":"M6-0429","microSkill":"m6_mes_prefixes","difficulty":3,"prompt":"Quel préfixe signifie « un millième » ?","choices":["milli","centi","déci","kilo"],"correctIndex":0,"explanation":"« Milli » signifie un millième."},
+    {"code":"M6-0430","microSkill":"m6_mes_prefixes","difficulty":3,"prompt":"Quel préfixe signifie « dix fois l’unité » ?","choices":["déci","déca","hecto","centi"],"correctIndex":1,"explanation":"« Déca » signifie dix fois l’unité."},
+
+    {"code":"M6-0431","microSkill":"m6_mes_convertir_longueur","difficulty":1,"prompt":"Convertis 3 m en centimètres.","choices":["30 cm","3 000 cm","300 cm","0,03 cm"],"correctIndex":2,"explanation":"1 m = 100 cm, donc 3 m = 300 cm."},
+    {"code":"M6-0432","microSkill":"m6_mes_convertir_longueur","difficulty":1,"prompt":"Convertis 5 km en mètres.","choices":["50 m","500 m","50 000 m","5 000 m"],"correctIndex":3,"explanation":"1 km = 1 000 m, donc 5 km = 5 000 m."},
+    {"code":"M6-0433","microSkill":"m6_mes_convertir_longueur","difficulty":1,"prompt":"Convertis 700 cm en mètres.","choices":["7 m","70 m","0,7 m","700 m"],"correctIndex":0,"explanation":"100 cm = 1 m, donc 700 cm = 7 m."},
+    {"code":"M6-0434","microSkill":"m6_mes_convertir_longueur","difficulty":2,"prompt":"Convertis 4,2 m en centimètres.","choices":["42 cm","420 cm","4 200 cm","0,42 cm"],"correctIndex":1,"explanation":"1 m = 100 cm, donc 4,2 m = 420 cm."},
+    {"code":"M6-0435","microSkill":"m6_mes_convertir_longueur","difficulty":2,"prompt":"Convertis 35 mm en centimètres.","choices":["350 cm","0,35 cm","3,5 cm","35 cm"],"correctIndex":2,"explanation":"10 mm = 1 cm, donc 35 mm = 3,5 cm."},
+    {"code":"M6-0436","microSkill":"m6_mes_convertir_longueur","difficulty":2,"prompt":"Convertis 2,5 km en mètres.","choices":["25 m","250 m","25 000 m","2 500 m"],"correctIndex":3,"explanation":"1 km = 1 000 m, donc 2,5 km = 2 500 m."},
+    {"code":"M6-0437","microSkill":"m6_mes_convertir_longueur","difficulty":2,"prompt":"Convertis 48 dm en mètres.","choices":["4,8 m","48 m","0,48 m","480 m"],"correctIndex":0,"explanation":"10 dm = 1 m, donc 48 dm = 4,8 m."},
+    {"code":"M6-0438","microSkill":"m6_mes_convertir_longueur","difficulty":3,"prompt":"Convertis 0,75 m en millimètres.","choices":["75 mm","750 mm","7 500 mm","0,75 mm"],"correctIndex":1,"explanation":"1 m = 1 000 mm, donc 0,75 m = 750 mm."},
+    {"code":"M6-0439","microSkill":"m6_mes_convertir_longueur","difficulty":3,"prompt":"Convertis 12 500 m en kilomètres.","choices":["1,25 km","125 km","12,5 km","1 250 km"],"correctIndex":2,"explanation":"1 000 m = 1 km, donc 12 500 m = 12,5 km."},
+    {"code":"M6-0440","microSkill":"m6_mes_convertir_longueur","difficulty":3,"prompt":"Convertis 6,04 m en centimètres.","choices":["60,4 cm","6 040 cm","0,604 cm","604 cm"],"correctIndex":3,"explanation":"1 m = 100 cm, donc 6,04 m = 604 cm."},
+
+    {"code":"M6-0441","microSkill":"m6_mes_perimetre_carre","difficulty":1,"prompt":"Un carré a un côté de 3 cm. Quel est son périmètre ?","choices":["12 cm","9 cm","6 cm","16 cm"],"correctIndex":0,"explanation":"P = 4 × 3 cm = 12 cm."},
+    {"code":"M6-0442","microSkill":"m6_mes_perimetre_carre","difficulty":1,"prompt":"Un carré a un côté de 5 m. Quel est son périmètre ?","choices":["10 m","20 m","25 m","15 m"],"correctIndex":1,"explanation":"P = 4 × 5 m = 20 m."},
+    {"code":"M6-0443","microSkill":"m6_mes_perimetre_carre","difficulty":1,"prompt":"Un carré a un côté de 7 cm. Quel est son périmètre ?","choices":["14 cm","21 cm","28 cm","49 cm"],"correctIndex":2,"explanation":"P = 4 × 7 cm = 28 cm."},
+    {"code":"M6-0444","microSkill":"m6_mes_perimetre_carre","difficulty":2,"prompt":"Un carré a un côté de 9 mm. Quel est son périmètre ?","choices":["18 mm","27 mm","81 mm","36 mm"],"correctIndex":3,"explanation":"P = 4 × 9 mm = 36 mm."},
+    {"code":"M6-0445","microSkill":"m6_mes_perimetre_carre","difficulty":2,"prompt":"Un carré a un côté de 12 cm. Quel est son périmètre ?","choices":["48 cm","24 cm","36 cm","144 cm"],"correctIndex":0,"explanation":"P = 4 × 12 cm = 48 cm."},
+    {"code":"M6-0446","microSkill":"m6_mes_perimetre_carre","difficulty":2,"prompt":"Un carré a un côté de 2,5 m. Quel est son périmètre ?","choices":["5 m","10 m","6,25 m","12,5 m"],"correctIndex":1,"explanation":"P = 4 × 2,5 m = 10 m."},
+    {"code":"M6-0447","microSkill":"m6_mes_perimetre_carre","difficulty":2,"prompt":"Un carré a un côté de 4,5 cm. Quel est son périmètre ?","choices":["9 cm","16 cm","18 cm","20,25 cm"],"correctIndex":2,"explanation":"P = 4 × 4,5 cm = 18 cm."},
+    {"code":"M6-0448","microSkill":"m6_mes_perimetre_carre","difficulty":3,"prompt":"Un carré a un côté de 15,5 m. Quel est son périmètre ?","choices":["31 m","46,5 m","60 m","62 m"],"correctIndex":3,"explanation":"P = 4 × 15,5 m = 62 m."},
+    {"code":"M6-0449","microSkill":"m6_mes_perimetre_carre","difficulty":3,"prompt":"Un carré a un côté de 0,8 km. Quel est son périmètre ?","choices":["3,2 km","1,6 km","0,64 km","4,8 km"],"correctIndex":0,"explanation":"P = 4 × 0,8 km = 3,2 km."},
+    {"code":"M6-0450","microSkill":"m6_mes_perimetre_carre","difficulty":3,"prompt":"Un carré a un côté de 23,25 cm. Quel est son périmètre ?","choices":["46,5 cm","93 cm","92 cm","540,5625 cm"],"correctIndex":1,"explanation":"P = 4 × 23,25 cm = 93 cm."},
+
+    {"code":"M6-0451","microSkill":"m6_mes_perimetre_rectangle","difficulty":1,"prompt":"Un rectangle mesure 5 cm de longueur et 3 cm de largeur. Quel est son périmètre ?","choices":["8 cm","15 cm","16 cm","13 cm"],"correctIndex":2,"explanation":"P = 2 × (5 + 3) = 16 cm."},
+    {"code":"M6-0452","microSkill":"m6_mes_perimetre_rectangle","difficulty":1,"prompt":"Un rectangle mesure 7 m de longueur et 2 m de largeur. Quel est son périmètre ?","choices":["9 m","14 m","16 m","18 m"],"correctIndex":3,"explanation":"P = 2 × (7 + 2) = 18 m."},
+    {"code":"M6-0453","microSkill":"m6_mes_perimetre_rectangle","difficulty":1,"prompt":"Un rectangle mesure 6 cm de longueur et 4 cm de largeur. Quel est son périmètre ?","choices":["20 cm","10 cm","24 cm","16 cm"],"correctIndex":0,"explanation":"P = 2 × (6 + 4) = 20 cm."},
+    {"code":"M6-0454","microSkill":"m6_mes_perimetre_rectangle","difficulty":2,"prompt":"Un rectangle mesure 10 mm de longueur et 3 mm de largeur. Quel est son périmètre ?","choices":["13 mm","26 mm","30 mm","23 mm"],"correctIndex":1,"explanation":"P = 2 × (10 + 3) = 26 mm."},
+    {"code":"M6-0455","microSkill":"m6_mes_perimetre_rectangle","difficulty":2,"prompt":"Un rectangle mesure 8,5 cm de longueur et 4 cm de largeur. Quel est son périmètre ?","choices":["12,5 cm","21 cm","25 cm","34 cm"],"correctIndex":2,"explanation":"P = 2 × (8,5 + 4) = 25 cm."},
+    {"code":"M6-0456","microSkill":"m6_mes_perimetre_rectangle","difficulty":2,"prompt":"Un rectangle mesure 12 m de longueur et 7,5 m de largeur. Quel est son périmètre ?","choices":["19,5 m","24 m","90 m","39 m"],"correctIndex":3,"explanation":"P = 2 × (12 + 7,5) = 39 m."},
+    {"code":"M6-0457","microSkill":"m6_mes_perimetre_rectangle","difficulty":2,"prompt":"Un rectangle mesure 15 cm de longueur et 9 cm de largeur. Quel est son périmètre ?","choices":["48 cm","24 cm","135 cm","39 cm"],"correctIndex":0,"explanation":"P = 2 × (15 + 9) = 48 cm."},
+    {"code":"M6-0458","microSkill":"m6_mes_perimetre_rectangle","difficulty":3,"prompt":"Un rectangle mesure 20,5 m de longueur et 6,5 m de largeur. Quel est son périmètre ?","choices":["27 m","54 m","133,25 m","47,5 m"],"correctIndex":1,"explanation":"P = 2 × (20,5 + 6,5) = 54 m."},
+    {"code":"M6-0459","microSkill":"m6_mes_perimetre_rectangle","difficulty":3,"prompt":"Un rectangle mesure 3,75 km de longueur et 1,25 km de largeur. Quel est son périmètre ?","choices":["5 km","7,5 km","10 km","4,6875 km"],"correctIndex":2,"explanation":"P = 2 × (3,75 + 1,25) = 10 km."},
+    {"code":"M6-0460","microSkill":"m6_mes_perimetre_rectangle","difficulty":3,"prompt":"Un rectangle mesure 14,2 cm de longueur et 5,8 cm de largeur. Quel est son périmètre ?","choices":["20 cm","28,4 cm","82,36 cm","40 cm"],"correctIndex":3,"explanation":"P = 2 × (14,2 + 5,8) = 40 cm."}
+  ]
+}
