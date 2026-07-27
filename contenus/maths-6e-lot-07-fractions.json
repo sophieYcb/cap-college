@@ -1,0 +1,89 @@
+{
+  "format":"cap-college-question-draft-v1",
+  "subject":"mathematics",
+  "level":"6e",
+  "domain":{"code":"numbers_calculation","name":"Nombres, calcul et résolution de problèmes"},
+  "skill":{"code":"fractions","name":"Fractions"},
+  "lot":"M6-FRAC-01",
+  "status":"draft",
+  "source":"Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills":[
+    {
+      "code":"m6_frac_quotient",
+      "teacherName":"Relier une fraction au quotient de deux entiers",
+      "studentName":"Relier une fraction à une division",
+      "lessonReminder":"La fraction a/b est le résultat exact de la division de a par b, avec b différent de zéro.",
+      "workedExample":"3/4 est le résultat exact de 3 ÷ 4.",
+      "masteryCriteria":"Associer une fraction à la division exacte correspondante."
+    },
+    {
+      "code":"m6_frac_egalite_multiplicative",
+      "teacherName":"Compléter une égalité multiplicative avec un quotient",
+      "studentName":"Trouver le facteur manquant",
+      "lessonReminder":"Le quotient a/b est le nombre qui, multiplié par b, donne a.",
+      "workedExample":"4 × 3/4 = 3.",
+      "masteryCriteria":"Compléter une égalité du type b × … = a avec la fraction a/b."
+    },
+    {
+      "code":"m6_frac_decimal_usuel",
+      "teacherName":"Associer des fractions usuelles à leur écriture décimale",
+      "studentName":"Passer d’une fraction à un nombre à virgule",
+      "lessonReminder":"Certaines fractions usuelles ont une écriture décimale à connaître ou à retrouver par division.",
+      "workedExample":"1/4 = 0,25.",
+      "masteryCriteria":"Passer entre une fraction usuelle et son écriture décimale."
+    },
+    {
+      "code":"m6_frac_nature_quotient",
+      "teacherName":"Déterminer la nature du nombre représenté par une fraction",
+      "studentName":"Reconnaître le résultat d’une fraction",
+      "lessonReminder":"Une fraction peut représenter un entier, un nombre décimal non entier ou un nombre non décimal.",
+      "workedExample":"12/4 = 3 est entier ; 3/4 = 0,75 est décimal non entier ; 1/3 est non décimal.",
+      "masteryCriteria":"Classer le nombre représenté par une fraction parmi entier, décimal non entier et non décimal."
+    }
+  ],
+  "questions":[
+    {"code":"M6-0241","microSkill":"m6_frac_quotient","difficulty":1,"prompt":"Quelle division a pour résultat exact 3/4 ?","choices":["3 ÷ 4","4 ÷ 3","3 ÷ 7","7 ÷ 4"],"correctIndex":0,"explanation":"Par définition, 3/4 est le résultat exact de 3 ÷ 4."},
+    {"code":"M6-0242","microSkill":"m6_frac_quotient","difficulty":1,"prompt":"Quelle fraction est le résultat exact de 5 ÷ 2 ?","choices":["2/5","5/2","7/2","5/7"],"correctIndex":1,"explanation":"Le nombre divisé devient le numérateur et le diviseur devient le dénominateur : 5 ÷ 2 = 5/2."},
+    {"code":"M6-0243","microSkill":"m6_frac_quotient","difficulty":1,"prompt":"Complète : 7/3 = …","choices":["3 ÷ 7","7 × 3","7 ÷ 3","3 − 7"],"correctIndex":2,"explanation":"La fraction 7/3 est le résultat exact de la division 7 ÷ 3."},
+    {"code":"M6-0244","microSkill":"m6_frac_quotient","difficulty":2,"prompt":"Quelle écriture donne le résultat exact de 11 ÷ 6 ?","choices":["6/11","17/6","11/17","11/6"],"correctIndex":3,"explanation":"11 ÷ 6 s’écrit exactement 11/6."},
+    {"code":"M6-0245","microSkill":"m6_frac_quotient","difficulty":2,"prompt":"Dans la fraction 9/5, quel entier est divisé ?","choices":["9","5","14","45"],"correctIndex":0,"explanation":"9/5 signifie 9 ÷ 5 : l’entier divisé est 9."},
+    {"code":"M6-0246","microSkill":"m6_frac_quotient","difficulty":2,"prompt":"Dans l’écriture 13/8, quel entier est le diviseur ?","choices":["13","8","21","5"],"correctIndex":1,"explanation":"13/8 signifie 13 ÷ 8 : le diviseur est 8."},
+    {"code":"M6-0247","microSkill":"m6_frac_quotient","difficulty":2,"prompt":"Quel quotient exact correspond à la fraction 2/9 ?","choices":["9 ÷ 2","2 × 9","2 ÷ 9","9 − 2"],"correctIndex":2,"explanation":"La fraction 2/9 est le quotient exact de 2 par 9."},
+    {"code":"M6-0248","microSkill":"m6_frac_quotient","difficulty":3,"prompt":"Une longueur de 5 m est partagée en 8 parts égales. Quelle est la longueur exacte d’une part, en mètre ?","choices":["8/5","13/8","5/13","5/8"],"correctIndex":3,"explanation":"La longueur d’une part est le quotient de 5 par 8, soit 5/8 m."},
+    {"code":"M6-0249","microSkill":"m6_frac_quotient","difficulty":3,"prompt":"Quelle fraction représente le quotient exact de 17 par 4 ?","choices":["17/4","4/17","21/4","17/21"],"correctIndex":0,"explanation":"Le quotient de 17 par 4 s’écrit 17/4."},
+    {"code":"M6-0250","microSkill":"m6_frac_quotient","difficulty":3,"prompt":"Quelle affirmation est correcte ?","choices":["4/7 est le quotient de 7 par 4.","4/7 est le quotient de 4 par 7.","4/7 est le produit de 4 par 7.","4/7 est la différence entre 7 et 4."],"correctIndex":1,"explanation":"Le numérateur est le nombre divisé et le dénominateur est le diviseur : 4/7 = 4 ÷ 7."},
+
+    {"code":"M6-0251","microSkill":"m6_frac_egalite_multiplicative","difficulty":1,"prompt":"Complète : 4 × … = 3.","choices":["4/3","7/4","3/4","1/4"],"correctIndex":2,"explanation":"4 × 3/4 = 3."},
+    {"code":"M6-0252","microSkill":"m6_frac_egalite_multiplicative","difficulty":1,"prompt":"Complète : 5 × … = 2.","choices":["5/2","7/5","3/5","2/5"],"correctIndex":3,"explanation":"5 × 2/5 = 2."},
+    {"code":"M6-0253","microSkill":"m6_frac_egalite_multiplicative","difficulty":1,"prompt":"Quel nombre multiplié par 3 donne 1 ?","choices":["1/3","3","2/3","1/2"],"correctIndex":0,"explanation":"3 × 1/3 = 1."},
+    {"code":"M6-0254","microSkill":"m6_frac_egalite_multiplicative","difficulty":2,"prompt":"Complète : 7 × … = 5.","choices":["7/5","5/7","12/7","2/7"],"correctIndex":1,"explanation":"7 × 5/7 = 5."},
+    {"code":"M6-0255","microSkill":"m6_frac_egalite_multiplicative","difficulty":2,"prompt":"Complète : 8 × … = 11.","choices":["8/11","19/8","11/8","3/8"],"correctIndex":2,"explanation":"8 × 11/8 = 11."},
+    {"code":"M6-0256","microSkill":"m6_frac_egalite_multiplicative","difficulty":2,"prompt":"Quel nombre vérifie 6 × ce nombre = 13 ?","choices":["6/13","19/6","7/6","13/6"],"correctIndex":3,"explanation":"Le nombre recherché est le quotient de 13 par 6, soit 13/6."},
+    {"code":"M6-0257","microSkill":"m6_frac_egalite_multiplicative","difficulty":2,"prompt":"Complète : 9 × … = 4.","choices":["4/9","9/4","13/9","5/9"],"correctIndex":0,"explanation":"9 × 4/9 = 4."},
+    {"code":"M6-0258","microSkill":"m6_frac_egalite_multiplicative","difficulty":3,"prompt":"Par quel nombre faut-il multiplier 12 pour obtenir 7 ?","choices":["12/7","7/12","19/12","5/12"],"correctIndex":1,"explanation":"12 × 7/12 = 7."},
+    {"code":"M6-0259","microSkill":"m6_frac_egalite_multiplicative","difficulty":3,"prompt":"Quelle égalité traduit correctement la définition de 15/4 ?","choices":["15 × 15/4 = 4","4 × 4/15 = 15","4 × 15/4 = 15","15 × 4/15 = 15"],"correctIndex":2,"explanation":"15/4 est le nombre qui, multiplié par 4, donne 15."},
+    {"code":"M6-0260","microSkill":"m6_frac_egalite_multiplicative","difficulty":3,"prompt":"Complète : 11 × … = 18.","choices":["11/18","29/11","7/11","18/11"],"correctIndex":3,"explanation":"Le facteur manquant est le quotient de 18 par 11, soit 18/11."},
+
+    {"code":"M6-0261","microSkill":"m6_frac_decimal_usuel","difficulty":1,"prompt":"Quelle est l’écriture décimale de 1/2 ?","choices":["0,5","0,2","1,2","2"],"correctIndex":0,"explanation":"1 ÷ 2 = 0,5."},
+    {"code":"M6-0262","microSkill":"m6_frac_decimal_usuel","difficulty":1,"prompt":"Quelle est l’écriture décimale de 1/4 ?","choices":["0,4","0,25","0,75","1,4"],"correctIndex":1,"explanation":"1 ÷ 4 = 0,25."},
+    {"code":"M6-0263","microSkill":"m6_frac_decimal_usuel","difficulty":1,"prompt":"Quelle fraction est égale à 0,75 ?","choices":["1/4","1/2","3/4","4/3"],"correctIndex":2,"explanation":"3/4 = 3 ÷ 4 = 0,75."},
+    {"code":"M6-0264","microSkill":"m6_frac_decimal_usuel","difficulty":2,"prompt":"Quelle est l’écriture décimale de 3/2 ?","choices":["0,3","0,6","3,2","1,5"],"correctIndex":3,"explanation":"3 ÷ 2 = 1,5."},
+    {"code":"M6-0265","microSkill":"m6_frac_decimal_usuel","difficulty":2,"prompt":"Quelle fraction est égale à 2,5 ?","choices":["5/2","2/5","5/10","2/10"],"correctIndex":0,"explanation":"5 ÷ 2 = 2,5."},
+    {"code":"M6-0266","microSkill":"m6_frac_decimal_usuel","difficulty":2,"prompt":"Quelle est l’écriture décimale de 2/5 ?","choices":["0,25","0,4","0,5","2,5"],"correctIndex":1,"explanation":"2 ÷ 5 = 0,4."},
+    {"code":"M6-0267","microSkill":"m6_frac_decimal_usuel","difficulty":2,"prompt":"Quelle fraction est égale à 0,2 ?","choices":["1/2","2/5","1/5","1/4"],"correctIndex":2,"explanation":"1 ÷ 5 = 0,2."},
+    {"code":"M6-0268","microSkill":"m6_frac_decimal_usuel","difficulty":3,"prompt":"Quelle est l’écriture décimale de 7/4 ?","choices":["0,175","1,4","7,4","1,75"],"correctIndex":3,"explanation":"7 ÷ 4 = 1,75."},
+    {"code":"M6-0269","microSkill":"m6_frac_decimal_usuel","difficulty":3,"prompt":"Quelle fraction est égale à 0,1 ?","choices":["1/10","1/100","10/1","1/5"],"correctIndex":0,"explanation":"1 ÷ 10 = 0,1."},
+    {"code":"M6-0270","microSkill":"m6_frac_decimal_usuel","difficulty":3,"prompt":"Quelle est l’écriture décimale de 9/4 ?","choices":["0,225","2,25","2,4","9,4"],"correctIndex":1,"explanation":"9 ÷ 4 = 2,25."},
+
+    {"code":"M6-0271","microSkill":"m6_frac_nature_quotient","difficulty":1,"prompt":"Quel type de nombre la fraction 12/4 représente-t-elle ?","choices":["Un nombre décimal non entier","Un nombre non décimal","Un nombre entier","Elle ne représente aucun nombre"],"correctIndex":2,"explanation":"12/4 = 3 : cette fraction représente un nombre entier."},
+    {"code":"M6-0272","microSkill":"m6_frac_nature_quotient","difficulty":1,"prompt":"Quel type de nombre la fraction 3/4 représente-t-elle ?","choices":["Un nombre entier","Un nombre non décimal","Elle ne représente aucun nombre","Un nombre décimal non entier"],"correctIndex":3,"explanation":"3/4 = 0,75 : c’est un nombre décimal non entier."},
+    {"code":"M6-0273","microSkill":"m6_frac_nature_quotient","difficulty":1,"prompt":"Quel type de nombre la fraction 1/3 représente-t-elle ?","choices":["Un nombre non décimal","Un nombre entier","Un nombre décimal non entier","Elle ne représente aucun nombre"],"correctIndex":0,"explanation":"L’écriture décimale de 1/3 ne se termine pas : 1/3 est un nombre non décimal."},
+    {"code":"M6-0274","microSkill":"m6_frac_nature_quotient","difficulty":2,"prompt":"Quel type de nombre la fraction 7/2 représente-t-elle ?","choices":["Un nombre entier","Un nombre décimal non entier","Un nombre non décimal","Elle ne représente aucun nombre"],"correctIndex":1,"explanation":"7/2 = 3,5 : c’est un nombre décimal non entier."},
+    {"code":"M6-0275","microSkill":"m6_frac_nature_quotient","difficulty":2,"prompt":"Quel type de nombre la fraction 20/5 représente-t-elle ?","choices":["Un nombre décimal non entier","Un nombre non décimal","Un nombre entier","Elle ne représente aucun nombre"],"correctIndex":2,"explanation":"20/5 = 4 : cette fraction représente un nombre entier."},
+    {"code":"M6-0276","microSkill":"m6_frac_nature_quotient","difficulty":2,"prompt":"Quel type de nombre la fraction 5/6 représente-t-elle ?","choices":["Un nombre entier","Un nombre décimal non entier","Elle ne représente aucun nombre","Un nombre non décimal"],"correctIndex":3,"explanation":"L’écriture décimale de 5/6 ne se termine pas : ce nombre est non décimal."},
+    {"code":"M6-0277","microSkill":"m6_frac_nature_quotient","difficulty":2,"prompt":"Quel type de nombre la fraction 15/6 représente-t-elle ?","choices":["Un nombre décimal non entier","Un nombre entier","Un nombre non décimal","Elle ne représente aucun nombre"],"correctIndex":0,"explanation":"15/6 = 2,5 : c’est un nombre décimal non entier."},
+    {"code":"M6-0278","microSkill":"m6_frac_nature_quotient","difficulty":3,"prompt":"Quel type de nombre la fraction 7/7 représente-t-elle ?","choices":["Un nombre non décimal","Un nombre entier","Un nombre décimal non entier","Elle ne représente aucun nombre"],"correctIndex":1,"explanation":"7/7 = 1 : cette fraction représente un nombre entier."},
+    {"code":"M6-0279","microSkill":"m6_frac_nature_quotient","difficulty":3,"prompt":"Quel type de nombre la fraction 11/20 représente-t-elle ?","choices":["Un nombre entier","Un nombre non décimal","Un nombre décimal non entier","Elle ne représente aucun nombre"],"correctIndex":2,"explanation":"11/20 = 0,55 : c’est un nombre décimal non entier."},
+    {"code":"M6-0280","microSkill":"m6_frac_nature_quotient","difficulty":3,"prompt":"Quel type de nombre la fraction 2/7 représente-t-elle ?","choices":["Un nombre entier","Un nombre décimal non entier","Elle ne représente aucun nombre","Un nombre non décimal"],"correctIndex":3,"explanation":"L’écriture décimale de 2/7 ne se termine pas : ce nombre est non décimal."}
+  ]
+}
