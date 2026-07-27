@@ -1,5 +1,5 @@
 const REVIEW_KEY='capCollegeV50aReviews';
-const APP_VERSION='5.3.9';
+const APP_VERSION='5.3.10';
 const QUESTIONS=(window.VALIDATION_QUESTIONS||[]).map(item=>{
  const choices=item.current?.choices||[];
  return {
@@ -47,7 +47,7 @@ async function persist(question=currentQuestion()){
  const review=reviewFor(q.id);
  if(!review.rating){
   saveStatus('Choisis d’abord une note pour enregistrer le commentaire.',true);
-  return;
+  return false;
  }
  saveStatus('Enregistrement…');
  try{
@@ -57,8 +57,10 @@ async function persist(question=currentQuestion()){
   review.updatedAt=saved?.reviewed_at||new Date().toISOString();
   review.questionVersion=q.version||1;
   saveStatus('Enregistré dans Supabase.');
+  return true;
  }catch(error){
   saveStatus(`Échec de l’enregistrement : ${error.message}`,true);
+  return false;
  }
 }
 function currentQuestion(){return filteredQuestions[currentIndex];}
@@ -201,7 +203,7 @@ function renderQuestion(){
   :'';
  window.scrollTo({top:0,behavior:'smooth'});
 }
-function setRating(rating){
+async function setRating(rating){
  const q=currentQuestion();if(!q)return;
  const old=reviewFor(q.id);
  const history=Array.isArray(old.history)?[...old.history]:[];
@@ -210,7 +212,11 @@ function setRating(rating){
   if(!alreadySaved)history.push({rating:old.rating,comment:old.comment||'',updatedAt:old.updatedAt||'',questionVersion:old.questionVersion||1});
  }
  reviews[String(q.id)]={...old,history,rating,updatedAt:new Date().toISOString(),questionVersion:q.version||1};
- renderQuestion();persist(q);
+ renderQuestion();
+ const saved=await persist(q);
+ if(saved&&rating==='A'&&currentQuestion()?.id===q.id){
+  nextTestQuestion();
+ }
 }
 function saveComment(){
  const q=currentQuestion();if(!q)return;
