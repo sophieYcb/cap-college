@@ -1,0 +1,89 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {"code": "numbers_calculation", "name": "Nombres, calcul et résolution de problèmes"},
+  "skill": {"code": "numeration", "name": "Numération"},
+  "lot": "M6-NUM-04",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_num_encadrer_decimal",
+      "teacherName": "Encadrer un nombre décimal",
+      "studentName": "Encadrer un nombre à virgule",
+      "lessonReminder": "Encadrer un nombre consiste à trouver une valeur plus petite et une valeur plus grande. L’unité, le dixième ou le centième d’encadrement doit être respecté.",
+      "workedExample": "À l’unité : 4 < 4,37 < 5. Au dixième : 4,3 < 4,37 < 4,4.",
+      "masteryCriteria": "Choisir un encadrement correct à l’unité, au dixième ou au centième."
+    },
+    {
+      "code": "m6_num_intercaler_decimal",
+      "teacherName": "Intercaler un décimal entre deux décimaux",
+      "studentName": "Trouver un nombre entre deux nombres",
+      "lessonReminder": "Intercaler un nombre signifie trouver une valeur strictement plus grande que la première borne et strictement plus petite que la seconde.",
+      "workedExample": "Entre 2,4 et 2,5, on peut intercaler 2,45.",
+      "masteryCriteria": "Identifier ou produire un nombre strictement compris entre deux décimaux."
+    },
+    {
+      "code": "m6_num_arrondir_unite",
+      "teacherName": "Arrondir un décimal à l’unité",
+      "studentName": "Arrondir à l’unité",
+      "lessonReminder": "Pour arrondir à l’unité, on regarde le chiffre des dixièmes : de 0 à 4, on garde l’unité ; de 5 à 9, on passe à l’unité suivante.",
+      "workedExample": "12,36 s’arrondit à 12 ; 12,68 s’arrondit à 13.",
+      "masteryCriteria": "Déterminer l’entier le plus proche d’un nombre décimal."
+    },
+    {
+      "code": "m6_num_arrondir_dixieme",
+      "teacherName": "Arrondir un décimal au dixième",
+      "studentName": "Arrondir au dixième",
+      "lessonReminder": "Pour arrondir au dixième, on regarde le chiffre des centièmes : de 0 à 4, on garde le dixième ; de 5 à 9, on augmente le dixième d’une unité.",
+      "workedExample": "7,43 s’arrondit à 7,4 ; 7,48 s’arrondit à 7,5.",
+      "masteryCriteria": "Déterminer le nombre au dixième le plus proche."
+    }
+  ],
+  "questions": [
+    {"code":"M6-0121","microSkill":"m6_num_encadrer_decimal","difficulty":1,"prompt":"Quel est l’encadrement de 4,6 entre deux entiers consécutifs ?","choices":["4 < 4,6 < 5","3 < 4,6 < 4","4,5 < 4,6 < 4,7","5 < 4,6 < 6"],"correctIndex":0,"explanation":"4,6 est supérieur à 4 et inférieur à 5."},
+    {"code":"M6-0122","microSkill":"m6_num_encadrer_decimal","difficulty":1,"prompt":"Quel est l’encadrement de 12,3 entre deux entiers consécutifs ?","choices":["11 < 12,3 < 12","12 < 12,3 < 13","12,2 < 12,3 < 12,4","13 < 12,3 < 14"],"correctIndex":1,"explanation":"12,3 est compris entre les entiers consécutifs 12 et 13."},
+    {"code":"M6-0123","microSkill":"m6_num_encadrer_decimal","difficulty":1,"prompt":"Quel encadrement de 7,84 est au dixième ?","choices":["7 < 7,84 < 8","7,83 < 7,84 < 7,85","7,8 < 7,84 < 7,9","7,9 < 7,84 < 8"],"correctIndex":2,"explanation":"Les deux dixièmes consécutifs qui entourent 7,84 sont 7,8 et 7,9."},
+    {"code":"M6-0124","microSkill":"m6_num_encadrer_decimal","difficulty":2,"prompt":"Quel encadrement de 3,417 est au centième ?","choices":["3,3 < 3,417 < 3,4","3,4 < 3,417 < 3,5","3,416 < 3,417 < 3,418","3,41 < 3,417 < 3,42"],"correctIndex":3,"explanation":"3,417 est compris entre les centièmes consécutifs 3,41 et 3,42."},
+    {"code":"M6-0125","microSkill":"m6_num_encadrer_decimal","difficulty":2,"prompt":"Quel encadrement de 0,098 est au centième ?","choices":["0,09 < 0,098 < 0,10","0,08 < 0,098 < 0,09","0,097 < 0,098 < 0,099","0,10 < 0,098 < 0,11"],"correctIndex":0,"explanation":"0,098 se situe entre 0,09 et 0,10."},
+    {"code":"M6-0126","microSkill":"m6_num_encadrer_decimal","difficulty":2,"prompt":"Quel encadrement de 25,06 est au dixième ?","choices":["24,9 < 25,06 < 25,0","25,05 < 25,06 < 25,07","25,0 < 25,06 < 25,1","25,1 < 25,06 < 25,2"],"correctIndex":2,"explanation":"25,06 est compris entre 25,0 et 25,1."},
+    {"code":"M6-0127","microSkill":"m6_num_encadrer_decimal","difficulty":2,"prompt":"Quel encadrement de 99,999 est à l’unité ?","choices":["98 < 99,999 < 99","99,9 < 99,999 < 100","99 < 99,999 < 100","100 < 99,999 < 101"],"correctIndex":2,"explanation":"99,999 est supérieur à 99 et inférieur à 100."},
+    {"code":"M6-0128","microSkill":"m6_num_encadrer_decimal","difficulty":3,"prompt":"Quel encadrement de 10,005 est au centième ?","choices":["10,01 < 10,005 < 10,02","10,004 < 10,005 < 10,006","9,99 < 10,005 < 10,00","10,00 < 10,005 < 10,01"],"correctIndex":3,"explanation":"10,005 est strictement compris entre 10,00 et 10,01."},
+    {"code":"M6-0129","microSkill":"m6_num_encadrer_decimal","difficulty":3,"prompt":"Quel nombre peut remplacer les deux bornes pour encadrer 6,999 au dixième ?","choices":["6,9 et 7,0","6,8 et 6,9","6,99 et 7,00","7,0 et 7,1"],"correctIndex":0,"explanation":"Au dixième, 6,9 < 6,999 < 7,0."},
+    {"code":"M6-0130","microSkill":"m6_num_encadrer_decimal","difficulty":3,"prompt":"Quel encadrement de 42,101 est au centième ?","choices":["42,09 < 42,101 < 42,10","42,10 < 42,101 < 42,11","42,101 < 42,11 < 42,12","42,11 < 42,101 < 42,12"],"correctIndex":1,"explanation":"42,101 est juste supérieur à 42,10 et inférieur à 42,11."},
+
+    {"code":"M6-0131","microSkill":"m6_num_intercaler_decimal","difficulty":1,"prompt":"Quel nombre est strictement compris entre 3,2 et 3,4 ?","choices":["3,2","3,4","3,3","3,5"],"correctIndex":2,"explanation":"3,2 < 3,3 < 3,4."},
+    {"code":"M6-0132","microSkill":"m6_num_intercaler_decimal","difficulty":1,"prompt":"Quel nombre peut-on intercaler entre 8,5 et 8,6 ?","choices":["8,4","8,5","8,6","8,55"],"correctIndex":3,"explanation":"8,55 est strictement supérieur à 8,5 et inférieur à 8,6."},
+    {"code":"M6-0133","microSkill":"m6_num_intercaler_decimal","difficulty":1,"prompt":"Quel nombre est compris strictement entre 0,7 et 0,9 ?","choices":["0,8","0,6","0,7","0,9"],"correctIndex":0,"explanation":"0,7 < 0,8 < 0,9."},
+    {"code":"M6-0134","microSkill":"m6_num_intercaler_decimal","difficulty":2,"prompt":"Quel nombre peut-on intercaler entre 5,08 et 5,09 ?","choices":["5,8","5,085","5,09","5,07"],"correctIndex":1,"explanation":"5,08 < 5,085 < 5,09."},
+    {"code":"M6-0135","microSkill":"m6_num_intercaler_decimal","difficulty":2,"prompt":"Quel nombre est strictement compris entre 12,99 et 13 ?","choices":["12,9","13,01","12,995","12,99"],"correctIndex":2,"explanation":"12,99 < 12,995 < 13."},
+    {"code":"M6-0136","microSkill":"m6_num_intercaler_decimal","difficulty":2,"prompt":"Quel nombre peut-on intercaler entre 2,403 et 2,404 ?","choices":["2,4025","2,403","2,404","2,4035"],"correctIndex":3,"explanation":"2,403 < 2,4035 < 2,404."},
+    {"code":"M6-0137","microSkill":"m6_num_intercaler_decimal","difficulty":2,"prompt":"Quel nombre est strictement compris entre 6,09 et 6,1 ?","choices":["6,095","6,9","6,1","6,09"],"correctIndex":0,"explanation":"6,09 < 6,095 < 6,10."},
+    {"code":"M6-0138","microSkill":"m6_num_intercaler_decimal","difficulty":3,"prompt":"Quel nombre peut-on intercaler entre 0,009 et 0,01 ?","choices":["0,09","0,0095","0,01","0,0085"],"correctIndex":1,"explanation":"0,009 < 0,0095 < 0,010."},
+    {"code":"M6-0139","microSkill":"m6_num_intercaler_decimal","difficulty":3,"prompt":"Quel nombre est strictement compris entre 7,777 et 7,778 ?","choices":["7,7769","7,777","7,7775","7,778"],"correctIndex":2,"explanation":"7,777 < 7,7775 < 7,778."},
+    {"code":"M6-0140","microSkill":"m6_num_intercaler_decimal","difficulty":3,"prompt":"Quel nombre peut-on intercaler entre 19,999 et 20 ?","choices":["19,99","20,001","19,999","19,9995"],"correctIndex":3,"explanation":"19,999 < 19,9995 < 20."},
+
+    {"code":"M6-0141","microSkill":"m6_num_arrondir_unite","difficulty":1,"prompt":"Quel est l’arrondi de 6,2 à l’unité ?","choices":["6","7","6,2","5"],"correctIndex":0,"explanation":"Le chiffre des dixièmes est 2 : on garde 6."},
+    {"code":"M6-0142","microSkill":"m6_num_arrondir_unite","difficulty":1,"prompt":"Quel est l’arrondi de 8,7 à l’unité ?","choices":["8","8,7","9","7"],"correctIndex":2,"explanation":"Le chiffre des dixièmes est 7 : on passe à l’unité suivante, 9."},
+    {"code":"M6-0143","microSkill":"m6_num_arrondir_unite","difficulty":1,"prompt":"Quel est l’arrondi de 14,49 à l’unité ?","choices":["15","14","14,5","13"],"correctIndex":1,"explanation":"Le chiffre des dixièmes est 4 : 14,49 s’arrondit à 14."},
+    {"code":"M6-0144","microSkill":"m6_num_arrondir_unite","difficulty":2,"prompt":"Quel est l’arrondi de 25,83 à l’unité ?","choices":["25","25,8","24","26"],"correctIndex":3,"explanation":"Le chiffre des dixièmes est 8 : on arrondit à 26."},
+    {"code":"M6-0145","microSkill":"m6_num_arrondir_unite","difficulty":2,"prompt":"Quel est l’arrondi de 0,38 à l’unité ?","choices":["0","1","0,4","0,3"],"correctIndex":0,"explanation":"0,38 est plus proche de 0 que de 1."},
+    {"code":"M6-0146","microSkill":"m6_num_arrondir_unite","difficulty":2,"prompt":"Quel est l’arrondi de 99,6 à l’unité ?","choices":["99","99,6","100","98"],"correctIndex":2,"explanation":"Le chiffre des dixièmes est 6 : 99,6 s’arrondit à 100."},
+    {"code":"M6-0147","microSkill":"m6_num_arrondir_unite","difficulty":2,"prompt":"Quel est l’arrondi de 103,08 à l’unité ?","choices":["104","103","103,1","102"],"correctIndex":1,"explanation":"Le chiffre des dixièmes est 0 : on garde 103."},
+    {"code":"M6-0148","microSkill":"m6_num_arrondir_unite","difficulty":3,"prompt":"Quel est l’arrondi de 1 249,51 à l’unité ?","choices":["1 249","1 249,5","1 248","1 250"],"correctIndex":3,"explanation":"Le chiffre des dixièmes est 5 : on passe de 1 249 à 1 250."},
+    {"code":"M6-0149","microSkill":"m6_num_arrondir_unite","difficulty":3,"prompt":"Quel est l’arrondi de 37,499 à l’unité ?","choices":["37","38","37,5","36"],"correctIndex":0,"explanation":"Le chiffre des dixièmes est 4 : le nombre s’arrondit à 37."},
+    {"code":"M6-0150","microSkill":"m6_num_arrondir_unite","difficulty":3,"prompt":"Quel est l’arrondi de 999,501 à l’unité ?","choices":["999","1 000","999,5","998"],"correctIndex":1,"explanation":"Le chiffre des dixièmes est 5 : 999,501 s’arrondit à 1 000."},
+
+    {"code":"M6-0151","microSkill":"m6_num_arrondir_dixieme","difficulty":1,"prompt":"Quel est l’arrondi de 4,23 au dixième ?","choices":["4,3","4,2","4","4,23"],"correctIndex":1,"explanation":"Le chiffre des centièmes est 3 : on garde 4,2."},
+    {"code":"M6-0152","microSkill":"m6_num_arrondir_dixieme","difficulty":1,"prompt":"Quel est l’arrondi de 7,86 au dixième ?","choices":["7,8","8","7,86","7,9"],"correctIndex":3,"explanation":"Le chiffre des centièmes est 6 : 7,86 s’arrondit à 7,9."},
+    {"code":"M6-0153","microSkill":"m6_num_arrondir_dixieme","difficulty":1,"prompt":"Quel est l’arrondi de 12,04 au dixième ?","choices":["12,0","12,1","12,04","11,9"],"correctIndex":0,"explanation":"Le chiffre des centièmes est 4 : on garde 12,0."},
+    {"code":"M6-0154","microSkill":"m6_num_arrondir_dixieme","difficulty":2,"prompt":"Quel est l’arrondi de 3,57 au dixième ?","choices":["3,5","3,57","3,6","4,0"],"correctIndex":2,"explanation":"Le chiffre des centièmes est 7 : 3,57 s’arrondit à 3,6."},
+    {"code":"M6-0155","microSkill":"m6_num_arrondir_dixieme","difficulty":2,"prompt":"Quel est l’arrondi de 18,149 au dixième ?","choices":["18,2","18,1","18,15","18,0"],"correctIndex":1,"explanation":"Le chiffre des centièmes est 4 : on conserve le dixième 1."},
+    {"code":"M6-0156","microSkill":"m6_num_arrondir_dixieme","difficulty":2,"prompt":"Quel est l’arrondi de 0,999 au dixième ?","choices":["0,9","0,99","0,0","1,0"],"correctIndex":3,"explanation":"Le chiffre des centièmes est 9 : le dixième augmente et 0,999 s’arrondit à 1,0."},
+    {"code":"M6-0157","microSkill":"m6_num_arrondir_dixieme","difficulty":2,"prompt":"Quel est l’arrondi de 25,251 au dixième ?","choices":["25,3","25,2","25,25","26,0"],"correctIndex":0,"explanation":"Le chiffre des centièmes est 5 : le dixième 2 devient 3."},
+    {"code":"M6-0158","microSkill":"m6_num_arrondir_dixieme","difficulty":3,"prompt":"Quel est l’arrondi de 6,949 au dixième ?","choices":["7,0","6,9","6,95","6,8"],"correctIndex":1,"explanation":"Le chiffre des centièmes est 4 : on garde 6,9."},
+    {"code":"M6-0159","microSkill":"m6_num_arrondir_dixieme","difficulty":3,"prompt":"Quel est l’arrondi de 99,951 au dixième ?","choices":["99,9","99,95","100,0","100,1"],"correctIndex":2,"explanation":"Le chiffre des centièmes est 5 : 99,9 augmente d’un dixième et devient 100,0."},
+    {"code":"M6-0160","microSkill":"m6_num_arrondir_dixieme","difficulty":3,"prompt":"Quel est l’arrondi de 0,049 au dixième ?","choices":["0,1","0,05","0,04","0,0"],"correctIndex":3,"explanation":"Le chiffre des centièmes est 4 : le nombre s’arrondit à 0,0 au dixième."}
+  ]
+}
