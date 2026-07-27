@@ -1,5 +1,5 @@
 const REVIEW_KEY='capCollegeV50aReviews';
-const APP_VERSION='5.3.10';
+const APP_VERSION='5.3.11';
 const QUESTIONS=(window.VALIDATION_QUESTIONS||[]).map(item=>{
  const choices=item.current?.choices||[];
  return {
@@ -195,6 +195,13 @@ function renderQuestion(){
   document.getElementById('previousQuestion').textContent=q.previous.prompt||'';
   const previousCorrect=previousChoices.findIndex(choice=>choice.isCorrect);
   document.getElementById('previousChoices').innerHTML=previousChoices.map((choice,index)=>`<div class="choice test-choice ${index===previousCorrect?'correct-choice':''}"><span>${String.fromCharCode(65+index)}.</span> ${escapeHtml(choice.text)} ${index===previousCorrect?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
+  const previousReview=document.getElementById('previousReview');
+  const review=q.previous.review;
+  previousReview.classList.toggle('hidden',!review);
+  previousReview.innerHTML=review
+   ?`<strong>Validation de cette version : ${escapeHtml(review.grade||'—')}</strong>
+     <p>${escapeHtml(review.comment||'Aucun commentaire saisi.')}</p>`
+   :'';
  }
  const staleNotice=document.getElementById('staleReviewNotice');
  staleNotice.classList.toggle('hidden',!staleReview);

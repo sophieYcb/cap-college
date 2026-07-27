@@ -363,7 +363,7 @@
 
   async function getValidationQuestionBank() {
     const [bankResult, flagsResult] = await Promise.all([
-      getClient().rpc("get_validation_question_bank_v2"),
+      getClient().rpc("get_validation_question_bank_v3"),
       getClient().rpc("get_open_question_flags")
     ]);
     if (bankResult.error) throw bankResult.error;
