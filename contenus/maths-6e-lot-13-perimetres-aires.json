@@ -1,0 +1,89 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {"code": "quantities_measurement", "name": "Grandeurs et mesures"},
+  "skill": {"code": "perimeters_areas", "name": "Périmètres et aires"},
+  "lot": "M6-MES-02",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_mes_perimetre_disque_formule",
+      "teacherName": "Connaître la formule du périmètre d’un disque",
+      "studentName": "Connaître la formule du tour d’un disque",
+      "lessonReminder": "Le périmètre d’un disque est égal à π × diamètre, ou à 2 × π × rayon.",
+      "workedExample": "Pour un rayon r : P = 2 × π × r.",
+      "masteryCriteria": "Choisir et utiliser la formule du périmètre d’un disque sans effectuer le calcul."
+    },
+    {
+      "code": "m6_mes_perimetre_disque_calcul",
+      "teacherName": "Calculer le périmètre d’un disque",
+      "studentName": "Calculer le tour d’un disque",
+      "lessonReminder": "On multiplie le diamètre par π. Si seul le rayon est donné, le diamètre vaut deux fois le rayon.",
+      "workedExample": "Avec un diamètre de 10 cm et π ≈ 3,14 : P ≈ 10 × 3,14 = 31,4 cm.",
+      "masteryCriteria": "Calculer le périmètre d’un disque avec π ≈ 3,14, à partir du rayon ou du diamètre."
+    },
+    {
+      "code": "m6_mes_convertir_aire",
+      "teacherName": "Convertir une aire",
+      "studentName": "Convertir des unités d’aire",
+      "lessonReminder": "Entre deux unités d’aire consécutives, le rapport est 100 : 1 m² = 100 dm² et 1 dm² = 100 cm².",
+      "workedExample": "3 m² = 300 dm².",
+      "masteryCriteria": "Convertir des aires entre m², dm², cm² et mm²."
+    },
+    {
+      "code": "m6_mes_aire_carre",
+      "teacherName": "Calculer l’aire d’un carré",
+      "studentName": "Calculer l’aire d’un carré",
+      "lessonReminder": "L’aire d’un carré est égale au produit de la longueur de son côté par elle-même : A = côté × côté.",
+      "workedExample": "Pour un côté de 5 cm : A = 5 × 5 = 25 cm².",
+      "masteryCriteria": "Calculer l’aire d’un carré à partir de la longueur de son côté."
+    }
+  ],
+  "questions": [
+    {"code":"M6-0461","microSkill":"m6_mes_perimetre_disque_formule","difficulty":1,"prompt":"Quelle formule permet de calculer le périmètre P d’un disque de diamètre d ?","choices":["P = π × d","P = π + d","P = d × d","P = 2 × d"],"correctIndex":0,"explanation":"Le périmètre d’un disque est égal à π multiplié par son diamètre : P = π × d."},
+    {"code":"M6-0462","microSkill":"m6_mes_perimetre_disque_formule","difficulty":1,"prompt":"Quelle formule permet de calculer le périmètre P d’un disque de rayon r ?","choices":["P = π × r","P = 2 × π × r","P = r × r","P = 4 × r"],"correctIndex":1,"explanation":"Le diamètre vaut 2r, donc P = 2 × π × r."},
+    {"code":"M6-0463","microSkill":"m6_mes_perimetre_disque_formule","difficulty":1,"prompt":"Pour calculer le périmètre d’un disque à partir de son diamètre, par quel nombre multiplie-t-on le diamètre ?","choices":["2","4","π","10"],"correctIndex":2,"explanation":"On utilise P = π × diamètre."},
+    {"code":"M6-0464","microSkill":"m6_mes_perimetre_disque_formule","difficulty":2,"prompt":"Un disque a un rayon r. Quelle expression représente son diamètre ?","choices":["r ÷ 2","π × r","r + 1","2 × r"],"correctIndex":3,"explanation":"Le diamètre est égal à deux fois le rayon."},
+    {"code":"M6-0465","microSkill":"m6_mes_perimetre_disque_formule","difficulty":2,"prompt":"Un disque a un diamètre de 12 cm. Quelle expression donne son périmètre en centimètres ?","choices":["π × 12","π + 12","12 × 12","2 × 12"],"correctIndex":0,"explanation":"Avec le diamètre, on utilise P = π × d, soit π × 12."},
+    {"code":"M6-0466","microSkill":"m6_mes_perimetre_disque_formule","difficulty":2,"prompt":"Un disque a un rayon de 7 m. Quelle expression donne son périmètre en mètres ?","choices":["π × 7","2 × π × 7","7 × 7","4 × 7"],"correctIndex":1,"explanation":"Avec le rayon, on utilise P = 2 × π × r, soit 2 × π × 7."},
+    {"code":"M6-0467","microSkill":"m6_mes_perimetre_disque_formule","difficulty":2,"prompt":"Quelle égalité est correcte pour le périmètre d’un disque ?","choices":["P = π + diamètre","P = rayon × rayon","P = π × diamètre","P = 4 × diamètre"],"correctIndex":2,"explanation":"La formule correcte est P = π × diamètre."},
+    {"code":"M6-0468","microSkill":"m6_mes_perimetre_disque_formule","difficulty":3,"prompt":"Le diamètre d’un disque vaut 2r. Par quelle expression peut-on remplacer π × diamètre ?","choices":["π × r","π + 2r","4 × r","2 × π × r"],"correctIndex":3,"explanation":"Puisque diamètre = 2r, π × diamètre = 2 × π × r."},
+    {"code":"M6-0469","microSkill":"m6_mes_perimetre_disque_formule","difficulty":3,"prompt":"Un disque a un rayon de 4,5 cm. Quelle expression donne son périmètre ?","choices":["2 × π × 4,5 cm","π × 4,5 cm","4,5 × 4,5 cm","4 × 4,5 cm"],"correctIndex":0,"explanation":"Avec le rayon, la formule est P = 2 × π × r."},
+    {"code":"M6-0470","microSkill":"m6_mes_perimetre_disque_formule","difficulty":3,"prompt":"Un disque a un diamètre d. Quelle autre expression donne son périmètre si r = d ÷ 2 ?","choices":["π × r","2 × π × r","4 × π × r","π × r × r"],"correctIndex":1,"explanation":"Le périmètre peut aussi s’écrire 2 × π × r."},
+
+    {"code":"M6-0471","microSkill":"m6_mes_perimetre_disque_calcul","difficulty":1,"prompt":"Avec π ≈ 3,14, quel est le périmètre d’un disque de diamètre 10 cm ?","choices":["15,7 cm","100 cm","31,4 cm","62,8 cm"],"correctIndex":2,"explanation":"P ≈ 3,14 × 10 = 31,4 cm."},
+    {"code":"M6-0472","microSkill":"m6_mes_perimetre_disque_calcul","difficulty":1,"prompt":"Avec π ≈ 3,14, quel est le périmètre d’un disque de rayon 5 cm ?","choices":["15,7 cm","25 cm","62,8 cm","31,4 cm"],"correctIndex":3,"explanation":"Le diamètre vaut 10 cm, donc P ≈ 3,14 × 10 = 31,4 cm."},
+    {"code":"M6-0473","microSkill":"m6_mes_perimetre_disque_calcul","difficulty":1,"prompt":"Avec π ≈ 3,14, quel est le périmètre d’un disque de diamètre 2 m ?","choices":["6,28 m","3,14 m","4 m","12,56 m"],"correctIndex":0,"explanation":"P ≈ 3,14 × 2 = 6,28 m."},
+    {"code":"M6-0474","microSkill":"m6_mes_perimetre_disque_calcul","difficulty":2,"prompt":"Avec π ≈ 3,14, quel est le périmètre d’un disque de rayon 3 m ?","choices":["9,42 m","18,84 m","28,26 m","37,68 m"],"correctIndex":1,"explanation":"Le diamètre vaut 6 m, donc P ≈ 3,14 × 6 = 18,84 m."},
+    {"code":"M6-0475","microSkill":"m6_mes_perimetre_disque_calcul","difficulty":2,"prompt":"Avec π ≈ 3,14, quel est le périmètre d’un disque de diamètre 5 cm ?","choices":["7,85 cm","10 cm","15,7 cm","31,4 cm"],"correctIndex":2,"explanation":"P ≈ 3,14 × 5 = 15,7 cm."},
+    {"code":"M6-0476","microSkill":"m6_mes_perimetre_disque_calcul","difficulty":2,"prompt":"Avec π ≈ 3,14, quel est le périmètre d’un disque de rayon 4 cm ?","choices":["12,56 cm","16 cm","50,24 cm","25,12 cm"],"correctIndex":3,"explanation":"Le diamètre vaut 8 cm, donc P ≈ 3,14 × 8 = 25,12 cm."},
+    {"code":"M6-0477","microSkill":"m6_mes_perimetre_disque_calcul","difficulty":2,"prompt":"Avec π ≈ 3,14, quel est le périmètre d’un disque de diamètre 20 mm ?","choices":["62,8 mm","31,4 mm","40 mm","125,6 mm"],"correctIndex":0,"explanation":"P ≈ 3,14 × 20 = 62,8 mm."},
+    {"code":"M6-0478","microSkill":"m6_mes_perimetre_disque_calcul","difficulty":3,"prompt":"Avec π ≈ 3,14, quel est le périmètre d’un disque de rayon 2,5 m ?","choices":["7,85 m","15,7 m","19,625 m","31,4 m"],"correctIndex":1,"explanation":"Le diamètre vaut 5 m, donc P ≈ 3,14 × 5 = 15,7 m."},
+    {"code":"M6-0479","microSkill":"m6_mes_perimetre_disque_calcul","difficulty":3,"prompt":"Avec π ≈ 3,14, quel est le périmètre d’un disque de diamètre 12,5 cm ?","choices":["19,625 cm","25 cm","39,25 cm","78,5 cm"],"correctIndex":2,"explanation":"P ≈ 3,14 × 12,5 = 39,25 cm."},
+    {"code":"M6-0480","microSkill":"m6_mes_perimetre_disque_calcul","difficulty":3,"prompt":"Avec π ≈ 3,14, quel est le périmètre d’un disque de rayon 7,5 cm ?","choices":["23,55 cm","44,1 cm","176,625 cm","47,1 cm"],"correctIndex":3,"explanation":"Le diamètre vaut 15 cm, donc P ≈ 3,14 × 15 = 47,1 cm."},
+
+    {"code":"M6-0481","microSkill":"m6_mes_convertir_aire","difficulty":1,"prompt":"Convertis 3 m² en décimètres carrés.","choices":["300 dm²","30 dm²","3 000 dm²","0,03 dm²"],"correctIndex":0,"explanation":"1 m² = 100 dm², donc 3 m² = 300 dm²."},
+    {"code":"M6-0482","microSkill":"m6_mes_convertir_aire","difficulty":1,"prompt":"Convertis 5 dm² en centimètres carrés.","choices":["50 cm²","500 cm²","5 000 cm²","0,05 cm²"],"correctIndex":1,"explanation":"1 dm² = 100 cm², donc 5 dm² = 500 cm²."},
+    {"code":"M6-0483","microSkill":"m6_mes_convertir_aire","difficulty":1,"prompt":"Convertis 700 cm² en décimètres carrés.","choices":["70 dm²","0,7 dm²","7 dm²","700 dm²"],"correctIndex":2,"explanation":"100 cm² = 1 dm², donc 700 cm² = 7 dm²."},
+    {"code":"M6-0484","microSkill":"m6_mes_convertir_aire","difficulty":2,"prompt":"Convertis 2 m² en centimètres carrés.","choices":["200 cm²","2 000 cm²","200 000 cm²","20 000 cm²"],"correctIndex":3,"explanation":"1 m² = 10 000 cm², donc 2 m² = 20 000 cm²."},
+    {"code":"M6-0485","microSkill":"m6_mes_convertir_aire","difficulty":2,"prompt":"Convertis 4,5 m² en décimètres carrés.","choices":["450 dm²","45 dm²","4 500 dm²","0,045 dm²"],"correctIndex":0,"explanation":"1 m² = 100 dm², donc 4,5 m² = 450 dm²."},
+    {"code":"M6-0486","microSkill":"m6_mes_convertir_aire","difficulty":2,"prompt":"Convertis 350 dm² en mètres carrés.","choices":["35 m²","3,5 m²","0,35 m²","350 m²"],"correctIndex":1,"explanation":"100 dm² = 1 m², donc 350 dm² = 3,5 m²."},
+    {"code":"M6-0487","microSkill":"m6_mes_convertir_aire","difficulty":2,"prompt":"Convertis 8 cm² en millimètres carrés.","choices":["80 mm²","8 000 mm²","800 mm²","0,08 mm²"],"correctIndex":2,"explanation":"1 cm² = 100 mm², donc 8 cm² = 800 mm²."},
+    {"code":"M6-0488","microSkill":"m6_mes_convertir_aire","difficulty":3,"prompt":"Convertis 25 000 cm² en mètres carrés.","choices":["25 m²","250 m²","0,25 m²","2,5 m²"],"correctIndex":3,"explanation":"10 000 cm² = 1 m², donc 25 000 cm² = 2,5 m²."},
+    {"code":"M6-0489","microSkill":"m6_mes_convertir_aire","difficulty":3,"prompt":"Convertis 0,75 m² en centimètres carrés.","choices":["7 500 cm²","750 cm²","75 000 cm²","75 cm²"],"correctIndex":0,"explanation":"1 m² = 10 000 cm², donc 0,75 m² = 7 500 cm²."},
+    {"code":"M6-0490","microSkill":"m6_mes_convertir_aire","difficulty":3,"prompt":"Convertis 12 500 mm² en centimètres carrés.","choices":["12,5 cm²","125 cm²","1 250 cm²","0,125 cm²"],"correctIndex":1,"explanation":"100 mm² = 1 cm², donc 12 500 mm² = 125 cm²."},
+
+    {"code":"M6-0491","microSkill":"m6_mes_aire_carre","difficulty":1,"prompt":"Un carré a un côté de 3 cm. Quelle est son aire ?","choices":["6 cm²","9 cm","9 cm²","12 cm²"],"correctIndex":2,"explanation":"A = 3 cm × 3 cm = 9 cm²."},
+    {"code":"M6-0492","microSkill":"m6_mes_aire_carre","difficulty":1,"prompt":"Un carré a un côté de 5 m. Quelle est son aire ?","choices":["10 m²","20 m²","25 m","25 m²"],"correctIndex":3,"explanation":"A = 5 m × 5 m = 25 m²."},
+    {"code":"M6-0493","microSkill":"m6_mes_aire_carre","difficulty":1,"prompt":"Un carré a un côté de 7 cm. Quelle est son aire ?","choices":["49 cm²","28 cm²","14 cm²","49 cm"],"correctIndex":0,"explanation":"A = 7 cm × 7 cm = 49 cm²."},
+    {"code":"M6-0494","microSkill":"m6_mes_aire_carre","difficulty":2,"prompt":"Un carré a un côté de 9 mm. Quelle est son aire ?","choices":["36 mm²","81 mm²","18 mm²","81 mm"],"correctIndex":1,"explanation":"A = 9 mm × 9 mm = 81 mm²."},
+    {"code":"M6-0495","microSkill":"m6_mes_aire_carre","difficulty":2,"prompt":"Un carré a un côté de 12 cm. Quelle est son aire ?","choices":["48 cm²","24 cm²","144 cm²","144 cm"],"correctIndex":2,"explanation":"A = 12 cm × 12 cm = 144 cm²."},
+    {"code":"M6-0496","microSkill":"m6_mes_aire_carre","difficulty":2,"prompt":"Un carré a un côté de 2,5 m. Quelle est son aire ?","choices":["5 m²","10 m²","6,25 m","6,25 m²"],"correctIndex":3,"explanation":"A = 2,5 m × 2,5 m = 6,25 m²."},
+    {"code":"M6-0497","microSkill":"m6_mes_aire_carre","difficulty":2,"prompt":"Un carré a un côté de 4,5 cm. Quelle est son aire ?","choices":["20,25 cm²","18 cm²","9 cm²","20,25 cm"],"correctIndex":0,"explanation":"A = 4,5 cm × 4,5 cm = 20,25 cm²."},
+    {"code":"M6-0498","microSkill":"m6_mes_aire_carre","difficulty":3,"prompt":"Un carré a un côté de 0,8 m. Quelle est son aire ?","choices":["3,2 m²","0,64 m²","1,6 m²","0,64 m"],"correctIndex":1,"explanation":"A = 0,8 m × 0,8 m = 0,64 m²."},
+    {"code":"M6-0499","microSkill":"m6_mes_aire_carre","difficulty":3,"prompt":"Un carré a un côté de 1,2 km. Quelle est son aire ?","choices":["2,4 km²","4,8 km²","1,44 km²","1,44 km"],"correctIndex":2,"explanation":"A = 1,2 km × 1,2 km = 1,44 km²."},
+    {"code":"M6-0500","microSkill":"m6_mes_aire_carre","difficulty":3,"prompt":"Un carré a un côté de 15,5 cm. Quelle est son aire ?","choices":["62 cm²","31 cm²","240,25 cm","240,25 cm²"],"correctIndex":3,"explanation":"A = 15,5 cm × 15,5 cm = 240,25 cm²."}
+  ]
+}
