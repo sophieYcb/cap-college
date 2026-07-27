@@ -1,0 +1,216 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {
+    "code": "numbers_calculation",
+    "name": "Nombres, calcul et résolution de problèmes"
+  },
+  "skill": {
+    "code": "percentages",
+    "name": "Pourcentages"
+  },
+  "lot": "M6-PCT-01",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_pct_appliquer_nombre",
+      "teacherName": "Appliquer un pourcentage simple à un nombre",
+      "studentName": "Calculer un pourcentage d’un nombre",
+      "lessonReminder": "Pour calculer un pourcentage simple, on peut utiliser 10 % = un dixième, 25 % = un quart, 50 % = la moitié et 75 % = trois quarts.",
+      "workedExample": "25 % de 40 = 40 ÷ 4 = 10.",
+      "masteryCriteria": "Calculer 10 %, 20 %, 25 %, 50 % ou 75 % d’un nombre lorsque le résultat est entier."
+    },
+    {
+      "code": "m6_pct_appliquer_grandeur",
+      "teacherName": "Appliquer un pourcentage simple à une grandeur",
+      "studentName": "Calculer un pourcentage d’une grandeur",
+      "lessonReminder": "On calcule le pourcentage de la valeur numérique, puis on conserve l’unité de la grandeur.",
+      "workedExample": "50 % de 18 kg = 9 kg.",
+      "masteryCriteria": "Calculer un pourcentage simple d’une longueur, d’une masse, d’une durée ou d’une somme, sans conversion d’unité."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M6-0401",
+      "microSkill": "m6_pct_appliquer_nombre",
+      "difficulty": 1,
+      "prompt": "Calcule 50 % de 20.",
+      "choices": ["10", "5", "20", "40"],
+      "correctIndex": 0,
+      "explanation": "50 % représente la moitié ; la moitié de 20 est 10."
+    },
+    {
+      "code": "M6-0402",
+      "microSkill": "m6_pct_appliquer_nombre",
+      "difficulty": 1,
+      "prompt": "Calcule 25 % de 20.",
+      "choices": ["4", "5", "10", "15"],
+      "correctIndex": 1,
+      "explanation": "25 % représente un quart ; 20 ÷ 4 = 5."
+    },
+    {
+      "code": "M6-0403",
+      "microSkill": "m6_pct_appliquer_nombre",
+      "difficulty": 1,
+      "prompt": "Calcule 10 % de 70.",
+      "choices": ["10", "17", "7", "63"],
+      "correctIndex": 2,
+      "explanation": "10 % représente un dixième ; 70 ÷ 10 = 7."
+    },
+    {
+      "code": "M6-0404",
+      "microSkill": "m6_pct_appliquer_nombre",
+      "difficulty": 2,
+      "prompt": "Calcule 75 % de 20.",
+      "choices": ["5", "10", "18", "15"],
+      "correctIndex": 3,
+      "explanation": "75 % représente trois quarts ; un quart de 20 vaut 5, donc trois quarts valent 15."
+    },
+    {
+      "code": "M6-0405",
+      "microSkill": "m6_pct_appliquer_nombre",
+      "difficulty": 2,
+      "prompt": "Calcule 20 % de 30.",
+      "choices": ["6", "3", "10", "20"],
+      "correctIndex": 0,
+      "explanation": "10 % de 30 vaut 3, donc 20 % vaut 2 × 3 = 6."
+    },
+    {
+      "code": "M6-0406",
+      "microSkill": "m6_pct_appliquer_nombre",
+      "difficulty": 2,
+      "prompt": "Calcule 50 % de 86.",
+      "choices": ["36", "43", "50", "172"],
+      "correctIndex": 1,
+      "explanation": "50 % représente la moitié ; 86 ÷ 2 = 43."
+    },
+    {
+      "code": "M6-0407",
+      "microSkill": "m6_pct_appliquer_nombre",
+      "difficulty": 2,
+      "prompt": "Calcule 25 % de 36.",
+      "choices": ["4", "8", "9", "12"],
+      "correctIndex": 2,
+      "explanation": "25 % représente un quart ; 36 ÷ 4 = 9."
+    },
+    {
+      "code": "M6-0408",
+      "microSkill": "m6_pct_appliquer_nombre",
+      "difficulty": 3,
+      "prompt": "Calcule 75 % de 48.",
+      "choices": ["12", "24", "32", "36"],
+      "correctIndex": 3,
+      "explanation": "Un quart de 48 vaut 12 ; trois quarts valent 3 × 12 = 36."
+    },
+    {
+      "code": "M6-0409",
+      "microSkill": "m6_pct_appliquer_nombre",
+      "difficulty": 3,
+      "prompt": "Calcule 20 % de 85.",
+      "choices": ["17", "8,5", "20", "68"],
+      "correctIndex": 0,
+      "explanation": "10 % de 85 vaut 8,5, donc 20 % vaut 17."
+    },
+    {
+      "code": "M6-0410",
+      "microSkill": "m6_pct_appliquer_nombre",
+      "difficulty": 3,
+      "prompt": "Calcule 10 % de 350.",
+      "choices": ["3,5", "35", "45", "315"],
+      "correctIndex": 1,
+      "explanation": "10 % représente un dixième ; 350 ÷ 10 = 35."
+    },
+    {
+      "code": "M6-0411",
+      "microSkill": "m6_pct_appliquer_grandeur",
+      "difficulty": 1,
+      "prompt": "Quelle masse représente 50 % de 12 kg ?",
+      "choices": ["3 kg", "12 kg", "6 kg", "24 kg"],
+      "correctIndex": 2,
+      "explanation": "50 % représente la moitié ; la moitié de 12 kg est 6 kg."
+    },
+    {
+      "code": "M6-0412",
+      "microSkill": "m6_pct_appliquer_grandeur",
+      "difficulty": 1,
+      "prompt": "Quelle longueur représente 25 % de 20 m ?",
+      "choices": ["4 m", "10 m", "15 m", "5 m"],
+      "correctIndex": 3,
+      "explanation": "25 % représente un quart ; 20 m ÷ 4 = 5 m."
+    },
+    {
+      "code": "M6-0413",
+      "microSkill": "m6_pct_appliquer_grandeur",
+      "difficulty": 1,
+      "prompt": "Quelle somme représente 10 % de 80 € ?",
+      "choices": ["8 €", "10 €", "70 €", "72 €"],
+      "correctIndex": 0,
+      "explanation": "10 % représente un dixième ; 80 € ÷ 10 = 8 €."
+    },
+    {
+      "code": "M6-0414",
+      "microSkill": "m6_pct_appliquer_grandeur",
+      "difficulty": 2,
+      "prompt": "Quelle durée représente 50 % de 90 minutes ?",
+      "choices": ["40 minutes", "45 minutes", "50 minutes", "180 minutes"],
+      "correctIndex": 1,
+      "explanation": "50 % représente la moitié ; 90 minutes ÷ 2 = 45 minutes."
+    },
+    {
+      "code": "M6-0415",
+      "microSkill": "m6_pct_appliquer_grandeur",
+      "difficulty": 2,
+      "prompt": "Quelle masse représente 20 % de 35 kg ?",
+      "choices": ["3,5 kg", "5 kg", "7 kg", "28 kg"],
+      "correctIndex": 2,
+      "explanation": "10 % de 35 kg vaut 3,5 kg, donc 20 % vaut 7 kg."
+    },
+    {
+      "code": "M6-0416",
+      "microSkill": "m6_pct_appliquer_grandeur",
+      "difficulty": 2,
+      "prompt": "Quelle longueur représente 75 % de 40 cm ?",
+      "choices": ["10 cm", "20 cm", "35 cm", "30 cm"],
+      "correctIndex": 3,
+      "explanation": "Un quart de 40 cm vaut 10 cm ; trois quarts valent 30 cm."
+    },
+    {
+      "code": "M6-0417",
+      "microSkill": "m6_pct_appliquer_grandeur",
+      "difficulty": 2,
+      "prompt": "Quelle somme représente 25 % de 60 € ?",
+      "choices": ["15 €", "20 €", "25 €", "45 €"],
+      "correctIndex": 0,
+      "explanation": "25 % représente un quart ; 60 € ÷ 4 = 15 €."
+    },
+    {
+      "code": "M6-0418",
+      "microSkill": "m6_pct_appliquer_grandeur",
+      "difficulty": 3,
+      "prompt": "Quelle durée représente 20 % de 120 minutes ?",
+      "choices": ["12 minutes", "24 minutes", "20 minutes", "96 minutes"],
+      "correctIndex": 1,
+      "explanation": "10 % de 120 minutes vaut 12 minutes, donc 20 % vaut 24 minutes."
+    },
+    {
+      "code": "M6-0419",
+      "microSkill": "m6_pct_appliquer_grandeur",
+      "difficulty": 3,
+      "prompt": "Quelle masse représente 75 % de 28 kg ?",
+      "choices": ["7 kg", "14 kg", "21 kg", "24 kg"],
+      "correctIndex": 2,
+      "explanation": "Un quart de 28 kg vaut 7 kg ; trois quarts valent 21 kg."
+    },
+    {
+      "code": "M6-0420",
+      "microSkill": "m6_pct_appliquer_grandeur",
+      "difficulty": 3,
+      "prompt": "Quelle somme représente 10 % de 450 € ?",
+      "choices": ["4,50 €", "40 €", "405 €", "45 €"],
+      "correctIndex": 3,
+      "explanation": "10 % représente un dixième ; 450 € ÷ 10 = 45 €."
+    }
+  ]
+}
