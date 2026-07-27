@@ -42,7 +42,7 @@
     }
   ],
   "questions":[
-    {"code":"M6-0241","microSkill":"m6_frac_quotient","difficulty":1,"prompt":"Quelle division a pour résultat exact 3/4 ?","choices":["3 ÷ 4","4 ÷ 3","3 ÷ 7","7 ÷ 4"],"correctIndex":0,"explanation":"Par définition, 3/4 est le résultat exact de 3 ÷ 4."},
+    {"code":"M6-0241","microSkill":"m6_frac_quotient","difficulty":1,"prompt":"Quelle division correspond à la fraction 3/4 ?","choices":["3 ÷ 4","4 ÷ 3","3 ÷ 7","7 ÷ 4"],"correctIndex":0,"explanation":"Par définition, 3/4 est le résultat exact de 3 ÷ 4."},
     {"code":"M6-0242","microSkill":"m6_frac_quotient","difficulty":1,"prompt":"Quelle fraction est le résultat exact de 5 ÷ 2 ?","choices":["2/5","5/2","7/2","5/7"],"correctIndex":1,"explanation":"Le nombre divisé devient le numérateur et le diviseur devient le dénominateur : 5 ÷ 2 = 5/2."},
     {"code":"M6-0243","microSkill":"m6_frac_quotient","difficulty":1,"prompt":"Complète : 7/3 = …","choices":["3 ÷ 7","7 × 3","7 ÷ 3","3 − 7"],"correctIndex":2,"explanation":"La fraction 7/3 est le résultat exact de la division 7 ÷ 3."},
     {"code":"M6-0244","microSkill":"m6_frac_quotient","difficulty":2,"prompt":"Quelle écriture donne le résultat exact de 11 ÷ 6 ?","choices":["6/11","17/6","11/17","11/6"],"correctIndex":3,"explanation":"11 ÷ 6 s’écrit exactement 11/6."},
@@ -61,7 +61,7 @@
     {"code":"M6-0256","microSkill":"m6_frac_egalite_multiplicative","difficulty":2,"prompt":"Quel nombre vérifie 6 × ce nombre = 13 ?","choices":["6/13","19/6","7/6","13/6"],"correctIndex":3,"explanation":"Le nombre recherché est le quotient de 13 par 6, soit 13/6."},
     {"code":"M6-0257","microSkill":"m6_frac_egalite_multiplicative","difficulty":2,"prompt":"Complète : 9 × … = 4.","choices":["4/9","9/4","13/9","5/9"],"correctIndex":0,"explanation":"9 × 4/9 = 4."},
     {"code":"M6-0258","microSkill":"m6_frac_egalite_multiplicative","difficulty":3,"prompt":"Par quel nombre faut-il multiplier 12 pour obtenir 7 ?","choices":["12/7","7/12","19/12","5/12"],"correctIndex":1,"explanation":"12 × 7/12 = 7."},
-    {"code":"M6-0259","microSkill":"m6_frac_egalite_multiplicative","difficulty":3,"prompt":"Quelle égalité traduit correctement la définition de 15/4 ?","choices":["15 × 15/4 = 4","4 × 4/15 = 15","4 × 15/4 = 15","15 × 4/15 = 15"],"correctIndex":2,"explanation":"15/4 est le nombre qui, multiplié par 4, donne 15."},
+    {"code":"M6-0259","microSkill":"m6_frac_egalite_multiplicative","difficulty":3,"prompt":"Quelle égalité est correcte ?","choices":["15 × 15/4 = 4","4 × 4/15 = 15","4 × 15/4 = 15","15 × 4/15 = 15"],"correctIndex":2,"explanation":"15/4 est le nombre qui, multiplié par 4, donne 15."},
     {"code":"M6-0260","microSkill":"m6_frac_egalite_multiplicative","difficulty":3,"prompt":"Complète : 11 × … = 18.","choices":["11/18","29/11","7/11","18/11"],"correctIndex":3,"explanation":"Le facteur manquant est le quotient de 18 par 11, soit 18/11."},
 
     {"code":"M6-0261","microSkill":"m6_frac_decimal_usuel","difficulty":1,"prompt":"Quelle est l’écriture décimale de 1/2 ?","choices":["0,5","0,2","1,2","2"],"correctIndex":0,"explanation":"1 ÷ 2 = 0,5."},
