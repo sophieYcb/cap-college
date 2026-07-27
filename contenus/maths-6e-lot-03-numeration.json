@@ -1,0 +1,415 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {
+    "code": "numbers_calculation",
+    "name": "Nombres, calcul et résolution de problèmes"
+  },
+  "skill": {
+    "code": "numeration",
+    "name": "Numération"
+  },
+  "lot": "M6-NUM-03",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_num_decimal_mixte",
+      "teacherName": "Passer d’un décimal à un nombre mixte et réciproquement",
+      "studentName": "Décomposer un nombre décimal",
+      "lessonReminder": "Un nombre décimal peut s’écrire comme la somme de sa partie entière et d’une fraction décimale inférieure à 1.",
+      "workedExample": "4,27 = 4 + 27/100.",
+      "masteryCriteria": "Passer sans erreur d’une écriture à virgule à la somme d’un entier et d’une fraction décimale, et réciproquement."
+    },
+    {
+      "code": "m6_num_decimal_pourcentage",
+      "teacherName": "Associer un décimal simple à un pourcentage",
+      "studentName": "Relier nombres décimaux et pourcentages",
+      "lessonReminder": "Un pourcentage exprime une proportion sur 100. Pour passer d’une écriture décimale à un pourcentage, on cherche le nombre équivalent de centièmes.",
+      "workedExample": "0,35 = 35/100 = 35 %.",
+      "masteryCriteria": "Associer correctement les écritures décimales et les pourcentages usuels."
+    },
+    {
+      "code": "m6_num_comparer_decimaux",
+      "teacherName": "Comparer deux nombres décimaux",
+      "studentName": "Comparer des nombres à virgule",
+      "lessonReminder": "On compare d’abord les parties entières, puis les dixièmes, les centièmes et les millièmes. Des zéros peuvent être ajoutés à droite sans changer le nombre.",
+      "workedExample": "5,37 > 5,309 car 5,370 > 5,309.",
+      "masteryCriteria": "Choisir le bon signe <, > ou = entre deux nombres décimaux."
+    },
+    {
+      "code": "m6_num_ordonner_decimaux",
+      "teacherName": "Ordonner des nombres décimaux",
+      "studentName": "Ranger des nombres à virgule",
+      "lessonReminder": "Pour ranger des décimaux, on peut écrire le même nombre de chiffres après la virgule en ajoutant des zéros à droite.",
+      "workedExample": "2,5 ; 2,08 ; 2,305 deviennent 2,500 ; 2,080 ; 2,305, donc 2,08 < 2,305 < 2,5.",
+      "masteryCriteria": "Ranger correctement plusieurs nombres décimaux dans l’ordre croissant ou décroissant."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M6-0081",
+      "microSkill": "m6_num_decimal_mixte",
+      "difficulty": 1,
+      "prompt": "Quelle décomposition correspond à 3,4 ?",
+      "choices": ["3 + 4/10", "3 + 4/100", "4 + 3/10", "34 + 1/10"],
+      "correctIndex": 0,
+      "explanation": "3,4 contient 3 unités et 4 dixièmes : 3,4 = 3 + 4/10."
+    },
+    {
+      "code": "M6-0082",
+      "microSkill": "m6_num_decimal_mixte",
+      "difficulty": 1,
+      "prompt": "Quelle écriture à virgule correspond à 5 + 2/10 ?",
+      "choices": ["5,02", "5,2", "5,5", "7,0"],
+      "correctIndex": 1,
+      "explanation": "Deux dixièmes s’écrivent 0,2, donc 5 + 2/10 = 5,2."
+    },
+    {
+      "code": "M6-0083",
+      "microSkill": "m6_num_decimal_mixte",
+      "difficulty": 1,
+      "prompt": "Quelle décomposition correspond à 7,09 ?",
+      "choices": ["7 + 9/10", "7 + 9/1 000", "7 + 9/100", "9 + 7/100"],
+      "correctIndex": 2,
+      "explanation": "Dans 7,09, le chiffre 9 représente 9 centièmes : 7,09 = 7 + 9/100."
+    },
+    {
+      "code": "M6-0084",
+      "microSkill": "m6_num_decimal_mixte",
+      "difficulty": 2,
+      "prompt": "Quelle écriture à virgule correspond à 12 + 37/100 ?",
+      "choices": ["12,037", "12,3", "12,307", "12,37"],
+      "correctIndex": 3,
+      "explanation": "37/100 = 0,37, donc 12 + 37/100 = 12,37."
+    },
+    {
+      "code": "M6-0085",
+      "microSkill": "m6_num_decimal_mixte",
+      "difficulty": 2,
+      "prompt": "Quelle décomposition correspond à 20,406 ?",
+      "choices": ["20 + 406/1 000", "20 + 406/100", "20 + 46/100", "204 + 6/1 000"],
+      "correctIndex": 0,
+      "explanation": "La partie décimale 0,406 vaut 406/1 000."
+    },
+    {
+      "code": "M6-0086",
+      "microSkill": "m6_num_decimal_mixte",
+      "difficulty": 2,
+      "prompt": "Quelle écriture à virgule correspond à 8 + 75/1 000 ?",
+      "choices": ["8,75", "8,075", "8,705", "8,0075"],
+      "correctIndex": 1,
+      "explanation": "75/1 000 = 0,075, donc la somme vaut 8,075."
+    },
+    {
+      "code": "M6-0087",
+      "microSkill": "m6_num_decimal_mixte",
+      "difficulty": 2,
+      "prompt": "Complète : 14,205 = 14 + …",
+      "choices": ["205/100", "25/100", "205/1 000", "2 005/1 000"],
+      "correctIndex": 2,
+      "explanation": "La partie décimale de 14,205 est 205/1 000."
+    },
+    {
+      "code": "M6-0088",
+      "microSkill": "m6_num_decimal_mixte",
+      "difficulty": 3,
+      "prompt": "Quelle écriture à virgule correspond à 43 + 6/1 000 ?",
+      "choices": ["43,6", "43,06", "43,0006", "43,006"],
+      "correctIndex": 3,
+      "explanation": "6/1 000 = 0,006, donc la somme vaut 43,006."
+    },
+    {
+      "code": "M6-0089",
+      "microSkill": "m6_num_decimal_mixte",
+      "difficulty": 3,
+      "prompt": "Quelle décomposition de 9,038 est correcte ?",
+      "choices": ["9 + 38/1 000", "9 + 38/100", "9 + 308/1 000", "9 + 3/8"],
+      "correctIndex": 0,
+      "explanation": "0,038 représente 38 millièmes : 9,038 = 9 + 38/1 000."
+    },
+    {
+      "code": "M6-0090",
+      "microSkill": "m6_num_decimal_mixte",
+      "difficulty": 3,
+      "prompt": "Quel nombre est égal à 105 + 4/100 + 7/1 000 ?",
+      "choices": ["105,407", "105,047", "105,47", "105,0047"],
+      "correctIndex": 1,
+      "explanation": "4/100 + 7/1 000 = 0,040 + 0,007 = 0,047."
+    },
+
+    {
+      "code": "M6-0091",
+      "microSkill": "m6_num_decimal_pourcentage",
+      "difficulty": 1,
+      "prompt": "Quel pourcentage correspond à 0,25 ?",
+      "choices": ["2,5 %", "250 %", "25 %", "0,25 %"],
+      "correctIndex": 2,
+      "explanation": "0,25 = 25/100, soit 25 %."
+    },
+    {
+      "code": "M6-0092",
+      "microSkill": "m6_num_decimal_pourcentage",
+      "difficulty": 1,
+      "prompt": "Quelle écriture décimale correspond à 50 % ?",
+      "choices": ["50", "5", "0,05", "0,5"],
+      "correctIndex": 3,
+      "explanation": "50 % = 50/100 = 0,5."
+    },
+    {
+      "code": "M6-0093",
+      "microSkill": "m6_num_decimal_pourcentage",
+      "difficulty": 1,
+      "prompt": "Quel pourcentage correspond à 0,1 ?",
+      "choices": ["10 %", "1 %", "100 %", "0,1 %"],
+      "correctIndex": 0,
+      "explanation": "0,1 = 10/100, soit 10 %."
+    },
+    {
+      "code": "M6-0094",
+      "microSkill": "m6_num_decimal_pourcentage",
+      "difficulty": 2,
+      "prompt": "Quelle écriture décimale correspond à 75 % ?",
+      "choices": ["7,5", "0,75", "0,075", "75"],
+      "correctIndex": 1,
+      "explanation": "75 % = 75/100 = 0,75."
+    },
+    {
+      "code": "M6-0095",
+      "microSkill": "m6_num_decimal_pourcentage",
+      "difficulty": 2,
+      "prompt": "Quel pourcentage correspond à 0,4 ?",
+      "choices": ["4 %", "400 %", "40 %", "0,4 %"],
+      "correctIndex": 2,
+      "explanation": "0,4 = 40/100, soit 40 %."
+    },
+    {
+      "code": "M6-0096",
+      "microSkill": "m6_num_decimal_pourcentage",
+      "difficulty": 2,
+      "prompt": "Quelle écriture décimale correspond à 5 % ?",
+      "choices": ["0,5", "5", "0,005", "0,05"],
+      "correctIndex": 3,
+      "explanation": "5 % = 5/100 = 0,05."
+    },
+    {
+      "code": "M6-0097",
+      "microSkill": "m6_num_decimal_pourcentage",
+      "difficulty": 2,
+      "prompt": "Quel pourcentage correspond à 1,2 ?",
+      "choices": ["120 %", "12 %", "1,2 %", "102 %"],
+      "correctIndex": 0,
+      "explanation": "1,2 = 120/100, soit 120 %."
+    },
+    {
+      "code": "M6-0098",
+      "microSkill": "m6_num_decimal_pourcentage",
+      "difficulty": 3,
+      "prompt": "Quelle écriture décimale correspond à 125 % ?",
+      "choices": ["12,5", "1,25", "0,125", "125"],
+      "correctIndex": 1,
+      "explanation": "125 % = 125/100 = 1,25."
+    },
+    {
+      "code": "M6-0099",
+      "microSkill": "m6_num_decimal_pourcentage",
+      "difficulty": 3,
+      "prompt": "Quel pourcentage correspond à 0,035 ?",
+      "choices": ["35 %", "0,35 %", "3,5 %", "350 %"],
+      "correctIndex": 2,
+      "explanation": "0,035 = 3,5/100, soit 3,5 %."
+    },
+    {
+      "code": "M6-0100",
+      "microSkill": "m6_num_decimal_pourcentage",
+      "difficulty": 3,
+      "prompt": "Quelle écriture décimale correspond à 2,5 % ?",
+      "choices": ["0,25", "2,5", "0,0025", "0,025"],
+      "correctIndex": 3,
+      "explanation": "2,5 % = 2,5/100 = 0,025."
+    },
+
+    {
+      "code": "M6-0101",
+      "microSkill": "m6_num_comparer_decimaux",
+      "difficulty": 1,
+      "prompt": "Quel signe complète correctement 4,2 … 4,7 ?",
+      "choices": ["<", ">", "=", "≥"],
+      "correctIndex": 0,
+      "explanation": "Les parties entières sont égales et 2 dixièmes sont inférieurs à 7 dixièmes."
+    },
+    {
+      "code": "M6-0102",
+      "microSkill": "m6_num_comparer_decimaux",
+      "difficulty": 1,
+      "prompt": "Quelle comparaison est correcte ?",
+      "choices": ["8,6 < 8,12", "8,6 = 8,12", "8,6 > 8,12", "8,6 ≤ 8,12"],
+      "correctIndex": 2,
+      "explanation": "8,6 = 8,60 et 8,60 > 8,12."
+    },
+    {
+      "code": "M6-0103",
+      "microSkill": "m6_num_comparer_decimaux",
+      "difficulty": 1,
+      "prompt": "Quel signe complète correctement 3,50 … 3,5 ?",
+      "choices": ["<", ">", "=", "≠"],
+      "correctIndex": 2,
+      "explanation": "Ajouter un zéro à droite de la partie décimale ne change pas le nombre : 3,50 = 3,5."
+    },
+    {
+      "code": "M6-0104",
+      "microSkill": "m6_num_comparer_decimaux",
+      "difficulty": 2,
+      "prompt": "Quelle comparaison est correcte ?",
+      "choices": ["12,09 > 12,9", "12,09 = 12,9", "12,09 ≥ 12,9", "12,09 < 12,9"],
+      "correctIndex": 3,
+      "explanation": "12,09 = 12,090 et 12,9 = 12,900, donc 12,09 < 12,9."
+    },
+    {
+      "code": "M6-0105",
+      "microSkill": "m6_num_comparer_decimaux",
+      "difficulty": 2,
+      "prompt": "Quel signe complète correctement 0,408 … 0,48 ?",
+      "choices": ["<", ">", "=", "≥"],
+      "correctIndex": 0,
+      "explanation": "0,408 < 0,480, donc 0,408 < 0,48."
+    },
+    {
+      "code": "M6-0106",
+      "microSkill": "m6_num_comparer_decimaux",
+      "difficulty": 2,
+      "prompt": "Quelle comparaison est correcte ?",
+      "choices": ["5,307 = 5,37", "5,307 < 5,37", "5,307 > 5,37", "5,307 ≥ 5,37"],
+      "correctIndex": 1,
+      "explanation": "5,307 < 5,370, donc 5,307 < 5,37."
+    },
+    {
+      "code": "M6-0107",
+      "microSkill": "m6_num_comparer_decimaux",
+      "difficulty": 2,
+      "prompt": "Quel signe complète correctement 19,999 … 20 ?",
+      "choices": [">", "=", "<", "≥"],
+      "correctIndex": 2,
+      "explanation": "19,999 est inférieur à 20 d’un millième."
+    },
+    {
+      "code": "M6-0108",
+      "microSkill": "m6_num_comparer_decimaux",
+      "difficulty": 3,
+      "prompt": "Quelle comparaison est correcte ?",
+      "choices": ["7,080 > 7,8", "7,080 = 7,8", "7,080 ≥ 7,8", "7,080 < 7,8"],
+      "correctIndex": 3,
+      "explanation": "7,080 = 7,08 et 7,08 < 7,8."
+    },
+    {
+      "code": "M6-0109",
+      "microSkill": "m6_num_comparer_decimaux",
+      "difficulty": 3,
+      "prompt": "Quel signe complète correctement 2,405 … 2,4005 ?",
+      "choices": [">", "<", "=", "≤"],
+      "correctIndex": 0,
+      "explanation": "2,4050 > 2,4005."
+    },
+    {
+      "code": "M6-0110",
+      "microSkill": "m6_num_comparer_decimaux",
+      "difficulty": 3,
+      "prompt": "Quelle comparaison est correcte ?",
+      "choices": ["0,099 > 0,1", "0,099 < 0,1", "0,099 = 0,1", "0,099 ≥ 0,1"],
+      "correctIndex": 1,
+      "explanation": "0,099 < 0,100, donc 0,099 < 0,1."
+    },
+
+    {
+      "code": "M6-0111",
+      "microSkill": "m6_num_ordonner_decimaux",
+      "difficulty": 1,
+      "prompt": "Quel rangement est dans l’ordre croissant ?",
+      "choices": ["2,5 < 2,1 < 2,9", "2,1 < 2,5 < 2,9", "2,9 < 2,5 < 2,1", "2,1 < 2,9 < 2,5"],
+      "correctIndex": 1,
+      "explanation": "À partie entière égale, on compare les dixièmes : 1 < 5 < 9."
+    },
+    {
+      "code": "M6-0112",
+      "microSkill": "m6_num_ordonner_decimaux",
+      "difficulty": 1,
+      "prompt": "Quel rangement est dans l’ordre décroissant ?",
+      "choices": ["4,2 > 4,5 > 4,8", "4,2 > 4,8 > 4,5", "4,8 > 4,2 > 4,5", "4,8 > 4,5 > 4,2"],
+      "correctIndex": 3,
+      "explanation": "Dans l’ordre décroissant, on va du plus grand au plus petit : 4,8 > 4,5 > 4,2."
+    },
+    {
+      "code": "M6-0113",
+      "microSkill": "m6_num_ordonner_decimaux",
+      "difficulty": 1,
+      "prompt": "Quel est le plus petit nombre ?",
+      "choices": ["3,07", "3,7", "3,17", "3,70"],
+      "correctIndex": 0,
+      "explanation": "3,07 est inférieur à 3,17 et à 3,70."
+    },
+    {
+      "code": "M6-0114",
+      "microSkill": "m6_num_ordonner_decimaux",
+      "difficulty": 2,
+      "prompt": "Quel rangement est dans l’ordre croissant ?",
+      "choices": ["5,5 < 5,05 < 5,505", "5,505 < 5,5 < 5,05", "5,05 < 5,5 < 5,505", "5,05 < 5,505 < 5,5"],
+      "correctIndex": 2,
+      "explanation": "5,050 < 5,500 < 5,505."
+    },
+    {
+      "code": "M6-0115",
+      "microSkill": "m6_num_ordonner_decimaux",
+      "difficulty": 2,
+      "prompt": "Quel est le plus grand nombre ?",
+      "choices": ["10,099", "10,9", "10,19", "10,89"],
+      "correctIndex": 1,
+      "explanation": "10,9 = 10,900, qui est supérieur à 10,890, 10,190 et 10,099."
+    },
+    {
+      "code": "M6-0116",
+      "microSkill": "m6_num_ordonner_decimaux",
+      "difficulty": 2,
+      "prompt": "Quel rangement est dans l’ordre décroissant ?",
+      "choices": ["0,45 > 0,405 > 0,5", "0,405 > 0,45 > 0,5", "0,5 > 0,405 > 0,45", "0,5 > 0,45 > 0,405"],
+      "correctIndex": 3,
+      "explanation": "0,500 > 0,450 > 0,405."
+    },
+    {
+      "code": "M6-0117",
+      "microSkill": "m6_num_ordonner_decimaux",
+      "difficulty": 2,
+      "prompt": "Quel nombre vient en deuxième dans l’ordre croissant : 6,4 ; 6,04 ; 6,44 ; 6,404 ?",
+      "choices": ["6,4", "6,04", "6,44", "6,404"],
+      "correctIndex": 0,
+      "explanation": "L’ordre est 6,04 < 6,400 < 6,404 < 6,44 : le deuxième nombre est 6,4."
+    },
+    {
+      "code": "M6-0118",
+      "microSkill": "m6_num_ordonner_decimaux",
+      "difficulty": 3,
+      "prompt": "Quel rangement est dans l’ordre croissant ?",
+      "choices": ["1,011 < 1,01 < 1,001", "1,001 < 1,01 < 1,011", "1,01 < 1,001 < 1,011", "1,011 < 1,001 < 1,01"],
+      "correctIndex": 1,
+      "explanation": "En écrivant 1,001 ; 1,010 ; 1,011, on lit directement l’ordre croissant."
+    },
+    {
+      "code": "M6-0119",
+      "microSkill": "m6_num_ordonner_decimaux",
+      "difficulty": 3,
+      "prompt": "Quel est le troisième nombre dans l’ordre décroissant : 9,9 ; 9,09 ; 9,909 ; 9,99 ?",
+      "choices": ["9,99", "9,09", "9,9", "9,909"],
+      "correctIndex": 2,
+      "explanation": "L’ordre décroissant est 9,99 > 9,909 > 9,9 > 9,09 : le troisième nombre est 9,9."
+    },
+    {
+      "code": "M6-0120",
+      "microSkill": "m6_num_ordonner_decimaux",
+      "difficulty": 3,
+      "prompt": "Quel rangement est dans l’ordre décroissant ?",
+      "choices": ["12,012 > 12,12 > 12,102", "12,102 > 12,12 > 12,012", "12,012 > 12,102 > 12,12", "12,12 > 12,102 > 12,012"],
+      "correctIndex": 3,
+      "explanation": "12,120 > 12,102 > 12,012."
+    }
+  ]
+}
