@@ -1,0 +1,57 @@
+{
+  "format":"cap-college-question-draft-v1","subject":"mathematics","level":"6e",
+  "domain":{"code":"numbers_calculation","name":"Nombres, calcul et résolution de problèmes"},
+  "skill":{"code":"calculation","name":"Calcul"},"lot":"M6-CALC-02","status":"draft",
+  "source":"Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills":[
+    {"code":"m6_calc_diviser_10_100_1000","teacherName":"Diviser un décimal par 10, 100 ou 1 000","studentName":"Diviser par 10, 100 ou 1 000","lessonReminder":"Diviser par 10, 100 ou 1 000 rend le nombre 10, 100 ou 1 000 fois plus petit.","workedExample":"403,7 ÷ 100 = 4,037.","masteryCriteria":"Diviser mentalement un décimal par 10, 100 ou 1 000."},
+    {"code":"m6_calc_multiplier_decimal","teacherName":"Multiplier deux nombres décimaux","studentName":"Multiplier des nombres à virgule","lessonReminder":"On calcule d’abord comme avec des entiers, puis on place la virgule en tenant compte du nombre total de chiffres décimaux des facteurs.","workedExample":"2,4 × 1,5 = 3,60 = 3,6.","masteryCriteria":"Calculer exactement un produit de deux nombres décimaux."},
+    {"code":"m6_calc_ordre_grandeur","teacherName":"Contrôler un calcul par un ordre de grandeur","studentName":"Estimer un résultat","lessonReminder":"Un ordre de grandeur s’obtient en remplaçant les nombres par des valeurs proches faciles à calculer.","workedExample":"19,8 × 3,1 est proche de 20 × 3, donc de 60.","masteryCriteria":"Choisir une estimation cohérente d’une somme, différence, multiplication ou division."},
+    {"code":"m6_calc_division_decimale","teacherName":"Diviser un décimal par un entier inférieur à 10","studentName":"Diviser un nombre à virgule","lessonReminder":"On partage le nombre en parts égales. Le résultat peut être contrôlé en le multipliant par le diviseur.","workedExample":"12,6 ÷ 3 = 4,2 car 4,2 × 3 = 12,6.","masteryCriteria":"Calculer exactement le quotient d’un décimal par un entier inférieur à 10."}
+  ],
+  "questions":[
+    {"code":"M6-0201","microSkill":"m6_calc_diviser_10_100_1000","difficulty":1,"prompt":"Calcule 42 ÷ 10.","choices":["4,2","420","0,42","42,1"],"correctIndex":0,"explanation":"42 ÷ 10 = 4,2."},
+    {"code":"M6-0202","microSkill":"m6_calc_diviser_10_100_1000","difficulty":1,"prompt":"Calcule 35 ÷ 100.","choices":["3,5","0,35","350","0,035"],"correctIndex":1,"explanation":"35 ÷ 100 = 0,35."},
+    {"code":"M6-0203","microSkill":"m6_calc_diviser_10_100_1000","difficulty":1,"prompt":"Calcule 704 ÷ 10.","choices":["7,04","7040","70,4","0,704"],"correctIndex":2,"explanation":"704 ÷ 10 = 70,4."},
+    {"code":"M6-0204","microSkill":"m6_calc_diviser_10_100_1000","difficulty":2,"prompt":"Calcule 2 507 ÷ 1 000.","choices":["250,7","25,07","0,2507","2,507"],"correctIndex":3,"explanation":"2 507 ÷ 1 000 = 2,507."},
+    {"code":"M6-0205","microSkill":"m6_calc_diviser_10_100_1000","difficulty":2,"prompt":"Calcule 8 ÷ 100.","choices":["0,08","0,8","800","0,008"],"correctIndex":0,"explanation":"8 ÷ 100 = 0,08."},
+    {"code":"M6-0206","microSkill":"m6_calc_diviser_10_100_1000","difficulty":2,"prompt":"Calcule 1 209 ÷ 100.","choices":["120,9","12,09","1,209","0,1209"],"correctIndex":1,"explanation":"1 209 ÷ 100 = 12,09."},
+    {"code":"M6-0207","microSkill":"m6_calc_diviser_10_100_1000","difficulty":2,"prompt":"Calcule 56,4 ÷ 10.","choices":["0,564","564","5,64","56,04"],"correctIndex":2,"explanation":"56,4 ÷ 10 = 5,64."},
+    {"code":"M6-0208","microSkill":"m6_calc_diviser_10_100_1000","difficulty":3,"prompt":"Calcule 40,7 ÷ 1 000.","choices":["4,07","0,407","0,00407","0,0407"],"correctIndex":3,"explanation":"40,7 ÷ 1 000 = 0,0407."},
+    {"code":"M6-0209","microSkill":"m6_calc_diviser_10_100_1000","difficulty":3,"prompt":"Par combien faut-il diviser 370,5 pour obtenir 3,705 ?","choices":["100","10","1 000","0,01"],"correctIndex":0,"explanation":"370,5 ÷ 100 = 3,705."},
+    {"code":"M6-0210","microSkill":"m6_calc_diviser_10_100_1000","difficulty":3,"prompt":"Quel quotient est égal à 0,006008 ?","choices":["6,008 ÷ 10","6,008 ÷ 1 000","6,008 ÷ 100","60,08 ÷ 1 000"],"correctIndex":1,"explanation":"6,008 ÷ 1 000 = 0,006008."},
+
+    {"code":"M6-0211","microSkill":"m6_calc_multiplier_decimal","difficulty":1,"prompt":"Calcule 2,5 × 4.","choices":["1","100","10","6,5"],"correctIndex":2,"explanation":"2,5 × 4 = 10."},
+    {"code":"M6-0212","microSkill":"m6_calc_multiplier_decimal","difficulty":1,"prompt":"Calcule 1,2 × 3.","choices":["0,36","4,2","36","3,6"],"correctIndex":3,"explanation":"1,2 × 3 = 3,6."},
+    {"code":"M6-0213","microSkill":"m6_calc_multiplier_decimal","difficulty":1,"prompt":"Calcule 0,5 × 8.","choices":["4","40","0,4","8,5"],"correctIndex":0,"explanation":"La moitié de 8 vaut 4."},
+    {"code":"M6-0214","microSkill":"m6_calc_multiplier_decimal","difficulty":2,"prompt":"Calcule 2,4 × 1,5.","choices":["36","3,6","2,9","0,36"],"correctIndex":1,"explanation":"24 × 15 = 360 ; avec deux chiffres décimaux, le produit vaut 3,60 = 3,6."},
+    {"code":"M6-0215","microSkill":"m6_calc_multiplier_decimal","difficulty":2,"prompt":"Calcule 0,7 × 0,6.","choices":["4,2","0,042","0,42","1,3"],"correctIndex":2,"explanation":"7 × 6 = 42 et le produit comporte deux chiffres décimaux : 0,42."},
+    {"code":"M6-0216","microSkill":"m6_calc_multiplier_decimal","difficulty":2,"prompt":"Calcule 3,25 × 2,4.","choices":["7,2","78","0,78","7,8"],"correctIndex":3,"explanation":"3,25 × 2,4 = 7,8."},
+    {"code":"M6-0217","microSkill":"m6_calc_multiplier_decimal","difficulty":2,"prompt":"Calcule 12,5 × 0,8.","choices":["10","100","1","13,3"],"correctIndex":0,"explanation":"12,5 × 0,8 = 10."},
+    {"code":"M6-0218","microSkill":"m6_calc_multiplier_decimal","difficulty":3,"prompt":"Calcule 0,045 × 1,2.","choices":["0,54","0,054","0,0054","5,4"],"correctIndex":1,"explanation":"45 × 12 = 540 ; avec quatre chiffres décimaux, le résultat vaut 0,0540 = 0,054."},
+    {"code":"M6-0219","microSkill":"m6_calc_multiplier_decimal","difficulty":3,"prompt":"Calcule 4,08 × 0,25.","choices":["10,2","0,102","1,02","4,33"],"correctIndex":2,"explanation":"Multiplier par 0,25 revient à prendre le quart : 4,08 ÷ 4 = 1,02."},
+    {"code":"M6-0220","microSkill":"m6_calc_multiplier_decimal","difficulty":3,"prompt":"Calcule 2,75 × 3,04.","choices":["8,26","83,6","0,836","8,36"],"correctIndex":3,"explanation":"2,75 × 3,04 = 8,36."},
+
+    {"code":"M6-0221","microSkill":"m6_calc_ordre_grandeur","difficulty":1,"prompt":"Quel est le meilleur ordre de grandeur de 19,8 + 30,2 ?","choices":["50","5","500","40"],"correctIndex":0,"explanation":"19,8 est proche de 20 et 30,2 de 30 : 20 + 30 = 50."},
+    {"code":"M6-0222","microSkill":"m6_calc_ordre_grandeur","difficulty":1,"prompt":"Quel est le meilleur ordre de grandeur de 48,9 − 19,2 ?","choices":["70","20","30","3"],"correctIndex":2,"explanation":"49 − 19 est proche de 30."},
+    {"code":"M6-0223","microSkill":"m6_calc_ordre_grandeur","difficulty":1,"prompt":"Quel est le meilleur ordre de grandeur de 9,8 × 4,1 ?","choices":["400","40","14","4"],"correctIndex":1,"explanation":"9,8 est proche de 10 et 4,1 de 4 : 10 × 4 = 40."},
+    {"code":"M6-0224","microSkill":"m6_calc_ordre_grandeur","difficulty":2,"prompt":"Quel résultat est vraisemblable pour 31,2 × 2,9 ?","choices":["9,048","904,8","33,1","90,48"],"correctIndex":3,"explanation":"31 × 3 est proche de 93 ; 90,48 est cohérent."},
+    {"code":"M6-0225","microSkill":"m6_calc_ordre_grandeur","difficulty":2,"prompt":"Quel est le meilleur ordre de grandeur de 201,5 + 398,2 ?","choices":["600","60","6 000","400"],"correctIndex":0,"explanation":"201,5 est proche de 200 et 398,2 de 400 : la somme est proche de 600."},
+    {"code":"M6-0226","microSkill":"m6_calc_ordre_grandeur","difficulty":2,"prompt":"Quel résultat est vraisemblable pour 82,4 ÷ 4 ?","choices":["206","20,6","2,06","0,206"],"correctIndex":1,"explanation":"80 ÷ 4 = 20 ; 20,6 est cohérent."},
+    {"code":"M6-0227","microSkill":"m6_calc_ordre_grandeur","difficulty":2,"prompt":"Quel est le meilleur ordre de grandeur de 0,49 × 20,2 ?","choices":["100","1","10","0,1"],"correctIndex":2,"explanation":"0,49 est proche de 0,5 et 20,2 de 20 : 0,5 × 20 = 10."},
+    {"code":"M6-0228","microSkill":"m6_calc_ordre_grandeur","difficulty":3,"prompt":"Quel résultat est vraisemblable pour 399,7 − 198,9 ?","choices":["20,08","2 008","2,008","200,8"],"correctIndex":3,"explanation":"400 − 200 est proche de 200 ; 200,8 est cohérent."},
+    {"code":"M6-0229","microSkill":"m6_calc_ordre_grandeur","difficulty":3,"prompt":"Quel est le meilleur ordre de grandeur de 5,98 × 49,7 ?","choices":["300","30","3 000","55"],"correctIndex":0,"explanation":"5,98 est proche de 6 et 49,7 de 50 : 6 × 50 = 300."},
+    {"code":"M6-0230","microSkill":"m6_calc_ordre_grandeur","difficulty":3,"prompt":"Quel résultat est vraisemblable pour 1 002,4 ÷ 5 ?","choices":["2 004,8","200,48","20,048","0,20048"],"correctIndex":1,"explanation":"1 000 ÷ 5 = 200 ; 200,48 est cohérent."},
+
+    {"code":"M6-0231","microSkill":"m6_calc_division_decimale","difficulty":1,"prompt":"Calcule 8,4 ÷ 2.","choices":["2,4","6,4","4,2","16,8"],"correctIndex":2,"explanation":"4,2 × 2 = 8,4."},
+    {"code":"M6-0232","microSkill":"m6_calc_division_decimale","difficulty":1,"prompt":"Calcule 12,6 ÷ 3.","choices":["3,2","4,6","42","4,2"],"correctIndex":3,"explanation":"4,2 × 3 = 12,6."},
+    {"code":"M6-0233","microSkill":"m6_calc_division_decimale","difficulty":1,"prompt":"Calcule 7,5 ÷ 5.","choices":["1,5","2,5","15","0,15"],"correctIndex":0,"explanation":"1,5 × 5 = 7,5."},
+    {"code":"M6-0234","microSkill":"m6_calc_division_decimale","difficulty":2,"prompt":"Calcule 9,24 ÷ 4.","choices":["23,1","2,31","2,21","3,21"],"correctIndex":1,"explanation":"2,31 × 4 = 9,24."},
+    {"code":"M6-0235","microSkill":"m6_calc_division_decimale","difficulty":2,"prompt":"Calcule 0,84 ÷ 7.","choices":["1,2","0,012","0,12","12"],"correctIndex":2,"explanation":"0,12 × 7 = 0,84."},
+    {"code":"M6-0236","microSkill":"m6_calc_division_decimale","difficulty":2,"prompt":"Calcule 15,75 ÷ 5.","choices":["3,5","31,5","2,15","3,15"],"correctIndex":3,"explanation":"3,15 × 5 = 15,75."},
+    {"code":"M6-0237","microSkill":"m6_calc_division_decimale","difficulty":2,"prompt":"Calcule 24,08 ÷ 8.","choices":["3,01","3,1","30,1","2,01"],"correctIndex":0,"explanation":"3,01 × 8 = 24,08."},
+    {"code":"M6-0238","microSkill":"m6_calc_division_decimale","difficulty":3,"prompt":"Calcule 0,945 ÷ 3.","choices":["3,15","0,315","0,0315","31,5"],"correctIndex":1,"explanation":"0,315 × 3 = 0,945."},
+    {"code":"M6-0239","microSkill":"m6_calc_division_decimale","difficulty":3,"prompt":"Calcule 18,432 ÷ 6.","choices":["30,72","3,72","3,072","0,3072"],"correctIndex":2,"explanation":"3,072 × 6 = 18,432."},
+    {"code":"M6-0240","microSkill":"m6_calc_division_decimale","difficulty":3,"prompt":"Calcule 5,005 ÷ 5.","choices":["1,01","0,1001","10,01","1,001"],"correctIndex":3,"explanation":"1,001 × 5 = 5,005."}
+  ]
+}
