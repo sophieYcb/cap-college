@@ -1,0 +1,89 @@
+{
+  "format":"cap-college-question-draft-v1",
+  "subject":"mathematics",
+  "level":"6e",
+  "domain":{"code":"numbers_calculation","name":"Nombres, calcul et résolution de problèmes"},
+  "skill":{"code":"fractions","name":"Fractions"},
+  "lot":"M6-FRAC-02",
+  "status":"draft",
+  "source":"Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills":[
+    {
+      "code":"m6_frac_equivalentes",
+      "teacherName":"Établir des égalités de fractions",
+      "studentName":"Reconnaître des fractions égales",
+      "lessonReminder":"On obtient une fraction égale en multipliant ou en divisant son numérateur et son dénominateur par un même nombre non nul.",
+      "workedExample":"2/3 = 4/6, car 2 et 3 ont été multipliés par 2.",
+      "masteryCriteria":"Reconnaître, compléter ou simplifier une égalité de fractions."
+    },
+    {
+      "code":"m6_frac_comparer",
+      "teacherName":"Comparer deux fractions",
+      "studentName":"Comparer deux fractions",
+      "lessonReminder":"On peut comparer des fractions en utilisant un même dénominateur, une même unité de référence ou leur position par rapport à 1.",
+      "workedExample":"3/7 < 5/7, car les dénominateurs sont égaux et 3 < 5.",
+      "masteryCriteria":"Choisir le symbole <, > ou = qui compare correctement deux fractions."
+    },
+    {
+      "code":"m6_frac_encadrer_entiers",
+      "teacherName":"Encadrer une fraction par deux entiers consécutifs",
+      "studentName":"Encadrer une fraction",
+      "lessonReminder":"On cherche les deux entiers consécutifs entre lesquels se trouve la fraction.",
+      "workedExample":"2 < 7/3 < 3, car 6/3 < 7/3 < 9/3.",
+      "masteryCriteria":"Encadrer une fraction non entière entre deux entiers consécutifs."
+    },
+    {
+      "code":"m6_frac_ordonner",
+      "teacherName":"Ordonner des fractions et des nombres mixtes",
+      "studentName":"Ranger des fractions",
+      "lessonReminder":"Pour ranger plusieurs fractions, on les compare deux à deux en utilisant une écriture ou un dénominateur adapté.",
+      "workedExample":"1/4 < 1/2 < 3/4.",
+      "masteryCriteria":"Ranger trois fractions ou nombres mixtes dans l’ordre demandé."
+    }
+  ],
+  "questions":[
+    {"code":"M6-0281","microSkill":"m6_frac_equivalentes","difficulty":1,"prompt":"Quelle fraction est égale à 1/2 ?","choices":["2/4","1/3","2/3","3/4"],"correctIndex":0,"explanation":"1/2 = 2/4, car le numérateur et le dénominateur sont multipliés par 2."},
+    {"code":"M6-0282","microSkill":"m6_frac_equivalentes","difficulty":1,"prompt":"Quelle fraction est égale à 2/3 ?","choices":["3/4","4/6","4/5","6/8"],"correctIndex":1,"explanation":"2/3 = 4/6, car le numérateur et le dénominateur sont multipliés par 2."},
+    {"code":"M6-0283","microSkill":"m6_frac_equivalentes","difficulty":1,"prompt":"Quelle fraction est égale à 3/5 ?","choices":["6/8","6/10","9/15","12/15"],"correctIndex":2,"explanation":"3/5 = 9/15, car le numérateur et le dénominateur sont multipliés par 3."},
+    {"code":"M6-0284","microSkill":"m6_frac_equivalentes","difficulty":2,"prompt":"Quelle fraction est égale à 4/7 ?","choices":["8/12","12/14","16/21","12/21"],"correctIndex":3,"explanation":"4/7 = 12/21, car le numérateur et le dénominateur sont multipliés par 3."},
+    {"code":"M6-0285","microSkill":"m6_frac_equivalentes","difficulty":2,"prompt":"Complète : 1/3 = …/12.","choices":["4/12","3/12","6/12","9/12"],"correctIndex":0,"explanation":"3 × 4 = 12, donc 1 × 4 = 4 : 1/3 = 4/12."},
+    {"code":"M6-0286","microSkill":"m6_frac_equivalentes","difficulty":2,"prompt":"Complète : 5/8 = …/24.","choices":["10/24","15/24","20/24","21/24"],"correctIndex":1,"explanation":"8 × 3 = 24, donc 5 × 3 = 15 : 5/8 = 15/24."},
+    {"code":"M6-0287","microSkill":"m6_frac_equivalentes","difficulty":2,"prompt":"Quelle est la forme simplifiée de 6/9 ?","choices":["3/4","3/5","2/3","1/2"],"correctIndex":2,"explanation":"En divisant 6 et 9 par 3, on obtient 2/3."},
+    {"code":"M6-0288","microSkill":"m6_frac_equivalentes","difficulty":3,"prompt":"Complète : 7/10 = 21/…","choices":["20","24","27","30"],"correctIndex":3,"explanation":"7 est multiplié par 3 pour obtenir 21 ; 10 × 3 = 30."},
+    {"code":"M6-0289","microSkill":"m6_frac_equivalentes","difficulty":3,"prompt":"Quelle est la forme simplifiée de 12/18 ?","choices":["2/3","3/4","4/5","6/8"],"correctIndex":0,"explanation":"En divisant 12 et 18 par 6, on obtient 2/3."},
+    {"code":"M6-0290","microSkill":"m6_frac_equivalentes","difficulty":3,"prompt":"Quelle fraction n’est pas égale à 3/4 ?","choices":["6/8","15/24","9/12","12/16"],"correctIndex":1,"explanation":"15/24 = 5/8, tandis que 6/8, 9/12 et 12/16 sont égales à 3/4."},
+
+    {"code":"M6-0291","microSkill":"m6_frac_comparer","difficulty":1,"prompt":"Quelle comparaison est correcte ?","choices":["3/7 > 5/7","3/7 = 5/7","3/7 < 5/7","On ne peut pas comparer."],"correctIndex":2,"explanation":"À dénominateur égal, la fraction ayant le plus petit numérateur est la plus petite."},
+    {"code":"M6-0292","microSkill":"m6_frac_comparer","difficulty":1,"prompt":"Quelle comparaison est correcte ?","choices":["4/9 > 4/7","4/9 = 4/7","On ne peut pas comparer.","4/9 < 4/7"],"correctIndex":3,"explanation":"À numérateur égal, la fraction ayant le plus grand dénominateur est la plus petite."},
+    {"code":"M6-0293","microSkill":"m6_frac_comparer","difficulty":1,"prompt":"Quelle comparaison est correcte ?","choices":["2/3 < 3/4","2/3 > 3/4","2/3 = 3/4","On ne peut pas comparer."],"correctIndex":0,"explanation":"2/3 = 8/12 et 3/4 = 9/12, donc 2/3 < 3/4."},
+    {"code":"M6-0294","microSkill":"m6_frac_comparer","difficulty":2,"prompt":"Quelle comparaison est correcte ?","choices":["5/6 < 7/9","5/6 > 7/9","5/6 = 7/9","On ne peut pas comparer."],"correctIndex":1,"explanation":"5/6 = 15/18 et 7/9 = 14/18, donc 5/6 > 7/9."},
+    {"code":"M6-0295","microSkill":"m6_frac_comparer","difficulty":2,"prompt":"Quelle comparaison est correcte ?","choices":["7/4 < 3/2","7/4 = 3/2","7/4 > 3/2","On ne peut pas comparer."],"correctIndex":2,"explanation":"7/4 = 1,75 et 3/2 = 1,5, donc 7/4 > 3/2."},
+    {"code":"M6-0296","microSkill":"m6_frac_comparer","difficulty":2,"prompt":"Quelle comparaison est correcte ?","choices":["11/8 < 4/3","11/8 = 4/3","On ne peut pas comparer.","11/8 > 4/3"],"correctIndex":3,"explanation":"11/8 = 33/24 et 4/3 = 32/24, donc 11/8 > 4/3."},
+    {"code":"M6-0297","microSkill":"m6_frac_comparer","difficulty":2,"prompt":"Quelle comparaison est correcte ?","choices":["8/9 < 1","8/9 > 1","8/9 = 1","On ne peut pas comparer."],"correctIndex":0,"explanation":"Le numérateur 8 est inférieur au dénominateur 9, donc 8/9 < 1."},
+    {"code":"M6-0298","microSkill":"m6_frac_comparer","difficulty":3,"prompt":"Quelle comparaison est correcte ?","choices":["13/12 < 1","13/12 > 1","13/12 = 1","On ne peut pas comparer."],"correctIndex":1,"explanation":"Le numérateur 13 est supérieur au dénominateur 12, donc 13/12 > 1."},
+    {"code":"M6-0299","microSkill":"m6_frac_comparer","difficulty":3,"prompt":"Quelle comparaison est correcte ?","choices":["5/8 < 0,6","5/8 = 0,6","5/8 > 0,6","On ne peut pas comparer."],"correctIndex":2,"explanation":"5/8 = 0,625, donc 5/8 > 0,6."},
+    {"code":"M6-0300","microSkill":"m6_frac_comparer","difficulty":3,"prompt":"Quelle comparaison est correcte ?","choices":["7/10 < 2/3","7/10 = 2/3","On ne peut pas comparer.","7/10 > 2/3"],"correctIndex":3,"explanation":"7/10 = 21/30 et 2/3 = 20/30, donc 7/10 > 2/3."},
+
+    {"code":"M6-0301","microSkill":"m6_frac_encadrer_entiers","difficulty":1,"prompt":"Quel encadrement de 7/3 est correct ?","choices":["2 < 7/3 < 3","1 < 7/3 < 2","3 < 7/3 < 4","4 < 7/3 < 5"],"correctIndex":0,"explanation":"6/3 < 7/3 < 9/3, donc 2 < 7/3 < 3."},
+    {"code":"M6-0302","microSkill":"m6_frac_encadrer_entiers","difficulty":1,"prompt":"Quel encadrement de 11/4 est correct ?","choices":["1 < 11/4 < 2","2 < 11/4 < 3","3 < 11/4 < 4","4 < 11/4 < 5"],"correctIndex":1,"explanation":"8/4 < 11/4 < 12/4, donc 2 < 11/4 < 3."},
+    {"code":"M6-0303","microSkill":"m6_frac_encadrer_entiers","difficulty":1,"prompt":"Quel encadrement de 9/5 est correct ?","choices":["0 < 9/5 < 1","2 < 9/5 < 3","1 < 9/5 < 2","3 < 9/5 < 4"],"correctIndex":2,"explanation":"5/5 < 9/5 < 10/5, donc 1 < 9/5 < 2."},
+    {"code":"M6-0304","microSkill":"m6_frac_encadrer_entiers","difficulty":2,"prompt":"Quel encadrement de 17/6 est correct ?","choices":["0 < 17/6 < 1","1 < 17/6 < 2","3 < 17/6 < 4","2 < 17/6 < 3"],"correctIndex":3,"explanation":"12/6 < 17/6 < 18/6, donc 2 < 17/6 < 3."},
+    {"code":"M6-0305","microSkill":"m6_frac_encadrer_entiers","difficulty":2,"prompt":"Quel encadrement de 13/4 est correct ?","choices":["3 < 13/4 < 4","2 < 13/4 < 3","4 < 13/4 < 5","5 < 13/4 < 6"],"correctIndex":0,"explanation":"12/4 < 13/4 < 16/4, donc 3 < 13/4 < 4."},
+    {"code":"M6-0306","microSkill":"m6_frac_encadrer_entiers","difficulty":2,"prompt":"Quel encadrement de 22/5 est correct ?","choices":["3 < 22/5 < 4","4 < 22/5 < 5","5 < 22/5 < 6","6 < 22/5 < 7"],"correctIndex":1,"explanation":"20/5 < 22/5 < 25/5, donc 4 < 22/5 < 5."},
+    {"code":"M6-0307","microSkill":"m6_frac_encadrer_entiers","difficulty":2,"prompt":"Quel encadrement de 19/8 est correct ?","choices":["1 < 19/8 < 2","3 < 19/8 < 4","2 < 19/8 < 3","4 < 19/8 < 5"],"correctIndex":2,"explanation":"16/8 < 19/8 < 24/8, donc 2 < 19/8 < 3."},
+    {"code":"M6-0308","microSkill":"m6_frac_encadrer_entiers","difficulty":3,"prompt":"Quel encadrement de 31/7 est correct ?","choices":["2 < 31/7 < 3","3 < 31/7 < 4","5 < 31/7 < 6","4 < 31/7 < 5"],"correctIndex":3,"explanation":"28/7 < 31/7 < 35/7, donc 4 < 31/7 < 5."},
+    {"code":"M6-0309","microSkill":"m6_frac_encadrer_entiers","difficulty":3,"prompt":"Quel encadrement de 41/9 est correct ?","choices":["4 < 41/9 < 5","3 < 41/9 < 4","5 < 41/9 < 6","6 < 41/9 < 7"],"correctIndex":0,"explanation":"36/9 < 41/9 < 45/9, donc 4 < 41/9 < 5."},
+    {"code":"M6-0310","microSkill":"m6_frac_encadrer_entiers","difficulty":3,"prompt":"Quel encadrement de 29/6 est correct ?","choices":["3 < 29/6 < 4","4 < 29/6 < 5","5 < 29/6 < 6","6 < 29/6 < 7"],"correctIndex":1,"explanation":"24/6 < 29/6 < 30/6, donc 4 < 29/6 < 5."},
+
+    {"code":"M6-0311","microSkill":"m6_frac_ordonner","difficulty":1,"prompt":"Quel rangement est dans l’ordre croissant ?","choices":["3/4 < 1/2 < 1/4","1/2 < 1/4 < 3/4","1/4 < 1/2 < 3/4","3/4 < 1/4 < 1/2"],"correctIndex":2,"explanation":"Un quart est inférieur à un demi, lui-même inférieur à trois quarts."},
+    {"code":"M6-0312","microSkill":"m6_frac_ordonner","difficulty":1,"prompt":"Quel rangement est dans l’ordre décroissant ?","choices":["1/2 > 2/3 > 5/6","2/3 > 5/6 > 1/2","5/6 > 1/2 > 2/3","5/6 > 2/3 > 1/2"],"correctIndex":3,"explanation":"5/6 est supérieur à 2/3, qui est supérieur à 1/2."},
+    {"code":"M6-0313","microSkill":"m6_frac_ordonner","difficulty":1,"prompt":"Quel rangement est dans l’ordre croissant ?","choices":["2/5 < 1/2 < 3/5","1/2 < 2/5 < 3/5","3/5 < 1/2 < 2/5","2/5 < 3/5 < 1/2"],"correctIndex":0,"explanation":"2/5 = 0,4 ; 1/2 = 0,5 ; 3/5 = 0,6."},
+    {"code":"M6-0314","microSkill":"m6_frac_ordonner","difficulty":2,"prompt":"Quel rangement est dans l’ordre croissant ?","choices":["1 < 3/4 < 5/4","3/4 < 1 < 5/4","5/4 < 1 < 3/4","3/4 < 5/4 < 1"],"correctIndex":1,"explanation":"3/4 = 0,75 et 5/4 = 1,25, donc 3/4 < 1 < 5/4."},
+    {"code":"M6-0315","microSkill":"m6_frac_ordonner","difficulty":2,"prompt":"Quel rangement est dans l’ordre décroissant ?","choices":["5/4 > 3/2 > 7/4","3/2 > 7/4 > 5/4","7/4 > 3/2 > 5/4","7/4 > 5/4 > 3/2"],"correctIndex":2,"explanation":"7/4 = 1,75 ; 3/2 = 1,5 ; 5/4 = 1,25."},
+    {"code":"M6-0316","microSkill":"m6_frac_ordonner","difficulty":2,"prompt":"Quel rangement est dans l’ordre croissant ?","choices":["1/2 < 2/5 < 1/3","2/5 < 1/3 < 1/2","1/3 < 1/2 < 2/5","1/3 < 2/5 < 1/2"],"correctIndex":3,"explanation":"1/3 est inférieur à 2/5, qui est inférieur à 1/2."},
+    {"code":"M6-0317","microSkill":"m6_frac_ordonner","difficulty":2,"prompt":"Quel rangement est dans l’ordre croissant ?","choices":["1 + 1/4 < 3/2 < 1 + 3/4","3/2 < 1 + 1/4 < 1 + 3/4","1 + 3/4 < 3/2 < 1 + 1/4","1 + 1/4 < 1 + 3/4 < 3/2"],"correctIndex":0,"explanation":"1 + 1/4 = 1,25 ; 3/2 = 1,5 ; 1 + 3/4 = 1,75."},
+    {"code":"M6-0318","microSkill":"m6_frac_ordonner","difficulty":3,"prompt":"Quel rangement est dans l’ordre décroissant ?","choices":["7/4 > 9/5 > 5/3","9/5 > 7/4 > 5/3","5/3 > 7/4 > 9/5","9/5 > 5/3 > 7/4"],"correctIndex":1,"explanation":"9/5 = 1,8 ; 7/4 = 1,75 ; 5/3 est environ égal à 1,67."},
+    {"code":"M6-0319","microSkill":"m6_frac_ordonner","difficulty":3,"prompt":"Quel rangement est dans l’ordre croissant ?","choices":["3/4 < 2/3 < 5/8","2/3 < 5/8 < 3/4","5/8 < 2/3 < 3/4","5/8 < 3/4 < 2/3"],"correctIndex":2,"explanation":"5/8 = 0,625 ; 2/3 est environ égal à 0,67 ; 3/4 = 0,75."},
+    {"code":"M6-0320","microSkill":"m6_frac_ordonner","difficulty":3,"prompt":"Quel rangement est dans l’ordre décroissant ?","choices":["5/3 > 7/4 > 11/6","7/4 > 11/6 > 5/3","11/6 > 5/3 > 7/4","11/6 > 7/4 > 5/3"],"correctIndex":3,"explanation":"11/6 est environ égal à 1,83 ; 7/4 = 1,75 ; 5/3 est environ égal à 1,67."}
+  ]
+}
