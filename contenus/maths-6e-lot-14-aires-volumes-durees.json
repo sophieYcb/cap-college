@@ -1,0 +1,89 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "6e",
+  "domain": {"code": "quantities_measurement", "name": "Grandeurs et mesures"},
+  "skill": {"code": "areas_volumes_durations", "name": "Aires, volumes et durées"},
+  "lot": "M6-MES-03",
+  "status": "draft",
+  "source": "Programme de mathématiques cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "m6_mes_aire_rectangle",
+      "teacherName": "Calculer l’aire d’un rectangle",
+      "studentName": "Calculer l’aire d’un rectangle",
+      "lessonReminder": "L’aire d’un rectangle est égale au produit de sa longueur par sa largeur : A = longueur × largeur.",
+      "workedExample": "Pour 8 cm sur 3 cm : A = 8 × 3 = 24 cm².",
+      "masteryCriteria": "Calculer l’aire d’un rectangle dont les dimensions sont exprimées dans la même unité."
+    },
+    {
+      "code": "m6_mes_cm3",
+      "teacherName": "Comprendre l’unité centimètre cube",
+      "studentName": "Comprendre le centimètre cube",
+      "lessonReminder": "Un centimètre cube, noté cm³, est le volume d’un cube dont chaque arête mesure 1 cm.",
+      "workedExample": "Un cube de 1 cm de côté occupe un volume de 1 cm³.",
+      "masteryCriteria": "Identifier le cm³ comme unité de volume et interpréter un nombre de cm³."
+    },
+    {
+      "code": "m6_mes_calcul_horaire",
+      "teacherName": "Calculer un horaire de départ ou d’arrivée",
+      "studentName": "Trouver une heure de départ ou d’arrivée",
+      "lessonReminder": "Pour trouver l’arrivée, on ajoute la durée au départ. Pour trouver le départ, on retire la durée à l’arrivée.",
+      "workedExample": "Départ à 14 h 20, trajet de 35 min : arrivée à 14 h 55.",
+      "masteryCriteria": "Calculer un horaire de départ ou d’arrivée à partir d’un horaire connu et d’une durée."
+    },
+    {
+      "code": "m6_mes_calcul_duree",
+      "teacherName": "Calculer une durée",
+      "studentName": "Calculer le temps écoulé",
+      "lessonReminder": "Pour calculer une durée, on décompose le trajet jusqu’à une heure entière, puis on ajoute le temps restant.",
+      "workedExample": "De 9 h 40 à 11 h 10 : 20 min + 1 h + 10 min = 1 h 30.",
+      "masteryCriteria": "Calculer une durée entre deux horaires d’une même journée."
+    }
+  ],
+  "questions": [
+    {"code":"M6-0501","microSkill":"m6_mes_aire_rectangle","difficulty":1,"prompt":"Un rectangle mesure 5 cm de longueur et 3 cm de largeur. Quelle est son aire ?","choices":["15 cm²","16 cm²","8 cm²","15 cm"],"correctIndex":0,"explanation":"A = 5 cm × 3 cm = 15 cm²."},
+    {"code":"M6-0502","microSkill":"m6_mes_aire_rectangle","difficulty":1,"prompt":"Un rectangle mesure 7 m de longueur et 2 m de largeur. Quelle est son aire ?","choices":["9 m²","14 m²","18 m²","14 m"],"correctIndex":1,"explanation":"A = 7 m × 2 m = 14 m²."},
+    {"code":"M6-0503","microSkill":"m6_mes_aire_rectangle","difficulty":1,"prompt":"Un rectangle mesure 6 cm de longueur et 4 cm de largeur. Quelle est son aire ?","choices":["10 cm²","20 cm²","24 cm²","24 cm"],"correctIndex":2,"explanation":"A = 6 cm × 4 cm = 24 cm²."},
+    {"code":"M6-0504","microSkill":"m6_mes_aire_rectangle","difficulty":2,"prompt":"Un rectangle mesure 10 mm de longueur et 3 mm de largeur. Quelle est son aire ?","choices":["13 mm²","26 mm²","30 mm","30 mm²"],"correctIndex":3,"explanation":"A = 10 mm × 3 mm = 30 mm²."},
+    {"code":"M6-0505","microSkill":"m6_mes_aire_rectangle","difficulty":2,"prompt":"Un rectangle mesure 8,5 cm de longueur et 4 cm de largeur. Quelle est son aire ?","choices":["34 cm²","25 cm²","12,5 cm²","34 cm"],"correctIndex":0,"explanation":"A = 8,5 cm × 4 cm = 34 cm²."},
+    {"code":"M6-0506","microSkill":"m6_mes_aire_rectangle","difficulty":2,"prompt":"Un rectangle mesure 12 m de longueur et 7,5 m de largeur. Quelle est son aire ?","choices":["39 m²","90 m²","19,5 m²","90 m"],"correctIndex":1,"explanation":"A = 12 m × 7,5 m = 90 m²."},
+    {"code":"M6-0507","microSkill":"m6_mes_aire_rectangle","difficulty":2,"prompt":"Un rectangle mesure 15 cm de longueur et 9 cm de largeur. Quelle est son aire ?","choices":["48 cm²","24 cm²","135 cm²","135 cm"],"correctIndex":2,"explanation":"A = 15 cm × 9 cm = 135 cm²."},
+    {"code":"M6-0508","microSkill":"m6_mes_aire_rectangle","difficulty":3,"prompt":"Un rectangle mesure 20,5 m de longueur et 6,5 m de largeur. Quelle est son aire ?","choices":["54 m²","27 m²","133,25 m","133,25 m²"],"correctIndex":3,"explanation":"A = 20,5 m × 6,5 m = 133,25 m²."},
+    {"code":"M6-0509","microSkill":"m6_mes_aire_rectangle","difficulty":3,"prompt":"Un rectangle mesure 3,75 km de longueur et 1,2 km de largeur. Quelle est son aire ?","choices":["4,5 km²","4,95 km²","9,9 km²","4,5 km"],"correctIndex":0,"explanation":"A = 3,75 km × 1,2 km = 4,5 km²."},
+    {"code":"M6-0510","microSkill":"m6_mes_aire_rectangle","difficulty":3,"prompt":"Un rectangle mesure 14,2 cm de longueur et 5,8 cm de largeur. Quelle est son aire ?","choices":["40 cm²","82,36 cm²","28,4 cm²","82,36 cm"],"correctIndex":1,"explanation":"A = 14,2 cm × 5,8 cm = 82,36 cm²."},
+
+    {"code":"M6-0511","microSkill":"m6_mes_cm3","difficulty":1,"prompt":"Que mesure-t-on en centimètres cubes (cm³) ?","choices":["Une longueur","Une aire","Un volume","Une durée"],"correctIndex":2,"explanation":"Le centimètre cube est une unité de volume."},
+    {"code":"M6-0512","microSkill":"m6_mes_cm3","difficulty":1,"prompt":"Quel objet définit exactement un volume de 1 cm³ ?","choices":["Un carré de 1 cm de côté","Un segment de 1 cm","Un cube de 3 cm de côté","Un cube de 1 cm de côté"],"correctIndex":3,"explanation":"1 cm³ est le volume d’un cube de 1 cm de côté."},
+    {"code":"M6-0513","microSkill":"m6_mes_cm3","difficulty":1,"prompt":"Quelle notation correspond au centimètre cube ?","choices":["cm³","cm²","cm","m³"],"correctIndex":0,"explanation":"Le centimètre cube se note cm³."},
+    {"code":"M6-0514","microSkill":"m6_mes_cm3","difficulty":2,"prompt":"Une boîte occupe 24 cubes de 1 cm³ sans espace vide. Quel est son volume ?","choices":["24 cm","24 cm³","24 cm²","8 cm³"],"correctIndex":1,"explanation":"Chaque petit cube vaut 1 cm³ ; 24 cubes occupent 24 cm³."},
+    {"code":"M6-0515","microSkill":"m6_mes_cm3","difficulty":2,"prompt":"Laquelle de ces mesures peut être le volume d’une petite boîte ?","choices":["120 cm","120 cm²","120 cm³","120 min"],"correctIndex":2,"explanation":"Le volume s’exprime ici en centimètres cubes."},
+    {"code":"M6-0516","microSkill":"m6_mes_cm3","difficulty":2,"prompt":"Un assemblage contient 35 cubes de 1 cm³. Quel volume occupe-t-il ?","choices":["35 cm","35 cm²","105 cm³","35 cm³"],"correctIndex":3,"explanation":"35 cubes-unités de 1 cm³ occupent 35 cm³."},
+    {"code":"M6-0517","microSkill":"m6_mes_cm3","difficulty":2,"prompt":"Que signifie « un volume de 18 cm³ » ?","choices":["Un volume équivalent à 18 cubes de 1 cm³","Une longueur de 18 cm","Une aire de 18 carrés de 1 cm²","Un cube de 18 cm de côté"],"correctIndex":0,"explanation":"18 cm³ correspond au volume de 18 cubes-unités de 1 cm³."},
+    {"code":"M6-0518","microSkill":"m6_mes_cm3","difficulty":3,"prompt":"Un cube de 1 cm de côté est partagé en 8 cubes identiques. Le volume total des 8 petits cubes est…","choices":["8 cm³","1 cm³","4 cm³","Impossible à déterminer"],"correctIndex":1,"explanation":"Le découpage ne change pas le volume total : il reste égal à 1 cm³."},
+    {"code":"M6-0519","microSkill":"m6_mes_cm3","difficulty":3,"prompt":"Quelle phrase est correcte ?","choices":["cm³ mesure une aire.","cm³ mesure une longueur.","cm³ mesure un volume.","cm³ mesure une masse."],"correctIndex":2,"explanation":"Le symbole cm³ désigne une unité de volume."},
+    {"code":"M6-0520","microSkill":"m6_mes_cm3","difficulty":3,"prompt":"Deux assemblages contiennent chacun 50 cubes de 1 cm³. Leurs volumes sont…","choices":["Toujours différents","Égaux à 25 cm³","Égaux à 100 cm³ chacun","Égaux à 50 cm³ chacun"],"correctIndex":3,"explanation":"Chaque assemblage contient 50 unités de 1 cm³, donc son volume est 50 cm³."},
+
+    {"code":"M6-0521","microSkill":"m6_mes_calcul_horaire","difficulty":1,"prompt":"Un film commence à 14 h et dure 2 h. À quelle heure finit-il ?","choices":["16 h","12 h","15 h","17 h"],"correctIndex":0,"explanation":"14 h + 2 h = 16 h."},
+    {"code":"M6-0522","microSkill":"m6_mes_calcul_horaire","difficulty":1,"prompt":"Un trajet commence à 9 h 20 et dure 30 minutes. À quelle heure se termine-t-il ?","choices":["9 h 30","9 h 50","10 h","8 h 50"],"correctIndex":1,"explanation":"9 h 20 + 30 min = 9 h 50."},
+    {"code":"M6-0523","microSkill":"m6_mes_calcul_horaire","difficulty":1,"prompt":"Une activité finit à 11 h et dure 1 h. À quelle heure a-t-elle commencé ?","choices":["9 h","11 h","10 h","12 h"],"correctIndex":2,"explanation":"11 h − 1 h = 10 h."},
+    {"code":"M6-0524","microSkill":"m6_mes_calcul_horaire","difficulty":2,"prompt":"Un train part à 15 h 45 et roule pendant 40 minutes. À quelle heure arrive-t-il ?","choices":["15 h 05","16 h 15","16 h 45","16 h 25"],"correctIndex":3,"explanation":"De 15 h 45 à 16 h, il y a 15 min, puis 25 min : arrivée à 16 h 25."},
+    {"code":"M6-0525","microSkill":"m6_mes_calcul_horaire","difficulty":2,"prompt":"Un cours commence à 8 h 35 et dure 55 minutes. À quelle heure finit-il ?","choices":["9 h 30","9 h 20","8 h 90","10 h 30"],"correctIndex":0,"explanation":"8 h 35 + 55 min = 9 h 30."},
+    {"code":"M6-0526","microSkill":"m6_mes_calcul_horaire","difficulty":2,"prompt":"Une séance finit à 17 h 10 et dure 45 minutes. À quelle heure a-t-elle commencé ?","choices":["16 h 15","16 h 25","16 h 35","17 h 55"],"correctIndex":1,"explanation":"17 h 10 − 45 min = 16 h 25."},
+    {"code":"M6-0527","microSkill":"m6_mes_calcul_horaire","difficulty":2,"prompt":"Un spectacle commence à 19 h 50 et dure 1 h 25. À quelle heure finit-il ?","choices":["20 h 15","20 h 75","21 h 15","21 h 25"],"correctIndex":2,"explanation":"19 h 50 + 1 h 25 = 21 h 15."},
+    {"code":"M6-0528","microSkill":"m6_mes_calcul_horaire","difficulty":3,"prompt":"Un voyage finit à 13 h 05 et dure 2 h 35. À quelle heure a-t-il commencé ?","choices":["9 h 30","10 h 20","11 h 30","10 h 30"],"correctIndex":3,"explanation":"13 h 05 − 2 h 35 = 10 h 30."},
+    {"code":"M6-0529","microSkill":"m6_mes_calcul_horaire","difficulty":3,"prompt":"Une randonnée commence à 7 h 48 et dure 3 h 37. À quelle heure finit-elle ?","choices":["11 h 25","10 h 25","11 h 15","12 h 25"],"correctIndex":0,"explanation":"7 h 48 + 3 h 37 = 11 h 25."},
+    {"code":"M6-0530","microSkill":"m6_mes_calcul_horaire","difficulty":3,"prompt":"Une émission finit à 22 h 12 et dure 1 h 48. À quelle heure a-t-elle commencé ?","choices":["20 h 12","20 h 24","21 h 24","23 h 60"],"correctIndex":1,"explanation":"22 h 12 − 1 h 48 = 20 h 24."},
+
+    {"code":"M6-0531","microSkill":"m6_mes_calcul_duree","difficulty":1,"prompt":"Combien de temps s’écoule entre 9 h et 11 h ?","choices":["1 h","3 h","2 h","20 min"],"correctIndex":2,"explanation":"De 9 h à 11 h, il s’écoule 2 heures."},
+    {"code":"M6-0532","microSkill":"m6_mes_calcul_duree","difficulty":1,"prompt":"Combien de temps s’écoule entre 14 h 10 et 14 h 40 ?","choices":["20 min","40 min","50 min","30 min"],"correctIndex":3,"explanation":"De 14 h 10 à 14 h 40, il s’écoule 30 minutes."},
+    {"code":"M6-0533","microSkill":"m6_mes_calcul_duree","difficulty":1,"prompt":"Combien de temps s’écoule entre 8 h 30 et 9 h 30 ?","choices":["1 h","30 min","2 h","1 h 30"],"correctIndex":0,"explanation":"Les minutes sont identiques et les heures diffèrent de 1 : durée 1 h."},
+    {"code":"M6-0534","microSkill":"m6_mes_calcul_duree","difficulty":2,"prompt":"Combien de temps s’écoule entre 10 h 20 et 11 h 05 ?","choices":["35 min","45 min","55 min","1 h 15"],"correctIndex":1,"explanation":"De 10 h 20 à 11 h : 40 min, puis 5 min, soit 45 min."},
+    {"code":"M6-0535","microSkill":"m6_mes_calcul_duree","difficulty":2,"prompt":"Combien de temps s’écoule entre 13 h 45 et 15 h 15 ?","choices":["1 h 15","2 h 30","1 h 30","2 h"],"correctIndex":2,"explanation":"De 13 h 45 à 14 h : 15 min, puis 1 h 15, soit 1 h 30."},
+    {"code":"M6-0536","microSkill":"m6_mes_calcul_duree","difficulty":2,"prompt":"Combien de temps s’écoule entre 16 h 50 et 18 h 20 ?","choices":["1 h 10","2 h 30","1 h 50","1 h 30"],"correctIndex":3,"explanation":"De 16 h 50 à 17 h : 10 min, puis 1 h 20, soit 1 h 30."},
+    {"code":"M6-0537","microSkill":"m6_mes_calcul_duree","difficulty":2,"prompt":"Combien de temps s’écoule entre 7 h 25 et 10 h ?","choices":["2 h 35","2 h 25","3 h 35","3 h 25"],"correctIndex":0,"explanation":"De 7 h 25 à 8 h : 35 min, puis 2 h, soit 2 h 35."},
+    {"code":"M6-0538","microSkill":"m6_mes_calcul_duree","difficulty":3,"prompt":"Combien de temps s’écoule entre 9 h 47 et 12 h 13 ?","choices":["2 h 16","2 h 26","3 h 26","1 h 34"],"correctIndex":1,"explanation":"De 9 h 47 à 10 h : 13 min, puis 2 h 13, soit 2 h 26."},
+    {"code":"M6-0539","microSkill":"m6_mes_calcul_duree","difficulty":3,"prompt":"Combien de temps s’écoule entre 14 h 38 et 18 h 02 ?","choices":["3 h 14","4 h 24","3 h 24","4 h 36"],"correctIndex":2,"explanation":"De 14 h 38 à 15 h : 22 min, puis 3 h 02, soit 3 h 24."},
+    {"code":"M6-0540","microSkill":"m6_mes_calcul_duree","difficulty":3,"prompt":"Combien de temps s’écoule entre 6 h 55 et 11 h 30 ?","choices":["4 h 25","5 h 35","4 h 45","4 h 35"],"correctIndex":3,"explanation":"De 6 h 55 à 7 h : 5 min, puis 4 h 30, soit 4 h 35."}
+  ]
+}
