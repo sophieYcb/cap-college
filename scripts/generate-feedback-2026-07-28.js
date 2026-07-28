@@ -257,7 +257,7 @@ const sql = `/*
  CAP-COLLEGE DATABASE
 -------------------------------------------------------------------------------
  Version      : 1.0.0
- File         : database/116_correct_maths_feedback_2026_07_28.sql
+ File         : database/118_correct_maths_feedback_2026_07_28_v2.sql
  Target       : PostgreSQL / Supabase
  Purpose      : Apply the validator feedback exported on 28 July 2026.
  Idempotent   : Yes
@@ -388,6 +388,6 @@ select jsonb_build_object(
 ) as verification;
 `;
 
-fs.writeFileSync(path.join(root, "database", "116_correct_maths_feedback_2026_07_28.sql"), sql, "utf8");
+fs.writeFileSync(path.join(root, "database", "118_correct_maths_feedback_2026_07_28_v2.sql"), sql, "utf8");
 fs.writeFileSync(path.join(root, "database", "117_verify_maths_feedback_2026_07_28.sql"), verify, "utf8");
 console.log(JSON.stringify({ corrections: payload.length, min: ids[0], max: ids.at(-1) }));
