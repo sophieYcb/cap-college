@@ -292,7 +292,7 @@ begin
 
     target_version_id := md5(
       'cap-college:feedback-2026-07-28:' ||
-      correction->>'legacy_id' || ':v2'
+      (correction->>'legacy_id') || ':v2'
     )::uuid;
 
     insert into public.question_versions (
@@ -329,7 +329,7 @@ begin
       values (
         md5(
           'cap-college:feedback-2026-07-28:' ||
-          correction->>'legacy_id' || ':v2:' || answer.sort_order
+          (correction->>'legacy_id') || ':v2:' || answer.sort_order
         )::uuid,
         target_version_id,
         chr(64 + answer.sort_order),
