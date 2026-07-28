@@ -169,7 +169,11 @@ function renderQuestion(){
  document.getElementById('testDomain').textContent=q.domaine;
  document.getElementById('testSkill').textContent=q.competence;
  document.getElementById('testVersion').textContent=`Version ${q.version||1}`;
- document.getElementById('testQuestion').textContent=q.question;
+ CapCollegeQuestionVisuals.render(
+  document.getElementById('testQuestion'),
+  document.getElementById('testQuestionVisual'),
+  q.question
+ );
  document.getElementById('testChoices').innerHTML=q.choix.map((c,i)=>`<div class="choice test-choice ${i===q.reponse?'correct-choice':''}"><span>${String.fromCharCode(65+i)}.</span> ${escapeHtml(c)} ${i===q.reponse?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
  const flagDetails=document.getElementById('openFlagDetails');
  flagDetails.classList.toggle('hidden',!q.openFlagDetails.length);
@@ -192,16 +196,23 @@ function renderQuestion(){
  if(q.previous){
   const previousChoices=q.previous.choices||[];
   document.getElementById('previousVersionLabel').textContent=`Version ${q.previous.number} — immédiatement antérieure`;
-  document.getElementById('previousQuestion').textContent=q.previous.prompt||'';
+  CapCollegeQuestionVisuals.render(
+   document.getElementById('previousQuestion'),
+   document.getElementById('previousQuestionVisual'),
+   q.previous.prompt||''
+  );
   const previousCorrect=previousChoices.findIndex(choice=>choice.isCorrect);
   document.getElementById('previousChoices').innerHTML=previousChoices.map((choice,index)=>`<div class="choice test-choice ${index===previousCorrect?'correct-choice':''}"><span>${String.fromCharCode(65+index)}.</span> ${escapeHtml(choice.text)} ${index===previousCorrect?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
   const previousReview=document.getElementById('previousReview');
   const review=q.previous.review;
   previousReview.classList.toggle('hidden',!review);
-  previousReview.innerHTML=review
+ previousReview.innerHTML=review
    ?`<strong>Validation de cette version : ${escapeHtml(review.grade||'—')}</strong>
      <p>${escapeHtml(review.comment||'Aucun commentaire saisi.')}</p>`
    :'';
+ }else{
+  document.getElementById('previousQuestionVisual').replaceChildren();
+  document.getElementById('previousQuestionVisual').classList.add('hidden');
  }
  const staleNotice=document.getElementById('staleReviewNotice');
  staleNotice.classList.toggle('hidden',!staleReview);

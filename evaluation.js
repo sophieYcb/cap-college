@@ -490,10 +490,16 @@ function renderQuestion(){
     tense.textContent=`Temps attendu : ${q.competence}`;
     tense.classList.remove('hidden');
     document.getElementById('questionText').textContent=`[${q.competence}] ${q.question}`;
+    document.getElementById('questionVisual').replaceChildren();
+    document.getElementById('questionVisual').classList.add('hidden');
   }else{
     tense.textContent='';
     tense.classList.add('hidden');
-    document.getElementById('questionText').textContent=q.question;
+    CapCollegeQuestionVisuals.render(
+      document.getElementById('questionText'),
+      document.getElementById('questionVisual'),
+      q.question
+    );
   }
 
   document.getElementById('prevBtn').disabled=current===0;
