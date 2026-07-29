@@ -1,0 +1,412 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "french",
+  "level": "6e",
+  "domain": {
+    "code": "grammar",
+    "name": "Grammaire"
+  },
+  "skill": {
+    "code": "f6_noun_phrase",
+    "name": "Groupe nominal"
+  },
+  "lot": "F6-GRA-04",
+  "status": "draft",
+  "source": "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "f6_gra_identifier_epithete",
+      "teacherName": "Identifier un adjectif épithète",
+      "studentName": "Reconnaître un adjectif épithète",
+      "lessonReminder": "Un adjectif épithète appartient au groupe nominal et apporte une précision sur le nom, sans être relié à lui par un verbe attributif.",
+      "workedExample": "Dans « un long voyage », « long » est un adjectif épithète du nom « voyage ».",
+      "masteryCriteria": "Identifier un adjectif épithète avant ou après le nom, y compris en présence d’un attribut."
+    },
+    {
+      "code": "f6_gra_identifier_complement_nom",
+      "teacherName": "Identifier un complément du nom",
+      "studentName": "Reconnaître un complément du nom",
+      "lessonReminder": "Le complément du nom complète un nom. Il est généralement introduit par une préposition comme de, à, en, pour, sans ou vers.",
+      "workedExample": "Dans « une tasse de chocolat », « de chocolat » complète le nom « tasse ».",
+      "masteryCriteria": "Identifier et délimiter des compléments du nom introduits par différentes prépositions."
+    },
+    {
+      "code": "f6_gra_distinguer_epithete_complement_nom",
+      "teacherName": "Distinguer épithète et complément du nom",
+      "studentName": "Distinguer épithète et complément du nom",
+      "lessonReminder": "L’épithète est un adjectif directement lié au nom. Le complément du nom est un groupe généralement introduit par une préposition.",
+      "workedExample": "Dans « une robe élégante en soie », « élégante » est épithète et « en soie » est complément du nom.",
+      "masteryCriteria": "Distinguer les deux expansions dans un même groupe nominal."
+    },
+    {
+      "code": "f6_gra_distinguer_epithete_attribut",
+      "teacherName": "Distinguer épithète et attribut du sujet",
+      "studentName": "Distinguer épithète et attribut",
+      "lessonReminder": "L’épithète appartient au groupe nominal. L’attribut du sujet est relié au sujet par un verbe attributif comme être, sembler, paraître, devenir ou rester.",
+      "workedExample": "Dans « Le jeune acteur paraît nerveux », « jeune » est épithète et « nerveux » est attribut du sujet.",
+      "masteryCriteria": "Distinguer l’épithète de l’attribut dans des phrases contenant les deux."
+    }
+  ],
+  "questions": [
+    {
+      "code": "F6-0081",
+      "microSkill": "f6_gra_identifier_epithete",
+      "difficulty": 2,
+      "prompt": "Dans « Le jeune acteur paraît nerveux », quel adjectif est épithète du nom « acteur » ?",
+      "choices": ["jeune", "nerveux", "paraît", "acteur"],
+      "correctIndex": 0,
+      "explanation": "« Jeune » appartient au groupe nominal « Le jeune acteur » : il est épithète. « Nerveux » est attribut du sujet."
+    },
+    {
+      "code": "F6-0082",
+      "microSkill": "f6_gra_identifier_epithete",
+      "difficulty": 2,
+      "prompt": "Dans « La route étroite devient dangereuse », quel adjectif est épithète du nom « route » ?",
+      "choices": ["dangereuse", "étroite", "devient", "route"],
+      "correctIndex": 1,
+      "explanation": "« Étroite » appartient au groupe nominal « La route étroite » ; « dangereuse » est attribut du sujet."
+    },
+    {
+      "code": "F6-0083",
+      "microSkill": "f6_gra_identifier_epithete",
+      "difficulty": 1,
+      "prompt": "Dans « Un parfum délicat flotte dans la pièce », quel mot est un adjectif épithète ?",
+      "choices": ["parfum", "flotte", "délicat", "pièce"],
+      "correctIndex": 2,
+      "explanation": "« Délicat » précise directement le nom « parfum » : il est épithète."
+    },
+    {
+      "code": "F6-0084",
+      "microSkill": "f6_gra_identifier_epithete",
+      "difficulty": 2,
+      "prompt": "Dans « Ces fleurs rouges semblent fragiles », quel adjectif est épithète du nom « fleurs » ?",
+      "choices": ["Ces", "fragiles", "semblent", "rouges"],
+      "correctIndex": 3,
+      "explanation": "« Rouges » appartient au groupe nominal ; « fragiles » est attribut du sujet."
+    },
+    {
+      "code": "F6-0085",
+      "microSkill": "f6_gra_identifier_epithete",
+      "difficulty": 2,
+      "prompt": "Dans « Une ancienne maison reste solide », quel adjectif est épithète du nom « maison » ?",
+      "choices": ["ancienne", "solide", "reste", "maison"],
+      "correctIndex": 0,
+      "explanation": "« Ancienne » est placé dans le groupe nominal ; « solide » est attribut du sujet."
+    },
+    {
+      "code": "F6-0086",
+      "microSkill": "f6_gra_identifier_epithete",
+      "difficulty": 2,
+      "prompt": "Dans « Le ciel gris devient menaçant », quel adjectif est épithète du nom « ciel » ?",
+      "choices": ["menaçant", "gris", "devient", "ciel"],
+      "correctIndex": 1,
+      "explanation": "« Gris » appartient au groupe nominal « Le ciel gris »."
+    },
+    {
+      "code": "F6-0087",
+      "microSkill": "f6_gra_identifier_epithete",
+      "difficulty": 2,
+      "prompt": "Dans « Son regard inquiet paraît étrange », quel adjectif est épithète du nom « regard » ?",
+      "choices": ["étrange", "paraît", "inquiet", "regard"],
+      "correctIndex": 2,
+      "explanation": "« Inquiet » appartient au groupe nominal ; « étrange » est attribut du sujet."
+    },
+    {
+      "code": "F6-0088",
+      "microSkill": "f6_gra_identifier_epithete",
+      "difficulty": 2,
+      "prompt": "Dans « Des enfants joyeux semblent fatigués », quel adjectif est épithète du nom « enfants » ?",
+      "choices": ["fatigués", "semblent", "enfants", "joyeux"],
+      "correctIndex": 3,
+      "explanation": "« Joyeux » appartient au groupe nominal « Des enfants joyeux »."
+    },
+    {
+      "code": "F6-0089",
+      "microSkill": "f6_gra_identifier_epithete",
+      "difficulty": 1,
+      "prompt": "Dans « Un vent glacial souffle sur la côte », quel mot est un adjectif épithète ?",
+      "choices": ["glacial", "souffle", "vent", "côte"],
+      "correctIndex": 0,
+      "explanation": "« Glacial » précise directement le nom « vent »."
+    },
+    {
+      "code": "F6-0090",
+      "microSkill": "f6_gra_identifier_epithete",
+      "difficulty": 2,
+      "prompt": "Dans « La soupe chaude paraît délicieuse », quel adjectif est épithète du nom « soupe » ?",
+      "choices": ["délicieuse", "chaude", "paraît", "soupe"],
+      "correctIndex": 1,
+      "explanation": "« Chaude » appartient au groupe nominal ; « délicieuse » est attribut du sujet."
+    },
+    {
+      "code": "F6-0091",
+      "microSkill": "f6_gra_identifier_complement_nom",
+      "difficulty": 1,
+      "prompt": "Dans le groupe nominal « la porte du garage », quel groupe complète le nom « porte » ?",
+      "choices": ["la porte", "garage", "du garage", "la"],
+      "correctIndex": 2,
+      "explanation": "« Du garage » est le complément du nom « porte »."
+    },
+    {
+      "code": "F6-0092",
+      "microSkill": "f6_gra_identifier_complement_nom",
+      "difficulty": 1,
+      "prompt": "Dans le groupe nominal « un voyage en Italie », quel est le complément du nom « voyage » ?",
+      "choices": ["un voyage", "Italie", "voyage", "en Italie"],
+      "correctIndex": 3,
+      "explanation": "« En Italie » complète le nom « voyage »."
+    },
+    {
+      "code": "F6-0093",
+      "microSkill": "f6_gra_identifier_complement_nom",
+      "difficulty": 1,
+      "prompt": "Dans le groupe nominal « une tasse de chocolat », quel est le complément du nom « tasse » ?",
+      "choices": ["de chocolat", "tasse", "chocolat", "une tasse"],
+      "correctIndex": 0,
+      "explanation": "« De chocolat » complète le nom « tasse »."
+    },
+    {
+      "code": "F6-0094",
+      "microSkill": "f6_gra_identifier_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans le groupe nominal « un livre pour enfants », quel est le complément du nom « livre » ?",
+      "choices": ["enfants", "pour enfants", "un livre", "livre"],
+      "correctIndex": 1,
+      "explanation": "« Pour enfants » complète le nom « livre »."
+    },
+    {
+      "code": "F6-0095",
+      "microSkill": "f6_gra_identifier_complement_nom",
+      "difficulty": 1,
+      "prompt": "Dans le groupe nominal « les rues de la ville », quel est le complément du nom « rues » ?",
+      "choices": ["la ville", "les rues", "de la ville", "rues"],
+      "correctIndex": 2,
+      "explanation": "« De la ville » complète le nom « rues »."
+    },
+    {
+      "code": "F6-0096",
+      "microSkill": "f6_gra_identifier_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans le groupe nominal « une machine à laver », quel est le complément du nom « machine » ?",
+      "choices": ["une machine", "laver", "machine", "à laver"],
+      "correctIndex": 3,
+      "explanation": "« À laver » est un groupe infinitif qui complète le nom « machine »."
+    },
+    {
+      "code": "F6-0097",
+      "microSkill": "f6_gra_identifier_complement_nom",
+      "difficulty": 1,
+      "prompt": "Dans le groupe nominal « un bracelet en argent », quel est le complément du nom « bracelet » ?",
+      "choices": ["en argent", "argent", "bracelet", "un bracelet"],
+      "correctIndex": 0,
+      "explanation": "« En argent » complète le nom « bracelet »."
+    },
+    {
+      "code": "F6-0098",
+      "microSkill": "f6_gra_identifier_complement_nom",
+      "difficulty": 1,
+      "prompt": "Dans le groupe nominal « la fin du spectacle », quel est le complément du nom « fin » ?",
+      "choices": ["spectacle", "du spectacle", "la fin", "fin"],
+      "correctIndex": 1,
+      "explanation": "« Du spectacle » complète le nom « fin »."
+    },
+    {
+      "code": "F6-0099",
+      "microSkill": "f6_gra_identifier_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans le groupe nominal « un cours sans exercices », quel est le complément du nom « cours » ?",
+      "choices": ["exercices", "un cours", "sans exercices", "cours"],
+      "correctIndex": 2,
+      "explanation": "« Sans exercices » complète le nom « cours »."
+    },
+    {
+      "code": "F6-0100",
+      "microSkill": "f6_gra_identifier_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans le groupe nominal « un chemin vers le village », quel est le complément du nom « chemin » ?",
+      "choices": ["village", "un chemin", "chemin", "vers le village"],
+      "correctIndex": 3,
+      "explanation": "« Vers le village » complète le nom « chemin »."
+    },
+    {
+      "code": "F6-0101",
+      "microSkill": "f6_gra_distinguer_epithete_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans « un chemin étroit de montagne », quelle est la fonction de « étroit » ?",
+      "choices": ["Adjectif épithète", "Complément du nom", "Attribut du sujet", "Complément circonstanciel"],
+      "correctIndex": 0,
+      "explanation": "« Étroit » est un adjectif directement lié au nom « chemin » : il est épithète."
+    },
+    {
+      "code": "F6-0102",
+      "microSkill": "f6_gra_distinguer_epithete_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans « un chemin étroit de montagne », quelle est la fonction de « de montagne » ?",
+      "choices": ["Adjectif épithète", "Complément du nom", "Attribut du sujet", "Complément circonstanciel"],
+      "correctIndex": 1,
+      "explanation": "« De montagne » est introduit par « de » et complète le nom « chemin »."
+    },
+    {
+      "code": "F6-0103",
+      "microSkill": "f6_gra_distinguer_epithete_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans « une robe élégante en soie », quelle est la fonction de « élégante » ?",
+      "choices": ["Complément du nom", "Attribut du sujet", "Adjectif épithète", "Complément circonstanciel"],
+      "correctIndex": 2,
+      "explanation": "« Élégante » est un adjectif directement lié au nom « robe »."
+    },
+    {
+      "code": "F6-0104",
+      "microSkill": "f6_gra_distinguer_epithete_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans « une robe élégante en soie », quelle est la fonction de « en soie » ?",
+      "choices": ["Adjectif épithète", "Attribut du sujet", "Complément circonstanciel", "Complément du nom"],
+      "correctIndex": 3,
+      "explanation": "« En soie » complète le nom « robe »."
+    },
+    {
+      "code": "F6-0105",
+      "microSkill": "f6_gra_distinguer_epithete_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans « les vieux murs du château », quelle est la fonction de « vieux » ?",
+      "choices": ["Adjectif épithète", "Complément du nom", "Attribut du sujet", "Complément circonstanciel"],
+      "correctIndex": 0,
+      "explanation": "« Vieux » est un adjectif directement lié au nom « murs »."
+    },
+    {
+      "code": "F6-0106",
+      "microSkill": "f6_gra_distinguer_epithete_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans « les vieux murs du château », quelle est la fonction de « du château » ?",
+      "choices": ["Adjectif épithète", "Complément du nom", "Attribut du sujet", "Complément circonstanciel"],
+      "correctIndex": 1,
+      "explanation": "« Du château » complète le nom « murs »."
+    },
+    {
+      "code": "F6-0107",
+      "microSkill": "f6_gra_distinguer_epithete_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans « un long voyage sans retour », quelle est la fonction de « long » ?",
+      "choices": ["Complément du nom", "Attribut du sujet", "Adjectif épithète", "Complément circonstanciel"],
+      "correctIndex": 2,
+      "explanation": "« Long » est un adjectif directement lié au nom « voyage »."
+    },
+    {
+      "code": "F6-0108",
+      "microSkill": "f6_gra_distinguer_epithete_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans « un long voyage sans retour », quelle est la fonction de « sans retour » ?",
+      "choices": ["Adjectif épithète", "Attribut du sujet", "Complément circonstanciel", "Complément du nom"],
+      "correctIndex": 3,
+      "explanation": "« Sans retour » complète le nom « voyage »."
+    },
+    {
+      "code": "F6-0109",
+      "microSkill": "f6_gra_distinguer_epithete_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans « une réponse précise à la question », quelle est la fonction de « précise » ?",
+      "choices": ["Adjectif épithète", "Complément du nom", "Attribut du sujet", "Complément circonstanciel"],
+      "correctIndex": 0,
+      "explanation": "« Précise » est un adjectif directement lié au nom « réponse »."
+    },
+    {
+      "code": "F6-0110",
+      "microSkill": "f6_gra_distinguer_epithete_complement_nom",
+      "difficulty": 2,
+      "prompt": "Dans « une réponse précise à la question », quelle est la fonction de « à la question » ?",
+      "choices": ["Adjectif épithète", "Complément du nom", "Attribut du sujet", "Complément circonstanciel"],
+      "correctIndex": 1,
+      "explanation": "« À la question » complète le nom « réponse »."
+    },
+    {
+      "code": "F6-0111",
+      "microSkill": "f6_gra_distinguer_epithete_attribut",
+      "difficulty": 2,
+      "prompt": "Dans « La mer calme paraît immense », quelle est la fonction de « calme » ?",
+      "choices": ["Attribut du sujet", "Complément du nom", "Adjectif épithète", "Complément circonstanciel"],
+      "correctIndex": 2,
+      "explanation": "« Calme » appartient au groupe nominal « La mer calme » : il est épithète."
+    },
+    {
+      "code": "F6-0112",
+      "microSkill": "f6_gra_distinguer_epithete_attribut",
+      "difficulty": 2,
+      "prompt": "Dans « La mer calme paraît immense », quelle est la fonction de « immense » ?",
+      "choices": ["Adjectif épithète", "Complément du nom", "Complément circonstanciel", "Attribut du sujet"],
+      "correctIndex": 3,
+      "explanation": "« Immense » est relié au sujet « La mer calme » par le verbe « paraît » : il est attribut."
+    },
+    {
+      "code": "F6-0113",
+      "microSkill": "f6_gra_distinguer_epithete_attribut",
+      "difficulty": 2,
+      "prompt": "Dans « Le jeune sportif semble épuisé », quelle est la fonction de « jeune » ?",
+      "choices": ["Adjectif épithète", "Attribut du sujet", "Complément du nom", "Complément circonstanciel"],
+      "correctIndex": 0,
+      "explanation": "« Jeune » appartient au groupe nominal « Le jeune sportif »."
+    },
+    {
+      "code": "F6-0114",
+      "microSkill": "f6_gra_distinguer_epithete_attribut",
+      "difficulty": 2,
+      "prompt": "Dans « Le jeune sportif semble épuisé », quelle est la fonction de « épuisé » ?",
+      "choices": ["Adjectif épithète", "Attribut du sujet", "Complément du nom", "Complément circonstanciel"],
+      "correctIndex": 1,
+      "explanation": "« Épuisé » est relié au sujet par le verbe « semble » : il est attribut."
+    },
+    {
+      "code": "F6-0115",
+      "microSkill": "f6_gra_distinguer_epithete_attribut",
+      "difficulty": 2,
+      "prompt": "Dans « Ces fleurs parfumées deviennent rares », quelle est la fonction de « parfumées » ?",
+      "choices": ["Attribut du sujet", "Complément du nom", "Adjectif épithète", "Complément circonstanciel"],
+      "correctIndex": 2,
+      "explanation": "« Parfumées » appartient au groupe nominal « Ces fleurs parfumées »."
+    },
+    {
+      "code": "F6-0116",
+      "microSkill": "f6_gra_distinguer_epithete_attribut",
+      "difficulty": 2,
+      "prompt": "Dans « Ces fleurs parfumées deviennent rares », quelle est la fonction de « rares » ?",
+      "choices": ["Adjectif épithète", "Complément du nom", "Complément circonstanciel", "Attribut du sujet"],
+      "correctIndex": 3,
+      "explanation": "« Rares » est relié au sujet par le verbe « deviennent »."
+    },
+    {
+      "code": "F6-0117",
+      "microSkill": "f6_gra_distinguer_epithete_attribut",
+      "difficulty": 2,
+      "prompt": "Dans « Un ciel sombre reste menaçant », quelle est la fonction de « sombre » ?",
+      "choices": ["Adjectif épithète", "Attribut du sujet", "Complément du nom", "Complément circonstanciel"],
+      "correctIndex": 0,
+      "explanation": "« Sombre » appartient au groupe nominal « Un ciel sombre »."
+    },
+    {
+      "code": "F6-0118",
+      "microSkill": "f6_gra_distinguer_epithete_attribut",
+      "difficulty": 2,
+      "prompt": "Dans « Un ciel sombre reste menaçant », quelle est la fonction de « menaçant » ?",
+      "choices": ["Adjectif épithète", "Attribut du sujet", "Complément du nom", "Complément circonstanciel"],
+      "correctIndex": 1,
+      "explanation": "« Menaçant » est relié au sujet par le verbe « reste »."
+    },
+    {
+      "code": "F6-0119",
+      "microSkill": "f6_gra_distinguer_epithete_attribut",
+      "difficulty": 2,
+      "prompt": "Dans « Les voyageurs fatigués semblent impatients », quelle est la fonction de « fatigués » ?",
+      "choices": ["Attribut du sujet", "Complément du nom", "Adjectif épithète", "Complément circonstanciel"],
+      "correctIndex": 2,
+      "explanation": "« Fatigués » appartient au groupe nominal « Les voyageurs fatigués »."
+    },
+    {
+      "code": "F6-0120",
+      "microSkill": "f6_gra_distinguer_epithete_attribut",
+      "difficulty": 2,
+      "prompt": "Dans « Les voyageurs fatigués semblent impatients », quelle est la fonction de « impatients » ?",
+      "choices": ["Adjectif épithète", "Complément du nom", "Complément circonstanciel", "Attribut du sujet"],
+      "correctIndex": 3,
+      "explanation": "« Impatients » est relié au sujet par le verbe « semblent »."
+    }
+  ]
+}
