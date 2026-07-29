@@ -50,6 +50,8 @@ lecture-compréhension fera l’objet d’un référentiel complémentaire.
 | `f6_gra_identifier_pronom_personnel` | Identifier un pronom personnel |
 | `f6_gra_distinguer_pronom_sujet_objet` | Distinguer pronom personnel sujet et objet |
 | `f6_gra_retrouver_antecedent_pronom` | Retrouver l’antécédent d’un pronom |
+| `f6_gra_identifier_conjonction` | Identifier une conjonction |
+| `f6_gra_identifier_preposition` | Identifier une préposition |
 
 Les conjonctions et les prépositions restent utiles pour l’analyse, mais elles
 ne doivent pas être mélangées à une question qui prétend mesurer une autre
@@ -166,6 +168,7 @@ ces deux difficultés.
 | `f6_voc_identifier_registre` | Identifier un registre familier, courant ou soutenu |
 | `f6_voc_lire_article_dictionnaire` | Lire les informations d’un article de dictionnaire |
 | `f6_voc_utiliser_etymologie` | Utiliser l’origine d’un mot pour en comprendre le sens |
+| `f6_voc_distinguer_mot_simple_derive` | Distinguer mot simple et mot dérivé |
 
 ## Règles de migration
 
@@ -177,4 +180,3 @@ ces deux difficultés.
 5. Une micro-compétence ayant moins de 10 questions après reclassement est
    marquée `à compléter`.
 6. Les versions et les évaluations historiques sont intégralement conservées.
-
