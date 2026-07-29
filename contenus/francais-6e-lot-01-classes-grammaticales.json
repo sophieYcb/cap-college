@@ -1,0 +1,433 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "french",
+  "level": "6e",
+  "domain": {
+    "code": "grammar",
+    "name": "Grammaire"
+  },
+  "skill": {
+    "code": "f6_word_classes",
+    "name": "Classes grammaticales"
+  },
+  "lot": "F6-GRA-01",
+  "status": "draft",
+  "source": "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "f6_gra_identifier_nom",
+      "teacherName": "Identifier un nom",
+      "studentName": "Reconnaître un nom",
+      "lessonReminder": "Un nom désigne une personne, un animal, une chose, un lieu ou une idée. Il est souvent précédé d’un déterminant.",
+      "workedExample": "Dans « la forêt », « forêt » est un nom.",
+      "masteryCriteria": "Identifier un nom dans des phrases variées."
+    },
+    {
+      "code": "f6_gra_identifier_verbe",
+      "teacherName": "Identifier un verbe",
+      "studentName": "Reconnaître un verbe",
+      "lessonReminder": "Un verbe exprime une action ou un état. Il peut se conjuguer.",
+      "workedExample": "Dans « Lina réfléchit », « réfléchit » est un verbe.",
+      "masteryCriteria": "Identifier un verbe conjugué ou à l’infinitif."
+    },
+    {
+      "code": "f6_gra_identifier_adverbe",
+      "teacherName": "Identifier un adverbe",
+      "studentName": "Reconnaître un adverbe",
+      "lessonReminder": "Un adverbe est invariable. Il précise souvent le sens d’un verbe, d’un adjectif ou d’un autre adverbe.",
+      "workedExample": "Dans « avancer lentement », « lentement » est un adverbe.",
+      "masteryCriteria": "Identifier des adverbes de sens et de formes variés."
+    },
+    {
+      "code": "f6_gra_identifier_adjectif",
+      "teacherName": "Identifier un adjectif",
+      "studentName": "Reconnaître un adjectif",
+      "lessonReminder": "Un adjectif apporte une précision sur un nom et s’accorde avec lui.",
+      "workedExample": "Dans « une route étroite », « étroite » est un adjectif.",
+      "masteryCriteria": "Identifier un adjectif placé avant ou après le nom."
+    },
+    {
+      "code": "f6_gra_identifier_determinant",
+      "teacherName": "Identifier un déterminant",
+      "studentName": "Reconnaître un déterminant",
+      "lessonReminder": "Un déterminant accompagne un nom et indique notamment son genre et son nombre.",
+      "workedExample": "Dans « ces livres », « ces » est un déterminant.",
+      "masteryCriteria": "Identifier des articles et des déterminants possessifs, démonstratifs ou interrogatifs."
+    },
+    {
+      "code": "f6_gra_identifier_pronom_personnel",
+      "teacherName": "Identifier un pronom personnel",
+      "studentName": "Reconnaître un pronom personnel",
+      "lessonReminder": "Un pronom personnel représente une personne, un groupe ou un élément déjà nommé.",
+      "workedExample": "Dans « Nous arrivons », « Nous » est un pronom personnel.",
+      "masteryCriteria": "Identifier des pronoms personnels sujets et compléments."
+    }
+  ],
+  "questions": [
+    {
+      "code": "F6-0001",
+      "microSkill": "f6_gra_identifier_nom",
+      "difficulty": 1,
+      "prompt": "Dans « Le navire quitte le port », quelle est la classe grammaticale de « navire » ?",
+      "choices": ["Nom", "Verbe", "Adjectif", "Adverbe"],
+      "correctIndex": 0,
+      "explanation": "« Navire » désigne une chose : c’est un nom."
+    },
+    {
+      "code": "F6-0002",
+      "microSkill": "f6_gra_identifier_nom",
+      "difficulty": 1,
+      "prompt": "Dans « Cette décision demande du courage », quelle est la classe grammaticale de « courage » ?",
+      "choices": ["Adjectif", "Nom", "Verbe", "Pronom"],
+      "correctIndex": 1,
+      "explanation": "« Courage » désigne une idée : c’est un nom."
+    },
+    {
+      "code": "F6-0003",
+      "microSkill": "f6_gra_identifier_nom",
+      "difficulty": 1,
+      "prompt": "Dans « Les touristes visitent Marseille », quelle est la classe grammaticale de « Marseille » ?",
+      "choices": ["Déterminant", "Adjectif", "Nom", "Verbe"],
+      "correctIndex": 2,
+      "explanation": "« Marseille » est un nom propre."
+    },
+    {
+      "code": "F6-0004",
+      "microSkill": "f6_gra_identifier_nom",
+      "difficulty": 2,
+      "prompt": "Dans « La patience aide à progresser », quelle est la classe grammaticale de « patience » ?",
+      "choices": ["Adverbe", "Pronom", "Adjectif", "Nom"],
+      "correctIndex": 3,
+      "explanation": "« Patience » désigne une idée : c’est un nom."
+    },
+    {
+      "code": "F6-0005",
+      "microSkill": "f6_gra_identifier_nom",
+      "difficulty": 1,
+      "prompt": "Dans « Un renard traverse le chemin », quelle est la classe grammaticale de « chemin » ?",
+      "choices": ["Nom", "Adjectif", "Verbe", "Déterminant"],
+      "correctIndex": 0,
+      "explanation": "« Chemin » désigne une chose : c’est un nom."
+    },
+    {
+      "code": "F6-0006",
+      "microSkill": "f6_gra_identifier_nom",
+      "difficulty": 2,
+      "prompt": "Dans « Son arrivée surprend tout le monde », quelle est la classe grammaticale de « arrivée » ?",
+      "choices": ["Verbe", "Nom", "Adverbe", "Pronom"],
+      "correctIndex": 1,
+      "explanation": "Précédé du déterminant « Son », « arrivée » est ici un nom."
+    },
+    {
+      "code": "F6-0007",
+      "microSkill": "f6_gra_identifier_nom",
+      "difficulty": 2,
+      "prompt": "Dans « Le rire des enfants résonne », quelle est la classe grammaticale de « rire » ?",
+      "choices": ["Verbe", "Adjectif", "Nom", "Adverbe"],
+      "correctIndex": 2,
+      "explanation": "Précédé de « Le », « rire » est ici employé comme nom."
+    },
+    {
+      "code": "F6-0008",
+      "microSkill": "f6_gra_identifier_nom",
+      "difficulty": 2,
+      "prompt": "Dans « Une lueur apparaît au loin », quelle est la classe grammaticale de « lueur » ?",
+      "choices": ["Déterminant", "Adjectif", "Pronom", "Nom"],
+      "correctIndex": 3,
+      "explanation": "« Lueur » désigne une chose perceptible : c’est un nom."
+    },
+
+    {
+      "code": "F6-0009",
+      "microSkill": "f6_gra_identifier_verbe",
+      "difficulty": 1,
+      "prompt": "Dans « Les vagues frappent la digue », quelle est la classe grammaticale de « frappent » ?",
+      "choices": ["Verbe", "Nom", "Adjectif", "Adverbe"],
+      "correctIndex": 0,
+      "explanation": "« Frappent » exprime une action et se conjugue : c’est un verbe."
+    },
+    {
+      "code": "F6-0010",
+      "microSkill": "f6_gra_identifier_verbe",
+      "difficulty": 1,
+      "prompt": "Dans « Il semble inquiet », quelle est la classe grammaticale de « semble » ?",
+      "choices": ["Adjectif", "Verbe", "Pronom", "Nom"],
+      "correctIndex": 1,
+      "explanation": "« Semble » est une forme conjuguée du verbe « sembler »."
+    },
+    {
+      "code": "F6-0011",
+      "microSkill": "f6_gra_identifier_verbe",
+      "difficulty": 1,
+      "prompt": "Dans « Nous partirons demain », quelle est la classe grammaticale de « partirons » ?",
+      "choices": ["Adverbe", "Nom", "Verbe", "Déterminant"],
+      "correctIndex": 2,
+      "explanation": "« Partirons » est une forme conjuguée du verbe « partir »."
+    },
+    {
+      "code": "F6-0012",
+      "microSkill": "f6_gra_identifier_verbe",
+      "difficulty": 2,
+      "prompt": "Dans « Voyager permet de découvrir le monde », quelle est la classe grammaticale de « Voyager » ?",
+      "choices": ["Nom", "Adjectif", "Adverbe", "Verbe"],
+      "correctIndex": 3,
+      "explanation": "« Voyager » est un verbe à l’infinitif."
+    },
+    {
+      "code": "F6-0013",
+      "microSkill": "f6_gra_identifier_verbe",
+      "difficulty": 1,
+      "prompt": "Dans « Cette lampe éclaire la pièce », quelle est la classe grammaticale de « éclaire » ?",
+      "choices": ["Verbe", "Adjectif", "Nom", "Pronom"],
+      "correctIndex": 0,
+      "explanation": "« Éclaire » exprime une action : c’est un verbe."
+    },
+    {
+      "code": "F6-0014",
+      "microSkill": "f6_gra_identifier_verbe",
+      "difficulty": 2,
+      "prompt": "Dans « Elles ont compris la consigne », quelle est la classe grammaticale de « ont » ?",
+      "choices": ["Déterminant", "Verbe", "Pronom", "Adverbe"],
+      "correctIndex": 1,
+      "explanation": "« Ont » est une forme conjuguée du verbe « avoir »."
+    },
+    {
+      "code": "F6-0015",
+      "microSkill": "f6_gra_identifier_verbe",
+      "difficulty": 2,
+      "prompt": "Dans « Le spectacle fut remarquable », quelle est la classe grammaticale de « fut » ?",
+      "choices": ["Nom", "Adjectif", "Verbe", "Pronom"],
+      "correctIndex": 2,
+      "explanation": "« Fut » est une forme conjuguée du verbe « être »."
+    },
+    {
+      "code": "F6-0016",
+      "microSkill": "f6_gra_identifier_verbe",
+      "difficulty": 2,
+      "prompt": "Dans « Vous pouvez entrer », quelle est la classe grammaticale de « entrer » ?",
+      "choices": ["Adverbe", "Nom", "Adjectif", "Verbe"],
+      "correctIndex": 3,
+      "explanation": "« Entrer » est un verbe à l’infinitif."
+    },
+
+    {
+      "code": "F6-0017",
+      "microSkill": "f6_gra_identifier_adverbe",
+      "difficulty": 1,
+      "prompt": "Dans « Le train avance lentement », quelle est la classe grammaticale de « lentement » ?",
+      "choices": ["Adverbe", "Adjectif", "Nom", "Verbe"],
+      "correctIndex": 0,
+      "explanation": "« Lentement » précise le verbe « avance » et est invariable : c’est un adverbe."
+    },
+    {
+      "code": "F6-0018",
+      "microSkill": "f6_gra_identifier_adverbe",
+      "difficulty": 1,
+      "prompt": "Dans « Nous partirons bientôt », quelle est la classe grammaticale de « bientôt » ?",
+      "choices": ["Nom", "Adverbe", "Adjectif", "Pronom"],
+      "correctIndex": 1,
+      "explanation": "« Bientôt » précise le moment : c’est un adverbe."
+    },
+    {
+      "code": "F6-0019",
+      "microSkill": "f6_gra_identifier_adverbe",
+      "difficulty": 1,
+      "prompt": "Dans « Elle habite ici », quelle est la classe grammaticale de « ici » ?",
+      "choices": ["Pronom", "Déterminant", "Adverbe", "Nom"],
+      "correctIndex": 2,
+      "explanation": "« Ici » précise le lieu : c’est un adverbe."
+    },
+    {
+      "code": "F6-0020",
+      "microSkill": "f6_gra_identifier_adverbe",
+      "difficulty": 2,
+      "prompt": "Dans « Ce problème est très difficile », quelle est la classe grammaticale de « très » ?",
+      "choices": ["Adjectif", "Nom", "Verbe", "Adverbe"],
+      "correctIndex": 3,
+      "explanation": "« Très » précise l’adjectif « difficile » : c’est un adverbe."
+    },
+    {
+      "code": "F6-0021",
+      "microSkill": "f6_gra_identifier_adverbe",
+      "difficulty": 2,
+      "prompt": "Dans « Il répond toujours poliment », quelle est la classe grammaticale de « toujours » ?",
+      "choices": ["Adverbe", "Adjectif", "Nom", "Pronom"],
+      "correctIndex": 0,
+      "explanation": "« Toujours » précise la fréquence : c’est un adverbe."
+    },
+    {
+      "code": "F6-0022",
+      "microSkill": "f6_gra_identifier_adverbe",
+      "difficulty": 2,
+      "prompt": "Dans « La rivière est assez profonde », quelle est la classe grammaticale de « assez » ?",
+      "choices": ["Adjectif", "Adverbe", "Déterminant", "Nom"],
+      "correctIndex": 1,
+      "explanation": "« Assez » précise l’adjectif « profonde » : c’est un adverbe."
+    },
+    {
+      "code": "F6-0023",
+      "microSkill": "f6_gra_identifier_adverbe",
+      "difficulty": 2,
+      "prompt": "Dans « Soudain, la porte s’ouvre », quelle est la classe grammaticale de « Soudain » ?",
+      "choices": ["Nom", "Adjectif", "Adverbe", "Pronom"],
+      "correctIndex": 2,
+      "explanation": "« Soudain » précise la manière dont l’événement survient : c’est un adverbe."
+    },
+
+    {
+      "code": "F6-0024",
+      "microSkill": "f6_gra_identifier_adjectif",
+      "difficulty": 1,
+      "prompt": "Dans « Un épais brouillard recouvre la vallée », quelle est la classe grammaticale de « épais » ?",
+      "choices": ["Nom", "Verbe", "Adverbe", "Adjectif"],
+      "correctIndex": 3,
+      "explanation": "« Épais » précise le nom « brouillard » : c’est un adjectif."
+    },
+    {
+      "code": "F6-0025",
+      "microSkill": "f6_gra_identifier_adjectif",
+      "difficulty": 1,
+      "prompt": "Dans « La mer calme reflète le ciel », quelle est la classe grammaticale de « calme » ?",
+      "choices": ["Adjectif", "Nom", "Verbe", "Adverbe"],
+      "correctIndex": 0,
+      "explanation": "« Calme » précise le nom « mer » : c’est un adjectif."
+    },
+    {
+      "code": "F6-0026",
+      "microSkill": "f6_gra_identifier_adjectif",
+      "difficulty": 1,
+      "prompt": "Dans « Nous empruntons un sentier étroit », quelle est la classe grammaticale de « étroit » ?",
+      "choices": ["Adverbe", "Adjectif", "Nom", "Pronom"],
+      "correctIndex": 1,
+      "explanation": "« Étroit » précise le nom « sentier » : c’est un adjectif."
+    },
+    {
+      "code": "F6-0027",
+      "microSkill": "f6_gra_identifier_adjectif",
+      "difficulty": 2,
+      "prompt": "Dans « Cette réponse paraît juste », quelle est la classe grammaticale de « juste » ?",
+      "choices": ["Nom", "Adverbe", "Adjectif", "Verbe"],
+      "correctIndex": 2,
+      "explanation": "« Juste » caractérise le nom « réponse » : c’est un adjectif."
+    },
+    {
+      "code": "F6-0028",
+      "microSkill": "f6_gra_identifier_adjectif",
+      "difficulty": 2,
+      "prompt": "Dans « Les élèves attentifs comprennent », quelle est la classe grammaticale de « attentifs » ?",
+      "choices": ["Déterminant", "Pronom", "Nom", "Adjectif"],
+      "correctIndex": 3,
+      "explanation": "« Attentifs » précise le nom « élèves » et s’accorde avec lui : c’est un adjectif."
+    },
+    {
+      "code": "F6-0029",
+      "microSkill": "f6_gra_identifier_adjectif",
+      "difficulty": 2,
+      "prompt": "Dans « Une histoire passionnante commence », quelle est la classe grammaticale de « passionnante » ?",
+      "choices": ["Adjectif", "Verbe", "Nom", "Adverbe"],
+      "correctIndex": 0,
+      "explanation": "« Passionnante » précise le nom « histoire » : c’est un adjectif."
+    },
+    {
+      "code": "F6-0030",
+      "microSkill": "f6_gra_identifier_adjectif",
+      "difficulty": 2,
+      "prompt": "Dans « Son regard devient inquiet », quelle est la classe grammaticale de « inquiet » ?",
+      "choices": ["Nom", "Adjectif", "Adverbe", "Verbe"],
+      "correctIndex": 1,
+      "explanation": "« Inquiet » caractérise le nom « regard » : c’est un adjectif."
+    },
+
+    {
+      "code": "F6-0031",
+      "microSkill": "f6_gra_identifier_determinant",
+      "difficulty": 1,
+      "prompt": "Dans « Plusieurs élèves répondent », quelle est la classe grammaticale de « Plusieurs » ?",
+      "choices": ["Pronom", "Adjectif", "Déterminant", "Nom"],
+      "correctIndex": 2,
+      "explanation": "« Plusieurs » accompagne le nom « élèves » : c’est un déterminant."
+    },
+    {
+      "code": "F6-0032",
+      "microSkill": "f6_gra_identifier_determinant",
+      "difficulty": 1,
+      "prompt": "Dans « Mon voisin jardine », quelle est la classe grammaticale de « Mon » ?",
+      "choices": ["Adjectif", "Pronom", "Nom", "Déterminant"],
+      "correctIndex": 3,
+      "explanation": "« Mon » accompagne le nom « voisin » : c’est un déterminant possessif."
+    },
+    {
+      "code": "F6-0033",
+      "microSkill": "f6_gra_identifier_determinant",
+      "difficulty": 1,
+      "prompt": "Dans « Une étoile brille », quelle est la classe grammaticale de « Une » ?",
+      "choices": ["Déterminant", "Pronom", "Nom", "Adjectif"],
+      "correctIndex": 0,
+      "explanation": "« Une » accompagne le nom « étoile » : c’est un déterminant."
+    },
+    {
+      "code": "F6-0034",
+      "microSkill": "f6_gra_identifier_determinant",
+      "difficulty": 2,
+      "prompt": "Dans « Quels exercices choisissez-vous ? », quelle est la classe grammaticale de « Quels » ?",
+      "choices": ["Pronom", "Déterminant", "Adverbe", "Nom"],
+      "correctIndex": 1,
+      "explanation": "« Quels » accompagne le nom « exercices » : c’est un déterminant interrogatif."
+    },
+    {
+      "code": "F6-0035",
+      "microSkill": "f6_gra_identifier_determinant",
+      "difficulty": 2,
+      "prompt": "Dans « Ces anciennes maisons sont solides », quelle est la classe grammaticale de « Ces » ?",
+      "choices": ["Adjectif", "Pronom", "Déterminant", "Nom"],
+      "correctIndex": 2,
+      "explanation": "« Ces » accompagne le nom « maisons » : c’est un déterminant démonstratif."
+    },
+
+    {
+      "code": "F6-0036",
+      "microSkill": "f6_gra_identifier_pronom_personnel",
+      "difficulty": 1,
+      "prompt": "Dans « Vous connaissez la réponse », quelle est la classe grammaticale de « Vous » ?",
+      "choices": ["Déterminant", "Nom", "Adjectif", "Pronom personnel"],
+      "correctIndex": 3,
+      "explanation": "« Vous » représente les personnes auxquelles on parle : c’est un pronom personnel."
+    },
+    {
+      "code": "F6-0037",
+      "microSkill": "f6_gra_identifier_pronom_personnel",
+      "difficulty": 1,
+      "prompt": "Dans « Ils reviendront demain », quelle est la classe grammaticale de « Ils » ?",
+      "choices": ["Pronom personnel", "Déterminant", "Nom", "Adverbe"],
+      "correctIndex": 0,
+      "explanation": "« Ils » remplace un groupe nominal : c’est un pronom personnel."
+    },
+    {
+      "code": "F6-0038",
+      "microSkill": "f6_gra_identifier_pronom_personnel",
+      "difficulty": 2,
+      "prompt": "Dans « Je leur réponds », quelle est la classe grammaticale de « leur » ?",
+      "choices": ["Déterminant", "Pronom personnel", "Adjectif", "Nom"],
+      "correctIndex": 1,
+      "explanation": "« Leur » remplace ici un groupe introduit par « à » : c’est un pronom personnel."
+    },
+    {
+      "code": "F6-0039",
+      "microSkill": "f6_gra_identifier_pronom_personnel",
+      "difficulty": 2,
+      "prompt": "Dans « Le professeur nous écoute », quelle est la classe grammaticale de « nous » ?",
+      "choices": ["Adverbe", "Déterminant", "Pronom personnel", "Nom"],
+      "correctIndex": 2,
+      "explanation": "« Nous » représente ici les personnes écoutées : c’est un pronom personnel."
+    },
+    {
+      "code": "F6-0040",
+      "microSkill": "f6_gra_identifier_pronom_personnel",
+      "difficulty": 2,
+      "prompt": "Dans « Lina le range dans son sac », quelle est la classe grammaticale de « le » ?",
+      "choices": ["Déterminant", "Nom", "Adjectif", "Pronom personnel"],
+      "correctIndex": 3,
+      "explanation": "« Le » remplace ici un nom déjà mentionné : c’est un pronom personnel."
+    }
+  ]
+}
