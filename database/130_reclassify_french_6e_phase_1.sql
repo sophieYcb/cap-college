@@ -30,9 +30,20 @@ begin
 end
 $block$;
 
-create temporary table _french_reclassification_phase1
-on commit drop
-as
+create table if not exists public._french_reclassification_phase1 (
+  question_id uuid primary key,
+  new_micro_skill_id uuid not null
+);
+
+alter table public._french_reclassification_phase1 enable row level security;
+revoke all on public._french_reclassification_phase1 from anon, authenticated;
+
+truncate table public._french_reclassification_phase1;
+
+insert into public._french_reclassification_phase1 (
+  question_id,
+  new_micro_skill_id
+)
 with direct_mapping(old_code, new_code) as (
   values
     ('legacy_c_conditionnel',  'f6_con_conditionnel_present'),
@@ -162,7 +173,7 @@ declare
 begin
   select count(*), count(distinct question_id)
   into mapping_count, unique_question_count
-  from _french_reclassification_phase1;
+  from public._french_reclassification_phase1;
 
   if mapping_count <> 500 or unique_question_count <> 500 then
     raise exception
@@ -176,8 +187,10 @@ $block$;
 update public.questions q
 set micro_skill_id = vt.new_micro_skill_id,
     updated_at = statement_timestamp()
-from _french_reclassification_phase1 vt
+from public._french_reclassification_phase1 vt
 where q.id = vt.question_id
   and q.micro_skill_id is distinct from vt.new_micro_skill_id;
+
+drop table public._french_reclassification_phase1;
 
 commit;
