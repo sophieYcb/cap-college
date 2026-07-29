@@ -61,7 +61,7 @@
   function createPie(percent){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
-    const svg=svgNode('svg',{viewBox:'0 0 320 250',role:'img','aria-label':`Diagramme circulaire coloré à ${percent} %`});
+    const svg=svgNode('svg',{viewBox:'0 0 320 220',role:'img','aria-label':`Diagramme circulaire avec un secteur coloré`});
     svg.classList.add('question-chart','question-pie-chart');
     const cx=160,cy=110,r=82;
     svg.appendChild(svgNode('circle',{cx,cy,r,class:'pie-background'}));
@@ -76,32 +76,36 @@
       svg.appendChild(svgNode('path',{d:path,class:'pie-sector'}));
     }
     svg.appendChild(svgNode('circle',{cx,cy,r,class:'pie-outline'}));
-    addSvgText(svg,`${percent} %`,cx,225,{class:'chart-value pie-value','text-anchor':'middle'});
     wrapper.appendChild(svg);
     return wrapper;
   }
 
-  function createCurve(hour1,value1,hour2,value2){
+  function createCurve(points){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
-    const svg=svgNode('svg',{viewBox:'0 0 540 280',role:'img','aria-label':`Courbe : ${value1} à ${hour1} h et ${value2} à ${hour2} h`});
+    const description=points.map(point=>`${point.value} à ${point.hour} h`).join(', ');
+    const svg=svgNode('svg',{viewBox:'0 0 540 280',role:'img','aria-label':`Courbe : ${description}`});
     svg.classList.add('question-chart');
     const left=75,bottom=225,top=25,right=495;
-    const min=Math.max(0,Math.min(value1,value2)-3);
-    const max=Math.max(value1,value2)+3;
+    const values=points.map(point=>point.value);
+    const min=Math.max(0,Math.min(...values)-3);
+    const max=Math.max(...values)+3;
     const yFor=value=>bottom-((value-min)/(max-min))*(bottom-top);
     svg.appendChild(svgNode('line',{x1:left,y1:top,x2:left,y2:bottom,class:'chart-axis'}));
     svg.appendChild(svgNode('line',{x1:left,y1:bottom,x2:right,y2:bottom,class:'chart-axis'}));
-    [min,value1,value2,max].filter((v,i,a)=>a.indexOf(v)===i).forEach(value=>{
+    [min,...values,max].filter((v,i,a)=>a.indexOf(v)===i).forEach(value=>{
       const y=yFor(value);
       svg.appendChild(svgNode('line',{x1:left,y1:y,x2:right,y2:y,class:'chart-grid'}));
       addSvgText(svg,value,left-12,y+5,{class:'chart-label','text-anchor':'end'});
     });
-    const points=[[175,yFor(value1)],[400,yFor(value2)]];
-    svg.appendChild(svgNode('polyline',{points:points.map(p=>p.join(',')).join(' '),class:'chart-line'}));
-    points.forEach(([x,y],index)=>{
+    const plotted=points.map((point,index)=>{
+      const x=points.length===1?285:left+100+index*((right-left-200)/(points.length-1));
+      return {x,y:yFor(point.value),hour:point.hour};
+    });
+    svg.appendChild(svgNode('polyline',{points:plotted.map(point=>`${point.x},${point.y}`).join(' '),class:'chart-line'}));
+    plotted.forEach(({x,y,hour})=>{
       svg.appendChild(svgNode('circle',{cx:x,cy:y,r:8,class:'chart-point'}));
-      addSvgText(svg,index===0?`${hour1} h`:`${hour2} h`,x,bottom+30,{class:'chart-label chart-category','text-anchor':'middle'});
+      addSvgText(svg,`${hour} h`,x,bottom+30,{class:'chart-label chart-category','text-anchor':'middle'});
     });
     addSvgText(svg,'Valeur',18,20,{class:'chart-label chart-axis-title'});
     wrapper.appendChild(svg);
@@ -146,12 +150,26 @@
       return {text:normalized,visual:createPie(percent)};
     }
 
+    if((match=normalized.match(/\[DONNÉES_COURBE\]\s*([^\n]+)/i))){
+      const points=match[1].split(';').map(pair=>{
+        const [hour,value]=pair.split('=').map(Number);
+        return {hour,value};
+      }).filter(point=>Number.isFinite(point.hour)&&Number.isFinite(point.value));
+      const text=normalized.split('\n')
+        .filter(line=>!/\[DONNÉES_COURBE\]/i.test(line)&&!/^Observe (cette|la) courbe/i.test(line.trim()))
+        .join('\n').trim();
+      if(points.length>=2)return {text,visual:createCurve(points)};
+    }
+
     if(/extrait de courbe/i.test(normalized)){
       const values=[...normalized.matchAll(/^(\d+)\s*┤/gm)].map(item=>Number(item[1]));
       const hours=[...normalized.matchAll(/(\d+)\s*h/g)].map(item=>Number(item[1]));
       if(values.length>=2&&hours.length>=2){
         const question=normalized.split('\n').find(line=>/Quelle valeur/i.test(line))||'';
-        return {text:question,visual:createCurve(hours[0],values[1],hours[1],values[0])};
+        return {text:question,visual:createCurve([
+          {hour:hours[0],value:values[1]},
+          {hour:hours[1],value:values[0]}
+        ])};
       }
     }
     return {text:normalized,visual:null};
