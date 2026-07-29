@@ -1,0 +1,316 @@
+﻿{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "french",
+    "level":  "6e",
+    "domain":  {
+                   "code":  "grammar",
+                   "name":  "Grammaire"
+               },
+    "skill":  {
+                  "code":  "f6_noun_phrase",
+                  "name":  "Groupe nominal"
+              },
+    "lot":  "F6-GRA-03",
+    "status":  "draft",
+    "source":  "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+    "microSkills":  [
+                        {
+                            "code":  "f6_gra_identifier_groupe_nominal",
+                            "teacherName":  "Identifier un groupe nominal",
+                            "studentName":  "Reconnaître un groupe nominal",
+                            "lessonReminder":  "Un groupe nominal est organisé autour d’un nom noyau. Il contient souvent un déterminant et peut comporter des expansions.",
+                            "workedExample":  "Dans « Le petit chat dort », « Le petit chat » est un groupe nominal.",
+                            "masteryCriteria":  "Délimiter un groupe nominal sujet, avec ou sans expansion."
+                        },
+                        {
+                            "code":  "f6_gra_identifier_nom_noyau",
+                            "teacherName":  "Identifier le nom noyau",
+                            "studentName":  "Trouver le nom noyau",
+                            "lessonReminder":  "Le nom noyau est le mot principal du groupe nominal. Les autres mots du groupe apportent des précisions sur ce nom.",
+                            "workedExample":  "Dans le groupe nominal « une longue route de montagne », le nom noyau est « route ».",
+                            "masteryCriteria":  "Identifier le nom noyau dans des groupes nominaux comportant différentes expansions."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "F6-0061",
+                          "microSkill":  "f6_gra_identifier_groupe_nominal",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Le petit chien aboie bruyamment », quel groupe nominal est sujet du verbe « aboie » ?",
+                          "choices":  [
+                                          "Le petit chien",
+                                          "aboie bruyamment",
+                                          "petit",
+                                          "bruyamment"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "« Le petit chien » est le groupe nominal sujet du verbe « aboie »."
+                      },
+                      {
+                          "code":  "F6-0062",
+                          "microSkill":  "f6_gra_identifier_groupe_nominal",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Une vieille horloge sonne à midi », quel groupe nominal est sujet du verbe « sonne » ?",
+                          "choices":  [
+                                          "sonne à midi",
+                                          "Une vieille horloge",
+                                          "à midi",
+                                          "vieille"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "« Une vieille horloge » est le groupe nominal sujet."
+                      },
+                      {
+                          "code":  "F6-0063",
+                          "microSkill":  "f6_gra_identifier_groupe_nominal",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Mes deux cousins arrivent demain », quel groupe nominal est sujet du verbe « arrivent » ?",
+                          "choices":  [
+                                          "arrivent demain",
+                                          "demain",
+                                          "Mes deux cousins",
+                                          "deux"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "« Mes deux cousins » est le groupe nominal sujet."
+                      },
+                      {
+                          "code":  "F6-0064",
+                          "microSkill":  "f6_gra_identifier_groupe_nominal",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Cette immense forêt abrite des loups », quel groupe nominal est sujet du verbe « abrite » ?",
+                          "choices":  [
+                                          "abrite des loups",
+                                          "immense",
+                                          "des loups",
+                                          "Cette immense forêt"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "« Cette immense forêt » est le groupe nominal sujet."
+                      },
+                      {
+                          "code":  "F6-0065",
+                          "microSkill":  "f6_gra_identifier_groupe_nominal",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Des oiseaux migrateurs survolent la côte », quel groupe nominal est sujet du verbe « survolent » ?",
+                          "choices":  [
+                                          "Des oiseaux migrateurs",
+                                          "survolent la côte",
+                                          "la côte",
+                                          "migrateurs"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "« Des oiseaux migrateurs » est le groupe nominal sujet."
+                      },
+                      {
+                          "code":  "F6-0066",
+                          "microSkill":  "f6_gra_identifier_groupe_nominal",
+                          "difficulty":  2,
+                          "prompt":  "Dans « La porte du garage grince », quel est le groupe nominal sujet complet ?",
+                          "choices":  [
+                                          "du garage",
+                                          "La porte du garage",
+                                          "grince",
+                                          "la porte"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le groupe nominal sujet complet est « La porte du garage » ; « du garage » complète le nom « porte »."
+                      },
+                      {
+                          "code":  "F6-0067",
+                          "microSkill":  "f6_gra_identifier_groupe_nominal",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Son nouveau professeur explique la leçon », quel groupe nominal est sujet du verbe « explique » ?",
+                          "choices":  [
+                                          "explique la leçon",
+                                          "la leçon",
+                                          "Son nouveau professeur",
+                                          "nouveau"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "« Son nouveau professeur » est le groupe nominal sujet."
+                      },
+                      {
+                          "code":  "F6-0068",
+                          "microSkill":  "f6_gra_identifier_groupe_nominal",
+                          "difficulty":  2,
+                          "prompt":  "Dans « Les lumières de la ville brillent », quel est le groupe nominal sujet complet ?",
+                          "choices":  [
+                                          "de la ville",
+                                          "brillent",
+                                          "Les lumières",
+                                          "Les lumières de la ville"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le groupe nominal sujet complet est « Les lumières de la ville »."
+                      },
+                      {
+                          "code":  "F6-0069",
+                          "microSkill":  "f6_gra_identifier_groupe_nominal",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Un étrange silence envahit la salle », quel groupe nominal est sujet du verbe « envahit » ?",
+                          "choices":  [
+                                          "Un étrange silence",
+                                          "envahit la salle",
+                                          "la salle",
+                                          "étrange"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "« Un étrange silence » est le groupe nominal sujet."
+                      },
+                      {
+                          "code":  "F6-0070",
+                          "microSkill":  "f6_gra_identifier_groupe_nominal",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Nos meilleurs joueurs gagnent le match », quel groupe nominal est sujet du verbe « gagnent » ?",
+                          "choices":  [
+                                          "gagnent le match",
+                                          "Nos meilleurs joueurs",
+                                          "le match",
+                                          "meilleurs"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "« Nos meilleurs joueurs » est le groupe nominal sujet."
+                      },
+                      {
+                          "code":  "F6-0071",
+                          "microSkill":  "f6_gra_identifier_nom_noyau",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le nom noyau du groupe nominal « les hautes montagnes enneigées » ?",
+                          "choices":  [
+                                          "hautes",
+                                          "enneigées",
+                                          "montagnes",
+                                          "les"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le groupe nominal est organisé autour du nom « montagnes »."
+                      },
+                      {
+                          "code":  "F6-0072",
+                          "microSkill":  "f6_gra_identifier_nom_noyau",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le nom noyau du groupe nominal « une tasse de chocolat chaud » ?",
+                          "choices":  [
+                                          "chocolat",
+                                          "chaud",
+                                          "une",
+                                          "tasse"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le nom principal est « tasse » ; « de chocolat chaud » complète ce nom."
+                      },
+                      {
+                          "code":  "F6-0073",
+                          "microSkill":  "f6_gra_identifier_nom_noyau",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le nom noyau du groupe nominal « ces trois vieux livres » ?",
+                          "choices":  [
+                                          "livres",
+                                          "trois",
+                                          "vieux",
+                                          "ces"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le groupe nominal est organisé autour du nom « livres »."
+                      },
+                      {
+                          "code":  "F6-0074",
+                          "microSkill":  "f6_gra_identifier_nom_noyau",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le nom noyau du groupe nominal « la porte du grenier » ?",
+                          "choices":  [
+                                          "grenier",
+                                          "porte",
+                                          "du",
+                                          "la"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le nom noyau est « porte » ; « du grenier » est son complément."
+                      },
+                      {
+                          "code":  "F6-0075",
+                          "microSkill":  "f6_gra_identifier_nom_noyau",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le nom noyau du groupe nominal « un magnifique bouquet de roses » ?",
+                          "choices":  [
+                                          "magnifique",
+                                          "roses",
+                                          "bouquet",
+                                          "un"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le nom noyau est « bouquet » ; « de roses » complète ce nom."
+                      },
+                      {
+                          "code":  "F6-0076",
+                          "microSkill":  "f6_gra_identifier_nom_noyau",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le nom noyau du groupe nominal « les rues étroites du village » ?",
+                          "choices":  [
+                                          "village",
+                                          "étroites",
+                                          "les",
+                                          "rues"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le nom noyau est « rues »."
+                      },
+                      {
+                          "code":  "F6-0077",
+                          "microSkill":  "f6_gra_identifier_nom_noyau",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le nom noyau du groupe nominal « son premier voyage en Italie » ?",
+                          "choices":  [
+                                          "voyage",
+                                          "premier",
+                                          "Italie",
+                                          "son"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le nom noyau est « voyage » ; « en Italie » complète ce nom."
+                      },
+                      {
+                          "code":  "F6-0078",
+                          "microSkill":  "f6_gra_identifier_nom_noyau",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le nom noyau du groupe nominal « plusieurs petites boîtes en métal » ?",
+                          "choices":  [
+                                          "métal",
+                                          "boîtes",
+                                          "petites",
+                                          "plusieurs"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le nom noyau est « boîtes »."
+                      },
+                      {
+                          "code":  "F6-0079",
+                          "microSkill":  "f6_gra_identifier_nom_noyau",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le nom noyau du groupe nominal « la longue histoire de ce château » ?",
+                          "choices":  [
+                                          "château",
+                                          "longue",
+                                          "histoire",
+                                          "la"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le nom noyau est « histoire » ; « de ce château » complète ce nom."
+                      },
+                      {
+                          "code":  "F6-0080",
+                          "microSkill":  "f6_gra_identifier_nom_noyau",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le nom noyau du groupe nominal « mes chaussures de randonnée » ?",
+                          "choices":  [
+                                          "randonnée",
+                                          "de",
+                                          "mes",
+                                          "chaussures"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le nom noyau est « chaussures » ; « de randonnée » complète ce nom."
+                      }
+                  ]
+}

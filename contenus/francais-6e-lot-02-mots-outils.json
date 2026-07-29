@@ -1,0 +1,324 @@
+﻿{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "french",
+    "level":  "6e",
+    "domain":  {
+                   "code":  "grammar",
+                   "name":  "Grammaire"
+               },
+    "skill":  {
+                  "code":  "f6_word_classes",
+                  "name":  "Classes grammaticales"
+              },
+    "lot":  "F6-GRA-02",
+    "status":  "draft",
+    "source":  "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+    "microSkills":  [
+                        {
+                            "code":  "f6_gra_identifier_conjonction",
+                            "teacherName":  "Identifier une conjonction",
+                            "studentName":  "Reconnaître une conjonction",
+                            "lessonReminder":  "Une conjonction relie des mots, des groupes de mots ou des propositions. Elle est invariable.",
+                            "workedExample":  "Dans « Lina lit et Sami écrit », « et » est une conjonction.",
+                            "masteryCriteria":  "Identifier des conjonctions de coordination et de subordination en contexte."
+                        },
+                        {
+                            "code":  "f6_gra_identifier_preposition",
+                            "teacherName":  "Identifier une préposition",
+                            "studentName":  "Reconnaître une préposition",
+                            "lessonReminder":  "Une préposition est un mot invariable qui introduit un complément : à, de, pour, avec, sans, sous, vers, entre, etc.",
+                            "workedExample":  "Dans « partir avec Lina », « avec » est une préposition.",
+                            "masteryCriteria":  "Identifier des prépositions variées dans une phrase."
+                        },
+                        {
+                            "code":  "f6_gra_identifier_pronom_personnel",
+                            "teacherName":  "Identifier un pronom personnel",
+                            "studentName":  "Reconnaître un pronom personnel",
+                            "lessonReminder":  "Un pronom personnel représente une personne, un groupe ou un élément déjà nommé.",
+                            "workedExample":  "Dans « Nous arrivons », « Nous » est un pronom personnel.",
+                            "masteryCriteria":  "Identifier des pronoms personnels sujets et compléments."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "F6-0041",
+                          "microSkill":  "f6_gra_identifier_conjonction",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Lina lit et son frère dessine », quel mot est une conjonction ?",
+                          "choices":  [
+                                          "et",
+                                          "lit",
+                                          "frère",
+                                          "dessine"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "« Et » relie les deux propositions : c’est une conjonction de coordination."
+                      },
+                      {
+                          "code":  "F6-0042",
+                          "microSkill":  "f6_gra_identifier_conjonction",
+                          "difficulty":  2,
+                          "prompt":  "Dans « Nous sortirons quand la pluie cessera », quel mot est une conjonction de subordination ?",
+                          "choices":  [
+                                          "sortirons",
+                                          "quand",
+                                          "pluie",
+                                          "cessera"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "« Quand » introduit la proposition subordonnée « quand la pluie cessera »."
+                      },
+                      {
+                          "code":  "F6-0043",
+                          "microSkill":  "f6_gra_identifier_conjonction",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Il reste car il pleut », quel mot relie les deux propositions ?",
+                          "choices":  [
+                                          "reste",
+                                          "il",
+                                          "car",
+                                          "pleut"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "« Car » relie les deux propositions : c’est une conjonction de coordination."
+                      },
+                      {
+                          "code":  "F6-0044",
+                          "microSkill":  "f6_gra_identifier_conjonction",
+                          "difficulty":  2,
+                          "prompt":  "Dans « Tu viendras si tu peux », quel mot introduit la condition ?",
+                          "choices":  [
+                                          "viendras",
+                                          "tu",
+                                          "peux",
+                                          "si"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "« Si » est une conjonction de subordination qui introduit une condition."
+                      },
+                      {
+                          "code":  "F6-0045",
+                          "microSkill":  "f6_gra_identifier_conjonction",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Elle avance mais reste prudente », quel mot est une conjonction ?",
+                          "choices":  [
+                                          "mais",
+                                          "avance",
+                                          "reste",
+                                          "prudente"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "« Mais » relie deux éléments en marquant une opposition."
+                      },
+                      {
+                          "code":  "F6-0046",
+                          "microSkill":  "f6_gra_identifier_conjonction",
+                          "difficulty":  2,
+                          "prompt":  "Dans « Je prends un manteau puisque le froid arrive », quel mot introduit la cause ?",
+                          "choices":  [
+                                          "manteau",
+                                          "puisque",
+                                          "froid",
+                                          "arrive"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "« Puisque » est une conjonction de subordination qui introduit la cause."
+                      },
+                      {
+                          "code":  "F6-0047",
+                          "microSkill":  "f6_gra_identifier_conjonction",
+                          "difficulty":  2,
+                          "prompt":  "Dans « Ni Paul ni Léa ne répondent », quel mot répété est une conjonction ?",
+                          "choices":  [
+                                          "Paul",
+                                          "Léa",
+                                          "ni",
+                                          "répondent"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "« Ni » est une conjonction de coordination employée ici deux fois."
+                      },
+                      {
+                          "code":  "F6-0048",
+                          "microSkill":  "f6_gra_identifier_conjonction",
+                          "difficulty":  2,
+                          "prompt":  "Dans « Avant que le cours commence, chacun s’installe », quel groupe de mots est une conjonction de subordination ?",
+                          "choices":  [
+                                          "le cours",
+                                          "commence",
+                                          "chacun",
+                                          "Avant que"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "« Avant que » est une locution conjonctive qui introduit une proposition subordonnée."
+                      },
+                      {
+                          "code":  "F6-0049",
+                          "microSkill":  "f6_gra_identifier_conjonction",
+                          "difficulty":  2,
+                          "prompt":  "Dans « Il travaille afin que son projet réussisse », quel groupe de mots introduit le but ?",
+                          "choices":  [
+                                          "afin que",
+                                          "travaille",
+                                          "son projet",
+                                          "réussisse"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "« Afin que » est une locution conjonctive qui introduit le but."
+                      },
+                      {
+                          "code":  "F6-0050",
+                          "microSkill":  "f6_gra_identifier_preposition",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Le livre est sur la table », quel mot est une préposition ?",
+                          "choices":  [
+                                          "livre",
+                                          "sur",
+                                          "table",
+                                          "est"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "« Sur » introduit le groupe nominal « la table » : c’est une préposition."
+                      },
+                      {
+                          "code":  "F6-0051",
+                          "microSkill":  "f6_gra_identifier_preposition",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Nous partons avec nos amis », quel mot est une préposition ?",
+                          "choices":  [
+                                          "Nous",
+                                          "partons",
+                                          "avec",
+                                          "amis"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "« Avec » introduit le groupe nominal « nos amis »."
+                      },
+                      {
+                          "code":  "F6-0052",
+                          "microSkill":  "f6_gra_identifier_preposition",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Elle revient de Paris demain », quel mot est une préposition ?",
+                          "choices":  [
+                                          "Elle",
+                                          "revient",
+                                          "demain",
+                                          "de"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "« De » introduit le nom propre « Paris »."
+                      },
+                      {
+                          "code":  "F6-0053",
+                          "microSkill":  "f6_gra_identifier_preposition",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Il marche vers la gare », quel mot est une préposition ?",
+                          "choices":  [
+                                          "vers",
+                                          "marche",
+                                          "gare",
+                                          "Il"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "« Vers » introduit le groupe nominal « la gare »."
+                      },
+                      {
+                          "code":  "F6-0054",
+                          "microSkill":  "f6_gra_identifier_preposition",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Le chat dort sous le fauteuil », quel mot est une préposition ?",
+                          "choices":  [
+                                          "dort",
+                                          "sous",
+                                          "chat",
+                                          "fauteuil"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "« Sous » introduit le groupe nominal « le fauteuil »."
+                      },
+                      {
+                          "code":  "F6-0055",
+                          "microSkill":  "f6_gra_identifier_preposition",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Ce cadeau est pour Léa », quel mot est une préposition ?",
+                          "choices":  [
+                                          "cadeau",
+                                          "est",
+                                          "pour",
+                                          "Léa"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "« Pour » introduit le nom propre « Léa »."
+                      },
+                      {
+                          "code":  "F6-0056",
+                          "microSkill":  "f6_gra_identifier_preposition",
+                          "difficulty":  2,
+                          "prompt":  "Dans « Le cycliste passe entre les arbres », quel mot est une préposition ?",
+                          "choices":  [
+                                          "cycliste",
+                                          "passe",
+                                          "arbres",
+                                          "entre"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "« Entre » introduit le groupe nominal « les arbres »."
+                      },
+                      {
+                          "code":  "F6-0057",
+                          "microSkill":  "f6_gra_identifier_preposition",
+                          "difficulty":  2,
+                          "prompt":  "Dans « Sans bruit, la porte se ferme », quel mot est une préposition ?",
+                          "choices":  [
+                                          "Sans",
+                                          "bruit",
+                                          "porte",
+                                          "ferme"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "« Sans » introduit le nom « bruit »."
+                      },
+                      {
+                          "code":  "F6-0058",
+                          "microSkill":  "f6_gra_identifier_preposition",
+                          "difficulty":  2,
+                          "prompt":  "Dans « Depuis lundi, la bibliothèque est ouverte », quel mot est une préposition ?",
+                          "choices":  [
+                                          "lundi",
+                                          "Depuis",
+                                          "bibliothèque",
+                                          "ouverte"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "« Depuis » introduit ici le nom « lundi »."
+                      },
+                      {
+                          "code":  "F6-0059",
+                          "microSkill":  "f6_gra_identifier_pronom_personnel",
+                          "difficulty":  2,
+                          "prompt":  "Dans « Maya les range soigneusement dans son sac », quel mot est un pronom personnel complément ?",
+                          "choices":  [
+                                          "Maya",
+                                          "soigneusement",
+                                          "les",
+                                          "sac"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "« Les » remplace des éléments déjà nommés : c’est un pronom personnel complément."
+                      },
+                      {
+                          "code":  "F6-0060",
+                          "microSkill":  "f6_gra_identifier_pronom_personnel",
+                          "difficulty":  1,
+                          "prompt":  "Dans « Paul et moi, nous préparons le repas », quel mot est un pronom personnel ?",
+                          "choices":  [
+                                          "Paul",
+                                          "préparons",
+                                          "repas",
+                                          "nous"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "« Nous » reprend « Paul et moi » : c’est un pronom personnel."
+                      }
+                  ]
+}
