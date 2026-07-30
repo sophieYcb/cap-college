@@ -1,0 +1,98 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "french",
+  "level": "6e",
+  "domain": {"code": "grammar", "name": "Grammaire"},
+  "skill": {"code": "f6_complex_sentence", "name": "Phrase complexe"},
+  "lot": "F6-GRA-08",
+  "status": "draft",
+  "source": "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "f6_gra_compter_propositions",
+      "teacherName": "Compter les propositions",
+      "studentName": "Compter les propositions d’une phrase",
+      "lessonReminder": "Une proposition s’organise autour d’un verbe conjugué. Pour compter les propositions, on repère d’abord les verbes conjugués.",
+      "workedExample": "Dans « Le soleil brille et les oiseaux chantent », deux verbes conjugués organisent deux propositions.",
+      "masteryCriteria": "Compter correctement de une à trois propositions."
+    },
+    {
+      "code": "f6_gra_distinguer_articulations",
+      "teacherName": "Distinguer juxtaposition, coordination et subordination",
+      "studentName": "Distinguer les liens entre propositions",
+      "lessonReminder": "Les propositions juxtaposées sont séparées par un signe de ponctuation ; les coordonnées sont reliées par un mot coordonnant ; une subordonnée dépend d’une autre proposition.",
+      "workedExample": "« Il pleut ; je rentre » est une juxtaposition, « Il pleut donc je rentre » une coordination et « Je rentre parce qu’il pleut » une subordination.",
+      "masteryCriteria": "Identifier le lien entre deux propositions à partir de la ponctuation ou du mot de liaison."
+    },
+    {
+      "code": "f6_gra_identifier_coordination",
+      "teacherName": "Identifier des propositions coordonnées",
+      "studentName": "Reconnaître des propositions coordonnées",
+      "lessonReminder": "Des propositions coordonnées sont reliées par une conjonction de coordination ou un autre mot coordonnant, comme mais, ou, et, donc, or, ni ou car.",
+      "workedExample": "Dans « Paul lit mais Léa écrit », les deux propositions sont coordonnées par « mais ».",
+      "masteryCriteria": "Identifier des propositions coordonnées et leur mot de liaison."
+    },
+    {
+      "code": "f6_gra_identifier_juxtaposition",
+      "teacherName": "Identifier des propositions juxtaposées",
+      "studentName": "Reconnaître des propositions juxtaposées",
+      "lessonReminder": "Des propositions juxtaposées sont placées côte à côte et séparées par une virgule, un point-virgule ou deux-points, sans mot de liaison.",
+      "workedExample": "Dans « La cloche sonne, les élèves entrent », la virgule juxtapose les deux propositions.",
+      "masteryCriteria": "Identifier une juxtaposition marquée par différents signes de ponctuation."
+    },
+    {
+      "code": "f6_gra_identifier_subordination",
+      "teacherName": "Identifier une proposition subordonnée",
+      "studentName": "Reconnaître une proposition subordonnée",
+      "lessonReminder": "Une proposition subordonnée dépend d’une proposition principale et est souvent introduite par que, quand, lorsque, parce que, si ou un pronom relatif.",
+      "workedExample": "Dans « Je pars quand la cloche sonne », « quand la cloche sonne » est subordonnée à « Je pars ».",
+      "masteryCriteria": "Identifier et délimiter une proposition subordonnée."
+    }
+  ],
+  "questions": [
+    {"code":"F6-0231","microSkill":"f6_gra_compter_propositions","difficulty":1,"prompt":"Combien de propositions contient « Le soleil brille » ?","choices":["Une","Deux","Trois","Quatre"],"correctIndex":0,"explanation":"La phrase contient un seul verbe conjugué, « brille » : elle comporte une proposition."},
+    {"code":"F6-0232","microSkill":"f6_gra_compter_propositions","difficulty":1,"prompt":"Combien de propositions contient « Le soleil brille et les oiseaux chantent » ?","choices":["Une","Deux","Trois","Quatre"],"correctIndex":1,"explanation":"Les verbes « brille » et « chantent » organisent deux propositions."},
+    {"code":"F6-0233","microSkill":"f6_gra_compter_propositions","difficulty":1,"prompt":"Combien de propositions contient « Quand la pluie cesse, les enfants sortent » ?","choices":["Une","Trois","Deux","Quatre"],"correctIndex":2,"explanation":"Les verbes « cesse » et « sortent » organisent deux propositions."},
+    {"code":"F6-0234","microSkill":"f6_gra_compter_propositions","difficulty":1,"prompt":"Combien de propositions contient « Je pense que tu viendras demain » ?","choices":["Une","Trois","Quatre","Deux"],"correctIndex":3,"explanation":"Les verbes « pense » et « viendras » organisent deux propositions."},
+    {"code":"F6-0235","microSkill":"f6_gra_compter_propositions","difficulty":2,"prompt":"Combien de propositions contient « Il ouvre la fenêtre, regarde la rue et referme le rideau » ?","choices":["Trois","Une","Deux","Quatre"],"correctIndex":0,"explanation":"Les trois verbes conjugués « ouvre », « regarde » et « referme » organisent trois propositions."},
+    {"code":"F6-0236","microSkill":"f6_gra_compter_propositions","difficulty":2,"prompt":"Combien de propositions contient « Nous partirons lorsque le bus arrivera » ?","choices":["Une","Deux","Trois","Quatre"],"correctIndex":1,"explanation":"Les verbes « partirons » et « arrivera » organisent deux propositions."},
+    {"code":"F6-0237","microSkill":"f6_gra_compter_propositions","difficulty":2,"prompt":"Combien de propositions contient « Le chat dort tandis que le chien joue et les oiseaux chantent » ?","choices":["Une","Deux","Trois","Quatre"],"correctIndex":2,"explanation":"Les verbes « dort », « joue » et « chantent » organisent trois propositions."},
+    {"code":"F6-0238","microSkill":"f6_gra_compter_propositions","difficulty":2,"prompt":"Combien de propositions contient « Parce qu’il pleut, nous restons et nous lisons » ?","choices":["Une","Deux","Quatre","Trois"],"correctIndex":3,"explanation":"Les verbes « pleut », « restons » et « lisons » organisent trois propositions."},
+
+    {"code":"F6-0239","microSkill":"f6_gra_distinguer_articulations","difficulty":1,"prompt":"Dans « Le vent se lève ; la mer grossit », quel lien unit les propositions ?","choices":["Juxtaposition","Coordination","Subordination","Comparaison"],"correctIndex":0,"explanation":"Le point-virgule relie les propositions sans mot de liaison : elles sont juxtaposées."},
+    {"code":"F6-0240","microSkill":"f6_gra_distinguer_articulations","difficulty":1,"prompt":"Dans « Paul lit et Léa écrit », quel lien unit les propositions ?","choices":["Juxtaposition","Coordination","Subordination","Interrogation"],"correctIndex":1,"explanation":"La conjonction « et » coordonne les deux propositions."},
+    {"code":"F6-0241","microSkill":"f6_gra_distinguer_articulations","difficulty":1,"prompt":"Dans « Je pars quand la cloche sonne », quel lien unit les propositions ?","choices":["Juxtaposition","Coordination","Subordination","Énumération"],"correctIndex":2,"explanation":"La proposition introduite par « quand » dépend de « Je pars » : c’est une subordination."},
+    {"code":"F6-0242","microSkill":"f6_gra_distinguer_articulations","difficulty":1,"prompt":"Dans « Il pleut, nous rentrons », quel lien unit les propositions ?","choices":["Coordination","Subordination","Comparaison","Juxtaposition"],"correctIndex":3,"explanation":"La virgule relie les propositions sans mot de liaison : elles sont juxtaposées."},
+    {"code":"F6-0243","microSkill":"f6_gra_distinguer_articulations","difficulty":1,"prompt":"Dans « Tu viens ou tu restes », quel lien unit les propositions ?","choices":["Coordination","Juxtaposition","Subordination","Énumération"],"correctIndex":0,"explanation":"La conjonction « ou » coordonne les deux propositions."},
+    {"code":"F6-0244","microSkill":"f6_gra_distinguer_articulations","difficulty":2,"prompt":"Dans « Nous restons parce qu’il pleut », quel lien unit les propositions ?","choices":["Coordination","Subordination","Juxtaposition","Comparaison"],"correctIndex":1,"explanation":"La proposition introduite par « parce que » dépend de la principale."},
+    {"code":"F6-0245","microSkill":"f6_gra_distinguer_articulations","difficulty":2,"prompt":"Dans « La nuit tombe : les rues se vident », quel lien unit les propositions ?","choices":["Coordination","Subordination","Juxtaposition","Interrogation"],"correctIndex":2,"explanation":"Les deux-points relient les propositions sans mot de liaison : elles sont juxtaposées."},
+    {"code":"F6-0246","microSkill":"f6_gra_distinguer_articulations","difficulty":2,"prompt":"Dans « Elle sourit mais elle semble inquiète », quel lien unit les propositions ?","choices":["Juxtaposition","Subordination","Comparaison","Coordination"],"correctIndex":3,"explanation":"La conjonction « mais » coordonne les deux propositions."},
+    {"code":"F6-0247","microSkill":"f6_gra_distinguer_articulations","difficulty":2,"prompt":"Dans « Dès que tu arrives, téléphone-moi », quel lien unit les propositions ?","choices":["Subordination","Juxtaposition","Coordination","Énumération"],"correctIndex":0,"explanation":"La proposition introduite par « dès que » dépend de la principale."},
+    {"code":"F6-0248","microSkill":"f6_gra_distinguer_articulations","difficulty":2,"prompt":"Dans « Le feu passe au vert, les voitures démarrent », quel lien unit les propositions ?","choices":["Coordination","Juxtaposition","Subordination","Comparaison"],"correctIndex":1,"explanation":"La virgule juxtapose les deux propositions."},
+
+    {"code":"F6-0249","microSkill":"f6_gra_identifier_coordination","difficulty":1,"prompt":"Dans « Paul lit mais Léa écrit », comment les propositions sont-elles reliées ?","choices":["Par subordination","Par juxtaposition","Par coordination","Sans aucun lien"],"correctIndex":2,"explanation":"« Mais » est une conjonction de coordination."},
+    {"code":"F6-0250","microSkill":"f6_gra_identifier_coordination","difficulty":1,"prompt":"Dans « Tu viens ou tu restes », les propositions sont…","choices":["juxtaposées","subordonnées","sans verbe","coordonnées"],"correctIndex":3,"explanation":"« Ou » coordonne les deux propositions."},
+    {"code":"F6-0251","microSkill":"f6_gra_identifier_coordination","difficulty":1,"prompt":"Dans « Il pleut donc je prends mon parapluie », les propositions sont…","choices":["coordonnées","juxtaposées","subordonnées","indépendantes sans lien"],"correctIndex":0,"explanation":"« Donc » est un mot coordonnant."},
+    {"code":"F6-0252","microSkill":"f6_gra_identifier_coordination","difficulty":1,"prompt":"Dans « Elle ouvre la fenêtre et elle respire profondément », les propositions sont…","choices":["juxtaposées","coordonnées","subordonnées","interrogatives"],"correctIndex":1,"explanation":"La conjonction « et » coordonne les propositions."},
+    {"code":"F6-0253","microSkill":"f6_gra_identifier_coordination","difficulty":2,"prompt":"Dans « Paul ne parle ni ne bouge », quel mot coordonne les deux actions ?","choices":["ne","parle","ni","bouge"],"correctIndex":2,"explanation":"« Ni » coordonne les deux propositions négatives."},
+    {"code":"F6-0254","microSkill":"f6_gra_identifier_coordination","difficulty":2,"prompt":"Dans « Je voulais sortir, mais l’orage a éclaté », quel mot coordonne les propositions ?","choices":["sortir","orage","a éclaté","mais"],"correctIndex":3,"explanation":"« Mais » coordonne les deux propositions en exprimant une opposition."},
+    {"code":"F6-0255","microSkill":"f6_gra_identifier_coordination","difficulty":2,"prompt":"Dans « Soit tu réponds, soit tu te tais », comment les propositions sont-elles reliées ?","choices":["Par coordination","Par juxtaposition","Par subordination","Par comparaison"],"correctIndex":0,"explanation":"La construction « soit… soit… » coordonne les deux propositions."},
+
+    {"code":"F6-0256","microSkill":"f6_gra_identifier_juxtaposition","difficulty":1,"prompt":"Dans « La cloche sonne, les élèves entrent », les propositions sont…","choices":["coordonnées","juxtaposées","subordonnées","interrogatives"],"correctIndex":1,"explanation":"La virgule juxtapose les deux propositions sans mot de liaison."},
+    {"code":"F6-0257","microSkill":"f6_gra_identifier_juxtaposition","difficulty":1,"prompt":"Dans « Le vent souffle ; les volets claquent », les propositions sont…","choices":["coordonnées","subordonnées","juxtaposées","exclamatives"],"correctIndex":2,"explanation":"Le point-virgule juxtapose les propositions."},
+    {"code":"F6-0258","microSkill":"f6_gra_identifier_juxtaposition","difficulty":1,"prompt":"Dans « La pluie cesse : nous sortons », les propositions sont…","choices":["coordonnées","subordonnées","interrogatives","juxtaposées"],"correctIndex":3,"explanation":"Les deux-points juxtaposent les propositions."},
+    {"code":"F6-0259","microSkill":"f6_gra_identifier_juxtaposition","difficulty":1,"prompt":"Dans « Il écoute : personne ne répond », comment les propositions sont-elles reliées ?","choices":["Par juxtaposition","Par coordination","Par subordination","Par comparaison"],"correctIndex":0,"explanation":"Les deux-points relient directement les propositions : elles sont juxtaposées."},
+    {"code":"F6-0260","microSkill":"f6_gra_identifier_juxtaposition","difficulty":2,"prompt":"Dans « Le jour baisse, les lampes s’allument », les propositions sont…","choices":["coordonnées","juxtaposées","subordonnées","injonctives"],"correctIndex":1,"explanation":"La virgule juxtapose les deux propositions."},
+    {"code":"F6-0261","microSkill":"f6_gra_identifier_juxtaposition","difficulty":2,"prompt":"Dans « Tu hésites ; je commence », les propositions sont…","choices":["coordonnées","subordonnées","juxtaposées","interrogatives"],"correctIndex":2,"explanation":"Le point-virgule juxtapose les propositions."},
+    {"code":"F6-0262","microSkill":"f6_gra_identifier_juxtaposition","difficulty":2,"prompt":"Dans « La porte s’ouvre : un visiteur apparaît », les propositions sont…","choices":["coordonnées","subordonnées","comparées","juxtaposées"],"correctIndex":3,"explanation":"Les deux-points juxtaposent les propositions."},
+    {"code":"F6-0263","microSkill":"f6_gra_identifier_juxtaposition","difficulty":2,"prompt":"Dans « Elle prend son élan, elle saute par-dessus la flaque », comment les propositions sont-elles reliées ?","choices":["Par juxtaposition","Par coordination","Par subordination","Par comparaison"],"correctIndex":0,"explanation":"La virgule relie directement les propositions sans mot de liaison."},
+
+    {"code":"F6-0264","microSkill":"f6_gra_identifier_subordination","difficulty":1,"prompt":"Dans « Je sais que tu comprends », quelle est la proposition subordonnée ?","choices":["Je sais","que tu comprends","tu comprends","Je sais que"],"correctIndex":1,"explanation":"« Que tu comprends » dépend du verbe « sais » : c’est la subordonnée."},
+    {"code":"F6-0265","microSkill":"f6_gra_identifier_subordination","difficulty":1,"prompt":"Dans « Quand la cloche sonne, les élèves sortent », quelle est la proposition subordonnée ?","choices":["les élèves","les élèves sortent","Quand la cloche sonne","la cloche"],"correctIndex":2,"explanation":"« Quand la cloche sonne » dépend de la proposition principale."},
+    {"code":"F6-0266","microSkill":"f6_gra_identifier_subordination","difficulty":1,"prompt":"Dans « Nous sortons parce que la pluie a cessé », quelle est la proposition subordonnée ?","choices":["Nous sortons","la pluie","a cessé","parce que la pluie a cessé"],"correctIndex":3,"explanation":"« Parce que la pluie a cessé » dépend de « Nous sortons »."},
+    {"code":"F6-0267","microSkill":"f6_gra_identifier_subordination","difficulty":2,"prompt":"Dans « Si tu viens, préviens-moi », quelle est la proposition subordonnée ?","choices":["Si tu viens","préviens-moi","tu viens","Si tu"],"correctIndex":0,"explanation":"« Si tu viens » exprime la condition et dépend de la principale."},
+    {"code":"F6-0268","microSkill":"f6_gra_identifier_subordination","difficulty":2,"prompt":"Dans « Le livre que je lis est passionnant », quelle est la proposition subordonnée ?","choices":["Le livre","que je lis","est passionnant","je lis"],"correctIndex":1,"explanation":"« Que je lis » complète le nom « livre » et dépend de la principale."},
+    {"code":"F6-0269","microSkill":"f6_gra_identifier_subordination","difficulty":2,"prompt":"Dans « Même si le vent souffle, le bateau avance », quelle est la proposition subordonnée ?","choices":["le bateau","le bateau avance","Même si le vent souffle","le vent"],"correctIndex":2,"explanation":"« Même si le vent souffle » dépend de la proposition principale."},
+    {"code":"F6-0270","microSkill":"f6_gra_identifier_subordination","difficulty":2,"prompt":"Dans « Dès que la nuit tombe, les lampes s’allument », quelle est la proposition subordonnée ?","choices":["les lampes","la nuit","les lampes s’allument","Dès que la nuit tombe"],"correctIndex":3,"explanation":"« Dès que la nuit tombe » dépend de la proposition principale."}
+  ]
+}
