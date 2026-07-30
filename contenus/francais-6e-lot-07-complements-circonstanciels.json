@@ -1,0 +1,79 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "french",
+  "level": "6e",
+  "domain": {"code": "grammar", "name": "Grammaire"},
+  "skill": {"code": "f6_simple_sentence", "name": "Constituants de la phrase simple"},
+  "lot": "F6-GRA-07",
+  "status": "draft",
+  "source": "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "f6_gra_identifier_cc_temps",
+      "teacherName": "Identifier un complément circonstanciel de temps",
+      "studentName": "Reconnaître un complément qui indique le temps",
+      "lessonReminder": "Le complément circonstanciel de temps précise quand, depuis quand ou pendant combien de temps se déroule l’action.",
+      "workedExample": "Dans « Demain, nous partirons », « Demain » indique quand aura lieu le départ.",
+      "masteryCriteria": "Identifier et délimiter un complément circonstanciel de temps."
+    },
+    {
+      "code": "f6_gra_identifier_cc_lieu",
+      "teacherName": "Identifier un complément circonstanciel de lieu",
+      "studentName": "Reconnaître un complément qui indique le lieu",
+      "lessonReminder": "Le complément circonstanciel de lieu précise où, d’où ou par où se déroule l’action.",
+      "workedExample": "Dans « Les enfants jouent dans la cour », « dans la cour » indique le lieu.",
+      "masteryCriteria": "Identifier et délimiter un complément circonstanciel de lieu."
+    },
+    {
+      "code": "f6_gra_identifier_cc_cause",
+      "teacherName": "Identifier un complément circonstanciel de cause",
+      "studentName": "Reconnaître un complément qui indique la cause",
+      "lessonReminder": "Le complément circonstanciel de cause indique pourquoi un fait se produit. Il peut être introduit par à cause de, grâce à, en raison de ou faute de.",
+      "workedExample": "Dans « Le match est annulé à cause de la pluie », « à cause de la pluie » indique la cause.",
+      "masteryCriteria": "Identifier et délimiter un complément circonstanciel de cause."
+    },
+    {
+      "code": "f6_gra_distinguer_objet_circonstanciel",
+      "teacherName": "Distinguer complément d’objet et complément circonstanciel",
+      "studentName": "Distinguer objet et circonstance",
+      "lessonReminder": "Le complément d’objet dépend du verbe et désigne ce que vise l’action. Le complément circonstanciel précise le temps, le lieu, la cause ou une autre circonstance.",
+      "workedExample": "Dans « Lina lit un roman dans sa chambre », « un roman » est COD et « dans sa chambre » est complément circonstanciel de lieu.",
+      "masteryCriteria": "Distinguer COD, COI et compléments circonstanciels dans des phrases simples."
+    }
+  ],
+  "questions": [
+    {"code":"F6-0201","microSkill":"f6_gra_identifier_cc_temps","difficulty":1,"prompt":"Dans « Demain, nous partirons tôt », quel mot indique le moment du départ ?","choices":["Demain","nous","partirons","tôt"],"correctIndex":0,"explanation":"« Demain » précise quand aura lieu le départ : c’est un complément circonstanciel de temps."},
+    {"code":"F6-0202","microSkill":"f6_gra_identifier_cc_temps","difficulty":1,"prompt":"Dans « Les enfants reprendront le travail après le déjeuner », quel groupe indique le temps ?","choices":["Les enfants","après le déjeuner","le travail","reprendront"],"correctIndex":1,"explanation":"« Après le déjeuner » précise quand les enfants reprendront le travail."},
+    {"code":"F6-0203","microSkill":"f6_gra_identifier_cc_temps","difficulty":1,"prompt":"Dans « Chaque lundi, le collège ouvre à huit heures », quel groupe indique la répétition dans le temps ?","choices":["le collège","à huit heures","Chaque lundi","ouvre"],"correctIndex":2,"explanation":"« Chaque lundi » indique le moment qui se répète."},
+    {"code":"F6-0204","microSkill":"f6_gra_identifier_cc_temps","difficulty":1,"prompt":"Dans « Nous visiterons ce musée en avril », quel groupe indique le temps ?","choices":["Nous","ce musée","visiterons","en avril"],"correctIndex":3,"explanation":"« En avril » précise quand aura lieu la visite."},
+    {"code":"F6-0205","microSkill":"f6_gra_identifier_cc_temps","difficulty":2,"prompt":"Dans « Pendant une heure, la pluie est tombée sans arrêt », quel groupe indique la durée ?","choices":["Pendant une heure","la pluie","sans arrêt","est tombée"],"correctIndex":0,"explanation":"« Pendant une heure » précise la durée de la pluie."},
+    {"code":"F6-0206","microSkill":"f6_gra_identifier_cc_temps","difficulty":2,"prompt":"Dans « Le train arrivera vers midi », quel groupe indique le moment de l’arrivée ?","choices":["Le train","vers midi","arrivera","midi"],"correctIndex":1,"explanation":"« Vers midi » précise approximativement quand le train arrivera."},
+
+    {"code":"F6-0207","microSkill":"f6_gra_identifier_cc_lieu","difficulty":1,"prompt":"Dans « Les élèves discutent dans la cour », quel groupe indique le lieu ?","choices":["Les élèves","discutent","dans la cour","la cour"],"correctIndex":2,"explanation":"« Dans la cour » précise où les élèves discutent."},
+    {"code":"F6-0208","microSkill":"f6_gra_identifier_cc_lieu","difficulty":1,"prompt":"Dans « Le chat se cache sous la table », quel groupe indique le lieu ?","choices":["Le chat","se cache","la table","sous la table"],"correctIndex":3,"explanation":"« Sous la table » précise où le chat se cache."},
+    {"code":"F6-0209","microSkill":"f6_gra_identifier_cc_lieu","difficulty":1,"prompt":"Dans « Nous pique-niquons près de la rivière », quel groupe indique le lieu ?","choices":["près de la rivière","Nous","pique-niquons","la rivière"],"correctIndex":0,"explanation":"« Près de la rivière » précise où se déroule le pique-nique."},
+    {"code":"F6-0210","microSkill":"f6_gra_identifier_cc_lieu","difficulty":1,"prompt":"Dans « Une tour se dresse au sommet de la colline », quel groupe indique le lieu ?","choices":["Une tour","au sommet de la colline","se dresse","la colline"],"correctIndex":1,"explanation":"« Au sommet de la colline » précise où se dresse la tour."},
+    {"code":"F6-0211","microSkill":"f6_gra_identifier_cc_lieu","difficulty":2,"prompt":"Dans « Derrière le rideau attendait le comédien », quel groupe indique le lieu ?","choices":["le comédien","attendait","Derrière le rideau","le rideau"],"correctIndex":2,"explanation":"« Derrière le rideau » précise où attendait le comédien."},
+    {"code":"F6-0212","microSkill":"f6_gra_identifier_cc_lieu","difficulty":2,"prompt":"Dans « Cet été, nous séjournerons chez nos grands-parents », quel groupe indique le lieu ?","choices":["Cet été","nous","séjournerons","chez nos grands-parents"],"correctIndex":3,"explanation":"« Chez nos grands-parents » précise où nous séjournerons."},
+    {"code":"F6-0213","microSkill":"f6_gra_identifier_cc_lieu","difficulty":2,"prompt":"Dans « Après la fête, des papiers traînaient partout », quel mot indique le lieu ?","choices":["partout","Après la fête","des papiers","traînaient"],"correctIndex":0,"explanation":"« Partout » précise où traînaient les papiers."},
+
+    {"code":"F6-0214","microSkill":"f6_gra_identifier_cc_cause","difficulty":1,"prompt":"Dans « Le vol est retardé à cause du brouillard », quel groupe indique la cause ?","choices":["Le vol","à cause du brouillard","est retardé","du brouillard"],"correctIndex":1,"explanation":"« À cause du brouillard » explique pourquoi le vol est retardé."},
+    {"code":"F6-0215","microSkill":"f6_gra_identifier_cc_cause","difficulty":1,"prompt":"Dans « Grâce à ton aide, nous avons terminé », quel groupe indique la cause ?","choices":["ton aide","nous","Grâce à ton aide","avons terminé"],"correctIndex":2,"explanation":"« Grâce à ton aide » indique la cause positive qui a permis de terminer."},
+    {"code":"F6-0216","microSkill":"f6_gra_identifier_cc_cause","difficulty":1,"prompt":"Dans « Le chien recule par peur », quel groupe indique la cause ?","choices":["Le chien","recule","peur","par peur"],"correctIndex":3,"explanation":"« Par peur » explique pourquoi le chien recule."},
+    {"code":"F6-0217","microSkill":"f6_gra_identifier_cc_cause","difficulty":2,"prompt":"Dans « En raison des travaux, la rue est fermée », quel groupe indique la cause ?","choices":["En raison des travaux","la rue","est fermée","les travaux"],"correctIndex":0,"explanation":"« En raison des travaux » explique pourquoi la rue est fermée."},
+    {"code":"F6-0218","microSkill":"f6_gra_identifier_cc_cause","difficulty":2,"prompt":"Dans « Le voyageur tremble de froid », quel groupe indique la cause ?","choices":["Le voyageur","de froid","tremble","froid"],"correctIndex":1,"explanation":"« De froid » indique pourquoi le voyageur tremble."},
+    {"code":"F6-0219","microSkill":"f6_gra_identifier_cc_cause","difficulty":2,"prompt":"Dans « Faute de temps, nous avons écourté la visite », quel groupe indique la cause ?","choices":["nous","la visite","Faute de temps","avons écourté"],"correctIndex":2,"explanation":"« Faute de temps » explique pourquoi la visite a été écourtée."},
+    {"code":"F6-0220","microSkill":"f6_gra_identifier_cc_cause","difficulty":2,"prompt":"Dans « Le magasin reste fermé à cause d’une panne », quel groupe indique la cause ?","choices":["Le magasin","reste fermé","une panne","à cause d’une panne"],"correctIndex":3,"explanation":"« À cause d’une panne » explique pourquoi le magasin reste fermé."},
+
+    {"code":"F6-0221","microSkill":"f6_gra_distinguer_objet_circonstanciel","difficulty":1,"prompt":"Dans « Elle ferme la porte », quelle est la fonction de « la porte » ?","choices":["COD","COI","Complément circonstanciel de lieu","Complément circonstanciel de temps"],"correctIndex":0,"explanation":"Elle ferme quoi ? « la porte » complète directement le verbe : c’est un COD."},
+    {"code":"F6-0222","microSkill":"f6_gra_distinguer_objet_circonstanciel","difficulty":1,"prompt":"Dans « Elle travaille dans sa chambre », quelle est la fonction de « dans sa chambre » ?","choices":["COD","Complément circonstanciel de lieu","COI","Complément circonstanciel de cause"],"correctIndex":1,"explanation":"« Dans sa chambre » précise où elle travaille : c’est un complément circonstanciel de lieu."},
+    {"code":"F6-0223","microSkill":"f6_gra_distinguer_objet_circonstanciel","difficulty":1,"prompt":"Dans « Nous parlons à notre professeur », quelle est la fonction de « à notre professeur » ?","choices":["COD","Complément circonstanciel de lieu","COI","Complément circonstanciel de temps"],"correctIndex":2,"explanation":"Nous parlons à qui ? « à notre professeur » est un COI."},
+    {"code":"F6-0224","microSkill":"f6_gra_distinguer_objet_circonstanciel","difficulty":1,"prompt":"Dans « Nous partirons demain », quelle est la fonction de « demain » ?","choices":["COD","COI","Complément circonstanciel de lieu","Complément circonstanciel de temps"],"correctIndex":3,"explanation":"« Demain » précise quand nous partirons : c’est un complément circonstanciel de temps."},
+    {"code":"F6-0225","microSkill":"f6_gra_distinguer_objet_circonstanciel","difficulty":2,"prompt":"Dans « Le vent renverse les poubelles », quelle est la fonction de « les poubelles » ?","choices":["COD","COI","Complément circonstanciel de cause","Complément circonstanciel de lieu"],"correctIndex":0,"explanation":"Le vent renverse quoi ? « les poubelles » est un COD."},
+    {"code":"F6-0226","microSkill":"f6_gra_distinguer_objet_circonstanciel","difficulty":2,"prompt":"Dans « Le vent souffle depuis ce matin », quelle est la fonction de « depuis ce matin » ?","choices":["COD","Complément circonstanciel de temps","COI","Complément circonstanciel de lieu"],"correctIndex":1,"explanation":"« Depuis ce matin » précise depuis quand le vent souffle : c’est un complément circonstanciel de temps."},
+    {"code":"F6-0227","microSkill":"f6_gra_distinguer_objet_circonstanciel","difficulty":2,"prompt":"Dans « Il téléphone à son ami », quelle est la fonction de « à son ami » ?","choices":["COD","Complément circonstanciel de lieu","COI","Complément circonstanciel de cause"],"correctIndex":2,"explanation":"Il téléphone à qui ? « à son ami » est un COI."},
+    {"code":"F6-0228","microSkill":"f6_gra_distinguer_objet_circonstanciel","difficulty":2,"prompt":"Dans « Il reste chez lui à cause de la pluie », quelle est la fonction de « à cause de la pluie » ?","choices":["COD","COI","Complément circonstanciel de lieu","Complément circonstanciel de cause"],"correctIndex":3,"explanation":"« À cause de la pluie » explique pourquoi il reste chez lui : c’est un complément circonstanciel de cause."},
+    {"code":"F6-0229","microSkill":"f6_gra_distinguer_objet_circonstanciel","difficulty":2,"prompt":"Dans « Les enfants construisent une cabane », quelle est la fonction de « une cabane » ?","choices":["COD","COI","Complément circonstanciel de lieu","Complément circonstanciel de temps"],"correctIndex":0,"explanation":"Les enfants construisent quoi ? « une cabane » est un COD."},
+    {"code":"F6-0230","microSkill":"f6_gra_distinguer_objet_circonstanciel","difficulty":2,"prompt":"Dans « Les enfants jouent près de la rivière », quelle est la fonction de « près de la rivière » ?","choices":["COD","Complément circonstanciel de lieu","COI","Complément circonstanciel de cause"],"correctIndex":1,"explanation":"« Près de la rivière » précise où les enfants jouent : c’est un complément circonstanciel de lieu."}
+  ]
+}
