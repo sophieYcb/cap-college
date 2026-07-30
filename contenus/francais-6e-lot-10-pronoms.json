@@ -1,0 +1,42 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "french",
+  "level": "6e",
+  "domain": {"code": "grammar", "name": "Grammaire"},
+  "skill": {"code": "f6_word_classes", "name": "Classes grammaticales"},
+  "lot": "F6-GRA-10",
+  "status": "draft",
+  "source": "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "f6_gra_distinguer_pronom_sujet_objet",
+      "teacherName": "Distinguer pronom personnel sujet et objet",
+      "studentName": "Distinguer les pronoms sujets et compléments",
+      "lessonReminder": "Le pronom sujet commande l’accord du verbe. Le pronom objet complète le verbe et peut être COD ou COI.",
+      "workedExample": "Dans « Il la regarde », « Il » est sujet et « la » est COD.",
+      "masteryCriteria": "Identifier la fonction sujet ou objet d’un pronom personnel."
+    },
+    {
+      "code": "f6_gra_retrouver_antecedent_pronom",
+      "teacherName": "Retrouver l’antécédent d’un pronom",
+      "studentName": "Retrouver le mot remplacé par un pronom",
+      "lessonReminder": "L’antécédent est le nom ou le groupe nominal repris par le pronom. Le sens ainsi que le genre et le nombre permettent de le retrouver.",
+      "workedExample": "Dans « Léa prend son manteau car elle a froid », « elle » reprend « Léa ».",
+      "masteryCriteria": "Retrouver sans ambiguïté l’antécédent d’un pronom personnel."
+    }
+  ],
+  "questions": [
+    {"code":"F6-0298","microSkill":"f6_gra_distinguer_pronom_sujet_objet","difficulty":1,"prompt":"Dans « Il la regarde », quelle est la fonction du pronom « Il » ?","choices":["Sujet","COD","COI","Attribut du sujet"],"correctIndex":0,"explanation":"« Il » commande l’accord du verbe « regarde » : c’est le pronom sujet."},
+    {"code":"F6-0299","microSkill":"f6_gra_distinguer_pronom_sujet_objet","difficulty":1,"prompt":"Dans « Nous leur parlons », quelle est la fonction du pronom « leur » ?","choices":["Sujet","COI","COD","Attribut du sujet"],"correctIndex":1,"explanation":"Nous parlons à qui ? « leur » complète indirectement le verbe : c’est un COI."},
+    {"code":"F6-0300","microSkill":"f6_gra_distinguer_pronom_sujet_objet","difficulty":2,"prompt":"Dans « Les enfants les rangent », quelle est la fonction du pronom « les » ?","choices":["Sujet","COI","COD","Complément circonstanciel"],"correctIndex":2,"explanation":"Les enfants rangent quoi ? « les » complète directement le verbe : c’est un COD."},
+    {"code":"F6-0301","microSkill":"f6_gra_distinguer_pronom_sujet_objet","difficulty":2,"prompt":"Dans « Elle nous accompagne », quelle est la fonction du pronom « nous » ?","choices":["Sujet","COI","Attribut du sujet","COD"],"correctIndex":3,"explanation":"Elle accompagne qui ? « nous » complète directement le verbe : c’est un COD."},
+
+    {"code":"F6-0302","microSkill":"f6_gra_retrouver_antecedent_pronom","difficulty":1,"prompt":"Dans « Léa prend son manteau parce qu’elle a froid », quel est l’antécédent de « elle » ?","choices":["Léa","son manteau","froid","prend"],"correctIndex":0,"explanation":"Le pronom féminin singulier « elle » reprend le nom « Léa »."},
+    {"code":"F6-0303","microSkill":"f6_gra_retrouver_antecedent_pronom","difficulty":1,"prompt":"Dans « Le chien poursuit les poules, mais elles s’envolent », quel est l’antécédent de « elles » ?","choices":["Le chien","les poules","poursuit","s’envolent"],"correctIndex":1,"explanation":"Le pronom féminin pluriel « elles » reprend « les poules »."},
+    {"code":"F6-0304","microSkill":"f6_gra_retrouver_antecedent_pronom","difficulty":1,"prompt":"Dans « Maya appelle son frère puis elle lui explique la règle », quel est l’antécédent de « lui » ?","choices":["Maya","la règle","son frère","elle"],"correctIndex":2,"explanation":"Maya explique la règle à son frère : « lui » reprend « son frère »."},
+    {"code":"F6-0305","microSkill":"f6_gra_retrouver_antecedent_pronom","difficulty":1,"prompt":"Dans « Les bateaux rentrent au port car ils ont fini leur course », quel est l’antécédent de « ils » ?","choices":["le port","leur course","ont fini","Les bateaux"],"correctIndex":3,"explanation":"Le pronom masculin pluriel « ils » reprend « Les bateaux »."},
+    {"code":"F6-0306","microSkill":"f6_gra_retrouver_antecedent_pronom","difficulty":2,"prompt":"Dans « Le maître félicite Inès parce qu’elle a réussi », quel est l’antécédent de « elle » ?","choices":["Inès","Le maître","félicite","a réussi"],"correctIndex":0,"explanation":"Le pronom féminin singulier « elle » ne peut reprendre ici que « Inès »."},
+    {"code":"F6-0307","microSkill":"f6_gra_retrouver_antecedent_pronom","difficulty":2,"prompt":"Dans « Tom montre sa maquette à Nora ; il l’a terminée hier », quel est l’antécédent de « il » ?","choices":["Nora","Tom","sa maquette","hier"],"correctIndex":1,"explanation":"Le pronom masculin singulier « il » reprend « Tom »."},
+    {"code":"F6-0308","microSkill":"f6_gra_retrouver_antecedent_pronom","difficulty":2,"prompt":"Dans « La pluie frappe les vitres, puis elle cesse », quel est l’antécédent de « elle » ?","choices":["les vitres","frappe","La pluie","cesse"],"correctIndex":2,"explanation":"Le pronom féminin singulier « elle » reprend « La pluie »."}
+  ]
+}
