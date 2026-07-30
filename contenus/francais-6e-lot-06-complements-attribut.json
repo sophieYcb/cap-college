@@ -1,0 +1,89 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "french",
+  "level": "6e",
+  "domain": {"code": "grammar", "name": "Grammaire"},
+  "skill": {"code": "f6_simple_sentence", "name": "Constituants de la phrase simple"},
+  "lot": "F6-GRA-06",
+  "status": "draft",
+  "source": "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "f6_gra_identifier_coi",
+      "teacherName": "Identifier un COI",
+      "studentName": "Reconnaître un complément d’objet indirect",
+      "lessonReminder": "Le COI complète le verbe par l’intermédiaire d’une préposition, souvent à ou de. On peut poser une question comme « à qui ? », « à quoi ? », « de qui ? » ou « de quoi ? » après le verbe.",
+      "workedExample": "Dans « Lina parle à sa sœur », « à sa sœur » est le COI du verbe « parle ».",
+      "masteryCriteria": "Identifier et délimiter un COI introduit par une préposition."
+    },
+    {
+      "code": "f6_gra_distinguer_cod_coi",
+      "teacherName": "Distinguer COD et COI",
+      "studentName": "Distinguer complément direct et complément indirect",
+      "lessonReminder": "Le COD complète directement le verbe, sans préposition. Le COI est relié au verbe par une préposition.",
+      "workedExample": "Dans « Lina regarde sa sœur » puis « Lina parle à sa sœur », « sa sœur » est COD dans la première phrase et « à sa sœur » est COI dans la seconde.",
+      "masteryCriteria": "Distinguer COD et COI en observant la construction du verbe et la présence éventuelle d’une préposition."
+    },
+    {
+      "code": "f6_gra_identifier_attribut_sujet",
+      "teacherName": "Identifier l’attribut du sujet",
+      "studentName": "Reconnaître l’attribut du sujet",
+      "lessonReminder": "L’attribut du sujet donne une caractéristique ou une identité au sujet par l’intermédiaire d’un verbe attributif comme être, sembler, paraître, devenir ou rester.",
+      "workedExample": "Dans « Le ciel devient sombre », « sombre » est attribut du sujet « Le ciel ».",
+      "masteryCriteria": "Identifier un attribut adjectival ou nominal relié au sujet par un verbe attributif."
+    },
+    {
+      "code": "f6_gra_distinguer_attribut_cod",
+      "teacherName": "Distinguer attribut du sujet et COD",
+      "studentName": "Distinguer attribut du sujet et COD",
+      "lessonReminder": "L’attribut caractérise le sujet après un verbe attributif. Le COD désigne l’être ou la chose directement concernés par l’action d’un verbe.",
+      "workedExample": "Dans « La mer devient calme », « calme » est attribut ; dans « Les marins observent la mer », « la mer » est COD.",
+      "masteryCriteria": "Distinguer l’attribut du sujet et le COD à partir du sens et de la construction du verbe."
+    }
+  ],
+  "questions": [
+    {"code":"F6-0161","microSkill":"f6_gra_identifier_coi","difficulty":1,"prompt":"Dans « Lina parle à sa sœur », quel est le COI du verbe « parle » ?","choices":["à sa sœur","Lina","parle","sa sœur"],"correctIndex":0,"explanation":"Lina parle à qui ? « à sa sœur » complète le verbe par la préposition « à »."},
+    {"code":"F6-0162","microSkill":"f6_gra_identifier_coi","difficulty":1,"prompt":"Dans « Nous rêvons de vacances », quel est le COI du verbe « rêvons » ?","choices":["Nous","de vacances","rêvons","vacances"],"correctIndex":1,"explanation":"Nous rêvons de quoi ? « de vacances » est introduit par la préposition « de »."},
+    {"code":"F6-0163","microSkill":"f6_gra_identifier_coi","difficulty":1,"prompt":"Dans « Il téléphone à son médecin », quel est le COI de « téléphone » ?","choices":["Il","téléphone","à son médecin","son médecin"],"correctIndex":2,"explanation":"Il téléphone à qui ? « à son médecin » est le COI."},
+    {"code":"F6-0164","microSkill":"f6_gra_identifier_coi","difficulty":1,"prompt":"Dans « Les élèves obéissent aux consignes », quel est le COI de « obéissent » ?","choices":["Les élèves","obéissent","les consignes","aux consignes"],"correctIndex":3,"explanation":"Les élèves obéissent à quoi ? « aux consignes » est le COI."},
+    {"code":"F6-0165","microSkill":"f6_gra_identifier_coi","difficulty":2,"prompt":"Dans « Je me souviens de cette histoire », quel est le COI de « me souviens » ?","choices":["de cette histoire","Je","me souviens","cette histoire"],"correctIndex":0,"explanation":"Je me souviens de quoi ? « de cette histoire » est le COI."},
+    {"code":"F6-0166","microSkill":"f6_gra_identifier_coi","difficulty":2,"prompt":"Dans « Les enfants profitent de la récréation », quel est le COI de « profitent » ?","choices":["Les enfants","de la récréation","profitent","la récréation"],"correctIndex":1,"explanation":"Les enfants profitent de quoi ? « de la récréation » est le COI."},
+    {"code":"F6-0167","microSkill":"f6_gra_identifier_coi","difficulty":2,"prompt":"Dans « Tu réponds au professeur », quel est le COI de « réponds » ?","choices":["Tu","réponds","au professeur","professeur"],"correctIndex":2,"explanation":"Tu réponds à qui ? « au professeur » est le COI."},
+    {"code":"F6-0168","microSkill":"f6_gra_identifier_coi","difficulty":2,"prompt":"Dans « Elle doute de sa réponse », quel est le COI de « doute » ?","choices":["Elle","doute","sa réponse","de sa réponse"],"correctIndex":3,"explanation":"Elle doute de quoi ? « de sa réponse » est le COI."},
+    {"code":"F6-0169","microSkill":"f6_gra_identifier_coi","difficulty":2,"prompt":"Dans « Nous pensons à notre projet », quel est le COI de « pensons » ?","choices":["à notre projet","Nous","pensons","notre projet"],"correctIndex":0,"explanation":"Nous pensons à quoi ? « à notre projet » est le COI."},
+    {"code":"F6-0170","microSkill":"f6_gra_identifier_coi","difficulty":2,"prompt":"Dans « Ma cousine s’intéresse à l’astronomie », quel est le COI de « s’intéresse » ?","choices":["Ma cousine","à l’astronomie","s’intéresse","l’astronomie"],"correctIndex":1,"explanation":"Ma cousine s’intéresse à quoi ? « à l’astronomie » est le COI."},
+
+    {"code":"F6-0171","microSkill":"f6_gra_distinguer_cod_coi","difficulty":1,"prompt":"Dans « Lina range ses livres », quelle est la fonction de « ses livres » ?","choices":["Sujet","COI","COD","Attribut du sujet"],"correctIndex":2,"explanation":"Lina range quoi ? « ses livres » complète directement le verbe : c’est un COD."},
+    {"code":"F6-0172","microSkill":"f6_gra_distinguer_cod_coi","difficulty":1,"prompt":"Dans « Lina parle à sa sœur », quelle est la fonction de « à sa sœur » ?","choices":["COD","Sujet","Attribut du sujet","COI"],"correctIndex":3,"explanation":"Le groupe est introduit par « à » et complète le verbe « parle » : c’est un COI."},
+    {"code":"F6-0173","microSkill":"f6_gra_distinguer_cod_coi","difficulty":1,"prompt":"Dans « Nous attendons le bus », quelle est la fonction de « le bus » ?","choices":["COD","COI","Sujet","Attribut du sujet"],"correctIndex":0,"explanation":"Nous attendons quoi ? « le bus » complète le verbe sans préposition : c’est un COD."},
+    {"code":"F6-0174","microSkill":"f6_gra_distinguer_cod_coi","difficulty":1,"prompt":"Dans « Nous pensons à nos vacances », quelle est la fonction de « à nos vacances » ?","choices":["COD","COI","Sujet","Complément du nom"],"correctIndex":1,"explanation":"Le groupe est introduit par « à » et complète « pensons » : c’est un COI."},
+    {"code":"F6-0175","microSkill":"f6_gra_distinguer_cod_coi","difficulty":2,"prompt":"Dans « Il écoute son professeur », quelle est la fonction de « son professeur » ?","choices":["Sujet","COI","COD","Attribut du sujet"],"correctIndex":2,"explanation":"Il écoute qui ? Le groupe complète directement le verbe : c’est un COD."},
+    {"code":"F6-0176","microSkill":"f6_gra_distinguer_cod_coi","difficulty":2,"prompt":"Dans « Il obéit à son professeur », quelle est la fonction de « à son professeur » ?","choices":["COD","Sujet","Attribut du sujet","COI"],"correctIndex":3,"explanation":"Il obéit à qui ? Le groupe introduit par « à » est un COI."},
+    {"code":"F6-0177","microSkill":"f6_gra_distinguer_cod_coi","difficulty":2,"prompt":"Dans « Elle cherche ses lunettes », quelle est la fonction de « ses lunettes » ?","choices":["COD","COI","Sujet","Complément du nom"],"correctIndex":0,"explanation":"Elle cherche quoi ? Le groupe complète directement le verbe : c’est un COD."},
+    {"code":"F6-0178","microSkill":"f6_gra_distinguer_cod_coi","difficulty":2,"prompt":"Dans « Elle se souvient de son adresse », quelle est la fonction de « de son adresse » ?","choices":["COD","COI","Sujet","Attribut du sujet"],"correctIndex":1,"explanation":"Le groupe introduit par « de » complète « se souvient » : c’est un COI."},
+    {"code":"F6-0179","microSkill":"f6_gra_distinguer_cod_coi","difficulty":2,"prompt":"Dans « Tu regardes ce tableau », quelle est la fonction de « ce tableau » ?","choices":["Sujet","COI","COD","Complément du nom"],"correctIndex":2,"explanation":"Tu regardes quoi ? Le groupe complète directement le verbe : c’est un COD."},
+    {"code":"F6-0180","microSkill":"f6_gra_distinguer_cod_coi","difficulty":2,"prompt":"Dans « Tu réponds au gardien », quelle est la fonction de « au gardien » ?","choices":["COD","Sujet","Attribut du sujet","COI"],"correctIndex":3,"explanation":"Tu réponds à qui ? Le groupe introduit par « à » est un COI."},
+
+    {"code":"F6-0181","microSkill":"f6_gra_identifier_attribut_sujet","difficulty":1,"prompt":"Dans « Le ciel devient sombre », quel est l’attribut du sujet ?","choices":["sombre","Le ciel","devient","ciel"],"correctIndex":0,"explanation":"« Sombre » caractérise le sujet « Le ciel » par l’intermédiaire du verbe « devient »."},
+    {"code":"F6-0182","microSkill":"f6_gra_identifier_attribut_sujet","difficulty":1,"prompt":"Dans « Ma sœur est médecin », quel est l’attribut du sujet ?","choices":["Ma sœur","médecin","est","sœur"],"correctIndex":1,"explanation":"« Médecin » donne une identité au sujet « Ma sœur » par l’intermédiaire du verbe « est »."},
+    {"code":"F6-0183","microSkill":"f6_gra_identifier_attribut_sujet","difficulty":1,"prompt":"Dans « Ces exercices semblent faciles », quel est l’attribut du sujet ?","choices":["Ces exercices","semblent","faciles","exercices"],"correctIndex":2,"explanation":"« Faciles » caractérise le sujet après le verbe attributif « semblent »."},
+    {"code":"F6-0184","microSkill":"f6_gra_identifier_attribut_sujet","difficulty":1,"prompt":"Dans « Paul reste silencieux », quel est l’attribut du sujet ?","choices":["Paul","reste","silence","silencieux"],"correctIndex":3,"explanation":"« Silencieux » caractérise le sujet « Paul » après le verbe « reste »."},
+    {"code":"F6-0185","microSkill":"f6_gra_identifier_attribut_sujet","difficulty":2,"prompt":"Dans « Après la course, Léa paraît épuisée », quel est l’attribut du sujet ?","choices":["épuisée","Après la course","Léa","paraît"],"correctIndex":0,"explanation":"« Épuisée » caractérise le sujet « Léa » par l’intermédiaire de « paraît »."},
+    {"code":"F6-0186","microSkill":"f6_gra_identifier_attribut_sujet","difficulty":2,"prompt":"Dans « Les enfants sont heureux de leur victoire », quel est l’attribut du sujet ?","choices":["Les enfants","heureux","leur victoire","sont"],"correctIndex":1,"explanation":"« Heureux » caractérise le sujet « Les enfants » après le verbe « sont »."},
+    {"code":"F6-0187","microSkill":"f6_gra_identifier_attribut_sujet","difficulty":2,"prompt":"Dans « Son oncle est devenu capitaine », quel est l’attribut du sujet ?","choices":["Son oncle","est devenu","capitaine","oncle"],"correctIndex":2,"explanation":"« Capitaine » donne une identité au sujet après le verbe attributif « est devenu »."},
+    {"code":"F6-0188","microSkill":"f6_gra_identifier_attribut_sujet","difficulty":2,"prompt":"Dans « L’eau du bassin demeure glacée », quel est l’attribut du sujet ?","choices":["L’eau du bassin","demeure","bassin","glacée"],"correctIndex":3,"explanation":"« Glacée » caractérise le sujet « L’eau du bassin » après « demeure »."},
+    {"code":"F6-0189","microSkill":"f6_gra_identifier_attribut_sujet","difficulty":2,"prompt":"Dans « En automne, les feuilles deviennent rouges », quel est l’attribut du sujet ?","choices":["rouges","En automne","les feuilles","deviennent"],"correctIndex":0,"explanation":"« Rouges » caractérise le sujet « les feuilles » après « deviennent »."},
+    {"code":"F6-0190","microSkill":"f6_gra_identifier_attribut_sujet","difficulty":2,"prompt":"Dans « Cette route paraît dangereuse la nuit », quel est l’attribut du sujet ?","choices":["Cette route","dangereuse","la nuit","paraît"],"correctIndex":1,"explanation":"« Dangereuse » caractérise le sujet « Cette route » après « paraît »."},
+
+    {"code":"F6-0191","microSkill":"f6_gra_distinguer_attribut_cod","difficulty":1,"prompt":"Dans « Paul semble fatigué », quelle est la fonction de « fatigué » ?","choices":["COD","Adjectif épithète","Attribut du sujet","COI"],"correctIndex":2,"explanation":"« Fatigué » caractérise le sujet « Paul » après le verbe attributif « semble »."},
+    {"code":"F6-0192","microSkill":"f6_gra_distinguer_attribut_cod","difficulty":1,"prompt":"Dans « Paul porte un sac lourd », quelle est la fonction de « un sac lourd » ?","choices":["Attribut du sujet","COI","Sujet","COD"],"correctIndex":3,"explanation":"Paul porte quoi ? « un sac lourd » complète directement le verbe : c’est un COD."},
+    {"code":"F6-0193","microSkill":"f6_gra_distinguer_attribut_cod","difficulty":1,"prompt":"Dans « La mer devient calme », quelle est la fonction de « calme » ?","choices":["Attribut du sujet","COD","COI","Adjectif épithète"],"correctIndex":0,"explanation":"« Calme » caractérise le sujet « La mer » après le verbe « devient »."},
+    {"code":"F6-0194","microSkill":"f6_gra_distinguer_attribut_cod","difficulty":1,"prompt":"Dans « Les marins observent la mer calme », quelle est la fonction de « la mer calme » ?","choices":["Attribut du sujet","COD","Sujet","COI"],"correctIndex":1,"explanation":"Les marins observent quoi ? « la mer calme » est le COD de « observent »."},
+    {"code":"F6-0195","microSkill":"f6_gra_distinguer_attribut_cod","difficulty":2,"prompt":"Dans « Cette soupe paraît délicieuse », quelle est la fonction de « délicieuse » ?","choices":["COD","Adjectif épithète","Attribut du sujet","COI"],"correctIndex":2,"explanation":"« Délicieuse » caractérise le sujet « Cette soupe » après « paraît »."},
+    {"code":"F6-0196","microSkill":"f6_gra_distinguer_attribut_cod","difficulty":2,"prompt":"Dans « Le cuisinier goûte cette soupe », quelle est la fonction de « cette soupe » ?","choices":["Attribut du sujet","COI","Sujet","COD"],"correctIndex":3,"explanation":"Le cuisinier goûte quoi ? « cette soupe » complète directement le verbe : c’est un COD."},
+    {"code":"F6-0197","microSkill":"f6_gra_distinguer_attribut_cod","difficulty":2,"prompt":"Dans « Le ciel reste gris », quelle est la fonction de « gris » ?","choices":["Attribut du sujet","COD","COI","Adjectif épithète"],"correctIndex":0,"explanation":"« Gris » caractérise le sujet « Le ciel » après le verbe attributif « reste »."},
+    {"code":"F6-0198","microSkill":"f6_gra_distinguer_attribut_cod","difficulty":2,"prompt":"Dans « Les enfants dessinent un ciel gris », quelle est la fonction de « un ciel gris » ?","choices":["Attribut du sujet","COD","Sujet","COI"],"correctIndex":1,"explanation":"Les enfants dessinent quoi ? « un ciel gris » est le COD de « dessinent »."},
+    {"code":"F6-0199","microSkill":"f6_gra_distinguer_attribut_cod","difficulty":2,"prompt":"Dans « Léa est une excellente musicienne », quelle est la fonction de « une excellente musicienne » ?","choices":["COD","COI","Attribut du sujet","Sujet"],"correctIndex":2,"explanation":"Le groupe donne une identité au sujet « Léa » par l’intermédiaire du verbe « est »."},
+    {"code":"F6-0200","microSkill":"f6_gra_distinguer_attribut_cod","difficulty":2,"prompt":"Dans « Léa écoute une excellente musicienne », quelle est la fonction de « une excellente musicienne » ?","choices":["Attribut du sujet","COI","Sujet","COD"],"correctIndex":3,"explanation":"Léa écoute qui ? Le groupe complète directement le verbe « écoute » : c’est un COD."}
+  ]
+}
