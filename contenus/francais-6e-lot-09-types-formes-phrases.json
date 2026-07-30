@@ -1,0 +1,67 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "french",
+  "level": "6e",
+  "domain": {"code": "grammar", "name": "Grammaire"},
+  "skill": {"code": "f6_sentence_types_forms", "name": "Types et formes de phrases"},
+  "lot": "F6-GRA-09",
+  "status": "draft",
+  "source": "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "f6_gra_identifier_forme_exclamative",
+      "teacherName": "Identifier une phrase à la forme exclamative",
+      "studentName": "Reconnaître la forme exclamative",
+      "lessonReminder": "La forme exclamative exprime une émotion, une réaction ou une intensité. Elle se termine généralement par un point d’exclamation.",
+      "workedExample": "« Comme ce paysage est beau ! » est une phrase déclarative à la forme exclamative.",
+      "masteryCriteria": "Identifier une phrase à la forme exclamative sans la confondre avec un type interrogatif ou injonctif."
+    },
+    {
+      "code": "f6_gra_transformer_forme_phrase",
+      "teacherName": "Transformer la forme d’une phrase",
+      "studentName": "Changer la forme d’une phrase",
+      "lessonReminder": "On peut transformer la forme d’une phrase, par exemple passer de l’affirmation à la négation ou retirer une tournure exclamative, sans changer son type.",
+      "workedExample": "« Lina vient. » devient « Lina ne vient pas. » à la forme négative.",
+      "masteryCriteria": "Transformer correctement une phrase affirmative, négative ou exclamative."
+    },
+    {
+      "code": "f6_gra_transformer_type_phrase",
+      "teacherName": "Transformer le type d’une phrase",
+      "studentName": "Changer le type d’une phrase",
+      "lessonReminder": "Changer le type consiste à transformer une phrase déclarative, interrogative ou injonctive en conservant l’idée principale.",
+      "workedExample": "La déclaration « Tu viens demain. » devient l’interrogation « Viendras-tu demain ? ».",
+      "masteryCriteria": "Transformer une phrase entre les types déclaratif, interrogatif et injonctif."
+    }
+  ],
+  "questions": [
+    {"code":"F6-0271","microSkill":"f6_gra_identifier_forme_exclamative","difficulty":1,"prompt":"Quelle phrase est à la forme exclamative ?","choices":["Comme ce paysage est beau !","Ce paysage est beau.","Ce paysage est-il beau ?","Regarde ce paysage."],"correctIndex":0,"explanation":"« Comme ce paysage est beau ! » exprime une émotion avec une tournure exclamative."},
+    {"code":"F6-0272","microSkill":"f6_gra_identifier_forme_exclamative","difficulty":1,"prompt":"Quelle phrase est à la forme exclamative ?","choices":["La surprise est grande.","Quelle surprise !","As-tu une surprise ?","Prépare une surprise."],"correctIndex":1,"explanation":"« Quelle surprise ! » exprime une réaction vive : la phrase est exclamative."},
+    {"code":"F6-0273","microSkill":"f6_gra_identifier_forme_exclamative","difficulty":1,"prompt":"Quelle phrase est à la forme exclamative ?","choices":["Ce gâteau est délicieux.","Ce gâteau est-il délicieux ?","Que ce gâteau est délicieux !","Goûte ce gâteau."],"correctIndex":2,"explanation":"La tournure « Que… ! » marque ici la forme exclamative."},
+    {"code":"F6-0274","microSkill":"f6_gra_identifier_forme_exclamative","difficulty":1,"prompt":"Quelle phrase est à la forme exclamative ?","choices":["Tu as grandi.","As-tu grandi ?","Grandis encore.","Comme tu as grandi !"],"correctIndex":3,"explanation":"« Comme tu as grandi ! » exprime l’étonnement à la forme exclamative."},
+    {"code":"F6-0275","microSkill":"f6_gra_identifier_forme_exclamative","difficulty":2,"prompt":"Quelle phrase déclarative est aussi à la forme exclamative ?","choices":["Quel froid aujourd’hui !","Fait-il froid aujourd’hui ?","Ferme la fenêtre.","Il fait froid aujourd’hui."],"correctIndex":0,"explanation":"« Quel froid aujourd’hui ! » constate un fait en exprimant vivement une sensation."},
+    {"code":"F6-0276","microSkill":"f6_gra_identifier_forme_exclamative","difficulty":2,"prompt":"Quelle phrase est à la forme exclamative ?","choices":["Cette musique est douce.","Que cette musique est douce !","Cette musique est-elle douce ?","Écoute cette musique."],"correctIndex":1,"explanation":"La tournure « Que… ! » donne à la phrase sa forme exclamative."},
+    {"code":"F6-0277","microSkill":"f6_gra_identifier_forme_exclamative","difficulty":2,"prompt":"Quelle phrase est à la forme exclamative ?","choices":["Ils courent vite.","Courent-ils vite ?","Comme ils courent vite !","Courez vite."],"correctIndex":2,"explanation":"« Comme ils courent vite ! » exprime l’intensité à la forme exclamative."},
+
+    {"code":"F6-0278","microSkill":"f6_gra_transformer_forme_phrase","difficulty":1,"prompt":"Quelle phrase est la transformation négative de « Lina vient » ?","choices":["Lina vient-elle ?","Viens, Lina.","Lina viendra.","Lina ne vient pas."],"correctIndex":3,"explanation":"La négation « ne… pas » transforme la phrase affirmative en phrase négative."},
+    {"code":"F6-0279","microSkill":"f6_gra_transformer_forme_phrase","difficulty":1,"prompt":"Quelle phrase affirmative correspond à « Nous ne partons pas » ?","choices":["Nous partons.","Partons-nous ?","Ne partons pas.","Nous ne partirons jamais."],"correctIndex":0,"explanation":"En retirant « ne… pas », on obtient la phrase affirmative « Nous partons. »"},
+    {"code":"F6-0280","microSkill":"f6_gra_transformer_forme_phrase","difficulty":1,"prompt":"Quelle transformation met « Ce paysage est magnifique » à la forme exclamative ?","choices":["Ce paysage est-il magnifique ?","Comme ce paysage est magnifique !","Regarde ce paysage magnifique.","Ce paysage n’est pas magnifique."],"correctIndex":1,"explanation":"La tournure « Comme… ! » transforme l’énoncé en phrase exclamative."},
+    {"code":"F6-0281","microSkill":"f6_gra_transformer_forme_phrase","difficulty":1,"prompt":"Quelle phrase retire la forme exclamative de « Que ce film est drôle ! » ?","choices":["Ce film est-il drôle ?","Regarde ce film drôle.","Ce film est drôle.","Ce film n’est pas drôle."],"correctIndex":2,"explanation":"« Ce film est drôle. » conserve l’affirmation sans tournure exclamative."},
+    {"code":"F6-0282","microSkill":"f6_gra_transformer_forme_phrase","difficulty":1,"prompt":"Quelle phrase est la transformation négative de « Elle a compris » ?","choices":["A-t-elle compris ?","Elle comprend.","Comprends !","Elle n’a pas compris."],"correctIndex":3,"explanation":"La négation encadre l’auxiliaire : « Elle n’a pas compris. »"},
+    {"code":"F6-0283","microSkill":"f6_gra_transformer_forme_phrase","difficulty":2,"prompt":"Quelle phrase affirmative correspond à « Vous ne fermez pas la porte » ?","choices":["Vous fermez la porte.","Fermez la porte.","Fermez-vous la porte ?","Vous ne fermez jamais la porte."],"correctIndex":0,"explanation":"La suppression de « ne… pas » donne « Vous fermez la porte. »"},
+    {"code":"F6-0284","microSkill":"f6_gra_transformer_forme_phrase","difficulty":2,"prompt":"Quelle phrase est la transformation négative de « Il écoute encore » ?","choices":["Écoute-t-il encore ?","Il n’écoute plus.","Il écoute toujours.","Écoute encore."],"correctIndex":1,"explanation":"La négation « ne… plus » s’oppose à l’adverbe « encore »."},
+    {"code":"F6-0285","microSkill":"f6_gra_transformer_forme_phrase","difficulty":2,"prompt":"Quelle phrase retire la forme exclamative de « Quel spectacle impressionnant ! » ?","choices":["Le spectacle est-il impressionnant ?","Regarde ce spectacle.","Ce spectacle est impressionnant.","Ce spectacle n’est pas impressionnant."],"correctIndex":2,"explanation":"« Ce spectacle est impressionnant. » conserve le sens sans exclamation."},
+    {"code":"F6-0286","microSkill":"f6_gra_transformer_forme_phrase","difficulty":2,"prompt":"Quelle phrase est la transformation négative de « Les enfants jouent » ?","choices":["Les enfants jouent-ils ?","Jouez, les enfants.","Les enfants joueront.","Les enfants ne jouent pas."],"correctIndex":3,"explanation":"« Ne… pas » transforme la phrase affirmative en phrase négative."},
+    {"code":"F6-0287","microSkill":"f6_gra_transformer_forme_phrase","difficulty":2,"prompt":"Quelle phrase retire la forme exclamative de « Comme cette salle est vaste ! » ?","choices":["Cette salle est vaste.","Cette salle est-elle vaste ?","Entrez dans cette vaste salle.","Cette salle n’est pas vaste."],"correctIndex":0,"explanation":"La phrase déclarative neutre correspondante est « Cette salle est vaste. »"},
+
+    {"code":"F6-0288","microSkill":"f6_gra_transformer_type_phrase","difficulty":1,"prompt":"Quelle interrogation correspond à la déclaration « Tu viens demain » ?","choices":["Viens demain.","Viendras-tu demain ?","Tu ne viens pas demain.","Comme tu viens tôt !"],"correctIndex":1,"explanation":"L’inversion « Viendras-tu… ? » transforme la déclaration en interrogation."},
+    {"code":"F6-0289","microSkill":"f6_gra_transformer_type_phrase","difficulty":1,"prompt":"Quelle phrase injonctive correspond à « Vous fermez la porte » ?","choices":["Fermez-vous la porte ?","Vous ne fermez pas la porte.","Fermez la porte.","Comme cette porte est lourde !"],"correctIndex":2,"explanation":"L’impératif « Fermez » transforme l’énoncé en consigne."},
+    {"code":"F6-0290","microSkill":"f6_gra_transformer_type_phrase","difficulty":1,"prompt":"Quelle déclaration correspond à « Le train est-il arrivé ? » ?","choices":["Le train arrive-t-il ?","Que le train arrive !","Arrive, le train.","Le train est arrivé."],"correctIndex":3,"explanation":"« Le train est arrivé. » affirme la même information."},
+    {"code":"F6-0291","microSkill":"f6_gra_transformer_type_phrase","difficulty":1,"prompt":"Quelle déclaration correspond à l’injonction « Range ta chambre » ?","choices":["Tu ranges ta chambre.","Ranges-tu ta chambre ?","Ne range pas ta chambre.","Quelle chambre bien rangée !"],"correctIndex":0,"explanation":"« Tu ranges ta chambre. » est la déclaration correspondante."},
+    {"code":"F6-0292","microSkill":"f6_gra_transformer_type_phrase","difficulty":1,"prompt":"Quelle interrogation correspond à « Lina connaît la réponse » ?","choices":["Lina, connais la réponse.","Lina connaît-elle la réponse ?","Lina ne connaît pas la réponse.","Comme Lina connaît bien la réponse !"],"correctIndex":1,"explanation":"L’inversion avec reprise du sujet transforme la déclaration en interrogation."},
+    {"code":"F6-0293","microSkill":"f6_gra_transformer_type_phrase","difficulty":2,"prompt":"Quelle phrase injonctive correspond à « Tu prends ton cahier » ?","choices":["Prends-tu ton cahier ?","Tu ne prends pas ton cahier.","Prends ton cahier.","Quel beau cahier !"],"correctIndex":2,"explanation":"« Prends ton cahier. » emploie l’impératif pour donner une consigne."},
+    {"code":"F6-0294","microSkill":"f6_gra_transformer_type_phrase","difficulty":2,"prompt":"Quelle déclaration correspond à « Avez-vous terminé ? » ?","choices":["Terminez.","Vous n’avez pas terminé.","Comme vous avez vite terminé !","Vous avez terminé."],"correctIndex":3,"explanation":"« Vous avez terminé. » affirme l’information demandée dans l’interrogation."},
+    {"code":"F6-0295","microSkill":"f6_gra_transformer_type_phrase","difficulty":2,"prompt":"Quelle déclaration correspond à l’injonction « Écoutez la consigne » ?","choices":["Vous écoutez la consigne.","Écoutez-vous la consigne ?","Vous n’écoutez pas la consigne.","Quelle consigne claire !"],"correctIndex":0,"explanation":"« Vous écoutez la consigne. » est une phrase déclarative."},
+    {"code":"F6-0296","microSkill":"f6_gra_transformer_type_phrase","difficulty":2,"prompt":"Quelle interrogation correspond à « Ils partiront tôt » ?","choices":["Partez tôt.","Partiront-ils tôt ?","Ils ne partiront pas tôt.","Comme ils partiront tôt !"],"correctIndex":1,"explanation":"L’inversion « Partiront-ils… ? » transforme la déclaration en interrogation."},
+    {"code":"F6-0297","microSkill":"f6_gra_transformer_type_phrase","difficulty":2,"prompt":"Quelle phrase injonctive correspond à « Vous avancez doucement » ?","choices":["Avancez-vous doucement ?","Vous n’avancez pas doucement.","Avancez doucement.","Comme vous avancez doucement !"],"correctIndex":2,"explanation":"« Avancez doucement. » emploie l’impératif pour donner une consigne."}
+  ]
+}
