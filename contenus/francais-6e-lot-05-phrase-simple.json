@@ -1,0 +1,412 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "french",
+  "level": "6e",
+  "domain": {
+    "code": "grammar",
+    "name": "Grammaire"
+  },
+  "skill": {
+    "code": "f6_simple_sentence",
+    "name": "Constituants de la phrase simple"
+  },
+  "lot": "F6-GRA-05",
+  "status": "draft",
+  "source": "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "f6_gra_identifier_verbe_conjugue",
+      "teacherName": "Identifier le verbe conjugué",
+      "studentName": "Reconnaître le verbe conjugué",
+      "lessonReminder": "Le verbe conjugué exprime une action ou un état et varie selon le temps et la personne. Une phrase peut aussi contenir un infinitif, qui n’est pas conjugué.",
+      "workedExample": "Dans « Les élèves vont visiter le musée », « vont » est le verbe conjugué et « visiter » est à l’infinitif.",
+      "masteryCriteria": "Identifier le verbe conjugué dans une phrase simple, y compris en présence d’un infinitif ou d’un temps composé."
+    },
+    {
+      "code": "f6_gra_identifier_sujet",
+      "teacherName": "Identifier un sujet placé avant le verbe",
+      "studentName": "Reconnaître le sujet avant le verbe",
+      "lessonReminder": "Le sujet commande l’accord du verbe. Pour le trouver, on peut demander « qui est-ce qui ? » ou « qu’est-ce qui ? » avant le verbe.",
+      "workedExample": "Dans « Les feuilles du marronnier tombent », le groupe sujet est « Les feuilles du marronnier ».",
+      "masteryCriteria": "Identifier et délimiter un sujet antéposé, même lorsqu’il est enrichi ou séparé du verbe par un complément."
+    },
+    {
+      "code": "f6_gra_identifier_sujet_inverse",
+      "teacherName": "Identifier un sujet inversé",
+      "studentName": "Reconnaître le sujet placé après le verbe",
+      "lessonReminder": "Un sujet inversé est placé après le verbe, notamment dans certaines questions ou après un complément placé en tête de phrase.",
+      "workedExample": "Dans « Au loin brillent les étoiles », « les étoiles » est le sujet inversé du verbe « brillent ».",
+      "masteryCriteria": "Identifier un sujet nominal ou pronominal placé après le verbe sans le confondre avec un complément."
+    },
+    {
+      "code": "f6_gra_identifier_cod",
+      "teacherName": "Identifier un COD",
+      "studentName": "Reconnaître un complément d’objet direct",
+      "lessonReminder": "Le complément d’objet direct complète directement le verbe, sans préposition. On peut souvent le trouver en posant la question « qui ? » ou « quoi ? » après le verbe.",
+      "workedExample": "Dans « Lina prépare un gâteau », « un gâteau » est le COD du verbe « prépare ».",
+      "masteryCriteria": "Identifier et délimiter un COD nominal ou pronominal, sans le confondre avec le sujet ou un complément introduit par une préposition."
+    }
+  ],
+  "questions": [
+    {
+      "code": "F6-0121",
+      "microSkill": "f6_gra_identifier_verbe_conjugue",
+      "difficulty": 1,
+      "prompt": "Dans « Le renard traverse la clairière », quel est le verbe conjugué ?",
+      "choices": ["traverse", "renard", "clairière", "Le"],
+      "correctIndex": 0,
+      "explanation": "« Traverse » exprime l’action du renard et est conjugué au présent."
+    },
+    {
+      "code": "F6-0122",
+      "microSkill": "f6_gra_identifier_verbe_conjugue",
+      "difficulty": 1,
+      "prompt": "Dans « Mes cousins arriveront demain », quel est le verbe conjugué ?",
+      "choices": ["cousins", "arriveront", "demain", "Mes"],
+      "correctIndex": 1,
+      "explanation": "« Arriveront » est le verbe « arriver » conjugué au futur simple."
+    },
+    {
+      "code": "F6-0123",
+      "microSkill": "f6_gra_identifier_verbe_conjugue",
+      "difficulty": 1,
+      "prompt": "Dans « Cette soupe semble délicieuse », quel est le verbe conjugué ?",
+      "choices": ["soupe", "délicieuse", "semble", "Cette"],
+      "correctIndex": 2,
+      "explanation": "« Semble » est le verbe « sembler » conjugué au présent."
+    },
+    {
+      "code": "F6-0124",
+      "microSkill": "f6_gra_identifier_verbe_conjugue",
+      "difficulty": 2,
+      "prompt": "Dans « Tu peux fermer la fenêtre », quel mot est le verbe conjugué ?",
+      "choices": ["fermer", "fenêtre", "Tu", "peux"],
+      "correctIndex": 3,
+      "explanation": "« Peux » est conjugué ; « fermer » est un verbe à l’infinitif."
+    },
+    {
+      "code": "F6-0125",
+      "microSkill": "f6_gra_identifier_verbe_conjugue",
+      "difficulty": 2,
+      "prompt": "Dans « Nous allons observer les oiseaux », quel mot est le verbe conjugué ?",
+      "choices": ["allons", "observer", "oiseaux", "Nous"],
+      "correctIndex": 0,
+      "explanation": "« Allons » est conjugué à la première personne du pluriel ; « observer » est à l’infinitif."
+    },
+    {
+      "code": "F6-0126",
+      "microSkill": "f6_gra_identifier_verbe_conjugue",
+      "difficulty": 2,
+      "prompt": "Dans « Les enfants ont construit une cabane », quel est le verbe conjugué au passé composé ?",
+      "choices": ["construit", "ont construit", "cabane", "enfants"],
+      "correctIndex": 1,
+      "explanation": "Au passé composé, le verbe conjugué est formé de l’auxiliaire et du participe passé : « ont construit »."
+    },
+    {
+      "code": "F6-0127",
+      "microSkill": "f6_gra_identifier_verbe_conjugue",
+      "difficulty": 2,
+      "prompt": "Dans « Elle avait oublié son carnet », quel est le verbe conjugué ?",
+      "choices": ["oublié", "carnet", "avait oublié", "son"],
+      "correctIndex": 2,
+      "explanation": "« Avait oublié » forme le verbe « oublier » conjugué au plus-que-parfait."
+    },
+    {
+      "code": "F6-0128",
+      "microSkill": "f6_gra_identifier_verbe_conjugue",
+      "difficulty": 2,
+      "prompt": "Dans « Pour réussir, vous relisez la consigne », quel est le verbe conjugué ?",
+      "choices": ["réussir", "Pour", "consigne", "relisez"],
+      "correctIndex": 3,
+      "explanation": "« Relisez » est conjugué ; « réussir » est à l’infinitif."
+    },
+    {
+      "code": "F6-0129",
+      "microSkill": "f6_gra_identifier_verbe_conjugue",
+      "difficulty": 1,
+      "prompt": "Dans « La pluie cessait enfin », quel est le verbe conjugué ?",
+      "choices": ["cessait", "pluie", "enfin", "La"],
+      "correctIndex": 0,
+      "explanation": "« Cessait » est le verbe « cesser » conjugué à l’imparfait."
+    },
+    {
+      "code": "F6-0130",
+      "microSkill": "f6_gra_identifier_verbe_conjugue",
+      "difficulty": 2,
+      "prompt": "Dans « On doit respecter les règles », quel mot est le verbe conjugué ?",
+      "choices": ["respecter", "doit", "règles", "On"],
+      "correctIndex": 1,
+      "explanation": "« Doit » est conjugué ; « respecter » est à l’infinitif."
+    },
+    {
+      "code": "F6-0131",
+      "microSkill": "f6_gra_identifier_sujet",
+      "difficulty": 1,
+      "prompt": "Dans « Le chat dort sur le canapé », quel est le sujet du verbe « dort » ?",
+      "choices": ["sur le canapé", "dort", "Le chat", "le canapé"],
+      "correctIndex": 2,
+      "explanation": "C’est « Le chat » qui dort : ce groupe est le sujet."
+    },
+    {
+      "code": "F6-0132",
+      "microSkill": "f6_gra_identifier_sujet",
+      "difficulty": 1,
+      "prompt": "Dans « Ma sœur et moi préparons le repas », quel est le sujet de « préparons » ?",
+      "choices": ["le repas", "Ma sœur", "préparons", "Ma sœur et moi"],
+      "correctIndex": 3,
+      "explanation": "« Ma sœur et moi » commande l’accord de « préparons » à la première personne du pluriel."
+    },
+    {
+      "code": "F6-0133",
+      "microSkill": "f6_gra_identifier_sujet",
+      "difficulty": 1,
+      "prompt": "Dans « Les oiseaux chantent dès l’aube », quel est le sujet de « chantent » ?",
+      "choices": ["Les oiseaux", "dès l’aube", "chantent", "l’aube"],
+      "correctIndex": 0,
+      "explanation": "Ce sont « Les oiseaux » qui chantent : ce groupe est le sujet."
+    },
+    {
+      "code": "F6-0134",
+      "microSkill": "f6_gra_identifier_sujet",
+      "difficulty": 2,
+      "prompt": "Dans « Le petit chien de nos voisins aboie », quel est le groupe sujet de « aboie » ?",
+      "choices": ["de nos voisins", "Le petit chien de nos voisins", "aboie", "nos voisins"],
+      "correctIndex": 1,
+      "explanation": "Le sujet complet est « Le petit chien de nos voisins » ; tout ce groupe commande le singulier du verbe."
+    },
+    {
+      "code": "F6-0135",
+      "microSkill": "f6_gra_identifier_sujet",
+      "difficulty": 2,
+      "prompt": "Dans « Chaque matin, le boulanger ouvre sa boutique », quel est le sujet de « ouvre » ?",
+      "choices": ["Chaque matin", "sa boutique", "le boulanger", "matin"],
+      "correctIndex": 2,
+      "explanation": "C’est « le boulanger » qui ouvre ; « Chaque matin » indique le temps."
+    },
+    {
+      "code": "F6-0136",
+      "microSkill": "f6_gra_identifier_sujet",
+      "difficulty": 2,
+      "prompt": "Dans « Les clés de la maison sont dans ce tiroir », quel est le groupe sujet de « sont » ?",
+      "choices": ["de la maison", "dans ce tiroir", "la maison", "Les clés de la maison"],
+      "correctIndex": 3,
+      "explanation": "Le groupe complet « Les clés de la maison » est le sujet du verbe « sont »."
+    },
+    {
+      "code": "F6-0137",
+      "microSkill": "f6_gra_identifier_sujet",
+      "difficulty": 1,
+      "prompt": "Dans « Nous terminerons ce travail demain », quel est le sujet de « terminerons » ?",
+      "choices": ["Nous", "ce travail", "demain", "terminerons"],
+      "correctIndex": 0,
+      "explanation": "Le pronom « Nous » est le sujet de « terminerons »."
+    },
+    {
+      "code": "F6-0138",
+      "microSkill": "f6_gra_identifier_sujet",
+      "difficulty": 2,
+      "prompt": "Dans « Après la récréation, plusieurs élèves rangent la salle », quel est le sujet de « rangent » ?",
+      "choices": ["Après la récréation", "plusieurs élèves", "la salle", "la récréation"],
+      "correctIndex": 1,
+      "explanation": "Ce sont « plusieurs élèves » qui rangent la salle."
+    },
+    {
+      "code": "F6-0139",
+      "microSkill": "f6_gra_identifier_sujet",
+      "difficulty": 2,
+      "prompt": "Dans « La grande horloge du salon sonne midi », quel est le groupe sujet de « sonne » ?",
+      "choices": ["du salon", "midi", "La grande horloge du salon", "salon"],
+      "correctIndex": 2,
+      "explanation": "Le groupe sujet complet est « La grande horloge du salon »."
+    },
+    {
+      "code": "F6-0140",
+      "microSkill": "f6_gra_identifier_sujet",
+      "difficulty": 2,
+      "prompt": "Dans « Au printemps, les arbres du verger fleurissent », quel est le sujet de « fleurissent » ?",
+      "choices": ["Au printemps", "du verger", "fleurissent", "les arbres du verger"],
+      "correctIndex": 3,
+      "explanation": "Ce sont « les arbres du verger » qui fleurissent."
+    },
+    {
+      "code": "F6-0141",
+      "microSkill": "f6_gra_identifier_sujet_inverse",
+      "difficulty": 1,
+      "prompt": "Dans « Au loin brillent les étoiles », quel est le sujet inversé de « brillent » ?",
+      "choices": ["les étoiles", "Au loin", "brillent", "loin"],
+      "correctIndex": 0,
+      "explanation": "Ce sont « les étoiles » qui brillent ; le sujet est placé après le verbe."
+    },
+    {
+      "code": "F6-0142",
+      "microSkill": "f6_gra_identifier_sujet_inverse",
+      "difficulty": 1,
+      "prompt": "Dans « Où habite ton meilleur ami ? », quel est le sujet inversé de « habite » ?",
+      "choices": ["Où", "ton meilleur ami", "habite", "meilleur"],
+      "correctIndex": 1,
+      "explanation": "C’est « ton meilleur ami » qui habite ; le sujet est placé après le verbe."
+    },
+    {
+      "code": "F6-0143",
+      "microSkill": "f6_gra_identifier_sujet_inverse",
+      "difficulty": 1,
+      "prompt": "Dans « Quand reviendra-t-elle ? », quel est le sujet inversé de « reviendra » ?",
+      "choices": ["Quand", "reviendra", "elle", "Quand reviendra"],
+      "correctIndex": 2,
+      "explanation": "Le pronom « elle », repris après le verbe par « -t-elle », est le sujet inversé."
+    },
+    {
+      "code": "F6-0144",
+      "microSkill": "f6_gra_identifier_sujet_inverse",
+      "difficulty": 2,
+      "prompt": "Dans « Derrière la haie apparaît un chevreuil », quel est le sujet inversé de « apparaît » ?",
+      "choices": ["Derrière la haie", "la haie", "apparaît", "un chevreuil"],
+      "correctIndex": 3,
+      "explanation": "C’est « un chevreuil » qui apparaît ; le sujet suit le verbe."
+    },
+    {
+      "code": "F6-0145",
+      "microSkill": "f6_gra_identifier_sujet_inverse",
+      "difficulty": 2,
+      "prompt": "Dans « Sur la place dansaient des artistes costumés », quel est le sujet inversé de « dansaient » ?",
+      "choices": ["des artistes costumés", "Sur la place", "dansaient", "la place"],
+      "correctIndex": 0,
+      "explanation": "Ce sont « des artistes costumés » qui dansaient ; le sujet est placé après le verbe."
+    },
+    {
+      "code": "F6-0146",
+      "microSkill": "f6_gra_identifier_sujet_inverse",
+      "difficulty": 2,
+      "prompt": "Dans « Que prépare votre équipe ? », quel est le sujet inversé de « prépare » ?",
+      "choices": ["Que", "votre équipe", "prépare", "équipe"],
+      "correctIndex": 1,
+      "explanation": "C’est « votre équipe » qui prépare quelque chose ; « Que » est le complément placé en tête."
+    },
+    {
+      "code": "F6-0147",
+      "microSkill": "f6_gra_identifier_sujet_inverse",
+      "difficulty": 2,
+      "prompt": "Dans « Soudain retentit une forte détonation », quel est le sujet inversé de « retentit » ?",
+      "choices": ["Soudain", "retentit", "une forte détonation", "forte"],
+      "correctIndex": 2,
+      "explanation": "C’est « une forte détonation » qui retentit ; le sujet est placé après le verbe."
+    },
+    {
+      "code": "F6-0148",
+      "microSkill": "f6_gra_identifier_sujet_inverse",
+      "difficulty": 2,
+      "prompt": "Dans « Pourquoi rient-ils ? », quel est le sujet inversé de « rient » ?",
+      "choices": ["Pourquoi", "rient", "Pourquoi rient", "ils"],
+      "correctIndex": 3,
+      "explanation": "Le pronom « ils », placé après le verbe, est son sujet inversé."
+    },
+    {
+      "code": "F6-0149",
+      "microSkill": "f6_gra_identifier_sujet_inverse",
+      "difficulty": 2,
+      "prompt": "Dans « Près du rivage passent plusieurs voiliers », quel est le sujet inversé de « passent » ?",
+      "choices": ["plusieurs voiliers", "Près du rivage", "passent", "rivage"],
+      "correctIndex": 0,
+      "explanation": "Ce sont « plusieurs voiliers » qui passent ; le sujet suit le verbe."
+    },
+    {
+      "code": "F6-0150",
+      "microSkill": "f6_gra_identifier_sujet_inverse",
+      "difficulty": 2,
+      "prompt": "Dans « À quelle heure commence le spectacle ? », quel est le sujet inversé de « commence » ?",
+      "choices": ["À quelle heure", "le spectacle", "commence", "heure"],
+      "correctIndex": 1,
+      "explanation": "C’est « le spectacle » qui commence ; le groupe sujet est placé après le verbe."
+    },
+    {
+      "code": "F6-0151",
+      "microSkill": "f6_gra_identifier_cod",
+      "difficulty": 1,
+      "prompt": "Dans « Lina prépare un gâteau », quel est le COD du verbe « prépare » ?",
+      "choices": ["Lina", "prépare", "un gâteau", "gâteau"],
+      "correctIndex": 2,
+      "explanation": "Lina prépare quoi ? « un gâteau », directement après le verbe et sans préposition."
+    },
+    {
+      "code": "F6-0152",
+      "microSkill": "f6_gra_identifier_cod",
+      "difficulty": 1,
+      "prompt": "Dans « Le gardien ferme la grande grille », quel est le COD de « ferme » ?",
+      "choices": ["Le gardien", "ferme", "grille", "la grande grille"],
+      "correctIndex": 3,
+      "explanation": "Le gardien ferme quoi ? « la grande grille » : ce groupe est le COD."
+    },
+    {
+      "code": "F6-0153",
+      "microSkill": "f6_gra_identifier_cod",
+      "difficulty": 1,
+      "prompt": "Dans « Nous regardons les nuages », quel est le COD de « regardons » ?",
+      "choices": ["les nuages", "Nous", "regardons", "nuages"],
+      "correctIndex": 0,
+      "explanation": "Nous regardons quoi ? « les nuages », sans préposition."
+    },
+    {
+      "code": "F6-0154",
+      "microSkill": "f6_gra_identifier_cod",
+      "difficulty": 2,
+      "prompt": "Dans « Mon frère apprend une nouvelle chanson », quel est le COD de « apprend » ?",
+      "choices": ["Mon frère", "une nouvelle chanson", "apprend", "nouvelle"],
+      "correctIndex": 1,
+      "explanation": "Mon frère apprend quoi ? « une nouvelle chanson » : ce groupe est le COD."
+    },
+    {
+      "code": "F6-0155",
+      "microSkill": "f6_gra_identifier_cod",
+      "difficulty": 2,
+      "prompt": "Dans « La bibliothécaire range soigneusement les albums », quel est le COD de « range » ?",
+      "choices": ["La bibliothécaire", "soigneusement", "les albums", "range"],
+      "correctIndex": 2,
+      "explanation": "La bibliothécaire range quoi ? « les albums » ; « soigneusement » précise la manière."
+    },
+    {
+      "code": "F6-0156",
+      "microSkill": "f6_gra_identifier_cod",
+      "difficulty": 2,
+      "prompt": "Dans « Chaque soir, Yanis lit quelques pages », quel est le COD de « lit » ?",
+      "choices": ["Chaque soir", "Yanis", "lit", "quelques pages"],
+      "correctIndex": 3,
+      "explanation": "Yanis lit quoi ? « quelques pages » : ce groupe complète directement le verbe."
+    },
+    {
+      "code": "F6-0157",
+      "microSkill": "f6_gra_identifier_cod",
+      "difficulty": 2,
+      "prompt": "Dans « Je les retrouve devant le collège », quel pronom est COD de « retrouve » ?",
+      "choices": ["les", "Je", "devant le collège", "le collège"],
+      "correctIndex": 0,
+      "explanation": "Le pronom « les » répond à « je retrouve qui ? » et est placé directement devant le verbe."
+    },
+    {
+      "code": "F6-0158",
+      "microSkill": "f6_gra_identifier_cod",
+      "difficulty": 2,
+      "prompt": "Dans « Le professeur nous félicite », quel pronom est COD de « félicite » ?",
+      "choices": ["Le professeur", "nous", "félicite", "professeur"],
+      "correctIndex": 1,
+      "explanation": "Le professeur félicite qui ? « nous » : le pronom est COD."
+    },
+    {
+      "code": "F6-0159",
+      "microSkill": "f6_gra_identifier_cod",
+      "difficulty": 2,
+      "prompt": "Dans « Salomé offre un dessin à sa grand-mère », quel est le COD de « offre » ?",
+      "choices": ["Salomé", "à sa grand-mère", "un dessin", "sa grand-mère"],
+      "correctIndex": 2,
+      "explanation": "Salomé offre quoi ? « un dessin » est le COD ; « à sa grand-mère » est introduit par une préposition."
+    },
+    {
+      "code": "F6-0160",
+      "microSkill": "f6_gra_identifier_cod",
+      "difficulty": 2,
+      "prompt": "Dans « Les élèves présentent leur projet au jury », quel est le COD de « présentent » ?",
+      "choices": ["Les élèves", "au jury", "présentent", "leur projet"],
+      "correctIndex": 3,
+      "explanation": "Les élèves présentent quoi ? « leur projet » est le COD ; « au jury » est introduit par « à »."
+    }
+  ]
+}
