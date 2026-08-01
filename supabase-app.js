@@ -90,6 +90,35 @@
     }));
   }
 
+  async function loadValidationQuestions() {
+    const { data, error } = await getClient().rpc(
+      "get_validation_question_bank_v3"
+    );
+    if (error) throw error;
+    if (!Array.isArray(data)) {
+      throw new Error("La banque de validation recue est invalide.");
+    }
+    QUESTIONS = data.map((question) => ({
+      id: Number(question.id),
+      questionId: question.questionId,
+      questionVersionId: question.current.id,
+      subjectCode: question.subjectCode || "french",
+      subject: question.subject || "Francais",
+      domainCode: question.domainCode || question.domain,
+      subcategoryCode: question.subcategoryCode || question.competenceId,
+      subcategory: question.subcategory || question.competence,
+      competenceId: question.competenceId,
+      domaine: question.domain,
+      competence: question.competence,
+      difficulte: Number(question.difficulty),
+      question: question.current.prompt,
+      choix: question.current.choices.map((choice) => choice.text),
+      choiceIds: question.current.choices.map((choice) => choice.id),
+      reponse: null,
+      version: Number(question.current.number),
+      source: "supabase"
+    }));
+  }
   async function loadDiagnosticHistory(validationCampaignId = null) {
     const { data, error } = validationCampaignId
       ? await getClient().rpc(
@@ -155,7 +184,11 @@
     }
 
     if (loadQuestions) {
-      await loadPublishedQuestions();
+      if (validationCampaignId) {
+        await loadValidationQuestions();
+      } else {
+        await loadPublishedQuestions();
+      }
       await loadDiagnosticHistory(validationCampaignId);
     }
     return {
