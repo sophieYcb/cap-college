@@ -230,7 +230,9 @@ async function startTest(){
       remoteSessionId=remote.session_id;
       remoteDiagnosticId=remote.diagnostic_id;
     }catch(error){
-      alert('Le diagnostic en ligne n’a pas pu démarrer. Réessaie dans un instant.');
+      const reason=String(error?.message||error||'Erreur inconnue');
+      console.error('Démarrage du diagnostic refusé :',error);
+      alert(`Le diagnostic en ligne n’a pas pu démarrer.\n\nDétail : ${reason}`);
       return;
     }
   }
