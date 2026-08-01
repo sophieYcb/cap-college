@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Connexion enfant — Cap Collège</title><link rel="stylesheet" href="styles.css?v=5.3.24">
+</head>
+<body>
+<main class="page auth-page">
+<header class="topbar"><a class="brand" href="index.html"><div class="logo">C</div><span>Cap Collège</span></a><div class="badge">Espace enfant</div></header>
+<section class="card auth-card">
+<h1>Connexion enfant</h1>
+<p>Utilise l’identifiant donné par ton parent ou ton enseignant. Aucune adresse e-mail n’est nécessaire.</p>
+<form id="learnerLoginForm">
+<label>Identifiant enfant<input id="accessCode" autocomplete="username" autocapitalize="characters" spellcheck="false" maxlength="14" placeholder="ABCD-EF12-3456" required></label>
+<label>PIN à 6 chiffres<input id="learnerLoginPin" type="password" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="current-password" required></label>
+<button class="btn btn-primary" id="learnerLoginButton" type="submit">Me connecter</button>
+</form>
+<p id="learnerLoginMessage" class="notice hidden" aria-live="polite"></p>
+<p class="auth-alternative"><a href="login.html">Connexion parent ou enseignant</a></p>
+</section></main>
+<script src="supabase-config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-app.js?v=5.3.24"></script><script src="connexion-enfant.js?v=5.3.24"></script>
+</body></html>

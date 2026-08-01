@@ -8,6 +8,9 @@ function escapeHtml(value) {
   element.textContent = String(value || "");
   return element.innerHTML;
 }
+function formatProfileCode(value) {
+  return String(value || "").replace(/(.{4})(?=.)/g, "$1-");
+}
 function renderProfiles(profiles) {
   count.textContent = `${profiles.length} profil${profiles.length > 1 ? "s" : ""}`;
   if (!profiles.length) {
@@ -17,7 +20,7 @@ function renderProfiles(profiles) {
   list.innerHTML = profiles.map(profile => `
     <article class="learner-profile-card">
       <div class="learner-avatar">${escapeHtml(profile.display_name).charAt(0).toUpperCase()}</div>
-      <div><strong>${escapeHtml(profile.display_name)}</strong><p>${escapeHtml(profile.level_name)} · ${profile.relationship_type === "teacher" ? "Élève" : "Enfant"}</p></div>
+      <div><strong>${escapeHtml(profile.display_name)}</strong><p>${escapeHtml(profile.level_name)} · ${profile.relationship_type === "teacher" ? "Élève" : "Enfant"}</p><p class="learner-access-code">Identifiant : <code>${formatProfileCode(profile.access_code)}</code></p></div>
       <span class="learner-pin-badge">PIN protégé</span>
     </article>`).join("");
 }

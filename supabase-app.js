@@ -534,6 +534,41 @@
     if (error) throw error;
     return data;
   }
+  const LEARNER_TOKEN_KEY = "cap_college_learner_session";
+
+  async function openLearnerSession(accessCode, pin) {
+    const { data, error } = await getClient().rpc(
+      "open_learner_session",
+      { requested_access_code: accessCode, requested_pin: pin }
+    );
+    if (error) throw error;
+    if (!data || data.success !== true || !data.token) {
+      throw new Error(data?.message || "Identifiant ou PIN incorrect.");
+    }
+    localStorage.setItem(LEARNER_TOKEN_KEY, data.token);
+    return data.profile;
+  }
+
+  async function getLearnerSession() {
+    const token = localStorage.getItem(LEARNER_TOKEN_KEY);
+    if (!token) return null;
+    const { data, error } = await getClient().rpc(
+      "get_learner_session", { requested_token: token }
+    );
+    if (error) throw error;
+    if (!data) localStorage.removeItem(LEARNER_TOKEN_KEY);
+    return data || null;
+  }
+
+  async function closeLearnerSession() {
+    const token = localStorage.getItem(LEARNER_TOKEN_KEY);
+    localStorage.removeItem(LEARNER_TOKEN_KEY);
+    if (!token) return;
+    const { error } = await getClient().rpc(
+      "close_learner_session", { requested_token: token }
+    );
+    if (error) throw error;
+  }
   function appendScript(source) {
     return new Promise((resolve, reject) => {
       const script = document.createElement("script");
@@ -569,6 +604,9 @@
     getValidationQuestionBank,
     importDraftQuestionLot,
     createLearnerProfile,
+    openLearnerSession,
+    getLearnerSession,
+    closeLearnerSession,
     getLearnerProfiles,
     getRemediationQuestions,
     getRoles: () => activeRole ? [activeRole] : [],
