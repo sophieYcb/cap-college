@@ -516,6 +516,24 @@
     return Array.isArray(data) ? data[0] : data;
   }
 
+  async function getLearnerProfiles() {
+    const { data, error } = await getClient().rpc("get_my_learner_profiles");
+    if (error) throw error;
+    return Array.isArray(data) ? data : [];
+  }
+
+  async function createLearnerProfile(displayName, levelCode, pin) {
+    const { data, error } = await getClient().rpc(
+      "create_my_learner_profile",
+      {
+        requested_display_name: displayName,
+        requested_level_code: levelCode,
+        requested_pin: pin
+      }
+    );
+    if (error) throw error;
+    return data;
+  }
   function appendScript(source) {
     return new Promise((resolve, reject) => {
       const script = document.createElement("script");
@@ -550,6 +568,8 @@
     getValidationCampaigns,
     getValidationQuestionBank,
     importDraftQuestionLot,
+    createLearnerProfile,
+    getLearnerProfiles,
     getRemediationQuestions,
     getRoles: () => activeRole ? [activeRole] : [],
     getAvailableRoles: () => [...roles],

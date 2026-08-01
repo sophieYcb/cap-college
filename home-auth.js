@@ -80,9 +80,14 @@ CapCollegeSupabase.bootstrap()
     }
     if (activeRole === "guardian" || activeRole === "teacher") {
       const notice = document.getElementById("profileWorkspaceNotice");
+      const profilesLink = document.getElementById("learnerProfilesLink");
       notice.textContent = activeRole === "guardian"
-        ? "L’espace Parent sera ajouté dans une prochaine étape."
-        : "L’espace Enseignant sera ajouté dans une prochaine étape.";
+        ? "Créez ici les profils de vos enfants, sans adresse e-mail."
+        : "Créez ici les profils de vos élèves, sans adresse e-mail.";
+      profilesLink.textContent = activeRole === "guardian"
+        ? "Gérer mes enfants"
+        : "Gérer mes élèves";
+      profilesLink.classList.remove("hidden");
       notice.classList.remove("hidden");
     }
 

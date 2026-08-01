@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Profils enfants — Cap Collège</title><link rel="stylesheet" href="styles.css?v=5.3.23">
+</head>
+<body>
+<main class="page learner-profile-page">
+<nav class="page-navigation"><div class="breadcrumbs"><a href="index.html">Accueil</a><span class="breadcrumb-separator">›</span><span aria-current="page">Profils enfants</span></div></nav>
+<section class="card learner-profile-intro"><div><span class="small" id="workspaceLabel">Espace adulte</span><h1 id="pageTitle">Profils enfants</h1><p>Créez un profil sans adresse e-mail. Son PIN à 6 chiffres protège sa progression.</p></div></section>
+<div class="learner-profile-layout">
+<section class="card"><h2>Ajouter un profil</h2>
+<form id="learnerProfileForm" class="learner-profile-form">
+<label>Prénom ou pseudonyme<input id="learnerName" maxlength="80" autocomplete="off" required></label>
+<label>Niveau scolaire<select id="learnerLevel" required><option value="6e">6e</option><option value="5e">5e</option><option value="4e">4e</option><option value="3e">3e</option></select></label>
+<label>Code PIN à 6 chiffres<input id="learnerPin" type="password" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="new-password" required></label>
+<label>Confirmer le PIN<input id="learnerPinConfirmation" type="password" inputmode="numeric" pattern="[0-9]{6}" minlength="6" maxlength="6" autocomplete="new-password" required></label>
+<p class="small">Le PIN est obligatoire et n’est jamais affiché ni enregistré en clair.</p>
+<button class="btn btn-primary" id="createLearnerButton" type="submit">Créer le profil</button>
+<p class="review-save-status" id="profileFormStatus" role="status"></p>
+</form></section>
+<section class="card"><div class="learner-list-heading"><div><h2 id="listTitle">Profils existants</h2><p class="muted" id="profileCount"></p></div></div><div class="learner-profile-list" id="learnerProfileList"><p class="muted">Chargement…</p></div></section>
+</div></main>
+<script src="supabase-config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-app.js?v=5.3.23"></script><script src="profils-enfants.js?v=5.3.23"></script>
+</body></html>
