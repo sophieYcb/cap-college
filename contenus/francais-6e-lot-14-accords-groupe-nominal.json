@@ -1,0 +1,464 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "french",
+  "level": "6e",
+  "domain": {
+    "code": "spelling",
+    "name": "Orthographe"
+  },
+  "skill": {
+    "code": "f6_noun_phrase_agreement",
+    "name": "Accords dans le groupe nominal"
+  },
+  "lot": "F6-ORT-14",
+  "status": "draft",
+  "source": "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "f6_ort_former_pluriel_regulier",
+      "teacherName": "Former un pluriel régulier",
+      "studentName": "Former un pluriel régulier",
+      "lessonReminder": "Dans le cas général, on forme le pluriel des noms et des adjectifs en ajoutant un s.",
+      "workedExample": "« un cahier neuf » devient « des cahiers neufs ».",
+      "masteryCriteria": "Transformer correctement au pluriel un groupe nominal dont le nom et l’adjectif suivent la règle générale."
+    },
+    {
+      "code": "f6_ort_accorder_gn_genre",
+      "teacherName": "Réaliser les accords en genre dans le groupe nominal",
+      "studentName": "Accorder le groupe nominal au masculin ou au féminin",
+      "lessonReminder": "Le déterminant et l’adjectif s’accordent en genre avec le nom noyau du groupe nominal.",
+      "workedExample": "Dans « une chemise bleue », le déterminant et l’adjectif sont au féminin comme « chemise ».",
+      "masteryCriteria": "Choisir les formes masculines ou féminines qui conviennent au nom noyau."
+    },
+    {
+      "code": "f6_ort_accorder_gn_nombre",
+      "teacherName": "Réaliser les accords en nombre dans le groupe nominal",
+      "studentName": "Accorder le groupe nominal au singulier ou au pluriel",
+      "lessonReminder": "Le déterminant et l’adjectif s’accordent en nombre avec le nom noyau du groupe nominal.",
+      "workedExample": "Dans « ces grandes maisons », les mots du groupe nominal portent les marques du pluriel.",
+      "masteryCriteria": "Accorder en nombre le déterminant, le nom et l’adjectif d’un groupe nominal."
+    }
+  ],
+  "questions": [
+    {
+      "code": "F6-0429",
+      "microSkill": "f6_ort_former_pluriel_regulier",
+      "difficulty": 1,
+      "prompt": "Mets « un cahier neuf » au pluriel.",
+      "choices": [
+        "des cahiers neufs",
+        "des cahier neufs",
+        "des cahiers neuf",
+        "des cahier neuf"
+      ],
+      "correctIndex": 0,
+      "explanation": "« cahier » et « neuf » prennent un s."
+    },
+    {
+      "code": "F6-0430",
+      "microSkill": "f6_ort_former_pluriel_regulier",
+      "difficulty": 1,
+      "prompt": "Mets « une fleur rouge » au pluriel.",
+      "choices": [
+        "des fleur rouges",
+        "des fleurs rouges",
+        "des fleurs rouge",
+        "des fleur rouge"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le nom et l’adjectif prennent la marque du pluriel."
+    },
+    {
+      "code": "F6-0431",
+      "microSkill": "f6_ort_former_pluriel_regulier",
+      "difficulty": 1,
+      "prompt": "Quel est le pluriel de « un petit navire » ?",
+      "choices": [
+        "des petit navires",
+        "des petits navire",
+        "des petits navires",
+        "des petites navires"
+      ],
+      "correctIndex": 2,
+      "explanation": "« navire » et « petit » prennent un s."
+    },
+    {
+      "code": "F6-0432",
+      "microSkill": "f6_ort_former_pluriel_regulier",
+      "difficulty": 1,
+      "prompt": "Mets « cette longue route » au pluriel.",
+      "choices": [
+        "ces longue routes",
+        "ces longues route",
+        "cette longues routes",
+        "ces longues routes"
+      ],
+      "correctIndex": 3,
+      "explanation": "Au pluriel, on écrit « ces longues routes »."
+    },
+    {
+      "code": "F6-0433",
+      "microSkill": "f6_ort_former_pluriel_regulier",
+      "difficulty": 2,
+      "prompt": "Mets « un exercice difficile » au pluriel.",
+      "choices": [
+        "des exercices difficiles",
+        "des exercice difficiles",
+        "des exercices difficile",
+        "des exercices difficileses"
+      ],
+      "correctIndex": 0,
+      "explanation": "« exercices » et « difficiles » prennent chacun un s."
+    },
+    {
+      "code": "F6-0434",
+      "microSkill": "f6_ort_former_pluriel_regulier",
+      "difficulty": 2,
+      "prompt": "Mets « la porte fermée » au pluriel.",
+      "choices": [
+        "les porte fermées",
+        "les portes fermées",
+        "les portes fermé",
+        "les portes fermés"
+      ],
+      "correctIndex": 1,
+      "explanation": "« portes » et « fermées » sont au féminin pluriel."
+    },
+    {
+      "code": "F6-0435",
+      "microSkill": "f6_ort_former_pluriel_regulier",
+      "difficulty": 2,
+      "prompt": "Mets « un résultat utile » au pluriel.",
+      "choices": [
+        "des résultat utiles",
+        "des résultats utile",
+        "des résultats utiles",
+        "des résultats utilent"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le nom et l’adjectif prennent chacun un s."
+    },
+    {
+      "code": "F6-0436",
+      "microSkill": "f6_ort_former_pluriel_regulier",
+      "difficulty": 2,
+      "prompt": "Mets « une réponse correcte » au pluriel.",
+      "choices": [
+        "des réponse correctes",
+        "des réponses correcte",
+        "des réponses corrects",
+        "des réponses correctes"
+      ],
+      "correctIndex": 3,
+      "explanation": "On écrit « des réponses correctes »."
+    },
+    {
+      "code": "F6-0437",
+      "microSkill": "f6_ort_former_pluriel_regulier",
+      "difficulty": 2,
+      "prompt": "Quel groupe nominal est correctement mis au pluriel ?",
+      "choices": [
+        "des solides remparts",
+        "des solide remparts",
+        "des solides rempart",
+        "des solides rempartes"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le nom et l’adjectif portent la marque du pluriel."
+    },
+    {
+      "code": "F6-0438",
+      "microSkill": "f6_ort_former_pluriel_regulier",
+      "difficulty": 3,
+      "prompt": "Mets « une curieuse découverte » au pluriel.",
+      "choices": [
+        "des curieuse découvertes",
+        "des curieuses découvertes",
+        "des curieuses découverte",
+        "des curieusent découvertes"
+      ],
+      "correctIndex": 1,
+      "explanation": "On écrit « des curieuses découvertes »."
+    },
+    {
+      "code": "F6-0439",
+      "microSkill": "f6_ort_accorder_gn_genre",
+      "difficulty": 1,
+      "prompt": "Complète : « une veste ___ ».",
+      "choices": [
+        "léger",
+        "légers",
+        "légère",
+        "légères"
+      ],
+      "correctIndex": 2,
+      "explanation": "« veste » est féminin singulier : « légère »."
+    },
+    {
+      "code": "F6-0440",
+      "microSkill": "f6_ort_accorder_gn_genre",
+      "difficulty": 1,
+      "prompt": "Complète : « un voisin ___ ».",
+      "choices": [
+        "discrète",
+        "discrètes",
+        "discrets",
+        "discret"
+      ],
+      "correctIndex": 3,
+      "explanation": "« voisin » est masculin singulier : « discret »."
+    },
+    {
+      "code": "F6-0441",
+      "microSkill": "f6_ort_accorder_gn_genre",
+      "difficulty": 1,
+      "prompt": "Quel groupe nominal est correctement accordé ?",
+      "choices": [
+        "une chatte noire",
+        "un chatte noir",
+        "une chat noire",
+        "une chatte noir"
+      ],
+      "correctIndex": 0,
+      "explanation": "« chatte » est féminin : « une chatte noire »."
+    },
+    {
+      "code": "F6-0442",
+      "microSkill": "f6_ort_accorder_gn_genre",
+      "difficulty": 1,
+      "prompt": "Quel groupe nominal est correctement accordé ?",
+      "choices": [
+        "un actrice talentueux",
+        "une actrice talentueuse",
+        "une acteur talentueuse",
+        "un actrice talentueuse"
+      ],
+      "correctIndex": 1,
+      "explanation": "« actrice » est féminin : « une actrice talentueuse »."
+    },
+    {
+      "code": "F6-0443",
+      "microSkill": "f6_ort_accorder_gn_genre",
+      "difficulty": 2,
+      "prompt": "Complète : « une histoire ___ ».",
+      "choices": [
+        "passionnant",
+        "passionnants",
+        "passionnante",
+        "passionnantes"
+      ],
+      "correctIndex": 2,
+      "explanation": "« histoire » est féminin singulier : « passionnante »."
+    },
+    {
+      "code": "F6-0444",
+      "microSkill": "f6_ort_accorder_gn_genre",
+      "difficulty": 2,
+      "prompt": "Complète : « un chemin ___ ».",
+      "choices": [
+        "étroite",
+        "étroites",
+        "étroits",
+        "étroit"
+      ],
+      "correctIndex": 3,
+      "explanation": "« chemin » est masculin singulier : « étroit »."
+    },
+    {
+      "code": "F6-0445",
+      "microSkill": "f6_ort_accorder_gn_genre",
+      "difficulty": 2,
+      "prompt": "Choisis la forme correctement accordée.",
+      "choices": [
+        "cette longue journée",
+        "ce longue journée",
+        "cette long journée",
+        "ce long journée"
+      ],
+      "correctIndex": 0,
+      "explanation": "« journée » est féminin : « cette longue journée »."
+    },
+    {
+      "code": "F6-0446",
+      "microSkill": "f6_ort_accorder_gn_genre",
+      "difficulty": 2,
+      "prompt": "Choisis la forme correctement accordée.",
+      "choices": [
+        "un réponse exacte",
+        "une réponse exacte",
+        "une réponse exact",
+        "un réponse exact"
+      ],
+      "correctIndex": 1,
+      "explanation": "« réponse » est féminin : « une réponse exacte »."
+    },
+    {
+      "code": "F6-0447",
+      "microSkill": "f6_ort_accorder_gn_genre",
+      "difficulty": 3,
+      "prompt": "Complète : « une solution ___ et efficace ».",
+      "choices": [
+        "ingénieux",
+        "ingénieuses",
+        "ingénieuse",
+        "ingénieuxes"
+      ],
+      "correctIndex": 2,
+      "explanation": "Les adjectifs se rapportent au nom féminin singulier « solution »."
+    },
+    {
+      "code": "F6-0448",
+      "microSkill": "f6_ort_accorder_gn_genre",
+      "difficulty": 3,
+      "prompt": "Quel groupe nominal respecte l’accord en genre ?",
+      "choices": [
+        "une renard rusée",
+        "un renarde rusé",
+        "une renarde rusé",
+        "une renarde rusée"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le nom féminin « renarde » commande « une » et « rusée »."
+    },
+    {
+      "code": "F6-0449",
+      "microSkill": "f6_ort_accorder_gn_nombre",
+      "difficulty": 1,
+      "prompt": "Complète : « ces ___ maisons ».",
+      "choices": [
+        "grandes",
+        "grande",
+        "grands",
+        "grand"
+      ],
+      "correctIndex": 0,
+      "explanation": "« ces maisons » est féminin pluriel : « grandes »."
+    },
+    {
+      "code": "F6-0450",
+      "microSkill": "f6_ort_accorder_gn_nombre",
+      "difficulty": 1,
+      "prompt": "Choisis le groupe nominal correctement accordé.",
+      "choices": [
+        "plusieurs route étroite",
+        "plusieurs routes étroites",
+        "plusieurs routes étroite",
+        "plusieurs route étroites"
+      ],
+      "correctIndex": 1,
+      "explanation": "Après « plusieurs », le nom et l’adjectif sont au pluriel."
+    },
+    {
+      "code": "F6-0451",
+      "microSkill": "f6_ort_accorder_gn_nombre",
+      "difficulty": 1,
+      "prompt": "Complète : « chaque ___ détail ».",
+      "choices": [
+        "petits",
+        "petites",
+        "petit",
+        "petite"
+      ],
+      "correctIndex": 2,
+      "explanation": "« chaque » commande le singulier : « petit »."
+    },
+    {
+      "code": "F6-0452",
+      "microSkill": "f6_ort_accorder_gn_nombre",
+      "difficulty": 1,
+      "prompt": "Choisis le groupe nominal correctement accordé.",
+      "choices": [
+        "des ancien villages",
+        "des anciens village",
+        "un anciens villages",
+        "des anciens villages"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le déterminant, le nom et l’adjectif sont au pluriel."
+    },
+    {
+      "code": "F6-0453",
+      "microSkill": "f6_ort_accorder_gn_nombre",
+      "difficulty": 2,
+      "prompt": "Complète : « leurs idées ___ ».",
+      "choices": [
+        "originales",
+        "originale",
+        "originaux",
+        "original"
+      ],
+      "correctIndex": 0,
+      "explanation": "« idées » est féminin pluriel : « originales »."
+    },
+    {
+      "code": "F6-0454",
+      "microSkill": "f6_ort_accorder_gn_nombre",
+      "difficulty": 2,
+      "prompt": "Quel groupe nominal est correctement accordé au singulier ?",
+      "choices": [
+        "ces hautes tours",
+        "cette haute tour",
+        "ces haute tour",
+        "cette hautes tours"
+      ],
+      "correctIndex": 1,
+      "explanation": "« cette haute tour » est entièrement au singulier."
+    },
+    {
+      "code": "F6-0455",
+      "microSkill": "f6_ort_accorder_gn_nombre",
+      "difficulty": 2,
+      "prompt": "Complète : « deux exercices ___ ».",
+      "choices": [
+        "terminé",
+        "terminée",
+        "terminés",
+        "terminées"
+      ],
+      "correctIndex": 2,
+      "explanation": "« exercices » est masculin pluriel : « terminés »."
+    },
+    {
+      "code": "F6-0456",
+      "microSkill": "f6_ort_accorder_gn_nombre",
+      "difficulty": 2,
+      "prompt": "Choisis la phrase correctement accordée.",
+      "choices": [
+        "Cette élèves attentives écoutent.",
+        "Ces élève attentive écoutent.",
+        "Ces élèves attentive écoutent.",
+        "Ces élèves attentives écoutent."
+      ],
+      "correctIndex": 3,
+      "explanation": "« ces », « élèves » et « attentives » sont au pluriel."
+    },
+    {
+      "code": "F6-0457",
+      "microSkill": "f6_ort_accorder_gn_nombre",
+      "difficulty": 3,
+      "prompt": "Quel groupe nominal respecte tous les accords en nombre ?",
+      "choices": [
+        "mes nouveaux voisins",
+        "mon nouveaux voisins",
+        "mes nouveau voisin",
+        "mes nouveaux voisin"
+      ],
+      "correctIndex": 0,
+      "explanation": "Tous les mots variables sont au pluriel."
+    },
+    {
+      "code": "F6-0458",
+      "microSkill": "f6_ort_accorder_gn_nombre",
+      "difficulty": 3,
+      "prompt": "Complète : « aucun bruit ___ ».",
+      "choices": [
+        "étranges",
+        "étrange",
+        "étrangères",
+        "étrangère"
+      ],
+      "correctIndex": 1,
+      "explanation": "Après « aucun », le groupe nominal reste au singulier."
+    }
+  ]
+}
