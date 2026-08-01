@@ -64,7 +64,7 @@ function updateDiagnosticSkills(){
   const themes=[...new Map(
     QUESTIONS.filter(q=>(q.subjectCode||'french')===subject)
       .filter(q=>domain==='all'||(q.domainCode||q.domaine)===domain)
-      .map(q=>[q.competenceId,q.competence])
+      .map(q=>[q.subcategoryCode||q.competenceId,q.subcategory||q.competence])
   ).entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr'));
   document.getElementById('diagnosticSkill').innerHTML=
     '<option value="all">Toutes les sous-catégories</option>'+
@@ -115,7 +115,7 @@ function buildBalancedDiagnostic(selectedSkill='all',limit=DIAGNOSTIC_SIZE){
     .filter(q=>domain==='all'||(q.domainCode||q.domaine)===domain);
   if(selectedSkill!=='all'){
     return prioritiseQuestions(
-      scopedQuestions.filter(q=>q.competenceId===selectedSkill)
+      scopedQuestions.filter(q=>(q.subcategoryCode||q.competenceId)===selectedSkill)
     ).slice(0,limit);
   }
   const groups={};
@@ -147,7 +147,7 @@ function buildBalancedDiagnostic(selectedSkill='all',limit=DIAGNOSTIC_SIZE){
 function restoreDiagnosticSelection(skillId='all',subjectCode=null){
   const matching=skillId==='all'
     ?QUESTIONS.find(q=>(q.subjectCode||'french')===(subjectCode||'french'))
-    :QUESTIONS.find(q=>q.competenceId===skillId);
+    :QUESTIONS.find(q=>(q.subcategoryCode||q.competenceId)===skillId);
   const subject=subjectCode||matching?.subjectCode||'french';
   const subjectSelect=document.getElementById('diagnosticSubject');
   if(subjectSelect.querySelector(`option[value="${subject}"]`)){
@@ -220,7 +220,7 @@ async function startTest(){
     try{
       const remote=await CapCollegeSupabase.startDiagnostic(
         plannedMinutes,
-        selectedSkill,
+        'all',
         VALIDATION_CAMPAIGN_ID,
         selectedSubject
       );
@@ -483,24 +483,16 @@ function renderQuestion(){
   document.getElementById('counter').textContent=`Question ${displayedNumber} · ${displayedAnswered} réponse${displayedAnswered>1?'s':''} enregistrée${displayedAnswered>1?'s':''}`;
   document.getElementById('topDomain').textContent=q.domaine;
   document.getElementById('domainBadge').textContent=`Domaine : ${q.domaine}`;
-  document.getElementById('skillBadge').textContent=`Thème : ${q.competence}`;
+  document.getElementById('skillBadge').textContent=`Sous-catégorie : ${q.subcategory||q.competence}`;
 
   const tense=document.getElementById('tenseBadge');
-  if(q.domaine==='Conjugaison'){
-    tense.textContent=`Temps attendu : ${q.competence}`;
-    tense.classList.remove('hidden');
-    document.getElementById('questionText').textContent=`[${q.competence}] ${q.question}`;
-    document.getElementById('questionVisual').replaceChildren();
-    document.getElementById('questionVisual').classList.add('hidden');
-  }else{
-    tense.textContent='';
-    tense.classList.add('hidden');
-    CapCollegeQuestionVisuals.render(
-      document.getElementById('questionText'),
-      document.getElementById('questionVisual'),
-      q.question
-    );
-  }
+  tense.textContent='';
+  tense.classList.add('hidden');
+  CapCollegeQuestionVisuals.render(
+    document.getElementById('questionText'),
+    document.getElementById('questionVisual'),
+    q.question
+  );
 
   document.getElementById('prevBtn').disabled=current===0;
   document.getElementById('nextBtn').textContent=current===diagnosticQuestions.length-1?'Terminer la séance':'Suivante';
