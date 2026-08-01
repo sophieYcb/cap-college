@@ -1,0 +1,168 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "french",
+  "level": "6e",
+  "domain": {
+    "code": "spelling",
+    "name": "Orthographe"
+  },
+  "skill": {
+    "code": "f6_lexical_spelling",
+    "name": "Orthographe lexicale"
+  },
+  "lot": "F6-ORT-15",
+  "status": "draft",
+  "source": "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "f6_ort_utiliser_famille_mots",
+      "teacherName": "Utiliser une famille de mots pour orthographier",
+      "studentName": "Utiliser un mot de la même famille pour bien écrire",
+      "lessonReminder": "Un mot de la même famille peut faire entendre une lettre finale muette ou confirmer une partie difficile à orthographier.",
+      "workedExample": "« longueur » aide à retrouver le g final de « long ».",
+      "masteryCriteria": "S’appuyer sur un mot de la même famille pour choisir l’orthographe correcte d’un mot."
+    }
+  ],
+  "questions": [
+    {
+      "code": "F6-0459",
+      "microSkill": "f6_ort_utiliser_famille_mots",
+      "difficulty": 1,
+      "prompt": "« grandeur » aide à retrouver la lettre finale de « gran_ ». Quel mot faut-il écrire ?",
+      "choices": [
+        "grand",
+        "grant",
+        "gran",
+        "granc"
+      ],
+      "correctIndex": 0,
+      "explanation": "« grandeur » appartient à la famille de « grand » et fait entendre le d."
+    },
+    {
+      "code": "F6-0460",
+      "microSkill": "f6_ort_utiliser_famille_mots",
+      "difficulty": 1,
+      "prompt": "« dentiste » aide à écrire correctement quel mot ?",
+      "choices": [
+        "dend",
+        "dent",
+        "den",
+        "dant"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le t de « dent » s’entend dans « dentiste »."
+    },
+    {
+      "code": "F6-0461",
+      "microSkill": "f6_ort_utiliser_famille_mots",
+      "difficulty": 1,
+      "prompt": "« laitage » aide à compléter « le lai_ ». Quel mot faut-il écrire ?",
+      "choices": [
+        "laid",
+        "lai",
+        "lait",
+        "laits"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le t final de « lait » s’entend dans le mot de la même famille « laitage »."
+    },
+    {
+      "code": "F6-0462",
+      "microSkill": "f6_ort_utiliser_famille_mots",
+      "difficulty": 1,
+      "prompt": "« border » aide à compléter « bor_ ». Quelle orthographe est correcte ?",
+      "choices": [
+        "bort",
+        "bor",
+        "borc",
+        "bord"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le verbe « border » fait entendre le d final de « bord »."
+    },
+    {
+      "code": "F6-0463",
+      "microSkill": "f6_ort_utiliser_famille_mots",
+      "difficulty": 2,
+      "prompt": "« camper » aide à retrouver la lettre finale de « cam_ ». Quel mot faut-il écrire ?",
+      "choices": [
+        "camp",
+        "cant",
+        "cam",
+        "cand"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le p final de « camp » s’entend dans « camper »."
+    },
+    {
+      "code": "F6-0464",
+      "microSkill": "f6_ort_utiliser_famille_mots",
+      "difficulty": 2,
+      "prompt": "« sanguin » permet de retrouver l’orthographe de quel mot ?",
+      "choices": [
+        "sant",
+        "sang",
+        "san",
+        "sanc"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le g final de « sang » apparaît dans le mot de la même famille « sanguin »."
+    },
+    {
+      "code": "F6-0465",
+      "microSkill": "f6_ort_utiliser_famille_mots",
+      "difficulty": 2,
+      "prompt": "« toiture » aide à compléter « toi_ ». Quelle orthographe est correcte ?",
+      "choices": [
+        "toid",
+        "tois",
+        "toit",
+        "toix"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le t final de « toit » s’entend dans « toiture »."
+    },
+    {
+      "code": "F6-0466",
+      "microSkill": "f6_ort_utiliser_famille_mots",
+      "difficulty": 2,
+      "prompt": "« chanter » aide à retrouver la lettre finale de « chan_ ». Quel mot faut-il écrire ?",
+      "choices": [
+        "chand",
+        "chanc",
+        "chan",
+        "chant"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le t final de « chant » s’entend dans « chanter »."
+    },
+    {
+      "code": "F6-0467",
+      "microSkill": "f6_ort_utiliser_famille_mots",
+      "difficulty": 3,
+      "prompt": "« longueur » permet de choisir l’orthographe correcte. Laquelle ?",
+      "choices": [
+        "long",
+        "lonc",
+        "lond",
+        "lont"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le g final de « long » est confirmé par « longueur »."
+    },
+    {
+      "code": "F6-0468",
+      "microSkill": "f6_ort_utiliser_famille_mots",
+      "difficulty": 3,
+      "prompt": "« regarder » aide à compléter « un regar_ ». Quel nom faut-il écrire ?",
+      "choices": [
+        "regart",
+        "regard",
+        "regar",
+        "regards"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le d final de « regard » s’entend dans « regarder »."
+    }
+  ]
+}
