@@ -1,0 +1,620 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "french",
+    "level":  "6e",
+    "domain":  {
+                   "code":  "conjugation",
+                   "name":  "Conjugaison"
+               },
+    "skill":  {
+                  "code":  "f6_construction_usage",
+                  "name":  "Construction et emploi des verbes"
+              },
+    "lot":  "F6-CON-12",
+    "status":  "draft",
+    "source":  "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+    "microSkills":  [
+                        {
+                            "code":  "f6_con_variation_radical",
+                            "teacherName":  "Appliquer une variation du radical",
+                            "studentName":  "Adapter le radical quand le verbe change",
+                            "lessonReminder":  "Certains verbes modifient leur radical ou leur graphie selon la personne afin de conserver leur prononciation.",
+                            "workedExample":  "Le verbe « appeler » double le l dans « j’appelle », mais pas dans « nous appelons ».",
+                            "masteryCriteria":  "Choisir la forme dont le radical est correctement adapté à la personne."
+                        },
+                        {
+                            "code":  "f6_con_identifier_radical",
+                            "teacherName":  "Identifier le radical d’un verbe",
+                            "studentName":  "Repérer le radical d’un verbe",
+                            "lessonReminder":  "Le radical porte le sens principal du verbe. Pour un verbe régulier, on le trouve en retirant la terminaison de l’infinitif ou de la forme conjuguée.",
+                            "workedExample":  "Dans « chanter », le radical est « chant- ».",
+                            "masteryCriteria":  "Isoler correctement le radical d’un verbe régulier."
+                        },
+                        {
+                            "code":  "f6_con_identifier_marque_personne",
+                            "teacherName":  "Identifier une marque de personne",
+                            "studentName":  "Repérer la terminaison liée à la personne",
+                            "lessonReminder":  "La terminaison indique notamment la personne et le nombre du sujet : je, tu, il, nous, vous, ils.",
+                            "workedExample":  "Dans « nous chantons », « -ons » marque la première personne du pluriel.",
+                            "masteryCriteria":  "Associer une marque de personne au sujet correspondant."
+                        },
+                        {
+                            "code":  "f6_con_identifier_marque_temps",
+                            "teacherName":  "Identifier une marque de temps",
+                            "studentName":  "Repérer ce qui indique le temps du verbe",
+                            "lessonReminder":  "Certaines lettres ou suites de lettres signalent le temps : « -i- » à l’imparfait dans « chantions », « -r- » au futur dans « chanterons ».",
+                            "workedExample":  "Dans « vous finirez », le « r » appartient à la marque du futur.",
+                            "masteryCriteria":  "Repérer dans une forme verbale la marque caractéristique du temps."
+                        },
+                        {
+                            "code":  "f6_con_retrouver_infinitif_temps_compose",
+                            "teacherName":  "Retrouver l’infinitif d’un verbe à un temps composé",
+                            "studentName":  "Retrouver l’infinitif grâce au participe passé",
+                            "lessonReminder":  "Dans un temps composé, le participe passé permet de retrouver le verbe à l’infinitif.",
+                            "workedExample":  "Dans « elle a écrit », le participe passé « écrit » vient du verbe « écrire ».",
+                            "masteryCriteria":  "Associer un participe passé à l’infinitif correct."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "F6-0349",
+                          "microSkill":  "f6_con_variation_radical",
+                          "difficulty":  1,
+                          "prompt":  "Quelle forme complète correctement « Nous ___ le ballon » avec le verbe « lancer » ?",
+                          "choices":  [
+                                          "lançons",
+                                          "lancons",
+                                          "lançont",
+                                          "lanceons"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Devant « o », le c devient ç pour conserver le son [s] : « nous lançons »."
+                      },
+                      {
+                          "code":  "F6-0350",
+                          "microSkill":  "f6_con_variation_radical",
+                          "difficulty":  1,
+                          "prompt":  "Quelle forme complète correctement « Nous ___ à la cantine » avec le verbe « manger » ?",
+                          "choices":  [
+                                          "mangons",
+                                          "mangeons",
+                                          "mengeons",
+                                          "mangeont"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On ajoute un e devant « -ons » pour conserver le son [ʒ] : « nous mangeons »."
+                      },
+                      {
+                          "code":  "F6-0351",
+                          "microSkill":  "f6_con_variation_radical",
+                          "difficulty":  1,
+                          "prompt":  "Quelle forme complète correctement « J’___ ce livre » avec le verbe « acheter » ?",
+                          "choices":  [
+                                          "achette",
+                                          "acheter",
+                                          "achète",
+                                          "achete"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le e du radical devient è devant une syllabe muette : « j’achète »."
+                      },
+                      {
+                          "code":  "F6-0352",
+                          "microSkill":  "f6_con_variation_radical",
+                          "difficulty":  1,
+                          "prompt":  "Quelle forme complète correctement « Ils ___ leur ami » avec le verbe « appeler » ?",
+                          "choices":  [
+                                          "apelent",
+                                          "appélent",
+                                          "appelont",
+                                          "appellent"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le verbe « appeler » double le l devant un e muet : « ils appellent »."
+                      },
+                      {
+                          "code":  "F6-0353",
+                          "microSkill":  "f6_con_variation_radical",
+                          "difficulty":  2,
+                          "prompt":  "Quelle forme complète correctement « Nous ___ l’exercice » avec le verbe « commencer » ?",
+                          "choices":  [
+                                          "commençons",
+                                          "commencons",
+                                          "commenceons",
+                                          "commençont"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le c devient ç devant « o » : « nous commençons »."
+                      },
+                      {
+                          "code":  "F6-0354",
+                          "microSkill":  "f6_con_variation_radical",
+                          "difficulty":  2,
+                          "prompt":  "Quelle forme complète correctement « Je ___ cette solution » avec le verbe « préférer » ?",
+                          "choices":  [
+                                          "préfaire",
+                                          "préfère",
+                                          "préférre",
+                                          "préfére"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le deuxième é devient è devant une syllabe muette : « je préfère »."
+                      },
+                      {
+                          "code":  "F6-0355",
+                          "microSkill":  "f6_con_variation_radical",
+                          "difficulty":  2,
+                          "prompt":  "Quelle forme complète correctement « Tu ___ la balle » avec le verbe « jeter » ?",
+                          "choices":  [
+                                          "jetes",
+                                          "jétes",
+                                          "jettes",
+                                          "jette"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le verbe « jeter » double le t devant un e muet : « tu jettes »."
+                      },
+                      {
+                          "code":  "F6-0356",
+                          "microSkill":  "f6_con_variation_radical",
+                          "difficulty":  2,
+                          "prompt":  "Quelle forme complète correctement « Il ___ un outil » avec le verbe « employer » ?",
+                          "choices":  [
+                                          "employe",
+                                          "emploit",
+                                          "employent",
+                                          "emploie"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le y devient i devant un e muet : « il emploie »."
+                      },
+                      {
+                          "code":  "F6-0357",
+                          "microSkill":  "f6_con_identifier_radical",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le radical du verbe « chanter » ?",
+                          "choices":  [
+                                          "chant-",
+                                          "chan-",
+                                          "chante-",
+                                          "-ter"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On retire la terminaison « -er » : le radical est « chant- »."
+                      },
+                      {
+                          "code":  "F6-0358",
+                          "microSkill":  "f6_con_identifier_radical",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le radical du verbe « finir » ?",
+                          "choices":  [
+                                          "fini-",
+                                          "fin-",
+                                          "fi-",
+                                          "-ir"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On retire « -ir » de l’infinitif : le radical est « fin- »."
+                      },
+                      {
+                          "code":  "F6-0359",
+                          "microSkill":  "f6_con_identifier_radical",
+                          "difficulty":  1,
+                          "prompt":  "Dans la forme « nous vendons », quel élément est le radical ?",
+                          "choices":  [
+                                          "ven-",
+                                          "-ons",
+                                          "vend-",
+                                          "vendons"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "« vend- » porte le sens du verbe ; « -ons » est la terminaison."
+                      },
+                      {
+                          "code":  "F6-0360",
+                          "microSkill":  "f6_con_identifier_radical",
+                          "difficulty":  2,
+                          "prompt":  "Dans « elles regardaient », quel élément est le radical ?",
+                          "choices":  [
+                                          "regardaient",
+                                          "-aient",
+                                          "regardai-",
+                                          "regard-"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "« regard- » est le radical commun aux formes du verbe « regarder »."
+                      },
+                      {
+                          "code":  "F6-0361",
+                          "microSkill":  "f6_con_identifier_radical",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le radical commun à « choisir », « choisissons » et « choisira » ?",
+                          "choices":  [
+                                          "chois-",
+                                          "choisi-",
+                                          "choisiss-",
+                                          "choisir-"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La partie commune qui porte le sens est « chois- »."
+                      },
+                      {
+                          "code":  "F6-0362",
+                          "microSkill":  "f6_con_identifier_radical",
+                          "difficulty":  2,
+                          "prompt":  "Dans « il jouera », quel élément correspond au radical du verbe « jouer » ?",
+                          "choices":  [
+                                          "joue-",
+                                          "jou-",
+                                          "jouer-",
+                                          "-era"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le radical lexical de « jouer » est « jou- »."
+                      },
+                      {
+                          "code":  "F6-0363",
+                          "microSkill":  "f6_con_identifier_radical",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le radical du verbe « grandir » ?",
+                          "choices":  [
+                                          "grandi-",
+                                          "gran-",
+                                          "grand-",
+                                          "-ir"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "En retirant « -ir », on obtient le radical « grand- »."
+                      },
+                      {
+                          "code":  "F6-0364",
+                          "microSkill":  "f6_con_identifier_marque_personne",
+                          "difficulty":  1,
+                          "prompt":  "Dans « nous marchons », quelle terminaison indique la première personne du pluriel ?",
+                          "choices":  [
+                                          "-chons",
+                                          "-on",
+                                          "-s",
+                                          "-ons"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "La terminaison « -ons » correspond à « nous »."
+                      },
+                      {
+                          "code":  "F6-0365",
+                          "microSkill":  "f6_con_identifier_marque_personne",
+                          "difficulty":  1,
+                          "prompt":  "Quelle terminaison de « vous finissez » marque la deuxième personne du pluriel ?",
+                          "choices":  [
+                                          "-ez",
+                                          "-issez",
+                                          "-z",
+                                          "-ent"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La terminaison personnelle de « vous » est « -ez »."
+                      },
+                      {
+                          "code":  "F6-0366",
+                          "microSkill":  "f6_con_identifier_marque_personne",
+                          "difficulty":  1,
+                          "prompt":  "Dans « ils parlent », quelle terminaison marque la troisième personne du pluriel ?",
+                          "choices":  [
+                                          "-es",
+                                          "-ent",
+                                          "-nt",
+                                          "-lent"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "La terminaison « -ent » correspond à « ils » ou « elles »."
+                      },
+                      {
+                          "code":  "F6-0367",
+                          "microSkill":  "f6_con_identifier_marque_personne",
+                          "difficulty":  2,
+                          "prompt":  "Quel sujet convient à la forme verbale « regardons » ?",
+                          "choices":  [
+                                          "vous",
+                                          "ils",
+                                          "nous",
+                                          "tu"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "La terminaison « -ons » appelle le sujet « nous »."
+                      },
+                      {
+                          "code":  "F6-0368",
+                          "microSkill":  "f6_con_identifier_marque_personne",
+                          "difficulty":  2,
+                          "prompt":  "Quel sujet convient à la forme verbale « réussissez » ?",
+                          "choices":  [
+                                          "nous",
+                                          "elles",
+                                          "je",
+                                          "vous"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "La terminaison « -ez » correspond à « vous »."
+                      },
+                      {
+                          "code":  "F6-0369",
+                          "microSkill":  "f6_con_identifier_marque_personne",
+                          "difficulty":  2,
+                          "prompt":  "Quelle marque distingue « ils finiront » de « il finira » du point de vue du nombre ?",
+                          "choices":  [
+                                          "-ont",
+                                          "-ir-",
+                                          "-r-",
+                                          "-a"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "« -ont » marque la troisième personne du pluriel, tandis que « -a » marque le singulier."
+                      },
+                      {
+                          "code":  "F6-0370",
+                          "microSkill":  "f6_con_identifier_marque_personne",
+                          "difficulty":  2,
+                          "prompt":  "Dans « vous preniez », quelle partie finale correspond à la personne « vous » ?",
+                          "choices":  [
+                                          "-iez",
+                                          "-ez",
+                                          "-z",
+                                          "-ent"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Dans « -iez », le « i » signale l’imparfait et « -ez » marque la personne « vous »."
+                      },
+                      {
+                          "code":  "F6-0371",
+                          "microSkill":  "f6_con_identifier_marque_temps",
+                          "difficulty":  1,
+                          "prompt":  "En comparant « nous chantons » et « nous chantions », quelle lettre ajoutée signale l’imparfait ?",
+                          "choices":  [
+                                          "o",
+                                          "n",
+                                          "i",
+                                          "s"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le « i » de « chantions » appartient à la marque de l’imparfait."
+                      },
+                      {
+                          "code":  "F6-0372",
+                          "microSkill":  "f6_con_identifier_marque_temps",
+                          "difficulty":  1,
+                          "prompt":  "Dans « ils partiront », quelle lettre caractérise le futur simple ?",
+                          "choices":  [
+                                          "p",
+                                          "t",
+                                          "o",
+                                          "r"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le « r » appartient à la marque du futur simple."
+                      },
+                      {
+                          "code":  "F6-0373",
+                          "microSkill":  "f6_con_identifier_marque_temps",
+                          "difficulty":  1,
+                          "prompt":  "Quelle terminaison de « elle dansait » indique l’imparfait à la troisième personne du singulier ?",
+                          "choices":  [
+                                          "-ait",
+                                          "-a",
+                                          "-t",
+                                          "-ant"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La terminaison « -ait » est celle de l’imparfait à cette personne."
+                      },
+                      {
+                          "code":  "F6-0374",
+                          "microSkill":  "f6_con_identifier_marque_temps",
+                          "difficulty":  1,
+                          "prompt":  "Dans « vous finissiez », quelle lettre distingue cette forme de « vous finissez » et signale l’imparfait ?",
+                          "choices":  [
+                                          "s",
+                                          "i",
+                                          "z",
+                                          "f"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le « i » de « finissiez » signale l’imparfait."
+                      },
+                      {
+                          "code":  "F6-0375",
+                          "microSkill":  "f6_con_identifier_marque_temps",
+                          "difficulty":  2,
+                          "prompt":  "Dans « tu regarderas », quelle lettre appartient à la marque du futur ?",
+                          "choices":  [
+                                          "g",
+                                          "d",
+                                          "r",
+                                          "s"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le « r » précède la terminaison personnelle du futur."
+                      },
+                      {
+                          "code":  "F6-0376",
+                          "microSkill":  "f6_con_identifier_marque_temps",
+                          "difficulty":  2,
+                          "prompt":  "Quelle lettre commune à « je finirai » et « nous finirons » signale le futur ?",
+                          "choices":  [
+                                          "f",
+                                          "n",
+                                          "i",
+                                          "r"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le « r » est présent dans les formes du futur simple."
+                      },
+                      {
+                          "code":  "F6-0377",
+                          "microSkill":  "f6_con_identifier_marque_temps",
+                          "difficulty":  2,
+                          "prompt":  "Quelle suite finale de « nous aimerions » indique le conditionnel présent à la première personne du pluriel ?",
+                          "choices":  [
+                                          "-erions",
+                                          "-ons",
+                                          "-ions",
+                                          "-r"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "« -erions » associe le r du conditionnel à la terminaison « -ions »."
+                      },
+                      {
+                          "code":  "F6-0378",
+                          "microSkill":  "f6_con_identifier_marque_temps",
+                          "difficulty":  2,
+                          "prompt":  "Dans « vous prendrez », quelle lettre permet de reconnaître le futur simple ?",
+                          "choices":  [
+                                          "n",
+                                          "r",
+                                          "d",
+                                          "z"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le « r » appartient à la marque du futur ; « -ez » marque la personne."
+                      },
+                      {
+                          "code":  "F6-0379",
+                          "microSkill":  "f6_con_retrouver_infinitif_temps_compose",
+                          "difficulty":  1,
+                          "prompt":  "Quel est l’infinitif du verbe dans « Elle a écrit une lettre » ?",
+                          "choices":  [
+                                          "décrire",
+                                          "inscrire",
+                                          "écrire",
+                                          "réécrire"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le participe passé « écrit », sans préfixe, vient ici du verbe « écrire »."
+                      },
+                      {
+                          "code":  "F6-0380",
+                          "microSkill":  "f6_con_retrouver_infinitif_temps_compose",
+                          "difficulty":  1,
+                          "prompt":  "Quel est l’infinitif du verbe dans « Ils ont pris le train » ?",
+                          "choices":  [
+                                          "apprendre",
+                                          "comprendre",
+                                          "surprendre",
+                                          "prendre"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le participe passé « pris », sans préfixe, vient ici du verbe « prendre »."
+                      },
+                      {
+                          "code":  "F6-0381",
+                          "microSkill":  "f6_con_retrouver_infinitif_temps_compose",
+                          "difficulty":  1,
+                          "prompt":  "Quel est l’infinitif du verbe dans « Elle est venue hier » ?",
+                          "choices":  [
+                                          "venir",
+                                          "devenir",
+                                          "revenir",
+                                          "parvenir"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le participe passé « venue », sans préfixe, vient ici du verbe « venir »."
+                      },
+                      {
+                          "code":  "F6-0382",
+                          "microSkill":  "f6_con_retrouver_infinitif_temps_compose",
+                          "difficulty":  1,
+                          "prompt":  "Quel est l’infinitif du verbe dans « Nous avons fait un gâteau » ?",
+                          "choices":  [
+                                          "défaire",
+                                          "faire",
+                                          "refaire",
+                                          "satisfaire"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le participe passé « fait », sans préfixe, vient ici du verbe « faire »."
+                      },
+                      {
+                          "code":  "F6-0383",
+                          "microSkill":  "f6_con_retrouver_infinitif_temps_compose",
+                          "difficulty":  1,
+                          "prompt":  "Quel est l’infinitif du verbe dans « Il avait lu ce roman » ?",
+                          "choices":  [
+                                          "relire",
+                                          "élire",
+                                          "lire",
+                                          "délire"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le participe passé « lu », sans préfixe, vient ici du verbe « lire »."
+                      },
+                      {
+                          "code":  "F6-0384",
+                          "microSkill":  "f6_con_retrouver_infinitif_temps_compose",
+                          "difficulty":  2,
+                          "prompt":  "Quel est l’infinitif du verbe dans « Les enfants sont nés en juin » ?",
+                          "choices":  [
+                                          "vivre",
+                                          "nier",
+                                          "nourrir",
+                                          "naître"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le participe passé « nés » vient du verbe « naître »."
+                      },
+                      {
+                          "code":  "F6-0385",
+                          "microSkill":  "f6_con_retrouver_infinitif_temps_compose",
+                          "difficulty":  2,
+                          "prompt":  "Quel est l’infinitif du verbe dans « Tu as ouvert la fenêtre » ?",
+                          "choices":  [
+                                          "ouvrir",
+                                          "couvrir",
+                                          "découvrir",
+                                          "offrir"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le participe passé « ouvert » vient du verbe « ouvrir »."
+                      },
+                      {
+                          "code":  "F6-0386",
+                          "microSkill":  "f6_con_retrouver_infinitif_temps_compose",
+                          "difficulty":  2,
+                          "prompt":  "Quel est l’infinitif du verbe dans « Ils étaient descendus au sous-sol » ?",
+                          "choices":  [
+                                          "défendre",
+                                          "descendre",
+                                          "dépendre",
+                                          "dessiner"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le participe passé « descendus » vient du verbe « descendre »."
+                      },
+                      {
+                          "code":  "F6-0387",
+                          "microSkill":  "f6_con_retrouver_infinitif_temps_compose",
+                          "difficulty":  2,
+                          "prompt":  "Quel est l’infinitif du verbe dans « Elle a voulu participer » ?",
+                          "choices":  [
+                                          "valoir",
+                                          "pouvoir",
+                                          "vouloir",
+                                          "voir"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le participe passé « voulu » vient du verbe « vouloir »."
+                      },
+                      {
+                          "code":  "F6-0388",
+                          "microSkill":  "f6_con_retrouver_infinitif_temps_compose",
+                          "difficulty":  2,
+                          "prompt":  "Quel est l’infinitif du verbe dans « Vous avez reçu un message » ?",
+                          "choices":  [
+                                          "concevoir",
+                                          "apercevoir",
+                                          "percevoir",
+                                          "recevoir"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le participe passé « reçu » vient du verbe « recevoir »."
+                      }
+                  ]
+}
