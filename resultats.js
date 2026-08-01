@@ -1,11 +1,14 @@
+const RESULT_LEARNER_PROFILE=CapCollegeSupabase.getLearnerProfile();
 const VALIDATION_RESULT_SUFFIX=window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID
-  ?`:validation:${window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID}`:'';
+  ?':validation:'+window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID
+  :RESULT_LEARNER_PROFILE?':learner:'+RESULT_LEARNER_PROFILE.id:'';
 const VALIDATION_RESULT_KEY=`capCollegeV43Result${VALIDATION_RESULT_SUFFIX}`;
-const STORAGE_RESULT=
-  localStorage.getItem(VALIDATION_RESULT_KEY)?VALIDATION_RESULT_KEY:
-  localStorage.getItem('capCollegeV43Result')?'capCollegeV43Result':
-  localStorage.getItem('capCollegeV41Result')?'capCollegeV41Result':
-  'capCollegeV4Result';
+const STORAGE_RESULT=RESULT_LEARNER_PROFILE
+  ?VALIDATION_RESULT_KEY
+  :localStorage.getItem(VALIDATION_RESULT_KEY)?VALIDATION_RESULT_KEY:
+    localStorage.getItem('capCollegeV43Result')?'capCollegeV43Result':
+    localStorage.getItem('capCollegeV41Result')?'capCollegeV41Result':
+    'capCollegeV4Result';
 
 const raw=localStorage.getItem(STORAGE_RESULT);
 
@@ -15,6 +18,9 @@ if(window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID){
     restartLink.href=`evaluation.html?validationCampaign=${encodeURIComponent(window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID)}`;
     restartLink.textContent='Nouvelle séance dans cette campagne';
   }
+}else if(RESULT_LEARNER_PROFILE){
+  const restartLink=document.querySelector('a[href="evaluation.html"]');
+  if(restartLink)restartLink.href='evaluation.html?mode=child';
 }
 
 if(!raw){
@@ -79,6 +85,10 @@ function renderRecommendation(){
   const profile=Array.isArray(window.CAP_COLLEGE_SKILL_PROFILE)
     ?window.CAP_COLLEGE_SKILL_PROFILE:[];
   const target=document.getElementById('recommendation');
+  if(RESULT_LEARNER_PROFILE){
+    target.innerHTML='<div class="notice">Tes résultats sont bien enregistrés sur ton profil. Les exercices ciblés seront ajoutés à l’étape suivante.</div>';
+    return;
+  }
   if(window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID){
     target.innerHTML='<div class="notice">Campagne de validation : ces réponses sont isolées du profil réel.</div>';
     return;

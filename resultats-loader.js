@@ -1,4 +1,9 @@
-CapCollegeSupabase.bootstrap({ requireAuth: true })
+const resultLearnerMode =
+  new URLSearchParams(location.search).get("mode") === "child";
+CapCollegeSupabase.bootstrap({
+  requireAuth: true,
+  preferLearner: resultLearnerMode
+})
   .then(async () => {
     const validationCampaignId =
       new URLSearchParams(location.search).get("validationCampaign");
@@ -11,6 +16,6 @@ CapCollegeSupabase.bootstrap({ requireAuth: true })
       console.warn("Le profil cumulé n’a pas pu être chargé.", error);
       window.CAP_COLLEGE_SKILL_PROFILE = [];
     }
-    await CapCollegeSupabase.appendScript("resultats.js?v=5.3.11");
+    await CapCollegeSupabase.appendScript("resultats.js?v=5.3.12");
   })
   .catch(CapCollegeSupabase.showFatalError);

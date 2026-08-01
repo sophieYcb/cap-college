@@ -1,5 +1,8 @@
 const VALIDATION_CAMPAIGN_ID=window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID||null;
-const STORAGE_SUFFIX=VALIDATION_CAMPAIGN_ID?`:validation:${VALIDATION_CAMPAIGN_ID}`:'';
+const LEARNER_PROFILE=CapCollegeSupabase.getLearnerProfile();
+const STORAGE_SUFFIX=VALIDATION_CAMPAIGN_ID
+  ?':validation:'+VALIDATION_CAMPAIGN_ID
+  :LEARNER_PROFILE?':learner:'+LEARNER_PROFILE.id:'';
 const STORAGE_PROGRESS=`capCollegeV43Progress${STORAGE_SUFFIX}`;
 const STORAGE_PROGRESS_BACKUP=`capCollegeDiagnosticProgressBackup${STORAGE_SUFFIX}`;
 const STORAGE_RESULT=`capCollegeV43Result${STORAGE_SUFFIX}`;
@@ -639,7 +642,7 @@ async function finishTest(stoppedEarly=false){
   };
 
   localStorage.setItem(STORAGE_RESULT,JSON.stringify(result));
-  if(!VALIDATION_CAMPAIGN_ID){
+  if(!VALIDATION_CAMPAIGN_ID&&!LEARNER_PROFILE){
     localStorage.setItem('capCollegeV41Result',JSON.stringify(result));
     localStorage.setItem('capCollegeV4Result',JSON.stringify(result));
   }
@@ -654,7 +657,7 @@ async function finishTest(stoppedEarly=false){
   }
   window.location.href=VALIDATION_CAMPAIGN_ID
     ?`resultats.html?validationCampaign=${encodeURIComponent(VALIDATION_CAMPAIGN_ID)}`
-    :'resultats.html';
+    :LEARNER_PROFILE?'resultats.html?mode=child':'resultats.html';
 }
 
 window.addEventListener('pagehide',()=>{

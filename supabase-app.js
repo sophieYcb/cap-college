@@ -4,8 +4,12 @@
   let roles = [];
   let activeRole = null;
   let canReportQuestions = false;
+  let learnerProfile = null;
   let diagnosticHistory = [];
 
+  function learnerAccessToken() {
+    return localStorage.getItem("cap_college_learner_session");
+  }
   function configured() {
     const config = window.CAP_COLLEGE_CONFIG || {};
     return Boolean(config.supabaseUrl && config.publishableKey);
@@ -120,20 +124,23 @@
     }));
   }
   async function loadDiagnosticHistory(validationCampaignId = null) {
-    const { data, error } = validationCampaignId
-      ? await getClient().rpc(
-          "get_my_validation_diagnostic_history",
-          { requested_campaign_id: validationCampaignId }
-        )
-      : await getClient().rpc("get_my_diagnostic_history");
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const { data, error } = token
+      ? await getClient().rpc("get_learner_diagnostic_history", {
+          requested_token: token
+        })
+      : validationCampaignId
+        ? await getClient().rpc("get_my_validation_diagnostic_history", {
+            requested_campaign_id: validationCampaignId
+          })
+        : await getClient().rpc("get_my_diagnostic_history");
     if (error) throw error;
     diagnosticHistory = Array.isArray(data) ? data : [];
     const historyByQuestion = new Map(
-      diagnosticHistory.map((item) => [item.questionId, item])
+      diagnosticHistory.map(item => [item.questionId, item])
     );
-    QUESTIONS.forEach((question) => {
-      const history = historyByQuestion.get(question.questionId);
-      question.history = history || {
+    QUESTIONS.forEach(question => {
+      question.history = historyByQuestion.get(question.questionId) || {
         attempts: 0,
         correctAnswers: 0,
         lastAnsweredAt: null
@@ -153,7 +160,8 @@
       requireAuth = false,
       requiredRoles = [],
       loadQuestions = false,
-      validationCampaignId = null
+      validationCampaignId = null,
+      preferLearner = false
     } = options;
 
     if (!configured()) {
@@ -169,12 +177,28 @@
     document.documentElement.dataset.dataSource = "supabase";
     await loadSession();
 
-    if (requireAuth && !session) {
+    if (preferLearner && learnerAccessToken()) {
+      learnerProfile = await getLearnerSession();
+    }
+    if (learnerProfile) {
+      roles = ["student"];
+      activeRole = "student";
+      canReportQuestions = false;
+    } else if (session) {
+      await loadRoles();
+    } else {
+      learnerProfile = await getLearnerSession();
+      if (learnerProfile) {
+        roles = ["student"];
+        activeRole = "student";
+        canReportQuestions = false;
+      }
+    }
+
+    if (requireAuth && !session && !learnerProfile) {
       redirectToLogin();
       return new Promise(() => {});
     }
-
-    if (session) await loadRoles();
 
     if (
       requiredRoles.length &&
@@ -195,7 +219,8 @@
       mode: "supabase",
       session,
       roles,
-      activeRole
+      activeRole,
+      learnerProfile
     };
   }
 
@@ -245,26 +270,29 @@
     subjectCode = "french"
   ) {
     if (!configured()) return null;
-    const { data, error } = validationCampaignId
-      ? await getClient().rpc(
-          "start_validation_diagnostic_session",
-          {
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const { data, error } = token
+      ? await getClient().rpc("start_learner_diagnostic_session", {
+          requested_token: token,
+          planned_minutes: plannedMinutes,
+          requested_subject_code: subjectCode,
+          requested_level_code: "6e",
+          requested_competence_id: competenceId
+        })
+      : validationCampaignId
+        ? await getClient().rpc("start_validation_diagnostic_session", {
             requested_campaign_id: validationCampaignId,
             planned_minutes: plannedMinutes,
             requested_subject_code: subjectCode,
             requested_level_code: "6e",
             requested_competence_id: competenceId
-          }
-        )
-      : await getClient().rpc(
-          "start_diagnostic_session_v2",
-          {
+          })
+        : await getClient().rpc("start_diagnostic_session_v2", {
             planned_minutes: plannedMinutes,
             requested_subject_code: subjectCode,
             requested_level_code: "6e",
             requested_competence_id: competenceId
-          }
-        );
+          });
     if (error) throw error;
     return Array.isArray(data) ? data[0] : data;
   }
@@ -276,63 +304,93 @@
     sequenceNumber
   ) {
     if (!configured()) return null;
-    const { data, error } = await getClient().rpc(
-      "submit_diagnostic_answer",
-      {
-        requested_session_id: sessionId,
-        requested_question_version_id: questionVersionId,
-        requested_choice_id: choiceId,
-        requested_sequence_number: sequenceNumber
-      }
-    );
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const { data, error } = token
+      ? await getClient().rpc("submit_learner_diagnostic_answer", {
+          requested_token: token,
+          requested_session_id: sessionId,
+          requested_question_version_id: questionVersionId,
+          requested_choice_id: choiceId,
+          requested_sequence_number: sequenceNumber
+        })
+      : await getClient().rpc("submit_diagnostic_answer", {
+          requested_session_id: sessionId,
+          requested_question_version_id: questionVersionId,
+          requested_choice_id: choiceId,
+          requested_sequence_number: sequenceNumber
+        });
     if (error) throw error;
     return Array.isArray(data) ? data[0] : data;
   }
 
   async function finishDiagnostic(sessionId) {
     if (!configured() || !sessionId) return null;
-    const { data, error } = await getClient().rpc(
-      "finish_diagnostic_session",
-      { requested_session_id: sessionId }
-    );
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const { data, error } = token
+      ? await getClient().rpc("finish_learner_diagnostic_session", {
+          requested_token: token,
+          requested_session_id: sessionId
+        })
+      : await getClient().rpc("finish_diagnostic_session", {
+          requested_session_id: sessionId
+        });
     if (error) throw error;
     return Array.isArray(data) ? data[0] : data;
   }
 
   async function getSkillProfile() {
     if (!configured()) return [];
-    const { data, error } = await getClient().rpc("get_my_skill_profile");
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const { data, error } = token
+      ? await getClient().rpc("get_learner_skill_profile", {
+          requested_token: token
+        })
+      : await getClient().rpc("get_my_skill_profile");
     if (error) throw error;
     return Array.isArray(data) ? data : [];
   }
 
   async function getDiagnosticSessionState(sessionId) {
     if (!configured() || !sessionId) return null;
-    const { data, error } = await getClient().rpc(
-      "get_my_diagnostic_session_state",
-      { requested_session_id: sessionId }
-    );
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const { data, error } = token
+      ? await getClient().rpc("get_learner_diagnostic_session_state", {
+          requested_token: token,
+          requested_session_id: sessionId
+        })
+      : await getClient().rpc("get_my_diagnostic_session_state", {
+          requested_session_id: sessionId
+        });
     if (error) throw error;
     return Array.isArray(data) ? (data[0] || null) : data;
   }
 
   async function getActiveDiagnosticSession(validationCampaignId = null) {
     if (!configured()) return null;
-    const { data, error } = validationCampaignId
-      ? await getClient().rpc(
-          "get_my_active_validation_session",
-          { requested_campaign_id: validationCampaignId }
-        )
-      : await getClient().rpc("get_my_active_diagnostic_session_v2");
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const { data, error } = token
+      ? await getClient().rpc("get_learner_active_diagnostic_session", {
+          requested_token: token
+        })
+      : validationCampaignId
+        ? await getClient().rpc("get_my_active_validation_session", {
+            requested_campaign_id: validationCampaignId
+          })
+        : await getClient().rpc("get_my_active_diagnostic_session_v2");
     if (error) throw error;
     return Array.isArray(data) ? (data[0] || null) : data;
   }
 
   async function closeDiagnosticSession(sessionId) {
-    const { error } = await getClient().rpc(
-      "close_my_diagnostic_session",
-      { requested_session_id: sessionId }
-    );
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const { error } = token
+      ? await getClient().rpc("close_learner_diagnostic_session", {
+          requested_token: token,
+          requested_session_id: sessionId
+        })
+      : await getClient().rpc("close_my_diagnostic_session", {
+          requested_session_id: sessionId
+        });
     if (error) throw error;
   }
 
@@ -614,6 +672,7 @@
     getActiveRole: () => activeRole,
     canReportQuestions: () => canReportQuestions,
     getSession: () => session,
+    getLearnerProfile: () => learnerProfile,
     showFatalError,
     archiveValidationCampaign,
     createValidationCampaign,

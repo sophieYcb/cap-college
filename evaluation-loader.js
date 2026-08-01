@@ -1,3 +1,6 @@
+const learnerMode =
+  new URLSearchParams(location.search).get("mode") === "child";
+
 const validationCampaignId =
   new URLSearchParams(location.search).get("validationCampaign");
 
@@ -16,7 +19,8 @@ CapCollegeSupabase.bootstrap({
   requireAuth: true,
   requiredRoles: validationCampaignId ? ["validator", "administrator"] : [],
   loadQuestions: true,
-  validationCampaignId
+  validationCampaignId,
+  preferLearner: learnerMode && !validationCampaignId
 })
-  .then(() => CapCollegeSupabase.appendScript("evaluation.js?v=5.3.28"))
+  .then(() => CapCollegeSupabase.appendScript("evaluation.js?v=5.3.29"))
   .catch(CapCollegeSupabase.showFatalError);
