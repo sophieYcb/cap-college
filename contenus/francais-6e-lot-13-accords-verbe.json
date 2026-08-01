@@ -1,0 +1,636 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "french",
+    "level":  "6e",
+    "domain":  {
+                   "code":  "spelling",
+                   "name":  "Orthographe"
+               },
+    "skill":  {
+                  "code":  "f6_verb_agreement",
+                  "name":  "Accords autour du verbe"
+              },
+    "lot":  "F6-ORT-13",
+    "status":  "draft",
+    "source":  "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+    "microSkills":  [
+                        {
+                            "code":  "f6_ort_accorder_sujet_attribut",
+                            "teacherName":  "Accorder l’attribut avec le sujet",
+                            "studentName":  "Accorder l’attribut avec le sujet",
+                            "lessonReminder":  "L’attribut du sujet s’accorde en genre et en nombre avec le sujet.",
+                            "workedExample":  "« Les portes sont fermées » : « fermées » s’accorde avec « les portes ».",
+                            "masteryCriteria":  "Accorder correctement un attribut avec un sujet singulier, pluriel, masculin ou féminin."
+                        },
+                        {
+                            "code":  "f6_ort_participe_passe_avoir",
+                            "teacherName":  "Accorder le participe passé avec le COD placé avant",
+                            "studentName":  "Accorder le participe passé quand le COD est placé avant",
+                            "lessonReminder":  "Avec l’auxiliaire avoir, le participe passé s’accorde avec le COD lorsque celui-ci est placé avant le verbe.",
+                            "workedExample":  "« Les lettres que j’ai écrites » : « que » reprend « les lettres », placé avant.",
+                            "masteryCriteria":  "Repérer le COD antéposé et accorder le participe passé avec lui."
+                        },
+                        {
+                            "code":  "f6_ort_participe_passe_etre",
+                            "teacherName":  "Accorder le participe passé employé avec être",
+                            "studentName":  "Accorder le participe passé avec être",
+                            "lessonReminder":  "Employé avec être, le participe passé s’accorde avec le sujet.",
+                            "workedExample":  "« Elles sont parties » : « parties » s’accorde au féminin pluriel.",
+                            "masteryCriteria":  "Accorder le participe passé avec le sujet lorsque l’auxiliaire est être."
+                        },
+                        {
+                            "code":  "f6_ort_accorder_sujet_verbe_eloigne",
+                            "teacherName":  "Accorder malgré un élément placé entre sujet et verbe",
+                            "studentName":  "Accorder le verbe avec un sujet éloigné",
+                            "lessonReminder":  "Le verbe s’accorde avec le noyau du sujet, même si d’autres mots sont placés entre eux.",
+                            "workedExample":  "« Le bouquet de roses parfume la pièce » : le noyau « bouquet » est singulier.",
+                            "masteryCriteria":  "Identifier le noyau du sujet éloigné et accorder le verbe avec lui."
+                        },
+                        {
+                            "code":  "f6_ort_accorder_sujet_compose",
+                            "teacherName":  "Accorder un verbe avec un sujet composé",
+                            "studentName":  "Accorder le verbe avec plusieurs sujets",
+                            "lessonReminder":  "Plusieurs sujets reliés par « et » commandent généralement un verbe au pluriel.",
+                            "workedExample":  "« Le chat et le chien dorment » : les deux sujets imposent le pluriel.",
+                            "masteryCriteria":  "Accorder un verbe avec un sujet composé de plusieurs éléments."
+                        },
+                        {
+                            "code":  "f6_ort_accorder_sujet_verbe_inverse",
+                            "teacherName":  "Accorder un verbe avec un sujet inversé",
+                            "studentName":  "Accorder le verbe quand le sujet est placé après",
+                            "lessonReminder":  "Même placé après le verbe, le sujet commande toujours son accord.",
+                            "workedExample":  "« Dans le ciel brillent les étoiles » : le sujet pluriel est après le verbe.",
+                            "masteryCriteria":  "Repérer un sujet postposé et accorder le verbe avec lui."
+                        },
+                        {
+                            "code":  "f6_ort_accorder_sujet_verbe_simple",
+                            "teacherName":  "Accorder un verbe avec un sujet simple antéposé",
+                            "studentName":  "Accorder le verbe avec un sujet simple",
+                            "lessonReminder":  "Le verbe s’accorde en personne et en nombre avec son sujet.",
+                            "workedExample":  "« La grande horloge sonne » : le sujet singulier commande « sonne ».",
+                            "masteryCriteria":  "Accorder un verbe avec un sujet simple placé avant lui."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "F6-0389",
+                          "microSkill":  "f6_ort_accorder_sujet_attribut",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Les portes sont ___ ». ",
+                          "choices":  [
+                                          "fermées",
+                                          "fermée",
+                                          "fermés",
+                                          "fermé"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "« fermées » s’accorde au féminin pluriel avec « les portes »."
+                      },
+                      {
+                          "code":  "F6-0390",
+                          "microSkill":  "f6_ort_accorder_sujet_attribut",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « La fillette paraît ___ ». ",
+                          "choices":  [
+                                          "attentifs",
+                                          "attentive",
+                                          "attentif",
+                                          "attentives"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "« attentive » s’accorde au féminin singulier avec « la fillette »."
+                      },
+                      {
+                          "code":  "F6-0391",
+                          "microSkill":  "f6_ort_accorder_sujet_attribut",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Les garçons restent ___ ». ",
+                          "choices":  [
+                                          "contente",
+                                          "content",
+                                          "contents",
+                                          "contentes"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "« contents » s’accorde au masculin pluriel avec « les garçons »."
+                      },
+                      {
+                          "code":  "F6-0392",
+                          "microSkill":  "f6_ort_accorder_sujet_attribut",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Le ciel devient ___ ». ",
+                          "choices":  [
+                                          "obscure",
+                                          "obscures",
+                                          "obscurs",
+                                          "obscur"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "« obscur » s’accorde au masculin singulier avec « le ciel »."
+                      },
+                      {
+                          "code":  "F6-0393",
+                          "microSkill":  "f6_ort_accorder_sujet_attribut",
+                          "difficulty":  2,
+                          "prompt":  "Quelle phrase est correctement accordée ?",
+                          "choices":  [
+                                          "Ces maisons semblent anciennes.",
+                                          "Ces maisons semblent ancienne.",
+                                          "Ces maisons semblent anciens.",
+                                          "Ces maisons semble anciennes."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "L’attribut « anciennes » s’accorde avec le sujet féminin pluriel « ces maisons »."
+                      },
+                      {
+                          "code":  "F6-0394",
+                          "microSkill":  "f6_ort_accorder_sujet_attribut",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « La chienne semble ___ ». ",
+                          "choices":  [
+                                          "fatigués",
+                                          "fatiguée",
+                                          "fatigué",
+                                          "fatiguées"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "« fatiguée » s’accorde au féminin singulier avec « la chienne »."
+                      },
+                      {
+                          "code":  "F6-0395",
+                          "microSkill":  "f6_ort_accorder_sujet_attribut",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Les spectatrices paraissent ___ ». ",
+                          "choices":  [
+                                          "satisfait",
+                                          "satisfaite",
+                                          "satisfaites",
+                                          "satisfaits"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "« satisfaites » s’accorde au féminin pluriel avec « les spectatrices »."
+                      },
+                      {
+                          "code":  "F6-0396",
+                          "microSkill":  "f6_ort_accorder_sujet_attribut",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Mon frère et ma sœur sont ___ ». ",
+                          "choices":  [
+                                          "prête",
+                                          "prêtes",
+                                          "prêt",
+                                          "prêts"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Un groupe mixte se met au masculin pluriel : « prêts »."
+                      },
+                      {
+                          "code":  "F6-0397",
+                          "microSkill":  "f6_ort_accorder_sujet_attribut",
+                          "difficulty":  2,
+                          "prompt":  "Corrige « Marie est curieux ».",
+                          "choices":  [
+                                          "Marie est curieuse.",
+                                          "Marie est curieuses.",
+                                          "Marie est curieux.",
+                                          "Marie sont curieuse."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "L’attribut s’accorde au féminin singulier avec « Marie » : « curieuse »."
+                      },
+                      {
+                          "code":  "F6-0398",
+                          "microSkill":  "f6_ort_accorder_sujet_attribut",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Paul et Léa semblent ___ ». ",
+                          "choices":  [
+                                          "attentif",
+                                          "attentifs",
+                                          "attentive",
+                                          "attentives"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le groupe mixte « Paul et Léa » commande le masculin pluriel « attentifs »."
+                      },
+                      {
+                          "code":  "F6-0399",
+                          "microSkill":  "f6_ort_participe_passe_avoir",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Les pommes que Lila a ___ étaient mûres. »",
+                          "choices":  [
+                                          "mangé",
+                                          "manger",
+                                          "mangées",
+                                          "mangés"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le COD « les pommes », repris par « que », est placé avant : « mangées »."
+                      },
+                      {
+                          "code":  "F6-0400",
+                          "microSkill":  "f6_ort_participe_passe_avoir",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « La chanson qu’ils ont ___ est célèbre. »",
+                          "choices":  [
+                                          "appris",
+                                          "apprises",
+                                          "apprend",
+                                          "apprise"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le COD féminin singulier « la chanson » est placé avant : « apprise »."
+                      },
+                      {
+                          "code":  "F6-0401",
+                          "microSkill":  "f6_ort_participe_passe_avoir",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Les lettres que j’ai ___ sont sur la table. »",
+                          "choices":  [
+                                          "écrites",
+                                          "écrit",
+                                          "écrite",
+                                          "écrits"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le COD féminin pluriel « les lettres » est placé avant : « écrites »."
+                      },
+                      {
+                          "code":  "F6-0402",
+                          "microSkill":  "f6_ort_participe_passe_avoir",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Le film que nous avons ___ dure deux heures. »",
+                          "choices":  [
+                                          "regardée",
+                                          "regardé",
+                                          "regardés",
+                                          "regardées"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le COD masculin singulier « le film » est placé avant : « regardé »."
+                      },
+                      {
+                          "code":  "F6-0403",
+                          "microSkill":  "f6_ort_participe_passe_avoir",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Quelle photo avez-vous ___ ? »",
+                          "choices":  [
+                                          "choisis",
+                                          "choisi",
+                                          "choisie",
+                                          "choisies"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le COD féminin singulier « quelle photo » est placé avant : « choisie »."
+                      },
+                      {
+                          "code":  "F6-0404",
+                          "microSkill":  "f6_ort_participe_passe_avoir",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Les efforts qu’elle a ___ ont porté leurs fruits. »",
+                          "choices":  [
+                                          "fournie",
+                                          "fournies",
+                                          "fourni",
+                                          "fournis"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le COD masculin pluriel « les efforts » est placé avant : « fournis »."
+                      },
+                      {
+                          "code":  "F6-0405",
+                          "microSkill":  "f6_ort_participe_passe_etre",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Elles sont ___ avant midi. »",
+                          "choices":  [
+                                          "parties",
+                                          "partie",
+                                          "partis",
+                                          "parti"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Avec être, « parties » s’accorde au féminin pluriel avec « elles »."
+                      },
+                      {
+                          "code":  "F6-0406",
+                          "microSkill":  "f6_ort_participe_passe_etre",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Paul et Lina sont ___ ensemble. »",
+                          "choices":  [
+                                          "arrivée",
+                                          "arrivés",
+                                          "arrivé",
+                                          "arrivées"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le sujet mixte commande le masculin pluriel « arrivés »."
+                      },
+                      {
+                          "code":  "F6-0407",
+                          "microSkill":  "f6_ort_participe_passe_etre",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Marie est ___ au grenier. »",
+                          "choices":  [
+                                          "montés",
+                                          "monté",
+                                          "montée",
+                                          "montées"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Avec être, « montée » s’accorde au féminin singulier avec « Marie »."
+                      },
+                      {
+                          "code":  "F6-0408",
+                          "microSkill":  "f6_ort_participe_passe_etre",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Les feuilles sont ___ pendant la nuit. »",
+                          "choices":  [
+                                          "tombé",
+                                          "tombée",
+                                          "tombés",
+                                          "tombées"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Avec être, « tombées » s’accorde au féminin pluriel avec « les feuilles »."
+                      },
+                      {
+                          "code":  "F6-0409",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_eloigne",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Le bouquet de roses ___ la pièce. »",
+                          "choices":  [
+                                          "parfume",
+                                          "parfument",
+                                          "parfumes",
+                                          "parfumer"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le noyau du sujet est « bouquet », au singulier : « parfume »."
+                      },
+                      {
+                          "code":  "F6-0410",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_eloigne",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Les élèves de la classe ___ un spectacle. »",
+                          "choices":  [
+                                          "prépare",
+                                          "préparent",
+                                          "prépares",
+                                          "préparer"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le noyau « élèves » est pluriel : « préparent »."
+                      },
+                      {
+                          "code":  "F6-0411",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_eloigne",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « La boîte de crayons ___ ouverte. »",
+                          "choices":  [
+                                          "restent",
+                                          "rester",
+                                          "reste",
+                                          "restes"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le noyau « boîte » est singulier : « reste »."
+                      },
+                      {
+                          "code":  "F6-0412",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_eloigne",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Le bruit des vagues me ___ doucement. »",
+                          "choices":  [
+                                          "bercent",
+                                          "berces",
+                                          "bercer",
+                                          "berce"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le noyau « bruit » est singulier : « berce »."
+                      },
+                      {
+                          "code":  "F6-0413",
+                          "microSkill":  "f6_ort_accorder_sujet_compose",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Paul et Léa ___ ensemble. »",
+                          "choices":  [
+                                          "arrivent",
+                                          "arrive",
+                                          "arrives",
+                                          "arriver"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les deux sujets commandent le pluriel : « arrivent »."
+                      },
+                      {
+                          "code":  "F6-0414",
+                          "microSkill":  "f6_ort_accorder_sujet_compose",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Ma sœur et moi ___ demain. »",
+                          "choices":  [
+                                          "partent",
+                                          "partons",
+                                          "partez",
+                                          "part"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "« Ma sœur et moi » correspond à « nous » : « partons »."
+                      },
+                      {
+                          "code":  "F6-0415",
+                          "microSkill":  "f6_ort_accorder_sujet_compose",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Le chat et le chien ___ près du feu. »",
+                          "choices":  [
+                                          "dort",
+                                          "dormez",
+                                          "dorment",
+                                          "dormons"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Les deux sujets forment un pluriel : « dorment »."
+                      },
+                      {
+                          "code":  "F6-0416",
+                          "microSkill":  "f6_ort_accorder_sujet_compose",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Toi et Lucas ___ la présentation. »",
+                          "choices":  [
+                                          "préparons",
+                                          "préparent",
+                                          "prépare",
+                                          "préparez"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "« Toi et Lucas » correspond à « vous » : « préparez »."
+                      },
+                      {
+                          "code":  "F6-0417",
+                          "microSkill":  "f6_ort_accorder_sujet_compose",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « La pluie et le vent ___ les vitres. »",
+                          "choices":  [
+                                          "frappent",
+                                          "frappe",
+                                          "frappes",
+                                          "frapper"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les deux sujets commandent le pluriel : « frappent »."
+                      },
+                      {
+                          "code":  "F6-0418",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_inverse",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Au fond du jardin ___ trois roses. »",
+                          "choices":  [
+                                          "pousse",
+                                          "poussent",
+                                          "poussait",
+                                          "poussera"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le sujet inversé « trois roses » est pluriel : « poussent »."
+                      },
+                      {
+                          "code":  "F6-0419",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_inverse",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Dans le ciel ___ les étoiles. »",
+                          "choices":  [
+                                          "brille",
+                                          "brillera",
+                                          "brillent",
+                                          "brilles"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le sujet inversé « les étoiles » est pluriel : « brillent »."
+                      },
+                      {
+                          "code":  "F6-0420",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_inverse",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Sur la table ___ deux cahiers. »",
+                          "choices":  [
+                                          "reste",
+                                          "restes",
+                                          "restera",
+                                          "restent"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le sujet inversé « deux cahiers » est pluriel : « restent »."
+                      },
+                      {
+                          "code":  "F6-0421",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_inverse",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « Au loin ___ une lumière. »",
+                          "choices":  [
+                                          "apparaît",
+                                          "apparaissent",
+                                          "apparaître",
+                                          "apparaissez"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le sujet inversé « une lumière » est singulier : « apparaît »."
+                      },
+                      {
+                          "code":  "F6-0422",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_inverse",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « De la cour ___ des cris. »",
+                          "choices":  [
+                                          "monte",
+                                          "montent",
+                                          "montera",
+                                          "montes"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le sujet inversé « des cris » est pluriel : « montent »."
+                      },
+                      {
+                          "code":  "F6-0423",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_inverse",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Après le virage ___ les cyclistes. »",
+                          "choices":  [
+                                          "arrive",
+                                          "arrivera",
+                                          "arrivent",
+                                          "arrives"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le sujet inversé « les cyclistes » est pluriel : « arrivent »."
+                      },
+                      {
+                          "code":  "F6-0424",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_inverse",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Sous le meuble se ___ la souris. »",
+                          "choices":  [
+                                          "cachent",
+                                          "caches",
+                                          "cacher",
+                                          "cache"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le sujet inversé « la souris » est singulier : « cache »."
+                      },
+                      {
+                          "code":  "F6-0425",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_inverse",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Au-dessus des arbres ___ des oiseaux. »",
+                          "choices":  [
+                                          "passent",
+                                          "passe",
+                                          "passes",
+                                          "passera"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le sujet inversé « des oiseaux » est pluriel : « passent »."
+                      },
+                      {
+                          "code":  "F6-0426",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_inverse",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « Dans cette boîte se ___ les clés. »",
+                          "choices":  [
+                                          "trouve",
+                                          "trouvent",
+                                          "trouver",
+                                          "trouves"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le sujet inversé « les clés » est pluriel : « trouvent »."
+                      },
+                      {
+                          "code":  "F6-0427",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_inverse",
+                          "difficulty":  2,
+                          "prompt":  "Complète : « À quelle heure ___ les activités ? »",
+                          "choices":  [
+                                          "commence",
+                                          "commencera",
+                                          "commencent",
+                                          "commences"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le sujet inversé « les activités » est pluriel : « commencent »."
+                      },
+                      {
+                          "code":  "F6-0428",
+                          "microSkill":  "f6_ort_accorder_sujet_verbe_simple",
+                          "difficulty":  1,
+                          "prompt":  "Complète : « La grande horloge du salon ___ midi. »",
+                          "choices":  [
+                                          "sonnent",
+                                          "sonner",
+                                          "sonnes",
+                                          "sonne"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le noyau du sujet « horloge » est singulier : « sonne »."
+                      }
+                  ]
+}
