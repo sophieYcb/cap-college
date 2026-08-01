@@ -47,6 +47,13 @@ function initialiseThemeSelector(){
   ).entries()].sort((a,b)=>a[1].localeCompare(b[1],'fr'));
   document.getElementById('diagnosticSubject').innerHTML=subjects
     .map(([code,name])=>`<option value="${code}">${name}</option>`).join('');
+  const requestedSubject=new URLSearchParams(location.search).get('subject');
+  const subjectSelect=document.getElementById('diagnosticSubject');
+  if(requestedSubject&&subjectSelect.querySelector(
+    `option[value="${requestedSubject}"]`
+  )){
+    subjectSelect.value=requestedSubject;
+  }
   updateDiagnosticDomains();
 }
 
