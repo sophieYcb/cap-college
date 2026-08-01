@@ -83,6 +83,7 @@ returns table (
 )
 language plpgsql security definer set search_path = ''
 as $function$
+#variable_conflict use_column
 declare
   selected_learner_id uuid;
   selected_subject_id smallint;
