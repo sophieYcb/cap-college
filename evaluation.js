@@ -6,8 +6,8 @@ const STORAGE_SUFFIX=VALIDATION_CAMPAIGN_ID
 const STORAGE_PROGRESS=`capCollegeV43Progress${STORAGE_SUFFIX}`;
 const STORAGE_PROGRESS_BACKUP=`capCollegeDiagnosticProgressBackup${STORAGE_SUFFIX}`;
 const STORAGE_RESULT=`capCollegeV43Result${STORAGE_SUFFIX}`;
-const PROGRESS_FORMAT_VERSION='6.1';
-const MIN_ANSWERS_PER_SKILL=3;
+const PROGRESS_FORMAT_VERSION='7.0';
+const MIN_ANSWERS_PER_SKILL=4;
 const BASE_PER_SKILL=MIN_ANSWERS_PER_SKILL;
 const DIAGNOSTIC_SIZE=new Set(QUESTIONS.map(q=>q.competenceId)).size*MIN_ANSWERS_PER_SKILL;
 const APPROXIMATE_QUESTIONS_PER_MINUTE=2;
@@ -24,6 +24,7 @@ let plannedMinutes=30;
 let diagnosticFinished=false;
 let remoteSequenceOffset=0;
 let discoveredRemoteSession=null;
+let cumulativeDiagnosticProgress=null;
 const CAN_FLAG_QUESTIONS=CapCollegeSupabase.canReportQuestions();
 
 if(CAN_FLAG_QUESTIONS){
@@ -116,13 +117,20 @@ function buildBalancedDiagnostic(selectedSkill='all',limit=DIAGNOSTIC_SIZE){
   const scopedQuestions=QUESTIONS
     .filter(q=>(q.subjectCode||'french')===subject)
     .filter(q=>domain==='all'||(q.domainCode||q.domaine)===domain);
+  const progressBySkill=new Map(
+    (cumulativeDiagnosticProgress?.skills||[])
+      .map(skill=>[skill.competenceId,skill])
+  );
+  const candidateQuestions=scopedQuestions.filter(
+    q=>!progressBySkill.get(q.competenceId)?.sufficientEvidence
+  );
   if(selectedSkill!=='all'){
     return prioritiseQuestions(
-      scopedQuestions.filter(q=>(q.subcategoryCode||q.competenceId)===selectedSkill)
+      candidateQuestions.filter(q=>(q.subcategoryCode||q.competenceId)===selectedSkill)
     ).slice(0,limit);
   }
   const groups={};
-  scopedQuestions.forEach(q=>{
+  candidateQuestions.forEach(q=>{
     if(!groups[q.competenceId])groups[q.competenceId]=[];
     groups[q.competenceId].push(q);
   });
@@ -140,8 +148,8 @@ function buildBalancedDiagnostic(selectedSkill='all',limit=DIAGNOSTIC_SIZE){
   }
 
   const selectedIds=new Set(selected.map(q=>q.id));
-  const targetSize=Math.min(limit,Math.max(selected.length,scopedQuestions.length));
-  const remaining=shuffle(scopedQuestions.filter(q=>!selectedIds.has(q.id)));
+  const targetSize=Math.min(limit,candidateQuestions.length);
+  const remaining=shuffle(candidateQuestions.filter(q=>!selectedIds.has(q.id)));
   selected.push(...remaining.slice(0,targetSize-selected.length));
 
   return selected.slice(0,targetSize);
@@ -211,11 +219,6 @@ async function startTest(){
   const selectedSubject=document.getElementById('diagnosticSubject').value;
   plannedMinutes=selectedDuration();
   const questionLimit=plannedMinutes*APPROXIMATE_QUESTIONS_PER_MINUTE;
-  diagnosticQuestions=buildBalancedDiagnostic(selectedSkill,questionLimit);
-  current=0;
-  answers=Array(diagnosticQuestions.length).fill(null);
-  answerResults=Array(diagnosticQuestions.length).fill(null);
-  answerFeedback=Array(diagnosticQuestions.length).fill(null);
   remoteSessionId=null;
   remoteDiagnosticId=null;
   remoteSequenceOffset=0;
@@ -223,7 +226,7 @@ async function startTest(){
     try{
       const remote=await CapCollegeSupabase.startDiagnostic(
         plannedMinutes,
-        'all',
+        selectedSkill,
         VALIDATION_CAMPAIGN_ID,
         selectedSubject
       );
@@ -236,6 +239,23 @@ async function startTest(){
       return;
     }
   }
+  if(LEARNER_PROFILE&&!VALIDATION_CAMPAIGN_ID){
+    try{
+      cumulativeDiagnosticProgress=
+        await CapCollegeSupabase.getDiagnosticProgress();
+    }catch(error){
+      console.warn('Progression cumulée indisponible.',error);
+    }
+  }
+  diagnosticQuestions=buildBalancedDiagnostic(selectedSkill,questionLimit);
+  if(!diagnosticQuestions.length){
+    alert('Toutes les compétences de ce périmètre sont déjà suffisamment évaluées.');
+    return;
+  }
+  current=0;
+  answers=Array(diagnosticQuestions.length).fill(null);
+  answerResults=Array(diagnosticQuestions.length).fill(null);
+  answerFeedback=Array(diagnosticQuestions.length).fill(null);
   saveProgress();
   showTest();
   renderQuestion();
@@ -580,6 +600,18 @@ function pauseTest(){
 
 async function finishTest(stoppedEarly=false){
   diagnosticFinished=true;
+  let authoritativeProgress=cumulativeDiagnosticProgress;
+  if(remoteSessionId){
+    try{
+      await CapCollegeSupabase.finishDiagnostic(remoteSessionId);
+      if(LEARNER_PROFILE&&!VALIDATION_CAMPAIGN_ID){
+        authoritativeProgress=await CapCollegeSupabase.getDiagnosticProgress();
+        cumulativeDiagnosticProgress=authoritativeProgress;
+      }
+    }catch(error){
+      console.warn('La séance distante n’a pas pu être clôturée.',error);
+    }
+  }
   const stats={};
 
   // Tous les thèmes existent dans le bilan, même ceux qui n'ont pas été suffisamment testés.
@@ -623,6 +655,8 @@ async function finishTest(stoppedEarly=false){
     plannedTotal:diagnosticQuestions.length,
     stoppedEarly,
     minimumAnswersPerSkill:MIN_ANSWERS_PER_SKILL,
+    diagnosticProgress:authoritativeProgress,
+    diagnosisReady:Boolean(authoritativeProgress?.diagnosisReady),
     answers,
     answerResults,
     reviewItems:diagnosticQuestions.map((q,index)=>{
@@ -650,13 +684,6 @@ async function finishTest(stoppedEarly=false){
   }
   localStorage.removeItem(STORAGE_PROGRESS);
   localStorage.removeItem(STORAGE_PROGRESS_BACKUP);
-  if(remoteSessionId){
-    try{
-      await CapCollegeSupabase.finishDiagnostic(remoteSessionId);
-    }catch(error){
-      console.warn('La séance distante n’a pas pu être clôturée.',error);
-    }
-  }
   window.location.href=VALIDATION_CAMPAIGN_ID
     ?`resultats.html?validationCampaign=${encodeURIComponent(VALIDATION_CAMPAIGN_ID)}`
     :LEARNER_PROFILE?'resultats.html?mode=child':'resultats.html';
@@ -674,6 +701,28 @@ document.querySelectorAll('input[name="sessionDuration"]').forEach(input=>{
   input.addEventListener('change',refreshDurationSummary);
 });
 refreshDurationSummary();
+
+async function refreshOverallDiagnosticProgress(){
+  const target=document.getElementById('diagnosticOverallProgress');
+  if(!target||!LEARNER_PROFILE||VALIDATION_CAMPAIGN_ID)return;
+  try{
+    cumulativeDiagnosticProgress=
+      await CapCollegeSupabase.getDiagnosticProgress();
+    if(!cumulativeDiagnosticProgress?.hasDiagnostic)return;
+    const progress=cumulativeDiagnosticProgress;
+    target.textContent=progress.diagnosisReady
+      ?'Diagnostic terminé : le bilan final est disponible.'
+      :'Diagnostic en cours : '+progress.progressPercent+' % · '+
+        progress.assessedSkills+'/'+progress.totalSkills+
+        ' compétences suffisamment évaluées · au moins '+
+        progress.questionsRemaining+' question'+
+        (progress.questionsRemaining>1?'s':'')+' restante'+
+        (progress.questionsRemaining>1?'s':'')+'.';
+    target.classList.remove('hidden');
+  }catch(error){
+    console.warn('Progression globale indisponible.',error);
+  }
+}
 
 async function discoverRemoteResume(){
   const wantsImmediateResume=new URLSearchParams(location.search).get('resume')==='1';
@@ -715,4 +764,5 @@ async function discoverRemoteResume(){
     console.warn('Recherche de séance active impossible.',error);
   }
 }
+refreshOverallDiagnosticProgress();
 discoverRemoteResume();

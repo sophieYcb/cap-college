@@ -81,10 +81,16 @@ function renderMistakes(r){
   `).join('');
 }
 
-function renderRecommendation(){
+function renderRecommendation(diagnosticProgress=null){
   const profile=Array.isArray(window.CAP_COLLEGE_SKILL_PROFILE)
     ?window.CAP_COLLEGE_SKILL_PROFILE:[];
   const target=document.getElementById('recommendation');
+  if(RESULT_LEARNER_PROFILE&&diagnosticProgress&&!diagnosticProgress.diagnosisReady){
+    target.innerHTML='<div class="notice">Le diagnostic est encore en cours ('+
+      diagnosticProgress.progressPercent+
+      ' %). Aucune priorité définitive ne sera proposée avant que toutes les compétences soient suffisamment évaluées.</div>';
+    return;
+  }
   if(RESULT_LEARNER_PROFILE){
     target.innerHTML='<div class="notice">Tes résultats sont bien enregistrés sur ton profil. Les exercices ciblés seront ajoutés à l’étape suivante.</div>';
     return;
@@ -136,6 +142,9 @@ function render(r){
   const minimum=r.minimumAnswersPerSkill||3;
   const answeredTotal=r.total||0;
   const global=answeredTotal?Math.round(r.totalOk/answeredTotal*100):0;
+  const diagnosticProgress=r.diagnosticProgress||
+    window.CAP_COLLEGE_DIAGNOSTIC_PROGRESS||null;
+  const diagnosisReady=Boolean(diagnosticProgress?.diagnosisReady);
 
   const arr=Object.entries(r.stats).map(([name,s])=>{
     const pending=s.pending===true || s.total<minimum;
@@ -147,7 +156,9 @@ function render(r){
     };
   });
 
-  const evaluated=arr.filter(x=>!x.pending);
+  const evaluated=arr.filter(
+    x=>!x.pending&&(!diagnosticProgress||diagnosisReady)
+  );
   const pending=arr.filter(x=>x.pending);
   const acquired=evaluated.filter(x=>x.p>=80).length;
   const weak=evaluated.filter(x=>x.p<80).sort((a,b)=>a.p-b.p);
@@ -156,16 +167,27 @@ function render(r){
     ? `Le test a été arrêté volontairement après <strong>${answeredTotal} réponse${answeredTotal>1?'s':''}</strong>. `
     : `Le diagnostic porte sur <strong>${answeredTotal} réponse${answeredTotal>1?'s':''}</strong>. `;
 
-  document.getElementById('globalText').innerHTML=
-    `${partialText}Score global sur les questions répondues : <strong>${global} %</strong>. `+
-    `Le diagnostic général reste actif et continuera lors des prochaines séances.`;
+  document.getElementById('globalText').innerHTML=diagnosticProgress
+    ?diagnosisReady
+      ?partialText+'<strong>Le diagnostic final est terminé.</strong> Toutes les compétences disposent de preuves suffisantes.'
+      :partialText+'<strong>Diagnostic en cours : '+diagnosticProgress.progressPercent+
+        ' %.</strong> '+diagnosticProgress.assessedSkills+'/'+
+        diagnosticProgress.totalSkills+' compétences sont suffisamment évaluées. '+
+        'Il reste au moins '+diagnosticProgress.questionsRemaining+
+        ' question'+(diagnosticProgress.questionsRemaining>1?'s':'')+
+        '. Aucun niveau définitif n’est encore établi.'
+    :partialText+'Score global sur les questions répondues : <strong>'+
+      global+' %</strong>. Le diagnostic général reste actif.';
 
   document.getElementById('summary').innerHTML=`
     <div class="summary-box"><div class="summary-value">${answeredTotal}</div><div class="small">réponses données</div></div>
     <div class="summary-box"><div class="summary-value">${r.totalOk}</div><div class="small">bonnes réponses</div></div>
     <div class="summary-box"><div class="summary-value">${answeredTotal-r.totalOk}</div><div class="small">erreurs à revoir</div></div>`;
 
-  document.getElementById('priorities').innerHTML=weak.length
+  document.getElementById('priorities').innerHTML=
+    diagnosticProgress&&!diagnosisReady
+    ?'<div class="notice">Les priorités seront calculées lorsque le diagnostic sera terminé.</div>'
+    :weak.length
     ? weak.slice(0,8).map((x,i)=>`<div class="priority"><strong>${i+1}. ${x.name}</strong><br><span class="small">${x.domain} — ${x.p} % (${x.total} réponses)</span></div>`).join('')
     : evaluated.length
       ? '<p>Tous les thèmes suffisamment évalués atteignent le seuil de maîtrise.</p>'
@@ -177,7 +199,7 @@ function render(r){
     if(!items.length)return;
     html+=`<h3 class="domain-title">${domain}</h3>`;
     html+=items.map(x=>{
-      if(x.pending){
+      if(x.pending||(diagnosticProgress&&!diagnosisReady)){
         return `<div class="result pending-result">
           <div class="result-head">
             <span>${x.name}</span>
@@ -198,6 +220,6 @@ function render(r){
   });
 
   document.getElementById('skillsResults').innerHTML=html;
-  renderRecommendation();
+  renderRecommendation(diagnosticProgress);
   renderMistakes(r);
 }

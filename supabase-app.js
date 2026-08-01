@@ -350,6 +350,18 @@
     return Array.isArray(data) ? data : [];
   }
 
+  async function getDiagnosticProgress() {
+    if (!configured()) return null;
+    const token = learnerProfile ? learnerAccessToken() : null;
+    if (!token) return null;
+    const { data, error } = await getClient().rpc(
+      "get_learner_diagnostic_progress",
+      { requested_token: token }
+    );
+    if (error) throw error;
+    return data || null;
+  }
+
   async function getDiagnosticSessionState(sessionId) {
     if (!configured() || !sessionId) return null;
     const token = learnerProfile ? learnerAccessToken() : null;
@@ -658,6 +670,7 @@
     getDiagnosticSessionState,
     getErrorNotebook,
     getSkillProfile,
+    getDiagnosticProgress,
     getValidationCampaigns,
     getValidationQuestionBank,
     importDraftQuestionLot,
