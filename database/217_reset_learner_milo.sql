@@ -11,11 +11,18 @@ declare
   selected_learner_id uuid;
   matching_profiles integer;
 begin
-  select count(*), min(id)
-  into matching_profiles, selected_learner_id
+  select count(*)
+  into matching_profiles
   from public.learner_profiles
   where lower(btrim(display_name)) = 'milo'
     and active;
+
+  select id
+  into selected_learner_id
+  from public.learner_profiles
+  where lower(btrim(display_name)) = 'milo'
+    and active
+  limit 1;
 
   if matching_profiles <> 1 then
     raise exception

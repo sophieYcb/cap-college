@@ -9,11 +9,11 @@ select jsonb_build_object(
   'access_code_preserved', bool_and(milo.access_code is not null),
   'diagnostics_remaining', (
     select count(*) from public.diagnostics d
-    where d.learner_profile_id = min(milo.id)
+    where d.learner_profile_id = (select id from milo limit 1)
   ),
   'access_sessions_remaining', (
     select count(*) from public.learner_access_sessions las
-    where las.learner_profile_id = min(milo.id)
+    where las.learner_profile_id = (select id from milo limit 1)
   )
 ) as verification
 from milo;
