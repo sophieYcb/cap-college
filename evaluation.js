@@ -58,7 +58,17 @@ function initialiseThemeSelector(){
 }
 
 function updateDiagnosticDomains(){
-  const subject=document.getElementById('diagnosticSubject').value;
+  const subjectSelect=document.getElementById('diagnosticSubject');
+  const subject=subjectSelect.value;
+  if(!VALIDATION_CAMPAIGN_ID){
+    const subjectName=subjectSelect.options[subjectSelect.selectedIndex]?.text||
+      'Matière';
+    document.querySelector('#intro h1').textContent=
+      'Diagnostic '+subjectName+' 6e';
+    document.getElementById('evaluationModeBadge').textContent=
+      subjectName+' 6e';
+    document.title='Diagnostic '+subjectName+' 6e — Cap Collège';
+  }
   const domains=[...new Map(
     QUESTIONS.filter(q=>(q.subjectCode||'french')===subject)
       .map(q=>[q.domainCode||q.domaine,q.domaine])
