@@ -1,0 +1,620 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "french",
+  "level": "6e",
+  "domain": {
+    "code": "vocabulary",
+    "name": "Vocabulaire"
+  },
+  "skill": {
+    "code": "f6_vocabulary_system",
+    "name": "Système lexical et sens des mots"
+  },
+  "lot": "F6-VOC-16",
+  "status": "draft",
+  "source": "Programme de français cycle 3, BO n°16 du 17 avril 2025",
+  "microSkills": [
+    {
+      "code": "f6_voc_distinguer_mot_simple_derive",
+      "teacherName": "Distinguer mot simple et mot dérivé",
+      "studentName": "Distinguer un mot simple d’un mot dérivé",
+      "lessonReminder": "Un mot dérivé est construit à partir d’un mot de base auquel on ajoute un préfixe ou un suffixe.",
+      "workedExample": "« jardinier » est dérivé de « jardin » grâce au suffixe « -ier ».",
+      "masteryCriteria": "Reconnaître un mot dérivé et retrouver sa base ou ses éléments de formation."
+    },
+    {
+      "code": "f6_voc_identifier_mot_compose",
+      "teacherName": "Identifier la composition d’un mot",
+      "studentName": "Reconnaître et décomposer un mot composé",
+      "lessonReminder": "Un mot composé réunit au moins deux mots ou éléments qui peuvent être séparés par un trait d’union ou une préposition.",
+      "workedExample": "« porte-monnaie » réunit « porte » et « monnaie ».",
+      "masteryCriteria": "Reconnaître un mot composé et identifier les mots qui le constituent."
+    },
+    {
+      "code": "f6_voc_identifier_prefixe",
+      "teacherName": "Identifier ou interpréter un préfixe",
+      "studentName": "Reconnaître un préfixe et comprendre son sens",
+      "lessonReminder": "Le préfixe se place avant le mot de base et en modifie le sens.",
+      "workedExample": "Dans « refaire », le préfixe « re- » indique que l’action est répétée.",
+      "masteryCriteria": "Identifier un préfixe fréquent et interpréter sa contribution au sens du mot."
+    },
+    {
+      "code": "f6_voc_identifier_suffixe",
+      "teacherName": "Identifier ou interpréter un suffixe",
+      "studentName": "Reconnaître un suffixe et comprendre son sens",
+      "lessonReminder": "Le suffixe se place après le mot de base et sert souvent à former un mot nouveau ou à changer sa classe grammaticale.",
+      "workedExample": "Dans « doucement », le suffixe « -ment » forme un adverbe.",
+      "masteryCriteria": "Identifier un suffixe fréquent et interpréter sa contribution au sens du mot."
+    },
+    {
+      "code": "f6_voc_lire_article_dictionnaire",
+      "teacherName": "Lire les informations d’un article de dictionnaire",
+      "studentName": "Trouver une information dans un article de dictionnaire",
+      "lessonReminder": "Un article de dictionnaire donne notamment l’entrée, la prononciation, la classe grammaticale, les définitions et des exemples.",
+      "workedExample": "Dans « fragile adj. Qui se casse facilement », « adj. » indique que le mot est un adjectif.",
+      "masteryCriteria": "Repérer et interpréter les principales informations d’un article de dictionnaire."
+    }
+  ],
+  "questions": [
+    {
+      "code": "F6-0469",
+      "microSkill": "f6_voc_distinguer_mot_simple_derive",
+      "difficulty": 1,
+      "prompt": "Quel mot est dérivé d’un mot de base ?",
+      "choices": [
+        "jardinier",
+        "arbre",
+        "table",
+        "maison"
+      ],
+      "correctIndex": 0,
+      "explanation": "« jardinier » est formé à partir de « jardin » avec le suffixe « -ier »."
+    },
+    {
+      "code": "F6-0470",
+      "microSkill": "f6_voc_distinguer_mot_simple_derive",
+      "difficulty": 1,
+      "prompt": "Quel mot est construit avec un préfixe ?",
+      "choices": [
+        "possible",
+        "impossible",
+        "possibilité",
+        "possiblement"
+      ],
+      "correctIndex": 1,
+      "explanation": "« impossible » est construit avec le préfixe « im- » ajouté à « possible »."
+    },
+    {
+      "code": "F6-0471",
+      "microSkill": "f6_voc_distinguer_mot_simple_derive",
+      "difficulty": 1,
+      "prompt": "Quel mot est un mot simple ?",
+      "choices": [
+        "chaton",
+        "relecture",
+        "chat",
+        "doucement"
+      ],
+      "correctIndex": 2,
+      "explanation": "« chat » sert de base ; les autres mots sont construits avec un préfixe ou un suffixe."
+    },
+    {
+      "code": "F6-0472",
+      "microSkill": "f6_voc_distinguer_mot_simple_derive",
+      "difficulty": 1,
+      "prompt": "Comment le mot « lavable » est-il formé ?",
+      "choices": [
+        "lav + able",
+        "lavable + er",
+        "la + vable",
+        "laver + -able"
+      ],
+      "correctIndex": 3,
+      "explanation": "« lavable » est formé à partir de « laver » avec le suffixe « -able »."
+    },
+    {
+      "code": "F6-0473",
+      "microSkill": "f6_voc_distinguer_mot_simple_derive",
+      "difficulty": 2,
+      "prompt": "Quel mot est dérivé de « dent » ?",
+      "choices": [
+        "dentiste",
+        "dette",
+        "dedans",
+        "dense"
+      ],
+      "correctIndex": 0,
+      "explanation": "« dentiste » appartient à la famille de « dent » et comporte le suffixe « -iste »."
+    },
+    {
+      "code": "F6-0474",
+      "microSkill": "f6_voc_distinguer_mot_simple_derive",
+      "difficulty": 2,
+      "prompt": "Quel mot n’est pas un mot dérivé ?",
+      "choices": [
+        "ensoleillé",
+        "soleil",
+        "jardinage",
+        "impossible"
+      ],
+      "correctIndex": 1,
+      "explanation": "« soleil » est ici le mot simple qui sert de base à « ensoleillé »."
+    },
+    {
+      "code": "F6-0475",
+      "microSkill": "f6_voc_distinguer_mot_simple_derive",
+      "difficulty": 2,
+      "prompt": "Quelle décomposition explique le mot « relecture » ?",
+      "choices": [
+        "relect + ure",
+        "relecture + re",
+        "re- + lecture",
+        "relire + -cture"
+      ],
+      "correctIndex": 2,
+      "explanation": "« relecture » est construit avec le préfixe « re- » et le nom « lecture »."
+    },
+    {
+      "code": "F6-0476",
+      "microSkill": "f6_voc_distinguer_mot_simple_derive",
+      "difficulty": 3,
+      "prompt": "Quelle formation explique le mot « rapidement » ?",
+      "choices": [
+        "rapidement + rapide",
+        "rap + idement",
+        "rapide + -té",
+        "rapide + -ment"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le suffixe « -ment » ajouté à « rapide » forme l’adverbe « rapidement »."
+    },
+    {
+      "code": "F6-0477",
+      "microSkill": "f6_voc_identifier_mot_compose",
+      "difficulty": 1,
+      "prompt": "Quels éléments forment le mot « porte-monnaie » ?",
+      "choices": [
+        "porte + monnaie",
+        "port + monnaie",
+        "porte + mon",
+        "porter + monnaie"
+      ],
+      "correctIndex": 0,
+      "explanation": "« porte-monnaie » réunit les mots « porte » et « monnaie »."
+    },
+    {
+      "code": "F6-0478",
+      "microSkill": "f6_voc_identifier_mot_compose",
+      "difficulty": 1,
+      "prompt": "Quel mot est un mot composé ?",
+      "choices": [
+        "chou",
+        "chou-fleur",
+        "fleur",
+        "fleuri"
+      ],
+      "correctIndex": 1,
+      "explanation": "« chou-fleur » est formé de deux mots reliés par un trait d’union."
+    },
+    {
+      "code": "F6-0479",
+      "microSkill": "f6_voc_identifier_mot_compose",
+      "difficulty": 1,
+      "prompt": "De quels mots « pomme de terre » est-il composé ?",
+      "choices": [
+        "pomme + terreau",
+        "pom + terre",
+        "pomme + de + terre",
+        "pommier + terre"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le mot composé contient « pomme », la préposition « de » et « terre »."
+    },
+    {
+      "code": "F6-0480",
+      "microSkill": "f6_voc_identifier_mot_compose",
+      "difficulty": 1,
+      "prompt": "Quelle décomposition de « tire-bouchon » est correcte ?",
+      "choices": [
+        "tir + bouchon",
+        "tire + bouche",
+        "tirer + bouche",
+        "tire + bouchon"
+      ],
+      "correctIndex": 3,
+      "explanation": "« tire-bouchon » réunit « tire » et « bouchon »."
+    },
+    {
+      "code": "F6-0481",
+      "microSkill": "f6_voc_identifier_mot_compose",
+      "difficulty": 2,
+      "prompt": "Quel mot est composé de deux mots autonomes ?",
+      "choices": [
+        "coffre-fort",
+        "coffret",
+        "renforcement",
+        "fortement"
+      ],
+      "correctIndex": 0,
+      "explanation": "« coffre-fort » réunit les mots autonomes « coffre » et « fort »."
+    },
+    {
+      "code": "F6-0482",
+      "microSkill": "f6_voc_identifier_mot_compose",
+      "difficulty": 2,
+      "prompt": "Quels mots reconnaît-on dans « arc-en-ciel » ?",
+      "choices": [
+        "arc + cieler",
+        "arc + en + ciel",
+        "arque + ciel",
+        "arc + ancien"
+      ],
+      "correctIndex": 1,
+      "explanation": "« arc-en-ciel » est formé de « arc », « en » et « ciel »."
+    },
+    {
+      "code": "F6-0483",
+      "microSkill": "f6_voc_identifier_mot_compose",
+      "difficulty": 2,
+      "prompt": "Quel mot composé désigne une partie de la journée ?",
+      "choices": [
+        "journée",
+        "midi",
+        "après-midi",
+        "journalier"
+      ],
+      "correctIndex": 2,
+      "explanation": "« après-midi » est un mot composé de « après » et « midi »."
+    },
+    {
+      "code": "F6-0484",
+      "microSkill": "f6_voc_identifier_mot_compose",
+      "difficulty": 3,
+      "prompt": "Quel mot n’est pas un mot composé ?",
+      "choices": [
+        "tournesol",
+        "portefeuille",
+        "gratte-ciel",
+        "rapidement"
+      ],
+      "correctIndex": 3,
+      "explanation": "« rapidement » est un mot dérivé avec le suffixe « -ment », pas un mot composé."
+    },
+    {
+      "code": "F6-0485",
+      "microSkill": "f6_voc_identifier_prefixe",
+      "difficulty": 1,
+      "prompt": "Dans « impossible », que signifie le préfixe « im- » ?",
+      "choices": [
+        "la négation",
+        "la répétition",
+        "le temps passé",
+        "la petitesse"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le préfixe « im- » donne ici le sens de « qui n’est pas possible »."
+    },
+    {
+      "code": "F6-0486",
+      "microSkill": "f6_voc_identifier_prefixe",
+      "difficulty": 1,
+      "prompt": "Quel mot contient un préfixe signifiant « de nouveau » ?",
+      "choices": [
+        "joueur",
+        "rejouer",
+        "jouable",
+        "jouet"
+      ],
+      "correctIndex": 1,
+      "explanation": "Dans « rejouer », « re- » indique que l’on joue de nouveau."
+    },
+    {
+      "code": "F6-0487",
+      "microSkill": "f6_voc_identifier_prefixe",
+      "difficulty": 1,
+      "prompt": "Dans « préhistoire », quel est le sens de « pré- » ?",
+      "choices": [
+        "à l’intérieur",
+        "contre",
+        "avant",
+        "après"
+      ],
+      "correctIndex": 2,
+      "explanation": "Le préfixe « pré- » signifie « avant »."
+    },
+    {
+      "code": "F6-0488",
+      "microSkill": "f6_voc_identifier_prefixe",
+      "difficulty": 2,
+      "prompt": "Quel mot signifie « faire l’action inverse de faire » grâce à un préfixe ?",
+      "choices": [
+        "refaire",
+        "parfaire",
+        "faire",
+        "défaire"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le préfixe « dé- » donne à « défaire » le sens d’annuler ce qui a été fait."
+    },
+    {
+      "code": "F6-0489",
+      "microSkill": "f6_voc_identifier_prefixe",
+      "difficulty": 2,
+      "prompt": "Quel préfixe trouve-t-on dans « invisible » ?",
+      "choices": [
+        "in-",
+        "-ible",
+        "invis-",
+        "vis-"
+      ],
+      "correctIndex": 0,
+      "explanation": "« in- » est placé avant « visible » et exprime la négation."
+    },
+    {
+      "code": "F6-0490",
+      "microSkill": "f6_voc_identifier_prefixe",
+      "difficulty": 2,
+      "prompt": "Dans « antivol », que signifie le préfixe « anti- » ?",
+      "choices": [
+        "autour de",
+        "contre",
+        "avant",
+        "deux fois"
+      ],
+      "correctIndex": 1,
+      "explanation": "« anti- » signifie « contre » : un antivol protège contre le vol."
+    },
+    {
+      "code": "F6-0491",
+      "microSkill": "f6_voc_identifier_prefixe",
+      "difficulty": 3,
+      "prompt": "Dans « surcharger », quel sens le préfixe « sur- » ajoute-t-il ?",
+      "choices": [
+        "enlever la charge",
+        "charger de nouveau",
+        "charger excessivement",
+        "charger avant"
+      ],
+      "correctIndex": 2,
+      "explanation": "« sur- » indique ici un excès : charger plus que nécessaire."
+    },
+    {
+      "code": "F6-0492",
+      "microSkill": "f6_voc_identifier_suffixe",
+      "difficulty": 1,
+      "prompt": "Dans « maisonnette », quel suffixe exprime une petite taille ?",
+      "choices": [
+        "-maison",
+        "-son",
+        "-nette",
+        "-ette"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le suffixe « -ette » donne à « maisonnette » le sens de petite maison."
+    },
+    {
+      "code": "F6-0493",
+      "microSkill": "f6_voc_identifier_suffixe",
+      "difficulty": 1,
+      "prompt": "Dans « danseur », quel suffixe désigne la personne qui danse ?",
+      "choices": [
+        "-eur",
+        "-dan",
+        "-se",
+        "-reur"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le suffixe « -eur » sert ici à nommer la personne qui accomplit l’action."
+    },
+    {
+      "code": "F6-0494",
+      "microSkill": "f6_voc_identifier_suffixe",
+      "difficulty": 1,
+      "prompt": "Quel suffixe transforme « doux » en adverbe dans « doucement » ?",
+      "choices": [
+        "-douce",
+        "-ment",
+        "-ementer",
+        "-ce"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le suffixe « -ment » sert à former l’adverbe « doucement »."
+    },
+    {
+      "code": "F6-0495",
+      "microSkill": "f6_voc_identifier_suffixe",
+      "difficulty": 2,
+      "prompt": "Dans « lavable », que signifie le suffixe « -able » ?",
+      "choices": [
+        "qui lave toujours",
+        "qui ne peut pas être lavé",
+        "qui peut être lavé",
+        "qui lave de nouveau"
+      ],
+      "correctIndex": 2,
+      "explanation": "« -able » exprime ici la possibilité : ce qui peut être lavé."
+    },
+    {
+      "code": "F6-0496",
+      "microSkill": "f6_voc_identifier_suffixe",
+      "difficulty": 2,
+      "prompt": "Quel suffixe trouve-t-on dans « rapidité » ?",
+      "choices": [
+        "-ra",
+        "-pide",
+        "-diter",
+        "-ité"
+      ],
+      "correctIndex": 3,
+      "explanation": "Le suffixe « -ité » sert notamment à former un nom exprimant une qualité."
+    },
+    {
+      "code": "F6-0497",
+      "microSkill": "f6_voc_identifier_suffixe",
+      "difficulty": 2,
+      "prompt": "Dans « pianiste », quel suffixe désigne une personne ?",
+      "choices": [
+        "-iste",
+        "-pian",
+        "-aniste",
+        "-te"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le suffixe « -iste » désigne ici la personne qui joue du piano."
+    },
+    {
+      "code": "F6-0498",
+      "microSkill": "f6_voc_identifier_suffixe",
+      "difficulty": 3,
+      "prompt": "Dans « jardinage », quel suffixe forme le nom de l’activité ?",
+      "choices": [
+        "-jardin",
+        "-age",
+        "-inage",
+        "-ge"
+      ],
+      "correctIndex": 1,
+      "explanation": "Le suffixe « -age » forme ici le nom de l’activité liée au jardin."
+    },
+    {
+      "code": "F6-0499",
+      "microSkill": "f6_voc_lire_article_dictionnaire",
+      "difficulty": 1,
+      "prompt": "Lis : « fragile adj. Qui se casse facilement. » Quelle est la classe grammaticale de « fragile » ?",
+      "choices": [
+        "un nom",
+        "un verbe",
+        "un adjectif",
+        "un adverbe"
+      ],
+      "correctIndex": 2,
+      "explanation": "L’abréviation « adj. » signifie « adjectif »."
+    },
+    {
+      "code": "F6-0500",
+      "microSkill": "f6_voc_lire_article_dictionnaire",
+      "difficulty": 1,
+      "prompt": "Lis : « cheval, chevaux n.m. Grand mammifère domestiqué. » Quel est le pluriel de « cheval » ?",
+      "choices": [
+        "chevals",
+        "chevaus",
+        "cheval",
+        "chevaux"
+      ],
+      "correctIndex": 3,
+      "explanation": "L’article indique le pluriel irrégulier « chevaux »."
+    },
+    {
+      "code": "F6-0501",
+      "microSkill": "f6_voc_lire_article_dictionnaire",
+      "difficulty": 1,
+      "prompt": "Lis : « glace n.f. 1. Eau gelée. 2. Miroir. » Que montrent les numéros 1 et 2 ?",
+      "choices": [
+        "deux sens du mot",
+        "deux pluriels",
+        "deux prononciations",
+        "deux classes grammaticales"
+      ],
+      "correctIndex": 0,
+      "explanation": "Les numéros séparent les différents sens du mot « glace »."
+    },
+    {
+      "code": "F6-0502",
+      "microSkill": "f6_voc_lire_article_dictionnaire",
+      "difficulty": 1,
+      "prompt": "Lis : « rapide adj. Qui va vite. SYN. prompt. » Quel synonyme est indiqué ?",
+      "choices": [
+        "vite",
+        "prompt",
+        "lent",
+        "rapidité"
+      ],
+      "correctIndex": 1,
+      "explanation": "L’abréviation « SYN. » introduit le synonyme « prompt »."
+    },
+    {
+      "code": "F6-0503",
+      "microSkill": "f6_voc_lire_article_dictionnaire",
+      "difficulty": 2,
+      "prompt": "Lis : « bruyant adj. Qui produit beaucoup de bruit. CONTR. silencieux. » Quel antonyme est donné ?",
+      "choices": [
+        "bruit",
+        "sonore",
+        "silencieux",
+        "calme"
+      ],
+      "correctIndex": 2,
+      "explanation": "L’abréviation « CONTR. » introduit l’antonyme « silencieux »."
+    },
+    {
+      "code": "F6-0504",
+      "microSkill": "f6_voc_lire_article_dictionnaire",
+      "difficulty": 2,
+      "prompt": "Lis : « migrer v. intr. Se déplacer selon les saisons. Ex. Les oiseaux migrent en automne. » Quel passage est l’exemple ?",
+      "choices": [
+        "migrer",
+        "v. intr.",
+        "Se déplacer selon les saisons.",
+        "Les oiseaux migrent en automne."
+      ],
+      "correctIndex": 3,
+      "explanation": "L’abréviation « Ex. » introduit la phrase d’exemple."
+    },
+    {
+      "code": "F6-0505",
+      "microSkill": "f6_voc_lire_article_dictionnaire",
+      "difficulty": 2,
+      "prompt": "Lis : « éclair n.m. Lumière vive et brève pendant un orage. » Quel est le mot-entrée ?",
+      "choices": [
+        "éclair",
+        "lumière",
+        "orage",
+        "brève"
+      ],
+      "correctIndex": 0,
+      "explanation": "Le mot placé au début de l’article est l’entrée « éclair »."
+    },
+    {
+      "code": "F6-0506",
+      "microSkill": "f6_voc_lire_article_dictionnaire",
+      "difficulty": 2,
+      "prompt": "Dans un article, à quoi servent les signes « [ ] » placés après le mot-entrée ?",
+      "choices": [
+        "à donner un antonyme",
+        "à indiquer la prononciation",
+        "à annoncer un exemple",
+        "à séparer les sens"
+      ],
+      "correctIndex": 1,
+      "explanation": "Les crochets contiennent généralement la transcription de la prononciation."
+    },
+    {
+      "code": "F6-0507",
+      "microSkill": "f6_voc_lire_article_dictionnaire",
+      "difficulty": 3,
+      "prompt": "Lis : « avide adj. Qui désire quelque chose avec force. » Quelle partie constitue la définition ?",
+      "choices": [
+        "avide",
+        "adj.",
+        "Qui désire quelque chose avec force.",
+        "avec force"
+      ],
+      "correctIndex": 2,
+      "explanation": "La définition explique le sens du mot après l’indication de sa classe."
+    },
+    {
+      "code": "F6-0508",
+      "microSkill": "f6_voc_lire_article_dictionnaire",
+      "difficulty": 3,
+      "prompt": "Lis : « banc n.m. 1. Siège allongé. 2. Groupe de poissons. » Quel sens convient dans « un banc de sardines » ?",
+      "choices": [
+        "un siège allongé",
+        "un meuble scolaire",
+        "une planche",
+        "un groupe de poissons"
+      ],
+      "correctIndex": 3,
+      "explanation": "Dans ce contexte, « banc » désigne un groupe de poissons."
+    }
+  ]
+}
