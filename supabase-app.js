@@ -204,7 +204,15 @@
       requiredRoles.length &&
       !requiredRoles.includes(activeRole)
     ) {
-      throw new Error("Ce compte n’a pas accès à cet espace.");
+      const compatibleRole = requiredRoles.find(role =>
+        roles.includes(role)
+      );
+      if (compatibleRole && session) {
+        await setActiveRole(compatibleRole);
+        activeRole = compatibleRole;
+      } else {
+        throw new Error("Ce compte n’a pas accès à cet espace.");
+      }
     }
 
     if (loadQuestions) {
