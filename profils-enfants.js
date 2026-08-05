@@ -11,21 +11,65 @@ function escapeHtml(value) {
 function formatProfileCode(value) {
   return String(value || "").replace(/(.{4})(?=.)/g, "$1-");
 }
-function renderProfiles(profiles) {
+function clampPercent(value) {
+  return Math.max(0, Math.min(100, Number(value) || 0));
+}
+function renderSubjectProgress(progress) {
+  const percent = clampPercent(progress.progress_percent);
+  const title = escapeHtml(progress.subject_name);
+  if (!progress.has_diagnostic) {
+    return `<div class="learner-subject-progress">
+      <div class="learner-progress-heading"><strong>${title}</strong><span>Pas encore commencé</span></div>
+      <div class="meter"><span class="pending-meter" style="width:0%"></span></div>
+    </div>`;
+  }
+  const state = progress.diagnosis_ready
+    ? "Diagnostic terminé"
+    : `${percent} % · ${progress.assessed_skills}/${progress.total_skills} compétences évaluées`;
+  const details = progress.diagnosis_ready
+    ? `${progress.completed_sessions} séance${progress.completed_sessions > 1 ? "s" : ""} · bilan fiable disponible`
+    : `${progress.completed_sessions} séance${progress.completed_sessions > 1 ? "s" : ""} · au moins ${progress.questions_remaining} question${progress.questions_remaining > 1 ? "s" : ""} restante${progress.questions_remaining > 1 ? "s" : ""}`;
+  return `<div class="learner-subject-progress">
+    <div class="learner-progress-heading"><strong>${title}</strong><span>${escapeHtml(state)}</span></div>
+    <div class="meter"><span class="${progress.diagnosis_ready ? "green" : "pending-meter"}" style="width:${percent}%"></span></div>
+    <p class="small">${escapeHtml(details)}</p>
+  </div>`;
+}
+function renderProfiles(profiles, progressRows = []) {
   count.textContent = `${profiles.length} profil${profiles.length > 1 ? "s" : ""}`;
   if (!profiles.length) {
     list.innerHTML = '<p class="muted">Aucun profil créé pour le moment.</p>';
     return;
   }
-  list.innerHTML = profiles.map(profile => `
-    <article class="learner-profile-card">
-      <div class="learner-avatar">${escapeHtml(profile.display_name).charAt(0).toUpperCase()}</div>
-      <div><strong>${escapeHtml(profile.display_name)}</strong><p>${escapeHtml(profile.level_name)} · ${profile.relationship_type === "teacher" ? "Élève" : "Enfant"}</p><p class="learner-access-code">Identifiant : <code>${formatProfileCode(profile.access_code)}</code></p></div>
-      <span class="learner-pin-badge">PIN protégé</span>
-    </article>`).join("");
+  const progressByLearner = new Map();
+  progressRows.forEach(progress => {
+    const rows = progressByLearner.get(progress.learner_profile_id) || [];
+    rows.push(progress);
+    progressByLearner.set(progress.learner_profile_id, rows);
+  });
+  list.innerHTML = profiles.map(profile => {
+    const progress = progressByLearner.get(profile.id) || [];
+    return `<article class="learner-profile-card">
+      <div class="learner-profile-main">
+        <div class="learner-avatar">${escapeHtml(profile.display_name).charAt(0).toUpperCase()}</div>
+        <div><strong>${escapeHtml(profile.display_name)}</strong><p>${escapeHtml(profile.level_name)} · ${profile.relationship_type === "teacher" ? "Élève" : "Enfant"}</p><p class="learner-access-code">Identifiant : <code>${formatProfileCode(profile.access_code)}</code></p></div>
+        <span class="learner-pin-badge">PIN protégé</span>
+      </div>
+      <div class="learner-progress-summary">
+        <h3>Progression</h3>
+        ${progress.length
+          ? progress.map(renderSubjectProgress).join("")
+          : '<p class="muted">Aucune matière disponible pour ce niveau.</p>'}
+      </div>
+    </article>`;
+  }).join("");
 }
 async function refreshProfiles() {
-  renderProfiles(await CapCollegeSupabase.getLearnerProfiles());
+  const [profiles, progress] = await Promise.all([
+    CapCollegeSupabase.getLearnerProfiles(),
+    CapCollegeSupabase.getLearnerProgress()
+  ]);
+  renderProfiles(profiles, progress);
 }
 form.addEventListener("submit", async event => {
   event.preventDefault();
