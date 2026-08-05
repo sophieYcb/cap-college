@@ -59,7 +59,7 @@ function renderProfiles(profiles, progressRows = []) {
         <h3>Progression</h3>
         ${progress.length
           ? progress.map(renderSubjectProgress).join("")
-          : '<p class="muted">Aucune matière disponible pour ce niveau.</p>'}
+          : '<p class="muted">Aucun diagnostic disponible.</p>'}
       </div>
     </article>`;
   }).join("");
