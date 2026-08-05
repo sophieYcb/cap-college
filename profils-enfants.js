@@ -54,6 +54,7 @@ function renderProfiles(profiles, progressRows = []) {
         <div class="learner-avatar">${escapeHtml(profile.display_name).charAt(0).toUpperCase()}</div>
         <div><strong>${escapeHtml(profile.display_name)}</strong><p>${escapeHtml(profile.level_name)} · ${profile.relationship_type === "teacher" ? "Élève" : "Enfant"}</p><p class="learner-access-code">Identifiant : <code>${formatProfileCode(profile.access_code)}</code></p></div>
         <span class="learner-pin-badge">PIN protégé</span>
+        <a class="btn btn-secondary learner-detail-link" href="suivi-enfant.html?id=${encodeURIComponent(profile.id)}">Voir le détail</a>
       </div>
       <div class="learner-progress-summary">
         <h3>Progression</h3>

@@ -600,6 +600,15 @@
     return Array.isArray(data) ? data : [];
   }
 
+  async function getLearnerSessionHistory(learnerProfileId) {
+    const { data, error } = await getClient().rpc(
+      "get_my_learner_session_history",
+      { requested_learner_profile_id: learnerProfileId }
+    );
+    if (error) throw error;
+    return Array.isArray(data) ? data : [];
+  }
+
   async function createLearnerProfile(displayName, levelCode, pin) {
     const { data, error } = await getClient().rpc(
       "create_my_learner_profile",
@@ -688,6 +697,7 @@
     closeLearnerSession,
     getLearnerProfiles,
     getLearnerProgress,
+    getLearnerSessionHistory,
     getRemediationQuestions,
     getRoles: () => activeRole ? [activeRole] : [],
     getAvailableRoles: () => [...roles],

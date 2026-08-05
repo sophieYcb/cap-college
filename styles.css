@@ -284,3 +284,13 @@ footer{margin-top:36px;text-align:center;color:var(--muted);font-size:.9rem}
 .learner-progress-heading{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
 .learner-progress-heading span{font-size:.9rem;color:var(--muted)}
 .learner-subject-progress .meter{margin:.4rem 0}
+
+.learner-followup-page{display:grid;gap:1rem}
+.learner-week-summary{margin:0}
+.learner-followup-subject{margin:1rem 0}
+.learner-session-row{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border)}
+.learner-session-row:last-child{border-bottom:0}
+.learner-session-row p{margin:.35rem 0 0}
+.learner-session-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.5rem}
+.learner-detail-link{margin-left:auto}
+@media(max-width:640px){.learner-session-row{display:block}.learner-session-meta{align-items:flex-start;margin-top:.6rem}.learner-detail-link{width:100%;text-align:center}}
