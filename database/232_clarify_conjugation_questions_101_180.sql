@@ -1,7 +1,7 @@
 /*
  CAP-COLLEGE DATABASE
  File: database/232_clarify_conjugation_questions_101_180.sql
- Purpose: Explicitly state the requested tense in questions 101 through 180.
+ Purpose: Explicitly state the requested tense in ambiguous questions 101 through 160.
  Idempotent: Yes
 */
 
@@ -22,7 +22,7 @@ begin
   for question_record in
     select q.id, q.legacy_id, q.current_version_number
     from public.questions q
-    where q.legacy_id between 101 and 180
+    where q.legacy_id between 101 and 160
     order by q.legacy_id
   loop
     select qv.*
@@ -135,9 +135,9 @@ begin
     corrected_count := corrected_count + 1;
   end loop;
 
-  if corrected_count not in (0, 79) then
+  if corrected_count not in (0, 59) then
     raise exception
-      'Expected 0 or 79 corrections, % were prepared.',
+      'Expected 0 or 59 corrections, % were prepared.',
       corrected_count;
   end if;
 end;

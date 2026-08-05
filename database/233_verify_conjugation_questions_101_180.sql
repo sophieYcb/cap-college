@@ -42,7 +42,7 @@ select jsonb_build_object(
   'past_compound_prompts', (
     select count(*) from target_questions
     where legacy_id between 161 and 180
-      and prompt like '% au passé composé de l''indicatif.'
+      and prompt like '%passé composé%'
   ),
   'questions_in_review', (
     select count(*) from target_questions
