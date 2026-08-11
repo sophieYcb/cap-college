@@ -25,6 +25,7 @@ let diagnosticFinished=false;
 let remoteSequenceOffset=0;
 let discoveredRemoteSession=null;
 let cumulativeDiagnosticProgress=null;
+let diagnosticProgressRequestSequence=0;
 const CAN_FLAG_QUESTIONS=CapCollegeSupabase.canReportQuestions();
 
 if(CAN_FLAG_QUESTIONS){
@@ -77,6 +78,9 @@ function updateDiagnosticDomains(){
     '<option value="all">Toutes les catégories</option>'+
     domains.map(([code,name])=>`<option value="${code}">${name}</option>`).join('');
   updateDiagnosticSkills();
+  if(LEARNER_PROFILE&&!VALIDATION_CAMPAIGN_ID){
+    refreshOverallDiagnosticProgress(subject);
+  }
 }
 
 function updateDiagnosticSkills(){
@@ -259,7 +263,7 @@ async function startTest(){
   if(LEARNER_PROFILE&&!VALIDATION_CAMPAIGN_ID){
     try{
       cumulativeDiagnosticProgress=
-        await CapCollegeSupabase.getDiagnosticProgress();
+        await CapCollegeSupabase.getDiagnosticProgress(selectedSubject);
     }catch(error){
       console.warn('Progression cumulée indisponible.',error);
     }
@@ -617,12 +621,16 @@ function pauseTest(){
 
 async function finishTest(stoppedEarly=false){
   diagnosticFinished=true;
+  const diagnosticSubject=diagnosticQuestions[0]?.subjectCode||
+    document.getElementById('diagnosticSubject')?.value||null;
   let authoritativeProgress=cumulativeDiagnosticProgress;
   if(remoteSessionId){
     try{
       await CapCollegeSupabase.finishDiagnostic(remoteSessionId);
       if(LEARNER_PROFILE&&!VALIDATION_CAMPAIGN_ID){
-        authoritativeProgress=await CapCollegeSupabase.getDiagnosticProgress();
+        authoritativeProgress=await CapCollegeSupabase.getDiagnosticProgress(
+          diagnosticSubject
+        );
         cumulativeDiagnosticProgress=authoritativeProgress;
       }
     }catch(error){
@@ -632,7 +640,9 @@ async function finishTest(stoppedEarly=false){
   const stats={};
 
   // Tous les thèmes existent dans le bilan, même ceux qui n'ont pas été suffisamment testés.
-  QUESTIONS.forEach(q=>{
+  QUESTIONS.filter(
+    q=>!diagnosticSubject||(q.subjectCode||'french')===diagnosticSubject
+  ).forEach(q=>{
     if(!stats[q.competence]){
       stats[q.competence]={
         competenceId:q.competenceId,
@@ -703,7 +713,9 @@ async function finishTest(stoppedEarly=false){
   localStorage.removeItem(STORAGE_PROGRESS_BACKUP);
   window.location.href=VALIDATION_CAMPAIGN_ID
     ?`resultats.html?validationCampaign=${encodeURIComponent(VALIDATION_CAMPAIGN_ID)}`
-    :LEARNER_PROFILE?'resultats.html?mode=child':'resultats.html';
+    :LEARNER_PROFILE
+      ?`resultats.html?mode=child&subject=${encodeURIComponent(diagnosticSubject||'')}`
+      :'resultats.html';
 }
 
 window.addEventListener('pagehide',()=>{
@@ -719,14 +731,22 @@ document.querySelectorAll('input[name="sessionDuration"]').forEach(input=>{
 });
 refreshDurationSummary();
 
-async function refreshOverallDiagnosticProgress(){
+async function refreshOverallDiagnosticProgress(subjectCode=null){
   const target=document.getElementById('diagnosticOverallProgress');
   if(!target||!LEARNER_PROFILE||VALIDATION_CAMPAIGN_ID)return;
+  const requestedSubject=subjectCode||
+    document.getElementById('diagnosticSubject')?.value||null;
+  const requestSequence=++diagnosticProgressRequestSequence;
   try{
-    cumulativeDiagnosticProgress=
-      await CapCollegeSupabase.getDiagnosticProgress();
-    if(!cumulativeDiagnosticProgress?.hasDiagnostic)return;
-    const progress=cumulativeDiagnosticProgress;
+    const progress=await CapCollegeSupabase.getDiagnosticProgress(
+      requestedSubject
+    );
+    if(requestSequence!==diagnosticProgressRequestSequence)return;
+    cumulativeDiagnosticProgress=progress;
+    if(!progress?.hasDiagnostic){
+      target.classList.add('hidden');
+      return;
+    }
     target.textContent=progress.diagnosisReady
       ?'Diagnostic terminé : le bilan final est disponible.'
       :'Diagnostic en cours : '+progress.progressPercent+' % · '+
@@ -781,5 +801,4 @@ async function discoverRemoteResume(){
     console.warn('Recherche de séance active impossible.',error);
   }
 }
-refreshOverallDiagnosticProgress();
 discoverRemoteResume();

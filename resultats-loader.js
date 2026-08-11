@@ -1,5 +1,7 @@
 const resultLearnerMode =
   new URLSearchParams(location.search).get("mode") === "child";
+const resultSubject =
+  new URLSearchParams(location.search).get("subject");
 CapCollegeSupabase.bootstrap({
   requireAuth: true,
   preferLearner: resultLearnerMode
@@ -19,7 +21,7 @@ CapCollegeSupabase.bootstrap({
     try {
       window.CAP_COLLEGE_DIAGNOSTIC_PROGRESS = validationCampaignId
         ? null
-        : await CapCollegeSupabase.getDiagnosticProgress();
+        : await CapCollegeSupabase.getDiagnosticProgress(resultSubject);
     } catch (error) {
       console.warn("La progression du diagnostic n’a pas pu être chargée.", error);
       window.CAP_COLLEGE_DIAGNOSTIC_PROGRESS = null;

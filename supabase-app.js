@@ -358,13 +358,17 @@
     return Array.isArray(data) ? data : [];
   }
 
-  async function getDiagnosticProgress() {
+  async function getDiagnosticProgress(subjectCode = null) {
     if (!configured()) return null;
     const token = learnerProfile ? learnerAccessToken() : null;
     if (!token) return null;
     const { data, error } = await getClient().rpc(
-      "get_learner_diagnostic_progress",
-      { requested_token: token }
+      subjectCode
+        ? "get_learner_subject_diagnostic_progress"
+        : "get_learner_diagnostic_progress",
+      subjectCode
+        ? { requested_token: token, requested_subject_code: subjectCode }
+        : { requested_token: token }
     );
     if (error) throw error;
     return data || null;
