@@ -323,7 +323,7 @@
       "microSkill": "m6_num_decimal_fraction",
       "difficulty": 1,
       "prompt": "Quelle fraction décimale est égale à 0,6 ?",
-      "choices": ["6/10", "6/100", "60/100", "600/10"],
+      "choices": ["6/10", "6/100", "60/1 000", "600/10"],
       "correctIndex": 0,
       "explanation": "0,6 représente six dixièmes, donc 6/10."
     },
