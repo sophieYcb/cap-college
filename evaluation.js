@@ -111,7 +111,7 @@ function selectedDuration(){
 
 function refreshDurationSummary(){
   plannedMinutes=selectedDuration();
-  document.getElementById('durationSummary').textContent=`${plannedMinutes} min`;
+  document.getElementById('durationSummary').textContent=`${plannedMinutes*APPROXIMATE_QUESTIONS_PER_MINUTE} questions`;
 }
 
 function shuffle(array){
@@ -760,13 +760,13 @@ async function discoverRemoteResume(){
     document.getElementById('activeSessionIntroTitle').textContent=
       discoveredRemoteSession.focus_name;
     document.getElementById('activeSessionIntroDetails').textContent=
-      `${discoveredRemoteSession.recorded_answers} réponse${discoveredRemoteSession.recorded_answers>1?'s':''} enregistrée${discoveredRemoteSession.recorded_answers>1?'s':''} · séance de ${discoveredRemoteSession.planned_minutes} min`;
+      `${discoveredRemoteSession.recorded_answers} réponse${discoveredRemoteSession.recorded_answers>1?'s':''} enregistrée${discoveredRemoteSession.recorded_answers>1?'s':''} · objectif de ${discoveredRemoteSession.planned_minutes*APPROXIMATE_QUESTIONS_PER_MINUTE} questions`;
     resume.disabled=false;
     notice.textContent=`Séance en ligne retrouvée : ${discoveredRemoteSession.focus_name}.`;
     notice.classList.remove('hidden');
     document.getElementById('continueActiveSessionButton').onclick=resumeTest;
     document.getElementById('closeActiveSessionButton').onclick=async()=>{
-      const close=confirm('Ta progression générale sera conservée, mais cette séance sera clôturée. Veux-tu choisir un nouveau thème et une nouvelle durée ?');
+      const close=confirm('Ta progression générale sera conservée, mais cette séance sera clôturée. Veux-tu choisir un nouveau thème et un nouvel objectif ?');
       if(!close)return;
       await CapCollegeSupabase.closeDiagnosticSession(discoveredRemoteSession.session_id);
       localStorage.removeItem(STORAGE_PROGRESS);

@@ -21,7 +21,7 @@
     <a class="btn btn-secondary" href="campagnes-validation.html">Changer de campagne</a>
   </div>
   <h1>Diagnostic Français 6e</h1>
-  <p>Choisis le temps que tu souhaites consacrer à cette séance. Le diagnostic se construit tranquillement, au fil de tes visites.</p>
+  <p>Choisis le nombre de questions que tu souhaites faire pendant cette séance. Le diagnostic se construit tranquillement, au fil de tes visites.</p>
   <div id="diagnosticOverallProgress" class="notice hidden" aria-live="polite"></div>
   <div class="active-session-home hidden" id="activeSessionIntro">
     <span class="small">Séance en cours</span>
@@ -34,13 +34,13 @@
   </div>
   <div id="newSessionConfiguration">
   <div class="duration-picker">
-    <strong>Durée souhaitée</strong>
-    <div class="duration-options" role="radiogroup" aria-label="Durée de la séance">
-      <label><input type="radio" name="sessionDuration" value="10"> <span>10 min</span></label>
-      <label><input type="radio" name="sessionDuration" value="20"> <span>20 min</span></label>
-      <label><input type="radio" name="sessionDuration" value="30" checked> <span>30 min</span></label>
+    <strong>Nombre de questions</strong>
+    <div class="duration-options" role="radiogroup" aria-label="Nombre de questions de la séance">
+      <label><input type="radio" name="sessionDuration" value="10"> <span>20 questions</span></label>
+      <label><input type="radio" name="sessionDuration" value="20"> <span>40 questions</span></label>
+      <label><input type="radio" name="sessionDuration" value="30" checked> <span>60 questions</span></label>
     </div>
-    <p class="small">Aucun chronomètre et aucune pénalité : tu avances à ton rythme.</p>
+    <p class="small">Aucun chronomètre et aucune pénalité : tu avances à ton rythme et tu peux faire une pause.</p>
   </div>
   <div class="theme-picker">
     <div class="theme-picker-heading">
@@ -69,7 +69,7 @@
     <p id="themeSelectionHint" class="theme-selection-hint"></p>
   </div>
   <div class="summary-grid">
-    <div class="summary-box"><div class="summary-value" id="durationSummary">30 min</div><div class="small">durée choisie</div></div>
+    <div class="summary-box"><div class="summary-value" id="durationSummary">60 questions</div><div class="small">objectif choisi</div></div>
     <div class="summary-box"><div class="summary-value">Progressif</div><div class="small">reprends une autre fois</div></div>
     <div class="summary-box"><div class="summary-value">4</div><div class="small">domaines</div></div>
   </div>
@@ -125,6 +125,6 @@
 <script src="supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="supabase-app.js?v=5.3.37"></script>
-<script src="evaluation-loader.js?v=5.3.32"></script>
+<script src="evaluation-loader.js?v=5.3.39"></script>
 </body>
 </html>

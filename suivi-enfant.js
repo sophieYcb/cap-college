@@ -55,8 +55,8 @@ function renderHistory(rows) {
     completedThisWeek.length;
   document.getElementById("weekMinutes").textContent =
     completedThisWeek.reduce(
-      (total, row) => total + Number(row.planned_minutes || 0), 0
-    ) + " min";
+      (total, row) => total + Number(row.planned_minutes || 0) * 2, 0
+    );
   document.getElementById("lastActivity").textContent =
     usefulRows.length ? formatDate(usefulRows[0].started_at, false) : "—";
 
@@ -69,7 +69,7 @@ function renderHistory(rows) {
     <article class="learner-session-row">
       <div>
         <strong>${formatDate(row.started_at)}</strong>
-        <p>${escapeHtml(row.subject_name)} · séance de ${row.planned_minutes} min</p>
+        <p>${escapeHtml(row.subject_name)} · objectif de ${Number(row.planned_minutes || 0) * 2} questions</p>
       </div>
       <div class="learner-session-meta">
         <span class="tag ${row.session_status === "completed" ? "green" : "orange"}">${statusLabel(row.session_status)}</span>

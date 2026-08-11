@@ -107,12 +107,12 @@ CapCollegeSupabase.bootstrap()
     document.getElementById("activeSessionTitle").textContent =
       activeSession.focus_name;
     document.getElementById("activeSessionDetails").textContent =
-      `${activeSession.recorded_answers} réponse${activeSession.recorded_answers > 1 ? "s" : ""} enregistrée${activeSession.recorded_answers > 1 ? "s" : ""} · séance de ${activeSession.planned_minutes} min`;
+      `${activeSession.recorded_answers} réponse${activeSession.recorded_answers > 1 ? "s" : ""} enregistrée${activeSession.recorded_answers > 1 ? "s" : ""} · objectif de ${Number(activeSession.planned_minutes || 0) * 2} questions`;
 
     document.getElementById("chooseNewSessionButton")
       .addEventListener("click", async () => {
         const close = confirm(
-          "Ta progression générale sera conservée, mais cette séance sera clôturée. Veux-tu choisir un nouveau thème et une nouvelle durée ?"
+          "Ta progression générale sera conservée, mais cette séance sera clôturée. Veux-tu choisir un nouveau thème et un nouvel objectif ?"
         );
         if (!close) return;
         try {
