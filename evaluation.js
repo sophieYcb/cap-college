@@ -743,9 +743,38 @@ async function refreshOverallDiagnosticProgress(subjectCode=null){
     );
     if(requestSequence!==diagnosticProgressRequestSequence)return;
     cumulativeDiagnosticProgress=progress;
+    const reportLink=document.getElementById('viewDiagnosticReportBtn');
+    const startButton=document.getElementById('startDiagnosticBtn');
+    const resumeButton=document.getElementById('resumeDiagnosticBtn');
     if(!progress?.hasDiagnostic){
       target.classList.add('hidden');
+      reportLink?.classList.add('hidden');
+      startButton?.classList.add('btn-primary');
+      startButton?.classList.remove('btn-secondary');
+      if(startButton)startButton.textContent='Commencer un nouveau diagnostic';
+      resumeButton?.classList.remove('hidden');
       return;
+    }
+    if(progress.diagnosisReady){
+      if(reportLink){
+        reportLink.href='resultats.html?mode=child&subject='+
+          encodeURIComponent(requestedSubject||progress.subjectCode||'');
+        reportLink.classList.remove('hidden');
+      }
+      if(startButton){
+        startButton.textContent='Recommencer un diagnostic';
+        startButton.classList.remove('btn-primary');
+        startButton.classList.add('btn-secondary');
+      }
+      resumeButton?.classList.add('hidden');
+    }else{
+      reportLink?.classList.add('hidden');
+      if(startButton){
+        startButton.textContent='Commencer un nouveau diagnostic';
+        startButton.classList.add('btn-primary');
+        startButton.classList.remove('btn-secondary');
+      }
+      resumeButton?.classList.remove('hidden');
     }
     target.textContent=progress.diagnosisReady
       ?'Diagnostic terminé : le bilan final est disponible.'

@@ -24,10 +24,22 @@ if(window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID){
 }
 
 if(!raw){
-  document.getElementById('globalText').innerHTML='Aucun résultat enregistré. <a href="evaluation.html"><strong>Commencer le diagnostic</strong></a>.';
-  document.getElementById('summary').innerHTML='';
-  document.getElementById('priorities').innerHTML='';
-  document.getElementById('skillsResults').innerHTML='';
+  const savedDiagnostic=window.CAP_COLLEGE_DIAGNOSTIC_PROGRESS;
+  if(RESULT_LEARNER_PROFILE&&savedDiagnostic?.diagnosisReady){
+    const savedSkills=savedDiagnostic.skills||[];
+    render({
+      total:Number(savedDiagnostic.answeredQuestions)||0,
+      totalOk:savedSkills.reduce((sum,item)=>sum+Number(item.correctCount||0),0),
+      stats:{},
+      reviewItems:[],
+      diagnosticProgress:savedDiagnostic
+    });
+  }else{
+    document.getElementById('globalText').innerHTML='Aucun résultat enregistré. <a href="evaluation.html"><strong>Commencer le diagnostic</strong></a>.';
+    document.getElementById('summary').innerHTML='';
+    document.getElementById('priorities').innerHTML='';
+    document.getElementById('skillsResults').innerHTML='';
+  }
 }else{
   render(JSON.parse(raw));
 }
