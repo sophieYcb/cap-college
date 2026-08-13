@@ -444,7 +444,7 @@
   async function startRemediation(competenceId, sessionSize) {
     const token = learnerProfile ? learnerAccessToken() : null;
     const { data, error } = token
-      ? await getClient().rpc("start_learner_remediation_session", {
+      ? await getClient().rpc("start_learner_remediation_session_v2", {
           requested_token: token,
           requested_competence_id: competenceId,
           requested_question_count: sessionSize

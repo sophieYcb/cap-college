@@ -183,7 +183,9 @@ async function initialise(){
     returnLink.href='resultats.html?mode=child&subject='+
       encodeURIComponent(subjectCode);
   }
-  setAssistance('with_reminder');
+  setAssistance(learnerMode
+    ?session.initial_assistance||'with_reminder'
+    :'with_reminder');
   renderQuestion();
 }
 
