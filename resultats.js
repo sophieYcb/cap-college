@@ -207,14 +207,17 @@ function renderFinalDiagnostic(r,diagnosticProgress){
   }).join('');
 
   renderRecommendation(diagnosticProgress);
-  renderMistakes(r);
+  const sameDiagnostic=!r.diagnosticProgress?.diagnosticId||
+    r.diagnosticProgress.diagnosticId===diagnosticProgress.diagnosticId;
+  renderMistakes(sameDiagnostic?r:{reviewItems:[]});
 }
 function render(r){
   const minimum=r.minimumAnswersPerSkill||3;
   const answeredTotal=r.total||0;
   const global=answeredTotal?Math.round(r.totalOk/answeredTotal*100):0;
-  const diagnosticProgress=r.diagnosticProgress||
-    window.CAP_COLLEGE_DIAGNOSTIC_PROGRESS||null;
+  const diagnosticProgress=RESULT_LEARNER_PROFILE
+    ?window.CAP_COLLEGE_DIAGNOSTIC_PROGRESS||r.diagnosticProgress||null
+    :r.diagnosticProgress||window.CAP_COLLEGE_DIAGNOSTIC_PROGRESS||null;
   const diagnosisReady=Boolean(diagnosticProgress?.diagnosisReady);
 
   if(RESULT_LEARNER_PROFILE&&diagnosisReady&&Array.isArray(diagnosticProgress.skills)){
