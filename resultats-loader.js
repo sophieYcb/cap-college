@@ -33,6 +33,6 @@ CapCollegeSupabase.bootstrap({
       console.warn("La progression des exercices n’a pas pu être chargée.", error);
       window.CAP_COLLEGE_EXERCISE_PROGRESS = [];
     }
-    await CapCollegeSupabase.appendScript("resultats.js?v=5.3.47");
+    await CapCollegeSupabase.appendScript("resultats.js?v=5.3.48");
   })
   .catch(CapCollegeSupabase.showFatalError);

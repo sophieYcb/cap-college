@@ -189,7 +189,10 @@ function renderFinalDiagnostic(r,diagnosticProgress){
     .map(item=>({
       ...item,
       masteryScore:Number(item.masteryScore)||0,
-      exerciseValidated:isValidatedAfterTraining(item)
+      exerciseValidated:isValidatedAfterTraining(item),
+      reassessmentScore:Number(
+        exerciseProgressFor(item.competenceId)?.reassessmentScore
+      )||null
     }));
   const validatedAfterTraining=skills.filter(item=>item.exerciseValidated);
   const strengths=skills.filter(item=>
@@ -227,9 +230,12 @@ function renderFinalDiagnostic(r,diagnosticProgress){
         const [label,color]=item.exerciseValidated
           ?['Validée après entraînement','green']
           :finalSkillStatus(item.masteryScore);
+        const displayedScore=item.exerciseValidated
+          ?item.reassessmentScore
+          :item.masteryScore;
         return `<div class="result">
           <div class="result-head"><span>${escapeHtml(item.competence)}</span><span class="tag ${color}">${label}</span></div>
-          <div class="meter"><span class="${color}" style="width:${item.masteryScore}%"></span></div>
+          <div class="meter"><span class="${color}" style="width:${displayedScore}%"></span></div>
         </div>`;
       }).join('');
   }).join('');

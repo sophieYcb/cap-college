@@ -60,10 +60,13 @@ function renderDiagnosticReports(rows, remediationRows = []) {
     .filter(item => item.session_kind === "reassessment")
     .forEach(item => {
       if (!latestReassessments.has(item.competence_id)) {
-        latestReassessments.set(
-          item.competence_id,
-          item.reassessment_passed === true
-        );
+        const answers=Number(item.answer_count)||0;
+        latestReassessments.set(item.competence_id,{
+          passed:item.reassessment_passed===true,
+          score:answers
+            ?Math.round(Number(item.correct_count||0)*100/answers)
+            :null
+        });
       }
     });
   reportsTarget.innerHTML = rows.map((row, reportIndex) => {
@@ -74,7 +77,10 @@ function renderDiagnosticReports(rows, remediationRows = []) {
       .map(item => ({
         ...item,
         masteryScore: Number(item.masteryScore) || 0,
-        exerciseValidated: latestReassessments.get(item.competenceId) === true
+        exerciseValidated:
+          latestReassessments.get(item.competenceId)?.passed === true,
+        reassessmentScore:
+          latestReassessments.get(item.competenceId)?.score ?? null
       }));
     const strengths = skills.filter(item =>
       item.masteryScore >= 80 || item.exerciseValidated
@@ -109,7 +115,7 @@ function renderDiagnosticReports(rows, remediationRows = []) {
             <div><strong>${escapeHtml(item.competence)}</strong><br>
               <span class="small">${item.correctCount}/${item.evidenceCount} réponses correctes · ${item.sessionCount} séances</span>
             </div>
-            <span class="tag ${color}">${item.masteryScore} % · ${label}</span>
+            <span class="tag ${color}">${item.exerciseValidated ? item.reassessmentScore : item.masteryScore} % · ${label}</span>
           </div>`;
         }).join("")}</div>
       </details>`;
