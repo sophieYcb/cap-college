@@ -129,7 +129,7 @@ function renderRemediationHistory(rows) {
     const [label, color] = reportLevel(score);
     return `<article class="learner-session-row">
       <div>
-        <strong>${escapeHtml(row.competence)}</strong>
+        <strong>${row.session_kind === "reassessment" ? "Réévaluation · " : ""}${escapeHtml(row.competence)}</strong>
         <p>${escapeHtml(row.subject_name)} · ${escapeHtml(row.domain_name)} · ${formatDate(row.started_at)}</p>
       </div>
       <div class="learner-session-meta">

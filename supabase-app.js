@@ -441,6 +441,34 @@
     }));
   }
 
+  async function getRemediationReadiness(competenceId) {
+    const token = learnerProfile ? learnerAccessToken() : null;
+    if (!token) return null;
+    const { data, error } = await getClient().rpc(
+      "get_learner_reassessment_readiness",
+      {
+        requested_token: token,
+        requested_competence_id: competenceId
+      }
+    );
+    if (error) throw error;
+    return data || null;
+  }
+
+  async function startRemediationReassessment(competenceId) {
+    const token = learnerProfile ? learnerAccessToken() : null;
+    if (!token) throw new Error("Learner session required");
+    const { data, error } = await getClient().rpc(
+      "start_learner_reassessment_session",
+      {
+        requested_token: token,
+        requested_competence_id: competenceId
+      }
+    );
+    if (error) throw error;
+    return Array.isArray(data) ? data[0] : data;
+  }
+
   async function startRemediation(competenceId, sessionSize) {
     const token = learnerProfile ? learnerAccessToken() : null;
     const { data, error } = token
@@ -491,7 +519,7 @@
   async function finishRemediation(sessionId) {
     const token = learnerProfile ? learnerAccessToken() : null;
     const { data, error } = token
-      ? await getClient().rpc("finish_learner_remediation_session", {
+      ? await getClient().rpc("finish_learner_remediation_session_v2", {
           requested_token: token,
           requested_session_id: sessionId
         })
@@ -649,7 +677,7 @@
   }
   async function getLearnerRemediationHistory(learnerProfileId) {
     const { data, error } = await getClient().rpc(
-      "get_my_learner_remediation_history",
+      "get_my_learner_remediation_history_v2",
       { requested_learner_profile_id: learnerProfileId }
     );
     if (error) throw error;
@@ -757,6 +785,7 @@
     getLearnerDiagnosticReports,
     getLearnerRemediationHistory,
     getRemediationQuestions,
+    getRemediationReadiness,
     getRoles: () => activeRole ? [activeRole] : [],
     getAvailableRoles: () => [...roles],
     getActiveRole: () => activeRole,
@@ -778,6 +807,7 @@
     flagQuestion,
     startDiagnostic,
     startRemediation,
+    startRemediationReassessment,
     submitAnswer,
     submitRemediationAnswer
   };

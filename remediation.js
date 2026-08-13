@@ -1,13 +1,16 @@
 const params=new URLSearchParams(location.search);
 const competenceId=params.get('skill');
 const learnerMode=params.get('mode')==='child';
+const reassessmentMode=params.get('reassess')==='1';
 const subjectCode=params.get('subject')||'';
 const plannedMinutes=Number(params.get('minutes'));
 const requestedQuestions=Number(params.get('questions'));
 const questionTargets={5:6,10:10,20:20};
-const questionTarget=learnerMode
-  ?requestedQuestions
-  :questionTargets[plannedMinutes];
+const questionTarget=reassessmentMode
+  ?5
+  :learnerMode
+    ?requestedQuestions
+    :questionTargets[plannedMinutes];
 
 let sessionId=null;
 let questions=[];
@@ -135,15 +138,50 @@ async function nextQuestion(){
 }
 
 async function finishSession(){
+  let completion=null;
   try{
-    await CapCollegeSupabase.finishRemediation(sessionId);
+    completion=await CapCollegeSupabase.finishRemediation(sessionId);
   }catch(error){
     console.warn('La séance de remédiation n’a pas pu être clôturée.',error);
   }
   document.getElementById('remediationSession').classList.add('hidden');
   document.getElementById('remediationComplete').classList.remove('hidden');
-  document.getElementById('remediationSummary').textContent=
-    `${correctAnswers} réussite${correctAnswers>1?'s':''} sur ${currentIndex+(answered?1:0)} exercice${currentIndex+(answered?1:0)>1?'s':''}. Ton diagnostic final reste inchangé ; cette séance est enregistrée dans ta progression d’exercices.`;
+  const answeredCount=Math.min(
+    questions.length,currentIndex+(answered?1:0)
+  );
+  const summary=document.getElementById('remediationSummary');
+  if(reassessmentMode){
+    const passed=completion?.reassessment_passed===true;
+    summary.textContent=passed
+      ?`Réévaluation réussie : ${correctAnswers} bonnes réponses sur 5. Cette compétence est maintenant validée dans ta progression d’exercices.`
+      :`Cette compétence demande encore un peu d’entraînement : ${correctAnswers} bonnes réponses sur 5. Fais 5 nouvelles questions avant de réessayer.`;
+  }else{
+    summary.textContent=
+      `${correctAnswers} réussite${correctAnswers>1?'s':''} sur ${answeredCount} exercice${answeredCount>1?'s':''}. Ton diagnostic final reste inchangé ; cette séance est enregistrée dans ta progression d’exercices.`;
+    try{
+      const readiness=await CapCollegeSupabase.getRemediationReadiness(
+        competenceId
+      );
+      if(readiness?.eligible){
+        const action=document.createElement('a');
+        action.className='btn btn-primary';
+        action.href='remediation.html?mode=child&reassess=1&skill='+
+          encodeURIComponent(competenceId)+'&subject='+
+          encodeURIComponent(subjectCode);
+        action.textContent='Réévaluer cette compétence · 5 questions';
+        document.querySelector('#remediationComplete .actions')
+          .prepend(action);
+        summary.textContent+=' Tu es prêt à réévaluer cette compétence sans rappel.';
+      }else if(Number(readiness?.questionsUntilReview)>0){
+        const remaining=Number(readiness.questionsUntilReview);
+        summary.textContent+=` Encore ${remaining} question${remaining>1?'s':''} d’entraînement avant la réévaluation.`;
+      }else if(readiness){
+        summary.textContent+=' Continue encore 5 questions pour consolider tes réussites avant la réévaluation.';
+      }
+    }catch(error){
+      console.warn('État de réévaluation indisponible.',error);
+    }
+  }
   window.scrollTo(0,0);
 }
 
@@ -157,10 +195,12 @@ async function initialise(){
     preferLearner:learnerMode
   });
   const [session,bank]=await Promise.all([
-    CapCollegeSupabase.startRemediation(
-      competenceId,
-      learnerMode?questionTarget:plannedMinutes
-    ),
+    reassessmentMode
+      ?CapCollegeSupabase.startRemediationReassessment(competenceId)
+      :CapCollegeSupabase.startRemediation(
+        competenceId,
+        learnerMode?questionTarget:plannedMinutes
+      ),
     CapCollegeSupabase.getRemediationQuestions(competenceId)
   ]);
   if(!session||!bank.length)throw new Error('Aucun exercice disponible pour cette compétence.');
@@ -183,9 +223,11 @@ async function initialise(){
     returnLink.href='resultats.html?mode=child&subject='+
       encodeURIComponent(subjectCode);
   }
-  setAssistance(learnerMode
-    ?session.initial_assistance||'with_reminder'
-    :'with_reminder');
+  setAssistance(reassessmentMode
+    ?'without_reminder'
+    :learnerMode
+      ?session.initial_assistance||'with_reminder'
+      :'with_reminder');
   renderQuestion();
 }
 
