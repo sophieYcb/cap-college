@@ -1,6 +1,7 @@
 const learnerId = new URLSearchParams(location.search).get("id");
 const progressTarget = document.getElementById("followupProgress");
 const historyTarget = document.getElementById("sessionHistory");
+const reportsTarget = document.getElementById("diagnosticReports");
 
 function escapeHtml(value) {
   const element = document.createElement("span");
@@ -42,6 +43,78 @@ function renderProgress(rows) {
     </article>`;
   }).join("");
 }
+function reportLevel(score) {
+  if (score >= 80) return ["Maîtrisée", "green"];
+  if (score >= 50) return ["À consolider", "orange"];
+  return ["Prioritaire", "red"];
+}
+function renderDiagnosticReports(rows) {
+  if (!rows.length) {
+    reportsTarget.innerHTML =
+      '<p class="muted">Aucun diagnostic terminé pour le moment.</p>';
+    return;
+  }
+  reportsTarget.innerHTML = rows.map((row, reportIndex) => {
+    const report = typeof row.report === "string"
+      ? JSON.parse(row.report) : (row.report || {});
+    const skills = (report.skills || [])
+      .filter(item => item.sufficientEvidence)
+      .map(item => ({...item, masteryScore: Number(item.masteryScore) || 0}));
+    const strengths = skills.filter(item => item.masteryScore >= 80);
+    const consolidating = skills.filter(item =>
+      item.masteryScore >= 50 && item.masteryScore < 80
+    );
+    const priorities = skills.filter(item => item.masteryScore < 50)
+      .sort((a, b) => a.masteryScore - b.masteryScore);
+    const workPlan = [...priorities, ...consolidating
+      .sort((a, b) => a.masteryScore - b.masteryScore)].slice(0, 3);
+    const domains = [...new Set(skills.map(item => item.domain))];
+    const domainHtml = domains.map(domain => {
+      const items = skills.filter(item => item.domain === domain);
+      const evidence = items.reduce((sum, item) =>
+        sum + Number(item.evidenceCount || 0), 0);
+      const correct = items.reduce((sum, item) =>
+        sum + Number(item.correctCount || 0), 0);
+      const score = evidence ? Math.round(correct * 100 / evidence) : 0;
+      return `<details class="diagnostic-domain" ${reportIndex === 0 ? "open" : ""}>
+        <summary>
+          <strong>${escapeHtml(domain)}</strong>
+          <span>${score} % · ${items.length} compétence${items.length > 1 ? "s" : ""}</span>
+        </summary>
+        <div class="diagnostic-skill-list">${items.map(item => {
+          const [label, color] = reportLevel(item.masteryScore);
+          return `<div class="diagnostic-skill-row">
+            <div><strong>${escapeHtml(item.competence)}</strong><br>
+              <span class="small">${item.correctCount}/${item.evidenceCount} réponses correctes · ${item.sessionCount} séances</span>
+            </div>
+            <span class="tag ${color}">${item.masteryScore} % · ${label}</span>
+          </div>`;
+        }).join("")}</div>
+      </details>`;
+    }).join("");
+    return `<article class="diagnostic-report-card">
+      <div class="diagnostic-report-heading">
+        <div><span class="small">Bilan du ${formatDate(row.completed_at, false)}</span>
+          <h3>${escapeHtml(row.subject_name)}</h3></div>
+        <span class="tag green">Diagnostic terminé</span>
+      </div>
+      <p>${row.answered_questions} réponses sur ${row.completed_sessions} séances. Le bilan repose sur ${skills.length} compétences suffisamment évaluées.</p>
+      <div class="diagnostic-report-counts">
+        <span><strong>${strengths.length}</strong> maîtrisées</span>
+        <span><strong>${consolidating.length}</strong> à consolider</span>
+        <span><strong>${priorities.length}</strong> prioritaires</span>
+      </div>
+      <div class="diagnostic-work-plan">
+        <strong>Programme conseillé</strong>
+        ${workPlan.length
+          ? `<ol>${workPlan.map(item => `<li>${escapeHtml(item.competence)}</li>`).join("")}</ol>
+             <p class="small">Objectif proposé : deux séances de 20 questions par semaine, puis une nouvelle évaluation après entraînement.</p>`
+          : '<p>Aucune priorité importante : entretien régulier conseillé.</p>'}
+      </div>
+      ${domainHtml}
+    </article>`;
+  }).join("");
+}
 function renderHistory(rows) {
   const usefulRows = rows.filter(row =>
     Number(row.answer_count) > 0 || row.session_status === "completed"
@@ -80,10 +153,11 @@ function renderHistory(rows) {
 }
 async function loadFollowup() {
   if (!learnerId) throw new Error("Profil enfant manquant.");
-  const [profiles, progress, history] = await Promise.all([
+  const [profiles, progress, history, reports] = await Promise.all([
     CapCollegeSupabase.getLearnerProfiles(),
     CapCollegeSupabase.getLearnerProgress(),
-    CapCollegeSupabase.getLearnerSessionHistory(learnerId)
+    CapCollegeSupabase.getLearnerSessionHistory(learnerId),
+    CapCollegeSupabase.getLearnerDiagnosticReports(learnerId)
   ]);
   const profile = profiles.find(item => item.id === learnerId);
   if (!profile) throw new Error("Ce profil enfant n’est pas accessible.");
@@ -95,6 +169,7 @@ async function loadFollowup() {
     item => item.learner_profile_id === learnerId
   ));
   renderHistory(history);
+  renderDiagnosticReports(reports);
 }
 CapCollegeSupabase.bootstrap({
   requireAuth: true,

@@ -26,6 +26,6 @@ CapCollegeSupabase.bootstrap({
       console.warn("La progression du diagnostic n’a pas pu être chargée.", error);
       window.CAP_COLLEGE_DIAGNOSTIC_PROGRESS = null;
     }
-    await CapCollegeSupabase.appendScript("resultats.js?v=5.3.29");
+    await CapCollegeSupabase.appendScript("resultats.js?v=5.3.41");
   })
   .catch(CapCollegeSupabase.showFatalError);

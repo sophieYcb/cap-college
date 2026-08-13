@@ -92,7 +92,18 @@ function renderRecommendation(diagnosticProgress=null){
     return;
   }
   if(RESULT_LEARNER_PROFILE){
-    target.innerHTML='<div class="notice">Tes résultats sont bien enregistrés sur ton profil. Les exercices ciblés seront ajoutés à l’étape suivante.</div>';
+    const priorities=(diagnosticProgress?.skills||[])
+      .filter(item=>item.sufficientEvidence&&Number(item.masteryScore)<80)
+      .sort((a,b)=>Number(a.masteryScore)-Number(b.masteryScore));
+    if(diagnosticProgress?.diagnosisReady&&priorities.length){
+      target.innerHTML=`<article class="recommendation-card">
+        <span class="small">Ton premier objectif</span>
+        <h3>${escapeHtml(priorities[0].competence)}</h3>
+        <p>Commence par cette compétence, puis avance sur les deux priorités suivantes. Deux petites séances de 20 questions par semaine suffisent pour progresser régulièrement.</p>
+      </article>`;
+    }else{
+      target.innerHTML='<div class="notice">Bravo, aucune priorité importante ne ressort de ce diagnostic. Continue à t’entraîner régulièrement.</div>';
+    }
     return;
   }
   if(window.CAP_COLLEGE_VALIDATION_CAMPAIGN_ID){
@@ -138,6 +149,54 @@ function renderRecommendation(diagnosticProgress=null){
     </article>`;
 }
 
+function finalSkillStatus(score){
+  return score>=80?['Point fort','green']:
+    score>=50?['À consolider','orange']:['Prioritaire','red'];
+}
+
+function renderFinalDiagnostic(r,diagnosticProgress){
+  const skills=(diagnosticProgress.skills||[])
+    .filter(item=>item.sufficientEvidence)
+    .map(item=>({...item,masteryScore:Number(item.masteryScore)||0}));
+  const strengths=skills.filter(item=>item.masteryScore>=80);
+  const consolidating=skills.filter(item=>item.masteryScore>=50&&item.masteryScore<80);
+  const priorities=skills
+    .filter(item=>item.masteryScore<50)
+    .sort((a,b)=>a.masteryScore-b.masteryScore);
+  const subject=diagnosticProgress.subjectName||
+    (diagnosticProgress.subjectCode==='mathematics'?'Mathématiques':'Français');
+
+  document.querySelector('h1').textContent=`Bilan final — ${subject}`;
+  const topBadge=document.querySelector('.topbar .badge');
+  if(topBadge)topBadge.textContent='Diagnostic terminé';
+  document.getElementById('globalText').innerHTML=
+    `<strong>Bravo, ton diagnostic est terminé.</strong> Il s’appuie sur ${diagnosticProgress.answeredQuestions||0} réponses réparties sur ${diagnosticProgress.completedSessions||0} séances. Tu peux maintenant voir ce que tu maîtrises et ce que tu vas travailler en priorité.`;
+  document.getElementById('summary').innerHTML=`
+    <div class="summary-box"><div class="summary-value">${strengths.length}</div><div class="small">points forts</div></div>
+    <div class="summary-box"><div class="summary-value">${consolidating.length}</div><div class="small">compétences à consolider</div></div>
+    <div class="summary-box"><div class="summary-value">${priorities.length}</div><div class="small">priorités de travail</div></div>`;
+
+  const orderedPriorities=[...priorities,...consolidating.sort((a,b)=>a.masteryScore-b.masteryScore)].slice(0,3);
+  document.getElementById('priorities').innerHTML=orderedPriorities.length
+    ?orderedPriorities.map((item,index)=>`<div class="priority"><strong>${index+1}. ${escapeHtml(item.competence)}</strong><br><span class="small">${escapeHtml(item.domain)} — à travailler en priorité</span></div>`).join('')
+    :'<p>Tu as de très bonnes bases dans toutes les compétences évaluées.</p>';
+
+  const domains=[...new Set(skills.map(item=>item.domain))];
+  document.getElementById('skillsResults').innerHTML=domains.map(domain=>{
+    const items=skills.filter(item=>item.domain===domain);
+    return `<h3 class="domain-title">${escapeHtml(domain)}</h3>`+
+      items.map(item=>{
+        const [label,color]=finalSkillStatus(item.masteryScore);
+        return `<div class="result">
+          <div class="result-head"><span>${escapeHtml(item.competence)}</span><span class="tag ${color}">${label}</span></div>
+          <div class="meter"><span class="${color}" style="width:${item.masteryScore}%"></span></div>
+        </div>`;
+      }).join('');
+  }).join('');
+
+  renderRecommendation(diagnosticProgress);
+  renderMistakes(r);
+}
 function render(r){
   const minimum=r.minimumAnswersPerSkill||3;
   const answeredTotal=r.total||0;
@@ -145,6 +204,11 @@ function render(r){
   const diagnosticProgress=r.diagnosticProgress||
     window.CAP_COLLEGE_DIAGNOSTIC_PROGRESS||null;
   const diagnosisReady=Boolean(diagnosticProgress?.diagnosisReady);
+
+  if(RESULT_LEARNER_PROFILE&&diagnosisReady&&Array.isArray(diagnosticProgress.skills)){
+    renderFinalDiagnostic(r,diagnosticProgress);
+    return;
+  }
 
   const arr=Object.entries(r.stats).map(([name,s])=>{
     const pending=s.pending===true || s.total<minimum;

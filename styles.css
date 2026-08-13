@@ -294,3 +294,17 @@ footer{margin-top:36px;text-align:center;color:var(--muted);font-size:.9rem}
 .learner-session-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.5rem}
 .learner-detail-link{margin-left:auto}
 @media(max-width:640px){.learner-session-row{display:block}.learner-session-meta{align-items:flex-start;margin-top:.6rem}.learner-detail-link{width:100%;text-align:center}}
+
+/* Final learner diagnostic reports */
+.diagnostic-report-card{border:1px solid #d8e0f2;border-radius:18px;padding:20px;margin:18px 0;background:#fbfcff}
+.diagnostic-report-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.diagnostic-report-heading h3{margin:4px 0;font-size:1.5rem}
+.diagnostic-report-counts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+.diagnostic-report-counts span{padding:12px;border-radius:12px;background:#eef3ff;text-align:center}
+.diagnostic-work-plan{padding:16px;border-radius:14px;background:#f3f8f5;margin:16px 0}
+.diagnostic-work-plan ol{margin:10px 0;padding-left:24px}
+.diagnostic-domain{border-top:1px solid #dce3f0;padding:12px 0}
+.diagnostic-domain summary{display:flex;justify-content:space-between;gap:12px;cursor:pointer}
+.diagnostic-skill-list{padding-top:8px}
+.diagnostic-skill-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 4px;border-top:1px solid #edf0f6}
+@media(max-width:700px){.diagnostic-report-counts{grid-template-columns:1fr}.diagnostic-report-heading,.diagnostic-skill-row,.diagnostic-domain summary{align-items:flex-start;flex-direction:column}}
