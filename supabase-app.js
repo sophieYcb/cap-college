@@ -419,10 +419,16 @@
   }
 
   async function getRemediationQuestions(competenceId) {
-    const { data, error } = await getClient().rpc(
-      "get_remediation_question_bank",
-      { requested_competence_id: competenceId }
-    );
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const { data, error } = token
+      ? await getClient().rpc("get_learner_remediation_question_bank", {
+          requested_token: token,
+          requested_competence_id: competenceId
+        })
+      : await getClient().rpc(
+          "get_remediation_question_bank",
+          { requested_competence_id: competenceId }
+        );
     if (error) throw error;
     return (Array.isArray(data) ? data : []).map((question) => ({
       id: Number(question.id),
@@ -435,14 +441,21 @@
     }));
   }
 
-  async function startRemediation(competenceId, minutes) {
-    const { data, error } = await getClient().rpc(
-      "start_remediation_session",
-      {
-        requested_competence_id: competenceId,
-        requested_minutes: minutes
-      }
-    );
+  async function startRemediation(competenceId, sessionSize) {
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const { data, error } = token
+      ? await getClient().rpc("start_learner_remediation_session", {
+          requested_token: token,
+          requested_competence_id: competenceId,
+          requested_question_count: sessionSize
+        })
+      : await getClient().rpc(
+          "start_remediation_session",
+          {
+            requested_competence_id: competenceId,
+            requested_minutes: sessionSize
+          }
+        );
     if (error) throw error;
     return Array.isArray(data) ? data[0] : data;
   }
@@ -454,26 +467,40 @@
     assistance,
     sequenceNumber
   ) {
-    const { data, error } = await getClient().rpc(
-      "submit_remediation_answer",
-      {
-        requested_session_id: sessionId,
-        requested_question_version_id: questionVersionId,
-        requested_choice_id: choiceId,
-        requested_assistance: assistance,
-        requested_sequence_number: sequenceNumber
-      }
-    );
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const commonParameters = {
+      requested_session_id: sessionId,
+      requested_question_version_id: questionVersionId,
+      requested_choice_id: choiceId,
+      requested_assistance: assistance,
+      requested_sequence_number: sequenceNumber
+    };
+    const { data, error } = token
+      ? await getClient().rpc("submit_learner_remediation_answer", {
+          requested_token: token,
+          ...commonParameters
+        })
+      : await getClient().rpc(
+          "submit_remediation_answer",
+          commonParameters
+        );
     if (error) throw error;
     return Array.isArray(data) ? data[0] : data;
   }
 
   async function finishRemediation(sessionId) {
-    const { error } = await getClient().rpc(
-      "finish_remediation_session",
-      { requested_session_id: sessionId }
-    );
+    const token = learnerProfile ? learnerAccessToken() : null;
+    const { data, error } = token
+      ? await getClient().rpc("finish_learner_remediation_session", {
+          requested_token: token,
+          requested_session_id: sessionId
+        })
+      : await getClient().rpc(
+          "finish_remediation_session",
+          { requested_session_id: sessionId }
+        );
     if (error) throw error;
+    return Array.isArray(data) ? data[0] : data;
   }
 
   async function getValidationQuestionBank() {
@@ -620,6 +647,15 @@
     if (error) throw error;
     return Array.isArray(data) ? data : [];
   }
+  async function getLearnerRemediationHistory(learnerProfileId) {
+    const { data, error } = await getClient().rpc(
+      "get_my_learner_remediation_history",
+      { requested_learner_profile_id: learnerProfileId }
+    );
+    if (error) throw error;
+    return Array.isArray(data) ? data : [];
+  }
+
   async function getLearnerDiagnosticReports(learnerProfileId) {
     const { data, error } = await getClient().rpc(
       "get_my_learner_diagnostic_reports",
@@ -719,6 +755,7 @@
     getLearnerProgress,
     getLearnerSessionHistory,
     getLearnerDiagnosticReports,
+    getLearnerRemediationHistory,
     getRemediationQuestions,
     getRoles: () => activeRole ? [activeRole] : [],
     getAvailableRoles: () => [...roles],

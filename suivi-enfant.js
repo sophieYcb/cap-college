@@ -2,6 +2,7 @@ const learnerId = new URLSearchParams(location.search).get("id");
 const progressTarget = document.getElementById("followupProgress");
 const historyTarget = document.getElementById("sessionHistory");
 const reportsTarget = document.getElementById("diagnosticReports");
+const remediationTarget = document.getElementById("remediationHistory");
 
 function escapeHtml(value) {
   const element = document.createElement("span");
@@ -115,6 +116,29 @@ function renderDiagnosticReports(rows) {
     </article>`;
   }).join("");
 }
+function renderRemediationHistory(rows) {
+  if (!rows.length) {
+    remediationTarget.innerHTML =
+      '<p class="muted">Aucun exercice réalisé pour le moment.</p>';
+    return;
+  }
+  remediationTarget.innerHTML = rows.map(row => {
+    const answers = Number(row.answer_count) || 0;
+    const correct = Number(row.correct_count) || 0;
+    const score = answers ? Math.round(correct * 100 / answers) : 0;
+    const [label, color] = reportLevel(score);
+    return `<article class="learner-session-row">
+      <div>
+        <strong>${escapeHtml(row.competence)}</strong>
+        <p>${escapeHtml(row.subject_name)} · ${escapeHtml(row.domain_name)} · ${formatDate(row.started_at)}</p>
+      </div>
+      <div class="learner-session-meta">
+        <span class="tag ${color}">${score} % · ${label}</span>
+        <span class="small">${correct}/${answers} réponses correctes</span>
+      </div>
+    </article>`;
+  }).join("");
+}
 function renderHistory(rows) {
   const usefulRows = rows.filter(row =>
     Number(row.answer_count) > 0 || row.session_status === "completed"
@@ -153,11 +177,12 @@ function renderHistory(rows) {
 }
 async function loadFollowup() {
   if (!learnerId) throw new Error("Profil enfant manquant.");
-  const [profiles, progress, history, reports] = await Promise.all([
+  const [profiles, progress, history, reports, remediationHistory] = await Promise.all([
     CapCollegeSupabase.getLearnerProfiles(),
     CapCollegeSupabase.getLearnerProgress(),
     CapCollegeSupabase.getLearnerSessionHistory(learnerId),
-    CapCollegeSupabase.getLearnerDiagnosticReports(learnerId)
+    CapCollegeSupabase.getLearnerDiagnosticReports(learnerId),
+    CapCollegeSupabase.getLearnerRemediationHistory(learnerId)
   ]);
   const profile = profiles.find(item => item.id === learnerId);
   if (!profile) throw new Error("Ce profil enfant n’est pas accessible.");
@@ -170,6 +195,7 @@ async function loadFollowup() {
   ));
   renderHistory(history);
   renderDiagnosticReports(reports);
+  renderRemediationHistory(remediationHistory);
 }
 CapCollegeSupabase.bootstrap({
   requireAuth: true,

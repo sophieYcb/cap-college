@@ -111,7 +111,11 @@ function renderRecommendation(diagnosticProgress=null){
       target.innerHTML=`<article class="recommendation-card">
         <span class="small">Ton premier objectif</span>
         <h3>${escapeHtml(priorities[0].competence)}</h3>
-        <p>Commence par cette compétence, puis avance sur les deux priorités suivantes. Deux petites séances de 20 questions par semaine suffisent pour progresser régulièrement.</p>
+        <p>Commence par cette compétence, puis avance sur les deux priorités suivantes.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="${learnerExerciseUrl(priorities[0],5,diagnosticProgress.subjectCode)}">Faire 5 questions</a>
+          <a class="btn btn-secondary" href="${learnerExerciseUrl(priorities[0],10,diagnosticProgress.subjectCode)}">Faire 10 questions</a>
+        </div>
       </article>`;
     }else{
       target.innerHTML='<div class="notice">Bravo, aucune priorité importante ne ressort de ce diagnostic. Continue à t’entraîner régulièrement.</div>';
@@ -161,6 +165,11 @@ function renderRecommendation(diagnosticProgress=null){
     </article>`;
 }
 
+function learnerExerciseUrl(skill,count,subjectCode){
+  return 'remediation.html?mode=child&skill='+
+    encodeURIComponent(skill.competenceId)+'&questions='+count+
+    '&subject='+encodeURIComponent(subjectCode||'');
+}
 function finalSkillStatus(score){
   return score>=80?['Point fort','green']:
     score>=50?['À consolider','orange']:['Prioritaire','red'];
@@ -190,7 +199,7 @@ function renderFinalDiagnostic(r,diagnosticProgress){
 
   const orderedPriorities=[...priorities,...consolidating.sort((a,b)=>a.masteryScore-b.masteryScore)].slice(0,3);
   document.getElementById('priorities').innerHTML=orderedPriorities.length
-    ?orderedPriorities.map((item,index)=>`<div class="priority"><strong>${index+1}. ${escapeHtml(item.competence)}</strong><br><span class="small">${escapeHtml(item.domain)} — à travailler en priorité</span></div>`).join('')
+    ?orderedPriorities.map((item,index)=>`<div class="priority"><strong>${index+1}. ${escapeHtml(item.competence)}</strong><br><span class="small">${escapeHtml(item.domain)} — à travailler en priorité</span><div class="actions"><a class="btn btn-secondary" href="${learnerExerciseUrl(item,5,diagnosticProgress.subjectCode)}">S’entraîner · 5 questions</a></div></div>`).join('')
     :'<p>Tu as de très bonnes bases dans toutes les compétences évaluées.</p>';
 
   const domains=[...new Set(skills.map(item=>item.domain))];
@@ -206,6 +215,16 @@ function renderFinalDiagnostic(r,diagnosticProgress){
       }).join('');
   }).join('');
 
+  const mainTrainingLink=document.querySelector('a[href="remediation.html"]');
+  const firstTrainingSkill=orderedPriorities[0];
+  if(mainTrainingLink&&firstTrainingSkill){
+    mainTrainingLink.href=learnerExerciseUrl(
+      firstTrainingSkill,5,diagnosticProgress.subjectCode
+    );
+    mainTrainingLink.textContent='Commencer mes exercices';
+  }else if(mainTrainingLink){
+    mainTrainingLink.classList.add('hidden');
+  }
   renderRecommendation(diagnosticProgress);
   const sameDiagnostic=!r.diagnosticProgress?.diagnosticId||
     r.diagnosticProgress.diagnosticId===diagnosticProgress.diagnosticId;

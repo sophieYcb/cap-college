@@ -1,7 +1,13 @@
 const params=new URLSearchParams(location.search);
 const competenceId=params.get('skill');
+const learnerMode=params.get('mode')==='child';
+const subjectCode=params.get('subject')||'';
 const plannedMinutes=Number(params.get('minutes'));
+const requestedQuestions=Number(params.get('questions'));
 const questionTargets={5:6,10:10,20:20};
+const questionTarget=learnerMode
+  ?requestedQuestions
+  :questionTargets[plannedMinutes];
 
 let sessionId=null;
 let questions=[];
@@ -137,31 +143,46 @@ async function finishSession(){
   document.getElementById('remediationSession').classList.add('hidden');
   document.getElementById('remediationComplete').classList.remove('hidden');
   document.getElementById('remediationSummary').textContent=
-    `${correctAnswers} réussite${correctAnswers>1?'s':''} sur ${currentIndex+(answered?1:0)} exercice${currentIndex+(answered?1:0)>1?'s':''}. Le diagnostic conservera cette séance pour la suite.`;
+    `${correctAnswers} réussite${correctAnswers>1?'s':''} sur ${currentIndex+(answered?1:0)} exercice${currentIndex+(answered?1:0)>1?'s':''}. Ton diagnostic final reste inchangé ; cette séance est enregistrée dans ta progression d’exercices.`;
   window.scrollTo(0,0);
 }
 
 async function initialise(){
-  if(!competenceId||!questionTargets[plannedMinutes]){
-    throw new Error('La compétence ou la durée de travail est manquante.');
+  if(!competenceId||!questionTarget||
+    (learnerMode&&![5,10].includes(questionTarget))){
+    throw new Error('La compétence ou le nombre de questions est manquant.');
   }
-  await CapCollegeSupabase.bootstrap({requireAuth:true});
+  await CapCollegeSupabase.bootstrap({
+    requireAuth:true,
+    preferLearner:learnerMode
+  });
   const [session,bank]=await Promise.all([
-    CapCollegeSupabase.startRemediation(competenceId,plannedMinutes),
+    CapCollegeSupabase.startRemediation(
+      competenceId,
+      learnerMode?questionTarget:plannedMinutes
+    ),
     CapCollegeSupabase.getRemediationQuestions(competenceId)
   ]);
   if(!session||!bank.length)throw new Error('Aucun exercice disponible pour cette compétence.');
 
   sessionId=session.session_id;
-  questions=shuffle(bank).slice(0,Math.min(questionTargets[plannedMinutes],bank.length));
+  questions=shuffle(bank).slice(0,Math.min(questionTarget,bank.length));
   document.getElementById('remediationTitle').textContent=session.competence;
-  document.getElementById('remediationDuration').textContent=`Séance choisie : ${plannedMinutes} min`;
+  document.getElementById('remediationDuration').textContent=
+    learnerMode
+      ?`Séance choisie : ${questionTarget} questions`
+      :`Séance choisie : ${plannedMinutes} min`;
   document.getElementById('lessonReminder').textContent=
     session.reminder||localLesson(session.competence);
   document.getElementById('workedExample').textContent=
     session.worked_example||localExample(session.competence);
   document.getElementById('remediationLoading').classList.add('hidden');
   document.getElementById('remediationSession').classList.remove('hidden');
+  const returnLink=document.getElementById('returnToReportLink');
+  if(learnerMode){
+    returnLink.href='resultats.html?mode=child&subject='+
+      encodeURIComponent(subjectCode);
+  }
   setAssistance('with_reminder');
   renderQuestion();
 }
