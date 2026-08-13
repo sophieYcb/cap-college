@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>Validation des résumés de cours — Cap Collège</title>
+ <link rel="stylesheet" href="styles.css?v=5.3.40">
+</head>
+<body class="validation-page"><main class="page quality-page">
+ <section class="card quality-toolbar course-quality-toolbar">
+  <div class="quality-primary-actions"><a class="btn btn-secondary" href="test.html">Tester les questions</a><a class="btn btn-secondary" href="index.html">Accueil</a></div>
+  <label>Matière <select id="subjectFilter"></select></label>
+  <label>Catégorie <select id="domainFilter"></select></label>
+  <label>État <select id="statusFilter"><option value="all">Tous</option><option value="unreviewed">Non testés</option><option value="A">A — excellent</option><option value="B">B — améliorable</option><option value="C">C — à réécrire</option><option value="D">D — à supprimer</option></select></label>
+ </section>
+ <section class="card quality-question course-summary-card">
+  <div class="question-top"><strong id="courseCounter"></strong><span id="courseCode"></span></div>
+  <div class="progress"><div class="progress-bar" id="courseProgress"></div></div>
+  <div class="question-meta"><span class="meta meta-domain" id="courseDomain"></span><span class="meta meta-skill" id="courseSkill"></span></div>
+  <h1 id="courseTitle"></h1>
+  <div class="course-preview-block"><span class="lesson-label">La règle</span><p id="courseReminder"></p></div>
+  <div class="course-preview-block"><span class="lesson-label">Exemple</span><p id="courseExample"></p></div>
+  <div class="review-panel">
+   <h3 class="review-title">Évaluation du résumé <span>Raccourcis : A, B, C ou D</span></h3>
+   <div class="rating-grid">
+    <button class="rating rating-a" data-rating="A"><strong>A</strong><span>Excellent</span></button><button class="rating rating-b" data-rating="B"><strong>B</strong><span>À améliorer</span></button><button class="rating rating-c" data-rating="C"><strong>C</strong><span>À réécrire</span></button><button class="rating rating-d" data-rating="D"><strong>D</strong><span>À supprimer</span></button>
+   </div>
+   <label class="comment-label">Commentaire<textarea id="reviewComment" rows="2" placeholder="Indique ce qui doit être corrigé."></textarea></label>
+   <p class="small review-save-status" id="reviewSaveStatus" aria-live="polite"></p>
+  </div>
+  <div class="actions question-actions quality-nav"><button class="btn btn-secondary" id="previousButton">Précédent</button><button class="btn btn-primary" id="nextButton">Suivant</button><button class="btn btn-secondary" id="nextUnreviewedButton">Prochain non testé</button></div>
+ </section>
+ <details class="card quality-tools-panel"><summary>Suivi et export</summary><section class="quality-summary" id="qualitySummary"></section><div class="actions"><button class="btn btn-primary" id="exportButton">Exporter les résumés à corriger</button></div></details>
+</main>
+<script src="site-navigation.js?v=5.3.19"></script><script src="supabase-config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-app.js?v=5.3.40"></script><script src="cours-test-loader.js?v=5.3.40"></script>
+</body></html>

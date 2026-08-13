@@ -308,3 +308,4 @@ footer{margin-top:36px;text-align:center;color:var(--muted);font-size:.9rem}
 .diagnostic-skill-list{padding-top:8px}
 .diagnostic-skill-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 4px;border-top:1px solid #edf0f6}
 @media(max-width:700px){.diagnostic-report-counts{grid-template-columns:1fr}.diagnostic-report-heading,.diagnostic-skill-row,.diagnostic-domain summary{align-items:flex-start;flex-direction:column}}
+.course-quality-toolbar{grid-template-columns:1fr 1fr 1fr}.course-summary-card h1{margin:14px 0 18px}.course-preview-block{border:1px solid #dbe2ee;border-radius:14px;background:#f8faff;padding:16px 18px;margin:12px 0}.course-preview-block p{margin:12px 0 0;font-size:1.04rem;line-height:1.55;white-space:pre-wrap}.course-content-missing{color:#b42318!important;font-weight:800}.course-summary-card .quality-nav{flex-wrap:wrap}

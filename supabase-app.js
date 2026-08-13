@@ -566,6 +566,23 @@
     }));
   }
 
+  async function getValidationCourseSummaries() {
+    const { data, error } = await getClient().rpc("get_validation_course_summaries");
+    if (error) throw error;
+    return Array.isArray(data) ? data : [];
+  }
+
+  async function saveCourseSummaryReview(microSkillId, fingerprint, grade, comment) {
+    const { data, error } = await getClient().rpc("save_course_summary_review", {
+      requested_micro_skill_id: microSkillId,
+      requested_fingerprint: fingerprint,
+      requested_grade: grade,
+      requested_comment: comment || null
+    });
+    if (error) throw error;
+    return Array.isArray(data) ? data[0] : data;
+  }
+
   async function getErrorNotebook() {
     const { data, error } = await getClient().rpc(
       "get_my_error_notebook"
@@ -787,6 +804,7 @@
     getDiagnosticProgress,
     getValidationCampaigns,
     getValidationQuestionBank,
+    getValidationCourseSummaries,
     importDraftQuestionLot,
     createLearnerProfile,
     openLearnerSession,
@@ -813,6 +831,7 @@
     resetValidationCampaign,
     resolveQuestionFlags,
     saveQuestionReview,
+    saveCourseSummaryReview,
     setActiveRole,
     signIn,
     signOut,
