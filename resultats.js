@@ -93,6 +93,14 @@ function renderMistakes(r){
   `).join('');
 }
 
+function exerciseProgressFor(competenceId){
+  return (window.CAP_COLLEGE_EXERCISE_PROGRESS||[])
+    .find(item=>item.competenceId===competenceId)||null;
+}
+
+function isValidatedAfterTraining(skill){
+  return exerciseProgressFor(skill.competenceId)?.reassessmentPassed===true;
+}
 function renderRecommendation(diagnosticProgress=null){
   const profile=Array.isArray(window.CAP_COLLEGE_SKILL_PROFILE)
     ?window.CAP_COLLEGE_SKILL_PROFILE:[];
@@ -105,7 +113,7 @@ function renderRecommendation(diagnosticProgress=null){
   }
   if(RESULT_LEARNER_PROFILE){
     const priorities=(diagnosticProgress?.skills||[])
-      .filter(item=>item.sufficientEvidence&&Number(item.masteryScore)<80)
+      .filter(item=>item.sufficientEvidence&&Number(item.masteryScore)<80&&!isValidatedAfterTraining(item))
       .sort((a,b)=>Number(a.masteryScore)-Number(b.masteryScore));
     if(diagnosticProgress?.diagnosisReady&&priorities.length){
       target.innerHTML=`<article class="recommendation-card">
@@ -178,11 +186,20 @@ function finalSkillStatus(score){
 function renderFinalDiagnostic(r,diagnosticProgress){
   const skills=(diagnosticProgress.skills||[])
     .filter(item=>item.sufficientEvidence)
-    .map(item=>({...item,masteryScore:Number(item.masteryScore)||0}));
-  const strengths=skills.filter(item=>item.masteryScore>=80);
-  const consolidating=skills.filter(item=>item.masteryScore>=50&&item.masteryScore<80);
+    .map(item=>({
+      ...item,
+      masteryScore:Number(item.masteryScore)||0,
+      exerciseValidated:isValidatedAfterTraining(item)
+    }));
+  const validatedAfterTraining=skills.filter(item=>item.exerciseValidated);
+  const strengths=skills.filter(item=>
+    item.masteryScore>=80||item.exerciseValidated
+  );
+  const consolidating=skills.filter(item=>
+    !item.exerciseValidated&&item.masteryScore>=50&&item.masteryScore<80
+  );
   const priorities=skills
-    .filter(item=>item.masteryScore<50)
+    .filter(item=>!item.exerciseValidated&&item.masteryScore<50)
     .sort((a,b)=>a.masteryScore-b.masteryScore);
   const subject=diagnosticProgress.subjectName||
     (diagnosticProgress.subjectCode==='mathematics'?'Mathématiques':'Français');
@@ -191,9 +208,9 @@ function renderFinalDiagnostic(r,diagnosticProgress){
   const topBadge=document.querySelector('.topbar .badge');
   if(topBadge)topBadge.textContent='Diagnostic terminé';
   document.getElementById('globalText').innerHTML=
-    `<strong>Bravo, ton diagnostic est terminé.</strong> Il s’appuie sur ${diagnosticProgress.answeredQuestions||0} réponses réparties sur ${diagnosticProgress.completedSessions||0} séances. Tu peux maintenant voir ce que tu maîtrises et ce que tu vas travailler en priorité.`;
+    `<strong>Bravo, ton diagnostic est terminé.</strong> Il s’appuie sur ${diagnosticProgress.answeredQuestions||0} réponses réparties sur ${diagnosticProgress.completedSessions||0} séances. Tu peux maintenant voir ce que tu maîtrises et ce que tu vas travailler en priorité.${validatedAfterTraining.length?` <strong>${validatedAfterTraining.length} compétence${validatedAfterTraining.length>1?'s ont':' a'} été validée${validatedAfterTraining.length>1?'s':''} après entraînement.</strong>`:''}`;
   document.getElementById('summary').innerHTML=`
-    <div class="summary-box"><div class="summary-value">${strengths.length}</div><div class="small">points forts</div></div>
+    <div class="summary-box"><div class="summary-value">${strengths.length}</div><div class="small">maîtrisées ou validées</div></div>
     <div class="summary-box"><div class="summary-value">${consolidating.length}</div><div class="small">compétences à consolider</div></div>
     <div class="summary-box"><div class="summary-value">${priorities.length}</div><div class="small">priorités de travail</div></div>`;
 
@@ -207,7 +224,9 @@ function renderFinalDiagnostic(r,diagnosticProgress){
     const items=skills.filter(item=>item.domain===domain);
     return `<h3 class="domain-title">${escapeHtml(domain)}</h3>`+
       items.map(item=>{
-        const [label,color]=finalSkillStatus(item.masteryScore);
+        const [label,color]=item.exerciseValidated
+          ?['Validée après entraînement','green']
+          :finalSkillStatus(item.masteryScore);
         return `<div class="result">
           <div class="result-head"><span>${escapeHtml(item.competence)}</span><span class="tag ${color}">${label}</span></div>
           <div class="meter"><span class="${color}" style="width:${item.masteryScore}%"></span></div>

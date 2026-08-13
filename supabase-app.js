@@ -441,6 +441,19 @@
     }));
   }
 
+  async function getLearnerExerciseProgress(subjectCode = null) {
+    const token = learnerProfile ? learnerAccessToken() : null;
+    if (!token) return [];
+    const { data, error } = await getClient().rpc(
+      "get_learner_exercise_progress",
+      {
+        requested_token: token,
+        requested_subject_code: subjectCode
+      }
+    );
+    if (error) throw error;
+    return Array.isArray(data) ? data : [];
+  }
   async function getRemediationReadiness(competenceId) {
     const token = learnerProfile ? learnerAccessToken() : null;
     if (!token) return null;
@@ -785,6 +798,7 @@
     getLearnerDiagnosticReports,
     getLearnerRemediationHistory,
     getRemediationQuestions,
+    getLearnerExerciseProgress,
     getRemediationReadiness,
     getRoles: () => activeRole ? [activeRole] : [],
     getAvailableRoles: () => [...roles],

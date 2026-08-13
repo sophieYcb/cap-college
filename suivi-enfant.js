@@ -49,23 +49,42 @@ function reportLevel(score) {
   if (score >= 50) return ["À consolider", "orange"];
   return ["Prioritaire", "red"];
 }
-function renderDiagnosticReports(rows) {
+function renderDiagnosticReports(rows, remediationRows = []) {
   if (!rows.length) {
     reportsTarget.innerHTML =
       '<p class="muted">Aucun diagnostic terminé pour le moment.</p>';
     return;
   }
+  const latestReassessments = new Map();
+  remediationRows
+    .filter(item => item.session_kind === "reassessment")
+    .forEach(item => {
+      if (!latestReassessments.has(item.competence_id)) {
+        latestReassessments.set(
+          item.competence_id,
+          item.reassessment_passed === true
+        );
+      }
+    });
   reportsTarget.innerHTML = rows.map((row, reportIndex) => {
     const report = typeof row.report === "string"
       ? JSON.parse(row.report) : (row.report || {});
     const skills = (report.skills || [])
       .filter(item => item.sufficientEvidence)
-      .map(item => ({...item, masteryScore: Number(item.masteryScore) || 0}));
-    const strengths = skills.filter(item => item.masteryScore >= 80);
-    const consolidating = skills.filter(item =>
-      item.masteryScore >= 50 && item.masteryScore < 80
+      .map(item => ({
+        ...item,
+        masteryScore: Number(item.masteryScore) || 0,
+        exerciseValidated: latestReassessments.get(item.competenceId) === true
+      }));
+    const strengths = skills.filter(item =>
+      item.masteryScore >= 80 || item.exerciseValidated
     );
-    const priorities = skills.filter(item => item.masteryScore < 50)
+    const consolidating = skills.filter(item =>
+      !item.exerciseValidated && item.masteryScore >= 50 && item.masteryScore < 80
+    );
+    const priorities = skills.filter(item =>
+      !item.exerciseValidated && item.masteryScore < 50
+    )
       .sort((a, b) => a.masteryScore - b.masteryScore);
     const workPlan = [...priorities, ...consolidating
       .sort((a, b) => a.masteryScore - b.masteryScore)].slice(0, 3);
@@ -83,7 +102,9 @@ function renderDiagnosticReports(rows) {
           <span>${score} % · ${items.length} compétence${items.length > 1 ? "s" : ""}</span>
         </summary>
         <div class="diagnostic-skill-list">${items.map(item => {
-          const [label, color] = reportLevel(item.masteryScore);
+          const [label, color] = item.exerciseValidated
+            ? ["Validée après entraînement", "green"]
+            : reportLevel(item.masteryScore);
           return `<div class="diagnostic-skill-row">
             <div><strong>${escapeHtml(item.competence)}</strong><br>
               <span class="small">${item.correctCount}/${item.evidenceCount} réponses correctes · ${item.sessionCount} séances</span>
@@ -101,7 +122,7 @@ function renderDiagnosticReports(rows) {
       </div>
       <p>${row.answered_questions} réponses sur ${row.completed_sessions} séances. Le bilan repose sur ${skills.length} compétences suffisamment évaluées.</p>
       <div class="diagnostic-report-counts">
-        <span><strong>${strengths.length}</strong> maîtrisées</span>
+        <span><strong>${strengths.length}</strong> maîtrisées ou validées</span>
         <span><strong>${consolidating.length}</strong> à consolider</span>
         <span><strong>${priorities.length}</strong> prioritaires</span>
       </div>
@@ -194,7 +215,7 @@ async function loadFollowup() {
     item => item.learner_profile_id === learnerId
   ));
   renderHistory(history);
-  renderDiagnosticReports(reports);
+  renderDiagnosticReports(reports, remediationHistory);
   renderRemediationHistory(remediationHistory);
 }
 CapCollegeSupabase.bootstrap({
