@@ -1,0 +1,464 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_numbers_calculation",
+                   "name":  "Nombres et calculs"
+               },
+    "skill":  {
+                  "code":  "m5_operations",
+                  "name":  "Opérations"
+              },
+    "lot":  "M5-OPS-03",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_calc_sum_product_vocabulary",
+                            "teacherName":  "Distinguer somme, produit, termes et facteurs",
+                            "studentName":  "Reconnaître une somme, un produit, leurs termes et leurs facteurs",
+                            "lessonReminder":  "Une somme est le résultat d’une addition et se compose de termes. Un produit est le résultat d’une multiplication et se compose de facteurs. Une expression entière est nommée d’après sa dernière opération à effectuer.",
+                            "workedExample":  "Dans 3 × 8 + 5, l’expression entière est une somme dont les termes sont 3 × 8 et 5. Dans 3 × (8 + 5), l’expression entière est un produit dont les facteurs sont 3 et 8 + 5.",
+                            "masteryCriteria":  "Reconnaître la nature d’une expression et identifier correctement ses termes ou ses facteurs."
+                        },
+                        {
+                            "code":  "m5_calc_order_operations",
+                            "teacherName":  "Appliquer les priorités opératoires",
+                            "studentName":  "Calculer en respectant les priorités opératoires",
+                            "lessonReminder":  "On effectue d’abord les calculs entre parenthèses, puis les multiplications et divisions de gauche à droite, et enfin les additions et soustractions de gauche à droite.",
+                            "workedExample":  "7 + 3 × 5 = 7 + 15 = 22 : la multiplication est effectuée avant l’addition.",
+                            "masteryCriteria":  "Calculer correctement des expressions comportant plusieurs opérations en respectant leur ordre."
+                        },
+                        {
+                            "code":  "m5_calc_distributivity_numeric",
+                            "teacherName":  "Utiliser la distributivité simple dans un calcul numérique",
+                            "studentName":  "Développer, factoriser et calculer avec la distributivité",
+                            "lessonReminder":  "La distributivité permet d’écrire a × (b + c) = a × b + a × c et a × (b − c) = a × b − a × c. Inversement, on peut mettre le facteur commun a en évidence.",
+                            "workedExample":  "7 × 23 = 7 × (20 + 3) = 7 × 20 + 7 × 3 = 161.",
+                            "masteryCriteria":  "Développer ou factoriser une expression numérique et utiliser la distributivité pour calculer efficacement."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0081",
+                          "microSkill":  "m5_calc_sum_product_vocabulary",
+                          "difficulty":  1,
+                          "prompt":  "Dans la somme 7 + 13, quels sont les deux termes ?",
+                          "choices":  [
+                                          "7 et 13",
+                                          "20 et 13",
+                                          "7 et 20",
+                                          "13 et 20"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les nombres ajoutés 7 et 13 sont les termes de la somme."
+                      },
+                      {
+                          "code":  "M5-0082",
+                          "microSkill":  "m5_calc_sum_product_vocabulary",
+                          "difficulty":  1,
+                          "prompt":  "Dans le produit 4 × 9, quels sont les deux facteurs ?",
+                          "choices":  [
+                                          "13 et 9",
+                                          "4 et 9",
+                                          "4 et 36",
+                                          "36 et 9"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Les nombres multipliés 4 et 9 sont les facteurs du produit."
+                      },
+                      {
+                          "code":  "M5-0083",
+                          "microSkill":  "m5_calc_sum_product_vocabulary",
+                          "difficulty":  1,
+                          "prompt":  "Laquelle de ces expressions est un produit ?",
+                          "choices":  [
+                                          "6 + 8 + 2",
+                                          "6 × 8 + 2",
+                                          "6 × (8 + 2)",
+                                          "6 + 8 × 2"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Dans 6 × (8 + 2), la dernière opération à effectuer est la multiplication : l’expression est un produit."
+                      },
+                      {
+                          "code":  "M5-0084",
+                          "microSkill":  "m5_calc_sum_product_vocabulary",
+                          "difficulty":  1,
+                          "prompt":  "Laquelle de ces expressions est une somme ?",
+                          "choices":  [
+                                          "5 × (7 + 3)",
+                                          "(5 + 7) × 3",
+                                          "5 × 7 × 3",
+                                          "5 × 7 + 3"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Dans 5 × 7 + 3, la dernière opération est l’addition : l’expression est une somme."
+                      },
+                      {
+                          "code":  "M5-0085",
+                          "microSkill":  "m5_calc_sum_product_vocabulary",
+                          "difficulty":  2,
+                          "prompt":  "Dans l’expression 12 × 5 + 8, quels sont les termes de la somme ?",
+                          "choices":  [
+                                          "12 × 5 et 8",
+                                          "12 et 5",
+                                          "5 et 8",
+                                          "12 et 8"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "L’expression entière est la somme de 12 × 5 et de 8."
+                      },
+                      {
+                          "code":  "M5-0086",
+                          "microSkill":  "m5_calc_sum_product_vocabulary",
+                          "difficulty":  2,
+                          "prompt":  "Dans l’expression 3 × (10 + 4), quels sont les facteurs du produit ?",
+                          "choices":  [
+                                          "3, 10 et 4",
+                                          "3 et 10 + 4",
+                                          "10 et 4",
+                                          "3 et 10"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Les deux facteurs écrits sont 3 et l’expression 10 + 4."
+                      },
+                      {
+                          "code":  "M5-0087",
+                          "microSkill":  "m5_calc_sum_product_vocabulary",
+                          "difficulty":  2,
+                          "prompt":  "Dans l’expression 5 × 6 + 2 × 9, quels sont les termes de la somme ?",
+                          "choices":  [
+                                          "5 et 6",
+                                          "2 et 9",
+                                          "5 × 6 et 2 × 9",
+                                          "5 × 6 × 2 et 9"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "La dernière opération est l’addition ; ses termes sont les deux produits 5 × 6 et 2 × 9."
+                      },
+                      {
+                          "code":  "M5-0088",
+                          "microSkill":  "m5_calc_sum_product_vocabulary",
+                          "difficulty":  2,
+                          "prompt":  "Dans l’expression 2 × 5 × 11, quels sont les facteurs ?",
+                          "choices":  [
+                                          "2 et 5 seulement",
+                                          "5 et 11 seulement",
+                                          "2 et 11 seulement",
+                                          "2, 5 et 11"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Les trois nombres 2, 5 et 11 sont multipliés : ce sont les facteurs."
+                      },
+                      {
+                          "code":  "M5-0089",
+                          "microSkill":  "m5_calc_sum_product_vocabulary",
+                          "difficulty":  3,
+                          "prompt":  "Quelle expression est la somme du produit de 6 par 4 et du produit de 3 par 5 ?",
+                          "choices":  [
+                                          "6 × 4 + 3 × 5",
+                                          "(6 + 4) × (3 + 5)",
+                                          "6 × (4 + 3) × 5",
+                                          "6 + 4 × 3 + 5"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les deux produits 6 × 4 et 3 × 5 sont les termes de la somme."
+                      },
+                      {
+                          "code":  "M5-0090",
+                          "microSkill":  "m5_calc_sum_product_vocabulary",
+                          "difficulty":  3,
+                          "prompt":  "Dans l’expression (8 + 2) × (7 − 3), quels sont les facteurs du produit ?",
+                          "choices":  [
+                                          "8 + 2, 7 et 3",
+                                          "8 + 2 et 7 − 3",
+                                          "8, 2, 7 et 3",
+                                          "10 et 7 uniquement"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Les deux facteurs sont les expressions entre parenthèses 8 + 2 et 7 − 3."
+                      },
+                      {
+                          "code":  "M5-0091",
+                          "microSkill":  "m5_calc_order_operations",
+                          "difficulty":  1,
+                          "prompt":  "Calcule 7 + 3 × 5.",
+                          "choices":  [
+                                          "50",
+                                          "35",
+                                          "22",
+                                          "25"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On calcule d’abord 3 × 5 = 15, puis 7 + 15 = 22."
+                      },
+                      {
+                          "code":  "M5-0092",
+                          "microSkill":  "m5_calc_order_operations",
+                          "difficulty":  1,
+                          "prompt":  "Calcule 24 ÷ 6 + 2 × 5.",
+                          "choices":  [
+                                          "30",
+                                          "9",
+                                          "20",
+                                          "14"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On calcule 24 ÷ 6 = 4 et 2 × 5 = 10, puis 4 + 10 = 14."
+                      },
+                      {
+                          "code":  "M5-0093",
+                          "microSkill":  "m5_calc_order_operations",
+                          "difficulty":  1,
+                          "prompt":  "Calcule 18 − 4 × 3 + 2.",
+                          "choices":  [
+                                          "8",
+                                          "44",
+                                          "20",
+                                          "4"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On calcule 4 × 3 = 12, puis 18 − 12 + 2 = 8."
+                      },
+                      {
+                          "code":  "M5-0094",
+                          "microSkill":  "m5_calc_order_operations",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 36 ÷ 3 × 2.",
+                          "choices":  [
+                                          "6",
+                                          "24",
+                                          "18",
+                                          "12"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Multiplications et divisions ont la même priorité : de gauche à droite, 36 ÷ 3 = 12 puis 12 × 2 = 24."
+                      },
+                      {
+                          "code":  "M5-0095",
+                          "microSkill":  "m5_calc_order_operations",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 5 + 18 ÷ 3 × 2.",
+                          "choices":  [
+                                          "22",
+                                          "46",
+                                          "17",
+                                          "16"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On calcule de gauche à droite 18 ÷ 3 = 6 puis 6 × 2 = 12, et enfin 5 + 12 = 17."
+                      },
+                      {
+                          "code":  "M5-0096",
+                          "microSkill":  "m5_calc_order_operations",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 42 − 6 × 4 + 8 ÷ 2.",
+                          "choices":  [
+                                          "40",
+                                          "76",
+                                          "14",
+                                          "22"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On calcule 6 × 4 = 24 et 8 ÷ 2 = 4, puis 42 − 24 + 4 = 22."
+                      },
+                      {
+                          "code":  "M5-0097",
+                          "microSkill":  "m5_calc_order_operations",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 60 ÷ 5 + 7 × 4.",
+                          "choices":  [
+                                          "40",
+                                          "96",
+                                          "19",
+                                          "76"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On calcule 60 ÷ 5 = 12 et 7 × 4 = 28, puis 12 + 28 = 40."
+                      },
+                      {
+                          "code":  "M5-0098",
+                          "microSkill":  "m5_calc_order_operations",
+                          "difficulty":  3,
+                          "prompt":  "Calcule 48 ÷ 4 + 6 × 3.",
+                          "choices":  [
+                                          "54",
+                                          "30",
+                                          "21",
+                                          "144"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On calcule 48 ÷ 4 = 12 et 6 × 3 = 18, puis 12 + 18 = 30."
+                      },
+                      {
+                          "code":  "M5-0099",
+                          "microSkill":  "m5_calc_order_operations",
+                          "difficulty":  3,
+                          "prompt":  "Calcule 100 − 8 × 7 + 24 ÷ 6.",
+                          "choices":  [
+                                          "72",
+                                          "16",
+                                          "48",
+                                          "60"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On calcule 8 × 7 = 56 et 24 ÷ 6 = 4, puis 100 − 56 + 4 = 48."
+                      },
+                      {
+                          "code":  "M5-0100",
+                          "microSkill":  "m5_calc_order_operations",
+                          "difficulty":  3,
+                          "prompt":  "Calcule 15 + 5 × 6 − 18 ÷ 3.",
+                          "choices":  [
+                                          "114",
+                                          "24",
+                                          "45",
+                                          "39"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On calcule 5 × 6 = 30 et 18 ÷ 3 = 6, puis 15 + 30 − 6 = 39."
+                      },
+                      {
+                          "code":  "M5-0101",
+                          "microSkill":  "m5_calc_distributivity_numeric",
+                          "difficulty":  1,
+                          "prompt":  "Quelle égalité utilise correctement la distributivité pour développer 7 × (10 + 3) ?",
+                          "choices":  [
+                                          "7 × 10 + 7 × 3",
+                                          "7 × 10 + 3",
+                                          "7 + 10 × 3",
+                                          "7 × 10 × 3"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On multiplie chacun des deux termes 10 et 3 par 7."
+                      },
+                      {
+                          "code":  "M5-0102",
+                          "microSkill":  "m5_calc_distributivity_numeric",
+                          "difficulty":  1,
+                          "prompt":  "Quelle décomposition permet de calculer 9 × 47 par distributivité ?",
+                          "choices":  [
+                                          "9 × 40 + 7",
+                                          "9 × 40 + 9 × 7",
+                                          "9 × 4 + 9 × 7",
+                                          "9 × 50 + 9 × 3"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Comme 47 = 40 + 7, on écrit 9 × 47 = 9 × 40 + 9 × 7."
+                      },
+                      {
+                          "code":  "M5-0103",
+                          "microSkill":  "m5_calc_distributivity_numeric",
+                          "difficulty":  1,
+                          "prompt":  "Calcule 6 × 98 en utilisant 98 = 100 − 2.",
+                          "choices":  [
+                                          "612",
+                                          "598",
+                                          "588",
+                                          "480"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "6 × 98 = 6 × 100 − 6 × 2 = 600 − 12 = 588."
+                      },
+                      {
+                          "code":  "M5-0104",
+                          "microSkill":  "m5_calc_distributivity_numeric",
+                          "difficulty":  2,
+                          "prompt":  "Quelle expression factorisée est égale à 5 × 12 + 5 × 8 ?",
+                          "choices":  [
+                                          "5 × 12 × 8",
+                                          "10 × (12 + 8)",
+                                          "5 + (12 × 8)",
+                                          "5 × (12 + 8)"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le facteur commun 5 est mis en évidence : 5 × 12 + 5 × 8 = 5 × (12 + 8)."
+                      },
+                      {
+                          "code":  "M5-0105",
+                          "microSkill":  "m5_calc_distributivity_numeric",
+                          "difficulty":  2,
+                          "prompt":  "Quelle égalité permet de calculer 13 × 21 par distributivité ?",
+                          "choices":  [
+                                          "13 × 20 + 13",
+                                          "13 × 20 + 1",
+                                          "13 × 2 + 13 × 1",
+                                          "13 + 20 × 1"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Comme 21 = 20 + 1, 13 × 21 = 13 × 20 + 13 × 1 = 13 × 20 + 13."
+                      },
+                      {
+                          "code":  "M5-0106",
+                          "microSkill":  "m5_calc_distributivity_numeric",
+                          "difficulty":  2,
+                          "prompt":  "Quelle expression est égale à 8 × (50 − 3) ?",
+                          "choices":  [
+                                          "8 × 50 − 3",
+                                          "8 × 50 − 8 × 3",
+                                          "8 × 50 + 8 × 3",
+                                          "8 × 47 − 3"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "La distributivité sur une différence donne 8 × 50 − 8 × 3."
+                      },
+                      {
+                          "code":  "M5-0107",
+                          "microSkill":  "m5_calc_distributivity_numeric",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 25 × 36 en décomposant 36 en 30 + 6.",
+                          "choices":  [
+                                          "750",
+                                          "150",
+                                          "900",
+                                          "1 500"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "25 × 36 = 25 × 30 + 25 × 6 = 750 + 150 = 900."
+                      },
+                      {
+                          "code":  "M5-0108",
+                          "microSkill":  "m5_calc_distributivity_numeric",
+                          "difficulty":  3,
+                          "prompt":  "Quelle expression factorisée est égale à 7 × 19 − 7 × 9 ?",
+                          "choices":  [
+                                          "7 × 19 × 9",
+                                          "14 × (19 − 9)",
+                                          "7 − (19 × 9)",
+                                          "7 × (19 − 9)"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le facteur commun 7 est mis en évidence : 7 × 19 − 7 × 9 = 7 × (19 − 9)."
+                      },
+                      {
+                          "code":  "M5-0109",
+                          "microSkill":  "m5_calc_distributivity_numeric",
+                          "difficulty":  3,
+                          "prompt":  "Calcule 99 × 14 en utilisant 99 = 100 − 1.",
+                          "choices":  [
+                                          "1 386",
+                                          "1 414",
+                                          "986",
+                                          "1 400"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "99 × 14 = 100 × 14 − 1 × 14 = 1 400 − 14 = 1 386."
+                      },
+                      {
+                          "code":  "M5-0110",
+                          "microSkill":  "m5_calc_distributivity_numeric",
+                          "difficulty":  3,
+                          "prompt":  "Calcule 42 × 15 + 58 × 15 en factorisant.",
+                          "choices":  [
+                                          "1 000",
+                                          "1 500",
+                                          "15 000",
+                                          "870"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "42 × 15 + 58 × 15 = (42 + 58) × 15 = 100 × 15 = 1 500."
+                      }
+                  ]
+}
