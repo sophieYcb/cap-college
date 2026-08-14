@@ -512,6 +512,55 @@ async function selectAnswer(index){
   }
 }
 
+async function skipQuestion(){
+  clearTimeout(autoAdvanceTimer);
+  if(answers[current]!==null)return;
+  const q=diagnosticQuestions[current];
+  const skipButton=document.getElementById('skipBtn');
+  skipButton.disabled=true;
+  if(q.source==='supabase'){
+    if(!remoteSessionId){
+      alert('Cette séance en ligne n’est plus disponible. Recommence le diagnostic.');
+      return;
+    }
+    try{
+      const result=await CapCollegeSupabase.submitAnswer(
+        remoteSessionId,
+        q.questionVersionId,
+        null,
+        remoteSequenceOffset+current+1
+      );
+      answerResults[current]=false;
+      answerFeedback[current]={
+        correctIndex:q.choiceIds.indexOf(result.correct_choice_id),
+        explanation:result.correction_explanation||SKILL_LESSONS[q.competence]||''
+      };
+    }catch(error){
+      const reason=String(error?.message||'Erreur inconnue');
+      console.error('Question passée non enregistrée :',error);
+      alert(`La question passée n’a pas pu être enregistrée.\n\nDétail : ${reason}`);
+      skipButton.disabled=false;
+      return;
+    }
+  }else{
+    answerResults[current]=false;
+    answerFeedback[current]={
+      correctIndex:q.reponse,
+      explanation:SKILL_LESSONS[q.competence]||''
+    };
+  }
+  answers[current]=-1;
+  saveProgress();
+  renderChoices();
+  if(current<diagnosticQuestions.length-1){
+    autoAdvanceTimer=setTimeout(()=>{
+      current++;
+      saveProgress();
+      renderQuestion();
+      window.scrollTo(0,0);
+    },350);
+  }
+}
 function renderChoices(){
   const q=diagnosticQuestions[current];
   document.getElementById('choices').innerHTML=q.choix.map((choice,index)=>`
@@ -519,6 +568,11 @@ function renderChoices(){
       <input type="radio" name="answer" ${answers[current]===index?'checked':''} onchange="selectAnswer(${index})">
       ${CapCollegeEducationalContent.toHtml(choice)}
     </label>`).join('');
+  const skipButton=document.getElementById('skipBtn');
+  skipButton.disabled=answers[current]!==null;
+  skipButton.textContent=answers[current]===-1
+    ?'Question passée'
+    :'Je ne sais pas — passer';
 }
 
 function renderQuestion(){
@@ -694,7 +748,7 @@ async function finishTest(stoppedEarly=false){
         domain:q.domaine,
         skill:q.competence,
         prompt:q.question,
-        selectedAnswer:q.choix[answers[index]],
+        selectedAnswer:answers[index]===-1?'Question passée':q.choix[answers[index]],
         correctAnswer:q.choix[feedback.correctIndex],
         explanation:feedback.explanation||'',
         isCorrect:answerResults[index]===true
