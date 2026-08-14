@@ -146,7 +146,7 @@
       svg.appendChild(svgNode('circle',{cx:x,cy:y,r:8,class:'chart-point'}));
       addSvgText(svg,`${hour} h`,x,bottom+30,{class:'chart-label chart-category','text-anchor':'middle'});
     });
-    addSvgText(svg,'Valeur',20,(top+bottom)/2,{class:'chart-label chart-axis-title','text-anchor':'middle',transform:otate(-90 20 )});
+    addSvgText(svg,'Valeur',20,(top+bottom)/2,{class:'chart-label chart-axis-title','text-anchor':'middle',transform:'rotate(-90 20 '+((top+bottom)/2)+')'});
     wrapper.appendChild(svg);
     return wrapper;
   }
