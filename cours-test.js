@@ -29,11 +29,11 @@ function render() {
   if (!item) {
     byId("courseCounter").textContent = "Aucun résumé"; byId("courseCode").textContent = "";
     byId("courseTitle").textContent = "Aucun résumé ne correspond aux filtres.";
-    byId("courseReminder").textContent = ""; byId("courseExample").textContent = ""; byId("courseExampleVisual").replaceChildren(); panel.hidden = true; renderSummary(); return;
+    byId("courseReminder").textContent = ""; byId("courseExample").textContent = ""; byId("courseExampleVisual").replaceChildren(); byId("previousCoursePanel").classList.add("hidden"); panel.hidden = true; renderSummary(); return;
   }
   panel.hidden = false;
   byId("courseCounter").textContent = `${index + 1} / ${filtered.length}`;
-  byId("courseCode").textContent = item.microSkillCode;
+  byId("courseCode").textContent = `${item.microSkillCode}${item.resourceVersion ? ` · Version ${item.resourceVersion}` : " · Référentiel initial"}`;
   byId("courseProgress").style.width = `${Math.round(((index + 1) / filtered.length) * 100)}%`;
   byId("courseDomain").textContent = `${item.subjectName} · ${item.domainName}`;
   byId("courseSkill").textContent = item.skillName; byId("courseTitle").textContent = item.title;
@@ -41,6 +41,31 @@ function render() {
   byId("courseReminder").classList.toggle("course-content-missing", !item.reminder);
   CapCollegeQuestionVisuals.render(byId("courseExample"), byId("courseExampleVisual"), item.workedExample || "Exemple manquant");
   byId("courseExample").classList.toggle("course-content-missing", !item.workedExample);
+  const previousPanel = byId("previousCoursePanel");
+  previousPanel.classList.toggle("hidden", !item.previous);
+  if (item.previous) {
+    byId("previousCourseVersionLabel").textContent = item.previous.resourceVersion
+      ? `Version ${item.previous.resourceVersion}`
+      : "Référentiel initial";
+    byId("previousCourseTitle").textContent = item.previous.title || item.title;
+    CapCollegeEducationalContent.renderInline(
+      byId("previousCourseReminder"),
+      item.previous.reminder || "Règle absente dans cette version."
+    );
+    CapCollegeQuestionVisuals.render(
+      byId("previousCourseExample"),
+      byId("previousCourseExampleVisual"),
+      item.previous.workedExample || "Exemple absent dans cette version."
+    );
+    const oldReview = item.previous.review;
+    byId("previousCourseReview").classList.toggle("hidden", !oldReview);
+    byId("previousCourseReview").innerHTML = oldReview
+      ? `<strong>Validation de cette version : ${escapeHtml(oldReview.grade || "—")}</strong><p>${escapeHtml(oldReview.comment || "Aucun commentaire saisi.")}</p>`
+      : "";
+  } else {
+    byId("previousCourseExampleVisual").replaceChildren();
+    byId("previousCourseReview").classList.add("hidden");
+  }
   byId("reviewComment").value = item.review?.comment || "";
   document.querySelectorAll(".rating").forEach(button => button.classList.toggle("active", button.dataset.rating === item.review?.grade));
   byId("reviewSaveStatus").textContent = item.review?.grade ? `Note ${item.review.grade} enregistrée.` : "Non testé";

@@ -4,5 +4,5 @@ CapCollegeSupabase.bootstrap({
   loadQuestions: false
 }).then(async () => {
   window.COURSE_SUMMARIES = await CapCollegeSupabase.getValidationCourseSummaries();
-  await CapCollegeSupabase.appendScript("cours-test.js?v=5.3.48");
+  await CapCollegeSupabase.appendScript("cours-test.js?v=5.3.49");
 }).catch(CapCollegeSupabase.showFatalError);
