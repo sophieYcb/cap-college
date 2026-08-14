@@ -10,6 +10,25 @@ function fillSelect(select, values, label) {
   select.innerHTML = `<option value="all">${label}</option>` + values.map(value => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`).join("");
   select.value = values.includes(selected) ? selected : "all";
 }
+function renderCourseExample(textId, visualId, content) {
+  const textElement = byId(textId);
+  const visualElement = byId(visualId);
+  try {
+    if (visualElement) {
+      CapCollegeQuestionVisuals.render(textElement, visualElement, content);
+    } else {
+      CapCollegeEducationalContent.renderInline(textElement, content);
+    }
+  } catch (error) {
+    if (visualElement) {
+      visualElement.replaceChildren();
+      visualElement.classList.add("hidden");
+    }
+    CapCollegeEducationalContent.renderInline(textElement, content);
+    console.warn("Exemple visuel indisponible.", error);
+  }
+}
+
 function updateDomains() {
   const subject = byId("subjectFilter").value;
   const rows = subject === "all" ? SUMMARIES : SUMMARIES.filter(x => x.subjectName === subject);
@@ -29,7 +48,7 @@ function render() {
   if (!item) {
     byId("courseCounter").textContent = "Aucun résumé"; byId("courseCode").textContent = "";
     byId("courseTitle").textContent = "Aucun résumé ne correspond aux filtres.";
-    byId("courseReminder").textContent = ""; byId("courseExample").textContent = ""; byId("courseExampleVisual").replaceChildren(); byId("previousCoursePanel").classList.add("hidden"); panel.hidden = true; renderSummary(); return;
+    byId("courseReminder").textContent = ""; byId("courseExample").textContent = ""; byId("courseExampleVisual")?.replaceChildren(); byId("previousCoursePanel")?.classList.add("hidden"); panel.hidden = true; renderSummary(); return;
   }
   panel.hidden = false;
   byId("courseCounter").textContent = `${index + 1} / ${filtered.length}`;
@@ -39,11 +58,11 @@ function render() {
   byId("courseSkill").textContent = item.skillName; byId("courseTitle").textContent = item.title;
   CapCollegeEducationalContent.renderInline(byId("courseReminder"), item.reminder || "Résumé manquant");
   byId("courseReminder").classList.toggle("course-content-missing", !item.reminder);
-  CapCollegeQuestionVisuals.render(byId("courseExample"), byId("courseExampleVisual"), item.workedExample || "Exemple manquant");
+  renderCourseExample("courseExample", "courseExampleVisual", item.workedExample || "Exemple manquant");
   byId("courseExample").classList.toggle("course-content-missing", !item.workedExample);
   const previousPanel = byId("previousCoursePanel");
-  previousPanel.classList.toggle("hidden", !item.previous);
-  if (item.previous) {
+  if (previousPanel) previousPanel.classList.toggle("hidden", !item.previous);
+  if (previousPanel && item.previous) {
     byId("previousCourseVersionLabel").textContent = item.previous.resourceVersion
       ? `Version ${item.previous.resourceVersion}`
       : "Référentiel initial";
@@ -52,9 +71,9 @@ function render() {
       byId("previousCourseReminder"),
       item.previous.reminder || "Règle absente dans cette version."
     );
-    CapCollegeQuestionVisuals.render(
-      byId("previousCourseExample"),
-      byId("previousCourseExampleVisual"),
+    renderCourseExample(
+      "previousCourseExample",
+      "previousCourseExampleVisual",
       item.previous.workedExample || "Exemple absent dans cette version."
     );
     const oldReview = item.previous.review;
@@ -62,7 +81,7 @@ function render() {
     byId("previousCourseReview").innerHTML = oldReview
       ? `<strong>Validation de cette version : ${escapeHtml(oldReview.grade || "—")}</strong><p>${escapeHtml(oldReview.comment || "Aucun commentaire saisi.")}</p>`
       : "";
-  } else {
+  } else if (previousPanel) {
     byId("previousCourseExampleVisual").replaceChildren();
     byId("previousCourseReview").classList.add("hidden");
   }
@@ -96,9 +115,10 @@ function downloadCorrections() {
   const blob = new Blob([JSON.stringify({format:"cap-college-course-summary-review",exportedAt:new Date().toISOString(),summaryCount:summaries.length,summaries},null,2)],{type:"application/json;charset=utf-8"});
   const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = `cap-college-resumes-cours-a-corriger-${new Date().toISOString().slice(0,10)}.json`; link.click(); URL.revokeObjectURL(link.href);
 }
-fillSelect(byId("subjectFilter"), unique(SUMMARIES.map(x => x.subjectName)), "Toutes les matières"); updateDomains();
+fillSelect(byId("subjectFilter"), unique(SUMMARIES.map(x => x.subjectName)), "Toutes les matières");
 
 byId("previousButton").addEventListener("click", () => move(-1)); byId("nextButton").addEventListener("click", () => move(1)); byId("nextUnreviewedButton").addEventListener("click", nextUnreviewed); byId("exportButton").addEventListener("click", downloadCorrections);
 document.querySelectorAll(".rating").forEach(button => button.addEventListener("click", () => save(button.dataset.rating).then(render)));
 byId("reviewComment").addEventListener("input", () => { clearTimeout(saveTimer); saveTimer = setTimeout(() => save(), 700); });
 document.addEventListener("keydown", event => { if (/^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName)) return; const key = event.key.toUpperCase(); if (["A","B","C","D"].includes(key)) save(key).then(render); if (event.key === "ArrowLeft") move(-1); if (event.key === "ArrowRight") move(1); });
+updateDomains();
