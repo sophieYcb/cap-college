@@ -1,0 +1,612 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_numbers_calculation",
+                   "name":  "Nombres et calculs"
+               },
+    "skill":  {
+                  "code":  "m5_operations",
+                  "name":  "Opérations"
+              },
+    "lot":  "M5-OPS-01",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_calc_division_euclidean",
+                            "teacherName":  "Déterminer le quotient et le reste d’une division euclidienne",
+                            "studentName":  "Trouver le quotient et le reste d’une division euclidienne",
+                            "lessonReminder":  "Dans une division euclidienne, le dividende est égal au diviseur multiplié par le quotient, auquel on ajoute le reste. Le reste est toujours inférieur au diviseur.",
+                            "workedExample":  "47 = 6 × 7 + 5 : le quotient de 47 par 6 est 7 et le reste est 5.",
+                            "masteryCriteria":  "Déterminer ou utiliser correctement le quotient et le reste dans des divisions euclidiennes variées."
+                        },
+                        {
+                            "code":  "m5_calc_multiple_divisor",
+                            "teacherName":  "Reconnaître un multiple ou un diviseur",
+                            "studentName":  "Reconnaître les multiples et les diviseurs",
+                            "lessonReminder":  "Un nombre a est un multiple de b lorsque l’on peut écrire a = b × entier. Dans ce cas, b est un diviseur de a.",
+                            "workedExample":  "42 = 6 × 7 : 42 est un multiple de 6 et de 7 ; 6 et 7 sont des diviseurs de 42.",
+                            "masteryCriteria":  "Reconnaître et justifier une relation de multiple ou de diviseur."
+                        },
+                        {
+                            "code":  "m5_calc_divisibility",
+                            "teacherName":  "Utiliser les critères de divisibilité par 2, 3, 5, 9 et 10",
+                            "studentName":  "Utiliser les critères de divisibilité",
+                            "lessonReminder":  "Un entier est divisible par 2 si son chiffre des unités est pair, par 5 s’il finit par 0 ou 5, par 10 s’il finit par 0, et par 3 ou 9 si la somme de ses chiffres est divisible par 3 ou 9.",
+                            "workedExample":  "Pour 4 572, la somme des chiffres vaut 18 : ce nombre est divisible par 3 et par 9. Il est aussi divisible par 2 car il finit par 2.",
+                            "masteryCriteria":  "Choisir et appliquer le bon critère de divisibilité, y compris en combinant plusieurs critères."
+                        },
+                        {
+                            "code":  "m5_calc_choose_operation",
+                            "teacherName":  "Choisir les opérations adaptées à un problème",
+                            "studentName":  "Choisir le bon calcul pour résoudre un problème",
+                            "lessonReminder":  "On choisit l’opération d’après la relation entre les données : réunir ou augmenter conduit souvent à une addition, chercher une différence à une soustraction, répéter une même quantité à une multiplication, partager ou grouper à une division.",
+                            "workedExample":  "Pour répartir 84 cartes également entre 7 joueurs, on calcule 84 ÷ 7.",
+                            "masteryCriteria":  "Associer une situation à l’opération ou à l’enchaînement d’opérations qui permet de la résoudre."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0001",
+                          "microSkill":  "m5_calc_division_euclidean",
+                          "difficulty":  1,
+                          "prompt":  "Effectue la division euclidienne de 47 par 6. Quel est le quotient ?",
+                          "choices":  [
+                                          "7",
+                                          "6",
+                                          "5",
+                                          "8"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "47 = 6 × 7 + 5 : le quotient est 7."
+                      },
+                      {
+                          "code":  "M5-0002",
+                          "microSkill":  "m5_calc_division_euclidean",
+                          "difficulty":  1,
+                          "prompt":  "Effectue la division euclidienne de 53 par 8. Quel est le reste ?",
+                          "choices":  [
+                                          "4",
+                                          "5",
+                                          "6",
+                                          "7"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "53 = 8 × 6 + 5 : le reste est 5."
+                      },
+                      {
+                          "code":  "M5-0003",
+                          "microSkill":  "m5_calc_division_euclidean",
+                          "difficulty":  1,
+                          "prompt":  "Quelle égalité traduit la division euclidienne de 38 par 7 ?",
+                          "choices":  [
+                                          "38 = 7 × 4 + 10",
+                                          "38 = 7 × 6 − 4",
+                                          "38 = 7 × 5 + 3",
+                                          "38 = 7 × 3 + 17"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "38 = 7 × 5 + 3 et 3 est inférieur à 7."
+                      },
+                      {
+                          "code":  "M5-0004",
+                          "microSkill":  "m5_calc_division_euclidean",
+                          "difficulty":  2,
+                          "prompt":  "Dans la division euclidienne de 92 par 9, quels sont le quotient et le reste ?",
+                          "choices":  [
+                                          "quotient 9, reste 11",
+                                          "quotient 11, reste 1",
+                                          "quotient 9, reste 2",
+                                          "quotient 10, reste 2"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "92 = 9 × 10 + 2 : le quotient est 10 et le reste 2."
+                      },
+                      {
+                          "code":  "M5-0005",
+                          "microSkill":  "m5_calc_division_euclidean",
+                          "difficulty":  2,
+                          "prompt":  "Un entier divisé par 7 donne un quotient de 12 et un reste de 4. Quel est cet entier ?",
+                          "choices":  [
+                                          "88",
+                                          "84",
+                                          "91",
+                                          "95"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "L’entier vaut 7 × 12 + 4 = 88."
+                      },
+                      {
+                          "code":  "M5-0006",
+                          "microSkill":  "m5_calc_division_euclidean",
+                          "difficulty":  2,
+                          "prompt":  "On écrit 125 = 11 × 11 + 4. Que représente 4 ?",
+                          "choices":  [
+                                          "le diviseur",
+                                          "le reste",
+                                          "le quotient",
+                                          "le dividende"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Dans cette écriture, 4 est le reste de la division de 125 par 11."
+                      },
+                      {
+                          "code":  "M5-0007",
+                          "microSkill":  "m5_calc_division_euclidean",
+                          "difficulty":  2,
+                          "prompt":  "Quel reste est impossible dans une division euclidienne par 6 ?",
+                          "choices":  [
+                                          "0",
+                                          "3",
+                                          "6",
+                                          "5"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le reste doit être strictement inférieur au diviseur 6 ; il ne peut donc pas valoir 6."
+                      },
+                      {
+                          "code":  "M5-0008",
+                          "microSkill":  "m5_calc_division_euclidean",
+                          "difficulty":  3,
+                          "prompt":  "Combien de boîtes pleines de 12 œufs peut-on remplir avec 158 œufs, et combien en reste-t-il ?",
+                          "choices":  [
+                                          "12 boîtes et 14 œufs",
+                                          "14 boîtes et 2 œufs",
+                                          "13 boîtes et 12 œufs",
+                                          "13 boîtes et 2 œufs"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "158 = 12 × 13 + 2 : on remplit 13 boîtes et il reste 2 œufs."
+                      },
+                      {
+                          "code":  "M5-0009",
+                          "microSkill":  "m5_calc_division_euclidean",
+                          "difficulty":  3,
+                          "prompt":  "Dans une division euclidienne, le diviseur est 15, le quotient 8 et le reste 7. Quel est le dividende ?",
+                          "choices":  [
+                                          "127",
+                                          "120",
+                                          "113",
+                                          "128"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le dividende vaut 15 × 8 + 7 = 127."
+                      },
+                      {
+                          "code":  "M5-0010",
+                          "microSkill":  "m5_calc_division_euclidean",
+                          "difficulty":  3,
+                          "prompt":  "La division euclidienne d’un nombre par 9 a pour quotient 14. Lequel de ces nombres peut être le dividende ?",
+                          "choices":  [
+                                          "135",
+                                          "131",
+                                          "125",
+                                          "143"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "131 = 9 × 14 + 5 ; le reste 5 est bien compris entre 0 et 8."
+                      },
+                      {
+                          "code":  "M5-0011",
+                          "microSkill":  "m5_calc_multiple_divisor",
+                          "difficulty":  1,
+                          "prompt":  "Lequel de ces nombres est un multiple de 7 ?",
+                          "choices":  [
+                                          "30",
+                                          "40",
+                                          "42",
+                                          "45"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "42 = 7 × 6 : 42 est un multiple de 7."
+                      },
+                      {
+                          "code":  "M5-0012",
+                          "microSkill":  "m5_calc_multiple_divisor",
+                          "difficulty":  1,
+                          "prompt":  "Lequel de ces nombres est un diviseur de 48 ?",
+                          "choices":  [
+                                          "5",
+                                          "7",
+                                          "9",
+                                          "8"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "48 = 8 × 6 : 8 est un diviseur de 48."
+                      },
+                      {
+                          "code":  "M5-0013",
+                          "microSkill":  "m5_calc_multiple_divisor",
+                          "difficulty":  1,
+                          "prompt":  "Complète : 63 est un multiple de…",
+                          "choices":  [
+                                          "9",
+                                          "8",
+                                          "5",
+                                          "4"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "63 = 9 × 7 : 63 est un multiple de 9."
+                      },
+                      {
+                          "code":  "M5-0014",
+                          "microSkill":  "m5_calc_multiple_divisor",
+                          "difficulty":  2,
+                          "prompt":  "Quelle affirmation est vraie ?",
+                          "choices":  [
+                                          "6 est un multiple de 54",
+                                          "6 est un diviseur de 54",
+                                          "54 est un diviseur de 6",
+                                          "54 n’est pas divisible par 6"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "54 = 6 × 9 : 6 est un diviseur de 54."
+                      },
+                      {
+                          "code":  "M5-0015",
+                          "microSkill":  "m5_calc_multiple_divisor",
+                          "difficulty":  2,
+                          "prompt":  "Quel nombre est à la fois un multiple de 4 et un multiple de 6 ?",
+                          "choices":  [
+                                          "18",
+                                          "20",
+                                          "24",
+                                          "28"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "24 = 4 × 6 et 24 = 6 × 4."
+                      },
+                      {
+                          "code":  "M5-0016",
+                          "microSkill":  "m5_calc_multiple_divisor",
+                          "difficulty":  2,
+                          "prompt":  "Parmi ces listes, laquelle contient uniquement des diviseurs de 36 ?",
+                          "choices":  [
+                                          "2 ; 5 ; 9",
+                                          "3 ; 8 ; 12",
+                                          "4 ; 7 ; 18",
+                                          "2 ; 3 ; 6"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "2, 3 et 6 divisent tous 36 sans reste."
+                      },
+                      {
+                          "code":  "M5-0017",
+                          "microSkill":  "m5_calc_multiple_divisor",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le plus petit multiple commun non nul de 6 et de 8 ?",
+                          "choices":  [
+                                          "24",
+                                          "14",
+                                          "36",
+                                          "48"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les premiers multiples communs sont 24, 48… Le plus petit est 24."
+                      },
+                      {
+                          "code":  "M5-0018",
+                          "microSkill":  "m5_calc_multiple_divisor",
+                          "difficulty":  3,
+                          "prompt":  "Quel nombre possède exactement les diviseurs 1, 2, 4 et 8 ?",
+                          "choices":  [
+                                          "4",
+                                          "8",
+                                          "12",
+                                          "16"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Les diviseurs positifs de 8 sont exactement 1, 2, 4 et 8."
+                      },
+                      {
+                          "code":  "M5-0019",
+                          "microSkill":  "m5_calc_multiple_divisor",
+                          "difficulty":  3,
+                          "prompt":  "Un nombre est un multiple de 9 compris entre 70 et 80. Quel est ce nombre ?",
+                          "choices":  [
+                                          "70",
+                                          "75",
+                                          "72",
+                                          "81"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "72 = 9 × 8 et 72 est compris entre 70 et 80."
+                      },
+                      {
+                          "code":  "M5-0020",
+                          "microSkill":  "m5_calc_multiple_divisor",
+                          "difficulty":  3,
+                          "prompt":  "Deux sonneries retentissent respectivement toutes les 6 minutes et toutes les 8 minutes. Elles sonnent ensemble maintenant. Dans combien de minutes sonneront-elles de nouveau ensemble ?",
+                          "choices":  [
+                                          "12",
+                                          "14",
+                                          "48",
+                                          "24"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le plus petit multiple commun de 6 et 8 est 24."
+                      },
+                      {
+                          "code":  "M5-0021",
+                          "microSkill":  "m5_calc_divisibility",
+                          "difficulty":  1,
+                          "prompt":  "Quel nombre est divisible par 2 ?",
+                          "choices":  [
+                                          "438",
+                                          "315",
+                                          "527",
+                                          "641"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "438 se termine par 8, un chiffre pair."
+                      },
+                      {
+                          "code":  "M5-0022",
+                          "microSkill":  "m5_calc_divisibility",
+                          "difficulty":  1,
+                          "prompt":  "Quel nombre est divisible par 5 ?",
+                          "choices":  [
+                                          "342",
+                                          "615",
+                                          "728",
+                                          "933"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "615 se termine par 5."
+                      },
+                      {
+                          "code":  "M5-0023",
+                          "microSkill":  "m5_calc_divisibility",
+                          "difficulty":  1,
+                          "prompt":  "Quel nombre est divisible par 10 ?",
+                          "choices":  [
+                                          "325",
+                                          "418",
+                                          "760",
+                                          "999"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "760 se termine par 0."
+                      },
+                      {
+                          "code":  "M5-0024",
+                          "microSkill":  "m5_calc_divisibility",
+                          "difficulty":  2,
+                          "prompt":  "Quel nombre est divisible par 3 ?",
+                          "choices":  [
+                                          "542",
+                                          "701",
+                                          "815",
+                                          "723"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "La somme des chiffres de 723 vaut 12, qui est divisible par 3."
+                      },
+                      {
+                          "code":  "M5-0025",
+                          "microSkill":  "m5_calc_divisibility",
+                          "difficulty":  2,
+                          "prompt":  "Quel nombre est divisible par 9 ?",
+                          "choices":  [
+                                          "4 572",
+                                          "4 571",
+                                          "4 573",
+                                          "4 574"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "4 + 5 + 7 + 2 = 18, qui est divisible par 9."
+                      },
+                      {
+                          "code":  "M5-0026",
+                          "microSkill":  "m5_calc_divisibility",
+                          "difficulty":  2,
+                          "prompt":  "Quel nombre est divisible à la fois par 2 et par 5 ?",
+                          "choices":  [
+                                          "235",
+                                          "470",
+                                          "622",
+                                          "915"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "470 se termine par 0 : il est divisible par 2 et par 5."
+                      },
+                      {
+                          "code":  "M5-0027",
+                          "microSkill":  "m5_calc_divisibility",
+                          "difficulty":  2,
+                          "prompt":  "Quel chiffre peut remplacer □ pour que 47□ soit divisible par 3 ?",
+                          "choices":  [
+                                          "0",
+                                          "2",
+                                          "7",
+                                          "5"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "4 + 7 + 7 = 18, qui est divisible par 3."
+                      },
+                      {
+                          "code":  "M5-0028",
+                          "microSkill":  "m5_calc_divisibility",
+                          "difficulty":  3,
+                          "prompt":  "Quel nombre est divisible à la fois par 2, par 3 et par 9 ?",
+                          "choices":  [
+                                          "236",
+                                          "455",
+                                          "734",
+                                          "1 134"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "1 134 est pair et la somme de ses chiffres vaut 9 : il est divisible par 2, 3 et 9."
+                      },
+                      {
+                          "code":  "M5-0029",
+                          "microSkill":  "m5_calc_divisibility",
+                          "difficulty":  3,
+                          "prompt":  "Quel est le plus petit chiffre à placer à la fin de 27 pour obtenir un nombre à trois chiffres divisible par 9 ?",
+                          "choices":  [
+                                          "0",
+                                          "2",
+                                          "5",
+                                          "9"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Pour 270, la somme des chiffres vaut 9 : 270 est divisible par 9, et 0 est le plus petit chiffre possible."
+                      },
+                      {
+                          "code":  "M5-0030",
+                          "microSkill":  "m5_calc_divisibility",
+                          "difficulty":  3,
+                          "prompt":  "Sans effectuer la division, pourquoi 8 415 est-il divisible par 3 ?",
+                          "choices":  [
+                                          "Il se termine par 5.",
+                                          "La somme de ses chiffres vaut 18.",
+                                          "Son chiffre des unités est impair.",
+                                          "Il contient le chiffre 3."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "8 + 4 + 1 + 5 = 18, et 18 est divisible par 3."
+                      },
+                      {
+                          "code":  "M5-0031",
+                          "microSkill":  "m5_calc_choose_operation",
+                          "difficulty":  1,
+                          "prompt":  "Une bibliothèque possède 368 romans et en achète 57 de plus. Quel calcul donne le nouveau nombre de romans ?",
+                          "choices":  [
+                                          "368 − 57",
+                                          "368 × 57",
+                                          "368 + 57",
+                                          "368 ÷ 57"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On ajoute les 57 nouveaux romans aux 368 déjà présents."
+                      },
+                      {
+                          "code":  "M5-0032",
+                          "microSkill":  "m5_calc_choose_operation",
+                          "difficulty":  1,
+                          "prompt":  "Un car transporte 63 élèves. Dix-sept descendent à un arrêt. Quel calcul donne le nombre d’élèves restant dans le car ?",
+                          "choices":  [
+                                          "63 + 17",
+                                          "63 × 17",
+                                          "63 ÷ 17",
+                                          "63 − 17"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Pour chercher ce qui reste après un retrait, on effectue 63 − 17."
+                      },
+                      {
+                          "code":  "M5-0033",
+                          "microSkill":  "m5_calc_choose_operation",
+                          "difficulty":  1,
+                          "prompt":  "Huit boîtes contiennent chacune 24 feutres. Quel calcul donne le nombre total de feutres ?",
+                          "choices":  [
+                                          "8 × 24",
+                                          "24 ÷ 8",
+                                          "24 − 8",
+                                          "24 + 8"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La quantité 24 est répétée 8 fois : on calcule 8 × 24."
+                      },
+                      {
+                          "code":  "M5-0034",
+                          "microSkill":  "m5_calc_choose_operation",
+                          "difficulty":  1,
+                          "prompt":  "On répartit équitablement 156 cartes entre 12 joueurs. Quel calcul donne le nombre de cartes par joueur ?",
+                          "choices":  [
+                                          "156 − 12",
+                                          "156 ÷ 12",
+                                          "156 + 12",
+                                          "156 × 12"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Un partage équitable se traduit par la division 156 ÷ 12."
+                      },
+                      {
+                          "code":  "M5-0035",
+                          "microSkill":  "m5_calc_choose_operation",
+                          "difficulty":  2,
+                          "prompt":  "Lina avait 85 €. Elle achète un livre à 18 € puis reçoit 12 €. Quelle expression donne la somme qu’elle possède ensuite ?",
+                          "choices":  [
+                                          "85 + 18 + 12",
+                                          "85 − 18 − 12",
+                                          "85 − 18 + 12",
+                                          "85 + 18 − 12"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On retire le prix du livre puis on ajoute la somme reçue : 85 − 18 + 12."
+                      },
+                      {
+                          "code":  "M5-0036",
+                          "microSkill":  "m5_calc_choose_operation",
+                          "difficulty":  2,
+                          "prompt":  "Un club commande 15 lots de 6 balles et possède déjà 28 balles. Quelle expression donne le nombre total de balles ?",
+                          "choices":  [
+                                          "15 + 6 + 28",
+                                          "28 × 15 + 6",
+                                          "28 − 15 × 6",
+                                          "15 × 6 + 28"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Les lots apportent 15 × 6 balles, auxquelles on ajoute les 28 déjà présentes."
+                      },
+                      {
+                          "code":  "M5-0037",
+                          "microSkill":  "m5_calc_choose_operation",
+                          "difficulty":  2,
+                          "prompt":  "Un trajet de 420 km est parcouru en 6 étapes de même longueur. Quel calcul donne la longueur d’une étape ?",
+                          "choices":  [
+                                          "420 ÷ 6",
+                                          "420 − 6",
+                                          "420 × 6",
+                                          "420 + 6"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Partager une distance totale en 6 étapes égales conduit à calculer 420 ÷ 6."
+                      },
+                      {
+                          "code":  "M5-0038",
+                          "microSkill":  "m5_calc_choose_operation",
+                          "difficulty":  2,
+                          "prompt":  "Une salle compte 18 rangées de 24 sièges. Trente sièges sont condamnés. Quelle expression donne le nombre de sièges utilisables ?",
+                          "choices":  [
+                                          "18 + 24 − 30",
+                                          "18 × 24 − 30",
+                                          "18 × (24 − 30)",
+                                          "18 × 24 + 30"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On calcule d’abord tous les sièges avec 18 × 24, puis on retire les 30 sièges condamnés."
+                      },
+                      {
+                          "code":  "M5-0039",
+                          "microSkill":  "m5_calc_choose_operation",
+                          "difficulty":  3,
+                          "prompt":  "Quatre amis paient ensemble un repas de 92 € et partagent la dépense également. Chacun ajoute ensuite 3 € de pourboire. Quelle expression donne la somme payée par chaque personne ?",
+                          "choices":  [
+                                          "92 ÷ (4 + 3)",
+                                          "92 − 4 + 3",
+                                          "92 ÷ 4 + 3",
+                                          "(92 + 4) ÷ 3"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Chaque personne paie le quart de 92 €, puis ajoute 3 € : 92 ÷ 4 + 3."
+                      },
+                      {
+                          "code":  "M5-0040",
+                          "microSkill":  "m5_calc_choose_operation",
+                          "difficulty":  3,
+                          "prompt":  "Un magasin reçoit 9 cartons de 32 bouteilles. Il vend ensuite 75 bouteilles. Quelle expression donne le nombre de bouteilles restantes ?",
+                          "choices":  [
+                                          "9 + 32 − 75",
+                                          "75 − 9 × 32",
+                                          "9 × (32 − 75)",
+                                          "9 × 32 − 75"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le magasin reçoit 9 × 32 bouteilles puis en retire 75."
+                      }
+                  ]
+}
