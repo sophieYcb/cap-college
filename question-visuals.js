@@ -19,13 +19,28 @@
     wrapper.className='question-visual question-table-wrap';
     const table=document.createElement('table');
     table.className='question-data-table';
+    const firstRow=rows[0]||[];
+    const groupedAreaHeader=firstRow.length>=2&&firstRow.length%2===0&&firstRow.every((value,index)=>
+      index%2===0||value===firstRow[index-1]
+    )&&firstRow.every(value=>/²$/.test(value));
+    if(groupedAreaHeader)table.classList.add('area-conversion-table');
     rows.forEach((row,rowIndex)=>{
       const tr=document.createElement('tr');
-      row.forEach((value,columnIndex)=>{
-        const cell=document.createElement(rowIndex===0||columnIndex===0?'th':'td');
-        cell.textContent=value;
-        tr.appendChild(cell);
-      });
+      if(rowIndex===0&&groupedAreaHeader){
+        for(let columnIndex=0;columnIndex<row.length;columnIndex+=2){
+          const cell=document.createElement('th');
+          cell.colSpan=2;
+          cell.scope='colgroup';
+          cell.textContent=row[columnIndex];
+          tr.appendChild(cell);
+        }
+      }else{
+        row.forEach((value,columnIndex)=>{
+          const cell=document.createElement(rowIndex===0||(!groupedAreaHeader&&columnIndex===0)?'th':'td');
+          cell.textContent=value;
+          tr.appendChild(cell);
+        });
+      }
       table.appendChild(tr);
     });
     wrapper.appendChild(table);
