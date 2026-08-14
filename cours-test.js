@@ -19,7 +19,7 @@ function updateDomains() {
 function applyFilters() {
   const activeId = current()?.microSkillId;
   const subject = byId("subjectFilter").value, domain = byId("domainFilter").value, status = byId("statusFilter").value;
-  filtered = SUMMARIES.filter(x => (subject === "all" || x.subjectName === subject) && (domain === "all" || x.domainName === domain) && (status === "all" || (status === "unreviewed" ? !x.review?.grade : x.review?.grade === status)));
+  filtered = SUMMARIES.filter(x => { const grade = String(x.review?.grade || "").trim().toUpperCase(); return (subject === "all" || x.subjectName === subject) && (domain === "all" || x.domainName === domain) && (status === "all" || (status === "unreviewed" ? !grade : grade === status)); });
   const existing = filtered.findIndex(x => x.microSkillId === activeId);
   index = existing >= 0 ? existing : 0;
   render();
@@ -97,7 +97,7 @@ function downloadCorrections() {
   const link = document.createElement("a"); link.href = URL.createObjectURL(blob); link.download = `cap-college-resumes-cours-a-corriger-${new Date().toISOString().slice(0,10)}.json`; link.click(); URL.revokeObjectURL(link.href);
 }
 fillSelect(byId("subjectFilter"), unique(SUMMARIES.map(x => x.subjectName)), "Toutes les matières"); updateDomains();
-byId("subjectFilter").addEventListener("change", updateDomains); byId("domainFilter").addEventListener("change", applyFilters); byId("statusFilter").addEventListener("change", applyFilters);
+
 byId("previousButton").addEventListener("click", () => move(-1)); byId("nextButton").addEventListener("click", () => move(1)); byId("nextUnreviewedButton").addEventListener("click", nextUnreviewed); byId("exportButton").addEventListener("click", downloadCorrections);
 document.querySelectorAll(".rating").forEach(button => button.addEventListener("click", () => save(button.dataset.rating).then(render)));
 byId("reviewComment").addEventListener("input", () => { clearTimeout(saveTimer); saveTimer = setTimeout(() => save(), 700); });

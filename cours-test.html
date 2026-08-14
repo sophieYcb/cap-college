@@ -8,9 +8,9 @@
 <body class="validation-page"><main class="page quality-page">
  <section class="card quality-toolbar course-quality-toolbar">
   <div class="quality-primary-actions"><a class="btn btn-secondary" href="test.html">Tester les questions</a><a class="btn btn-secondary" href="index.html">Accueil</a></div>
-  <label>Matière <select id="subjectFilter"></select></label>
-  <label>Catégorie <select id="domainFilter"></select></label>
-  <label>État <select id="statusFilter"><option value="all">Tous</option><option value="unreviewed">Non testés</option><option value="A">A — excellent</option><option value="B">B — améliorable</option><option value="C">C — à réécrire</option><option value="D">D — à supprimer</option></select></label>
+  <label>Matière <select id="subjectFilter" onchange="updateDomains()"></select></label>
+  <label>Catégorie <select id="domainFilter" onchange="applyFilters()"></select></label>
+  <label>État <select id="statusFilter" onchange="applyFilters()"><option value="all">Tous</option><option value="unreviewed">Non testés</option><option value="A">A — excellent</option><option value="B">B — améliorable</option><option value="C">C — à réécrire</option><option value="D">D — à supprimer</option></select></label>
  </section>
  <section class="card quality-question course-summary-card">
   <div class="question-top"><strong id="courseCounter"></strong><span id="courseCode"></span></div>
@@ -41,5 +41,5 @@
  </section>
  <details class="card quality-tools-panel"><summary>Suivi et export</summary><section class="quality-summary" id="qualitySummary"></section><div class="actions"><button class="btn btn-primary" id="exportButton">Exporter les résumés à corriger</button></div></details>
 </main>
-<script src="site-navigation.js?v=5.3.19"></script><script src="educational-content.js?v=5.3.48"></script><script src="question-visuals.js?v=5.3.51"></script><script src="supabase-config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-app.js?v=5.3.40"></script><script src="cours-test-loader.js?v=5.3.49"></script>
+<script src="site-navigation.js?v=5.3.19"></script><script src="educational-content.js?v=5.3.48"></script><script src="question-visuals.js?v=5.3.51"></script><script src="supabase-config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase-app.js?v=5.3.40"></script><script src="cours-test-loader.js?v=5.3.52"></script>
 </body></html>
