@@ -1,0 +1,612 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_numbers_calculation",
+                   "name":  "Nombres et calculs"
+               },
+    "skill":  {
+                  "code":  "m5_operations",
+                  "name":  "Opérations"
+              },
+    "lot":  "M5-OPS-02",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_calc_check_plausibility",
+                            "teacherName":  "Contrôler la vraisemblance d’un résultat",
+                            "studentName":  "Vérifier si un résultat est vraisemblable",
+                            "lessonReminder":  "Avant ou après un calcul, on peut arrondir les nombres et estimer l’ordre de grandeur du résultat. Une estimation permet de repérer une erreur de calcul ou de virgule.",
+                            "workedExample":  "198 × 51 est proche de 200 × 50 = 10 000 : un résultat voisin de 10 000 est vraisemblable.",
+                            "masteryCriteria":  "Estimer un ordre de grandeur et reconnaître un résultat cohérent avec les données."
+                        },
+                        {
+                            "code":  "m5_calc_divide_decimal",
+                            "teacherName":  "Diviser par un nombre décimal",
+                            "studentName":  "Effectuer une division par un nombre décimal",
+                            "lessonReminder":  "Pour diviser par un nombre décimal, on peut multiplier le dividende et le diviseur par 10, 100 ou 1 000 afin d’obtenir un diviseur entier, sans changer le quotient.",
+                            "workedExample":  "7,2 ÷ 0,6 = 72 ÷ 6 = 12.",
+                            "masteryCriteria":  "Transformer et calculer correctement des divisions dont le diviseur est décimal."
+                        },
+                        {
+                            "code":  "m5_calc_translate_expression",
+                            "teacherName":  "Traduire un problème par une expression numérique",
+                            "studentName":  "Écrire le calcul correspondant à un problème",
+                            "lessonReminder":  "On repère les quantités, les relations et l’ordre des actions. Les parenthèses regroupent les calculs qui doivent être effectués ensemble.",
+                            "workedExample":  "Cinq sachets contiennent chacun 8 billes rouges et 3 billes bleues : le total s’écrit 5 × (8 + 3).",
+                            "masteryCriteria":  "Associer une situation ou une phrase mathématique à une expression numérique correcte."
+                        },
+                        {
+                            "code":  "m5_calc_use_parentheses",
+                            "teacherName":  "Utiliser correctement les parenthèses",
+                            "studentName":  "Placer et utiliser les parenthèses",
+                            "lessonReminder":  "Les calculs entre parenthèses sont effectués en premier. Déplacer ou supprimer des parenthèses peut donc changer le résultat.",
+                            "workedExample":  "8 + 3 × 5 = 23, tandis que (8 + 3) × 5 = 55.",
+                            "masteryCriteria":  "Calculer une expression parenthésée et placer des parenthèses pour obtenir le résultat demandé."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0041",
+                          "microSkill":  "m5_calc_check_plausibility",
+                          "difficulty":  1,
+                          "prompt":  "Quel ordre de grandeur convient le mieux pour 198 × 51 ?",
+                          "choices":  [
+                                          "10 000",
+                                          "1 000",
+                                          "100 000",
+                                          "250"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "198 × 51 est proche de 200 × 50 = 10 000."
+                      },
+                      {
+                          "code":  "M5-0042",
+                          "microSkill":  "m5_calc_check_plausibility",
+                          "difficulty":  1,
+                          "prompt":  "Quel résultat est vraisemblable pour 1 248 ÷ 4 ?",
+                          "choices":  [
+                                          "32",
+                                          "312",
+                                          "3 120",
+                                          "4 992"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "1 200 ÷ 4 vaut environ 300 ; 312 est donc vraisemblable."
+                      },
+                      {
+                          "code":  "M5-0043",
+                          "microSkill":  "m5_calc_check_plausibility",
+                          "difficulty":  1,
+                          "prompt":  "On calcule 19,8 + 3,05. Quel résultat est vraisemblable ?",
+                          "choices":  [
+                                          "2,285",
+                                          "228,5",
+                                          "22,85",
+                                          "16,75"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "20 + 3 vaut environ 23 ; 22,85 est cohérent."
+                      },
+                      {
+                          "code":  "M5-0044",
+                          "microSkill":  "m5_calc_check_plausibility",
+                          "difficulty":  2,
+                          "prompt":  "Pour estimer 48 × 19, quel calcul approché est le plus utile ?",
+                          "choices":  [
+                                          "40 × 10",
+                                          "48 + 19",
+                                          "50 + 20",
+                                          "50 × 20"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "48 est proche de 50 et 19 de 20 : 50 × 20 = 1 000."
+                      },
+                      {
+                          "code":  "M5-0045",
+                          "microSkill":  "m5_calc_check_plausibility",
+                          "difficulty":  2,
+                          "prompt":  "Quel résultat est vraisemblable pour 3,2 × 4,9 ?",
+                          "choices":  [
+                                          "15,68",
+                                          "1,568",
+                                          "156,8",
+                                          "8,1"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "3,2 × 5 est proche de 16 ; 15,68 est vraisemblable."
+                      },
+                      {
+                          "code":  "M5-0046",
+                          "microSkill":  "m5_calc_check_plausibility",
+                          "difficulty":  2,
+                          "prompt":  "Quel résultat est vraisemblable pour 735 ÷ 8 ?",
+                          "choices":  [
+                                          "9,1875",
+                                          "91,875",
+                                          "918,75",
+                                          "5 880"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "720 ÷ 8 = 90 ; un résultat proche de 90, comme 91,875, est cohérent."
+                      },
+                      {
+                          "code":  "M5-0047",
+                          "microSkill":  "m5_calc_check_plausibility",
+                          "difficulty":  2,
+                          "prompt":  "Trois articles coûtent 12,90 €, 8,50 € et 4,20 €. Quel total est vraisemblable ?",
+                          "choices":  [
+                                          "2,56 €",
+                                          "256 €",
+                                          "25,60 €",
+                                          "24,40 €"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "13 + 8,5 + 4 vaut environ 25,5 ; le total exact est 25,60 €."
+                      },
+                      {
+                          "code":  "M5-0048",
+                          "microSkill":  "m5_calc_check_plausibility",
+                          "difficulty":  3,
+                          "prompt":  "Pour vérifier le produit 407 × 23, quel ordre de grandeur faut-il attendre ?",
+                          "choices":  [
+                                          "environ 900",
+                                          "environ 90 000",
+                                          "environ 400",
+                                          "environ 9 000"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "400 × 20 = 8 000 : le résultat exact doit être de l’ordre de 9 000."
+                      },
+                      {
+                          "code":  "M5-0049",
+                          "microSkill":  "m5_calc_check_plausibility",
+                          "difficulty":  3,
+                          "prompt":  "Quel résultat est vraisemblable pour 6,04 − 2,98 ?",
+                          "choices":  [
+                                          "3,06",
+                                          "0,306",
+                                          "30,6",
+                                          "9,02"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "6 − 3 vaut environ 3 ; 3,06 est cohérent."
+                      },
+                      {
+                          "code":  "M5-0050",
+                          "microSkill":  "m5_calc_check_plausibility",
+                          "difficulty":  3,
+                          "prompt":  "Pourquoi le résultat de 25,2 ÷ 0,4 doit-il être supérieur à 25,2 ?",
+                          "choices":  [
+                                          "Parce que 25,2 est un nombre décimal.",
+                                          "Parce que diviser par un nombre positif inférieur à 1 augmente le résultat.",
+                                          "Parce que toute division donne un entier.",
+                                          "Parce que 0,4 est supérieur à 1."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Diviser par 0,4 revient à chercher combien de fois 0,4 est contenu dans 25,2 ; le quotient vaut 63."
+                      },
+                      {
+                          "code":  "M5-0051",
+                          "microSkill":  "m5_calc_divide_decimal",
+                          "difficulty":  1,
+                          "prompt":  "Calcule 7,2 ÷ 0,6.",
+                          "choices":  [
+                                          "1,2",
+                                          "120",
+                                          "12",
+                                          "0,12"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "7,2 ÷ 0,6 = 72 ÷ 6 = 12."
+                      },
+                      {
+                          "code":  "M5-0052",
+                          "microSkill":  "m5_calc_divide_decimal",
+                          "difficulty":  1,
+                          "prompt":  "Calcule 15,75 ÷ 2,5.",
+                          "choices":  [
+                                          "63",
+                                          "0,63",
+                                          "5,3",
+                                          "6,3"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "15,75 ÷ 2,5 = 157,5 ÷ 25 = 6,3."
+                      },
+                      {
+                          "code":  "M5-0053",
+                          "microSkill":  "m5_calc_divide_decimal",
+                          "difficulty":  1,
+                          "prompt":  "Calcule 4,8 ÷ 0,04.",
+                          "choices":  [
+                                          "120",
+                                          "12",
+                                          "1,2",
+                                          "0,12"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "4,8 ÷ 0,04 = 480 ÷ 4 = 120."
+                      },
+                      {
+                          "code":  "M5-0054",
+                          "microSkill":  "m5_calc_divide_decimal",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 0,84 ÷ 0,7.",
+                          "choices":  [
+                                          "0,12",
+                                          "1,2",
+                                          "12",
+                                          "0,012"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "0,84 ÷ 0,7 = 8,4 ÷ 7 = 1,2."
+                      },
+                      {
+                          "code":  "M5-0055",
+                          "microSkill":  "m5_calc_divide_decimal",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 36 ÷ 1,5.",
+                          "choices":  [
+                                          "2,4",
+                                          "240",
+                                          "24",
+                                          "34,5"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "36 ÷ 1,5 = 360 ÷ 15 = 24."
+                      },
+                      {
+                          "code":  "M5-0056",
+                          "microSkill":  "m5_calc_divide_decimal",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 2,4 ÷ 0,08.",
+                          "choices":  [
+                                          "3",
+                                          "0,3",
+                                          "300",
+                                          "30"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "2,4 ÷ 0,08 = 240 ÷ 8 = 30."
+                      },
+                      {
+                          "code":  "M5-0057",
+                          "microSkill":  "m5_calc_divide_decimal",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 9,45 ÷ 0,9.",
+                          "choices":  [
+                                          "10,5",
+                                          "1,05",
+                                          "105",
+                                          "8,55"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "9,45 ÷ 0,9 = 94,5 ÷ 9 = 10,5."
+                      },
+                      {
+                          "code":  "M5-0058",
+                          "microSkill":  "m5_calc_divide_decimal",
+                          "difficulty":  3,
+                          "prompt":  "Calcule 1,26 ÷ 0,06.",
+                          "choices":  [
+                                          "2,1",
+                                          "21",
+                                          "210",
+                                          "0,21"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "1,26 ÷ 0,06 = 126 ÷ 6 = 21."
+                      },
+                      {
+                          "code":  "M5-0059",
+                          "microSkill":  "m5_calc_divide_decimal",
+                          "difficulty":  3,
+                          "prompt":  "Calcule 5 ÷ 0,125.",
+                          "choices":  [
+                                          "4",
+                                          "400",
+                                          "40",
+                                          "0,4"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "5 ÷ 0,125 = 5 000 ÷ 125 = 40."
+                      },
+                      {
+                          "code":  "M5-0060",
+                          "microSkill":  "m5_calc_divide_decimal",
+                          "difficulty":  3,
+                          "prompt":  "Calcule 12,6 ÷ 0,35.",
+                          "choices":  [
+                                          "3,6",
+                                          "0,36",
+                                          "360",
+                                          "36"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "12,6 ÷ 0,35 = 1 260 ÷ 35 = 36."
+                      },
+                      {
+                          "code":  "M5-0061",
+                          "microSkill":  "m5_calc_translate_expression",
+                          "difficulty":  1,
+                          "prompt":  "Quelle expression représente la somme de 18 et du produit de 4 par 7 ?",
+                          "choices":  [
+                                          "18 + 4 × 7",
+                                          "(18 + 4) × 7",
+                                          "18 × 4 + 7",
+                                          "18 + 4 + 7"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le produit de 4 par 7 s’écrit 4 × 7, puis on lui ajoute 18."
+                      },
+                      {
+                          "code":  "M5-0062",
+                          "microSkill":  "m5_calc_translate_expression",
+                          "difficulty":  1,
+                          "prompt":  "Quelle expression représente la différence entre le quotient de 45 par 5 et 3 ?",
+                          "choices":  [
+                                          "45 ÷ (5 − 3)",
+                                          "45 ÷ 5 − 3",
+                                          "45 − 5 ÷ 3",
+                                          "(45 − 5) ÷ 3"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le quotient est 45 ÷ 5 ; on lui retire ensuite 3."
+                      },
+                      {
+                          "code":  "M5-0063",
+                          "microSkill":  "m5_calc_translate_expression",
+                          "difficulty":  1,
+                          "prompt":  "Six cahiers coûtent chacun 2,50 € et un stylo coûte 3 €. Quelle expression donne le prix total ?",
+                          "choices":  [
+                                          "6 + 2,50 + 3",
+                                          "6 × (2,50 + 3)",
+                                          "6 × 2,50 + 3",
+                                          "6 ÷ 2,50 + 3"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Les six cahiers coûtent 6 × 2,50 €, puis on ajoute 3 €."
+                      },
+                      {
+                          "code":  "M5-0064",
+                          "microSkill":  "m5_calc_translate_expression",
+                          "difficulty":  2,
+                          "prompt":  "On partage 80 cartes entre 5 joueurs, puis chacun reçoit 2 cartes supplémentaires. Quelle expression donne le nombre de cartes par joueur ?",
+                          "choices":  [
+                                          "80 ÷ (5 + 2)",
+                                          "80 − 5 + 2",
+                                          "80 ÷ 2 + 5",
+                                          "80 ÷ 5 + 2"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On calcule d’abord la part 80 ÷ 5, puis on ajoute 2 cartes."
+                      },
+                      {
+                          "code":  "M5-0065",
+                          "microSkill":  "m5_calc_translate_expression",
+                          "difficulty":  2,
+                          "prompt":  "Quelle expression représente le produit de la somme de 9 et 4 par 6 ?",
+                          "choices":  [
+                                          "(9 + 4) × 6",
+                                          "9 + 4 × 6",
+                                          "9 × 4 + 6",
+                                          "9 × (4 + 6)"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La somme de 9 et 4 doit être calculée avant la multiplication par 6."
+                      },
+                      {
+                          "code":  "M5-0066",
+                          "microSkill":  "m5_calc_translate_expression",
+                          "difficulty":  2,
+                          "prompt":  "Quelle expression représente le quotient de 72 par la différence entre 11 et 3 ?",
+                          "choices":  [
+                                          "72 ÷ 11 − 3",
+                                          "72 ÷ (11 − 3)",
+                                          "(72 ÷ 11) − 3",
+                                          "72 − 11 ÷ 3"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le diviseur est la différence 11 − 3, placée entre parenthèses."
+                      },
+                      {
+                          "code":  "M5-0067",
+                          "microSkill":  "m5_calc_translate_expression",
+                          "difficulty":  2,
+                          "prompt":  "Un rectangle a une largeur x et une longueur supérieure de 3 à sa largeur. Quelle expression représente son périmètre ?",
+                          "choices":  [
+                                          "x × (x + 3)",
+                                          "2 × x + 3",
+                                          "2 × x + 2 × (x + 3)",
+                                          "x + x + 3"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le périmètre est deux fois la largeur plus deux fois la longueur x + 3."
+                      },
+                      {
+                          "code":  "M5-0068",
+                          "microSkill":  "m5_calc_translate_expression",
+                          "difficulty":  3,
+                          "prompt":  "Une famille achète 3 billets à 12 € et un billet à 8 €. Quelle expression donne la dépense totale ?",
+                          "choices":  [
+                                          "3 + 12 + 8",
+                                          "3 × (12 + 8)",
+                                          "12 × 8 + 3",
+                                          "3 × 12 + 8"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Les trois billets coûtent 3 × 12 €, puis on ajoute le billet à 8 €."
+                      },
+                      {
+                          "code":  "M5-0069",
+                          "microSkill":  "m5_calc_translate_expression",
+                          "difficulty":  3,
+                          "prompt":  "Quelle expression permet de calculer la moyenne de 12, 15 et 18 ?",
+                          "choices":  [
+                                          "(12 + 15 + 18) ÷ 3",
+                                          "12 + 15 + 18 ÷ 3",
+                                          "12 × 15 × 18 ÷ 3",
+                                          "(12 + 18) ÷ 2"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On additionne les trois valeurs puis on divise la somme par 3."
+                      },
+                      {
+                          "code":  "M5-0070",
+                          "microSkill":  "m5_calc_translate_expression",
+                          "difficulty":  3,
+                          "prompt":  "Quelle expression représente la moitié de la somme de 26 et 14 ?",
+                          "choices":  [
+                                          "26 + 14 ÷ 2",
+                                          "(26 + 14) ÷ 2",
+                                          "26 ÷ 2 + 14",
+                                          "26 + 14 × 2"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On calcule la somme 26 + 14 avant de la diviser par 2."
+                      },
+                      {
+                          "code":  "M5-0071",
+                          "microSkill":  "m5_calc_use_parentheses",
+                          "difficulty":  1,
+                          "prompt":  "Calcule (8 + 3) × 5.",
+                          "choices":  [
+                                          "23",
+                                          "43",
+                                          "55",
+                                          "75"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On calcule d’abord 8 + 3 = 11, puis 11 × 5 = 55."
+                      },
+                      {
+                          "code":  "M5-0072",
+                          "microSkill":  "m5_calc_use_parentheses",
+                          "difficulty":  1,
+                          "prompt":  "Quelle expression est égale à 42 ?",
+                          "choices":  [
+                                          "6 × 9 − 2",
+                                          "6 + 9 × 2",
+                                          "(6 + 9) × 2",
+                                          "6 × (9 − 2)"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On calcule 9 − 2 = 7, puis 6 × 7 = 42."
+                      },
+                      {
+                          "code":  "M5-0073",
+                          "microSkill":  "m5_calc_use_parentheses",
+                          "difficulty":  1,
+                          "prompt":  "Calcule 50 − (8 + 7).",
+                          "choices":  [
+                                          "35",
+                                          "49",
+                                          "65",
+                                          "27"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On calcule d’abord 8 + 7 = 15, puis 50 − 15 = 35."
+                      },
+                      {
+                          "code":  "M5-0074",
+                          "microSkill":  "m5_calc_use_parentheses",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 3 × (12 − 5).",
+                          "choices":  [
+                                          "31",
+                                          "21",
+                                          "7",
+                                          "33"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On calcule 12 − 5 = 7, puis 3 × 7 = 21."
+                      },
+                      {
+                          "code":  "M5-0075",
+                          "microSkill":  "m5_calc_use_parentheses",
+                          "difficulty":  2,
+                          "prompt":  "Quelle expression est égale à 80 ?",
+                          "choices":  [
+                                          "14 + 6 × 4",
+                                          "14 × (6 − 4)",
+                                          "(14 + 6) × 4",
+                                          "14 + (6 × 4)"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "(14 + 6) × 4 = 20 × 4 = 80."
+                      },
+                      {
+                          "code":  "M5-0076",
+                          "microSkill":  "m5_calc_use_parentheses",
+                          "difficulty":  2,
+                          "prompt":  "Quelle expression traduit : soustraire 4 à 18, puis multiplier le résultat par 3 ?",
+                          "choices":  [
+                                          "18 − 4 × 3",
+                                          "18 − (4 × 3)",
+                                          "18 − (4 + 3)",
+                                          "(18 − 4) × 3"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le résultat de 18 − 4 doit être calculé en premier : (18 − 4) × 3."
+                      },
+                      {
+                          "code":  "M5-0077",
+                          "microSkill":  "m5_calc_use_parentheses",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 72 ÷ (6 + 3).",
+                          "choices":  [
+                                          "8",
+                                          "15",
+                                          "27",
+                                          "4"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On calcule 6 + 3 = 9, puis 72 ÷ 9 = 8."
+                      },
+                      {
+                          "code":  "M5-0078",
+                          "microSkill":  "m5_calc_use_parentheses",
+                          "difficulty":  3,
+                          "prompt":  "Cinq sacs contiennent chacun 8 billes rouges et 3 billes bleues. Quelle expression donne le nombre total de billes ?",
+                          "choices":  [
+                                          "5 × 8 + 3",
+                                          "5 × (8 + 3)",
+                                          "5 + 8 × 3",
+                                          "(5 + 8) × 3"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Chaque sac contient 8 + 3 billes ; cette somme est répétée 5 fois."
+                      },
+                      {
+                          "code":  "M5-0079",
+                          "microSkill":  "m5_calc_use_parentheses",
+                          "difficulty":  3,
+                          "prompt":  "Quelle expression traduit : additionner 2 et 4, puis multiplier le résultat par 5 ?",
+                          "choices":  [
+                                          "2 + 4 × 5",
+                                          "2 × 4 + 5",
+                                          "(2 + 4) × 5",
+                                          "2 × (4 + 5)"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "La somme 2 + 4 doit être calculée en premier : (2 + 4) × 5."
+                      },
+                      {
+                          "code":  "M5-0080",
+                          "microSkill":  "m5_calc_use_parentheses",
+                          "difficulty":  3,
+                          "prompt":  "Calcule 36 ÷ (3 × 2).",
+                          "choices":  [
+                                          "24",
+                                          "18",
+                                          "12",
+                                          "6"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On calcule 3 × 2 = 6, puis 36 ÷ 6 = 6."
+                      }
+                  ]
+}
