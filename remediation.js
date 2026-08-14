@@ -61,13 +61,13 @@ function renderQuestion(){
   answered=false;
   document.getElementById('remediationCounter').textContent=
     `Exercice ${currentIndex+1}`;
-  document.getElementById('remediationQuestion').textContent=question.question;
+  CapCollegeEducationalContent.renderInline(document.getElementById('remediationQuestion'),question.question);
   document.getElementById('remediationFeedback').classList.add('hidden');
   document.getElementById('nextRemediationButton').classList.add('hidden');
   document.getElementById('remediationChoices').innerHTML=question.choix
     .map((choice,index)=>`
       <button class="choice remediation-choice" type="button" data-choice="${index}">
-        ${escapeHtml(choice)}
+        ${CapCollegeEducationalContent.toHtml(choice)}
       </button>`)
     .join('');
   document.querySelectorAll('.remediation-choice').forEach(button=>{
@@ -212,10 +212,15 @@ async function initialise(){
     learnerMode
       ?`Séance choisie : ${questionTarget} questions`
       :`Séance choisie : ${plannedMinutes} min`;
-  document.getElementById('lessonReminder').textContent=
-    session.reminder||localLesson(session.competence);
-  document.getElementById('workedExample').textContent=
-    session.worked_example||localExample(session.competence);
+  CapCollegeEducationalContent.renderInline(
+    document.getElementById('lessonReminder'),
+    session.reminder||localLesson(session.competence)
+  );
+  CapCollegeQuestionVisuals.render(
+    document.getElementById('workedExample'),
+    document.getElementById('workedExampleVisual'),
+    session.worked_example||localExample(session.competence)
+  );
   document.getElementById('remediationLoading').classList.add('hidden');
   document.getElementById('remediationSession').classList.remove('hidden');
   const returnLink=document.getElementById('returnToReportLink');

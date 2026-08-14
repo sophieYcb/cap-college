@@ -517,7 +517,7 @@ function renderChoices(){
   document.getElementById('choices').innerHTML=q.choix.map((choice,index)=>`
     <label class="choice ${answers[current]===index?'selected':''}">
       <input type="radio" name="answer" ${answers[current]===index?'checked':''} onchange="selectAnswer(${index})">
-      ${choice}
+      ${CapCollegeEducationalContent.toHtml(choice)}
     </label>`).join('');
 }
 

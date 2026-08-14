@@ -29,7 +29,7 @@ function render() {
   if (!item) {
     byId("courseCounter").textContent = "Aucun résumé"; byId("courseCode").textContent = "";
     byId("courseTitle").textContent = "Aucun résumé ne correspond aux filtres.";
-    byId("courseReminder").textContent = ""; byId("courseExample").textContent = ""; panel.hidden = true; renderSummary(); return;
+    byId("courseReminder").textContent = ""; byId("courseExample").textContent = ""; byId("courseExampleVisual").replaceChildren(); panel.hidden = true; renderSummary(); return;
   }
   panel.hidden = false;
   byId("courseCounter").textContent = `${index + 1} / ${filtered.length}`;
@@ -37,9 +37,9 @@ function render() {
   byId("courseProgress").style.width = `${Math.round(((index + 1) / filtered.length) * 100)}%`;
   byId("courseDomain").textContent = `${item.subjectName} · ${item.domainName}`;
   byId("courseSkill").textContent = item.skillName; byId("courseTitle").textContent = item.title;
-  byId("courseReminder").textContent = item.reminder || "Résumé manquant";
+  CapCollegeEducationalContent.renderInline(byId("courseReminder"), item.reminder || "Résumé manquant");
   byId("courseReminder").classList.toggle("course-content-missing", !item.reminder);
-  byId("courseExample").textContent = item.workedExample || "Exemple manquant";
+  CapCollegeQuestionVisuals.render(byId("courseExample"), byId("courseExampleVisual"), item.workedExample || "Exemple manquant");
   byId("courseExample").classList.toggle("course-content-missing", !item.workedExample);
   byId("reviewComment").value = item.review?.comment || "";
   document.querySelectorAll(".rating").forEach(button => button.classList.toggle("active", button.dataset.rating === item.review?.grade));

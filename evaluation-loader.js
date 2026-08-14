@@ -22,5 +22,5 @@ CapCollegeSupabase.bootstrap({
   validationCampaignId,
   preferLearner: learnerMode && !validationCampaignId
 })
-  .then(() => CapCollegeSupabase.appendScript("evaluation.js?v=5.3.42"))
+  .then(() => CapCollegeSupabase.appendScript("evaluation.js?v=5.3.48"))
   .catch(CapCollegeSupabase.showFatalError);

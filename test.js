@@ -174,7 +174,7 @@ function renderQuestion(){
   document.getElementById('testQuestionVisual'),
   q.question
  );
- document.getElementById('testChoices').innerHTML=q.choix.map((c,i)=>`<div class="choice test-choice ${i===q.reponse?'correct-choice':''}"><span>${String.fromCharCode(65+i)}.</span> ${escapeHtml(c)} ${i===q.reponse?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
+ document.getElementById('testChoices').innerHTML=q.choix.map((c,i)=>`<div class="choice test-choice ${i===q.reponse?'correct-choice':''}"><span>${String.fromCharCode(65+i)}.</span> ${CapCollegeEducationalContent.toHtml(c)} ${i===q.reponse?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
  const flagDetails=document.getElementById('openFlagDetails');
  flagDetails.classList.toggle('hidden',!q.openFlagDetails.length);
  flagDetails.innerHTML=q.openFlagDetails.length
@@ -202,7 +202,7 @@ function renderQuestion(){
    q.previous.prompt||''
   );
   const previousCorrect=previousChoices.findIndex(choice=>choice.isCorrect);
-  document.getElementById('previousChoices').innerHTML=previousChoices.map((choice,index)=>`<div class="choice test-choice ${index===previousCorrect?'correct-choice':''}"><span>${String.fromCharCode(65+index)}.</span> ${escapeHtml(choice.text)} ${index===previousCorrect?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
+  document.getElementById('previousChoices').innerHTML=previousChoices.map((choice,index)=>`<div class="choice test-choice ${index===previousCorrect?'correct-choice':''}"><span>${String.fromCharCode(65+index)}.</span> ${CapCollegeEducationalContent.toHtml(choice.text)} ${index===previousCorrect?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
   const previousReview=document.getElementById('previousReview');
   const review=q.previous.review;
   previousReview.classList.toggle('hidden',!review);

@@ -32,6 +32,45 @@
     return wrapper;
   }
 
+  function createOperation(content){
+    const wrapper=document.createElement('div');
+    wrapper.className='question-visual operation-visual';
+    const operation=document.createElement('pre');
+    operation.className='vertical-operation';
+    operation.setAttribute('role','math');
+    operation.setAttribute('aria-label',String(content).replace(/\n/g,' '));
+    operation.textContent=String(content).replace(/^\r?\n/,'').replace(/\r?\n\s*$/,'');
+    wrapper.appendChild(operation);
+    return wrapper;
+  }
+
+  function createNamedBars(entries){
+    const wrapper=document.createElement('div');
+    wrapper.className='question-visual';
+    const svg=svgNode('svg',{viewBox:'0 0 560 270',role:'img','aria-label':'Diagramme en barres'});
+    svg.classList.add('question-chart');
+    const max=Math.max(...entries.map(entry=>entry.value),1);
+    const ceiling=Math.ceil(max/5)*5||5;
+    const left=55,bottom=220,top=20,width=460,height=185;
+    svg.appendChild(svgNode('line',{x1:left,y1:top,x2:left,y2:bottom,class:'chart-axis'}));
+    svg.appendChild(svgNode('line',{x1:left,y1:bottom,x2:left+width,y2:bottom,class:'chart-axis'}));
+    for(let value=0;value<=ceiling;value+=5){
+      const y=bottom-(value/ceiling)*height;
+      svg.appendChild(svgNode('line',{x1:left,y1:y,x2:left+width,y2:y,class:'chart-grid'}));
+      addSvgText(svg,value,left-10,y+5,{class:'chart-label','text-anchor':'end'});
+    }
+    const slot=width/entries.length;
+    entries.forEach((entry,index)=>{
+      const barWidth=Math.min(85,slot*.58);
+      const x=left+index*slot+(slot-barWidth)/2;
+      const barHeight=(entry.value/ceiling)*height;
+      svg.appendChild(svgNode('rect',{x,y:bottom-barHeight,width:barWidth,height:barHeight,rx:6,class:`chart-bar chart-bar-${index%2+1}`}));
+      addSvgText(svg,entry.label,x+barWidth/2,bottom+28,{class:'chart-label chart-category','text-anchor':'middle'});
+      addSvgText(svg,entry.value,x+barWidth/2,bottom-barHeight-8,{class:'chart-value','text-anchor':'middle'});
+    });
+    wrapper.appendChild(svg);
+    return wrapper;
+  }
   function createBars(a,b){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
@@ -126,6 +165,31 @@
     const normalized=String(prompt||'').replace(/^[◐◔◕●○]\s*(?:\([^)]*\))?\s*/,'');
     let match;
 
+    if((match=normalized.match(/\[OPERATION\]([\s\S]*?)\[\/OPERATION\]/i))){
+      return {text:normalized.replace(match[0],'').trim(),visual:createOperation(match[1])};
+    }
+    if((match=normalized.match(/\[TABLE\]([\s\S]*?)\[\/TABLE\]/i))){
+      const rows=match[1].trim().split('\n').map(line=>line.split('|').map(value=>value.trim()));
+      return {text:normalized.replace(match[0],'').trim(),visual:createTable(rows)};
+    }
+    if((match=normalized.match(/\[BARS\]([\s\S]*?)\[\/BARS\]/i))){
+      const entries=match[1].split(';').map(pair=>{
+        const separator=pair.lastIndexOf('=');
+        return {label:pair.slice(0,separator).trim(),value:Number(pair.slice(separator+1))};
+      }).filter(entry=>entry.label&&Number.isFinite(entry.value));
+      if(entries.length)return {text:normalized.replace(match[0],'').trim(),visual:createNamedBars(entries)};
+    }
+    if((match=normalized.match(/\[PIE\]\s*(\d+(?:[.,]\d+)?)\s*\[\/PIE\]/i))){
+      return {text:normalized.replace(match[0],'').trim(),visual:createPie(Number(match[1].replace(',','.')))};
+    }
+    if((match=normalized.match(/\[CURVE\]([\s\S]*?)\[\/CURVE\]/i))){
+      const points=match[1].split(';').map(pair=>{
+        const [hour,value]=pair.split('=').map(Number);
+        return {hour,value};
+      }).filter(point=>Number.isFinite(point.hour)&&Number.isFinite(point.value));
+      if(points.length>=2)return {text:normalized.replace(match[0],'').trim(),visual:createCurve(points)};
+    }
+
     if((match=normalized.match(/Dans un tableau de proportionnalité\s*:\s*\n(\d+) objets → ([\d,]+) €\s*\n(\d+) objets → ([\d,]+) €\s*\n\s*([\s\S]*)/i))){
       return {text:match[5],visual:createTable([
         ['Quantité',match[1],match[3]],
@@ -177,7 +241,11 @@
 
   function render(textElement,visualElement,prompt){
     const result=parse(prompt);
-    textElement.textContent=result.text;
+    if(window.CapCollegeEducationalContent){
+      window.CapCollegeEducationalContent.renderInline(textElement,result.text);
+    }else{
+      textElement.textContent=result.text;
+    }
     if(visualElement){
       visualElement.replaceChildren();
       visualElement.classList.toggle('hidden',!result.visual);
