@@ -28,9 +28,15 @@ with function_checks as (
     position('subject.code = requested_subject_code' in pg_get_functiondef(
       'public.get_learner_subject_diagnostic_progress(text,text)'::regprocedure
     )) > 0 subject_progress_is_filtered,
-    position('get_learner_subject_diagnostic_progress' in pg_get_functiondef(
+    position('build_learner_diagnostic_snapshot(selected_diagnostic_id)' in pg_get_functiondef(
       'public.finish_learner_diagnostic_session(text,uuid)'::regprocedure
-    )) > 0 finish_uses_selected_subject,
+    )) > 0 finish_uses_exact_diagnostic,
+    position('domain.subject_id = selected.subject_id' in pg_get_functiondef(
+      'public.build_learner_diagnostic_snapshot(uuid)'::regprocedure
+    )) > 0 snapshot_filters_diagnostic_subject,
+    position('session.diagnostic_id = requested_diagnostic_id' in pg_get_functiondef(
+      'public.build_learner_diagnostic_snapshot(uuid)'::regprocedure
+    )) > 0 snapshot_filters_diagnostic_sessions,
     position('learner_profile_adults' in pg_get_functiondef(
       'public.get_my_learner_diagnostic_reports(uuid)'::regprocedure
     )) > 0 reports_check_adult_link,
@@ -99,6 +105,7 @@ with function_checks as (
     (select count(*) from public.remediation_sessions rs join test_profile tp on tp.id = rs.learner_profile_id where rs.session_kind = 'reassessment' and rs.reassessment_passed) passed_reassessments
 )
 select jsonb_build_object('verification', jsonb_build_object(
+  'audit_version', 2,
   'learner_connection', jsonb_build_object(
     'functions_ready', fc.learner_login and fc.learner_session_read,
     'anonymous_access_ready', pc.learner_login_anon,
@@ -107,7 +114,7 @@ select jsonb_build_object('verification', jsonb_build_object(
   'diagnostic', jsonb_build_object(
     'functions_ready', fc.diagnostic_start and fc.diagnostic_answer and fc.diagnostic_finish and fc.subject_progress,
     'anonymous_access_ready', pc.diagnostic_start_anon and pc.diagnostic_answer_anon,
-    'progress_separated_by_subject', bc.subject_progress_is_filtered and bc.finish_uses_selected_subject,
+    'progress_separated_by_subject', bc.subject_progress_is_filtered and bc.finish_uses_exact_diagnostic and bc.snapshot_filters_diagnostic_subject and bc.snapshot_filters_diagnostic_sessions,
     'completed_reports_preserved', ic.completed_diagnostics_have_reports,
     'owner_constraint', ic.diagnostic_owner_constraint
   ),
@@ -149,7 +156,8 @@ select jsonb_build_object('verification', jsonb_build_object(
     and pc.learner_login_anon and pc.diagnostic_start_anon and pc.diagnostic_answer_anon
     and pc.exercise_start_anon and pc.reassessment_start_anon
     and pc.parent_reports_authenticated and pc.parent_exercise_history_authenticated
-    and bc.subject_progress_is_filtered and bc.finish_uses_selected_subject
+    and bc.subject_progress_is_filtered and bc.finish_uses_exact_diagnostic
+    and bc.snapshot_filters_diagnostic_subject and bc.snapshot_filters_diagnostic_sessions
     and bc.reports_check_adult_link
     and bc.reassessment_requires_fifteen_answers and bc.reassessment_requires_three_sessions
     and bc.reassessment_requires_independence and bc.reassessment_passes_at_four_of_five
@@ -158,7 +166,7 @@ select jsonb_build_object('verification', jsonb_build_object(
     and ic.diagnostic_owner_constraint and ic.exercise_owner_constraint
     and (select count(*) >= 2 from published_bank where published_questions > 0)
   )
-)) as verification
+) as verification
 from function_checks fc
 cross join permission_checks pc
 cross join behavior_checks bc
