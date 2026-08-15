@@ -1,0 +1,412 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "5e",
+  "domain": {
+    "code": "cycle4_numbers_calculation",
+    "name": "Nombres et calculs"
+  },
+  "skill": {
+    "code": "m5_relative_numbers",
+    "name": "Nombres relatifs"
+  },
+  "lot": "M5-REL-02",
+  "status": "draft",
+  "source": "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+  "microSkills": [
+    {
+      "code": "m5_rel_compare_order",
+      "teacherName": "Comparer et ranger des nombres relatifs",
+      "studentName": "Comparer et ranger des nombres relatifs",
+      "lessonReminder": "Sur une droite graduée, le plus grand nombre est celui qui se trouve le plus à droite. Tout nombre positif est supérieur à tout nombre négatif. Entre deux nombres négatifs, le plus grand est celui qui est le plus proche de zéro.",
+      "workedExample": "−7 < −3 < 2, car −7 est plus à gauche que −3, et tout nombre négatif est inférieur à 2.",
+      "masteryCriteria": "Comparer et ranger correctement des nombres relatifs entiers ou décimaux."
+    },
+    {
+      "code": "m5_rel_add",
+      "teacherName": "Additionner des nombres relatifs",
+      "studentName": "Additionner des nombres positifs et négatifs",
+      "lessonReminder": "Pour additionner deux nombres de même signe, on additionne leurs distances à zéro et on conserve leur signe. S’ils sont de signes contraires, on soustrait les distances à zéro et on garde le signe du nombre qui a la plus grande distance à zéro.",
+      "workedExample": "−8 + 3 = −5 : les signes sont contraires, 8 − 3 = 5 et −8 a la plus grande distance à zéro.",
+      "masteryCriteria": "Calculer des sommes de nombres relatifs, y compris décimaux, et interpréter une somme dans une situation simple."
+    },
+    {
+      "code": "m5_rel_subtract",
+      "teacherName": "Soustraire des nombres relatifs",
+      "studentName": "Soustraire des nombres positifs et négatifs",
+      "lessonReminder": "Soustraire un nombre revient à ajouter son opposé : a − b = a + (−b). On transforme d’abord la soustraction en addition, puis on applique les règles d’addition des nombres relatifs.",
+      "workedExample": "4 − (−7) = 4 + 7 = 11 et −3 − 5 = −3 + (−5) = −8.",
+      "masteryCriteria": "Transformer une soustraction en addition de l’opposé et calculer correctement la différence."
+    },
+    {
+      "code": "m5_rel_simplify_parentheses",
+      "teacherName": "Simplifier une somme comportant des parenthèses",
+      "studentName": "Enlever les parenthèses dans une somme de nombres relatifs",
+      "lessonReminder": "Dans une somme algébrique, on peut supprimer les parenthèses précédées de + sans changer le signe du nombre. Lorsqu’elles sont précédées de −, on remplace le nombre entre parenthèses par son opposé.",
+      "workedExample": "7 + (−4) − (−2) = 7 − 4 + 2.",
+      "masteryCriteria": "Supprimer correctement les parenthèses et obtenir une somme algébrique équivalente."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M5-0151",
+      "microSkill": "m5_rel_compare_order",
+      "difficulty": 1,
+      "prompt": "Quel est le plus grand nombre parmi −3, +2, −1 et 0 ?",
+      "choices": ["+2", "0", "−1", "−3"],
+      "correctIndex": 0,
+      "explanation": "+2 est le seul nombre strictement positif : c’est le plus grand."
+    },
+    {
+      "code": "M5-0152",
+      "microSkill": "m5_rel_compare_order",
+      "difficulty": 1,
+      "prompt": "Quelle comparaison est correcte ?",
+      "choices": ["−5 > −2", "−5 < −2", "−5 = −2", "−2 < −5"],
+      "correctIndex": 1,
+      "explanation": "−5 est plus à gauche que −2 sur une droite graduée, donc −5 < −2."
+    },
+    {
+      "code": "M5-0153",
+      "microSkill": "m5_rel_compare_order",
+      "difficulty": 1,
+      "prompt": "Quel rangement est dans l’ordre croissant ?",
+      "choices": ["3 ; 0 ; −2 ; −6", "−6 ; −2 ; 3 ; 0", "−6 ; −2 ; 0 ; 3", "−2 ; −6 ; 0 ; 3"],
+      "correctIndex": 2,
+      "explanation": "Dans l’ordre croissant, les nombres vont du plus petit au plus grand : −6 < −2 < 0 < 3."
+    },
+    {
+      "code": "M5-0154",
+      "microSkill": "m5_rel_compare_order",
+      "difficulty": 1,
+      "prompt": "Quel nombre est compris entre −4 et −2 ?",
+      "choices": ["−5", "+3", "0", "−3"],
+      "correctIndex": 3,
+      "explanation": "On a −4 < −3 < −2."
+    },
+    {
+      "code": "M5-0155",
+      "microSkill": "m5_rel_compare_order",
+      "difficulty": 2,
+      "prompt": "Quel est le plus petit nombre parmi −1,7, −1,07, −1,17 et −0,7 ?",
+      "choices": ["−1,7", "−1,07", "−1,17", "−0,7"],
+      "correctIndex": 0,
+      "explanation": "Parmi ces nombres négatifs, −1,7 est le plus éloigné de zéro : c’est le plus petit."
+    },
+    {
+      "code": "M5-0156",
+      "microSkill": "m5_rel_compare_order",
+      "difficulty": 2,
+      "prompt": "Quel rangement est dans l’ordre décroissant ?",
+      "choices": ["−4,2 ; −1,5 ; 0 ; 3,1", "3,1 ; 0 ; −1,5 ; −4,2", "3,1 ; −1,5 ; 0 ; −4,2", "0 ; 3,1 ; −1,5 ; −4,2"],
+      "correctIndex": 1,
+      "explanation": "Dans l’ordre décroissant : 3,1 > 0 > −1,5 > −4,2."
+    },
+    {
+      "code": "M5-0157",
+      "microSkill": "m5_rel_compare_order",
+      "difficulty": 2,
+      "prompt": "Quel signe complète correctement −2,08 … −2,8 ?",
+      "choices": ["<", "=", ">", "On ne peut pas comparer."],
+      "correctIndex": 2,
+      "explanation": "−2,08 est plus proche de zéro que −2,8, donc −2,08 > −2,8."
+    },
+    {
+      "code": "M5-0158",
+      "microSkill": "m5_rel_compare_order",
+      "difficulty": 2,
+      "prompt": "La température la plus froide est…",
+      "choices": ["−2 °C", "+1 °C", "0 °C", "−5 °C"],
+      "correctIndex": 3,
+      "explanation": "La température la plus froide correspond au plus petit nombre : −5 °C."
+    },
+    {
+      "code": "M5-0159",
+      "microSkill": "m5_rel_compare_order",
+      "difficulty": 3,
+      "prompt": "Quel rangement est correct ?",
+      "choices": ["−3,05 < −3,005 < 3,005 < 3,05", "−3,005 < −3,05 < 3,005 < 3,05", "−3,05 < −3,005 < 3,05 < 3,005", "3,05 < 3,005 < −3,005 < −3,05"],
+      "correctIndex": 0,
+      "explanation": "On a −3,05 < −3,005, puis 3,005 < 3,05."
+    },
+    {
+      "code": "M5-0160",
+      "microSkill": "m5_rel_compare_order",
+      "difficulty": 3,
+      "prompt": "Quel nombre peut remplacer x dans −4,1 < x < −3,9 ?",
+      "choices": ["−4,2", "−4", "−3,8", "+4"],
+      "correctIndex": 1,
+      "explanation": "−4 est strictement supérieur à −4,1 et strictement inférieur à −3,9."
+    },
+    {
+      "code": "M5-0161",
+      "microSkill": "m5_rel_add",
+      "difficulty": 1,
+      "prompt": "Calcule (−3) + 5.",
+      "choices": ["−8", "−2", "2", "8"],
+      "correctIndex": 2,
+      "explanation": "Les signes sont contraires : 5 − 3 = 2, avec le signe positif."
+    },
+    {
+      "code": "M5-0162",
+      "microSkill": "m5_rel_add",
+      "difficulty": 1,
+      "prompt": "Calcule 7 + (−10).",
+      "choices": ["17", "3", "−17", "−3"],
+      "correctIndex": 3,
+      "explanation": "7 + (−10) = 7 − 10 = −3."
+    },
+    {
+      "code": "M5-0163",
+      "microSkill": "m5_rel_add",
+      "difficulty": 1,
+      "prompt": "Calcule (−4) + (−6).",
+      "choices": ["−10", "−2", "2", "10"],
+      "correctIndex": 0,
+      "explanation": "Les deux nombres sont négatifs : on additionne 4 et 6 et on conserve le signe −."
+    },
+    {
+      "code": "M5-0164",
+      "microSkill": "m5_rel_add",
+      "difficulty": 1,
+      "prompt": "Calcule (−8) + 8.",
+      "choices": ["−16", "0", "8", "16"],
+      "correctIndex": 1,
+      "explanation": "−8 et 8 sont opposés ; leur somme est nulle."
+    },
+    {
+      "code": "M5-0165",
+      "microSkill": "m5_rel_add",
+      "difficulty": 2,
+      "prompt": "Calcule (−2,5) + 7.",
+      "choices": ["−9,5", "−4,5", "4,5", "9,5"],
+      "correctIndex": 2,
+      "explanation": "7 − 2,5 = 4,5 et le nombre de plus grande distance à zéro est positif."
+    },
+    {
+      "code": "M5-0166",
+      "microSkill": "m5_rel_add",
+      "difficulty": 2,
+      "prompt": "Calcule 12 + (−3,7).",
+      "choices": ["15,7", "−8,3", "8,7", "8,3"],
+      "correctIndex": 3,
+      "explanation": "12 + (−3,7) = 12 − 3,7 = 8,3."
+    },
+    {
+      "code": "M5-0167",
+      "microSkill": "m5_rel_add",
+      "difficulty": 2,
+      "prompt": "Calcule (−6,4) + 2,1.",
+      "choices": ["−4,3", "−8,5", "4,3", "8,5"],
+      "correctIndex": 0,
+      "explanation": "6,4 − 2,1 = 4,3 et −6,4 a la plus grande distance à zéro : le résultat est −4,3."
+    },
+    {
+      "code": "M5-0168",
+      "microSkill": "m5_rel_add",
+      "difficulty": 2,
+      "prompt": "Calcule (−1,5) + (−2,8).",
+      "choices": ["−1,3", "−4,3", "1,3", "4,3"],
+      "correctIndex": 1,
+      "explanation": "Les deux nombres sont négatifs : −1,5 + (−2,8) = −4,3."
+    },
+    {
+      "code": "M5-0169",
+      "microSkill": "m5_rel_add",
+      "difficulty": 3,
+      "prompt": "Calcule 15 + (−8) + (−4).",
+      "choices": ["27", "11", "3", "−3"],
+      "correctIndex": 2,
+      "explanation": "15 − 8 − 4 = 7 − 4 = 3."
+    },
+    {
+      "code": "M5-0170",
+      "microSkill": "m5_rel_add",
+      "difficulty": 3,
+      "prompt": "Un ascenseur part de l’étage −3, monte de 7 étages puis descend de 2 étages. À quel étage arrive-t-il ?",
+      "choices": ["−12", "−2", "6", "2"],
+      "correctIndex": 3,
+      "explanation": "Le calcul est −3 + 7 + (−2) = 2."
+    },
+    {
+      "code": "M5-0171",
+      "microSkill": "m5_rel_subtract",
+      "difficulty": 1,
+      "prompt": "Calcule 5 − 8.",
+      "choices": ["−3", "3", "−13", "13"],
+      "correctIndex": 0,
+      "explanation": "5 − 8 = 5 + (−8) = −3."
+    },
+    {
+      "code": "M5-0172",
+      "microSkill": "m5_rel_subtract",
+      "difficulty": 1,
+      "prompt": "Calcule (−3) − 4.",
+      "choices": ["1", "−7", "7", "−1"],
+      "correctIndex": 1,
+      "explanation": "−3 − 4 = −3 + (−4) = −7."
+    },
+    {
+      "code": "M5-0173",
+      "microSkill": "m5_rel_subtract",
+      "difficulty": 1,
+      "prompt": "Calcule (−6) − (−2).",
+      "choices": ["−8", "8", "−4", "4"],
+      "correctIndex": 2,
+      "explanation": "−6 − (−2) = −6 + 2 = −4."
+    },
+    {
+      "code": "M5-0174",
+      "microSkill": "m5_rel_subtract",
+      "difficulty": 1,
+      "prompt": "Calcule 7 − (−5).",
+      "choices": ["2", "−2", "−12", "12"],
+      "correctIndex": 3,
+      "explanation": "Soustraire −5 revient à ajouter 5 : 7 + 5 = 12."
+    },
+    {
+      "code": "M5-0175",
+      "microSkill": "m5_rel_subtract",
+      "difficulty": 2,
+      "prompt": "Calcule (−2,5) − 3,5.",
+      "choices": ["−6", "−1", "1", "6"],
+      "correctIndex": 0,
+      "explanation": "−2,5 − 3,5 = −2,5 + (−3,5) = −6."
+    },
+    {
+      "code": "M5-0176",
+      "microSkill": "m5_rel_subtract",
+      "difficulty": 2,
+      "prompt": "Calcule 4,2 − (−1,8).",
+      "choices": ["2,4", "6", "−6", "−2,4"],
+      "correctIndex": 1,
+      "explanation": "4,2 − (−1,8) = 4,2 + 1,8 = 6."
+    },
+    {
+      "code": "M5-0177",
+      "microSkill": "m5_rel_subtract",
+      "difficulty": 2,
+      "prompt": "Calcule (−7,3) − (−9,1).",
+      "choices": ["−16,4", "−1,8", "1,8", "16,4"],
+      "correctIndex": 2,
+      "explanation": "−7,3 − (−9,1) = −7,3 + 9,1 = 1,8."
+    },
+    {
+      "code": "M5-0178",
+      "microSkill": "m5_rel_subtract",
+      "difficulty": 2,
+      "prompt": "Quelle addition est équivalente à (−4) − 9 ?",
+      "choices": ["(−4) + 9", "4 + (−9)", "4 + 9", "(−4) + (−9)"],
+      "correctIndex": 3,
+      "explanation": "Soustraire 9 revient à ajouter son opposé −9."
+    },
+    {
+      "code": "M5-0179",
+      "microSkill": "m5_rel_subtract",
+      "difficulty": 3,
+      "prompt": "La température passe de −4 °C à +3 °C. De combien a-t-elle augmenté ?",
+      "choices": ["7 °C", "1 °C", "−1 °C", "−7 °C"],
+      "correctIndex": 0,
+      "explanation": "La variation vaut 3 − (−4) = 3 + 4 = 7 °C."
+    },
+    {
+      "code": "M5-0180",
+      "microSkill": "m5_rel_subtract",
+      "difficulty": 3,
+      "prompt": "Quelle est la distance entre les nombres −8,5 et 2,5 ?",
+      "choices": ["6", "11", "−11", "21"],
+      "correctIndex": 1,
+      "explanation": "La distance vaut 2,5 − (−8,5) = 11."
+    },
+    {
+      "code": "M5-0181",
+      "microSkill": "m5_rel_simplify_parentheses",
+      "difficulty": 1,
+      "prompt": "Quelle écriture sans parenthèses est égale à 7 + (+3) ?",
+      "choices": ["7 − 3", "−7 + 3", "7 + 3", "−7 − 3"],
+      "correctIndex": 2,
+      "explanation": "Des parenthèses précédées de + peuvent être supprimées sans changer le signe : 7 + (+3) = 7 + 3."
+    },
+    {
+      "code": "M5-0182",
+      "microSkill": "m5_rel_simplify_parentheses",
+      "difficulty": 1,
+      "prompt": "Quelle écriture sans parenthèses est égale à 5 + (−2) ?",
+      "choices": ["5 + 2", "−5 + 2", "−5 − 2", "5 − 2"],
+      "correctIndex": 3,
+      "explanation": "Ajouter −2 revient à soustraire 2 : 5 + (−2) = 5 − 2."
+    },
+    {
+      "code": "M5-0183",
+      "microSkill": "m5_rel_simplify_parentheses",
+      "difficulty": 1,
+      "prompt": "Quelle écriture sans parenthèses est égale à 4 − (+6) ?",
+      "choices": ["4 − 6", "4 + 6", "−4 + 6", "−4 − 6"],
+      "correctIndex": 0,
+      "explanation": "Soustraire le nombre positif +6 donne 4 − 6."
+    },
+    {
+      "code": "M5-0184",
+      "microSkill": "m5_rel_simplify_parentheses",
+      "difficulty": 1,
+      "prompt": "Quelle écriture sans parenthèses est égale à 8 − (−3) ?",
+      "choices": ["8 − 3", "8 + 3", "−8 + 3", "−8 − 3"],
+      "correctIndex": 1,
+      "explanation": "Soustraire un nombre négatif revient à ajouter son opposé : 8 − (−3) = 8 + 3."
+    },
+    {
+      "code": "M5-0185",
+      "microSkill": "m5_rel_simplify_parentheses",
+      "difficulty": 2,
+      "prompt": "Simplifie (−5) + (+9).",
+      "choices": ["5 + 9", "−5 − 9", "−5 + 9", "5 − 9"],
+      "correctIndex": 2,
+      "explanation": "On conserve les signes des deux nombres : (−5) + (+9) = −5 + 9."
+    },
+    {
+      "code": "M5-0186",
+      "microSkill": "m5_rel_simplify_parentheses",
+      "difficulty": 2,
+      "prompt": "Simplifie 12 − (+4) + (−2).",
+      "choices": ["12 + 4 − 2", "12 − 4 + 2", "12 + 4 + 2", "12 − 4 − 2"],
+      "correctIndex": 3,
+      "explanation": "−(+4) devient −4 et +(−2) devient −2 : 12 − 4 − 2."
+    },
+    {
+      "code": "M5-0187",
+      "microSkill": "m5_rel_simplify_parentheses",
+      "difficulty": 2,
+      "prompt": "Simplifie −7 − (−5) + (+2).",
+      "choices": ["−7 + 5 + 2", "−7 − 5 + 2", "−7 + 5 − 2", "7 − 5 + 2"],
+      "correctIndex": 0,
+      "explanation": "−(−5) devient +5 et +(+2) devient +2."
+    },
+    {
+      "code": "M5-0188",
+      "microSkill": "m5_rel_simplify_parentheses",
+      "difficulty": 2,
+      "prompt": "Simplifie 3 + (−8) − (−4).",
+      "choices": ["3 + 8 − 4", "3 − 8 + 4", "3 − 8 − 4", "3 + 8 + 4"],
+      "correctIndex": 1,
+      "explanation": "+(−8) devient −8 et −(−4) devient +4."
+    },
+    {
+      "code": "M5-0189",
+      "microSkill": "m5_rel_simplify_parentheses",
+      "difficulty": 3,
+      "prompt": "Simplifie −2 − (+6) − (−3).",
+      "choices": ["−2 + 6 − 3", "−2 + 6 + 3", "−2 − 6 + 3", "2 − 6 − 3"],
+      "correctIndex": 2,
+      "explanation": "−(+6) devient −6 et −(−3) devient +3."
+    },
+    {
+      "code": "M5-0190",
+      "microSkill": "m5_rel_simplify_parentheses",
+      "difficulty": 3,
+      "prompt": "Quelle somme algébrique est égale à 6 − (−2) + (−5) − (+4) ?",
+      "choices": ["6 − 2 − 5 + 4", "6 + 2 + 5 − 4", "6 − 2 + 5 + 4", "6 + 2 − 5 − 4"],
+      "correctIndex": 3,
+      "explanation": "−(−2) devient +2, +(−5) devient −5 et −(+4) devient −4."
+    }
+  ]
+}
