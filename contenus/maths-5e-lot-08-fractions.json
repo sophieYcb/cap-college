@@ -1,0 +1,51 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "5e",
+  "domain": {"code": "cycle4_numbers_calculation", "name": "Nombres et calculs"},
+  "skill": {"code": "m5_rational_numbers", "name": "Nombres rationnels et fractions"},
+  "lot": "M5-FRAC-02",
+  "status": "draft",
+  "source": "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+  "microSkills": [
+    {
+      "code": "m5_frac_add_subtract",
+      "teacherName": "Additionner et soustraire des fractions de dénominateurs quelconques",
+      "studentName": "Additionner et soustraire des fractions",
+      "lessonReminder": "Pour additionner ou soustraire des fractions, on les écrit d’abord avec un même dénominateur. On additionne ou soustrait ensuite les numérateurs en conservant ce dénominateur, puis on simplifie le résultat si possible.",
+      "workedExample": "2/3 + 1/4 = 8/12 + 3/12 = 11/12.",
+      "masteryCriteria": "Calculer exactement des sommes et des différences de fractions, puis simplifier le résultat."
+    },
+    {
+      "code": "m5_frac_solve_problem",
+      "teacherName": "Résoudre un problème avec des additions ou soustractions de fractions",
+      "studentName": "Résoudre des problèmes avec des fractions",
+      "lessonReminder": "On repère l’unité commune, on traduit les données par une addition ou une soustraction de fractions, puis on effectue le calcul avec un dénominateur commun. Le résultat doit être interprété dans la situation.",
+      "workedExample": "Lina parcourt 1/3 du trajet le matin et 1/4 l’après-midi : elle parcourt 4/12 + 3/12 = 7/12 du trajet.",
+      "masteryCriteria": "Choisir l’opération adaptée, calculer avec des fractions et répondre avec l’unité ou l’interprétation attendue."
+    }
+  ],
+  "questions": [
+    {"code":"M5-0241","microSkill":"m5_frac_add_subtract","difficulty":1,"prompt":"Calcule 3/7 + 2/7.","choices":["5/7","5/14","1/7","6/7"],"correctIndex":0,"explanation":"Les dénominateurs sont identiques : 3/7 + 2/7 = 5/7."},
+    {"code":"M5-0242","microSkill":"m5_frac_add_subtract","difficulty":1,"prompt":"Calcule 5/6 − 1/6 et simplifie le résultat.","choices":["4/12","2/3","4/5","1/6"],"correctIndex":1,"explanation":"5/6 − 1/6 = 4/6 = 2/3."},
+    {"code":"M5-0243","microSkill":"m5_frac_add_subtract","difficulty":1,"prompt":"Calcule 1/2 + 1/3.","choices":["2/5","1/5","5/6","2/6"],"correctIndex":2,"explanation":"1/2 = 3/6 et 1/3 = 2/6, donc la somme vaut 5/6."},
+    {"code":"M5-0244","microSkill":"m5_frac_add_subtract","difficulty":1,"prompt":"Calcule 3/4 − 1/6.","choices":["2/2","2/10","1/2","7/12"],"correctIndex":3,"explanation":"3/4 = 9/12 et 1/6 = 2/12, donc la différence vaut 7/12."},
+    {"code":"M5-0245","microSkill":"m5_frac_add_subtract","difficulty":2,"prompt":"Calcule 2/5 + 3/10.","choices":["7/10","5/15","5/10","1/2"],"correctIndex":0,"explanation":"2/5 = 4/10, donc 4/10 + 3/10 = 7/10."},
+    {"code":"M5-0246","microSkill":"m5_frac_add_subtract","difficulty":2,"prompt":"Calcule 7/8 − 1/4.","choices":["6/4","5/8","6/8","3/4"],"correctIndex":1,"explanation":"1/4 = 2/8, donc 7/8 − 2/8 = 5/8."},
+    {"code":"M5-0247","microSkill":"m5_frac_add_subtract","difficulty":2,"prompt":"Calcule 5/6 + 7/9.","choices":["12/15","12/54","29/18","19/18"],"correctIndex":2,"explanation":"5/6 = 15/18 et 7/9 = 14/18, donc la somme vaut 29/18."},
+    {"code":"M5-0248","microSkill":"m5_frac_add_subtract","difficulty":2,"prompt":"Calcule 11/12 − 5/18.","choices":["6/6","6/30","13/36","23/36"],"correctIndex":3,"explanation":"11/12 = 33/36 et 5/18 = 10/36, donc la différence vaut 23/36."},
+    {"code":"M5-0249","microSkill":"m5_frac_add_subtract","difficulty":3,"prompt":"Calcule 2 − 3/5.","choices":["7/5","−1/5","1/5","2/5"],"correctIndex":0,"explanation":"2 = 10/5, donc 10/5 − 3/5 = 7/5."},
+    {"code":"M5-0250","microSkill":"m5_frac_add_subtract","difficulty":3,"prompt":"Calcule 1/2 + 3/4 − 1/3.","choices":["3/12","11/12","5/12","13/12"],"correctIndex":1,"explanation":"Avec le dénominateur 12 : 6/12 + 9/12 − 4/12 = 11/12."},
+
+    {"code":"M5-0251","microSkill":"m5_frac_solve_problem","difficulty":1,"prompt":"Maya mange 3/8 d’une pizza et Noé en mange 2/8. Quelle fraction de la pizza ont-ils mangée ensemble ?","choices":["5/16","1/8","5/8","6/8"],"correctIndex":2,"explanation":"3/8 + 2/8 = 5/8 de la pizza."},
+    {"code":"M5-0252","microSkill":"m5_frac_solve_problem","difficulty":1,"prompt":"Un réservoir est rempli aux 5/6. On utilise 1/4 de sa capacité totale. Quelle fraction de sa capacité reste remplie ?","choices":["4/2","4/10","3/6","7/12"],"correctIndex":3,"explanation":"5/6 − 1/4 = 10/12 − 3/12 = 7/12."},
+    {"code":"M5-0253","microSkill":"m5_frac_solve_problem","difficulty":1,"prompt":"Un marcheur parcourt 2/5 du trajet le matin et 1/3 l’après-midi. Quelle fraction du trajet a-t-il parcourue ?","choices":["11/15","3/8","3/5","7/15"],"correctIndex":0,"explanation":"2/5 + 1/3 = 6/15 + 5/15 = 11/15."},
+    {"code":"M5-0254","microSkill":"m5_frac_solve_problem","difficulty":2,"prompt":"Lina lit 3/10 d’un livre lundi et 1/4 mardi. Quelle fraction du livre a-t-elle lue en tout ?","choices":["4/14","11/20","4/10","7/20"],"correctIndex":1,"explanation":"3/10 + 1/4 = 6/20 + 5/20 = 11/20."},
+    {"code":"M5-0255","microSkill":"m5_frac_solve_problem","difficulty":2,"prompt":"Un ruban mesure 7/8 m. On en coupe 1/3 m. Quelle longueur reste-t-il ?","choices":["6/5 m","2/5 m","13/24 m","5/24 m"],"correctIndex":2,"explanation":"7/8 − 1/3 = 21/24 − 8/24 = 13/24 m."},
+    {"code":"M5-0256","microSkill":"m5_frac_solve_problem","difficulty":2,"prompt":"Une recette utilise 3/4 kg de farine et 1/6 kg de flocons d’avoine. Quelle masse totale est utilisée ?","choices":["4/10 kg","2/3 kg","5/12 kg","11/12 kg"],"correctIndex":3,"explanation":"3/4 + 1/6 = 9/12 + 2/12 = 11/12 kg."},
+    {"code":"M5-0257","microSkill":"m5_frac_solve_problem","difficulty":2,"prompt":"Un cycliste parcourt 2/7 d’un trajet avant la pause et 3/5 après la pause. Quelle fraction du trajet parcourt-il au total ?","choices":["31/35","5/12","5/35","29/35"],"correctIndex":0,"explanation":"2/7 + 3/5 = 10/35 + 21/35 = 31/35."},
+    {"code":"M5-0258","microSkill":"m5_frac_solve_problem","difficulty":3,"prompt":"Une famille consacre 5/12 de son budget au logement et 1/4 aux transports. Quelle fraction du budget cela représente-t-il ?","choices":["6/16","2/3","3/8","7/12"],"correctIndex":1,"explanation":"5/12 + 1/4 = 5/12 + 3/12 = 8/12 = 2/3."},
+    {"code":"M5-0259","microSkill":"m5_frac_solve_problem","difficulty":3,"prompt":"Un récipient est rempli aux 4/5 de sa capacité. On retire une quantité égale à 1/3 de sa capacité. Quelle fraction de la capacité reste dans le récipient ?","choices":["3/2","5/15","7/15","11/15"],"correctIndex":2,"explanation":"4/5 − 1/3 = 12/15 − 5/15 = 7/15."},
+    {"code":"M5-0260","microSkill":"m5_frac_solve_problem","difficulty":3,"prompt":"Dans une classe, 2/5 des élèves viennent en bus et 1/4 viennent à pied. Les autres viennent autrement. Quelle fraction des élèves vient autrement ?","choices":["3/20","13/20","1/5","7/20"],"correctIndex":3,"explanation":"1 − 2/5 − 1/4 = 20/20 − 8/20 − 5/20 = 7/20."}
+  ]
+}
