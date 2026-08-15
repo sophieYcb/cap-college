@@ -1,0 +1,32 @@
+{
+ "format":"cap-college-question-draft-v1","subject":"mathematics","level":"5e",
+ "domain":{"code":"cycle4_numbers_calculation","name":"Nombres et calculs"},
+ "skill":{"code":"m5_powers","name":"Puissances"},"lot":"M5-POW-01","status":"draft",
+ "source":"Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+ "microSkills":[
+  {"code":"m5_pow_square_cube","teacherName":"Comprendre les notations carré et cube","studentName":"Comprendre le carré et le cube","lessonReminder":"Le carré d’un nombre est le produit de ce nombre par lui-même. Son cube est le produit de trois facteurs égaux à ce nombre.","workedExample":"5² = 5 × 5 et 5³ = 5 × 5 × 5.","masteryCriteria":"Lire et interpréter correctement les notations au carré et au cube."},
+  {"code":"m5_pow_squares_0_12","teacherName":"Connaître les carrés des entiers de 0 à 12","studentName":"Connaître les carrés de 0 à 12","lessonReminder":"Les carrés des entiers de 0 à 12 sont à connaître ou à retrouver en multipliant chaque entier par lui-même.","workedExample":"8² = 8 × 8 = 64.","masteryCriteria":"Donner ou reconnaître rapidement les carrés des entiers de 0 à 12."}
+ ],
+ "questions":[
+  {"code":"M5-0261","microSkill":"m5_pow_square_cube","difficulty":1,"prompt":"Que signifie 5² ?","choices":["5 × 5","5 + 5","2 × 5","5 × 2"],"correctIndex":0,"explanation":"5² signifie 5 × 5."},
+  {"code":"M5-0262","microSkill":"m5_pow_square_cube","difficulty":1,"prompt":"Que signifie 3³ ?","choices":["3 × 3","3 × 3 × 3","3 + 3 + 3","3 × 2"],"correctIndex":1,"explanation":"3³ signifie 3 × 3 × 3."},
+  {"code":"M5-0263","microSkill":"m5_pow_square_cube","difficulty":1,"prompt":"Comment lit-on 7² ?","choices":["sept fois deux","sept au cube","sept au carré","deux puissance sept"],"correctIndex":2,"explanation":"L’exposant 2 se lit « au carré »."},
+  {"code":"M5-0264","microSkill":"m5_pow_square_cube","difficulty":1,"prompt":"Comment lit-on 4³ ?","choices":["quatre au carré","trois puissance quatre","quatre fois trois","quatre au cube"],"correctIndex":3,"explanation":"L’exposant 3 se lit « au cube »."},
+  {"code":"M5-0265","microSkill":"m5_pow_square_cube","difficulty":2,"prompt":"Dans 9², quel nombre est l’exposant ?","choices":["2","9","18","81"],"correctIndex":0,"explanation":"Dans 9², 9 est la base et 2 est l’exposant."},
+  {"code":"M5-0266","microSkill":"m5_pow_square_cube","difficulty":2,"prompt":"Dans 6³, quel nombre est la base ?","choices":["3","6","18","216"],"correctIndex":1,"explanation":"Dans 6³, la base est 6."},
+  {"code":"M5-0267","microSkill":"m5_pow_square_cube","difficulty":2,"prompt":"Quelle affirmation est correcte ?","choices":["8² = 8 × 2","8² = 8 + 8","8² = 8 × 8","8² = 2 × 2 × 2 × 2"],"correctIndex":2,"explanation":"Le carré de 8 est le produit de deux facteurs égaux à 8."},
+  {"code":"M5-0268","microSkill":"m5_pow_square_cube","difficulty":2,"prompt":"Quelle affirmation est correcte ?","choices":["2³ = 2 × 3","2³ = 2 + 2 + 2","2³ = 3 × 3","2³ = 2 × 2 × 2"],"correctIndex":3,"explanation":"Le cube de 2 est le produit de trois facteurs égaux à 2."},
+  {"code":"M5-0269","microSkill":"m5_pow_square_cube","difficulty":3,"prompt":"Quelle notation représente le cube de 10 ?","choices":["10³","3¹⁰","10²","10 × 3"],"correctIndex":0,"explanation":"Le cube de 10 se note 10³."},
+  {"code":"M5-0270","microSkill":"m5_pow_square_cube","difficulty":3,"prompt":"Quelle notation représente le carré de 12 ?","choices":["2¹²","12²","12³","12 × 2"],"correctIndex":1,"explanation":"Le carré de 12 se note 12²."},
+  {"code":"M5-0271","microSkill":"m5_pow_squares_0_12","difficulty":1,"prompt":"Calcule 0².","choices":["1","2","0","Impossible"],"correctIndex":2,"explanation":"0² = 0 × 0 = 0."},
+  {"code":"M5-0272","microSkill":"m5_pow_squares_0_12","difficulty":1,"prompt":"Calcule 1².","choices":["0","2","−1","1"],"correctIndex":3,"explanation":"1² = 1 × 1 = 1."},
+  {"code":"M5-0273","microSkill":"m5_pow_squares_0_12","difficulty":1,"prompt":"Calcule 5².","choices":["25","10","15","20"],"correctIndex":0,"explanation":"5² = 5 × 5 = 25."},
+  {"code":"M5-0274","microSkill":"m5_pow_squares_0_12","difficulty":1,"prompt":"Calcule 7².","choices":["14","49","21","42"],"correctIndex":1,"explanation":"7² = 7 × 7 = 49."},
+  {"code":"M5-0275","microSkill":"m5_pow_squares_0_12","difficulty":2,"prompt":"Quel entier positif a pour carré 81 ?","choices":["8","10","9","7"],"correctIndex":2,"explanation":"9² = 81."},
+  {"code":"M5-0276","microSkill":"m5_pow_squares_0_12","difficulty":2,"prompt":"Quel entier positif a pour carré 121 ?","choices":["10","12","9","11"],"correctIndex":3,"explanation":"11² = 121."},
+  {"code":"M5-0277","microSkill":"m5_pow_squares_0_12","difficulty":2,"prompt":"Calcule 12².","choices":["144","24","124","122"],"correctIndex":0,"explanation":"12² = 12 × 12 = 144."},
+  {"code":"M5-0278","microSkill":"m5_pow_squares_0_12","difficulty":2,"prompt":"Lequel de ces nombres est le carré de 8 ?","choices":["16","64","48","32"],"correctIndex":1,"explanation":"8² = 64."},
+  {"code":"M5-0279","microSkill":"m5_pow_squares_0_12","difficulty":3,"prompt":"Quel calcul est correct ?","choices":["6² = 12","6² = 18","6² = 36","6² = 216"],"correctIndex":2,"explanation":"6² = 6 × 6 = 36."},
+  {"code":"M5-0280","microSkill":"m5_pow_squares_0_12","difficulty":3,"prompt":"Quel rangement est croissant ?","choices":["4² < 2² < 3²","3² < 2² < 4²","4² < 3² < 2²","2² < 3² < 4²"],"correctIndex":3,"explanation":"2² = 4, 3² = 9 et 4² = 16."}
+ ]
+}
