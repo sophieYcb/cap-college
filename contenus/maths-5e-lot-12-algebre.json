@@ -1,0 +1,612 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_numbers_calculation",
+                   "name":  "Nombres et calculs"
+               },
+    "skill":  {
+                  "code":  "m5_algebra",
+                  "name":  "Calcul littéral et algébrique"
+              },
+    "lot":  "M5-ALG-02",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_alg_sum_product",
+                            "teacherName":  "Reconnaître si une expression est une somme ou un produit",
+                            "studentName":  "Reconnaître une somme ou un produit",
+                            "lessonReminder":  "Une expression est une somme si sa dernière opération est une addition ou une soustraction. Elle est un produit si sa dernière opération est une multiplication.",
+                            "workedExample":  "3x + 5 est une somme ; 3(x + 5) est un produit.",
+                            "masteryCriteria":  "Identifier la nature de expression et ses termes ou facteurs."
+                        },
+                        {
+                            "code":  "m5_alg_expand",
+                            "teacherName":  "Développer avec la distributivité simple",
+                            "studentName":  "Développer une expression",
+                            "lessonReminder":  "Développer transforme un produit en somme grâce à k(a + b) = ka + kb.",
+                            "workedExample":  "3(x + 4) = 3x + 12.",
+                            "masteryCriteria":  "Développer correctement avec la distributivité simple."
+                        },
+                        {
+                            "code":  "m5_alg_factor",
+                            "teacherName":  "Factoriser avec la distributivité simple",
+                            "studentName":  "Mettre un facteur commun en évidence",
+                            "lessonReminder":  "Factoriser transforme une somme en produit en repérant un facteur commun : ka + kb = k(a + b).",
+                            "workedExample":  "5x + 15 = 5(x + 3).",
+                            "masteryCriteria":  "Repérer le facteur commun et écrire une forme factorisée correcte."
+                        },
+                        {
+                            "code":  "m5_alg_reduce_ax_b",
+                            "teacherName":  "Réduire une expression de la forme ax + b",
+                            "studentName":  "Regrouper les termes semblables",
+                            "lessonReminder":  "Réduire consiste à regrouper les termes en x et les nombres constants.",
+                            "workedExample":  "3x + 5 + 2x + 1 = 5x + 6.",
+                            "masteryCriteria":  "Réduire correctement une expression littérale simple."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0351",
+                          "microSkill":  "m5_alg_sum_product",
+                          "difficulty":  1,
+                          "prompt":  "Dans la somme 7 + 13, quels sont les deux termes ?",
+                          "choices":  [
+                                          "7 et 13",
+                                          "20 et 13",
+                                          "7 et 20",
+                                          "13 et 20"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les nombres ajoutés 7 et 13 sont les termes de la somme."
+                      },
+                      {
+                          "code":  "M5-0352",
+                          "microSkill":  "m5_alg_sum_product",
+                          "difficulty":  1,
+                          "prompt":  "Dans le produit 4 × 9, quels sont les deux facteurs ?",
+                          "choices":  [
+                                          "13 et 9",
+                                          "4 et 9",
+                                          "4 et 36",
+                                          "36 et 9"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Les nombres multipliés 4 et 9 sont les facteurs du produit."
+                      },
+                      {
+                          "code":  "M5-0353",
+                          "microSkill":  "m5_alg_sum_product",
+                          "difficulty":  1,
+                          "prompt":  "Laquelle de ces expressions est un produit ?",
+                          "choices":  [
+                                          "6 + 8 + 2",
+                                          "6 × 8 + 2",
+                                          "6 × (8 + 2)",
+                                          "6 + 8 × 2"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Dans 6 × (8 + 2), la dernière opération à effectuer est la multiplication : l’expression est un produit."
+                      },
+                      {
+                          "code":  "M5-0354",
+                          "microSkill":  "m5_alg_sum_product",
+                          "difficulty":  1,
+                          "prompt":  "Laquelle de ces expressions est une somme ?",
+                          "choices":  [
+                                          "5 × (7 + 3)",
+                                          "(5 + 7) × 3",
+                                          "5 × 7 × 3",
+                                          "5 × 7 + 3"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Dans 5 × 7 + 3, la dernière opération est l’addition : l’expression est une somme."
+                      },
+                      {
+                          "code":  "M5-0355",
+                          "microSkill":  "m5_alg_sum_product",
+                          "difficulty":  2,
+                          "prompt":  "Dans l’expression 12 × 5 + 8, quels sont les termes de la somme ?",
+                          "choices":  [
+                                          "12 × 5 et 8",
+                                          "12 et 5",
+                                          "5 et 8",
+                                          "12 et 8"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "L’expression entière est la somme de 12 × 5 et de 8."
+                      },
+                      {
+                          "code":  "M5-0356",
+                          "microSkill":  "m5_alg_sum_product",
+                          "difficulty":  2,
+                          "prompt":  "Dans l’expression 3 × (10 + 4), quels sont les facteurs du produit ?",
+                          "choices":  [
+                                          "3, 10 et 4",
+                                          "3 et 10 + 4",
+                                          "10 et 4",
+                                          "3 et 10"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Les deux facteurs écrits sont 3 et l’expression 10 + 4."
+                      },
+                      {
+                          "code":  "M5-0357",
+                          "microSkill":  "m5_alg_sum_product",
+                          "difficulty":  2,
+                          "prompt":  "Dans l’expression 5 × 6 + 2 × 9, quels sont les termes de la somme ?",
+                          "choices":  [
+                                          "5 et 6",
+                                          "2 et 9",
+                                          "5 × 6 et 2 × 9",
+                                          "5 × 6 × 2 et 9"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "La dernière opération est l’addition ; ses termes sont les deux produits 5 × 6 et 2 × 9."
+                      },
+                      {
+                          "code":  "M5-0358",
+                          "microSkill":  "m5_alg_sum_product",
+                          "difficulty":  2,
+                          "prompt":  "Dans l’expression 2 × 5 × 11, quels sont les facteurs ?",
+                          "choices":  [
+                                          "2 et 5 seulement",
+                                          "5 et 11 seulement",
+                                          "2 et 11 seulement",
+                                          "2, 5 et 11"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Les trois nombres 2, 5 et 11 sont multipliés : ce sont les facteurs."
+                      },
+                      {
+                          "code":  "M5-0359",
+                          "microSkill":  "m5_alg_sum_product",
+                          "difficulty":  3,
+                          "prompt":  "Quelle expression est la somme du produit de 6 par 4 et du produit de 3 par 5 ?",
+                          "choices":  [
+                                          "6 × 4 + 3 × 5",
+                                          "(6 + 4) × (3 + 5)",
+                                          "6 × (4 + 3) × 5",
+                                          "6 + 4 × 3 + 5"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les deux produits 6 × 4 et 3 × 5 sont les termes de la somme."
+                      },
+                      {
+                          "code":  "M5-0360",
+                          "microSkill":  "m5_alg_sum_product",
+                          "difficulty":  3,
+                          "prompt":  "Dans l’expression (8 + 2) × (7 − 3), quels sont les facteurs du produit ?",
+                          "choices":  [
+                                          "8 + 2, 7 et 3",
+                                          "8 + 2 et 7 − 3",
+                                          "8, 2, 7 et 3",
+                                          "10 et 7 uniquement"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Les deux facteurs sont les expressions entre parenthèses 8 + 2 et 7 − 3."
+                      },
+                      {
+                          "code":  "M5-0361",
+                          "microSkill":  "m5_alg_expand",
+                          "difficulty":  1,
+                          "prompt":  "Développe 3(1x + 4).",
+                          "choices":  [
+                                          "3x + 4",
+                                          "4x + 12",
+                                          "3x + 12",
+                                          "3x + 7"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "3(1x + 4) = 3x + 12."
+                      },
+                      {
+                          "code":  "M5-0362",
+                          "microSkill":  "m5_alg_expand",
+                          "difficulty":  1,
+                          "prompt":  "Développe 5(2x + 3).",
+                          "choices":  [
+                                          "10x + 3",
+                                          "7x + 15",
+                                          "10x + 8",
+                                          "10x + 15"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "5(2x + 3) = 10x + 15."
+                      },
+                      {
+                          "code":  "M5-0363",
+                          "microSkill":  "m5_alg_expand",
+                          "difficulty":  1,
+                          "prompt":  "Développe 2(1x + 7).",
+                          "choices":  [
+                                          "2x + 14",
+                                          "2x + 7",
+                                          "3x + 14",
+                                          "2x + 9"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "2(1x + 7) = 2x + 14."
+                      },
+                      {
+                          "code":  "M5-0364",
+                          "microSkill":  "m5_alg_expand",
+                          "difficulty":  1,
+                          "prompt":  "Développe 4(3x + 2).",
+                          "choices":  [
+                                          "12x + 2",
+                                          "12x + 8",
+                                          "7x + 8",
+                                          "12x + 6"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "4(3x + 2) = 12x + 8."
+                      },
+                      {
+                          "code":  "M5-0365",
+                          "microSkill":  "m5_alg_expand",
+                          "difficulty":  2,
+                          "prompt":  "Développe 7(1x + 2).",
+                          "choices":  [
+                                          "7x + 2",
+                                          "8x + 14",
+                                          "7x + 14",
+                                          "7x + 9"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "7(1x + 2) = 7x + 14."
+                      },
+                      {
+                          "code":  "M5-0366",
+                          "microSkill":  "m5_alg_expand",
+                          "difficulty":  2,
+                          "prompt":  "Développe 3(2x + 5).",
+                          "choices":  [
+                                          "6x + 5",
+                                          "5x + 15",
+                                          "6x + 8",
+                                          "6x + 15"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "3(2x + 5) = 6x + 15."
+                      },
+                      {
+                          "code":  "M5-0367",
+                          "microSkill":  "m5_alg_expand",
+                          "difficulty":  2,
+                          "prompt":  "Développe 2(5x + 1).",
+                          "choices":  [
+                                          "10x + 2",
+                                          "10x + 1",
+                                          "7x + 2",
+                                          "10x + 3"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "2(5x + 1) = 10x + 2."
+                      },
+                      {
+                          "code":  "M5-0368",
+                          "microSkill":  "m5_alg_expand",
+                          "difficulty":  2,
+                          "prompt":  "Développe 6(2x + 4).",
+                          "choices":  [
+                                          "12x + 4",
+                                          "12x + 24",
+                                          "8x + 24",
+                                          "12x + 10"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "6(2x + 4) = 12x + 24."
+                      },
+                      {
+                          "code":  "M5-0369",
+                          "microSkill":  "m5_alg_expand",
+                          "difficulty":  3,
+                          "prompt":  "Développe 4(4x + 3).",
+                          "choices":  [
+                                          "16x + 3",
+                                          "8x + 12",
+                                          "16x + 12",
+                                          "16x + 7"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "4(4x + 3) = 16x + 12."
+                      },
+                      {
+                          "code":  "M5-0370",
+                          "microSkill":  "m5_alg_expand",
+                          "difficulty":  3,
+                          "prompt":  "Développe 8(2x + 5).",
+                          "choices":  [
+                                          "16x + 5",
+                                          "10x + 40",
+                                          "16x + 13",
+                                          "16x + 40"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "8(2x + 5) = 16x + 40."
+                      },
+                      {
+                          "code":  "M5-0371",
+                          "microSkill":  "m5_alg_factor",
+                          "difficulty":  1,
+                          "prompt":  "Factorise 3x + 12.",
+                          "choices":  [
+                                          "3(1x + 4)",
+                                          "3(1x + 12)",
+                                          "4(x + 4)",
+                                          "12(1x + 1)"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le facteur commun 3 donne 3x + 12 = 3(1x + 4)."
+                      },
+                      {
+                          "code":  "M5-0372",
+                          "microSkill":  "m5_alg_factor",
+                          "difficulty":  1,
+                          "prompt":  "Factorise 10x + 15.",
+                          "choices":  [
+                                          "5(2x + 15)",
+                                          "5(2x + 3)",
+                                          "11(x + 3)",
+                                          "15(2x + 1)"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le facteur commun 5 donne 10x + 15 = 5(2x + 3)."
+                      },
+                      {
+                          "code":  "M5-0373",
+                          "microSkill":  "m5_alg_factor",
+                          "difficulty":  1,
+                          "prompt":  "Factorise 8x + 20.",
+                          "choices":  [
+                                          "4(2x + 20)",
+                                          "9(x + 5)",
+                                          "4(2x + 5)",
+                                          "20(2x + 1)"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le facteur commun 4 donne 8x + 20 = 4(2x + 5)."
+                      },
+                      {
+                          "code":  "M5-0374",
+                          "microSkill":  "m5_alg_factor",
+                          "difficulty":  1,
+                          "prompt":  "Factorise 6x + 18.",
+                          "choices":  [
+                                          "6(1x + 18)",
+                                          "7(x + 3)",
+                                          "18(1x + 1)",
+                                          "6(1x + 3)"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le facteur commun 6 donne 6x + 18 = 6(1x + 3)."
+                      },
+                      {
+                          "code":  "M5-0375",
+                          "microSkill":  "m5_alg_factor",
+                          "difficulty":  2,
+                          "prompt":  "Factorise 7x + 14.",
+                          "choices":  [
+                                          "7(1x + 2)",
+                                          "7(1x + 14)",
+                                          "8(x + 2)",
+                                          "14(1x + 1)"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le facteur commun 7 donne 7x + 14 = 7(1x + 2)."
+                      },
+                      {
+                          "code":  "M5-0376",
+                          "microSkill":  "m5_alg_factor",
+                          "difficulty":  2,
+                          "prompt":  "Factorise 12x + 8.",
+                          "choices":  [
+                                          "4(3x + 8)",
+                                          "4(3x + 2)",
+                                          "13(x + 2)",
+                                          "8(3x + 1)"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le facteur commun 4 donne 12x + 8 = 4(3x + 2)."
+                      },
+                      {
+                          "code":  "M5-0377",
+                          "microSkill":  "m5_alg_factor",
+                          "difficulty":  2,
+                          "prompt":  "Factorise 15x + 25.",
+                          "choices":  [
+                                          "5(3x + 25)",
+                                          "16(x + 5)",
+                                          "5(3x + 5)",
+                                          "25(3x + 1)"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le facteur commun 5 donne 15x + 25 = 5(3x + 5)."
+                      },
+                      {
+                          "code":  "M5-0378",
+                          "microSkill":  "m5_alg_factor",
+                          "difficulty":  2,
+                          "prompt":  "Factorise 9x + 27.",
+                          "choices":  [
+                                          "9(1x + 27)",
+                                          "10(x + 3)",
+                                          "27(1x + 1)",
+                                          "9(1x + 3)"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le facteur commun 9 donne 9x + 27 = 9(1x + 3)."
+                      },
+                      {
+                          "code":  "M5-0379",
+                          "microSkill":  "m5_alg_factor",
+                          "difficulty":  3,
+                          "prompt":  "Factorise 4x + 4.",
+                          "choices":  [
+                                          "4(1x + 1)",
+                                          "4(1x + 4)",
+                                          "5(x + 1)",
+                                          "4(1x + 1)"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le facteur commun 4 donne 4x + 4 = 4(1x + 1)."
+                      },
+                      {
+                          "code":  "M5-0380",
+                          "microSkill":  "m5_alg_factor",
+                          "difficulty":  3,
+                          "prompt":  "Factorise 14x + 21.",
+                          "choices":  [
+                                          "7(2x + 21)",
+                                          "7(2x + 3)",
+                                          "15(x + 3)",
+                                          "21(2x + 1)"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le facteur commun 7 donne 14x + 21 = 7(2x + 3)."
+                      },
+                      {
+                          "code":  "M5-0381",
+                          "microSkill":  "m5_alg_reduce_ax_b",
+                          "difficulty":  1,
+                          "prompt":  "Réduis 3x + 4 + 2x + 5.",
+                          "choices":  [
+                                          "6x + 9",
+                                          "5x + 20",
+                                          "5x + 9",
+                                          "7x + 7"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On regroupe les termes semblables : 5x + 9."
+                      },
+                      {
+                          "code":  "M5-0382",
+                          "microSkill":  "m5_alg_reduce_ax_b",
+                          "difficulty":  1,
+                          "prompt":  "Réduis 7x + 5 + 3x + 2.",
+                          "choices":  [
+                                          "21x + 7",
+                                          "10x + 10",
+                                          "12x + 5",
+                                          "10x + 7"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On regroupe les termes semblables : 10x + 7."
+                      },
+                      {
+                          "code":  "M5-0383",
+                          "microSkill":  "m5_alg_reduce_ax_b",
+                          "difficulty":  1,
+                          "prompt":  "Réduis 2x + 6 + 3x + 1.",
+                          "choices":  [
+                                          "5x + 7",
+                                          "6x + 7",
+                                          "5x + 6",
+                                          "8x + 4"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On regroupe les termes semblables : 5x + 7."
+                      },
+                      {
+                          "code":  "M5-0384",
+                          "microSkill":  "m5_alg_reduce_ax_b",
+                          "difficulty":  1,
+                          "prompt":  "Réduis 9x + 2 + 1x + 4.",
+                          "choices":  [
+                                          "9x + 6",
+                                          "10x + 6",
+                                          "10x + 8",
+                                          "11x + 5"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On regroupe les termes semblables : 10x + 6."
+                      },
+                      {
+                          "code":  "M5-0385",
+                          "microSkill":  "m5_alg_reduce_ax_b",
+                          "difficulty":  2,
+                          "prompt":  "Réduis 4x + 3 + 2x + 5.",
+                          "choices":  [
+                                          "8x + 8",
+                                          "6x + 15",
+                                          "6x + 8",
+                                          "7x + 7"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On regroupe les termes semblables : 6x + 8."
+                      },
+                      {
+                          "code":  "M5-0386",
+                          "microSkill":  "m5_alg_reduce_ax_b",
+                          "difficulty":  2,
+                          "prompt":  "Réduis 10x + 7 + 4x + 2.",
+                          "choices":  [
+                                          "40x + 9",
+                                          "14x + 14",
+                                          "17x + 6",
+                                          "14x + 9"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On regroupe les termes semblables : 14x + 9."
+                      },
+                      {
+                          "code":  "M5-0387",
+                          "microSkill":  "m5_alg_reduce_ax_b",
+                          "difficulty":  2,
+                          "prompt":  "Réduis 5x + 2 + 1x + 6.",
+                          "choices":  [
+                                          "6x + 8",
+                                          "5x + 8",
+                                          "6x + 12",
+                                          "7x + 7"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On regroupe les termes semblables : 6x + 8."
+                      },
+                      {
+                          "code":  "M5-0388",
+                          "microSkill":  "m5_alg_reduce_ax_b",
+                          "difficulty":  2,
+                          "prompt":  "Réduis 3x + 4 + 6x + 1.",
+                          "choices":  [
+                                          "18x + 5",
+                                          "9x + 5",
+                                          "9x + 4",
+                                          "7x + 7"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On regroupe les termes semblables : 9x + 5."
+                      },
+                      {
+                          "code":  "M5-0389",
+                          "microSkill":  "m5_alg_reduce_ax_b",
+                          "difficulty":  3,
+                          "prompt":  "Réduis 2x + 7 + 5x + 2.",
+                          "choices":  [
+                                          "10x + 9",
+                                          "7x + 14",
+                                          "7x + 9",
+                                          "9x + 7"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On regroupe les termes semblables : 7x + 9."
+                      },
+                      {
+                          "code":  "M5-0390",
+                          "microSkill":  "m5_alg_reduce_ax_b",
+                          "difficulty":  3,
+                          "prompt":  "Réduis 8x + 3 + 5x + 2.",
+                          "choices":  [
+                                          "40x + 5",
+                                          "13x + 6",
+                                          "11x + 7",
+                                          "13x + 5"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On regroupe les termes semblables : 13x + 5."
+                      }
+                  ]
+}
