@@ -271,7 +271,7 @@ function exportJSON(){const payload={format:'cap-college-quality-review',applica
 function correctionRows(){
  return QUESTIONS.filter(q=>{
   const r=reviewFor(q.id);
-  return isCurrentReview(q,r)&&(['B','C','D'].includes(r.rating)||Boolean((r.comment||'').trim()));
+  return isCurrentReview(q,r)&&['B','C','D'].includes(r.rating);
  }).map(q=>{
   const r=reviewFor(q.id);
   const previousChoices=q.previous?.choices||[];
@@ -326,7 +326,7 @@ async function resolveCurrentQuestionFlags(){
 function exportCorrections(){
  const questions=correctionRows();
  if(!questions.length){
-  setExportStatus('Aucune question B, C, D ou commentée à exporter.');
+  setExportStatus('Aucune question notée B, C ou D à exporter.');
   return;
  }
  const payload={
