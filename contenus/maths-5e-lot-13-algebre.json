@@ -1,0 +1,464 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_numbers_calculation",
+                   "name":  "Nombres et calculs"
+               },
+    "skill":  {
+                  "code":  "m5_algebra",
+                  "name":  "Calcul littéral et algébrique"
+              },
+    "lot":  "M5-ALG-03",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_alg_prove_refute",
+                            "teacherName":  "Valider ou réfuter une affirmation mathématique",
+                            "studentName":  "Dire si une affirmation est toujours vraie",
+                            "lessonReminder":  "Pour valider une affirmation générale, il faut un raisonnement qui couvre tous les cas. Pour la réfuter, un seul contre-exemple suffit.",
+                            "workedExample":  "« Le carré de tout nombre est strictement positif » est faux : pour 0, le carré vaut 0.",
+                            "masteryCriteria":  "Choisir un argument valide ou un contre-exemple pertinent et conclure correctement."
+                        },
+                        {
+                            "code":  "m5_alg_model_equation",
+                            "teacherName":  "Mettre un problème en équation simple",
+                            "studentName":  "Traduire un problème par une équation",
+                            "lessonReminder":  "On choisit une lettre pour représenter la quantité inconnue, puis on traduit les relations du problème par des opérations et un signe égal.",
+                            "workedExample":  "Un nombre augmenté de 5 vaut 17 : si x désigne ce nombre, x + 5 = 17.",
+                            "masteryCriteria":  "Identifier la quantité inconnue et écrire une équation fidèle à la situation."
+                        },
+                        {
+                            "code":  "m5_alg_solve_simple_equation",
+                            "teacherName":  "Résoudre une équation simple par les opérations inverses",
+                            "studentName":  "Trouver la valeur inconnue dans une équation",
+                            "lessonReminder":  "On effectue la même opération sur les deux membres pour isoler la lettre. Addition et soustraction, multiplication et division sont des opérations inverses.",
+                            "workedExample":  "3x + 2 = 14 donne 3x = 12, puis x = 4.",
+                            "masteryCriteria":  "Résoudre une équation simple et vérifier la solution par substitution."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0391",
+                          "microSkill":  "m5_alg_prove_refute",
+                          "difficulty":  1,
+                          "prompt":  "Quelle affirmation est toujours vraie ?",
+                          "choices":  [
+                                          "La somme de deux nombres impairs est paire.",
+                                          "La somme de deux nombres impairs est impaire.",
+                                          "Le produit de deux nombres impairs est pair.",
+                                          "Tout nombre impair est négatif."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Deux nombres impairs peuvent s’écrire 2a + 1 et 2b + 1 ; leur somme vaut 2(a + b + 1), qui est paire."
+                      },
+                      {
+                          "code":  "M5-0392",
+                          "microSkill":  "m5_alg_prove_refute",
+                          "difficulty":  1,
+                          "prompt":  "Quel nombre réfute l’affirmation « le carré d’un nombre est toujours strictement supérieur à ce nombre » ?",
+                          "choices":  [
+                                          "2",
+                                          "1",
+                                          "−2",
+                                          "3"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Pour 1, on a 1² = 1 : le carré n’est pas strictement supérieur au nombre."
+                      },
+                      {
+                          "code":  "M5-0393",
+                          "microSkill":  "m5_alg_prove_refute",
+                          "difficulty":  1,
+                          "prompt":  "Pourquoi tout multiple de 4 est-il pair ?",
+                          "choices":  [
+                                          "Parce que 4 est impair.",
+                                          "Parce que tout multiple est pair.",
+                                          "Parce que 4n = 2 × (2n).",
+                                          "Parce que 4n est toujours multiple de 3."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Un multiple de 4 s’écrit 4n = 2 × (2n), donc il est divisible par 2."
+                      },
+                      {
+                          "code":  "M5-0394",
+                          "microSkill":  "m5_alg_prove_refute",
+                          "difficulty":  1,
+                          "prompt":  "Quelle affirmation est toujours vraie ?",
+                          "choices":  [
+                                          "La somme de deux nombres négatifs est positive.",
+                                          "La somme de deux nombres négatifs est nulle.",
+                                          "La somme de deux nombres négatifs peut être positive.",
+                                          "La somme de deux nombres négatifs est négative."
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "En additionnant deux nombres négatifs, on obtient toujours un nombre négatif."
+                      },
+                      {
+                          "code":  "M5-0395",
+                          "microSkill":  "m5_alg_prove_refute",
+                          "difficulty":  2,
+                          "prompt":  "Quel exemple réfute l’affirmation « le produit de deux nombres négatifs est négatif » ?",
+                          "choices":  [
+                                          "(−2) × (−3) = 6",
+                                          "(−2) × 3 = −6",
+                                          "2 × (−3) = −6",
+                                          "2 × 3 = 6"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le produit de deux nombres négatifs est positif ; (−2) × (−3) = 6 réfute l’affirmation."
+                      },
+                      {
+                          "code":  "M5-0396",
+                          "microSkill":  "m5_alg_prove_refute",
+                          "difficulty":  2,
+                          "prompt":  "Pour tout nombre x, pourquoi x + 5 est-il supérieur à x ?",
+                          "choices":  [
+                                          "Parce que x est toujours positif.",
+                                          "Parce qu’on ajoute le nombre positif 5.",
+                                          "Parce que x + 5 = 5x.",
+                                          "Cette affirmation est fausse pour x négatif."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Ajouter un nombre strictement positif augmente toujours la valeur initiale."
+                      },
+                      {
+                          "code":  "M5-0397",
+                          "microSkill":  "m5_alg_prove_refute",
+                          "difficulty":  2,
+                          "prompt":  "Un rectangle mesure 4 cm de longueur et 3 cm de largeur. Sa longueur passe à 8 cm. Quel résultat réfute affirmation « doubler la longueur double le périmètre » ?",
+                          "choices":  [
+                                          "Le périmètre passe de 14 cm à 28 cm.",
+                                          "Le périmètre passe de 7 cm à 14 cm.",
+                                          "Le périmètre passe de 14 cm à 22 cm.",
+                                          "Le périmètre passe de 12 cm à 24 cm."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le périmètre initial vaut 14 cm et le nouveau vaut 22 cm : il ne double pas."
+                      },
+                      {
+                          "code":  "M5-0398",
+                          "microSkill":  "m5_alg_prove_refute",
+                          "difficulty":  2,
+                          "prompt":  "Pourquoi le produit de deux entiers consécutifs est-il toujours pair ?",
+                          "choices":  [
+                                          "Les deux entiers sont toujours pairs.",
+                                          "Leur somme est toujours paire.",
+                                          "Leur produit est toujours nul.",
+                                          "L’un des deux entiers consécutifs est pair."
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Deux entiers consécutifs sont de parités différentes ; leur produit contient donc un facteur pair."
+                      },
+                      {
+                          "code":  "M5-0399",
+                          "microSkill":  "m5_alg_prove_refute",
+                          "difficulty":  3,
+                          "prompt":  "Si a et b sont positifs et a \u003c b, quelle affirmation est vraie ?",
+                          "choices":  [
+                                          "a/b \u003c 1",
+                                          "a/b \u003e 1",
+                                          "a/b = 1",
+                                          "a/b \u003c 0"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Avec un numérateur positif plus petit que le dénominateur, la fraction est comprise entre 0 et 1."
+                      },
+                      {
+                          "code":  "M5-0400",
+                          "microSkill":  "m5_alg_prove_refute",
+                          "difficulty":  3,
+                          "prompt":  "Quel nombre réfute l’affirmation « le carré de tout entier est strictement positif » ?",
+                          "choices":  [
+                                          "−1",
+                                          "0",
+                                          "1",
+                                          "2"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "0² = 0, qui n’est pas strictement positif."
+                      },
+                      {
+                          "code":  "M5-0401",
+                          "microSkill":  "m5_alg_model_equation",
+                          "difficulty":  1,
+                          "prompt":  "Un nombre augmenté de 7 vaut 19. Quelle équation traduit la situation ?",
+                          "choices":  [
+                                          "7x = 19",
+                                          "x − 7 = 19",
+                                          "x + 7 = 19",
+                                          "x/7 = 19"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Si x est le nombre cherché, l’augmenter de 7 donne x + 7 = 19."
+                      },
+                      {
+                          "code":  "M5-0402",
+                          "microSkill":  "m5_alg_model_equation",
+                          "difficulty":  1,
+                          "prompt":  "Le triple d’un nombre vaut 24. Quelle équation traduit la situation ?",
+                          "choices":  [
+                                          "x + 3 = 24",
+                                          "x/3 = 24",
+                                          "x − 3 = 24",
+                                          "3x = 24"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le triple de x est 3x, donc 3x = 24."
+                      },
+                      {
+                          "code":  "M5-0403",
+                          "microSkill":  "m5_alg_model_equation",
+                          "difficulty":  1,
+                          "prompt":  "Un nombre diminué de 5 vaut 11. Quelle équation traduit la situation ?",
+                          "choices":  [
+                                          "x − 5 = 11",
+                                          "5 − x = 11",
+                                          "x + 5 = 11",
+                                          "5x = 11"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Diminuer x de 5 se traduit par x − 5."
+                      },
+                      {
+                          "code":  "M5-0404",
+                          "microSkill":  "m5_alg_model_equation",
+                          "difficulty":  1,
+                          "prompt":  "La moitié d’un nombre vaut 9. Quelle équation traduit la situation ?",
+                          "choices":  [
+                                          "2x = 9",
+                                          "x/2 = 9",
+                                          "x − 2 = 9",
+                                          "x + 2 = 9"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "La moitié de x est x/2."
+                      },
+                      {
+                          "code":  "M5-0405",
+                          "microSkill":  "m5_alg_model_equation",
+                          "difficulty":  2,
+                          "prompt":  "Un rectangle de longueur x et de largeur 3 a un périmètre de 20. Quelle équation traduit la situation ?",
+                          "choices":  [
+                                          "3x = 20",
+                                          "x + 3 = 20",
+                                          "2x + 6 = 20",
+                                          "6x = 20"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le périmètre vaut 2x + 2 × 3 = 2x + 6."
+                      },
+                      {
+                          "code":  "M5-0406",
+                          "microSkill":  "m5_alg_model_equation",
+                          "difficulty":  2,
+                          "prompt":  "Un taxi facture 4 € fixes et 2 € par kilomètre. Une course coûte 18 €. Quelle équation permet de trouver la distance d ?",
+                          "choices":  [
+                                          "4d + 2 = 18",
+                                          "6d = 18",
+                                          "2d − 4 = 18",
+                                          "2d + 4 = 18"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le prix total est 2d + 4 euros."
+                      },
+                      {
+                          "code":  "M5-0407",
+                          "microSkill":  "m5_alg_model_equation",
+                          "difficulty":  2,
+                          "prompt":  "La somme de deux entiers consécutifs vaut 31. Si x est le plus petit, quelle équation convient ?",
+                          "choices":  [
+                                          "x + (x + 1) = 31",
+                                          "x + 1 = 31",
+                                          "2x = 31",
+                                          "x(x + 1) = 31"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les deux entiers sont x et x + 1 ; leur somme vaut 31."
+                      },
+                      {
+                          "code":  "M5-0408",
+                          "microSkill":  "m5_alg_model_equation",
+                          "difficulty":  2,
+                          "prompt":  "Cinq de moins que le double d’un nombre donnent 17. Quelle équation convient ?",
+                          "choices":  [
+                                          "2(x − 5) = 17",
+                                          "2x − 5 = 17",
+                                          "5 − 2x = 17",
+                                          "2x + 5 = 17"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le double de x est 2x ; cinq de moins donnent 2x − 5."
+                      },
+                      {
+                          "code":  "M5-0409",
+                          "microSkill":  "m5_alg_model_equation",
+                          "difficulty":  3,
+                          "prompt":  "Dans 4 ans, Milo aura 18 ans. Si x est son âge actuel, quelle équation convient ?",
+                          "choices":  [
+                                          "4x = 18",
+                                          "x − 4 = 18",
+                                          "x + 4 = 18",
+                                          "18 + 4 = x"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Son âge dans 4 ans sera x + 4."
+                      },
+                      {
+                          "code":  "M5-0410",
+                          "microSkill":  "m5_alg_model_equation",
+                          "difficulty":  3,
+                          "prompt":  "Un carré de côté x a un périmètre de 28. Quelle équation convient ?",
+                          "choices":  [
+                                          "x² = 28",
+                                          "x + 4 = 28",
+                                          "2x = 28",
+                                          "4x = 28"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le périmètre du carré est 4x."
+                      },
+                      {
+                          "code":  "M5-0411",
+                          "microSkill":  "m5_alg_solve_simple_equation",
+                          "difficulty":  1,
+                          "prompt":  "Résous x + 7 = 19.",
+                          "choices":  [
+                                          "x = 12",
+                                          "x = 26",
+                                          "x = 7",
+                                          "x = 19"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On soustrait 7 aux deux membres : x = 12."
+                      },
+                      {
+                          "code":  "M5-0412",
+                          "microSkill":  "m5_alg_solve_simple_equation",
+                          "difficulty":  1,
+                          "prompt":  "Résous 3x = 24.",
+                          "choices":  [
+                                          "x = 21",
+                                          "x = 8",
+                                          "x = 27",
+                                          "x = 72"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On divise les deux membres par 3 : x = 8."
+                      },
+                      {
+                          "code":  "M5-0413",
+                          "microSkill":  "m5_alg_solve_simple_equation",
+                          "difficulty":  1,
+                          "prompt":  "Résous x − 5 = 11.",
+                          "choices":  [
+                                          "x = 6",
+                                          "x = 11",
+                                          "x = 16",
+                                          "x = 55"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On ajoute 5 aux deux membres : x = 16."
+                      },
+                      {
+                          "code":  "M5-0414",
+                          "microSkill":  "m5_alg_solve_simple_equation",
+                          "difficulty":  1,
+                          "prompt":  "Résous x/2 = 9.",
+                          "choices":  [
+                                          "x = 4,5",
+                                          "x = 7",
+                                          "x = 11",
+                                          "x = 18"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On multiplie les deux membres par 2 : x = 18."
+                      },
+                      {
+                          "code":  "M5-0415",
+                          "microSkill":  "m5_alg_solve_simple_equation",
+                          "difficulty":  2,
+                          "prompt":  "Résous 2x + 3 = 13.",
+                          "choices":  [
+                                          "x = 5",
+                                          "x = 8",
+                                          "x = 10",
+                                          "x = 16"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "2x = 10, puis x = 5."
+                      },
+                      {
+                          "code":  "M5-0416",
+                          "microSkill":  "m5_alg_solve_simple_equation",
+                          "difficulty":  2,
+                          "prompt":  "Résous 5x − 4 = 21.",
+                          "choices":  [
+                                          "x = 3,4",
+                                          "x = 5",
+                                          "x = 17",
+                                          "x = 25"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "5x = 25, puis x = 5."
+                      },
+                      {
+                          "code":  "M5-0417",
+                          "microSkill":  "m5_alg_solve_simple_equation",
+                          "difficulty":  2,
+                          "prompt":  "Résous 3x + 7 = −2.",
+                          "choices":  [
+                                          "x = 3",
+                                          "x = −5",
+                                          "x = −3",
+                                          "x = −9"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "3x = −9, puis x = −3."
+                      },
+                      {
+                          "code":  "M5-0418",
+                          "microSkill":  "m5_alg_solve_simple_equation",
+                          "difficulty":  2,
+                          "prompt":  "Résous 4x − 6 = 10.",
+                          "choices":  [
+                                          "x = 1",
+                                          "x = 2,5",
+                                          "x = 16",
+                                          "x = 4"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "4x = 16, puis x = 4."
+                      },
+                      {
+                          "code":  "M5-0419",
+                          "microSkill":  "m5_alg_solve_simple_equation",
+                          "difficulty":  3,
+                          "prompt":  "Résous 2(x + 3) = 18.",
+                          "choices":  [
+                                          "x = 6",
+                                          "x = 9",
+                                          "x = 12",
+                                          "x = 15"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "x + 3 = 9, puis x = 6."
+                      },
+                      {
+                          "code":  "M5-0420",
+                          "microSkill":  "m5_alg_solve_simple_equation",
+                          "difficulty":  3,
+                          "prompt":  "Résous x/3 + 5 = 9.",
+                          "choices":  [
+                                          "x = 4",
+                                          "x = 12",
+                                          "x = 27",
+                                          "x = 42"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "x/3 = 4, puis x = 12."
+                      }
+                  ]
+}
