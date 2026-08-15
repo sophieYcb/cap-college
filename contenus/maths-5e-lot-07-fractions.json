@@ -1,0 +1,612 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_numbers_calculation",
+                   "name":  "Nombres et calculs"
+               },
+    "skill":  {
+                  "code":  "m5_rational_numbers",
+                  "name":  "Nombres rationnels et fractions"
+              },
+    "lot":  "M5-FRAC-01",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_frac_quotient",
+                            "teacherName":  "Interpréter une fraction comme quotient",
+                            "studentName":  "Comprendre une fraction comme une division",
+                            "lessonReminder":  "La fraction a/b est le quotient exact de a par b, avec b différent de zéro.",
+                            "workedExample":  "3/4 représente le quotient exact de 3 par 4.",
+                            "masteryCriteria":  "Associer une fraction au quotient correspondant et interpréter ce quotient."
+                        },
+                        {
+                            "code":  "m5_frac_equivalent",
+                            "teacherName":  "Reconnaître et produire des fractions égales",
+                            "studentName":  "Reconnaître et fabriquer des fractions égales",
+                            "lessonReminder":  "On obtient une fraction égale en multipliant ou en divisant son numérateur et son dénominateur par un même nombre non nul.",
+                            "workedExample":  "2/3 = 8/12, car le numérateur et le dénominateur sont multipliés par 4.",
+                            "masteryCriteria":  "Reconnaître, compléter et simplifier des fractions égales."
+                        },
+                        {
+                            "code":  "m5_frac_compare",
+                            "teacherName":  "Comparer des fractions",
+                            "studentName":  "Comparer des fractions",
+                            "lessonReminder":  "Pour comparer des fractions, on peut les réduire au même dénominateur, utiliser leur écriture décimale ou les situer par rapport à 1.",
+                            "workedExample":  "5/6 = 15/18 et 7/9 = 14/18, donc 5/6 \u003e 7/9.",
+                            "masteryCriteria":  "Comparer correctement des fractions, y compris de dénominateurs différents."
+                        },
+                        {
+                            "code":  "m5_frac_common_denominator",
+                            "teacherName":  "Réduire des fractions au même dénominateur",
+                            "studentName":  "Écrire des fractions avec le même dénominateur",
+                            "lessonReminder":  "On choisit un multiple commun des dénominateurs, puis on multiplie le numérateur et le dénominateur de chaque fraction par le facteur nécessaire.",
+                            "workedExample":  "1/2 = 3/6 et 1/3 = 2/6 : les deux fractions sont réduites au dénominateur 6.",
+                            "masteryCriteria":  "Choisir un dénominateur commun et produire des fractions équivalentes correctes."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0201",
+                          "microSkill":  "m5_frac_quotient",
+                          "difficulty":  1,
+                          "prompt":  "Quelle division correspond à la fraction 3/4 ?",
+                          "choices":  [
+                                          "3 ÷ 4",
+                                          "4 ÷ 3",
+                                          "3 ÷ 7",
+                                          "7 ÷ 4"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Par définition, 3/4 est le résultat exact de 3 ÷ 4."
+                      },
+                      {
+                          "code":  "M5-0202",
+                          "microSkill":  "m5_frac_quotient",
+                          "difficulty":  1,
+                          "prompt":  "Quelle fraction est le résultat exact de 5 ÷ 2 ?",
+                          "choices":  [
+                                          "2/5",
+                                          "5/2",
+                                          "7/2",
+                                          "5/7"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le nombre divisé devient le numérateur et le diviseur devient le dénominateur : 5 ÷ 2 = 5/2."
+                      },
+                      {
+                          "code":  "M5-0203",
+                          "microSkill":  "m5_frac_quotient",
+                          "difficulty":  1,
+                          "prompt":  "Complète : 7/3 = …",
+                          "choices":  [
+                                          "3 ÷ 7",
+                                          "7 × 3",
+                                          "7 ÷ 3",
+                                          "3 − 7"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "La fraction 7/3 est le résultat exact de la division 7 ÷ 3."
+                      },
+                      {
+                          "code":  "M5-0204",
+                          "microSkill":  "m5_frac_quotient",
+                          "difficulty":  2,
+                          "prompt":  "Quelle écriture donne le résultat exact de 11 ÷ 6 ?",
+                          "choices":  [
+                                          "6/11",
+                                          "17/6",
+                                          "11/17",
+                                          "11/6"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "11 ÷ 6 s’écrit exactement 11/6."
+                      },
+                      {
+                          "code":  "M5-0205",
+                          "microSkill":  "m5_frac_quotient",
+                          "difficulty":  2,
+                          "prompt":  "Dans la fraction 9/5, quel entier est divisé ?",
+                          "choices":  [
+                                          "9",
+                                          "5",
+                                          "14",
+                                          "45"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "9/5 signifie 9 ÷ 5 : l’entier divisé est 9."
+                      },
+                      {
+                          "code":  "M5-0206",
+                          "microSkill":  "m5_frac_quotient",
+                          "difficulty":  2,
+                          "prompt":  "Dans l’écriture 13/8, quel entier est le diviseur ?",
+                          "choices":  [
+                                          "13",
+                                          "8",
+                                          "21",
+                                          "5"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "13/8 signifie 13 ÷ 8 : le diviseur est 8."
+                      },
+                      {
+                          "code":  "M5-0207",
+                          "microSkill":  "m5_frac_quotient",
+                          "difficulty":  2,
+                          "prompt":  "Quel quotient exact correspond à la fraction 2/9 ?",
+                          "choices":  [
+                                          "9 ÷ 2",
+                                          "2 × 9",
+                                          "2 ÷ 9",
+                                          "9 − 2"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "La fraction 2/9 est le quotient exact de 2 par 9."
+                      },
+                      {
+                          "code":  "M5-0208",
+                          "microSkill":  "m5_frac_quotient",
+                          "difficulty":  3,
+                          "prompt":  "Une longueur de 5 m est partagée en 8 parts égales. Quelle est la longueur exacte d’une part, en mètre ?",
+                          "choices":  [
+                                          "8/5",
+                                          "13/8",
+                                          "5/13",
+                                          "5/8"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "La longueur d’une part est le quotient de 5 par 8, soit 5/8 m."
+                      },
+                      {
+                          "code":  "M5-0209",
+                          "microSkill":  "m5_frac_quotient",
+                          "difficulty":  3,
+                          "prompt":  "Quelle fraction représente le quotient exact de 17 par 4 ?",
+                          "choices":  [
+                                          "17/4",
+                                          "4/17",
+                                          "21/4",
+                                          "17/21"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le quotient de 17 par 4 s’écrit 17/4."
+                      },
+                      {
+                          "code":  "M5-0210",
+                          "microSkill":  "m5_frac_quotient",
+                          "difficulty":  3,
+                          "prompt":  "Quelle affirmation est correcte ?",
+                          "choices":  [
+                                          "4/7 est le quotient de 7 par 4.",
+                                          "4/7 est le quotient de 4 par 7.",
+                                          "4/7 est le produit de 4 par 7.",
+                                          "4/7 est la différence entre 7 et 4."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le numérateur est le nombre divisé et le dénominateur est le diviseur : 4/7 = 4 ÷ 7."
+                      },
+                      {
+                          "code":  "M5-0211",
+                          "microSkill":  "m5_frac_equivalent",
+                          "difficulty":  1,
+                          "prompt":  "Quelle fraction est égale à 1/2 ?",
+                          "choices":  [
+                                          "2/4",
+                                          "1/3",
+                                          "2/3",
+                                          "3/4"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "1/2 = 2/4, car le numérateur et le dénominateur sont multipliés par 2."
+                      },
+                      {
+                          "code":  "M5-0212",
+                          "microSkill":  "m5_frac_equivalent",
+                          "difficulty":  1,
+                          "prompt":  "Quelle fraction est égale à 2/3 ?",
+                          "choices":  [
+                                          "3/4",
+                                          "4/6",
+                                          "4/5",
+                                          "6/8"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "2/3 = 4/6, car le numérateur et le dénominateur sont multipliés par 2."
+                      },
+                      {
+                          "code":  "M5-0213",
+                          "microSkill":  "m5_frac_equivalent",
+                          "difficulty":  1,
+                          "prompt":  "Quelle fraction est égale à 3/5 ?",
+                          "choices":  [
+                                          "6/8",
+                                          "6/12",
+                                          "9/15",
+                                          "12/15"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "3/5 = 9/15, car le numérateur et le dénominateur sont multipliés par 3."
+                      },
+                      {
+                          "code":  "M5-0214",
+                          "microSkill":  "m5_frac_equivalent",
+                          "difficulty":  2,
+                          "prompt":  "Quelle fraction est égale à 4/7 ?",
+                          "choices":  [
+                                          "8/12",
+                                          "12/14",
+                                          "16/21",
+                                          "12/21"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "4/7 = 12/21, car le numérateur et le dénominateur sont multipliés par 3."
+                      },
+                      {
+                          "code":  "M5-0215",
+                          "microSkill":  "m5_frac_equivalent",
+                          "difficulty":  2,
+                          "prompt":  "Complète : 1/3 = …/12.",
+                          "choices":  [
+                                          "4",
+                                          "3",
+                                          "6",
+                                          "9"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "3 × 4 = 12, donc 1 × 4 = 4 : 1/3 = 4/12."
+                      },
+                      {
+                          "code":  "M5-0216",
+                          "microSkill":  "m5_frac_equivalent",
+                          "difficulty":  2,
+                          "prompt":  "Complète : 5/8 = …/24.",
+                          "choices":  [
+                                          "10",
+                                          "15",
+                                          "20",
+                                          "21"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "8 × 3 = 24, donc 5 × 3 = 15 : 5/8 = 15/24."
+                      },
+                      {
+                          "code":  "M5-0217",
+                          "microSkill":  "m5_frac_equivalent",
+                          "difficulty":  2,
+                          "prompt":  "Quelle est la forme simplifiée de 6/9 ?",
+                          "choices":  [
+                                          "3/4",
+                                          "3/5",
+                                          "2/3",
+                                          "1/2"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "En divisant 6 et 9 par 3, on obtient 2/3."
+                      },
+                      {
+                          "code":  "M5-0218",
+                          "microSkill":  "m5_frac_equivalent",
+                          "difficulty":  3,
+                          "prompt":  "Complète : 7/10 = 21/…",
+                          "choices":  [
+                                          "20",
+                                          "24",
+                                          "27",
+                                          "30"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "7 est multiplié par 3 pour obtenir 21 ; 10 × 3 = 30."
+                      },
+                      {
+                          "code":  "M5-0219",
+                          "microSkill":  "m5_frac_equivalent",
+                          "difficulty":  3,
+                          "prompt":  "Quelle est la forme simplifiée de 12/18 ?",
+                          "choices":  [
+                                          "2/3",
+                                          "3/4",
+                                          "4/5",
+                                          "6/8"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "En divisant 12 et 18 par 6, on obtient 2/3."
+                      },
+                      {
+                          "code":  "M5-0220",
+                          "microSkill":  "m5_frac_equivalent",
+                          "difficulty":  3,
+                          "prompt":  "Quelle fraction n’est pas égale à 3/4 ?",
+                          "choices":  [
+                                          "6/8",
+                                          "15/24",
+                                          "9/12",
+                                          "12/16"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "15/24 = 5/8, tandis que 6/8, 9/12 et 12/16 sont égales à 3/4."
+                      },
+                      {
+                          "code":  "M5-0221",
+                          "microSkill":  "m5_frac_compare",
+                          "difficulty":  1,
+                          "prompt":  "Quelle comparaison est correcte ?",
+                          "choices":  [
+                                          "3/7 \u003e 5/7",
+                                          "3/7 = 5/7",
+                                          "3/7 \u003c 5/7",
+                                          "On ne peut pas comparer."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "À dénominateur égal, la fraction ayant le plus petit numérateur est la plus petite."
+                      },
+                      {
+                          "code":  "M5-0222",
+                          "microSkill":  "m5_frac_compare",
+                          "difficulty":  1,
+                          "prompt":  "Quelle comparaison est correcte ?",
+                          "choices":  [
+                                          "4/9 \u003e 4/7",
+                                          "4/9 = 4/7",
+                                          "On ne peut pas comparer.",
+                                          "4/9 \u003c 4/7"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "À numérateur égal, la fraction ayant le plus grand dénominateur est la plus petite."
+                      },
+                      {
+                          "code":  "M5-0223",
+                          "microSkill":  "m5_frac_compare",
+                          "difficulty":  1,
+                          "prompt":  "Quelle comparaison est correcte ?",
+                          "choices":  [
+                                          "2/3 \u003c 3/4",
+                                          "2/3 \u003e 3/4",
+                                          "2/3 = 3/4",
+                                          "On ne peut pas comparer."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "2/3 = 8/12 et 3/4 = 9/12, donc 2/3 \u003c 3/4."
+                      },
+                      {
+                          "code":  "M5-0224",
+                          "microSkill":  "m5_frac_compare",
+                          "difficulty":  2,
+                          "prompt":  "Quelle comparaison est correcte ?",
+                          "choices":  [
+                                          "5/6 \u003c 7/9",
+                                          "5/6 \u003e 7/9",
+                                          "5/6 = 7/9",
+                                          "On ne peut pas comparer."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "5/6 = 15/18 et 7/9 = 14/18, donc 5/6 \u003e 7/9."
+                      },
+                      {
+                          "code":  "M5-0225",
+                          "microSkill":  "m5_frac_compare",
+                          "difficulty":  2,
+                          "prompt":  "Quelle comparaison est correcte ?",
+                          "choices":  [
+                                          "7/4 \u003c 3/2",
+                                          "7/4 = 3/2",
+                                          "7/4 \u003e 3/2",
+                                          "On ne peut pas comparer."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "7/4 = 1,75 et 3/2 = 1,5, donc 7/4 \u003e 3/2."
+                      },
+                      {
+                          "code":  "M5-0226",
+                          "microSkill":  "m5_frac_compare",
+                          "difficulty":  2,
+                          "prompt":  "Quelle comparaison est correcte ?",
+                          "choices":  [
+                                          "11/8 \u003c 4/3",
+                                          "11/8 = 4/3",
+                                          "On ne peut pas comparer.",
+                                          "11/8 \u003e 4/3"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "11/8 = 33/24 et 4/3 = 32/24, donc 11/8 \u003e 4/3."
+                      },
+                      {
+                          "code":  "M5-0227",
+                          "microSkill":  "m5_frac_compare",
+                          "difficulty":  2,
+                          "prompt":  "Quelle comparaison est correcte ?",
+                          "choices":  [
+                                          "8/9 \u003c 1",
+                                          "8/9 \u003e 1",
+                                          "8/9 = 1",
+                                          "On ne peut pas comparer."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le numérateur 8 est inférieur au dénominateur 9, donc 8/9 \u003c 1."
+                      },
+                      {
+                          "code":  "M5-0228",
+                          "microSkill":  "m5_frac_compare",
+                          "difficulty":  3,
+                          "prompt":  "Quelle comparaison est correcte ?",
+                          "choices":  [
+                                          "13/12 \u003c 1",
+                                          "13/12 \u003e 1",
+                                          "13/12 = 1",
+                                          "On ne peut pas comparer."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le numérateur 13 est supérieur au dénominateur 12, donc 13/12 \u003e 1."
+                      },
+                      {
+                          "code":  "M5-0229",
+                          "microSkill":  "m5_frac_compare",
+                          "difficulty":  3,
+                          "prompt":  "Quelle comparaison est correcte ?",
+                          "choices":  [
+                                          "5/8 \u003c 0,6",
+                                          "5/8 = 0,6",
+                                          "5/8 \u003e 0,6",
+                                          "On ne peut pas comparer."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "5/8 = 0,625, donc 5/8 \u003e 0,6."
+                      },
+                      {
+                          "code":  "M5-0230",
+                          "microSkill":  "m5_frac_compare",
+                          "difficulty":  3,
+                          "prompt":  "Quelle comparaison est correcte ?",
+                          "choices":  [
+                                          "7/10 \u003c 2/3",
+                                          "7/10 = 2/3",
+                                          "On ne peut pas comparer.",
+                                          "7/10 \u003e 2/3"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "7/10 = 21/30 et 2/3 = 20/30, donc 7/10 \u003e 2/3."
+                      },
+                      {
+                          "code":  "M5-0231",
+                          "microSkill":  "m5_frac_common_denominator",
+                          "difficulty":  2,
+                          "prompt":  "Réduis 1/2 et 1/3 au dénominateur 6.",
+                          "choices":  [
+                                          "2/6 et 3/6",
+                                          "1/6 et 1/6",
+                                          "3/6 et 2/6",
+                                          "4/6 et 3/6"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "1/2 = 3/6 et 1/3 = 2/6."
+                      },
+                      {
+                          "code":  "M5-0232",
+                          "microSkill":  "m5_frac_common_denominator",
+                          "difficulty":  2,
+                          "prompt":  "Réduis 3/4 et 5/6 au même dénominateur.",
+                          "choices":  [
+                                          "6/12 et 10/12",
+                                          "9/24 et 10/24",
+                                          "12/12 et 10/12",
+                                          "9/12 et 10/12"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le dénominateur commun 12 donne 3/4 = 9/12 et 5/6 = 10/12."
+                      },
+                      {
+                          "code":  "M5-0233",
+                          "microSkill":  "m5_frac_common_denominator",
+                          "difficulty":  2,
+                          "prompt":  "Quel dénominateur commun convient à 2/3 et 5/8 ?",
+                          "choices":  [
+                                          "24",
+                                          "11",
+                                          "8",
+                                          "6"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "24 est un multiple commun de 3 et de 8."
+                      },
+                      {
+                          "code":  "M5-0234",
+                          "microSkill":  "m5_frac_common_denominator",
+                          "difficulty":  2,
+                          "prompt":  "Réduis 7/10 et 3/4 au même dénominateur.",
+                          "choices":  [
+                                          "14/20 et 6/20",
+                                          "14/20 et 15/20",
+                                          "7/20 et 15/20",
+                                          "28/40 et 15/40"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "7/10 = 14/20 et 3/4 = 15/20."
+                      },
+                      {
+                          "code":  "M5-0235",
+                          "microSkill":  "m5_frac_common_denominator",
+                          "difficulty":  2,
+                          "prompt":  "Réduis 5/6 et 7/9 au dénominateur 18.",
+                          "choices":  [
+                                          "10/18 et 7/18",
+                                          "15/18 et 7/18",
+                                          "15/18 et 14/18",
+                                          "5/18 et 7/18"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "5/6 = 15/18 et 7/9 = 14/18."
+                      },
+                      {
+                          "code":  "M5-0236",
+                          "microSkill":  "m5_frac_common_denominator",
+                          "difficulty":  2,
+                          "prompt":  "Réduis 4/15 et 5/6 au même dénominateur.",
+                          "choices":  [
+                                          "8/30 et 10/30",
+                                          "24/90 et 75/90",
+                                          "4/30 et 25/30",
+                                          "8/30 et 25/30"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le dénominateur commun 30 donne 4/15 = 8/30 et 5/6 = 25/30."
+                      },
+                      {
+                          "code":  "M5-0237",
+                          "microSkill":  "m5_frac_common_denominator",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le plus petit dénominateur commun à 1/12 et 5/18 ?",
+                          "choices":  [
+                                          "36",
+                                          "30",
+                                          "72",
+                                          "216"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le plus petit multiple commun de 12 et 18 est 36."
+                      },
+                      {
+                          "code":  "M5-0238",
+                          "microSkill":  "m5_frac_common_denominator",
+                          "difficulty":  2,
+                          "prompt":  "Réduis 11/14 et 3/7 au même dénominateur.",
+                          "choices":  [
+                                          "11/21 et 6/21",
+                                          "11/14 et 6/14",
+                                          "22/28 et 3/28",
+                                          "11/98 et 42/98"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "3/7 = 6/14 ; les deux fractions ont alors le dénominateur 14."
+                      },
+                      {
+                          "code":  "M5-0239",
+                          "microSkill":  "m5_frac_common_denominator",
+                          "difficulty":  2,
+                          "prompt":  "Quelle égalité permet de mettre 2/5 et 7/12 au même dénominateur ?",
+                          "choices":  [
+                                          "2/60 = 7/60",
+                                          "24/60 = 35/60",
+                                          "24/60 et 35/60",
+                                          "14/60 et 24/60"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "2/5 = 24/60 et 7/12 = 35/60."
+                      },
+                      {
+                          "code":  "M5-0240",
+                          "microSkill":  "m5_frac_common_denominator",
+                          "difficulty":  2,
+                          "prompt":  "Réduis 5/8, 2/3 et 7/12 au même dénominateur.",
+                          "choices":  [
+                                          "15/24, 16/24 et 7/24",
+                                          "10/24, 16/24 et 14/24",
+                                          "15/24, 8/24 et 14/24",
+                                          "15/24, 16/24 et 14/24"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Avec le dénominateur 24 : 5/8 = 15/24, 2/3 = 16/24 et 7/12 = 14/24."
+                      }
+                  ]
+}
