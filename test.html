@@ -19,7 +19,7 @@
   <details class="advanced-quality-filters">
    <summary>Filtres avancés</summary>
    <div class="advanced-quality-filter-grid">
-    <label>État <select id="statusFilter" onchange="applyFilters()"><option value="all">Toutes</option><option value="flagged">🚩 Questions signalées</option><option value="unreviewed">Non testées</option><option value="A">A — excellente</option><option value="B">B — améliorable</option><option value="C">C — à réécrire</option><option value="D">D — à supprimer</option></select></label>
+    <label>État <select id="statusFilter" onchange="applyFilters()"><option value="all">Toutes</option><option value="flagged">🚩 Questions signalées</option><option value="unreviewed" selected>Non testées</option><option value="A">A — excellente</option><option value="B">B — améliorable</option><option value="C">C — à réécrire</option><option value="D">D — à supprimer</option></select></label>
     <label>Version <select id="versionFilter" onchange="applyFilters()"><option value="all">Toutes</option></select></label>
     <label>Trier <select id="sortOrder" onchange="applyFilters()"><option value="id">N° de question</option><option value="version-desc">Version récente</option><option value="version-asc">Version ancienne</option></select></label>
     <label>Rechercher <input id="searchFilter" type="search" placeholder="mot ou numéro" oninput="applyFilters()"></label>
