@@ -1,0 +1,118 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "5e",
+  "domain": {
+    "code": "cycle4_numbers_calculation",
+    "name": "Nombres et calculs"
+  },
+  "skill": {
+    "code": "m5_relative_numbers",
+    "name": "Nombres relatifs"
+  },
+  "lot": "M5-REL-03",
+  "status": "draft",
+  "source": "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+  "microSkills": [
+    {
+      "code": "m5_rel_solve_problem",
+      "teacherName": "Résoudre un problème avec des nombres relatifs",
+      "studentName": "Résoudre des problèmes avec des nombres positifs et négatifs",
+      "lessonReminder": "Pour résoudre un problème avec des nombres relatifs, on choisit un sens positif, on traduit chaque évolution par un nombre signé, puis on effectue les additions ou soustractions nécessaires. Le signe du résultat doit être interprété dans le contexte.",
+      "workedExample": "Un plongeur situé à −12 m remonte de 5 m puis descend de 3 m : −12 + 5 − 3 = −10. Il se trouve donc à 10 m sous la surface.",
+      "masteryCriteria": "Traduire une situation par un calcul avec des nombres relatifs, effectuer ce calcul et interpréter correctement le résultat."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M5-0191",
+      "microSkill": "m5_rel_solve_problem",
+      "difficulty": 1,
+      "prompt": "Le matin, il fait −4 °C. La température augmente de 7 °C. Quelle température fait-il ensuite ?",
+      "choices": ["3 °C", "−11 °C", "−3 °C", "11 °C"],
+      "correctIndex": 0,
+      "explanation": "La température finale vaut −4 + 7 = 3 °C."
+    },
+    {
+      "code": "M5-0192",
+      "microSkill": "m5_rel_solve_problem",
+      "difficulty": 1,
+      "prompt": "Un ascenseur part du 2e étage et descend de 5 étages. À quel étage arrive-t-il ?",
+      "choices": ["7e étage", "−3e étage", "3e étage", "−7e étage"],
+      "correctIndex": 1,
+      "explanation": "Le calcul est 2 − 5 = −3 : l’ascenseur arrive au niveau −3."
+    },
+    {
+      "code": "M5-0193",
+      "microSkill": "m5_rel_solve_problem",
+      "difficulty": 1,
+      "prompt": "Dans un jeu, Lina gagne 12 points puis en perd 18. Quelle est la variation totale de son score ?",
+      "choices": ["+30 points", "+6 points", "−6 points", "−30 points"],
+      "correctIndex": 2,
+      "explanation": "La variation totale est 12 + (−18) = −6 points."
+    },
+    {
+      "code": "M5-0194",
+      "microSkill": "m5_rel_solve_problem",
+      "difficulty": 1,
+      "prompt": "Le solde d’un compte est de −15 €. Un versement de 20 € est effectué. Quel est le nouveau solde ?",
+      "choices": ["−35 €", "+35 €", "−5 €", "+5 €"],
+      "correctIndex": 3,
+      "explanation": "Le nouveau solde vaut −15 + 20 = 5 €."
+    },
+    {
+      "code": "M5-0195",
+      "microSkill": "m5_rel_solve_problem",
+      "difficulty": 2,
+      "prompt": "Un plongeur est à −18 m. Il remonte de 7 m, puis descend de 4 m. À quelle profondeur se trouve-t-il ?",
+      "choices": ["−15 m", "−29 m", "−7 m", "+15 m"],
+      "correctIndex": 0,
+      "explanation": "Sa position finale est −18 + 7 − 4 = −15 m."
+    },
+    {
+      "code": "M5-0196",
+      "microSkill": "m5_rel_solve_problem",
+      "difficulty": 2,
+      "prompt": "À midi, la température est de 6 °C. Elle baisse de 9 °C dans l’après-midi puis de 2 °C le soir. Quelle est la température finale ?",
+      "choices": ["17 °C", "−5 °C", "−1 °C", "5 °C"],
+      "correctIndex": 1,
+      "explanation": "La température finale vaut 6 − 9 − 2 = −5 °C."
+    },
+    {
+      "code": "M5-0197",
+      "microSkill": "m5_rel_solve_problem",
+      "difficulty": 2,
+      "prompt": "Une équipe commence avec 3 points. Elle reçoit une pénalité de 8 points puis gagne 6 points. Quel est son score final ?",
+      "choices": ["17 points", "−11 points", "1 point", "−1 point"],
+      "correctIndex": 2,
+      "explanation": "Le score final est 3 − 8 + 6 = 1 point."
+    },
+    {
+      "code": "M5-0198",
+      "microSkill": "m5_rel_solve_problem",
+      "difficulty": 2,
+      "prompt": "Une randonnée commence à l’altitude 850 m. Le groupe monte de 275 m puis descend de 430 m. À quelle altitude arrive-t-il ?",
+      "choices": ["1 555 m", "145 m", "405 m", "695 m"],
+      "correctIndex": 3,
+      "explanation": "L’altitude finale est 850 + 275 − 430 = 695 m."
+    },
+    {
+      "code": "M5-0199",
+      "microSkill": "m5_rel_solve_problem",
+      "difficulty": 3,
+      "prompt": "La température passe de −7,5 °C à 2,5 °C. De combien de degrés a-t-elle augmenté ?",
+      "choices": ["10 °C", "5 °C", "−5 °C", "−10 °C"],
+      "correctIndex": 0,
+      "explanation": "L’augmentation vaut 2,5 − (−7,5) = 10 °C."
+    },
+    {
+      "code": "M5-0200",
+      "microSkill": "m5_rel_solve_problem",
+      "difficulty": 3,
+      "prompt": "Un compte affiche −28 €. Son titulaire dépense encore 17 €, puis reçoit 60 €. Quel est le solde final ?",
+      "choices": ["−105 €", "+15 €", "+49 €", "−15 €"],
+      "correctIndex": 1,
+      "explanation": "Le solde final est −28 − 17 + 60 = 15 €."
+    }
+  ]
+}
