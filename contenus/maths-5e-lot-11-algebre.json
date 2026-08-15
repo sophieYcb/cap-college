@@ -1,0 +1,612 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_numbers_calculation",
+                   "name":  "Nombres et calculs"
+               },
+    "skill":  {
+                  "code":  "m5_algebra",
+                  "name":  "Calcul littéral et algébrique"
+              },
+    "lot":  "M5-ALG-01",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_alg_pattern_conjecture",
+                            "teacherName":  "Identifier une régularité et formuler une conjecture",
+                            "studentName":  "Repérer une règle dans une suite",
+                            "lessonReminder":  "Pour repérer une régularité, on compare les termes ou les figures successives et on cherche une opération qui se répète. Une conjecture est une règle plausible qu’il faut ensuite vérifier.",
+                            "workedExample":  "Dans 4, 7, 10, 13, on ajoute 3 à chaque étape ; le terme suivant devrait être 16.",
+                            "masteryCriteria":  "Identifier une régularité, prévoir un terme et formuler la règle correspondante."
+                        },
+                        {
+                            "code":  "m5_alg_produce_formula",
+                            "teacherName":  "Produire une formule littérale",
+                            "studentName":  "Écrire une formule avec une lettre",
+                            "lessonReminder":  "Une lettre peut représenter un nombre variable. On traduit les opérations décrites par une expression littérale en respectant leur ordre.",
+                            "workedExample":  "Le prix de n cahiers à 3 € l’unité est 3n euros.",
+                            "masteryCriteria":  "Traduire une situation ou un programme de calcul par une formule littérale correcte."
+                        },
+                        {
+                            "code":  "m5_alg_substitute",
+                            "teacherName":  "Calculer une expression littérale par substitution",
+                            "studentName":  "Remplacer une lettre par sa valeur",
+                            "lessonReminder":  "Substituer consiste à remplacer chaque lettre par la valeur donnée, entre parenthèses si elle est négative, puis à effectuer les calculs en respectant les priorités.",
+                            "workedExample":  "Pour x = 4, 3x + 2 = 3 × 4 + 2 = 14.",
+                            "masteryCriteria":  "Remplacer correctement les lettres et calculer la valeur numérique de l’expression."
+                        },
+                        {
+                            "code":  "m5_alg_test_equality",
+                            "teacherName":  "Tester si une égalité est vraie pour une valeur donnée",
+                            "studentName":  "Vérifier une égalité pour une valeur",
+                            "lessonReminder":  "On calcule séparément le membre de gauche et le membre de droite après avoir remplacé la lettre. L’égalité est vraie seulement si les deux résultats sont égaux.",
+                            "workedExample":  "Pour x = 3, 2x + 1 = 7 et x + 4 = 7 : l’égalité est vraie.",
+                            "masteryCriteria":  "Tester une égalité par substitution et conclure correctement qu’elle est vraie ou fausse."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0311",
+                          "microSkill":  "m5_alg_pattern_conjecture",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le terme suivant de la suite 2 ; 5 ; 8 ; 11 ; … ?",
+                          "choices":  [
+                                          "14",
+                                          "12",
+                                          "13",
+                                          "15"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On ajoute 3 à chaque terme : 11 + 3 = 14."
+                      },
+                      {
+                          "code":  "M5-0312",
+                          "microSkill":  "m5_alg_pattern_conjecture",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le terme suivant de la suite 20 ; 17 ; 14 ; … ?",
+                          "choices":  [
+                                          "12",
+                                          "11",
+                                          "10",
+                                          "8"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On retire 3 à chaque étape : 14 − 3 = 11."
+                      },
+                      {
+                          "code":  "M5-0313",
+                          "microSkill":  "m5_alg_pattern_conjecture",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le terme suivant de la suite 1 ; 4 ; 9 ; 16 ; … ?",
+                          "choices":  [
+                                          "20",
+                                          "24",
+                                          "25",
+                                          "32"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Ce sont les carrés 1², 2², 3², 4² ; le suivant est 5² = 25."
+                      },
+                      {
+                          "code":  "M5-0314",
+                          "microSkill":  "m5_alg_pattern_conjecture",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le terme suivant de la suite 3 ; 6 ; 12 ; 24 ; … ?",
+                          "choices":  [
+                                          "27",
+                                          "36",
+                                          "42",
+                                          "48"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Chaque terme est le double du précédent : 24 × 2 = 48."
+                      },
+                      {
+                          "code":  "M5-0315",
+                          "microSkill":  "m5_alg_pattern_conjecture",
+                          "difficulty":  2,
+                          "prompt":  "Une suite commence par 5 ; 9 ; 13 ; 17. Quelle règle semble utilisée ?",
+                          "choices":  [
+                                          "Ajouter 4",
+                                          "Multiplier par 4",
+                                          "Ajouter des nombres différents",
+                                          "Retirer 4"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La différence entre deux termes consécutifs est toujours 4."
+                      },
+                      {
+                          "code":  "M5-0316",
+                          "microSkill":  "m5_alg_pattern_conjecture",
+                          "difficulty":  2,
+                          "prompt":  "Pour x = 1, 2, 3 et 4, on obtient y = 4, 7, 10 et 13. Quelle formule semble relier y à x ?",
+                          "choices":  [
+                                          "y = x + 3",
+                                          "y = 3x + 1",
+                                          "y = 4x",
+                                          "y = x² + 3"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "La formule 3x + 1 donne successivement 4, 7, 10 et 13."
+                      },
+                      {
+                          "code":  "M5-0317",
+                          "microSkill":  "m5_alg_pattern_conjecture",
+                          "difficulty":  2,
+                          "prompt":  "Quelle formule donne le n-ième nombre impair si n commence à 1 ?",
+                          "choices":  [
+                                          "2n",
+                                          "n + 2",
+                                          "2n − 1",
+                                          "n²"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Pour n = 1, 2, 3, la formule 2n − 1 donne 1, 3, 5."
+                      },
+                      {
+                          "code":  "M5-0318",
+                          "microSkill":  "m5_alg_pattern_conjecture",
+                          "difficulty":  2,
+                          "prompt":  "Une figure contient 4 bâtons, puis 7, puis 10. Combien la quatrième figure devrait-elle en contenir si la régularité continue ?",
+                          "choices":  [
+                                          "11",
+                                          "12",
+                                          "14",
+                                          "13"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On ajoute 3 bâtons à chaque nouvelle figure : 10 + 3 = 13."
+                      },
+                      {
+                          "code":  "M5-0319",
+                          "microSkill":  "m5_alg_pattern_conjecture",
+                          "difficulty":  3,
+                          "prompt":  "La suite 2 ; 6 ; 12 ; 20 correspond à n(n + 1) pour n = 1, 2, 3, 4. Quel terme prévoit cette formule pour n = 5 ?",
+                          "choices":  [
+                                          "30",
+                                          "25",
+                                          "24",
+                                          "35"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Pour n = 5 : 5 × 6 = 30."
+                      },
+                      {
+                          "code":  "M5-0320",
+                          "microSkill":  "m5_alg_pattern_conjecture",
+                          "difficulty":  3,
+                          "prompt":  "Quelle valeur contredit la conjecture « pour tout entier positif n, n² + n + 1 est divisible par 3 » ?",
+                          "choices":  [
+                                          "n = 1",
+                                          "n = 2",
+                                          "n = 4",
+                                          "n = 7"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Pour n = 2, n² + n + 1 = 7, qui ne se divise pas par 3. Pour les trois autres valeurs proposées, le résultat est divisible par 3."
+                      },
+                      {
+                          "code":  "M5-0321",
+                          "microSkill":  "m5_alg_produce_formula",
+                          "difficulty":  1,
+                          "prompt":  "Quelle formule donne le périmètre d’un carré de côté c ?",
+                          "choices":  [
+                                          "c²",
+                                          "2c",
+                                          "4c",
+                                          "c + 4"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le périmètre est la somme des quatre côtés : 4c."
+                      },
+                      {
+                          "code":  "M5-0322",
+                          "microSkill":  "m5_alg_produce_formula",
+                          "difficulty":  1,
+                          "prompt":  "Quelle formule donne l’aire d’un rectangle de longueur L et de largeur l ?",
+                          "choices":  [
+                                          "2L + 2l",
+                                          "L + l",
+                                          "L²",
+                                          "L × l"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "L’aire d’un rectangle est longueur × largeur."
+                      },
+                      {
+                          "code":  "M5-0323",
+                          "microSkill":  "m5_alg_produce_formula",
+                          "difficulty":  1,
+                          "prompt":  "Un cahier coûte 3 €. Quelle expression donne le prix de n cahiers ?",
+                          "choices":  [
+                                          "3n",
+                                          "n + 3",
+                                          "n/3",
+                                          "3 + 3n"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On multiplie le prix unitaire 3 par le nombre n de cahiers."
+                      },
+                      {
+                          "code":  "M5-0324",
+                          "microSkill":  "m5_alg_produce_formula",
+                          "difficulty":  1,
+                          "prompt":  "Un taxi facture 5 € fixes puis 2 € par kilomètre. Quelle expression donne le prix pour d kilomètres ?",
+                          "choices":  [
+                                          "7d",
+                                          "2d + 5",
+                                          "5d + 2",
+                                          "10d"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le prix comprend 2d euros pour la distance et 5 euros fixes."
+                      },
+                      {
+                          "code":  "M5-0325",
+                          "microSkill":  "m5_alg_produce_formula",
+                          "difficulty":  2,
+                          "prompt":  "Quelle expression représente le double d’un nombre x augmenté de 3 ?",
+                          "choices":  [
+                                          "2(x + 3)",
+                                          "x + 6",
+                                          "2x + 3",
+                                          "3x + 2"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On double x, puis on ajoute 3 : 2x + 3."
+                      },
+                      {
+                          "code":  "M5-0326",
+                          "microSkill":  "m5_alg_produce_formula",
+                          "difficulty":  2,
+                          "prompt":  "Ana a a ans. Quelle expression donnera son âge dans 5 ans ?",
+                          "choices":  [
+                                          "5a",
+                                          "a − 5",
+                                          "a/5",
+                                          "a + 5"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Dans 5 ans, son âge actuel aura augmenté de 5."
+                      },
+                      {
+                          "code":  "M5-0327",
+                          "microSkill":  "m5_alg_produce_formula",
+                          "difficulty":  2,
+                          "prompt":  "Une boîte contient 12 crayons. On a p boîtes et 4 crayons isolés. Combien a-t-on de crayons ?",
+                          "choices":  [
+                                          "12p + 4",
+                                          "16p",
+                                          "12 + 4p",
+                                          "48p"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les p boîtes contiennent 12p crayons, auxquels on ajoute 4."
+                      },
+                      {
+                          "code":  "M5-0328",
+                          "microSkill":  "m5_alg_produce_formula",
+                          "difficulty":  2,
+                          "prompt":  "Quelle expression représente la moyenne de deux nombres a et b ?",
+                          "choices":  [
+                                          "a + b/2",
+                                          "(a + b)/2",
+                                          "2(a + b)",
+                                          "a/2 + b"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On additionne les deux nombres puis on divise leur somme par 2."
+                      },
+                      {
+                          "code":  "M5-0329",
+                          "microSkill":  "m5_alg_produce_formula",
+                          "difficulty":  3,
+                          "prompt":  "Un rectangle a une longueur x + 3 et une largeur x. Quelle expression donne son périmètre ?",
+                          "choices":  [
+                                          "x(x + 3)",
+                                          "2x + 3",
+                                          "4x + 6",
+                                          "2x + 6"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "2(x + 3) + 2x = 4x + 6."
+                      },
+                      {
+                          "code":  "M5-0330",
+                          "microSkill":  "m5_alg_produce_formula",
+                          "difficulty":  3,
+                          "prompt":  "On choisit un nombre n, on lui retire 4 puis on triple le résultat. Quelle expression traduit ce programme ?",
+                          "choices":  [
+                                          "3n − 4",
+                                          "n − 12",
+                                          "3n + 12",
+                                          "3(n − 4)"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On calcule d’abord n − 4, puis on multiplie ce résultat par 3."
+                      },
+                      {
+                          "code":  "M5-0331",
+                          "microSkill":  "m5_alg_substitute",
+                          "difficulty":  1,
+                          "prompt":  "Calcule 3x + 2 pour x = 4.",
+                          "choices":  [
+                                          "14",
+                                          "18",
+                                          "9",
+                                          "24"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "3 × 4 + 2 = 14."
+                      },
+                      {
+                          "code":  "M5-0332",
+                          "microSkill":  "m5_alg_substitute",
+                          "difficulty":  1,
+                          "prompt":  "Calcule 5a − 1 pour a = 3.",
+                          "choices":  [
+                                          "10",
+                                          "14",
+                                          "12",
+                                          "16"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "5 × 3 − 1 = 14."
+                      },
+                      {
+                          "code":  "M5-0333",
+                          "microSkill":  "m5_alg_substitute",
+                          "difficulty":  1,
+                          "prompt":  "Calcule 2x + y pour x = 5 et y = 3.",
+                          "choices":  [
+                                          "10",
+                                          "16",
+                                          "13",
+                                          "8"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "2 × 5 + 3 = 13."
+                      },
+                      {
+                          "code":  "M5-0334",
+                          "microSkill":  "m5_alg_substitute",
+                          "difficulty":  1,
+                          "prompt":  "Calcule a² + 4 pour a = 3.",
+                          "choices":  [
+                                          "10",
+                                          "25",
+                                          "49",
+                                          "13"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "3² + 4 = 9 + 4 = 13."
+                      },
+                      {
+                          "code":  "M5-0335",
+                          "microSkill":  "m5_alg_substitute",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 4 − 2x pour x = −3.",
+                          "choices":  [
+                                          "10",
+                                          "−2",
+                                          "−10",
+                                          "2"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "4 − 2 × (−3) = 4 + 6 = 10."
+                      },
+                      {
+                          "code":  "M5-0336",
+                          "microSkill":  "m5_alg_substitute",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 3a + 2b pour a = 2 et b = 5.",
+                          "choices":  [
+                                          "21",
+                                          "16",
+                                          "25",
+                                          "20"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "3 × 2 + 2 × 5 = 6 + 10 = 16."
+                      },
+                      {
+                          "code":  "M5-0337",
+                          "microSkill":  "m5_alg_substitute",
+                          "difficulty":  2,
+                          "prompt":  "Calcule (x + 2)(x − 1) pour x = 4.",
+                          "choices":  [
+                                          "12",
+                                          "15",
+                                          "18",
+                                          "24"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "(4 + 2)(4 − 1) = 6 × 3 = 18."
+                      },
+                      {
+                          "code":  "M5-0338",
+                          "microSkill":  "m5_alg_substitute",
+                          "difficulty":  2,
+                          "prompt":  "Calcule 2x² − 3 pour x = 3.",
+                          "choices":  [
+                                          "9",
+                                          "12",
+                                          "21",
+                                          "15"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "2 × 3² − 3 = 18 − 3 = 15."
+                      },
+                      {
+                          "code":  "M5-0339",
+                          "microSkill":  "m5_alg_substitute",
+                          "difficulty":  3,
+                          "prompt":  "Calcule a² − b² pour a = 7 et b = 5.",
+                          "choices":  [
+                                          "24",
+                                          "4",
+                                          "12",
+                                          "74"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "7² − 5² = 49 − 25 = 24."
+                      },
+                      {
+                          "code":  "M5-0340",
+                          "microSkill":  "m5_alg_substitute",
+                          "difficulty":  3,
+                          "prompt":  "Calcule (2x + 1)/3 pour x = 4.",
+                          "choices":  [
+                                          "2",
+                                          "3",
+                                          "6",
+                                          "9"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "(2 × 4 + 1)/3 = 9/3 = 3."
+                      },
+                      {
+                          "code":  "M5-0341",
+                          "microSkill":  "m5_alg_test_equality",
+                          "difficulty":  1,
+                          "prompt":  "Pour x = 3, l’égalité 2x + 1 = 7 est-elle vraie ?",
+                          "choices":  [
+                                          "Non, car 2x + 1 = 5.",
+                                          "Non, car 2x + 1 = 6.",
+                                          "Oui, car 2 × 3 + 1 = 7.",
+                                          "On ne peut pas savoir."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Pour x = 3, le membre de gauche vaut 7 : l’égalité est vraie."
+                      },
+                      {
+                          "code":  "M5-0342",
+                          "microSkill":  "m5_alg_test_equality",
+                          "difficulty":  1,
+                          "prompt":  "Pour x = 4, l’égalité 3x = 10 est-elle vraie ?",
+                          "choices":  [
+                                          "Oui, car 3 + 4 = 7.",
+                                          "Oui, car 3 × 4 = 10.",
+                                          "On ne peut pas savoir.",
+                                          "Non, car 3 × 4 = 12."
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Pour x = 4, 3x vaut 12 et non 10 : l’égalité est fausse."
+                      },
+                      {
+                          "code":  "M5-0343",
+                          "microSkill":  "m5_alg_test_equality",
+                          "difficulty":  1,
+                          "prompt":  "Quelle valeur vérifie x + 5 = 9 ?",
+                          "choices":  [
+                                          "4",
+                                          "5",
+                                          "9",
+                                          "14"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Pour x = 4, 4 + 5 = 9."
+                      },
+                      {
+                          "code":  "M5-0344",
+                          "microSkill":  "m5_alg_test_equality",
+                          "difficulty":  1,
+                          "prompt":  "Quelle valeur vérifie 2x = 14 ?",
+                          "choices":  [
+                                          "6",
+                                          "7",
+                                          "12",
+                                          "28"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Pour x = 7, 2 × 7 = 14."
+                      },
+                      {
+                          "code":  "M5-0345",
+                          "microSkill":  "m5_alg_test_equality",
+                          "difficulty":  2,
+                          "prompt":  "Pour x = −2, quelle conclusion concernant x² = 4 est correcte ?",
+                          "choices":  [
+                                          "L’égalité est fausse car −2² = −4.",
+                                          "L’égalité est fausse car x² = 2.",
+                                          "L’égalité est vraie car (−2)² = 4.",
+                                          "L’égalité dépend de x."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Après substitution, (−2)² = 4 : l’égalité est vraie."
+                      },
+                      {
+                          "code":  "M5-0346",
+                          "microSkill":  "m5_alg_test_equality",
+                          "difficulty":  2,
+                          "prompt":  "Pour a = 5, l’égalité 2a + 3 = 3a est-elle vraie ?",
+                          "choices":  [
+                                          "Oui, les deux membres valent 10.",
+                                          "Oui, les deux membres valent 15.",
+                                          "On ne peut pas conclure.",
+                                          "Non : les membres valent 13 et 15."
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "2 × 5 + 3 = 13 tandis que 3 × 5 = 15."
+                      },
+                      {
+                          "code":  "M5-0347",
+                          "microSkill":  "m5_alg_test_equality",
+                          "difficulty":  2,
+                          "prompt":  "Quelle valeur vérifie 3x − 2 = 10 ?",
+                          "choices":  [
+                                          "4",
+                                          "3",
+                                          "6",
+                                          "12"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Pour x = 4, 3 × 4 − 2 = 10."
+                      },
+                      {
+                          "code":  "M5-0348",
+                          "microSkill":  "m5_alg_test_equality",
+                          "difficulty":  2,
+                          "prompt":  "Pour x = 2, l’égalité x² + 1 = 2x + 1 est-elle vraie ?",
+                          "choices":  [
+                                          "Non, les membres valent 5 et 4.",
+                                          "Oui, les deux membres valent 5.",
+                                          "Non, les membres valent 3 et 5.",
+                                          "Oui, les deux membres valent 4."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "2² + 1 = 5 et 2 × 2 + 1 = 5."
+                      },
+                      {
+                          "code":  "M5-0349",
+                          "microSkill":  "m5_alg_test_equality",
+                          "difficulty":  3,
+                          "prompt":  "Pour x = −1, quelle égalité est vraie ?",
+                          "choices":  [
+                                          "2x + 3 = 3",
+                                          "x² = −1",
+                                          "x² + x = 0",
+                                          "3x = 3"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Pour x = −1, x² + x = 1 − 1 = 0."
+                      },
+                      {
+                          "code":  "M5-0350",
+                          "microSkill":  "m5_alg_test_equality",
+                          "difficulty":  3,
+                          "prompt":  "Pour n = 6, l’égalité n(n + 1) = n² + n est-elle vraie ?",
+                          "choices":  [
+                                          "Non, car 42 ≠ 36.",
+                                          "Non, car 36 ≠ 12.",
+                                          "On ne peut pas tester une égalité avec n.",
+                                          "Oui, les deux membres valent 42."
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "6 × 7 = 42 et 6² + 6 = 42."
+                      }
+                  ]
+}
