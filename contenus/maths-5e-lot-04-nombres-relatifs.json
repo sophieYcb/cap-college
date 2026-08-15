@@ -1,0 +1,612 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_numbers_calculation",
+                   "name":  "Nombres et calculs"
+               },
+    "skill":  {
+                  "code":  "m5_relative_numbers",
+                  "name":  "Nombres relatifs"
+              },
+    "lot":  "M5-REL-01",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_rel_interpret",
+                            "teacherName":  "Reconnaître et interpréter un nombre relatif",
+                            "studentName":  "Comprendre le signe d’un nombre relatif",
+                            "lessonReminder":  "Un nombre relatif comporte un signe et une distance à zéro. Un nombre positif est supérieur à zéro, un nombre négatif est inférieur à zéro et zéro n’est ni positif ni négatif.",
+                            "workedExample":  "−6 °C signifie une température située 6 degrés sous zéro ; +4 °C signifie 4 degrés au-dessus de zéro.",
+                            "masteryCriteria":  "Reconnaître le signe d’un nombre relatif et interpréter correctement sa signification."
+                        },
+                        {
+                            "code":  "m5_rel_opposite_absolute",
+                            "teacherName":  "Déterminer l’opposé et la valeur absolue d’un nombre",
+                            "studentName":  "Trouver l’opposé et la distance à zéro d’un nombre",
+                            "lessonReminder":  "Deux nombres opposés ont la même distance à zéro et des signes contraires. La valeur absolue d’un nombre est sa distance à zéro ; elle est toujours positive ou nulle.",
+                            "workedExample":  "L’opposé de −7 est +7 et la valeur absolue de −7 est 7.",
+                            "masteryCriteria":  "Déterminer sans confusion l’opposé et la valeur absolue de nombres relatifs."
+                        },
+                        {
+                            "code":  "m5_rel_model_context",
+                            "teacherName":  "Modéliser une température, une altitude ou un déplacement",
+                            "studentName":  "Traduire une situation avec un nombre relatif",
+                            "lessonReminder":  "On choisit un repère et un sens positif. Les situations au-dessus, les gains ou les déplacements dans le sens choisi sont positifs ; les situations opposées sont négatives.",
+                            "workedExample":  "Une profondeur de 12 m sous le niveau de la mer se note −12 m si le niveau de la mer représente zéro.",
+                            "masteryCriteria":  "Associer correctement un nombre relatif à une situation et calculer une variation simple."
+                        },
+                        {
+                            "code":  "m5_rel_number_line",
+                            "teacherName":  "Lire et placer un nombre relatif sur une droite graduée",
+                            "studentName":  "Se repérer avec des nombres relatifs sur une droite graduée",
+                            "lessonReminder":  "Sur une droite graduée orientée vers la droite, les nombres augmentent de gauche à droite. La distance entre deux points correspond à l’écart entre leurs abscisses.",
+                            "workedExample":  "Le point d’abscisse −3 est situé trois unités à gauche de zéro ; le point d’abscisse +2 est deux unités à droite.",
+                            "masteryCriteria":  "Lire, placer et utiliser des abscisses relatives sur une droite graduée."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0111",
+                          "microSkill":  "m5_rel_interpret",
+                          "difficulty":  1,
+                          "prompt":  "Que signifie une température de −6 °C ?",
+                          "choices":  [
+                                          "La température est de 6 °C au-dessus de zéro.",
+                                          "La température a augmenté de 6 °C.",
+                                          "La température est de 6 °C sous zéro.",
+                                          "La température est égale à zéro."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le signe − indique que la température est située 6 degrés sous zéro."
+                      },
+                      {
+                          "code":  "M5-0112",
+                          "microSkill":  "m5_rel_interpret",
+                          "difficulty":  1,
+                          "prompt":  "Une altitude est notée +9 m par rapport au niveau de la mer. Que signifie cette notation ?",
+                          "choices":  [
+                                          "Le lieu est à 9 m sous le niveau de la mer.",
+                                          "Le lieu descend de 9 m.",
+                                          "Le lieu est exactement au niveau de la mer.",
+                                          "Le lieu est à 9 m au-dessus du niveau de la mer."
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le signe + indique une position située 9 m au-dessus du niveau de référence."
+                      },
+                      {
+                          "code":  "M5-0113",
+                          "microSkill":  "m5_rel_interpret",
+                          "difficulty":  1,
+                          "prompt":  "Dans un jeu, une variation de score de +12 correspond à…",
+                          "choices":  [
+                                          "un gain de 12 points",
+                                          "une perte de 12 points",
+                                          "un score final de 12 points dans tous les cas",
+                                          "une absence de changement"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Une variation positive de +12 correspond à un gain de 12 points."
+                      },
+                      {
+                          "code":  "M5-0114",
+                          "microSkill":  "m5_rel_interpret",
+                          "difficulty":  1,
+                          "prompt":  "Un solde de −35 € signifie que le compte présente…",
+                          "choices":  [
+                                          "un crédit de 35 €",
+                                          "un découvert de 35 €",
+                                          "un solde nul",
+                                          "une entrée de 35 €"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Un solde négatif de −35 € représente un découvert de 35 €."
+                      },
+                      {
+                          "code":  "M5-0115",
+                          "microSkill":  "m5_rel_interpret",
+                          "difficulty":  1,
+                          "prompt":  "Lequel de ces nombres est négatif ?",
+                          "choices":  [
+                                          "+2,7",
+                                          "0",
+                                          "−2,7",
+                                          "+0,27"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le nombre −2,7 porte le signe − et est inférieur à zéro."
+                      },
+                      {
+                          "code":  "M5-0116",
+                          "microSkill":  "m5_rel_interpret",
+                          "difficulty":  2,
+                          "prompt":  "Le nombre +4,5 est…",
+                          "choices":  [
+                                          "négatif",
+                                          "nul",
+                                          "sans signe",
+                                          "positif"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le signe + indique que 4,5 est un nombre positif."
+                      },
+                      {
+                          "code":  "M5-0117",
+                          "microSkill":  "m5_rel_interpret",
+                          "difficulty":  2,
+                          "prompt":  "Quel nombre représente une valeur située sous zéro ?",
+                          "choices":  [
+                                          "−0,3",
+                                          "+0,3",
+                                          "3",
+                                          "0"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "−0,3 est inférieur à zéro."
+                      },
+                      {
+                          "code":  "M5-0118",
+                          "microSkill":  "m5_rel_interpret",
+                          "difficulty":  2,
+                          "prompt":  "Dans le nombre −18, le signe − indique que le nombre est…",
+                          "choices":  [
+                                          "à une distance de −18 de zéro",
+                                          "inférieur à zéro",
+                                          "toujours une température",
+                                          "égal à l’opposé de 18 sans être négatif"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le signe − indique que le nombre est inférieur à zéro."
+                      },
+                      {
+                          "code":  "M5-0119",
+                          "microSkill":  "m5_rel_interpret",
+                          "difficulty":  2,
+                          "prompt":  "Quelle affirmation concernant zéro est correcte ?",
+                          "choices":  [
+                                          "Zéro est positif.",
+                                          "Zéro est négatif.",
+                                          "Zéro n’est ni positif ni négatif.",
+                                          "Zéro possède obligatoirement le signe +."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Zéro sépare les nombres négatifs et positifs ; il n’est ni positif ni négatif."
+                      },
+                      {
+                          "code":  "M5-0120",
+                          "microSkill":  "m5_rel_interpret",
+                          "difficulty":  3,
+                          "prompt":  "Deux niveaux sont repérés par −3 et +3. Lequel est le plus élevé ?",
+                          "choices":  [
+                                          "Ils sont au même niveau.",
+                                          "−3, car son chiffre est 3.",
+                                          "On ne peut pas les comparer.",
+                                          "+3"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Tout nombre positif est supérieur à tout nombre négatif."
+                      },
+                      {
+                          "code":  "M5-0121",
+                          "microSkill":  "m5_rel_opposite_absolute",
+                          "difficulty":  1,
+                          "prompt":  "Quel est l’opposé de −7 ?",
+                          "choices":  [
+                                          "+7",
+                                          "−7",
+                                          "0",
+                                          "1/7"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "L’opposé a la même distance à zéro et le signe contraire : c’est +7."
+                      },
+                      {
+                          "code":  "M5-0122",
+                          "microSkill":  "m5_rel_opposite_absolute",
+                          "difficulty":  1,
+                          "prompt":  "Quelle est la valeur absolue de −12 ?",
+                          "choices":  [
+                                          "−12",
+                                          "12",
+                                          "0",
+                                          "+24"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "La distance entre −12 et zéro est 12."
+                      },
+                      {
+                          "code":  "M5-0123",
+                          "microSkill":  "m5_rel_opposite_absolute",
+                          "difficulty":  1,
+                          "prompt":  "Quelle paire est formée de deux nombres opposés ?",
+                          "choices":  [
+                                          "−3,5 et −3,5",
+                                          "+3,5 et +3,5",
+                                          "−3,5 et +3,5",
+                                          "−3,5 et +5,3"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "−3,5 et +3,5 ont la même distance à zéro et des signes contraires."
+                      },
+                      {
+                          "code":  "M5-0124",
+                          "microSkill":  "m5_rel_opposite_absolute",
+                          "difficulty":  1,
+                          "prompt":  "Quel est l’opposé de +8,2 ?",
+                          "choices":  [
+                                          "+8,2",
+                                          "−2,8",
+                                          "0",
+                                          "−8,2"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "L’opposé de +8,2 est −8,2."
+                      },
+                      {
+                          "code":  "M5-0125",
+                          "microSkill":  "m5_rel_opposite_absolute",
+                          "difficulty":  2,
+                          "prompt":  "Quelle est la valeur absolue de 0 ?",
+                          "choices":  [
+                                          "0",
+                                          "−1",
+                                          "1",
+                                          "Elle n’existe pas."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La distance entre zéro et lui-même est nulle."
+                      },
+                      {
+                          "code":  "M5-0126",
+                          "microSkill":  "m5_rel_opposite_absolute",
+                          "difficulty":  2,
+                          "prompt":  "L’opposé d’un nombre est −15. Quel est ce nombre ?",
+                          "choices":  [
+                                          "−15",
+                                          "+15",
+                                          "0",
+                                          "1/15"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le nombre dont l’opposé est −15 est +15."
+                      },
+                      {
+                          "code":  "M5-0127",
+                          "microSkill":  "m5_rel_opposite_absolute",
+                          "difficulty":  2,
+                          "prompt":  "Quel nombre négatif se trouve à une distance de 6,4 de zéro ?",
+                          "choices":  [
+                                          "+6,4",
+                                          "−4,6",
+                                          "−6,4",
+                                          "−0,64"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Les deux nombres situés à 6,4 de zéro sont −6,4 et +6,4 ; le nombre négatif est −6,4."
+                      },
+                      {
+                          "code":  "M5-0128",
+                          "microSkill":  "m5_rel_opposite_absolute",
+                          "difficulty":  2,
+                          "prompt":  "Lequel de ces nombres a la plus grande valeur absolue ?",
+                          "choices":  [
+                                          "+8",
+                                          "−7",
+                                          "+6",
+                                          "−9"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Les valeurs absolues sont 8, 7, 6 et 9 ; la plus grande est celle de −9."
+                      },
+                      {
+                          "code":  "M5-0129",
+                          "microSkill":  "m5_rel_opposite_absolute",
+                          "difficulty":  3,
+                          "prompt":  "Que vaut l’opposé de l’opposé de −7 ?",
+                          "choices":  [
+                                          "−7",
+                                          "+7",
+                                          "0",
+                                          "14"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "L’opposé de −7 est +7, puis l’opposé de +7 est −7."
+                      },
+                      {
+                          "code":  "M5-0130",
+                          "microSkill":  "m5_rel_opposite_absolute",
+                          "difficulty":  3,
+                          "prompt":  "Quelle affirmation est correcte à propos de −5 ?",
+                          "choices":  [
+                                          "Son opposé est −5 et sa valeur absolue est 5.",
+                                          "Son opposé est +5 et sa valeur absolue est 5.",
+                                          "Son opposé est +5 et sa valeur absolue est −5.",
+                                          "Son opposé est 0 et sa valeur absolue est 5."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "L’opposé de −5 est +5 et sa distance à zéro vaut 5."
+                      },
+                      {
+                          "code":  "M5-0131",
+                          "microSkill":  "m5_rel_model_context",
+                          "difficulty":  1,
+                          "prompt":  "Le thermomètre indique 4 °C sous zéro. Quel nombre représente cette température ?",
+                          "choices":  [
+                                          "+4",
+                                          "0",
+                                          "−4",
+                                          "−0,4"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Quatre degrés sous zéro se notent −4 °C."
+                      },
+                      {
+                          "code":  "M5-0132",
+                          "microSkill":  "m5_rel_model_context",
+                          "difficulty":  1,
+                          "prompt":  "Dans un immeuble, le troisième sous-sol est repéré par…",
+                          "choices":  [
+                                          "+3",
+                                          "0",
+                                          "−1",
+                                          "−3"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Les étages situés sous le niveau zéro sont repérés par des nombres négatifs."
+                      },
+                      {
+                          "code":  "M5-0133",
+                          "microSkill":  "m5_rel_model_context",
+                          "difficulty":  1,
+                          "prompt":  "Un joueur gagne 25 points. Quelle variation représente ce gain ?",
+                          "choices":  [
+                                          "+25",
+                                          "−25",
+                                          "0",
+                                          "+2,5"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Un gain se représente par une variation positive : +25."
+                      },
+                      {
+                          "code":  "M5-0134",
+                          "microSkill":  "m5_rel_model_context",
+                          "difficulty":  1,
+                          "prompt":  "Une dette de 40 € est représentée par…",
+                          "choices":  [
+                                          "+40",
+                                          "−40",
+                                          "0",
+                                          "−4"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Une dette est représentée par une valeur négative : −40 €."
+                      },
+                      {
+                          "code":  "M5-0135",
+                          "microSkill":  "m5_rel_model_context",
+                          "difficulty":  2,
+                          "prompt":  "Un plongeur se trouve à 120 m sous le niveau de la mer. Quelle altitude relative lui correspond ?",
+                          "choices":  [
+                                          "+120 m",
+                                          "−12 m",
+                                          "−120 m",
+                                          "120 m sans signe"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Une position située 120 m sous le niveau de la mer se note −120 m."
+                      },
+                      {
+                          "code":  "M5-0136",
+                          "microSkill":  "m5_rel_model_context",
+                          "difficulty":  2,
+                          "prompt":  "Une équipe perd 7 points à la suite d’une pénalité. Quelle variation faut-il noter ?",
+                          "choices":  [
+                                          "+7",
+                                          "0",
+                                          "−1",
+                                          "−7"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Une perte de 7 points correspond à la variation −7."
+                      },
+                      {
+                          "code":  "M5-0137",
+                          "microSkill":  "m5_rel_model_context",
+                          "difficulty":  2,
+                          "prompt":  "La température passe de −2 °C à +5 °C. Quelle est sa variation ?",
+                          "choices":  [
+                                          "+7 °C",
+                                          "−7 °C",
+                                          "+3 °C",
+                                          "−3 °C"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La variation vaut 5 − (−2) = +7 °C."
+                      },
+                      {
+                          "code":  "M5-0138",
+                          "microSkill":  "m5_rel_model_context",
+                          "difficulty":  2,
+                          "prompt":  "Un compte passe de 30 € à 18 €. Quelle variation du solde faut-il noter ?",
+                          "choices":  [
+                                          "+12 €",
+                                          "−12 €",
+                                          "−48 €",
+                                          "+48 €"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le solde a diminué de 12 € : la variation est −12 €."
+                      },
+                      {
+                          "code":  "M5-0139",
+                          "microSkill":  "m5_rel_model_context",
+                          "difficulty":  3,
+                          "prompt":  "Un plongeur est à −18 m et remonte de 6 m. À quelle profondeur se trouve-t-il ensuite ?",
+                          "choices":  [
+                                          "−24 m",
+                                          "+12 m",
+                                          "−12 m",
+                                          "+24 m"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Remonter de 6 m revient à ajouter +6 : −18 + 6 = −12 m."
+                      },
+                      {
+                          "code":  "M5-0140",
+                          "microSkill":  "m5_rel_model_context",
+                          "difficulty":  3,
+                          "prompt":  "Le stock d’un magasin diminue de 15 articles. Quelle variation représente cette évolution ?",
+                          "choices":  [
+                                          "+15",
+                                          "0",
+                                          "15",
+                                          "−15"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Une diminution de 15 se représente par la variation −15."
+                      },
+                      {
+                          "code":  "M5-0141",
+                          "microSkill":  "m5_rel_number_line",
+                          "difficulty":  1,
+                          "prompt":  "Sur une droite graduée, quel nombre se situe 4 unités à gauche de zéro ?",
+                          "choices":  [
+                                          "−4",
+                                          "+4",
+                                          "0",
+                                          "−0,4"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "À gauche de zéro, les abscisses sont négatives ; quatre unités à gauche correspond à −4."
+                      },
+                      {
+                          "code":  "M5-0142",
+                          "microSkill":  "m5_rel_number_line",
+                          "difficulty":  1,
+                          "prompt":  "Quel nombre est situé entre −3 et −1 sur une droite graduée ?",
+                          "choices":  [
+                                          "−4",
+                                          "−2",
+                                          "0",
+                                          "+2"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "−2 est supérieur à −3 et inférieur à −1."
+                      },
+                      {
+                          "code":  "M5-0143",
+                          "microSkill":  "m5_rel_number_line",
+                          "difficulty":  1,
+                          "prompt":  "Quel rangement correspond à l’ordre des points de gauche à droite sur une droite graduée ?",
+                          "choices":  [
+                                          "2 ; −1 ; −5",
+                                          "−1 ; −5 ; 2",
+                                          "−5 ; −1 ; 2",
+                                          "−5 ; 2 ; −1"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Les nombres augmentent de gauche à droite : −5 \u003c −1 \u003c 2."
+                      },
+                      {
+                          "code":  "M5-0144",
+                          "microSkill":  "m5_rel_number_line",
+                          "difficulty":  1,
+                          "prompt":  "Un point est placé 2,5 unités à droite de zéro. Quelle est son abscisse ?",
+                          "choices":  [
+                                          "−2,5",
+                                          "+0,25",
+                                          "−0,25",
+                                          "+2,5"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "À droite de zéro, l’abscisse est positive : +2,5."
+                      },
+                      {
+                          "code":  "M5-0145",
+                          "microSkill":  "m5_rel_number_line",
+                          "difficulty":  2,
+                          "prompt":  "Quelle est la distance entre les points d’abscisses −2 et +3 ?",
+                          "choices":  [
+                                          "5 unités",
+                                          "1 unité",
+                                          "−5 unités",
+                                          "6 unités"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "De −2 à 0 il y a 2 unités, puis 3 unités jusqu’à +3 : la distance vaut 5."
+                      },
+                      {
+                          "code":  "M5-0146",
+                          "microSkill":  "m5_rel_number_line",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le milieu des points d’abscisses −4 et +2 ?",
+                          "choices":  [
+                                          "+1",
+                                          "−1",
+                                          "−3",
+                                          "+3"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le milieu a pour abscisse (−4 + 2) ÷ 2 = −1."
+                      },
+                      {
+                          "code":  "M5-0147",
+                          "microSkill":  "m5_rel_number_line",
+                          "difficulty":  2,
+                          "prompt":  "Quel point est symétrique du point d’abscisse −6 par rapport à zéro ?",
+                          "choices":  [
+                                          "le point d’abscisse −12",
+                                          "le point d’abscisse 0",
+                                          "le point d’abscisse +6",
+                                          "le point d’abscisse −6"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Les abscisses de deux points symétriques par rapport à zéro sont opposées."
+                      },
+                      {
+                          "code":  "M5-0148",
+                          "microSkill":  "m5_rel_number_line",
+                          "difficulty":  2,
+                          "prompt":  "On part du point d’abscisse −3 et on avance de 7 unités vers la droite. Quelle abscisse atteint-on ?",
+                          "choices":  [
+                                          "−10",
+                                          "−4",
+                                          "+3",
+                                          "+4"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Avancer de 7 vers la droite revient à ajouter 7 : −3 + 7 = +4."
+                      },
+                      {
+                          "code":  "M5-0149",
+                          "microSkill":  "m5_rel_number_line",
+                          "difficulty":  3,
+                          "prompt":  "Parmi ces abscisses, laquelle correspond au point le plus à gauche ?",
+                          "choices":  [
+                                          "−4",
+                                          "−1",
+                                          "+2",
+                                          "+5"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le point le plus à gauche possède la plus petite abscisse : −4."
+                      },
+                      {
+                          "code":  "M5-0150",
+                          "microSkill":  "m5_rel_number_line",
+                          "difficulty":  3,
+                          "prompt":  "Quelle est la distance entre les points d’abscisses −5,5 et −1,5 ?",
+                          "choices":  [
+                                          "7 unités",
+                                          "4 unités",
+                                          "−4 unités",
+                                          "6 unités"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "L’écart entre −5,5 et −1,5 vaut 4 unités."
+                      }
+                  ]
+}
