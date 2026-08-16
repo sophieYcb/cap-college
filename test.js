@@ -176,9 +176,14 @@ function renderQuestion(){
  );
  document.getElementById('testChoices').innerHTML=q.choix.map((c,i)=>`<div class="choice test-choice ${i===q.reponse?'correct-choice':''}"><span>${String.fromCharCode(65+i)}.</span> ${CapCollegeEducationalContent.toHtml(c)} ${i===q.reponse?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
  const changeCommentNotice=document.getElementById('changeCommentNotice');
+ const sourceReview=q.previous?.review;
  changeCommentNotice.classList.toggle('hidden',!q.changeComment);
  changeCommentNotice.innerHTML=q.changeComment
-  ?'<strong>Réponse à ta remarque</strong><p>'+escapeHtml(q.changeComment)+'</p>'
+  ?'<strong>Échange sur la modification</strong>'+
+    (sourceReview
+      ?'<div class="flag-detail"><strong>Ta remarque'+(sourceReview.grade?' — note '+escapeHtml(sourceReview.grade):'')+'</strong><p>'+escapeHtml(sourceReview.comment||'Aucun commentaire saisi.')+'</p></div>'
+      :'')+
+    '<div class="flag-detail"><strong>Ma réponse</strong><p>'+escapeHtml(q.changeComment)+'</p></div>'
   :'';
  const flagDetails=document.getElementById('openFlagDetails');
  flagDetails.classList.toggle('hidden',!q.openFlagDetails.length);
