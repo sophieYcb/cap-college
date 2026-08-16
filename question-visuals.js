@@ -303,17 +303,20 @@
   function createCodedTriangle(type){
     const normalized=String(type||'').trim().toLowerCase();
     const right=normalized==='right'||normalized==='right-isosceles';
-    const isosceles=normalized==='isosceles'||normalized==='right-isosceles';
+    const isosceles=normalized==='isosceles'||normalized==='isosceles-measures'||normalized==='right-isosceles';
     const equilateral=normalized==='equilateral';
     const points=right
       ?(normalized==='right-isosceles'
         ?{A:{x:110,y:240},B:{x:110,y:65},C:{x:285,y:240}}
         :{A:{x:100,y:240},B:{x:100,y:55},C:{x:370,y:240}})
-      :{A:{x:230,y:42},B:{x:110,y:250},C:{x:350,y:250}};
+      :normalized==='equilateral'
+        ?{A:{x:230,y:42},B:{x:110,y:250},C:{x:350,y:250}}
+        :{A:{x:230,y:70},B:{x:90,y:250},C:{x:370,y:250}};
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
     const descriptions={
       isosceles:'Triangle ABC avec les côtés AB et AC codés égaux',
+      'isosceles-measures':'Triangle ABC avec AB et AC codés égaux et des longueurs indiquées',
       equilateral:'Triangle ABC avec les trois côtés codés égaux',
       right:'Triangle ABC rectangle en A',
       'right-isosceles':'Triangle ABC rectangle en A avec AB et AC codés égaux'
@@ -347,6 +350,11 @@
         d:`M ${points.A.x} ${points.A.y-22} L ${points.A.x+22} ${points.A.y-22} L ${points.A.x+22} ${points.A.y}`,
         fill:'none',stroke:'#3158df','stroke-width':4
       }));
+    }
+    if(normalized==='isosceles-measures'){
+      addSvgText(svg,'5 cm',140,145,{class:'chart-label','text-anchor':'middle'});
+      addSvgText(svg,'5 cm',320,145,{class:'chart-label','text-anchor':'middle'});
+      addSvgText(svg,'7 cm',230,280,{class:'chart-label','text-anchor':'middle'});
     }
     const labelOffsets=right
       ?{A:[-20,24],B:[-18,-10],C:[12,24]}
