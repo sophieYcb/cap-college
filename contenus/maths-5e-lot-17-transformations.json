@@ -1,0 +1,316 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_space_geometry",
+                   "name":  "Espace et géométrie"
+               },
+    "skill":  {
+                  "code":  "m5_transformations",
+                  "name":  "Transformations"
+              },
+    "lot":  "M5-GEO-04",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_geo_central_symmetry",
+                            "teacherName":  "Reconnaître une symétrie centrale ou un demi-tour",
+                            "studentName":  "Reconnaître une symétrie centrale",
+                            "lessonReminder":  "Dans une symétrie centrale de centre O, le point O est le milieu du segment reliant un point à son image. Cette transformation équivaut à un demi-tour autour de O.",
+                            "workedExample":  "Si A et A’ sont symétriques par rapport à O, alors A, O et A’ sont alignés et OA = OA’.",
+                            "masteryCriteria":  "Reconnaître la transformation, construire ou déterminer l’image d’un point et retrouver le centre de symétrie."
+                        },
+                        {
+                            "code":  "m5_geo_central_symmetry_properties",
+                            "teacherName":  "Utiliser les propriétés de conservation de la symétrie centrale",
+                            "studentName":  "Utiliser les propriétés de la symétrie centrale",
+                            "lessonReminder":  "La symétrie centrale conserve les longueurs, les mesures d’angles, les aires, l’alignement et le parallélisme. L’image d’une droite est une droite parallèle, ou la même droite si elle passe par le centre.",
+                            "workedExample":  "L’image d’un segment de longueur 4 cm est un segment de longueur 4 cm.",
+                            "masteryCriteria":  "Déduire une longueur, un angle, une aire, un alignement ou un parallélisme sans refaire toute la construction."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0521",
+                          "microSkill":  "m5_geo_central_symmetry",
+                          "difficulty":  1,
+                          "prompt":  "À quelle transformation une symétrie centrale de centre O est-elle équivalente ?",
+                          "choices":  [
+                                          "Un demi-tour autour de O",
+                                          "Un quart de tour autour de O",
+                                          "Une symétrie axiale",
+                                          "Une translation quelconque"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Une symétrie centrale est exactement un demi-tour, soit une rotation de 180°, autour de son centre."
+                      },
+                      {
+                          "code":  "M5-0522",
+                          "microSkill":  "m5_geo_central_symmetry",
+                          "difficulty":  1,
+                          "prompt":  "[COORDINATES]O=0,0;A=3,-2[/COORDINATES] Le point A a pour coordonnées (3 ; −2). Quelle est son image par la symétrie centrale de centre O, origine du repère ?",
+                          "choices":  [
+                                          "(3 ; 2)",
+                                          "(−3 ; 2)",
+                                          "(−3 ; −2)",
+                                          "(2 ; −3)"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Par rapport à l’origine, les deux coordonnées changent de signe : A’(−3 ; 2)."
+                      },
+                      {
+                          "code":  "M5-0523",
+                          "microSkill":  "m5_geo_central_symmetry",
+                          "difficulty":  2,
+                          "prompt":  "[COORDINATES]A=1,4;A\u0027=5,0[/COORDINATES] Les points A(1 ; 4) et A’(5 ; 0) sont symétriques. Quelles sont les coordonnées du centre de symétrie ?",
+                          "choices":  [
+                                          "(4 ; 1)",
+                                          "(2 ; 4)",
+                                          "(3 ; 2)",
+                                          "(6 ; 4)"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le centre est le milieu de [AA’] : ((1 + 5) ÷ 2 ; (4 + 0) ÷ 2) = (3 ; 2)."
+                      },
+                      {
+                          "code":  "M5-0524",
+                          "microSkill":  "m5_geo_central_symmetry",
+                          "difficulty":  2,
+                          "prompt":  "[COORDINATES]I=2,1;P=5,3[/COORDINATES] Quelle est l’image P’ du point P(5 ; 3) par la symétrie centrale de centre I(2 ; 1) ?",
+                          "choices":  [
+                                          "(3 ; 2)",
+                                          "(−5 ; −3)",
+                                          "(−3 ; −2)",
+                                          "(−1 ; −1)"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "I doit être le milieu de [PP’]. Ainsi P’(2 × 2 − 5 ; 2 × 1 − 3) = (−1 ; −1)."
+                      },
+                      {
+                          "code":  "M5-0525",
+                          "microSkill":  "m5_geo_central_symmetry",
+                          "difficulty":  1,
+                          "prompt":  "Le point B’ est l’image de B par la symétrie centrale de centre O. Quelle affirmation est nécessairement vraie ?",
+                          "choices":  [
+                                          "O est le milieu de [BB’].",
+                                          "OB est le double de OB’.",
+                                          "B, B’ et O forment un triangle.",
+                                          "[BB’] est perpendiculaire à toute droite passant par O."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Par définition, le centre O est le milieu du segment reliant un point à son image."
+                      },
+                      {
+                          "code":  "M5-0526",
+                          "microSkill":  "m5_geo_central_symmetry",
+                          "difficulty":  1,
+                          "prompt":  "Quel point reste toujours invariant dans une symétrie centrale de centre C ?",
+                          "choices":  [
+                                          "Tous les points d’un cercle de centre C",
+                                          "Le centre C",
+                                          "Tous les points d’une droite passant par C",
+                                          "Aucun point"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le centre C est envoyé sur lui-même ; c’est l’unique point toujours invariant."
+                      },
+                      {
+                          "code":  "M5-0527",
+                          "microSkill":  "m5_geo_central_symmetry",
+                          "difficulty":  2,
+                          "prompt":  "On applique deux fois de suite la même symétrie centrale à un point M. Où arrive-t-on ?",
+                          "choices":  [
+                                          "Au centre de symétrie",
+                                          "Au milieu du premier trajet",
+                                          "Au point M de départ",
+                                          "Sur un point impossible à prévoir"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Deux demi-tours successifs autour du même centre ramènent au point de départ."
+                      },
+                      {
+                          "code":  "M5-0528",
+                          "microSkill":  "m5_geo_central_symmetry",
+                          "difficulty":  2,
+                          "prompt":  "[COORDINATES]O=0,0;A=-4,1[/COORDINATES] Quelle est l’image de A(−4 ; 1) par la symétrie centrale de centre O, origine du repère ?",
+                          "choices":  [
+                                          "(−4 ; −1)",
+                                          "(4 ; 1)",
+                                          "(1 ; −4)",
+                                          "(4 ; −1)"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Les coordonnées changent de signe : A’(4 ; −1)."
+                      },
+                      {
+                          "code":  "M5-0529",
+                          "microSkill":  "m5_geo_central_symmetry",
+                          "difficulty":  3,
+                          "prompt":  "[COORDINATES]M=-1,2;A=3,-2[/COORDINATES] Le point M(−1 ; 2) est le milieu de [AA’] et A(3 ; −2). Quelles sont les coordonnées de A’ ?",
+                          "choices":  [
+                                          "(−5 ; 6)",
+                                          "(1 ; 0)",
+                                          "(−3 ; 2)",
+                                          "(5 ; −6)"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "A’(2 × (−1) − 3 ; 2 × 2 − (−2)) = (−5 ; 6)."
+                      },
+                      {
+                          "code":  "M5-0530",
+                          "microSkill":  "m5_geo_central_symmetry",
+                          "difficulty":  2,
+                          "prompt":  "Pour construire l’image A’ d’un point A par la symétrie centrale de centre O, quelle méthode est correcte ?",
+                          "choices":  [
+                                          "Tracer la perpendiculaire à (AO) en O.",
+                                          "Placer A’ sur la droite (AO), de l’autre côté de O, avec OA’ = OA.",
+                                          "Placer A’ n’importe où sur le cercle de centre A.",
+                                          "Reporter deux fois la longueur OA à partir de A."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "A, O et A’ doivent être alignés et O doit être le milieu de [AA’]."
+                      },
+                      {
+                          "code":  "M5-0531",
+                          "microSkill":  "m5_geo_central_symmetry_properties",
+                          "difficulty":  1,
+                          "prompt":  "Un segment [AB] mesure 6 cm. Combien mesure son image [A’B’] par une symétrie centrale ?",
+                          "choices":  [
+                                          "3 cm",
+                                          "12 cm",
+                                          "6 cm",
+                                          "Cela dépend du centre."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "La symétrie centrale conserve les longueurs, donc A’B’ = AB = 6 cm."
+                      },
+                      {
+                          "code":  "M5-0532",
+                          "microSkill":  "m5_geo_central_symmetry_properties",
+                          "difficulty":  1,
+                          "prompt":  "Quelle propriété est toujours conservée par une symétrie centrale ?",
+                          "choices":  [
+                                          "La position horizontale",
+                                          "Le sens gauche-droite sur la feuille",
+                                          "La distance au bord de la feuille",
+                                          "Le parallélisme"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Une symétrie centrale conserve notamment le parallélisme."
+                      },
+                      {
+                          "code":  "M5-0533",
+                          "microSkill":  "m5_geo_central_symmetry_properties",
+                          "difficulty":  2,
+                          "prompt":  "Une droite d ne passe pas par le centre O d’une symétrie centrale. Quelle est son image d’ ?",
+                          "choices":  [
+                                          "Une droite parallèle à d",
+                                          "Une droite perpendiculaire à d",
+                                          "Un cercle de centre O",
+                                          "La droite d elle-même dans tous les cas"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "L’image d’une droite ne passant pas par le centre est une droite parallèle."
+                      },
+                      {
+                          "code":  "M5-0534",
+                          "microSkill":  "m5_geo_central_symmetry_properties",
+                          "difficulty":  2,
+                          "prompt":  "I est le milieu de [AB]. Les images de A, B et I sont A’, B’ et I’. Que peut-on affirmer ?",
+                          "choices":  [
+                                          "I’ est confondu avec A’.",
+                                          "I’ est le milieu de [A’B’].",
+                                          "I’ est toujours le centre de symétrie.",
+                                          "A’B’ = 2 × AB."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "La symétrie centrale conserve les milieux : I’ est le milieu de [A’B’]."
+                      },
+                      {
+                          "code":  "M5-0535",
+                          "microSkill":  "m5_geo_central_symmetry_properties",
+                          "difficulty":  1,
+                          "prompt":  "Un triangle a une aire de 18 cm². Quelle est l’aire de son image par une symétrie centrale ?",
+                          "choices":  [
+                                          "9 cm²",
+                                          "36 cm²",
+                                          "18 cm²",
+                                          "Elle dépend de la position du centre."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "La symétrie centrale conserve les aires."
+                      },
+                      {
+                          "code":  "M5-0536",
+                          "microSkill":  "m5_geo_central_symmetry_properties",
+                          "difficulty":  2,
+                          "prompt":  "Un cercle de rayon 4 cm est transformé par une symétrie centrale. Quel est le rayon du cercle image ?",
+                          "choices":  [
+                                          "2 cm",
+                                          "8 cm",
+                                          "16 cm",
+                                          "4 cm"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Les longueurs sont conservées ; le rayon reste égal à 4 cm."
+                      },
+                      {
+                          "code":  "M5-0537",
+                          "microSkill":  "m5_geo_central_symmetry_properties",
+                          "difficulty":  2,
+                          "prompt":  "Les points A, B et C sont alignés. Que peut-on dire de leurs images A’, B’ et C’ ?",
+                          "choices":  [
+                                          "Elles sont alignées.",
+                                          "Elles forment toujours un triangle rectangle.",
+                                          "Elles sont confondues.",
+                                          "Elles sont sur un cercle de centre O."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La symétrie centrale conserve l’alignement."
+                      },
+                      {
+                          "code":  "M5-0538",
+                          "microSkill":  "m5_geo_central_symmetry_properties",
+                          "difficulty":  2,
+                          "prompt":  "Un angle mesure 47°. Quelle est la mesure de son angle image par une symétrie centrale ?",
+                          "choices":  [
+                                          "133°",
+                                          "47°",
+                                          "94°",
+                                          "23,5°"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "La symétrie centrale conserve les mesures des angles."
+                      },
+                      {
+                          "code":  "M5-0539",
+                          "microSkill":  "m5_geo_central_symmetry_properties",
+                          "difficulty":  2,
+                          "prompt":  "Un triangle a un périmètre de 21 cm. Quel est le périmètre de son image par une symétrie centrale ?",
+                          "choices":  [
+                                          "42 cm",
+                                          "10,5 cm",
+                                          "21 cm",
+                                          "On ne peut pas savoir."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Toutes les longueurs sont conservées, donc le périmètre reste égal à 21 cm."
+                      },
+                      {
+                          "code":  "M5-0540",
+                          "microSkill":  "m5_geo_central_symmetry_properties",
+                          "difficulty":  3,
+                          "prompt":  "Une droite d passe par le centre O d’une symétrie centrale. Quelle est son image ?",
+                          "choices":  [
+                                          "Une droite parallèle distincte",
+                                          "Une droite perpendiculaire",
+                                          "Un point",
+                                          "La droite d elle-même"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Après un demi-tour autour de O, une droite passant par O se superpose à elle-même."
+                      }
+                  ]
+}
