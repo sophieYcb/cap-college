@@ -34,5 +34,5 @@ select jsonb_build_object(
   'hyphenated_alternate_internal_removed',count(*) filter(where prompt not ilike '%alterne-interne%'),
   'corresponding_definition_added',count(*) filter(where legacy_id=5000570 and prompt ilike '%même position%'),
   'corresponding_pair_wording_clarified',count(*) filter(where legacy_id=5000562 and prompt ilike '%une paire d’angles correspondants%')
-+) verification
+) verification
 from corrected;
