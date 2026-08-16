@@ -324,8 +324,21 @@
     const svg=svgNode('svg',{viewBox:'0 0 460 280',role:'img','aria-label':'Deux droites sécantes formant quatre angles notés a chapeau, b chapeau, c chapeau et d chapeau'});
     svg.classList.add('question-chart');
     const cx=230,cy=140;
-    svg.appendChild(svgNode('line',{x1:55,y1:220,x2:405,y2:60,class:'chart-axis'}));
-    svg.appendChild(svgNode('line',{x1:70,y1:55,x2:390,y2:225,class:'chart-axis'}));
+    const opening=Number.isFinite(measure)?Math.max(30,Math.min(150,measure)):110;
+    const firstAngle=(-90-opening/2)*Math.PI/180;
+    const secondAngle=(-90+opening/2)*Math.PI/180;
+    const point=(angle,length)=>({x:cx+length*Math.cos(angle),y:cy+length*Math.sin(angle)});
+    const firstStart=point(firstAngle,190),firstEnd=point(firstAngle+Math.PI,190);
+    const secondStart=point(secondAngle,190),secondEnd=point(secondAngle+Math.PI,190);
+    svg.appendChild(svgNode('line',{x1:firstStart.x,y1:firstStart.y,x2:firstEnd.x,y2:firstEnd.y,class:'chart-axis'}));
+    svg.appendChild(svgNode('line',{x1:secondStart.x,y1:secondStart.y,x2:secondEnd.x,y2:secondEnd.y,class:'chart-axis'}));
+    if(Number.isFinite(measure)){
+      const arcStart=point(firstAngle,48),arcEnd=point(secondAngle,48);
+      svg.appendChild(svgNode('path',{
+        d:`M ${arcStart.x} ${arcStart.y} A 48 48 0 0 1 ${arcEnd.x} ${arcEnd.y}`,
+        fill:'none',stroke:'#3158df','stroke-width':4
+      }));
+    }
     addSvgAngleLabel(svg,'a',230,82);
     addSvgAngleLabel(svg,'b',310,145);
     addSvgAngleLabel(svg,'c',230,210);
