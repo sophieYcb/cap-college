@@ -94,7 +94,7 @@
                           "code":  "M5-0454",
                           "microSkill":  "m5_geo_cube_views",
                           "difficulty":  2,
-                          "prompt":  "[CUBESTACK]1,3,0;2,1,4[/CUBESTACK]\nLa flèche indique l’avant. Dans la vue de face, quelles hauteurs voit-on de gauche à droite ?",
+                          "prompt":  "[CUBEVIEW]2,3,4[/CUBEVIEW]\r\nQuelles sont les hauteurs des colonnes visibles de gauche à droite ?",
                           "choices":  [
                                           "1 ; 3 ; 0",
                                           "2 ; 1 ; 4",
@@ -102,7 +102,7 @@
                                           "2 ; 3 ; 4"
                                       ],
                           "correctIndex":  3,
-                          "explanation":  "Dans chaque direction, on retient la plus grande hauteur visible : 2, 3 et 4."
+                          "explanation":  "La vue de face montre des colonnes de hauteurs 2, 3 et 4."
                       },
                       {
                           "code":  "M5-0455",
@@ -150,7 +150,7 @@
                           "code":  "M5-0458",
                           "microSkill":  "m5_geo_cube_views",
                           "difficulty":  2,
-                          "prompt":  "[CUBESTACK]1,2,1;0,3,2[/CUBESTACK]\nCombien de carrés comporte la vue de dessus de cet empilement ?",
+                          "prompt":  "[TOPVIEW]1,1,1;0,1,1[/TOPVIEW]\r\nCombien de carrés comporte cette vue de dessus ?",
                           "choices":  [
                                           "Le nombre total de cubes.",
                                           "La plus grande hauteur.",
@@ -158,7 +158,7 @@
                                           "Cinq carrés."
                                       ],
                           "correctIndex":  3,
-                          "explanation":  "Cinq emplacements sont occupés : la vue de dessus comporte donc cinq carrés."
+                          "explanation":  "La vue de dessus comporte cinq carrés."
                       },
                       {
                           "code":  "M5-0459",
