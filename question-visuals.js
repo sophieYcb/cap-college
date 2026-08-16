@@ -367,6 +367,56 @@
     return wrapper;
   }
 
+  function createTriangleAuxiliary(type){
+    const normalized=String(type||'').trim().toLowerCase();
+    const wrapper=document.createElement('div');
+    wrapper.className='question-visual';
+    const descriptions={
+      area:'Triangle ABC dont la base BC mesure 8 cm et la hauteur AH mesure 5 cm',
+      height:'Triangle ABC avec la hauteur AH perpendiculaire au côté BC',
+      median:'Triangle ABC avec M milieu de BC et la médiane AM'
+    };
+    const svg=svgNode('svg',{viewBox:'0 0 460 310',role:'img','aria-label':descriptions[normalized]||'Triangle ABC avec un segment remarquable'});
+    svg.classList.add('question-chart');
+    const points={A:{x:190,y:45},B:{x:65,y:255},C:{x:395,y:255}};
+    const foot=normalized==='median'?{x:230,y:255}:{x:190,y:255};
+    [['A','B'],['B','C'],['C','A']].forEach(([from,to])=>{
+      svg.appendChild(svgNode('line',{
+        x1:points[from].x,y1:points[from].y,
+        x2:points[to].x,y2:points[to].y,
+        class:'chart-axis'
+      }));
+    });
+    svg.appendChild(svgNode('line',{
+      x1:points.A.x,y1:points.A.y,x2:foot.x,y2:foot.y,
+      stroke:'#3158df','stroke-width':4
+    }));
+    if(normalized==='area'||normalized==='height'){
+      svg.appendChild(svgNode('path',{
+        d:`M ${foot.x} ${foot.y-20} L ${foot.x+20} ${foot.y-20} L ${foot.x+20} ${foot.y}`,
+        fill:'none',stroke:'#3158df','stroke-width':4
+      }));
+      addSvgText(svg,'H',foot.x-15,foot.y+26,{class:'chart-value','text-anchor':'middle'});
+    }
+    if(normalized==='area'){
+      addSvgText(svg,'5 cm',foot.x+45,155,{class:'chart-label','text-anchor':'middle'});
+      addSvgText(svg,'8 cm',230,287,{class:'chart-label','text-anchor':'middle'});
+    }
+    if(normalized==='median'){
+      addSvgText(svg,'M',foot.x-15,foot.y+26,{class:'chart-value','text-anchor':'middle'});
+      const addBaseTick=x=>svg.appendChild(svgNode('line',{
+        x1:x,y1:foot.y-9,x2:x,y2:foot.y+9,
+        stroke:'#3158df','stroke-width':4
+      }));
+      addBaseTick((points.B.x+foot.x)/2);
+      addBaseTick((foot.x+points.C.x)/2);
+    }
+    addSvgText(svg,'A',points.A.x,points.A.y-14,{class:'chart-value','text-anchor':'middle'});
+    addSvgText(svg,'B',points.B.x-16,points.B.y+24,{class:'chart-value','text-anchor':'middle'});
+    addSvgText(svg,'C',points.C.x+16,points.C.y+24,{class:'chart-value','text-anchor':'middle'});
+    wrapper.appendChild(svg);
+    return wrapper;
+  }
   function createAngleDiagram(measure){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
@@ -517,7 +567,9 @@
     if((match=normalized.match(/\[CODEDTRIANGLE\]\s*([a-z-]+)\s*\[\/CODEDTRIANGLE\]/i))){
       return {text:normalized.replace(match[0],'').trim(),visual:createCodedTriangle(match[1])};
     }
-    if((match=normalized.match(/\[ANGLECROSS\]\s*(\d+(?:[.,]\d+)?)?\s*\[\/ANGLECROSS\]/i))){
+    if((match=normalized.match(/\[TRIANGLEAUX\]\s*([a-z-]+)\s*\[\/TRIANGLEAUX\]/i))){
+      return {text:normalized.replace(match[0],'').trim(),visual:createTriangleAuxiliary(match[1])};
+    }    if((match=normalized.match(/\[ANGLECROSS\]\s*(\d+(?:[.,]\d+)?)?\s*\[\/ANGLECROSS\]/i))){
       return {text:normalized.replace(match[0],'').trim(),visual:createCrossingAngles(match[1]?Number(match[1].replace(',','.')):null)};
     }
     if((match=normalized.match(/\[PARALLELANGLES\]\s*\[\/PARALLELANGLES\]/i))){
