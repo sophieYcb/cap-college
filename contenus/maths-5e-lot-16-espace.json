@@ -1,0 +1,464 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_space_geometry",
+                   "name":  "Espace et géométrie"
+               },
+    "skill":  {
+                  "code":  "m5_space_representation",
+                  "name":  "Représentation de l’espace et solides"
+              },
+    "lot":  "M5-GEO-03",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_geo_convert_volume_capacity",
+                            "teacherName":  "Convertir des unités de volume et de capacité",
+                            "studentName":  "Convertir volumes et capacités",
+                            "lessonReminder":  "Les correspondances essentielles sont : 1 dm³ = 1 L et 1 cm³ = 1 mL. Entre deux unités de volume consécutives, on multiplie ou on divise par 1 000.",
+                            "workedExample":  "2,5 dm³ = 2,5 L = 2 500 cm³.",
+                            "masteryCriteria":  "Convertir entre m³, dm³, cm³, litres et millilitres, puis résoudre un problème de capacité."
+                        },
+                        {
+                            "code":  "m5_geo_area_disk",
+                            "teacherName":  "Calculer l’aire d’un disque",
+                            "studentName":  "Calculer l’aire d’un disque",
+                            "lessonReminder":  "L’aire d’un disque de rayon r est A = π × r². Le rayon est égal à la moitié du diamètre.",
+                            "workedExample":  "Pour un disque de rayon 3 cm : A = π × 3² = 9π cm², soit environ 28,27 cm².",
+                            "masteryCriteria":  "Identifier le rayon, appliquer πr² et donner une valeur exacte ou approchée avec l’unité correcte."
+                        },
+                        {
+                            "code":  "m5_geo_volume_cylinder",
+                            "teacherName":  "Calculer le volume d’un cylindre",
+                            "studentName":  "Calculer le volume d’un cylindre",
+                            "lessonReminder":  "Le volume d’un cylindre est l’aire de sa base multipliée par sa hauteur : V = π × r² × h.",
+                            "workedExample":  "Pour r = 2 cm et h = 5 cm : V = π × 2² × 5 = 20π cm³.",
+                            "masteryCriteria":  "Calculer un volume exact ou approché, retrouver une dimension et raisonner sur la variation du volume."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0491",
+                          "microSkill":  "m5_geo_convert_volume_capacity",
+                          "difficulty":  1,
+                          "prompt":  "Convertis 2 dm³ en litres.",
+                          "choices":  [
+                                          "2 L",
+                                          "20 L",
+                                          "200 L",
+                                          "0,2 L"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Comme 1 dm³ = 1 L, 2 dm³ = 2 L."
+                      },
+                      {
+                          "code":  "M5-0492",
+                          "microSkill":  "m5_geo_convert_volume_capacity",
+                          "difficulty":  1,
+                          "prompt":  "Convertis 750 cm³ en millilitres.",
+                          "choices":  [
+                                          "75 mL",
+                                          "7 500 mL",
+                                          "750 mL",
+                                          "0,75 mL"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Comme 1 cm³ = 1 mL, 750 cm³ = 750 mL."
+                      },
+                      {
+                          "code":  "M5-0493",
+                          "microSkill":  "m5_geo_convert_volume_capacity",
+                          "difficulty":  1,
+                          "prompt":  "Convertis 1,5 L en centimètres cubes.",
+                          "choices":  [
+                                          "150 cm³",
+                                          "1 500 cm³",
+                                          "15 000 cm³",
+                                          "1,5 cm³"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "1 L = 1 000 cm³, donc 1,5 L = 1 500 cm³."
+                      },
+                      {
+                          "code":  "M5-0494",
+                          "microSkill":  "m5_geo_convert_volume_capacity",
+                          "difficulty":  2,
+                          "prompt":  "Convertis 0,4 m³ en litres.",
+                          "choices":  [
+                                          "40 L",
+                                          "4 L",
+                                          "4 000 L",
+                                          "400 L"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "1 m³ = 1 000 L, donc 0,4 m³ = 400 L."
+                      },
+                      {
+                          "code":  "M5-0495",
+                          "microSkill":  "m5_geo_convert_volume_capacity",
+                          "difficulty":  2,
+                          "prompt":  "Convertis 2,5 dm³ en centimètres cubes.",
+                          "choices":  [
+                                          "250 cm³",
+                                          "2 500 cm³",
+                                          "25 000 cm³",
+                                          "2,5 cm³"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "1 dm³ = 1 000 cm³, donc 2,5 dm³ = 2 500 cm³."
+                      },
+                      {
+                          "code":  "M5-0496",
+                          "microSkill":  "m5_geo_convert_volume_capacity",
+                          "difficulty":  2,
+                          "prompt":  "[TOOLS]scratch[/TOOLS] Un aquarium mesure intérieurement 40 cm de long, 25 cm de large et 30 cm de haut. Quelle est sa capacité totale ?",
+                          "choices":  [
+                                          "30 L",
+                                          "3 L",
+                                          "300 L",
+                                          "95 L"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Son volume est 40 × 25 × 30 = 30 000 cm³, soit 30 L."
+                      },
+                      {
+                          "code":  "M5-0497",
+                          "microSkill":  "m5_geo_convert_volume_capacity",
+                          "difficulty":  2,
+                          "prompt":  "Quel volume en centimètres cubes correspond à 3 L et 250 mL ?",
+                          "choices":  [
+                                          "3 025 cm³",
+                                          "325 cm³",
+                                          "32 500 cm³",
+                                          "3 250 cm³"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "3 L = 3 000 cm³ et 250 mL = 250 cm³, soit 3 250 cm³."
+                      },
+                      {
+                          "code":  "M5-0498",
+                          "microSkill":  "m5_geo_convert_volume_capacity",
+                          "difficulty":  2,
+                          "prompt":  "Compare 0,002 m³ et 2 L.",
+                          "choices":  [
+                                          "0,002 m³ est plus grand.",
+                                          "2 L est plus grand.",
+                                          "Les deux volumes sont égaux.",
+                                          "On ne peut pas les comparer."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "0,002 m³ = 0,002 × 1 000 L = 2 L."
+                      },
+                      {
+                          "code":  "M5-0499",
+                          "microSkill":  "m5_geo_convert_volume_capacity",
+                          "difficulty":  2,
+                          "prompt":  "Convertis 4 500 cm³ en décimètres cubes.",
+                          "choices":  [
+                                          "4,5 dm³",
+                                          "45 dm³",
+                                          "450 dm³",
+                                          "0,45 dm³"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On divise par 1 000 : 4 500 cm³ = 4,5 dm³."
+                      },
+                      {
+                          "code":  "M5-0500",
+                          "microSkill":  "m5_geo_convert_volume_capacity",
+                          "difficulty":  3,
+                          "prompt":  "[TOOLS]scratch[/TOOLS] Un récipient de 12 L contient déjà 8 500 cm³ d’eau. Quel volume peut-on encore ajouter ?",
+                          "choices":  [
+                                          "2,5 L",
+                                          "3,5 L",
+                                          "4,5 L",
+                                          "8,5 L"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "8 500 cm³ = 8,5 L ; il reste 12 − 8,5 = 3,5 L."
+                      },
+                      {
+                          "code":  "M5-0501",
+                          "microSkill":  "m5_geo_area_disk",
+                          "difficulty":  1,
+                          "prompt":  "Quelle formule donne l’aire A d’un disque de rayon r ?",
+                          "choices":  [
+                                          "A = π × r × r",
+                                          "A = 2 × π × r",
+                                          "A = π × r",
+                                          "A = 2 × r²"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "L’aire d’un disque est A = πr² = π × r × r."
+                      },
+                      {
+                          "code":  "M5-0502",
+                          "microSkill":  "m5_geo_area_disk",
+                          "difficulty":  1,
+                          "prompt":  "Quelle est l’aire exacte d’un disque de rayon 3 cm ?",
+                          "choices":  [
+                                          "6π cm²",
+                                          "3π cm²",
+                                          "9 cm²",
+                                          "9π cm²"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "A = π × 3² = 9π cm²."
+                      },
+                      {
+                          "code":  "M5-0503",
+                          "microSkill":  "m5_geo_area_disk",
+                          "difficulty":  1,
+                          "prompt":  "Un disque a un diamètre de 10 cm. Quelle est son aire exacte ?",
+                          "choices":  [
+                                          "25π cm²",
+                                          "100π cm²",
+                                          "20π cm²",
+                                          "10π cm²"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le rayon vaut 5 cm, donc A = π × 5² = 25π cm²."
+                      },
+                      {
+                          "code":  "M5-0504",
+                          "microSkill":  "m5_geo_area_disk",
+                          "difficulty":  2,
+                          "prompt":  "[TOOLS]calculator[/TOOLS] Calcule l’aire approchée d’un disque de rayon 4 cm en prenant π ≈ 3,14.",
+                          "choices":  [
+                                          "25,12 cm²",
+                                          "50,24 cm²",
+                                          "12,56 cm²",
+                                          "100,48 cm²"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "A ≈ 3,14 × 4² = 3,14 × 16 = 50,24 cm²."
+                      },
+                      {
+                          "code":  "M5-0505",
+                          "microSkill":  "m5_geo_area_disk",
+                          "difficulty":  2,
+                          "prompt":  "Un disque a un diamètre de 14 cm. Quelle est son aire exacte ?",
+                          "choices":  [
+                                          "196π cm²",
+                                          "28π cm²",
+                                          "49 cm²",
+                                          "49π cm²"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le rayon vaut 7 cm, donc A = π × 7² = 49π cm²."
+                      },
+                      {
+                          "code":  "M5-0506",
+                          "microSkill":  "m5_geo_area_disk",
+                          "difficulty":  2,
+                          "prompt":  "Quelle est l’aire exacte d’un demi-disque de rayon 6 cm ?",
+                          "choices":  [
+                                          "12π cm²",
+                                          "36π cm²",
+                                          "18π cm²",
+                                          "6π cm²"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le disque entier a une aire de 36π cm² ; la moitié vaut 18π cm²."
+                      },
+                      {
+                          "code":  "M5-0507",
+                          "microSkill":  "m5_geo_area_disk",
+                          "difficulty":  2,
+                          "prompt":  "On double le rayon d’un disque. Par combien son aire est-elle multipliée ?",
+                          "choices":  [
+                                          "Par 2",
+                                          "Par 4",
+                                          "Par 8",
+                                          "Elle ne change pas."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Comme l’aire dépend de r², doubler r multiplie l’aire par 2² = 4."
+                      },
+                      {
+                          "code":  "M5-0508",
+                          "microSkill":  "m5_geo_area_disk",
+                          "difficulty":  2,
+                          "prompt":  "Un disque a une aire exacte de 81π cm². Quel est son rayon ?",
+                          "choices":  [
+                                          "9 cm",
+                                          "81 cm",
+                                          "40,5 cm",
+                                          "18 cm"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "πr² = 81π, donc r² = 81 et r = 9 cm."
+                      },
+                      {
+                          "code":  "M5-0509",
+                          "microSkill":  "m5_geo_area_disk",
+                          "difficulty":  3,
+                          "prompt":  "[TOOLS]calculator[/TOOLS] Une table ronde a un diamètre de 1,2 m. Quelle est son aire approchée au centième, avec π ≈ 3,14 ?",
+                          "choices":  [
+                                          "3,77 m²",
+                                          "0,38 m²",
+                                          "1,13 m²",
+                                          "4,52 m²"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le rayon vaut 0,6 m. A ≈ 3,14 × 0,6² = 1,1304 m², soit 1,13 m²."
+                      },
+                      {
+                          "code":  "M5-0510",
+                          "microSkill":  "m5_geo_area_disk",
+                          "difficulty":  3,
+                          "prompt":  "Une couronne est comprise entre deux cercles de même centre, de rayons 5 cm et 3 cm. Quelle est son aire exacte ?",
+                          "choices":  [
+                                          "8π cm²",
+                                          "25π cm²",
+                                          "9π cm²",
+                                          "16π cm²"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "On soustrait les aires : 25π − 9π = 16π cm²."
+                      },
+                      {
+                          "code":  "M5-0511",
+                          "microSkill":  "m5_geo_volume_cylinder",
+                          "difficulty":  1,
+                          "prompt":  "Quelle formule donne le volume V d’un cylindre de rayon r et de hauteur h ?",
+                          "choices":  [
+                                          "V = 2πrh",
+                                          "V = πr² + h",
+                                          "V = πr²h",
+                                          "V = πrh²"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le volume est l’aire de la base πr² multipliée par la hauteur h."
+                      },
+                      {
+                          "code":  "M5-0512",
+                          "microSkill":  "m5_geo_volume_cylinder",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le volume exact d’un cylindre de rayon 3 cm et de hauteur 5 cm ?",
+                          "choices":  [
+                                          "15π cm³",
+                                          "45π cm³",
+                                          "30π cm³",
+                                          "90π cm³"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "V = π × 3² × 5 = 45π cm³."
+                      },
+                      {
+                          "code":  "M5-0513",
+                          "microSkill":  "m5_geo_volume_cylinder",
+                          "difficulty":  2,
+                          "prompt":  "Un cylindre a un diamètre de 8 cm et une hauteur de 10 cm. Quel est son volume exact ?",
+                          "choices":  [
+                                          "160π cm³",
+                                          "640π cm³",
+                                          "80π cm³",
+                                          "320π cm³"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Le rayon vaut 4 cm. V = π × 4² × 10 = 160π cm³."
+                      },
+                      {
+                          "code":  "M5-0514",
+                          "microSkill":  "m5_geo_volume_cylinder",
+                          "difficulty":  2,
+                          "prompt":  "[TOOLS]calculator[/TOOLS] Calcule le volume approché d’un cylindre de rayon 2 cm et de hauteur 7 cm, avec π ≈ 3,14.",
+                          "choices":  [
+                                          "43,96 cm³",
+                                          "175,84 cm³",
+                                          "28 cm³",
+                                          "87,92 cm³"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "V ≈ 3,14 × 2² × 7 = 87,92 cm³."
+                      },
+                      {
+                          "code":  "M5-0515",
+                          "microSkill":  "m5_geo_volume_cylinder",
+                          "difficulty":  2,
+                          "prompt":  "L’aire de la base d’un cylindre est 12 cm² et sa hauteur est 5 cm. Quel est son volume ?",
+                          "choices":  [
+                                          "17 cm³",
+                                          "60 cm³",
+                                          "24 cm³",
+                                          "120 cm³"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "V = aire de la base × hauteur = 12 × 5 = 60 cm³."
+                      },
+                      {
+                          "code":  "M5-0516",
+                          "microSkill":  "m5_geo_volume_cylinder",
+                          "difficulty":  2,
+                          "prompt":  "Un cylindre de rayon 3 cm a un volume de 90π cm³. Quelle est sa hauteur ?",
+                          "choices":  [
+                                          "30 cm",
+                                          "5 cm",
+                                          "10 cm",
+                                          "9 cm"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "90π = π × 3² × h = 9πh, donc h = 10 cm."
+                      },
+                      {
+                          "code":  "M5-0517",
+                          "microSkill":  "m5_geo_volume_cylinder",
+                          "difficulty":  2,
+                          "prompt":  "On double seulement la hauteur d’un cylindre. Comment évolue son volume ?",
+                          "choices":  [
+                                          "Il est multiplié par 4.",
+                                          "Il ne change pas.",
+                                          "Il est divisé par 2.",
+                                          "Il est multiplié par 2."
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le volume est proportionnel à la hauteur : doubler h double V."
+                      },
+                      {
+                          "code":  "M5-0518",
+                          "microSkill":  "m5_geo_volume_cylinder",
+                          "difficulty":  3,
+                          "prompt":  "[TOOLS]calculator[/TOOLS] Un récipient cylindrique a un rayon intérieur de 10 cm et une hauteur de 20 cm. Quelle est sa capacité approchée, avec π ≈ 3,14 ?",
+                          "choices":  [
+                                          "6,28 L",
+                                          "62,8 L",
+                                          "0,628 L",
+                                          "628 L"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "V ≈ 3,14 × 10² × 20 = 6 280 cm³ = 6,28 L."
+                      },
+                      {
+                          "code":  "M5-0519",
+                          "microSkill":  "m5_geo_volume_cylinder",
+                          "difficulty":  3,
+                          "prompt":  "Deux cylindres ont la même hauteur. Le second a un rayon deux fois plus grand. Son volume est…",
+                          "choices":  [
+                                          "deux fois plus grand.",
+                                          "quatre fois plus grand.",
+                                          "huit fois plus grand.",
+                                          "le même."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le rayon intervient au carré : (2r)² = 4r². Le volume est multiplié par 4."
+                      },
+                      {
+                          "code":  "M5-0520",
+                          "microSkill":  "m5_geo_volume_cylinder",
+                          "difficulty":  3,
+                          "prompt":  "Un cylindre de rayon 5 cm et de hauteur 12 cm est rempli à moitié. Quel volume contient-il exactement ?",
+                          "choices":  [
+                                          "300π cm³",
+                                          "60π cm³",
+                                          "150π cm³",
+                                          "75π cm³"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le volume total vaut π × 5² × 12 = 300π cm³ ; la moitié vaut 150π cm³."
+                      }
+                  ]
+}
