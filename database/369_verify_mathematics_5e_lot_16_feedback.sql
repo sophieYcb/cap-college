@@ -14,7 +14,7 @@ select jsonb_build_object(
  'change_comments_saved',count(*) filter(where nullif(btrim(change_comment),'') is not null),
  'distinct_change_comments_saved',count(distinct change_comment),
  'previous_versions_preserved',count(*) filter(where current_version_number=2),
- 'lowercase_litre_symbols',bool_and(position(' L' in prompt||' '||choices_text||' '||correction_explanation)=0 and position('mL' in prompt||' '||choices_text||' '||correction_explanation)=0),
+ 'lowercase_litre_symbols',bool_and((prompt||' '||choices_text||' '||correction_explanation) !~ '(^|[^[:alnum:]])[0-9]+( [0-9]{3})*(,[0-9]+)?[[:space:]]+(mL|L)($|[^[:alpha:]])'),
  'duplicate_aquarium_removed',bool_and(legacy_id<>5000496 or position('aquarium' in lower(prompt))=0),
  'cylinder_formula_spaced',bool_and(legacy_id<>5000511 or position('π × r² × h' in choices_text)>0),
  'questions_with_four_choices',count(*) filter(where choices=4),
