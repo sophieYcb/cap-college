@@ -15,7 +15,7 @@ const QUESTIONS=(window.VALIDATION_QUESTIONS||[]).map(item=>{
   choix:choices.map(choice=>choice.text),
   reponse:choices.findIndex(choice=>choice.isCorrect),
   version:Number(item.current?.number||1),
-  previous:item.previous,status:item.status,
+  previous:item.previous,changeComment:item.current?.changeComment||'',status:item.status,
   openFlags:Number(item.openFlags||0),
   openFlagDetails:Array.isArray(item.openFlagDetails)?item.openFlagDetails:[]
  };
@@ -175,6 +175,11 @@ function renderQuestion(){
   q.question
  );
  document.getElementById('testChoices').innerHTML=q.choix.map((c,i)=>`<div class="choice test-choice ${i===q.reponse?'correct-choice':''}"><span>${String.fromCharCode(65+i)}.</span> ${CapCollegeEducationalContent.toHtml(c)} ${i===q.reponse?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
+ const changeCommentNotice=document.getElementById('changeCommentNotice');
+ changeCommentNotice.classList.toggle('hidden',!q.changeComment);
+ changeCommentNotice.innerHTML=q.changeComment
+  ?'<strong>Réponse à ta remarque</strong><p>'+escapeHtml(q.changeComment)+'</p>'
+  :'';
  const flagDetails=document.getElementById('openFlagDetails');
  flagDetails.classList.toggle('hidden',!q.openFlagDetails.length);
  flagDetails.innerHTML=q.openFlagDetails.length
