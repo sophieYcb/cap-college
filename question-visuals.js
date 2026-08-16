@@ -142,9 +142,19 @@
     const svg=svgNode('svg',{viewBox:'0 0 620 370',role:'img','aria-label':'Empilement de cubes, hauteurs par rangée : '+description});
     svg.classList.add('question-chart');
     const stacks=[];
+    const points=vertices=>vertices.map(point=>point.join(',')).join(' ');
+    heights.forEach((row,y)=>row.forEach((height,x)=>{
+      const cx=310+(x-(columns-1)/2)*105-(y-(rows-1)/2)*45;
+      const groundY=(rows===1?305:315)-y*78;
+      const cell=[[cx,groundY-16],[cx+30,groundY],[cx,groundY+16],[cx-30,groundY]];
+      svg.appendChild(svgNode('polygon',{points:points(cell),fill:height>0?'#eef3ff':'#fff7dc',stroke:'#6d7fa8','stroke-width':2,'stroke-dasharray':height>0?'':'5 4'}));
+    }));
+    if(rows>1){
+      addSvgText(svg,'Rangée arrière',310,55,{class:'chart-value','text-anchor':'middle'});
+      addSvgText(svg,'Rangée avant',310,355,{class:'chart-value','text-anchor':'middle'});
+    }
     heights.forEach((row,y)=>row.forEach((height,x)=>{if(height>0)stacks.push({x,y,height});}));
     stacks.sort((a,b)=>b.y-a.y||a.x-b.x);
-    const points=vertices=>vertices.map(point=>point.join(',')).join(' ');
     stacks.forEach(stack=>{
       const cx=310+(stack.x-(columns-1)/2)*105-(stack.y-(rows-1)/2)*45;
       const groundY=(rows===1?305:315)-stack.y*78;

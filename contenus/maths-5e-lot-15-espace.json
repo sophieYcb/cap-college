@@ -150,15 +150,15 @@
                           "code":  "M5-0458",
                           "microSkill":  "m5_geo_cube_views",
                           "difficulty":  2,
-                          "prompt":  "[CUBESTACK]1,2,1;0,3,2[/CUBESTACK]\r\nQuelle description correspond à la vue de dessus de cet empilement ? Le symbole ■ indique une case occupée ; la rangée arrière est écrite en premier.",
+                          "prompt":  "[CUBESTACK]1,2,1;0,3,2[/CUBESTACK]\r\nObserve l’empilement posé sur le quadrillage. Quelle proposition décrit sa vue de dessus ? Une case est occupée dès qu’au moins un cube y est posé.",
                           "choices":  [
-                                          "Arrière : ■■■ ; avant : ■■■",
-                                          "Arrière : ■□■ ; avant : □■■",
-                                          "Arrière : ■■■ ; avant : □■■",
-                                          "Arrière : □■■ ; avant : ■■■"
+                                          "Rangée arrière : 3 cases occupées ; rangée avant : 3 cases occupées.",
+                                          "Rangée arrière : cases gauche et droite occupées ; rangée avant : cases du centre et de droite occupées.",
+                                          "Rangée arrière : 3 cases occupées ; rangée avant : cases du centre et de droite occupées.",
+                                          "Rangée arrière : cases du centre et de droite occupées ; rangée avant : 3 cases occupées."
                                       ],
                           "correctIndex":  3,
-                          "explanation":  "La rangée arrière contient une case vide puis deux cases occupées : □■■. Les trois cases de la rangée avant sont occupées : ■■■."
+                          "explanation":  "Vue de dessus, les hauteurs ne comptent plus : on regarde seulement si chaque case porte au moins un cube. La case arrière gauche est vide ; les deux autres cases arrière et les trois cases avant sont occupées."
                       },
                       {
                           "code":  "M5-0459",
