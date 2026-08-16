@@ -150,15 +150,15 @@
                           "code":  "M5-0458",
                           "microSkill":  "m5_geo_cube_views",
                           "difficulty":  2,
-                          "prompt":  "[TOPVIEW]1,1,1;0,1,1[/TOPVIEW]\r\nCombien de carrés comporte cette vue de dessus ?",
+                          "prompt":  "[CUBESTACK]1,2,1;0,3,2[/CUBESTACK]\r\nQuelle description correspond à la vue de dessus de cet empilement ? Le symbole ■ indique une case occupée ; la rangée arrière est écrite en premier.",
                           "choices":  [
-                                          "Le nombre total de cubes.",
-                                          "La plus grande hauteur.",
-                                          "Un seul carré.",
-                                          "Cinq carrés."
+                                          "Arrière : ■■■ ; avant : ■■■",
+                                          "Arrière : ■□■ ; avant : □■■",
+                                          "Arrière : ■■■ ; avant : □■■",
+                                          "Arrière : □■■ ; avant : ■■■"
                                       ],
                           "correctIndex":  3,
-                          "explanation":  "La vue de dessus comporte cinq carrés."
+                          "explanation":  "La rangée arrière contient une case vide puis deux cases occupées : □■■. Les trois cases de la rangée avant sont occupées : ■■■."
                       },
                       {
                           "code":  "M5-0459",
