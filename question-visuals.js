@@ -300,6 +300,65 @@
     wrapper.appendChild(svg);
     return wrapper;
   }
+  function createCodedTriangle(type){
+    const normalized=String(type||'').trim().toLowerCase();
+    const right=normalized==='right'||normalized==='right-isosceles';
+    const isosceles=normalized==='isosceles'||normalized==='right-isosceles';
+    const equilateral=normalized==='equilateral';
+    const points=right
+      ?(normalized==='right-isosceles'
+        ?{A:{x:110,y:240},B:{x:110,y:65},C:{x:285,y:240}}
+        :{A:{x:100,y:240},B:{x:100,y:55},C:{x:370,y:240}})
+      :{A:{x:230,y:42},B:{x:110,y:250},C:{x:350,y:250}};
+    const wrapper=document.createElement('div');
+    wrapper.className='question-visual';
+    const descriptions={
+      isosceles:'Triangle ABC avec les côtés AB et AC codés égaux',
+      equilateral:'Triangle ABC avec les trois côtés codés égaux',
+      right:'Triangle ABC rectangle en A',
+      'right-isosceles':'Triangle ABC rectangle en A avec AB et AC codés égaux'
+    };
+    const svg=svgNode('svg',{viewBox:'0 0 460 300',role:'img','aria-label':descriptions[normalized]||'Triangle ABC codé'});
+    svg.classList.add('question-chart');
+    [['A','B'],['B','C'],['C','A']].forEach(([from,to])=>{
+      svg.appendChild(svgNode('line',{
+        x1:points[from].x,y1:points[from].y,
+        x2:points[to].x,y2:points[to].y,
+        class:'chart-axis'
+      }));
+    });
+    const addTick=(from,to)=>{
+      const p1=points[from],p2=points[to];
+      const mx=(p1.x+p2.x)/2,my=(p1.y+p2.y)/2;
+      const dx=p2.x-p1.x,dy=p2.y-p1.y,length=Math.hypot(dx,dy)||1;
+      const px=-dy/length*9,py=dx/length*9;
+      svg.appendChild(svgNode('line',{
+        x1:mx-px,y1:my-py,x2:mx+px,y2:my+py,
+        stroke:'#3158df','stroke-width':4,'stroke-linecap':'round'
+      }));
+    };
+    if(equilateral){
+      addTick('A','B');addTick('B','C');addTick('C','A');
+    }else if(isosceles){
+      addTick('A','B');addTick('A','C');
+    }
+    if(right){
+      svg.appendChild(svgNode('path',{
+        d:`M ${points.A.x} ${points.A.y-22} L ${points.A.x+22} ${points.A.y-22} L ${points.A.x+22} ${points.A.y}`,
+        fill:'none',stroke:'#3158df','stroke-width':4
+      }));
+    }
+    const labelOffsets=right
+      ?{A:[-20,24],B:[-18,-10],C:[12,24]}
+      :{A:[0,-14],B:[-16,24],C:[14,24]};
+    Object.entries(points).forEach(([label,point])=>{
+      const offset=labelOffsets[label];
+      addSvgText(svg,label,point.x+offset[0],point.y+offset[1],{class:'chart-value','text-anchor':'middle'});
+    });
+    wrapper.appendChild(svg);
+    return wrapper;
+  }
+
   function createAngleDiagram(measure){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
@@ -446,6 +505,9 @@
 
     if((match=normalized.match(/\[ANGLE\]\s*(\d+(?:[.,]\d+)?)\s*\[\/ANGLE\]/i))){
       return {text:normalized.replace(match[0],'').trim(),visual:createAngleDiagram(Number(match[1].replace(',','.')))};
+    }
+    if((match=normalized.match(/\[CODEDTRIANGLE\]\s*([a-z-]+)\s*\[\/CODEDTRIANGLE\]/i))){
+      return {text:normalized.replace(match[0],'').trim(),visual:createCodedTriangle(match[1])};
     }
     if((match=normalized.match(/\[ANGLECROSS\]\s*(\d+(?:[.,]\d+)?)?\s*\[\/ANGLECROSS\]/i))){
       return {text:normalized.replace(match[0],'').trim(),visual:createCrossingAngles(match[1]?Number(match[1].replace(',','.')):null)};

@@ -1,0 +1,412 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "5e",
+  "domain": {
+    "code": "cycle4_space_geometry",
+    "name": "Espace et géométrie"
+  },
+  "skill": {
+    "code": "m5_triangles",
+    "name": "Triangles"
+  },
+  "lot": "M5-GEO-06",
+  "status": "draft",
+  "source": "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+  "microSkills": [
+    {
+      "code": "m5_geo_triangle_types",
+      "teacherName": "Reconnaître les triangles particuliers à partir d’un codage",
+      "studentName": "Reconnaître les triangles particuliers",
+      "lessonReminder": "Le codage d’une figure indique les propriétés à utiliser : des côtés portant le même trait ont la même longueur et un petit carré signale un angle droit. On choisit le nom le plus précis du triangle.",
+      "workedExample": "Si AB = AC et que l’angle en A est droit, ABC est un triangle rectangle isocèle en A.",
+      "masteryCriteria": "Lire un codage de longueurs ou d’angle droit et donner la nature la plus précise du triangle."
+    },
+    {
+      "code": "m5_geo_triangle_angle_sum",
+      "teacherName": "Calculer un angle avec la somme des angles d’un triangle",
+      "studentName": "Calculer un angle dans un triangle",
+      "lessonReminder": "La somme des mesures des trois angles d’un triangle est égale à 180°. Dans un triangle isocèle, les deux angles à la base sont égaux.",
+      "workedExample": "Si deux angles mesurent 48° et 67°, le troisième mesure 180° − 48° − 67° = 65°.",
+      "masteryCriteria": "Calculer une mesure manquante et vérifier si trois mesures peuvent être celles des angles d’un triangle."
+    },
+    {
+      "code": "m5_geo_construct_triangle",
+      "teacherName": "Construire un triangle à partir de données partielles",
+      "studentName": "Construire un triangle",
+      "lessonReminder": "Un triangle est déterminé par trois longueurs compatibles, par deux côtés et l’angle compris, ou par un côté et les deux angles qui lui sont adjacents. Pour trois longueurs, la somme des deux plus petites doit être strictement supérieure à la plus grande.",
+      "workedExample": "Pour construire AB = 6 cm, AC = 5 cm et BC = 4 cm, on trace [AB], puis les cercles de centre A et de rayon 5 cm et de centre B et de rayon 4 cm ; leur intersection donne C.",
+      "masteryCriteria": "Choisir une procédure de construction, reconnaître des données suffisantes et vérifier qu’un triangle est constructible."
+    },
+    {
+      "code": "m5_geo_perpendicular_bisector_circumcircle",
+      "teacherName": "Utiliser les médiatrices et le cercle circonscrit",
+      "studentName": "Utiliser les médiatrices et le cercle circonscrit",
+      "lessonReminder": "La médiatrice d’un segment est la droite perpendiculaire à ce segment passant par son milieu. Les médiatrices des côtés d’un triangle se coupent au centre du cercle circonscrit, qui est à égale distance des trois sommets.",
+      "workedExample": "Si O est l’intersection des médiatrices de [AB] et [AC], alors OA = OB = OC ; le cercle de centre O passant par A passe aussi par B et C.",
+      "masteryCriteria": "Reconnaître une médiatrice, utiliser l’équidistance et construire ou identifier le cercle circonscrit à un triangle."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M5-0571",
+      "microSkill": "m5_geo_triangle_types",
+      "difficulty": 1,
+      "prompt": "[CODEDTRIANGLE]isosceles[/CODEDTRIANGLE] Quel nom est garanti par le codage de ce triangle ABC ?",
+      "choices": ["Un triangle isocèle en A", "Un triangle rectangle en A", "Un triangle équilatéral", "Un triangle quelconque"],
+      "correctIndex": 0,
+      "explanation": "Les côtés [AB] et [AC] portent le même codage : AB = AC. Le triangle est isocèle en A."
+    },
+    {
+      "code": "M5-0572",
+      "microSkill": "m5_geo_triangle_types",
+      "difficulty": 1,
+      "prompt": "[CODEDTRIANGLE]equilateral[/CODEDTRIANGLE] Quel est le nom le plus précis de ce triangle ABC ?",
+      "choices": ["Un triangle rectangle", "Un triangle équilatéral", "Un triangle rectangle isocèle", "Un triangle quelconque"],
+      "correctIndex": 1,
+      "explanation": "Les trois côtés portent le même codage : ils ont la même longueur. Le triangle est équilatéral."
+    },
+    {
+      "code": "M5-0573",
+      "microSkill": "m5_geo_triangle_types",
+      "difficulty": 1,
+      "prompt": "[CODEDTRIANGLE]right[/CODEDTRIANGLE] Quelle est la nature de ce triangle ABC ?",
+      "choices": ["Isocèle en B", "Équilatéral", "Rectangle en A", "Rectangle en C"],
+      "correctIndex": 2,
+      "explanation": "Le petit carré code un angle droit au sommet A : le triangle ABC est rectangle en A."
+    },
+    {
+      "code": "M5-0574",
+      "microSkill": "m5_geo_triangle_types",
+      "difficulty": 1,
+      "prompt": "[CODEDTRIANGLE]right-isosceles[/CODEDTRIANGLE] Quel est le nom le plus précis de ce triangle ABC ?",
+      "choices": ["Équilatéral", "Isocèle seulement", "Rectangle seulement", "Rectangle isocèle en A"],
+      "correctIndex": 3,
+      "explanation": "L’angle en A est droit et AB = AC : le triangle est rectangle isocèle en A."
+    },
+    {
+      "code": "M5-0575",
+      "microSkill": "m5_geo_triangle_types",
+      "difficulty": 2,
+      "prompt": "[CODEDTRIANGLE]isosceles[/CODEDTRIANGLE] Quelle égalité est indiquée par les deux traits identiques ?",
+      "choices": ["AB = AC", "AB = BC", "AC = BC", "Les trois côtés sont égaux"],
+      "correctIndex": 0,
+      "explanation": "Les traits identiques sont placés sur [AB] et [AC] : AB = AC."
+    },
+    {
+      "code": "M5-0576",
+      "microSkill": "m5_geo_triangle_types",
+      "difficulty": 2,
+      "prompt": "[CODEDTRIANGLE]equilateral[/CODEDTRIANGLE] Que signifie le codage porté par les trois côtés ?",
+      "choices": ["Un seul angle est droit", "AB = BC = CA", "Seulement AB = AC", "Le périmètre vaut 3 cm"],
+      "correctIndex": 1,
+      "explanation": "Un même trait sur chacun des trois côtés indique AB = BC = CA."
+    },
+    {
+      "code": "M5-0577",
+      "microSkill": "m5_geo_triangle_types",
+      "difficulty": 2,
+      "prompt": "[CODEDTRIANGLE]right[/CODEDTRIANGLE] À quel sommet se trouve l’angle droit ?",
+      "choices": ["Au sommet B", "Au sommet C", "Au sommet A", "Aucun angle n’est droit"],
+      "correctIndex": 2,
+      "explanation": "Le petit carré est placé au sommet A."
+    },
+    {
+      "code": "M5-0578",
+      "microSkill": "m5_geo_triangle_types",
+      "difficulty": 2,
+      "prompt": "Un triangle a pour longueurs de côtés 5 cm, 5 cm et 8 cm. Quel est son nom le plus précis ?",
+      "choices": ["Rectangle", "Équilatéral", "Rectangle isocèle", "Isocèle"],
+      "correctIndex": 3,
+      "explanation": "Deux côtés mesurent 5 cm : le triangle est isocèle. Il n’est ni équilatéral ni rectangle."
+    },
+    {
+      "code": "M5-0579",
+      "microSkill": "m5_geo_triangle_types",
+      "difficulty": 3,
+      "prompt": "Un triangle possède un angle de 90° et deux angles de 45°. Quel est son nom le plus précis ?",
+      "choices": ["Rectangle isocèle", "Équilatéral", "Isocèle non rectangle", "Quelconque"],
+      "correctIndex": 0,
+      "explanation": "Il est rectangle grâce à l’angle de 90° et isocèle grâce aux deux angles égaux de 45°."
+    },
+    {
+      "code": "M5-0580",
+      "microSkill": "m5_geo_triangle_types",
+      "difficulty": 3,
+      "prompt": "Dans le triangle ABC, AB = AC et l’angle de sommet A mesure 60°. Quel est le nom le plus précis du triangle ?",
+      "choices": ["Rectangle en A", "Équilatéral", "Isocèle non équilatéral", "Quelconque"],
+      "correctIndex": 1,
+      "explanation": "Les deux angles à la base sont égaux et leur somme vaut 120°, donc ils mesurent chacun 60°. Les trois angles valent 60° : le triangle est équilatéral."
+    },
+    {
+      "code": "M5-0581",
+      "microSkill": "m5_geo_triangle_angle_sum",
+      "difficulty": 1,
+      "prompt": "Deux angles d’un triangle mesurent 50° et 60°. Combien mesure le troisième angle ?",
+      "choices": ["60°", "65°", "70°", "80°"],
+      "correctIndex": 2,
+      "explanation": "180° − 50° − 60° = 70°."
+    },
+    {
+      "code": "M5-0582",
+      "microSkill": "m5_geo_triangle_angle_sum",
+      "difficulty": 1,
+      "prompt": "Dans un triangle rectangle, un angle aigu mesure 34°. Combien mesure l’autre angle aigu ?",
+      "choices": ["34°", "46°", "66°", "56°"],
+      "correctIndex": 3,
+      "explanation": "Les deux angles aigus d’un triangle rectangle ont une somme de 90° : 90° − 34° = 56°."
+    },
+    {
+      "code": "M5-0583",
+      "microSkill": "m5_geo_triangle_angle_sum",
+      "difficulty": 1,
+      "prompt": "Un triangle isocèle a un angle au sommet de 40°. Combien mesure chacun des deux angles à la base ?",
+      "choices": ["70°", "40°", "80°", "140°"],
+      "correctIndex": 0,
+      "explanation": "Les deux angles à la base sont égaux : (180° − 40°) ÷ 2 = 70°."
+    },
+    {
+      "code": "M5-0584",
+      "microSkill": "m5_geo_triangle_angle_sum",
+      "difficulty": 2,
+      "prompt": "Deux angles égaux d’un triangle mesurent chacun x degrés. Le troisième angle mesure 44°. Quelle est la valeur de x ?",
+      "choices": ["66°", "68°", "72°", "136°"],
+      "correctIndex": 1,
+      "explanation": "2x + 44° = 180°, donc 2x = 136° et x = 68°."
+    },
+    {
+      "code": "M5-0585",
+      "microSkill": "m5_geo_triangle_angle_sum",
+      "difficulty": 2,
+      "prompt": "Dans le triangle ABC, l’angle en A mesure 72° et l’angle en B mesure 48°. Combien mesure l’angle en C ?",
+      "choices": ["48°", "50°", "60°", "70°"],
+      "correctIndex": 2,
+      "explanation": "180° − 72° − 48° = 60°."
+    },
+    {
+      "code": "M5-0586",
+      "microSkill": "m5_geo_triangle_angle_sum",
+      "difficulty": 2,
+      "prompt": "Combien mesure chaque angle d’un triangle équilatéral ?",
+      "choices": ["30°", "45°", "90°", "60°"],
+      "correctIndex": 3,
+      "explanation": "Les trois angles sont égaux et leur somme vaut 180° : 180° ÷ 3 = 60°."
+    },
+    {
+      "code": "M5-0587",
+      "microSkill": "m5_geo_triangle_angle_sum",
+      "difficulty": 2,
+      "prompt": "Les mesures 95°, 50° et 35° peuvent-elles être celles des trois angles d’un triangle ?",
+      "choices": ["Oui, car leur somme vaut 180°", "Non, car un angle dépasse 90°", "Non, car leur somme vaut 170°", "Oui, seulement si le triangle est isocèle"],
+      "correctIndex": 0,
+      "explanation": "95° + 50° + 35° = 180° et chaque mesure est positive : ces trois angles forment un triangle."
+    },
+    {
+      "code": "M5-0588",
+      "microSkill": "m5_geo_triangle_angle_sum",
+      "difficulty": 3,
+      "prompt": "Un élève propose un triangle dont les angles mesurent 45°, 45° et 100°. Que faut-il conclure ?",
+      "choices": ["Le triangle est rectangle isocèle", "Ce triangle est impossible", "Le triangle est équilatéral", "Le triangle est seulement isocèle"],
+      "correctIndex": 1,
+      "explanation": "45° + 45° + 100° = 190° et non 180° : ce triangle est impossible."
+    },
+    {
+      "code": "M5-0589",
+      "microSkill": "m5_geo_triangle_angle_sum",
+      "difficulty": 3,
+      "prompt": "Dans un triangle isocèle, chacun des deux angles à la base mesure 37°. Combien mesure l’angle au sommet ?",
+      "choices": ["74°", "96°", "106°", "143°"],
+      "correctIndex": 2,
+      "explanation": "180° − 37° − 37° = 106°."
+    },
+    {
+      "code": "M5-0590",
+      "microSkill": "m5_geo_triangle_angle_sum",
+      "difficulty": 3,
+      "prompt": "Un triangle est à la fois rectangle et isocèle. Combien mesure chacun de ses deux angles aigus ?",
+      "choices": ["30°", "60°", "90°", "45°"],
+      "correctIndex": 3,
+      "explanation": "Après l’angle droit, il reste 90° à partager entre deux angles égaux : chacun mesure 45°."
+    },
+    {
+      "code": "M5-0591",
+      "microSkill": "m5_geo_construct_triangle",
+      "difficulty": 1,
+      "prompt": "On veut construire ABC avec AB = 6 cm, AC = 5 cm et BC = 4 cm. Quelle procédure est correcte après avoir tracé [AB] ?",
+      "choices": ["Tracer un cercle de centre A et de rayon 5 cm, puis un cercle de centre B et de rayon 4 cm", "Tracer deux droites perpendiculaires à [AB]", "Tracer un cercle de centre A et de rayon 4 cm seulement", "Placer C n’importe où à 5 cm de A"],
+      "correctIndex": 0,
+      "explanation": "C doit être à 5 cm de A et à 4 cm de B : il se trouve à l’intersection des deux cercles correspondants."
+    },
+    {
+      "code": "M5-0592",
+      "microSkill": "m5_geo_construct_triangle",
+      "difficulty": 1,
+      "prompt": "Peut-on construire un triangle dont les côtés mesurent 3 cm, 4 cm et 8 cm ?",
+      "choices": ["Oui, car les trois longueurs sont différentes", "Non, car 3 + 4 est inférieur à 8", "Oui, car 8 est un nombre pair", "Non, car un triangle doit être isocèle"],
+      "correctIndex": 1,
+      "explanation": "3 + 4 = 7, ce qui est inférieur à 8 : les deux petits côtés ne peuvent pas se rejoindre."
+    },
+    {
+      "code": "M5-0593",
+      "microSkill": "m5_geo_construct_triangle",
+      "difficulty": 1,
+      "prompt": "Les longueurs 4 cm, 6 cm et 9 cm permettent-elles de construire un triangle ?",
+      "choices": ["Non, car 4 + 6 = 10", "Non, car les longueurs doivent être entières consécutives", "Oui, car 4 + 6 est supérieur à 9", "Oui, seulement si le triangle est rectangle"],
+      "correctIndex": 2,
+      "explanation": "La somme des deux plus petites longueurs vaut 10 cm, strictement plus que 9 cm : le triangle est constructible."
+    },
+    {
+      "code": "M5-0594",
+      "microSkill": "m5_geo_construct_triangle",
+      "difficulty": 1,
+      "prompt": "Quel ensemble de données détermine un triangle de façon unique, à une symétrie près ?",
+      "choices": ["La longueur d’un seul côté", "Deux angles sans aucune longueur", "Deux côtés sans connaître l’angle qu’ils forment", "Un côté et les deux angles qui lui sont adjacents"],
+      "correctIndex": 3,
+      "explanation": "Un côté et ses deux angles adjacents fixent la forme et la taille du triangle."
+    },
+    {
+      "code": "M5-0595",
+      "microSkill": "m5_geo_construct_triangle",
+      "difficulty": 2,
+      "prompt": "On connaît AB = 5 cm, AC = 4 cm et l’angle de sommet A égal à 50°. Comment commencer la construction ?",
+      "choices": ["Tracer [AB], construire en A un angle de 50°, puis placer C à 4 cm de A", "Tracer seulement un cercle de rayon 5 cm", "Construire d’abord un angle droit en B", "Choisir librement la position de C"],
+      "correctIndex": 0,
+      "explanation": "Les deux côtés connus se rencontrent en A : on construit l’angle compris de 50°, puis on reporte AC = 4 cm."
+    },
+    {
+      "code": "M5-0596",
+      "microSkill": "m5_geo_construct_triangle",
+      "difficulty": 2,
+      "prompt": "Peut-on construire un triangle non aplati de côtés 2,5 cm, 3,5 cm et 6 cm ?",
+      "choices": ["Oui, car 2,5 + 3,5 = 6", "Non, car la somme des deux plus petits côtés doit être strictement supérieure à 6", "Oui, car les longueurs sont positives", "Non, car les côtés comportent des décimales"],
+      "correctIndex": 1,
+      "explanation": "2,5 + 3,5 = 6 : on obtient un alignement, pas un triangle non aplati."
+    },
+    {
+      "code": "M5-0597",
+      "microSkill": "m5_geo_construct_triangle",
+      "difficulty": 2,
+      "prompt": "On connaît seulement deux côtés d’un triangle : 5 cm et 7 cm. Combien de triangles différents peut-on construire en faisant varier l’angle entre eux ?",
+      "choices": ["Aucun", "Un seul", "Une infinité", "Exactement deux"],
+      "correctIndex": 2,
+      "explanation": "Sans connaître l’angle compris ni le troisième côté, on peut faire varier l’ouverture et obtenir une infinité de triangles."
+    },
+    {
+      "code": "M5-0598",
+      "microSkill": "m5_geo_construct_triangle",
+      "difficulty": 2,
+      "prompt": "On connaît seulement les trois angles d’un triangle : 40°, 60° et 80°. Que peut-on dire de sa construction ?",
+      "choices": ["Elle est impossible", "Elle donne un triangle unique", "Elle donne exactement trois triangles", "Elle donne une infinité de triangles de tailles différentes"],
+      "correctIndex": 3,
+      "explanation": "Les angles fixent la forme, mais aucune longueur ne fixe la taille : tous les triangles semblables conviennent."
+    },
+    {
+      "code": "M5-0599",
+      "microSkill": "m5_geo_construct_triangle",
+      "difficulty": 3,
+      "prompt": "Quel ensemble de données permet de construire un unique triangle, à une symétrie près ?",
+      "choices": ["Trois côtés de 4 cm, 5 cm et 6 cm", "Deux côtés de 4 cm et 5 cm", "Trois angles de 40°, 60° et 80°", "Un côté de 4 cm et un angle de 50°"],
+      "correctIndex": 0,
+      "explanation": "Trois longueurs compatibles déterminent entièrement le triangle. Les autres propositions laissent au moins une donnée libre."
+    },
+    {
+      "code": "M5-0600",
+      "microSkill": "m5_geo_construct_triangle",
+      "difficulty": 3,
+      "prompt": "Un élève veut construire un triangle de côtés 5 cm, 5 cm et 10 cm. Que va-t-il obtenir ?",
+      "choices": ["Un triangle isocèle", "Trois points alignés, donc pas de triangle non aplati", "Un triangle équilatéral", "Un triangle rectangle"],
+      "correctIndex": 1,
+      "explanation": "5 + 5 = 10 : les deux cercles sont tangents et les trois sommets sont alignés."
+    },
+    {
+      "code": "M5-0601",
+      "microSkill": "m5_geo_perpendicular_bisector_circumcircle",
+      "difficulty": 1,
+      "prompt": "Quelle définition correspond à la médiatrice d’un segment ?",
+      "choices": ["La droite qui contient le segment", "Toute droite passant par une extrémité", "La droite perpendiculaire au segment passant par son milieu", "La demi-droite issue du milieu"],
+      "correctIndex": 2,
+      "explanation": "La médiatrice est perpendiculaire au segment et passe par son milieu."
+    },
+    {
+      "code": "M5-0602",
+      "microSkill": "m5_geo_perpendicular_bisector_circumcircle",
+      "difficulty": 1,
+      "prompt": "Le point M appartient à la médiatrice de [AB]. Quelle égalité est nécessairement vraie ?",
+      "choices": ["MA = AB", "MB = AB", "M est le milieu de [AB]", "MA = MB"],
+      "correctIndex": 3,
+      "explanation": "Tout point de la médiatrice de [AB] est à égale distance de A et de B."
+    },
+    {
+      "code": "M5-0603",
+      "microSkill": "m5_geo_perpendicular_bisector_circumcircle",
+      "difficulty": 1,
+      "prompt": "Comment obtient-on le centre du cercle circonscrit à un triangle ?",
+      "choices": ["En construisant l’intersection des médiatrices de ses côtés", "En construisant l’intersection de ses côtés", "En prenant le milieu d’un côté quelconque", "En traçant une seule hauteur"],
+      "correctIndex": 0,
+      "explanation": "Les médiatrices des trois côtés sont concourantes au centre du cercle circonscrit."
+    },
+    {
+      "code": "M5-0604",
+      "microSkill": "m5_geo_perpendicular_bisector_circumcircle",
+      "difficulty": 1,
+      "prompt": "Par quels points passe le cercle circonscrit au triangle ABC ?",
+      "choices": ["Seulement par A", "Par A, B et C", "Seulement par les milieux des côtés", "Par le centre du triangle uniquement"],
+      "correctIndex": 1,
+      "explanation": "Par définition, le cercle circonscrit passe par les trois sommets du triangle."
+    },
+    {
+      "code": "M5-0605",
+      "microSkill": "m5_geo_perpendicular_bisector_circumcircle",
+      "difficulty": 2,
+      "prompt": "Quelle première étape permet de construire le cercle circonscrit à un triangle ABC ?",
+      "choices": ["Mesurer uniquement le périmètre", "Tracer une parallèle à chaque côté", "Tracer les médiatrices de deux côtés", "Tracer les trois bissectrices"],
+      "correctIndex": 2,
+      "explanation": "L’intersection de deux médiatrices suffit pour trouver le centre du cercle circonscrit."
+    },
+    {
+      "code": "M5-0606",
+      "microSkill": "m5_geo_perpendicular_bisector_circumcircle",
+      "difficulty": 2,
+      "prompt": "Dans un triangle rectangle, où se situe le centre du cercle circonscrit ?",
+      "choices": ["Au sommet de l’angle droit", "À l’extérieur du triangle", "Au milieu du plus petit côté", "Au milieu de l’hypoténuse"],
+      "correctIndex": 3,
+      "explanation": "Dans un triangle rectangle, le milieu de l’hypoténuse est à égale distance des trois sommets."
+    },
+    {
+      "code": "M5-0607",
+      "microSkill": "m5_geo_perpendicular_bisector_circumcircle",
+      "difficulty": 2,
+      "prompt": "O est le centre du cercle circonscrit à un triangle équilatéral ABC. Quelle égalité est vraie ?",
+      "choices": ["OA = OB = OC", "OA = AB uniquement", "OB = BC uniquement", "O appartient nécessairement à un côté"],
+      "correctIndex": 0,
+      "explanation": "Le centre du cercle circonscrit est à égale distance des trois sommets : OA = OB = OC."
+    },
+    {
+      "code": "M5-0608",
+      "microSkill": "m5_geo_perpendicular_bisector_circumcircle",
+      "difficulty": 2,
+      "prompt": "Un point O vérifie OA = OB = OC. Que peut-on conclure ?",
+      "choices": ["O est un sommet du triangle", "O est le centre du cercle circonscrit à ABC", "ABC est nécessairement rectangle", "O est le milieu de [AB]"],
+      "correctIndex": 1,
+      "explanation": "Le cercle de centre O et de rayon OA passe par A, B et C : O est son centre."
+    },
+    {
+      "code": "M5-0609",
+      "microSkill": "m5_geo_perpendicular_bisector_circumcircle",
+      "difficulty": 3,
+      "prompt": "Un point O vérifie OA = OB. Sur quelle droite se trouve nécessairement O ?",
+      "choices": ["Sur la droite (AB)", "Sur une parallèle à (AB)", "Sur la médiatrice de [AB]", "Sur la bissectrice d’un angle de ABC"],
+      "correctIndex": 2,
+      "explanation": "L’ensemble des points équidistants de A et B est la médiatrice de [AB]."
+    },
+    {
+      "code": "M5-0610",
+      "microSkill": "m5_geo_perpendicular_bisector_circumcircle",
+      "difficulty": 3,
+      "prompt": "Combien de médiatrices de côtés suffit-il de tracer pour déterminer le centre du cercle circonscrit à un triangle ?",
+      "choices": ["Aucune", "Une seule", "Les trois obligatoirement", "Deux"],
+      "correctIndex": 3,
+      "explanation": "Deux médiatrices se coupent au centre recherché ; la troisième passe également par ce point."
+    }
+  ]
+}
