@@ -1,314 +1,464 @@
 {
-  "format": "cap-college-question-draft-v1",
-  "subject": "mathematics",
-  "level": "5e",
-  "domain": {
-    "code": "cycle4_space_geometry",
-    "name": "Espace et géométrie"
-  },
-  "skill": {
-    "code": "m5_triangles",
-    "name": "Triangles"
-  },
-  "lot": "M5-GEO-07",
-  "status": "draft",
-  "source": "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
-  "microSkills": [
-    {
-      "code": "m5_geo_triangle_area",
-      "teacherName": "Calculer l’aire d’un triangle",
-      "studentName": "Calculer l’aire d’un triangle",
-      "lessonReminder": "L’aire d’un triangle est égale à (base × hauteur correspondante) ÷ 2. La hauteur doit être perpendiculaire à la droite qui porte la base ; elle peut être située à l’extérieur du triangle.",
-      "workedExample": "Avec une base de 8 cm et la hauteur correspondante de 5 cm, l’aire vaut (8 × 5) ÷ 2 = 20 cm².",
-      "masteryCriteria": "Identifier une base et sa hauteur correspondante, calculer une aire ou retrouver une dimension manquante avec des unités cohérentes."
-    },
-    {
-      "code": "m5_geo_triangle_heights",
-      "teacherName": "Reconnaître et tracer les hauteurs d’un triangle",
-      "studentName": "Reconnaître et tracer les hauteurs d’un triangle",
-      "lessonReminder": "Une hauteur d’un triangle est une droite qui passe par un sommet et qui est perpendiculaire à la droite portant le côté opposé. Un triangle possède trois hauteurs.",
-      "workedExample": "Si H appartient à la droite (BC) et si (AH) est perpendiculaire à (BC), alors (AH) est la hauteur issue de A.",
-      "masteryCriteria": "Reconnaître une hauteur grâce au sommet et à la perpendicularité, puis construire la hauteur issue d’un sommet, y compris hors du triangle."
-    },
-    {
-      "code": "m5_geo_triangle_medians",
-      "teacherName": "Reconnaître et tracer les médianes d’un triangle",
-      "studentName": "Reconnaître et tracer les médianes d’un triangle",
-      "lessonReminder": "Une médiane d’un triangle est un segment qui joint un sommet au milieu du côté opposé. Un triangle possède trois médianes.",
-      "workedExample": "Si M est le milieu de [BC], alors [AM] est la médiane issue de A dans le triangle ABC.",
-      "masteryCriteria": "Identifier le milieu du côté opposé, reconnaître une médiane et construire la médiane issue d’un sommet."
-    }
-  ],
-  "questions": [
-    {
-      "code": "M5-0611",
-      "microSkill": "m5_geo_triangle_area",
-      "difficulty": 1,
-      "prompt": "[TRIANGLEAUX]area[/TRIANGLEAUX] Quelle est l’aire du triangle ABC ?",
-      "choices": ["20 cm²", "40 cm²", "13 cm²", "26 cm²"],
-      "correctIndex": 0,
-      "explanation": "La base BC mesure 8 cm et la hauteur correspondante AH mesure 5 cm : (8 × 5) ÷ 2 = 20 cm²."
-    },
-    {
-      "code": "M5-0612",
-      "microSkill": "m5_geo_triangle_area",
-      "difficulty": 1,
-      "prompt": "Un triangle a une base de 12 cm et la hauteur correspondante mesure 7 cm. Quelle est son aire ?",
-      "choices": ["84 cm²", "42 cm²", "38 cm²", "19 cm²"],
-      "correctIndex": 1,
-      "explanation": "(12 × 7) ÷ 2 = 42 cm²."
-    },
-    {
-      "code": "M5-0613",
-      "microSkill": "m5_geo_triangle_area",
-      "difficulty": 1,
-      "prompt": "Un triangle a une aire de 30 cm² et une base de 10 cm. Quelle est la hauteur correspondant à cette base ?",
-      "choices": ["3 cm", "5 cm", "6 cm", "15 cm"],
-      "correctIndex": 2,
-      "explanation": "La hauteur vaut (2 × aire) ÷ base, soit (2 × 30) ÷ 10 = 6 cm."
-    },
-    {
-      "code": "M5-0614",
-      "microSkill": "m5_geo_triangle_area",
-      "difficulty": 2,
-      "prompt": "La base d’un triangle mesure 1,2 m et la hauteur correspondante 0,5 m. Quelle est son aire ?",
-      "choices": ["0,85 m²", "0,6 m²", "1,7 m²", "0,3 m²"],
-      "correctIndex": 3,
-      "explanation": "(1,2 × 0,5) ÷ 2 = 0,3 m²."
-    },
-    {
-      "code": "M5-0615",
-      "microSkill": "m5_geo_triangle_area",
-      "difficulty": 1,
-      "prompt": "Quelle formule permet de calculer l’aire d’un triangle ?",
-      "choices": ["(base × hauteur correspondante) ÷ 2", "base × hauteur correspondante", "2 × base + hauteur", "base + hauteur ÷ 2"],
-      "correctIndex": 0,
-      "explanation": "L’aire d’un triangle est la moitié du produit d’une base par la hauteur qui lui correspond."
-    },
-    {
-      "code": "M5-0616",
-      "microSkill": "m5_geo_triangle_area",
-      "difficulty": 2,
-      "prompt": "Un triangle rectangle a deux côtés perpendiculaires de 9 cm et 4 cm. Quelle est son aire ?",
-      "choices": ["36 cm²", "18 cm²", "26 cm²", "13 cm²"],
-      "correctIndex": 1,
-      "explanation": "Les deux côtés perpendiculaires servent de base et de hauteur : (9 × 4) ÷ 2 = 18 cm²."
-    },
-    {
-      "code": "M5-0617",
-      "microSkill": "m5_geo_triangle_area",
-      "difficulty": 2,
-      "prompt": "Deux triangles ont la même base et la même hauteur correspondant à cette base. Que peut-on affirmer ?",
-      "choices": ["Ils ont nécessairement le même périmètre", "Ils sont nécessairement superposables", "Ils ont la même aire", "Ils sont nécessairement rectangles"],
-      "correctIndex": 2,
-      "explanation": "La formule de l’aire dépend uniquement de la base choisie et de sa hauteur correspondante."
-    },
-    {
-      "code": "M5-0618",
-      "microSkill": "m5_geo_triangle_area",
-      "difficulty": 2,
-      "prompt": "Un triangle a une aire de 49 cm² et une base de 14 cm. Quelle est la hauteur correspondant à cette base ?",
-      "choices": ["3,5 cm", "5 cm", "6 cm", "7 cm"],
-      "correctIndex": 3,
-      "explanation": "La hauteur vaut (2 × 49) ÷ 14 = 7 cm."
-    },
-    {
-      "code": "M5-0619",
-      "microSkill": "m5_geo_triangle_area",
-      "difficulty": 3,
-      "prompt": "Dans un triangle obtus, une base mesure 10 cm et la hauteur correspondante, tracée à l’extérieur du triangle, mesure 4 cm. Quelle est l’aire du triangle ?",
-      "choices": ["20 cm²", "40 cm²", "14 cm²", "28 cm²"],
-      "correctIndex": 0,
-      "explanation": "Même extérieure au triangle, la hauteur correspondante s’utilise de la même façon : (10 × 4) ÷ 2 = 20 cm²."
-    },
-    {
-      "code": "M5-0620",
-      "microSkill": "m5_geo_triangle_area",
-      "difficulty": 3,
-      "prompt": "[TOOLS]calculator[/TOOLS] Une voile triangulaire a une base de 3,6 m et une hauteur correspondante de 2,5 m. Quelle est son aire ?",
-      "choices": ["9 m²", "4,5 m²", "6,1 m²", "3,05 m²"],
-      "correctIndex": 1,
-      "explanation": "(3,6 × 2,5) ÷ 2 = 9 ÷ 2 = 4,5 m²."
-    },
-    {
-      "code": "M5-0621",
-      "microSkill": "m5_geo_triangle_heights",
-      "difficulty": 1,
-      "prompt": "[TRIANGLEAUX]height[/TRIANGLEAUX] Pourquoi la droite (AH) est-elle une hauteur du triangle ABC ?",
-      "choices": ["Parce que AH = BC", "Parce que H est le milieu de [BC]", "Parce qu’elle passe par A et est perpendiculaire à (BC)", "Parce qu’elle partage l’angle en A en deux angles égaux"],
-      "correctIndex": 2,
-      "explanation": "Une hauteur passe par un sommet et est perpendiculaire à la droite portant le côté opposé."
-    },
-    {
-      "code": "M5-0622",
-      "microSkill": "m5_geo_triangle_heights",
-      "difficulty": 1,
-      "prompt": "Quelle définition correspond à une hauteur d’un triangle ?",
-      "choices": ["Une droite passant par les milieux de deux côtés", "Une droite partageant un angle en deux angles égaux", "Une droite perpendiculaire à un côté en son milieu", "Une droite passant par un sommet et perpendiculaire au côté opposé"],
-      "correctIndex": 3,
-      "explanation": "La hauteur issue d’un sommet est perpendiculaire à la droite qui porte le côté opposé."
-    },
-    {
-      "code": "M5-0623",
-      "microSkill": "m5_geo_triangle_heights",
-      "difficulty": 1,
-      "prompt": "Combien un triangle possède-t-il de hauteurs ?",
-      "choices": ["Trois", "Une", "Deux", "Une infinité"],
-      "correctIndex": 0,
-      "explanation": "On peut tracer une hauteur depuis chacun des trois sommets."
-    },
-    {
-      "code": "M5-0624",
-      "microSkill": "m5_geo_triangle_heights",
-      "difficulty": 2,
-      "prompt": "Le triangle ABC est rectangle en A. Quelles droites portent deux de ses hauteurs ?",
-      "choices": ["(BC) et une parallèle à (BC)", "(AB) et (AC)", "Les deux médiatrices de [AB] et [AC]", "Les deux bissectrices des angles en B et C"],
-      "correctIndex": 1,
-      "explanation": "Comme (AB) est perpendiculaire à (AC), chacun de ces deux côtés porte une hauteur du triangle rectangle."
-    },
-    {
-      "code": "M5-0625",
-      "microSkill": "m5_geo_triangle_heights",
-      "difficulty": 2,
-      "prompt": "Dans un triangle obtus, où peuvent se trouver certaines hauteurs ?",
-      "choices": ["Uniquement sur les médiatrices", "Toujours entièrement à l’intérieur", "À l’extérieur du triangle", "Uniquement sur les côtés du triangle"],
-      "correctIndex": 2,
-      "explanation": "Pour un triangle obtus, deux hauteurs rencontrent le prolongement du côté opposé et se situent en partie à l’extérieur."
-    },
-    {
-      "code": "M5-0626",
-      "microSkill": "m5_geo_triangle_heights",
-      "difficulty": 2,
-      "prompt": "Quel tracé ne suffit pas à définir la hauteur issue de A dans le triangle ABC ?",
-      "choices": ["La perpendiculaire à (BC) passant par A", "Une droite passant par A et formant un angle droit avec (BC)", "La droite passant par A et perpendiculaire au côté opposé", "La perpendiculaire à [BC] passant par le milieu de [BC]"],
-      "correctIndex": 3,
-      "explanation": "La perpendiculaire passant par le milieu de [BC] est sa médiatrice ; elle ne passe pas nécessairement par A."
-    },
-    {
-      "code": "M5-0627",
-      "microSkill": "m5_geo_triangle_heights",
-      "difficulty": 2,
-      "prompt": "Dans le triangle ABC, D appartient à la droite (BC) et (AD) est perpendiculaire à (BC). Que représente (AD) ?",
-      "choices": ["La hauteur issue de A", "La médiane issue de B", "La médiatrice de [AB]", "La bissectrice de l’angle en C"],
-      "correctIndex": 0,
-      "explanation": "La droite (AD) passe par A et est perpendiculaire à la droite du côté opposé [BC]."
-    },
-    {
-      "code": "M5-0628",
-      "microSkill": "m5_geo_triangle_heights",
-      "difficulty": 2,
-      "prompt": "Comment construire la hauteur issue de C dans un triangle ABC ?",
-      "choices": ["Tracer la parallèle à (AB) passant par C", "Tracer la perpendiculaire à (AB) passant par C", "Relier C au milieu de [AB]", "Tracer la médiatrice de [AB]"],
-      "correctIndex": 1,
-      "explanation": "Le côté opposé à C est [AB] : la hauteur issue de C est perpendiculaire à (AB) et passe par C."
-    },
-    {
-      "code": "M5-0629",
-      "microSkill": "m5_geo_triangle_heights",
-      "difficulty": 3,
-      "prompt": "Dans un triangle ABC isocèle en A, la hauteur issue de A coupe [BC] en H. Quelle propriété supplémentaire possède-t-elle ?",
-      "choices": ["Elle est parallèle à (BC)", "Elle passe par B", "H est le milieu de [BC]", "Elle est la médiatrice de [AB]"],
-      "correctIndex": 2,
-      "explanation": "Dans un triangle isocèle, la hauteur issue du sommet principal est aussi une médiane : elle coupe la base en son milieu."
-    },
-    {
-      "code": "M5-0630",
-      "microSkill": "m5_geo_triangle_heights",
-      "difficulty": 3,
-      "prompt": "Dans le triangle ABC, E appartient à [BC] et le segment [AE] est tracé, sans codage d’angle droit. Que peut-on conclure ?",
-      "choices": ["[AE] est forcément une hauteur", "[AE] est forcément une médiatrice", "[AE] est forcément une bissectrice", "On ne peut pas affirmer que [AE] est une hauteur"],
-      "correctIndex": 3,
-      "explanation": "Pour reconnaître une hauteur, il faut savoir que (AE) est perpendiculaire à (BC). Le dessin seul ne suffit pas."
-    },
-    {
-      "code": "M5-0631",
-      "microSkill": "m5_geo_triangle_medians",
-      "difficulty": 1,
-      "prompt": "Quelle définition correspond à une médiane d’un triangle ?",
-      "choices": ["Un segment qui joint un sommet au milieu du côté opposé", "Une droite perpendiculaire à un côté en son milieu", "Un segment qui partage un angle en deux angles égaux", "Une droite parallèle à un côté"],
-      "correctIndex": 0,
-      "explanation": "Une médiane relie un sommet au milieu du côté qui lui est opposé."
-    },
-    {
-      "code": "M5-0632",
-      "microSkill": "m5_geo_triangle_medians",
-      "difficulty": 1,
-      "prompt": "[TRIANGLEAUX]median[/TRIANGLEAUX] Les deux traits indiquent que BM = MC. Que représente [AM] ?",
-      "choices": ["La hauteur issue de A", "La médiane issue de A", "La médiatrice de [BC]", "La bissectrice de l’angle en B"],
-      "correctIndex": 1,
-      "explanation": "M est le milieu de [BC] puisque BM = MC ; [AM] joint A au milieu du côté opposé."
-    },
-    {
-      "code": "M5-0633",
-      "microSkill": "m5_geo_triangle_medians",
-      "difficulty": 1,
-      "prompt": "Combien un triangle possède-t-il de médianes ?",
-      "choices": ["Une", "Deux", "Trois", "Une infinité"],
-      "correctIndex": 2,
-      "explanation": "On peut joindre chacun des trois sommets au milieu du côté opposé."
-    },
-    {
-      "code": "M5-0634",
-      "microSkill": "m5_geo_triangle_medians",
-      "difficulty": 2,
-      "prompt": "Quelle différence distingue une médiane de la médiatrice d’un côté ?",
-      "choices": ["Une médiane est toujours perpendiculaire au côté opposé", "Une médiatrice passe toujours par un sommet", "Une médiane partage toujours un angle en deux angles égaux", "Une médiane passe par un sommet et le milieu du côté opposé, sans être forcément perpendiculaire"],
-      "correctIndex": 3,
-      "explanation": "La médiane est définie par un sommet et le milieu du côté opposé ; la médiatrice est définie par le milieu et la perpendicularité."
-    },
-    {
-      "code": "M5-0635",
-      "microSkill": "m5_geo_triangle_medians",
-      "difficulty": 2,
-      "prompt": "Dans le triangle ABC, [AM] est une médiane et BC = 10 cm. Quelles sont les longueurs BM et MC ?",
-      "choices": ["BM = MC = 5 cm", "BM = 4 cm et MC = 6 cm", "BM = MC = 10 cm", "On ne peut rien déterminer"],
-      "correctIndex": 0,
-      "explanation": "M est le milieu de [BC], donc BM = MC = 10 ÷ 2 = 5 cm."
-    },
-    {
-      "code": "M5-0636",
-      "microSkill": "m5_geo_triangle_medians",
-      "difficulty": 2,
-      "prompt": "Dans le triangle ABC, N est le milieu de [AC]. Quelle est la médiane issue de B ?",
-      "choices": ["[AN]", "[BN]", "[CN]", "[BC]"],
-      "correctIndex": 1,
-      "explanation": "La médiane issue de B joint B au milieu N du côté opposé [AC]."
-    },
-    {
-      "code": "M5-0637",
-      "microSkill": "m5_geo_triangle_medians",
-      "difficulty": 2,
-      "prompt": "Quelle procédure permet de tracer la médiane issue de C dans le triangle ABC ?",
-      "choices": ["Tracer la perpendiculaire à (AB) passant par C", "Construire la médiatrice de [AB]", "Construire le milieu I de [AB], puis tracer [CI]", "Construire le milieu de [AC], puis le relier à B"],
-      "correctIndex": 2,
-      "explanation": "Le côté opposé à C est [AB] : on trouve son milieu I, puis on relie C à I."
-    },
-    {
-      "code": "M5-0638",
-      "microSkill": "m5_geo_triangle_medians",
-      "difficulty": 2,
-      "prompt": "Lequel de ces segments n’est pas, en général, une médiane du triangle ABC ?",
-      "choices": ["Le segment joignant A au milieu de [BC]", "Le segment joignant B au milieu de [AC]", "Le segment joignant C au milieu de [AB]", "Le segment joignant le milieu de [AB] au milieu de [AC]"],
-      "correctIndex": 3,
-      "explanation": "Une médiane doit partir d’un sommet. Le segment joignant deux milieux ne part d’aucun sommet."
-    },
-    {
-      "code": "M5-0639",
-      "microSkill": "m5_geo_triangle_medians",
-      "difficulty": 3,
-      "prompt": "Dans un triangle équilatéral, quelle propriété possède chaque médiane ?",
-      "choices": ["Elle est aussi une hauteur", "Elle est parallèle au côté opposé", "Elle mesure toujours 1 cm", "Elle reste extérieure au triangle"],
-      "correctIndex": 0,
-      "explanation": "Dans un triangle équilatéral, chaque médiane est aussi une hauteur, une médiatrice et une bissectrice."
-    },
-    {
-      "code": "M5-0640",
-      "microSkill": "m5_geo_triangle_medians",
-      "difficulty": 3,
-      "prompt": "Dans le triangle ABC, [AM] est une médiane. Quelle information est garantie ?",
-      "choices": ["AM = BM", "BM = MC", "(AM) est perpendiculaire à (BC)", "L’angle BAM est égal à l’angle MAC"],
-      "correctIndex": 1,
-      "explanation": "Puisque [AM] est une médiane, M est le milieu de [BC] : BM = MC. La perpendicularité et le partage de l’angle ne sont pas garantis."
-    }
-  ]
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_space_geometry",
+                   "name":  "Espace et géométrie"
+               },
+    "skill":  {
+                  "code":  "m5_triangles",
+                  "name":  "Triangles"
+              },
+    "lot":  "M5-GEO-07",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_geo_triangle_area",
+                            "teacherName":  "Calculer l’aire d’un triangle",
+                            "studentName":  "Calculer l’aire d’un triangle",
+                            "lessonReminder":  "L’aire d’un triangle est égale à (base × hauteur correspondante) ÷ 2. La hauteur doit être perpendiculaire à la droite qui porte la base ; elle peut être située à l’extérieur du triangle.",
+                            "workedExample":  "Avec une base de 8 cm et la hauteur correspondante de 5 cm, l’aire vaut (8 × 5) ÷ 2 = 20 cm².",
+                            "masteryCriteria":  "Identifier une base et sa hauteur correspondante, calculer une aire ou retrouver une dimension manquante avec des unités cohérentes."
+                        },
+                        {
+                            "code":  "m5_geo_triangle_heights",
+                            "teacherName":  "Reconnaître et tracer les hauteurs d’un triangle",
+                            "studentName":  "Reconnaître et tracer les hauteurs d’un triangle",
+                            "lessonReminder":  "Une hauteur d’un triangle est une droite qui passe par un sommet et qui est perpendiculaire à la droite portant le côté opposé. Un triangle possède trois hauteurs.",
+                            "workedExample":  "Si H appartient à la droite (BC) et si (AH) est perpendiculaire à (BC), alors (AH) est la hauteur issue de A.",
+                            "masteryCriteria":  "Reconnaître une hauteur grâce au sommet et à la perpendicularité, puis construire la hauteur issue d’un sommet, y compris hors du triangle."
+                        },
+                        {
+                            "code":  "m5_geo_triangle_medians",
+                            "teacherName":  "Reconnaître et tracer les médianes d’un triangle",
+                            "studentName":  "Reconnaître et tracer les médianes d’un triangle",
+                            "lessonReminder":  "Une médiane d’un triangle est une droite qui passe par un sommet et par le milieu du côté opposé. Un triangle possède trois médianes.",
+                            "workedExample":  "Si M est le milieu de [BC], alors la droite (AM) est la médiane issue de A dans le triangle ABC.",
+                            "masteryCriteria":  "Identifier le milieu du côté opposé, reconnaître une médiane et construire la médiane issue d’un sommet."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0611",
+                          "microSkill":  "m5_geo_triangle_area",
+                          "difficulty":  1,
+                          "prompt":  "[TRIANGLEAUX]area[/TRIANGLEAUX] Quelle est l’aire du triangle ABC ?",
+                          "choices":  [
+                                          "20 cm²",
+                                          "40 cm²",
+                                          "13 cm²",
+                                          "26 cm²"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La base BC mesure 8 cm et la hauteur correspondante AH mesure 5 cm : (8 × 5) ÷ 2 = 20 cm²."
+                      },
+                      {
+                          "code":  "M5-0612",
+                          "microSkill":  "m5_geo_triangle_area",
+                          "difficulty":  1,
+                          "prompt":  "Un triangle a une base de 12 cm et la hauteur correspondante mesure 7 cm. Quelle est son aire ?",
+                          "choices":  [
+                                          "84 cm²",
+                                          "42 cm²",
+                                          "38 cm²",
+                                          "19 cm²"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "(12 × 7) ÷ 2 = 42 cm²."
+                      },
+                      {
+                          "code":  "M5-0613",
+                          "microSkill":  "m5_geo_triangle_area",
+                          "difficulty":  1,
+                          "prompt":  "Un triangle a une aire de 30 cm² et une base de 10 cm. Quelle est la hauteur correspondant à cette base ?",
+                          "choices":  [
+                                          "3 cm",
+                                          "5 cm",
+                                          "6 cm",
+                                          "15 cm"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "La hauteur vaut (2 × aire) ÷ base, soit (2 × 30) ÷ 10 = 6 cm."
+                      },
+                      {
+                          "code":  "M5-0614",
+                          "microSkill":  "m5_geo_triangle_area",
+                          "difficulty":  2,
+                          "prompt":  "La base d’un triangle mesure 1,2 m et la hauteur correspondante 0,5 m. Quelle est son aire ?",
+                          "choices":  [
+                                          "0,85 m²",
+                                          "0,6 m²",
+                                          "1,7 m²",
+                                          "0,3 m²"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "(1,2 × 0,5) ÷ 2 = 0,3 m²."
+                      },
+                      {
+                          "code":  "M5-0615",
+                          "microSkill":  "m5_geo_triangle_area",
+                          "difficulty":  1,
+                          "prompt":  "Quelle formule permet de calculer l’aire d’un triangle ?",
+                          "choices":  [
+                                          "(base × hauteur correspondante) ÷ 2",
+                                          "base × hauteur correspondante",
+                                          "2 × base + hauteur",
+                                          "base + hauteur ÷ 2"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "L’aire d’un triangle est la moitié du produit d’une base par la hauteur qui lui correspond."
+                      },
+                      {
+                          "code":  "M5-0616",
+                          "microSkill":  "m5_geo_triangle_area",
+                          "difficulty":  2,
+                          "prompt":  "Un triangle rectangle a deux côtés perpendiculaires de 9 cm et 4 cm. Quelle est son aire ?",
+                          "choices":  [
+                                          "36 cm²",
+                                          "18 cm²",
+                                          "26 cm²",
+                                          "13 cm²"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Les deux côtés perpendiculaires servent de base et de hauteur : (9 × 4) ÷ 2 = 18 cm²."
+                      },
+                      {
+                          "code":  "M5-0617",
+                          "microSkill":  "m5_geo_triangle_area",
+                          "difficulty":  2,
+                          "prompt":  "Deux triangles ont la même base et la même hauteur correspondant à cette base. Que peut-on affirmer ?",
+                          "choices":  [
+                                          "Ils ont nécessairement le même périmètre",
+                                          "Ils sont nécessairement superposables",
+                                          "Ils ont la même aire",
+                                          "Ils sont nécessairement rectangles"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "La formule de l’aire dépend uniquement de la base choisie et de sa hauteur correspondante."
+                      },
+                      {
+                          "code":  "M5-0618",
+                          "microSkill":  "m5_geo_triangle_area",
+                          "difficulty":  2,
+                          "prompt":  "Un triangle a une aire de 49 cm² et une base de 14 cm. Quelle est la hauteur correspondant à cette base ?",
+                          "choices":  [
+                                          "3,5 cm",
+                                          "5 cm",
+                                          "6 cm",
+                                          "7 cm"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "La hauteur vaut (2 × 49) ÷ 14 = 7 cm."
+                      },
+                      {
+                          "code":  "M5-0619",
+                          "microSkill":  "m5_geo_triangle_area",
+                          "difficulty":  3,
+                          "prompt":  "Une base d’un triangle mesure 10 cm et la hauteur correspondante, située à l’extérieur du triangle, mesure 4 cm. Quelle est l’aire du triangle ?",
+                          "choices":  [
+                                          "20 cm²",
+                                          "40 cm²",
+                                          "14 cm²",
+                                          "28 cm²"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Même située à l’extérieur du triangle, la hauteur correspondante s’utilise de la même façon : (10 × 4) ÷ 2 = 20 cm²."
+                      },
+                      {
+                          "code":  "M5-0620",
+                          "microSkill":  "m5_geo_triangle_area",
+                          "difficulty":  3,
+                          "prompt":  "[TOOLS]calculator[/TOOLS] Une voile triangulaire a une base de 3,6 m et une hauteur correspondante de 2,5 m. Quelle est son aire ?",
+                          "choices":  [
+                                          "9 m²",
+                                          "4,5 m²",
+                                          "6,1 m²",
+                                          "3,05 m²"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "(3,6 × 2,5) ÷ 2 = 9 ÷ 2 = 4,5 m²."
+                      },
+                      {
+                          "code":  "M5-0621",
+                          "microSkill":  "m5_geo_triangle_heights",
+                          "difficulty":  1,
+                          "prompt":  "[TRIANGLEAUX]height[/TRIANGLEAUX] Pourquoi la droite (AH) est-elle une hauteur du triangle ABC ?",
+                          "choices":  [
+                                          "Parce que AH = BC",
+                                          "Parce que H est le milieu de [BC]",
+                                          "Parce qu’elle passe par A et est perpendiculaire à (BC)",
+                                          "Parce qu’elle partage l’angle en A en deux angles égaux"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Une hauteur passe par un sommet et est perpendiculaire à la droite portant le côté opposé."
+                      },
+                      {
+                          "code":  "M5-0622",
+                          "microSkill":  "m5_geo_triangle_heights",
+                          "difficulty":  1,
+                          "prompt":  "Quelle définition correspond à une hauteur d’un triangle ?",
+                          "choices":  [
+                                          "Une droite passant par les milieux de deux côtés",
+                                          "Une droite partageant un angle en deux angles égaux",
+                                          "Une droite perpendiculaire à un côté en son milieu",
+                                          "Une droite passant par un sommet et perpendiculaire au côté opposé"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "La hauteur issue d’un sommet est perpendiculaire à la droite qui porte le côté opposé."
+                      },
+                      {
+                          "code":  "M5-0623",
+                          "microSkill":  "m5_geo_triangle_heights",
+                          "difficulty":  1,
+                          "prompt":  "Combien un triangle possède-t-il de hauteurs ?",
+                          "choices":  [
+                                          "Trois",
+                                          "Une",
+                                          "Deux",
+                                          "Une infinité"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On peut tracer une hauteur depuis chacun des trois sommets."
+                      },
+                      {
+                          "code":  "M5-0624",
+                          "microSkill":  "m5_geo_triangle_heights",
+                          "difficulty":  2,
+                          "prompt":  "Le triangle ABC est rectangle en A. Quelles droites portent deux de ses hauteurs ?",
+                          "choices":  [
+                                          "(BC) et une parallèle à (BC)",
+                                          "(AB) et (AC)",
+                                          "Les deux médiatrices de [AB] et [AC]",
+                                          "Les deux bissectrices des angles en B et C"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Comme (AB) est perpendiculaire à (AC), chacun de ces deux côtés porte une hauteur du triangle rectangle."
+                      },
+                      {
+                          "code":  "M5-0625",
+                          "microSkill":  "m5_geo_triangle_heights",
+                          "difficulty":  2,
+                          "prompt":  "Dans un triangle obtus, où peuvent se trouver certaines hauteurs ?",
+                          "choices":  [
+                                          "Uniquement sur les médiatrices",
+                                          "Toujours entièrement à l’intérieur",
+                                          "À l’extérieur du triangle",
+                                          "Uniquement sur les côtés du triangle"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Pour un triangle obtus, deux hauteurs rencontrent le prolongement du côté opposé et se situent en partie à l’extérieur."
+                      },
+                      {
+                          "code":  "M5-0626",
+                          "microSkill":  "m5_geo_triangle_heights",
+                          "difficulty":  2,
+                          "prompt":  "Quel tracé ne suffit pas à définir la hauteur issue de A dans le triangle ABC ?",
+                          "choices":  [
+                                          "La perpendiculaire à (BC) passant par A",
+                                          "Une droite passant par A et formant un angle droit avec (BC)",
+                                          "La droite passant par A et perpendiculaire au côté opposé",
+                                          "La perpendiculaire à [BC] passant par le milieu de [BC]"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "La perpendiculaire passant par le milieu de [BC] est sa médiatrice ; elle ne passe pas nécessairement par A."
+                      },
+                      {
+                          "code":  "M5-0627",
+                          "microSkill":  "m5_geo_triangle_heights",
+                          "difficulty":  2,
+                          "prompt":  "Dans le triangle ABC, D appartient à la droite (BC) et (AD) est perpendiculaire à (BC). Que représente (AD) ?",
+                          "choices":  [
+                                          "La hauteur issue de A",
+                                          "La médiane issue de B",
+                                          "La médiatrice de [AB]",
+                                          "La bissectrice de l’angle en C"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La droite (AD) passe par A et est perpendiculaire à la droite du côté opposé [BC]."
+                      },
+                      {
+                          "code":  "M5-0628",
+                          "microSkill":  "m5_geo_triangle_heights",
+                          "difficulty":  2,
+                          "prompt":  "Comment construire la hauteur issue de C dans un triangle ABC ?",
+                          "choices":  [
+                                          "Tracer la parallèle à (AB) passant par C",
+                                          "Tracer la perpendiculaire à (AB) passant par C",
+                                          "Relier C au milieu de [AB]",
+                                          "Tracer la médiatrice de [AB]"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le côté opposé à C est [AB] : la hauteur issue de C est perpendiculaire à (AB) et passe par C."
+                      },
+                      {
+                          "code":  "M5-0629",
+                          "microSkill":  "m5_geo_triangle_heights",
+                          "difficulty":  3,
+                          "prompt":  "Dans un triangle ABC isocèle en A, la hauteur issue de A coupe [BC] en H. Quelle propriété supplémentaire possède-t-elle ?",
+                          "choices":  [
+                                          "Elle est parallèle à (BC)",
+                                          "Elle passe par B",
+                                          "H est le milieu de [BC]",
+                                          "Elle est la médiatrice de [AB]"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Dans un triangle isocèle, la hauteur issue du sommet principal est aussi une médiane : elle coupe la base en son milieu."
+                      },
+                      {
+                          "code":  "M5-0630",
+                          "microSkill":  "m5_geo_triangle_heights",
+                          "difficulty":  3,
+                          "prompt":  "Dans le triangle ABC, E appartient à [BC] et la droite (AE) est tracée, sans codage d’angle droit. Que peut-on conclure ?",
+                          "choices":  [
+                                          "La droite (AE) est forcément une hauteur",
+                                          "La droite (AE) est forcément une médiatrice",
+                                          "La demi-droite [AE) est forcément la bissectrice de l’angle BÂC",
+                                          "On ne peut pas affirmer que (AE) est une hauteur"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Pour reconnaître une hauteur, il faut savoir que (AE) est perpendiculaire à (BC). Le dessin seul ne suffit pas."
+                      },
+                      {
+                          "code":  "M5-0631",
+                          "microSkill":  "m5_geo_triangle_medians",
+                          "difficulty":  1,
+                          "prompt":  "Quelle définition correspond à une médiane d’un triangle ?",
+                          "choices":  [
+                                          "Une droite qui passe par un sommet et par le milieu du côté opposé",
+                                          "Une droite perpendiculaire à un côté en son milieu",
+                                          "Une demi-droite qui partage un angle en deux angles égaux",
+                                          "Une droite parallèle au côté opposé"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Une médiane est une droite qui passe par un sommet et par le milieu du côté opposé."
+                      },
+                      {
+                          "code":  "M5-0632",
+                          "microSkill":  "m5_geo_triangle_medians",
+                          "difficulty":  1,
+                          "prompt":  "[TRIANGLEAUX]median[/TRIANGLEAUX] Les deux traits indiquent que BM = MC. Que représente la droite (AM) ?",
+                          "choices":  [
+                                          "La hauteur issue de A",
+                                          "La médiane issue de A",
+                                          "La médiatrice de [BC]",
+                                          "La bissectrice de l’angle en B"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "M est le milieu de [BC] puisque BM = MC ; la droite (AM) passe par A et par le milieu du côté opposé."
+                      },
+                      {
+                          "code":  "M5-0633",
+                          "microSkill":  "m5_geo_triangle_medians",
+                          "difficulty":  1,
+                          "prompt":  "Combien un triangle possède-t-il de médianes ?",
+                          "choices":  [
+                                          "Une",
+                                          "Deux",
+                                          "Trois",
+                                          "Une infinité"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On peut joindre chacun des trois sommets au milieu du côté opposé."
+                      },
+                      {
+                          "code":  "M5-0634",
+                          "microSkill":  "m5_geo_triangle_medians",
+                          "difficulty":  2,
+                          "prompt":  "Quelle différence distingue une médiane de la médiatrice d’un côté ?",
+                          "choices":  [
+                                          "Une médiane est toujours perpendiculaire au côté opposé",
+                                          "Une médiatrice passe toujours par un sommet",
+                                          "Une médiane partage toujours un angle en deux angles égaux",
+                                          "Une médiane passe par un sommet et le milieu du côté opposé, sans être forcément perpendiculaire"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "La médiane est définie par un sommet et le milieu du côté opposé ; la médiatrice est définie par le milieu et la perpendicularité."
+                      },
+                      {
+                          "code":  "M5-0635",
+                          "microSkill":  "m5_geo_triangle_medians",
+                          "difficulty":  2,
+                          "prompt":  "Dans le triangle ABC, (AM) est une médiane et BC = 10 cm. Quelles sont les longueurs BM et MC ?",
+                          "choices":  [
+                                          "BM = MC = 5 cm",
+                                          "BM = 4 cm et MC = 6 cm",
+                                          "BM = MC = 10 cm",
+                                          "On ne peut rien déterminer"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "M est le milieu de [BC], donc BM = MC = 10 ÷ 2 = 5 cm."
+                      },
+                      {
+                          "code":  "M5-0636",
+                          "microSkill":  "m5_geo_triangle_medians",
+                          "difficulty":  2,
+                          "prompt":  "Dans le triangle ABC, N est le milieu de [AC]. Quelle est la médiane issue de B ?",
+                          "choices":  [
+                                          "La droite (AN)",
+                                          "La droite (BN)",
+                                          "La droite (CN)",
+                                          "La droite (BC)"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "La médiane issue de B est la droite (BN), qui passe par B et par le milieu N du côté opposé [AC]."
+                      },
+                      {
+                          "code":  "M5-0637",
+                          "microSkill":  "m5_geo_triangle_medians",
+                          "difficulty":  2,
+                          "prompt":  "Quelle procédure permet de tracer la médiane issue de C dans le triangle ABC ?",
+                          "choices":  [
+                                          "Tracer la perpendiculaire à (AB) passant par C",
+                                          "Construire la médiatrice de [AB]",
+                                          "Construire le milieu I de [AB], puis tracer la droite (CI)",
+                                          "Construire le milieu de [AC], puis le relier à B"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le côté opposé à C est [AB] : on trouve son milieu I, puis on trace la droite (CI)."
+                      },
+                      {
+                          "code":  "M5-0638",
+                          "microSkill":  "m5_geo_triangle_medians",
+                          "difficulty":  2,
+                          "prompt":  "Laquelle de ces droites n’est pas, en général, une médiane du triangle ABC ?",
+                          "choices":  [
+                                          "La droite passant par A et le milieu de [BC]",
+                                          "La droite passant par B et le milieu de [AC]",
+                                          "La droite passant par C et le milieu de [AB]",
+                                          "La droite passant par les milieux de [AB] et [AC]"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Une médiane doit passer par un sommet. La droite passant par deux milieux ne passe, en général, par aucun sommet."
+                      },
+                      {
+                          "code":  "M5-0639",
+                          "microSkill":  "m5_geo_triangle_medians",
+                          "difficulty":  3,
+                          "prompt":  "Dans un triangle équilatéral, quelle propriété possède chaque médiane ?",
+                          "choices":  [
+                                          "Elle est aussi une hauteur",
+                                          "Elle est parallèle au côté opposé",
+                                          "Elle mesure toujours 1 cm",
+                                          "Elle reste extérieure au triangle"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Dans un triangle équilatéral, chaque médiane est aussi une hauteur, une médiatrice et une bissectrice."
+                      },
+                      {
+                          "code":  "M5-0640",
+                          "microSkill":  "m5_geo_triangle_medians",
+                          "difficulty":  3,
+                          "prompt":  "Dans le triangle ABC, (AM) est une médiane. Quelle information est garantie ?",
+                          "choices":  [
+                                          "AM = BM",
+                                          "BM = MC",
+                                          "(AM) est perpendiculaire à (BC)",
+                                          "Les angles BÂM et MÂC ont la même mesure"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Puisque (AM) est une médiane, M est le milieu de [BC] : BM = MC. La perpendicularité et le partage de l’angle ne sont pas garantis."
+                      }
+                  ]
 }
