@@ -248,7 +248,14 @@
     const svg=svgNode('svg',{viewBox:'0 0 540 340',role:'img','aria-label':'Repère contenant les points '+description});
     svg.classList.add('question-chart');
     const left=70,right=500,top=25,bottom=295;
-    const xValues=points.map(point=>point.x),yValues=points.map(point=>point.y);
+    const framingPoints=[...points];
+    const center=points.length>1&&/^(O|I|M|C)$/i.test(points[0].label)?points[0]:null;
+    if(center){
+      points.slice(1).forEach(point=>{
+        framingPoints.push({x:2*center.x-point.x,y:2*center.y-point.y});
+      });
+    }
+    const xValues=framingPoints.map(point=>point.x),yValues=framingPoints.map(point=>point.y);
     const minX=Math.min(0,...xValues)-1,maxX=Math.max(0,...xValues)+1;
     const minY=Math.min(0,...yValues)-1,maxY=Math.max(0,...yValues)+1;
     const xFor=value=>left+((value-minX)/(maxX-minX))*(right-left);

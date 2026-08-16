@@ -97,7 +97,7 @@
                                           "O est le milieu de [BB’].",
                                           "OB est le double de OB’.",
                                           "B, B’ et O forment un triangle.",
-                                          "[BB’] est perpendiculaire à toute droite passant par O."
+                                          "(BB’) est perpendiculaire à toute droite passant par O."
                                       ],
                           "correctIndex":  0,
                           "explanation":  "Par définition, le centre O est le milieu du segment reliant un point à son image."
@@ -204,15 +204,15 @@
                           "code":  "M5-0533",
                           "microSkill":  "m5_geo_central_symmetry_properties",
                           "difficulty":  2,
-                          "prompt":  "Une droite d ne passe pas par le centre O d’une symétrie centrale. Quelle est son image d’ ?",
+                          "prompt":  "Une droite (d) ne passe pas par le centre O d’une symétrie centrale. Quelle est son image (d’) ?",
                           "choices":  [
-                                          "Une droite parallèle à d",
-                                          "Une droite perpendiculaire à d",
+                                          "Une droite (d’) parallèle à (d)",
+                                          "Une droite (d’) perpendiculaire à (d)",
                                           "Un cercle de centre O",
-                                          "La droite d elle-même dans tous les cas"
+                                          "La droite (d) elle-même dans tous les cas"
                                       ],
                           "correctIndex":  0,
-                          "explanation":  "L’image d’une droite ne passant pas par le centre est une droite parallèle."
+                          "explanation":  "L’image d’une droite (d) ne passant pas par le centre est une droite (d’) parallèle à (d)."
                       },
                       {
                           "code":  "M5-0534",
@@ -302,15 +302,15 @@
                           "code":  "M5-0540",
                           "microSkill":  "m5_geo_central_symmetry_properties",
                           "difficulty":  3,
-                          "prompt":  "Une droite d passe par le centre O d’une symétrie centrale. Quelle est son image ?",
+                          "prompt":  "Une droite (d) passe par le centre O d’une symétrie centrale. Quelle est son image ?",
                           "choices":  [
                                           "Une droite parallèle distincte",
                                           "Une droite perpendiculaire",
                                           "Un point",
-                                          "La droite d elle-même"
+                                          "La droite (d) elle-même"
                                       ],
                           "correctIndex":  3,
-                          "explanation":  "Après un demi-tour autour de O, une droite passant par O se superpose à elle-même."
+                          "explanation":  "Après un demi-tour autour de O, une droite (d) passant par O se superpose à elle-même."
                       }
                   ]
 }
