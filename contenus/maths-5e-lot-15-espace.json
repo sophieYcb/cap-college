@@ -584,7 +584,7 @@
                           "code":  "M5-0489",
                           "microSkill":  "m5_geo_volume_prism",
                           "difficulty":  3,
-                          "prompt":  "Un aquarium en forme de pavé droit mesure 40 cm sur 25 cm sur 30 cm. Quelle est sa capacité maximale ? On rappelle que 1 L = 1 000 cm³.",
+                          "prompt":  "[TOOLS]scratch[/TOOLS]\r\nUn aquarium en forme de pavé droit mesure 40 cm sur 25 cm sur 30 cm. Quelle est sa capacité maximale ? On rappelle que 1 L = 1 000 cm³.",
                           "choices":  [
                                           "3 L",
                                           "12 L",

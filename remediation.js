@@ -61,7 +61,15 @@ function renderQuestion(){
   answered=false;
   document.getElementById('remediationCounter').textContent=
     `Exercice ${currentIndex+1}`;
-  CapCollegeEducationalContent.renderInline(document.getElementById('remediationQuestion'),question.question);
+  CapCollegeQuestionVisuals.render(
+    document.getElementById('remediationQuestion'),
+    document.getElementById('remediationQuestionVisual'),
+    question.question
+  );
+  CapCollegeQuestionVisuals.renderTools(
+    document.getElementById('remediationQuestionTools'),
+    question.question
+  );
   document.getElementById('remediationFeedback').classList.add('hidden');
   document.getElementById('nextRemediationButton').classList.add('hidden');
   document.getElementById('remediationChoices').innerHTML=question.choix

@@ -593,6 +593,7 @@ function renderQuestion(){
     document.getElementById('questionVisual'),
     q.question
   );
+  CapCollegeQuestionVisuals.renderTools(document.getElementById('questionTools'),q.question);
 
   document.getElementById('prevBtn').disabled=current===0;
   document.getElementById('nextBtn').textContent=current===diagnosticQuestions.length-1?'Terminer la séance':'Suivante';

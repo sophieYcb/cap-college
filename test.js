@@ -174,6 +174,7 @@ function renderQuestion(){
   document.getElementById('testQuestionVisual'),
   q.question
  );
+ CapCollegeQuestionVisuals.renderTools(document.getElementById('testQuestionTools'),q.question);
  document.getElementById('testChoices').innerHTML=q.choix.map((c,i)=>`<div class="choice test-choice ${i===q.reponse?'correct-choice':''}"><span>${String.fromCharCode(65+i)}.</span> ${CapCollegeEducationalContent.toHtml(c)} ${i===q.reponse?'<strong class="correct-marker">✓ réponse prévue</strong>':''}</div>`).join('');
  const changeCommentNotice=document.getElementById('changeCommentNotice');
  const sourceReview=q.previous?.review;

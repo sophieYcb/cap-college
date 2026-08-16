@@ -279,8 +279,14 @@
     return explicit?Number(explicit[1]):null;
   }
 
+  function questionTools(prompt){
+    const match=String(prompt||'').match(/\[TOOLS\]([\s\S]*?)\[\/TOOLS\]/i);
+    if(!match)return [];
+    return match[1].split(',').map(tool=>tool.trim().toLowerCase())
+      .filter(tool=>tool==='scratch'||tool==='calculator');
+  }
   function parse(prompt){
-    const normalized=String(prompt||'').replace(/^[◐◔◕●○]\s*(?:\([^)]*\))?\s*/,'');
+    const normalized=String(prompt||'').replace(/\[TOOLS\][\s\S]*?\[\/TOOLS\]\s*/ig,'').replace(/^[◐◔◕●○]\s*(?:\([^)]*\))?\s*/,'');
     let match;
 
     if((match=normalized.match(/\[OPERATION\]([\s\S]*?)\[\/OPERATION\]/i))){
@@ -391,5 +397,19 @@
     }
   }
 
-  window.CapCollegeQuestionVisuals={render,parse};
+  function renderTools(container,prompt){
+    if(!container)return;
+    const tools=questionTools(prompt);
+    const labels={scratch:'✏️ Brouillon conseillé',calculator:'🧮 Calculatrice autorisée'};
+    container.replaceChildren();
+    tools.forEach(tool=>{
+      const badge=document.createElement('span');
+      badge.className='question-tool-badge';
+      badge.textContent=labels[tool];
+      container.appendChild(badge);
+    });
+    container.classList.toggle('hidden',tools.length===0);
+  }
+
+  window.CapCollegeQuestionVisuals={render,parse,questionTools,renderTools};
 })();

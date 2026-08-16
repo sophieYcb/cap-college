@@ -254,7 +254,7 @@ footer{margin-top:36px;text-align:center;color:var(--muted);font-size:.9rem}
 .flag-detail p{margin:0 0 4px}
 .content-import-picker{display:grid;gap:10px;margin:24px 0}
 .content-import-picker input{box-sizing:border-box;width:100%;padding:14px;border:1px solid #d8deea;border-radius:12px;background:#fff;font:inherit}
-.question-visual{display:flex;justify-content:center;width:100%;margin:14px 0 20px}
+.question-tools{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px}.question-tool-badge{display:inline-flex;align-items:center;padding:7px 10px;border:1px solid #b9c8e8;border-radius:999px;background:#eef4ff;color:#243d78;font-size:.86rem;font-weight:900}.question-visual{display:flex;justify-content:center;width:100%;margin:14px 0 20px}
 .question-table-wrap{overflow-x:auto}
 .question-data-table{min-width:360px;border-collapse:collapse;border:2px solid #22345f;border-radius:10px;background:#fff;font:700 1rem/1.25 Arial,Helvetica,sans-serif;box-shadow:0 8px 22px rgba(32,53,96,.1)}
 .question-data-table th,.question-data-table td{min-width:86px;border:1px solid #7080a3;padding:13px 18px;text-align:center}
