@@ -134,6 +134,38 @@
     return wrapper;
   }
 
+  function createCoordinatePlane(points){
+    const wrapper=document.createElement('div');
+    wrapper.className='question-visual';
+    const description=points.map(point=>point.label+'('+point.x+' ; '+point.y+')').join(', ');
+    const svg=svgNode('svg',{viewBox:'0 0 540 340',role:'img','aria-label':'Repère contenant les points '+description});
+    svg.classList.add('question-chart');
+    const left=70,right=500,top=25,bottom=295;
+    const xValues=points.map(point=>point.x),yValues=points.map(point=>point.y);
+    const minX=Math.min(0,...xValues)-1,maxX=Math.max(0,...xValues)+1;
+    const minY=Math.min(0,...yValues)-1,maxY=Math.max(0,...yValues)+1;
+    const xFor=value=>left+((value-minX)/(maxX-minX))*(right-left);
+    const yFor=value=>bottom-((value-minY)/(maxY-minY))*(bottom-top);
+    for(let value=Math.ceil(minX);value<=Math.floor(maxX);value++){
+      const x=xFor(value);
+      svg.appendChild(svgNode('line',{x1:x,y1:top,x2:x,y2:bottom,class:'chart-grid'}));
+      addSvgText(svg,value,x,yFor(0)+22,{class:'chart-label','text-anchor':'middle'});
+    }
+    for(let value=Math.ceil(minY);value<=Math.floor(maxY);value++){
+      const y=yFor(value);
+      svg.appendChild(svgNode('line',{x1:left,y1:y,x2:right,y2:y,class:'chart-grid'}));
+      if(value!==0)addSvgText(svg,value,xFor(0)-12,y+5,{class:'chart-label','text-anchor':'end'});
+    }
+    svg.appendChild(svgNode('line',{x1:left,y1:yFor(0),x2:right,y2:yFor(0),class:'chart-axis'}));
+    svg.appendChild(svgNode('line',{x1:xFor(0),y1:top,x2:xFor(0),y2:bottom,class:'chart-axis'}));
+    points.forEach(point=>{
+      const x=xFor(point.x),y=yFor(point.y);
+      svg.appendChild(svgNode('circle',{cx:x,cy:y,r:7,class:'chart-point'}));
+      addSvgText(svg,point.label,x+12,y-10,{class:'chart-value'});
+    });
+    wrapper.appendChild(svg);
+    return wrapper;
+  }
   function createCurve(points){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
@@ -205,6 +237,13 @@
       if(points.length>=2)return {text:normalized.replace(match[0],'').trim(),visual:createCurve(points)};
     }
 
+    if((match=normalized.match(/\[COORDINATES\]([\s\S]*?)\[\/COORDINATES\]/i))){
+      const points=match[1].split(';').map(item=>{
+        const pointMatch=item.trim().match(/^([^=]+)=(-?\d+(?:[.,]\d+)?),(-?\d+(?:[.,]\d+)?)$/);
+        return pointMatch?{label:pointMatch[1].trim(),x:Number(pointMatch[2].replace(',','.')),y:Number(pointMatch[3].replace(',','.'))}:null;
+      }).filter(Boolean);
+      if(points.length)return {text:normalized.replace(match[0],'').trim(),visual:createCoordinatePlane(points)};
+    }
     if((match=normalized.match(/Dans un tableau de proportionnalité\s*:\s*\n(\d+) objets → ([\d,]+) €\s*\n(\d+) objets → ([\d,]+) €\s*\n\s*([\s\S]*)/i))){
       return {text:match[5],visual:createTable([
         ['Quantité',match[1],match[3]],
