@@ -14,6 +14,26 @@
     return node;
   }
 
+  function addSvgAngleLabel(svg,letter,x,y){
+    addSvgText(svg,letter,x,y,{
+      class:'chart-value',
+      'text-anchor':'middle',
+      'font-style':'italic',
+      stroke:'#fff',
+      'stroke-width':6,
+      'paint-order':'stroke',
+      'stroke-linejoin':'round'
+    });
+    svg.appendChild(svgNode('path',{
+      d:`M ${x-7} ${y-18} L ${x} ${y-23} L ${x+7} ${y-18}`,
+      fill:'none',
+      stroke:'#17233f',
+      'stroke-width':2,
+      'stroke-linecap':'round',
+      'stroke-linejoin':'round'
+    }));
+  }
+
   function createTable(rows){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual question-table-wrap';
@@ -301,15 +321,15 @@
   function createCrossingAngles(measure){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
-    const svg=svgNode('svg',{viewBox:'0 0 460 280',role:'img','aria-label':'Deux droites sécantes formant quatre angles a, b, c et d'});
+    const svg=svgNode('svg',{viewBox:'0 0 460 280',role:'img','aria-label':'Deux droites sécantes formant quatre angles notés a chapeau, b chapeau, c chapeau et d chapeau'});
     svg.classList.add('question-chart');
     const cx=230,cy=140;
     svg.appendChild(svgNode('line',{x1:55,y1:220,x2:405,y2:60,class:'chart-axis'}));
     svg.appendChild(svgNode('line',{x1:70,y1:55,x2:390,y2:225,class:'chart-axis'}));
-    addSvgText(svg,'a',230,82,{class:'chart-value','text-anchor':'middle'});
-    addSvgText(svg,'b',310,145,{class:'chart-value','text-anchor':'middle'});
-    addSvgText(svg,'c',230,210,{class:'chart-value','text-anchor':'middle'});
-    addSvgText(svg,'d',145,145,{class:'chart-value','text-anchor':'middle'});
+    addSvgAngleLabel(svg,'a',230,82);
+    addSvgAngleLabel(svg,'b',310,145);
+    addSvgAngleLabel(svg,'c',230,210);
+    addSvgAngleLabel(svg,'d',145,145);
     if(Number.isFinite(measure))addSvgText(svg,measure+'°',230,108,{class:'chart-label','text-anchor':'middle'});
     wrapper.appendChild(svg);
     return wrapper;
@@ -318,7 +338,7 @@
   function createParallelAngles(){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
-    const svg=svgNode('svg',{viewBox:'0 0 560 330',role:'img','aria-label':'Deux droites parallèles coupées par une sécante, avec les angles a à h'});
+    const svg=svgNode('svg',{viewBox:'0 0 560 330',role:'img','aria-label':'Deux droites parallèles coupées par une sécante, avec huit angles notés de a chapeau à h chapeau'});
     svg.classList.add('question-chart');
     svg.appendChild(svgNode('line',{x1:55,y1:95,x2:505,y2:95,class:'chart-axis'}));
     svg.appendChild(svgNode('line',{x1:55,y1:235,x2:505,y2:235,class:'chart-axis'}));
@@ -326,10 +346,10 @@
     addSvgText(svg,'(d₁)',475,82,{class:'chart-label'});
     addSvgText(svg,'(d₂)',475,222,{class:'chart-label'});
     const labels=[
-      ['a',168,72],['b',235,72],['c',245,128],['d',183,128],
-      ['e',278,212],['f',342,212],['g',355,270],['h',292,270]
+      ['a',168,68],['b',244,68],['c',272,135],['d',175,135],
+      ['e',270,205],['f',363,205],['g',386,277],['h',286,277]
     ];
-    labels.forEach(item=>addSvgText(svg,item[0],item[1],item[2],{class:'chart-value','text-anchor':'middle'}));
+    labels.forEach(item=>addSvgAngleLabel(svg,item[0],item[1],item[2]));
     addSvgText(svg,'(d₁) ∥ (d₂)',280,315,{class:'chart-value','text-anchor':'middle'});
     wrapper.appendChild(svg);
     return wrapper;
