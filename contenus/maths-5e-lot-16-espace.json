@@ -18,15 +18,15 @@
                             "code":  "m5_geo_convert_volume_capacity",
                             "teacherName":  "Convertir des unités de volume et de capacité",
                             "studentName":  "Convertir volumes et capacités",
-                            "lessonReminder":  "Les correspondances essentielles sont : 1 dm³ = 1 L et 1 cm³ = 1 mL. Entre deux unités de volume consécutives, on multiplie ou on divise par 1 000.",
-                            "workedExample":  "2,5 dm³ = 2,5 L = 2 500 cm³.",
+                            "lessonReminder":  "Les correspondances essentielles sont : 1 dm³ = 1 l et 1 cm³ = 1 ml. Entre deux unités de volume consécutives, on multiplie ou on divise par 1 000.",
+                            "workedExample":  "2,5 dm³ = 2,5 l = 2 500 cm³.",
                             "masteryCriteria":  "Convertir entre m³, dm³, cm³, litres et millilitres, puis résoudre un problème de capacité."
                         },
                         {
                             "code":  "m5_geo_area_disk",
                             "teacherName":  "Calculer l’aire d’un disque",
                             "studentName":  "Calculer l’aire d’un disque",
-                            "lessonReminder":  "L’aire d’un disque de rayon r est A = π × r². Le rayon est égal à la moitié du diamètre.",
+                            "lessonReminder":  "L’aire d’un disque de rayon r est A = π × r². le rayon est égal à la moitié du diamètre.",
                             "workedExample":  "Pour un disque de rayon 3 cm : A = π × 3² = 9π cm², soit environ 28,27 cm².",
                             "masteryCriteria":  "Identifier le rayon, appliquer πr² et donner une valeur exacte ou approchée avec l’unité correcte."
                         },
@@ -46,13 +46,13 @@
                           "difficulty":  1,
                           "prompt":  "Convertis 2 dm³ en litres.",
                           "choices":  [
-                                          "2 L",
-                                          "20 L",
-                                          "200 L",
-                                          "0,2 L"
+                                          "2 l",
+                                          "20 l",
+                                          "200 l",
+                                          "0,2 l"
                                       ],
                           "correctIndex":  0,
-                          "explanation":  "Comme 1 dm³ = 1 L, 2 dm³ = 2 L."
+                          "explanation":  "Comme 1 dm³ = 1 l, 2 dm³ = 2 l."
                       },
                       {
                           "code":  "M5-0492",
@@ -60,19 +60,19 @@
                           "difficulty":  1,
                           "prompt":  "Convertis 750 cm³ en millilitres.",
                           "choices":  [
-                                          "75 mL",
-                                          "7 500 mL",
-                                          "750 mL",
-                                          "0,75 mL"
+                                          "75 ml",
+                                          "7 500 ml",
+                                          "750 ml",
+                                          "0,75 ml"
                                       ],
                           "correctIndex":  2,
-                          "explanation":  "Comme 1 cm³ = 1 mL, 750 cm³ = 750 mL."
+                          "explanation":  "Comme 1 cm³ = 1 ml, 750 cm³ = 750 ml."
                       },
                       {
                           "code":  "M5-0493",
                           "microSkill":  "m5_geo_convert_volume_capacity",
                           "difficulty":  1,
-                          "prompt":  "Convertis 1,5 L en centimètres cubes.",
+                          "prompt":  "Convertis 1,5 l en centimètres cubes.",
                           "choices":  [
                                           "150 cm³",
                                           "1 500 cm³",
@@ -80,7 +80,7 @@
                                           "1,5 cm³"
                                       ],
                           "correctIndex":  1,
-                          "explanation":  "1 L = 1 000 cm³, donc 1,5 L = 1 500 cm³."
+                          "explanation":  "1 l = 1 000 cm³, donc 1,5 l = 1 500 cm³."
                       },
                       {
                           "code":  "M5-0494",
@@ -88,13 +88,13 @@
                           "difficulty":  2,
                           "prompt":  "Convertis 0,4 m³ en litres.",
                           "choices":  [
-                                          "40 L",
-                                          "4 L",
-                                          "4 000 L",
-                                          "400 L"
+                                          "40 l",
+                                          "4 l",
+                                          "4 000 l",
+                                          "400 l"
                                       ],
                           "correctIndex":  3,
-                          "explanation":  "1 m³ = 1 000 L, donc 0,4 m³ = 400 L."
+                          "explanation":  "1 m³ = 1 000 l, donc 0,4 m³ = 400 l."
                       },
                       {
                           "code":  "M5-0495",
@@ -114,21 +114,21 @@
                           "code":  "M5-0496",
                           "microSkill":  "m5_geo_convert_volume_capacity",
                           "difficulty":  2,
-                          "prompt":  "[TOOLS]scratch[/TOOLS] Un aquarium mesure intérieurement 40 cm de long, 25 cm de large et 30 cm de haut. Quelle est sa capacité totale ?",
+                          "prompt":  "[TOOLS]scratch[/TOOLS] Une cuve contient 0,018 m³ d’eau. Quel volume cela représente-t-il en litres ?",
                           "choices":  [
-                                          "30 L",
-                                          "3 L",
-                                          "300 L",
-                                          "95 L"
+                                          "18 l",
+                                          "1,8 l",
+                                          "180 l",
+                                          "18 000 l"
                                       ],
                           "correctIndex":  0,
-                          "explanation":  "Son volume est 40 × 25 × 30 = 30 000 cm³, soit 30 L."
+                          "explanation":  "1 m³ = 1 000 l, donc 0,018 m³ = 18 l."
                       },
                       {
                           "code":  "M5-0497",
                           "microSkill":  "m5_geo_convert_volume_capacity",
                           "difficulty":  2,
-                          "prompt":  "Quel volume en centimètres cubes correspond à 3 L et 250 mL ?",
+                          "prompt":  "Quel volume en centimètres cubes correspond à 3 l et 250 ml ?",
                           "choices":  [
                                           "3 025 cm³",
                                           "325 cm³",
@@ -136,21 +136,21 @@
                                           "3 250 cm³"
                                       ],
                           "correctIndex":  3,
-                          "explanation":  "3 L = 3 000 cm³ et 250 mL = 250 cm³, soit 3 250 cm³."
+                          "explanation":  "3 l = 3 000 cm³ et 250 ml = 250 cm³, soit 3 250 cm³."
                       },
                       {
                           "code":  "M5-0498",
                           "microSkill":  "m5_geo_convert_volume_capacity",
                           "difficulty":  2,
-                          "prompt":  "Compare 0,002 m³ et 2 L.",
+                          "prompt":  "Compare 0,002 m³ et 2 l.",
                           "choices":  [
                                           "0,002 m³ est plus grand.",
-                                          "2 L est plus grand.",
+                                          "2 l est plus grand.",
                                           "Les deux volumes sont égaux.",
                                           "On ne peut pas les comparer."
                                       ],
                           "correctIndex":  2,
-                          "explanation":  "0,002 m³ = 0,002 × 1 000 L = 2 L."
+                          "explanation":  "0,002 m³ = 0,002 × 1 000 l = 2 l."
                       },
                       {
                           "code":  "M5-0499",
@@ -170,15 +170,15 @@
                           "code":  "M5-0500",
                           "microSkill":  "m5_geo_convert_volume_capacity",
                           "difficulty":  3,
-                          "prompt":  "[TOOLS]scratch[/TOOLS] Un récipient de 12 L contient déjà 8 500 cm³ d’eau. Quel volume peut-on encore ajouter ?",
+                          "prompt":  "[TOOLS]scratch[/TOOLS] Un récipient de 12 l contient déjà 8 500 cm³ d’eau. Quel volume peut-on encore ajouter ?",
                           "choices":  [
-                                          "2,5 L",
-                                          "3,5 L",
-                                          "4,5 L",
-                                          "8,5 L"
+                                          "2,5 l",
+                                          "3,5 l",
+                                          "4,5 l",
+                                          "8,5 l"
                                       ],
                           "correctIndex":  1,
-                          "explanation":  "8 500 cm³ = 8,5 L ; il reste 12 − 8,5 = 3,5 L."
+                          "explanation":  "8 500 cm³ = 8,5 l ; il reste 12 − 8,5 = 3,5 l."
                       },
                       {
                           "code":  "M5-0501",
@@ -326,13 +326,13 @@
                           "difficulty":  1,
                           "prompt":  "Quelle formule donne le volume V d’un cylindre de rayon r et de hauteur h ?",
                           "choices":  [
-                                          "V = 2πrh",
-                                          "V = πr² + h",
-                                          "V = πr²h",
-                                          "V = πrh²"
+                                          "V = 2 × π × r × h",
+                                          "V = π × r² + h",
+                                          "V = π × r² × h",
+                                          "V = π × r × h²"
                                       ],
                           "correctIndex":  2,
-                          "explanation":  "Le volume est l’aire de la base πr² multipliée par la hauteur h."
+                          "explanation":  "Le volume est l’aire de la base, π × r², multipliée par la hauteur h : V = π × r² × h."
                       },
                       {
                           "code":  "M5-0512",
@@ -424,19 +424,19 @@
                           "difficulty":  3,
                           "prompt":  "[TOOLS]calculator[/TOOLS] Un récipient cylindrique a un rayon intérieur de 10 cm et une hauteur de 20 cm. Quelle est sa capacité approchée, avec π ≈ 3,14 ?",
                           "choices":  [
-                                          "6,28 L",
-                                          "62,8 L",
-                                          "0,628 L",
-                                          "628 L"
+                                          "6,28 l",
+                                          "62,8 l",
+                                          "0,628 l",
+                                          "628 l"
                                       ],
                           "correctIndex":  0,
-                          "explanation":  "V ≈ 3,14 × 10² × 20 = 6 280 cm³ = 6,28 L."
+                          "explanation":  "V ≈ 3,14 × 10² × 20 = 6 280 cm³ = 6,28 l."
                       },
                       {
                           "code":  "M5-0519",
                           "microSkill":  "m5_geo_volume_cylinder",
                           "difficulty":  3,
-                          "prompt":  "Deux cylindres ont la même hauteur. Le second a un rayon deux fois plus grand. Son volume est…",
+                          "prompt":  "Deux cylindres ont la même hauteur. le second a un rayon deux fois plus grand. Son volume est…",
                           "choices":  [
                                           "deux fois plus grand.",
                                           "quatre fois plus grand.",
@@ -444,7 +444,7 @@
                                           "le même."
                                       ],
                           "correctIndex":  1,
-                          "explanation":  "Le rayon intervient au carré : (2r)² = 4r². Le volume est multiplié par 4."
+                          "explanation":  "Le rayon intervient au carré : (2r)² = 4r². le volume est multiplié par 4."
                       },
                       {
                           "code":  "M5-0520",
