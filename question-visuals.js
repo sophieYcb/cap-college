@@ -445,19 +445,149 @@
     }
   }
 
+  function toolStorageKey(prompt){
+    let hash=2166136261;
+    const value=String(prompt||'');
+    for(let index=0;index<value.length;index++){
+      hash^=value.charCodeAt(index);
+      hash=Math.imul(hash,16777619);
+    }
+    return 'cap-college-scratch:'+location.pathname+':'+(hash>>>0);
+  }
+
+  function createScratchTool(prompt){
+    const details=document.createElement('details');
+    details.className='question-tool-widget';
+    const summary=document.createElement('summary');
+    summary.className='question-tool-badge';
+    summary.textContent='✏️ Ouvrir le brouillon';
+    details.appendChild(summary);
+    const panel=document.createElement('div');
+    panel.className='question-tool-panel';
+    const textarea=document.createElement('textarea');
+    textarea.className='question-scratchpad';
+    textarea.rows=7;
+    textarea.placeholder='Écris ici tes calculs, tes étapes ou tes idées…';
+    textarea.setAttribute('aria-label','Brouillon de la question');
+    const storageKey=toolStorageKey(prompt);
+    try{textarea.value=sessionStorage.getItem(storageKey)||'';}catch(error){}
+    textarea.addEventListener('input',()=>{
+      try{sessionStorage.setItem(storageKey,textarea.value);}catch(error){}
+    });
+    const clear=document.createElement('button');
+    clear.type='button';
+    clear.className='btn btn-secondary question-tool-clear';
+    clear.textContent='Effacer le brouillon';
+    clear.addEventListener('click',()=>{
+      textarea.value='';
+      try{sessionStorage.removeItem(storageKey);}catch(error){}
+      textarea.focus();
+    });
+    panel.append(textarea,clear);
+    details.appendChild(panel);
+    return details;
+  }
+
+  function calculateExpression(source){
+    const compact=String(source||'').replace(/\s+/g,'');
+    const tokens=compact.match(/\d+(?:[.,]\d+)?|[()+\-*/]/g)||[];
+    if(!compact||tokens.join('')!==compact)return null;
+    let position=0;
+    const expression=()=>{
+      let value=term();
+      while(tokens[position]==='+'||tokens[position]==='-'){
+        const operator=tokens[position++];
+        const next=term();
+        value=operator==='+'?value+next:value-next;
+      }
+      return value;
+    };
+    const term=()=>{
+      let value=factor();
+      while(tokens[position]==='*'||tokens[position]==='/'){
+        const operator=tokens[position++];
+        const next=factor();
+        value=operator==='*'?value*next:value/next;
+      }
+      return value;
+    };
+    const factor=()=>{
+      const token=tokens[position++];
+      if(token==='-')return -factor();
+      if(token==='+')return factor();
+      if(token==='('){
+        const value=expression();
+        if(tokens[position++]!==')')throw new Error('parenthèse');
+        return value;
+      }
+      const value=Number(String(token).replace(',','.'));
+      if(!Number.isFinite(value))throw new Error('nombre');
+      return value;
+    };
+    try{
+      const value=expression();
+      return position===tokens.length&&Number.isFinite(value)?value:null;
+    }catch(error){
+      return null;
+    }
+  }
+
+  function createCalculatorTool(){
+    const details=document.createElement('details');
+    details.className='question-tool-widget';
+    const summary=document.createElement('summary');
+    summary.className='question-tool-badge';
+    summary.textContent='🧮 Ouvrir la calculatrice';
+    details.appendChild(summary);
+    const panel=document.createElement('div');
+    panel.className='question-tool-panel question-calculator';
+    const display=document.createElement('input');
+    display.className='question-calculator-display';
+    display.type='text';
+    display.readOnly=true;
+    display.inputMode='none';
+    display.setAttribute('aria-label','Écran de la calculatrice');
+    const keys=[
+      ['C','clear'],['(','('],[')',')'],['←','backspace'],
+      ['7','7'],['8','8'],['9','9'],['÷','/'],
+      ['4','4'],['5','5'],['6','6'],['×','*'],
+      ['1','1'],['2','2'],['3','3'],['−','-'],
+      ['0','0'],[',',','],['=','equals'],['+','+']
+    ];
+    const grid=document.createElement('div');
+    grid.className='question-calculator-grid';
+    keys.forEach(([label,value])=>{
+      const button=document.createElement('button');
+      button.type='button';
+      button.className='question-calculator-key';
+      button.textContent=label;
+      button.setAttribute('aria-label',label==='←'?'Effacer le dernier caractère':label);
+      button.addEventListener('click',()=>{
+        if(value==='clear'){display.value='';return;}
+        if(value==='backspace'){display.value=display.value.slice(0,-1);return;}
+        if(value==='equals'){
+          const result=calculateExpression(display.value);
+          display.value=result===null?'Erreur':String(Math.round((result+Number.EPSILON)*1e10)/1e10).replace('.',',');
+          return;
+        }
+        if(display.value==='Erreur')display.value='';
+        display.value+=value;
+      });
+      grid.appendChild(button);
+    });
+    panel.append(display,grid);
+    details.appendChild(panel);
+    return details;
+  }
+
   function renderTools(container,prompt){
     if(!container)return;
     const tools=questionTools(prompt);
-    const labels={scratch:'✏️ Brouillon conseillé',calculator:'🧮 Calculatrice autorisée'};
     container.replaceChildren();
     tools.forEach(tool=>{
-      const badge=document.createElement('span');
-      badge.className='question-tool-badge';
-      badge.textContent=labels[tool];
-      container.appendChild(badge);
+      container.appendChild(tool==='scratch'?createScratchTool(prompt):createCalculatorTool());
     });
     container.classList.toggle('hidden',tools.length===0);
   }
-
   window.CapCollegeQuestionVisuals={render,parse,questionTools,renderTools};
 })();
