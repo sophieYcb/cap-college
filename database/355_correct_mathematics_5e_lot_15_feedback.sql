@@ -1,0 +1,38 @@
+begin;
+do $block$
+declare c record; qid uuid; source_number integer; source_id uuid; target_number integer; target_id uuid; a record;
+begin
+ for c in select * from (values
+  (5000451,1,E'[CUBESTACK]2,1;0,3[/CUBESTACK]\nObserve cet empilement. Combien contient-il de cubes ?',array['6','5','4','3'],1,'On compte 2 + 1 + 3 = 6 cubes.','Je suis d’accord : un tableau codé ne constitue pas une véritable vue d’empilement. Il est remplacé par un dessin de cubes en perspective.'),
+  (5000452,1,E'[CUBESTACK]1,2;4,0[/CUBESTACK]\nQuelle est la hauteur de la colonne la plus élevée ?',array['2 cubes','4 cubes','3 cubes','7 cubes'],2,'La colonne la plus élevée comporte 4 cubes.','Je suis d’accord avec la note B liée au même problème visuel : les hauteurs sont désormais montrées par un véritable empilement de cubes.'),
+  (5000453,1,E'[CUBESTACK]2,0,1;0,3,1[/CUBESTACK]\nCombien de colonnes de cubes cet empilement comporte-t-il ?',array['3','5','4','7'],3,'On repère quatre colonnes non vides dans l’empilement.','Je suis d’accord : si la représentation reste difficile à visualiser pour un adulte à l’aise dans l’espace, elle est inadaptée à un élève. Le tableau est remplacé par un empilement dessiné.'),
+  (5000454,2,E'[CUBESTACK]1,3,0;2,1,4[/CUBESTACK]\nLa flèche indique l’avant. Dans la vue de face, quelles hauteurs voit-on de gauche à droite ?',array['1 ; 3 ; 0','2 ; 1 ; 4','3 ; 3 ; 4','2 ; 3 ; 4'],4,'Dans chaque direction, on retient la plus grande hauteur visible : 2, 3 et 4.','Je suis d’accord avec la note B : une question sur la vue de face doit partir d’un empilement visible. Un dessin et l’indication de l’avant sont ajoutés.'),
+  (5000455,2,E'[CUBESTACK]2,2;1,3[/CUBESTACK]\nCombien de cubes cet empilement contient-il au total ?',array['8','7','6','9'],1,'On compte 2 + 2 + 1 + 3 = 8 cubes.','Je suis d’accord avec la remarque globale sur cette série : le dénombrement porte maintenant sur des cubes représentés, et non sur les valeurs d’un tableau.'),
+  (5000457,2,E'[CUBESTACK]3,1[/CUBESTACK]\nQuelle vue de face correspond à cet empilement ?',array['Deux colonnes de hauteur 2.','Une colonne de hauteur 4.','Une colonne de hauteur 3 puis une de hauteur 1.','Une colonne de hauteur 1 seulement.'],3,'La vue de face montre une colonne de hauteur 3 puis une colonne de hauteur 1.','Je suis d’accord : une image de cubes est nettement plus adaptée à la compétence évaluée. Elle est ajoutée à la question.'),
+  (5000458,2,E'[CUBESTACK]1,2,1;0,3,2[/CUBESTACK]\nCombien de carrés comporte la vue de dessus de cet empilement ?',array['Le nombre total de cubes.','La plus grande hauteur.','Un seul carré.','Cinq carrés.'],4,'Cinq emplacements sont occupés : la vue de dessus comporte donc cinq carrés.','Je suis d’accord avec la note B : la vue de dessus est désormais déduite d’un empilement réellement représenté.'),
+  (5000460,3,E'[CUBESTACK]0,2;1,1[/CUBESTACK]\nCombien de cubes faut-il pour réaliser exactement cet empilement ?',array['3','4','5','6'],2,'On compte 2 + 1 + 1 = 4 cubes.','Je suis d’accord avec la remarque globale : le tableau de hauteurs est remplacé par un dessin permettant un véritable dénombrement spatial.'),
+  (5000461,1,E'[SOLIDS]A=cylinder;B=pyramid;C=cuboid;D=triangular-prism[/SOLIDS]\nQuel solide représenté est un pavé droit ?',array['Le solide A','Le solide B','Le solide C','Le solide D'],3,'Le solide C est un pavé droit : ses six faces sont rectangulaires.','Je suis d’accord : pour évaluer la reconnaissance des solides, il faut montrer des solides. La définition textuelle est remplacée par quatre représentations en perspective.'),
+  (5000462,1,E'[SOLIDS]A=pyramid;B=cylinder;C=cube;D=triangular-prism[/SOLIDS]\nQuel solide représenté est un prisme droit à base triangulaire ?',array['Le solide A','Le solide B','Le solide C','Le solide D'],4,'Le solide D possède deux bases triangulaires parallèles reliées par trois faces rectangulaires.','Je suis d’accord avec la remarque globale sur cette micro-compétence : la question demande maintenant d’identifier un prisme parmi plusieurs solides dessinés.'),
+  (5000470,2,E'[SOLIDS]A=cube;B=triangular-prism;C=pyramid;D=cylinder[/SOLIDS]\nQuel solide représenté ne possède aucun sommet ?',array['Le solide A','Le solide B','Le solide C','Le solide D'],4,'Le cylindre, représenté par le solide D, ne possède aucun sommet.','Je suis d’accord : le terme « polyèdre » ne figure pas dans les objectifs de 5e du programme 2026. La question est remplacée par une reconnaissance visuelle au niveau attendu.'),
+  (5000484,2,'L’aire de la base triangulaire d’un prisme droit est 12 cm². La hauteur du prisme est 10 cm. Quel est son volume ?',array['240 cm³','120 cm³','60 cm³','40 cm³'],2,'Le volume vaut aire de la base × hauteur, soit 12 × 10 = 120 cm³.','Je suis partiellement d’accord : l’aire du triangle est bien au programme de 5e, mais elle n’a pas encore été évaluée dans notre parcours. L’aire de la base est donc fournie pour isoler le calcul du volume.'),
+  (5000487,3,'On utilise la formule V = aire de la base × hauteur. Un prisme droit a un volume de 126 cm³ et une aire de base de 18 cm². Quelle est sa hauteur ?',array['7 cm','6 cm','8 cm','108 cm'],1,'La hauteur vaut 126 ÷ 18 = 7 cm.','Je suis partiellement d’accord : retrouver une hauteur est une application valable mais plus avancée que le calcul direct demandé par le programme. Une seule question inverse est conservée, classée en difficulté 3, avec la formule fournie.'),
+  (5000488,2,'Un prisme droit a une aire de base de 12 cm² et une hauteur de 6 cm. Quel est son volume ?',array['18 cm³','72 cm³','66 cm³','432 cm³'],2,'Le volume vaut 12 × 6 = 72 cm³.','Je suis d’accord avec la réserve sur les calculs inverses trop nombreux : cette question devient un calcul direct de volume, conforme à l’objectif explicite du programme.')
+ ) as x(legacy_id,difficulty,prompt,choices,correct_position,explanation,change_comment)
+ loop
+  select q.id,q.current_version_number,v.id into qid,source_number,source_id
+  from public.questions q join public.question_versions v on v.question_id=q.id and v.version_number=q.current_version_number
+  where q.legacy_id=c.legacy_id;
+  if qid is null then raise exception 'Question % introuvable.',c.legacy_id; end if;
+  if exists(select 1 from public.question_versions where id=source_id and prompt=c.prompt and change_comment=c.change_comment) then continue; end if;
+  target_number:=source_number+1;
+  target_id:=md5('cap-college:mathematics-5e-lot-15-feedback:'||c.legacy_id||':v'||target_number)::uuid;
+  insert into public.question_versions(id,question_id,version_number,prompt,correction_explanation,change_comment,review_status,authored_by)
+  values(target_id,qid,target_number,c.prompt,c.explanation,c.change_comment,'unreviewed'::public.review_status,auth.uid());
+  for a in select value content,ordinality::smallint sort_order from unnest(c.choices) with ordinality t(value,ordinality) loop
+   insert into public.answer_choices(id,question_version_id,choice_key,content,is_correct,sort_order)
+   values(md5('cap-college:mathematics-5e-lot-15-feedback:'||c.legacy_id||':v'||target_number||':'||a.sort_order)::uuid,target_id,chr(64+a.sort_order),a.content,a.sort_order=c.correct_position,a.sort_order);
+  end loop;
+  update public.questions set current_version_number=target_number,theoretical_difficulty=c.difficulty::text::public.difficulty_level,status='in_review'::public.question_status,updated_at=statement_timestamp() where id=qid;
+ end loop;
+end;$block$;
+commit;

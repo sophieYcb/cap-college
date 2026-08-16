@@ -134,6 +134,77 @@
     return wrapper;
   }
 
+  function createCubeStack(heights){
+    const wrapper=document.createElement('div');
+    wrapper.className='question-visual';
+    const rows=heights.length,columns=Math.max(...heights.map(row=>row.length));
+    const description=heights.map(row=>row.join(', ')).join(' ; ');
+    const svg=svgNode('svg',{viewBox:'0 0 620 380',role:'img','aria-label':'Empilement de cubes, hauteurs par rangée : '+description});
+    svg.classList.add('question-chart');
+    const stacks=[];
+    heights.forEach((row,y)=>row.forEach((height,x)=>{
+      if(height>0)stacks.push({x,y,height});
+    }));
+    stacks.sort((a,b)=>b.y-a.y||a.x-b.x);
+    stacks.forEach(stack=>{
+      for(let level=0;level<stack.height;level++){
+        const cx=310+(stack.x-(columns-1)/2)*62-(stack.y-(rows-1)/2)*62;
+        const groundY=300+stack.x*20-stack.y*20;
+        const cy=groundY-(level+1)*44;
+        const top=[[cx,cy-24],[cx+42,cy],[cx,cy+24],[cx-42,cy]];
+        const right=[[cx,cy+24],[cx+42,cy],[cx+42,cy+44],[cx,cy+68]];
+        const left=[[cx-42,cy],[cx,cy+24],[cx,cy+68],[cx-42,cy+44]];
+        const points=vertices=>vertices.map(point=>point.join(',')).join(' ');
+        svg.appendChild(svgNode('polygon',{points:points(left),fill:'#cbdcff',stroke:'#334b7a','stroke-width':2}));
+        svg.appendChild(svgNode('polygon',{points:points(right),fill:'#a9c4fa',stroke:'#334b7a','stroke-width':2}));
+        svg.appendChild(svgNode('polygon',{points:points(top),fill:'#eef4ff',stroke:'#334b7a','stroke-width':2}));
+      }
+    });
+    addSvgText(svg,'Avant',310,352,{class:'chart-value','text-anchor':'middle'});
+    svg.appendChild(svgNode('line',{x1:310,y1:338,x2:310,y2:315,stroke:'#334b7a','stroke-width':3}));
+    svg.appendChild(svgNode('polyline',{points:'302,323 310,315 318,323',fill:'none',stroke:'#334b7a','stroke-width':3}));
+    wrapper.appendChild(svg);
+    return wrapper;
+  }
+
+  function createSolidGallery(entries){
+    const wrapper=document.createElement('div');
+    wrapper.className='question-visual';
+    const svg=svgNode('svg',{viewBox:'0 0 680 230',role:'img','aria-label':'Solides représentés : '+entries.map(entry=>entry.label).join(', ')});
+    svg.classList.add('question-chart');
+    const line={stroke:'#334b7a','stroke-width':3,fill:'#eef4ff','stroke-linejoin':'round'};
+    const plain={stroke:'#334b7a','stroke-width':3,fill:'none'};
+    const polygon=points=>svgNode('polygon',{points:points.map(point=>point.join(',')).join(' '),...line});
+    entries.forEach((entry,index)=>{
+      const cx=85+index*(510/Math.max(entries.length-1,1)),cy=105;
+      if(entry.type==='cuboid'||entry.type==='cube'){
+        const w=entry.type==='cube'?62:78,h=entry.type==='cube'?62:52,dx=22,dy=-18;
+        svg.appendChild(svgNode('rect',{x:cx-w/2+dx,y:cy-h/2+dy,width:w,height:h,...line}));
+        svg.appendChild(svgNode('rect',{x:cx-w/2,y:cy-h/2,width:w,height:h,...line}));
+        [[-w/2,-h/2], [w/2,-h/2], [w/2,h/2], [-w/2,h/2]].forEach(point=>{
+          svg.appendChild(svgNode('line',{x1:cx+point[0],y1:cy+point[1],x2:cx+point[0]+dx,y2:cy+point[1]+dy,...plain}));
+        });
+      }else if(entry.type==='cylinder'){
+        svg.appendChild(svgNode('rect',{x:cx-38,y:cy-42,width:76,height:84,fill:'#eef4ff',stroke:'none'}));
+        svg.appendChild(svgNode('ellipse',{cx,cy:cy-42,rx:38,ry:13,...line}));
+        svg.appendChild(svgNode('ellipse',{cx,cy:cy+42,rx:38,ry:13,...line}));
+        svg.appendChild(svgNode('line',{x1:cx-38,y1:cy-42,x2:cx-38,y2:cy+42,...plain}));
+        svg.appendChild(svgNode('line',{x1:cx+38,y1:cy-42,x2:cx+38,y2:cy+42,...plain}));
+      }else if(entry.type==='pyramid'){
+        const base=[[cx-48,cy+38],[cx+18,cy+50],[cx+50,cy+25],[cx-18,cy+14]],apex=[cx,cy-58];
+        svg.appendChild(polygon(base));
+        base.forEach(point=>svg.appendChild(svgNode('line',{x1:apex[0],y1:apex[1],x2:point[0],y2:point[1],...plain})));
+      }else if(entry.type==='triangular-prism'){
+        const front=[[cx-48,cy+38],[cx-12,cy-38],[cx+22,cy+38]],shift=[34,-18];
+        svg.appendChild(polygon(front));
+        svg.appendChild(polygon(front.map(point=>[point[0]+shift[0],point[1]+shift[1]])));
+        front.forEach(point=>svg.appendChild(svgNode('line',{x1:point[0],y1:point[1],x2:point[0]+shift[0],y2:point[1]+shift[1],...plain})));
+      }
+      addSvgText(svg,entry.label,cx,202,{class:'chart-value','text-anchor':'middle'});
+    });
+    wrapper.appendChild(svg);
+    return wrapper;
+  }
   function createCoordinatePlane(points){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
@@ -237,6 +308,19 @@
       if(points.length>=2)return {text:normalized.replace(match[0],'').trim(),visual:createCurve(points)};
     }
 
+    if((match=normalized.match(/\[CUBESTACK\]([\s\S]*?)\[\/CUBESTACK\]/i))){
+      const heights=match[1].trim().split(';').map(row=>row.split(',').map(Number));
+      if(heights.length&&heights.every(row=>row.length&&row.every(value=>Number.isInteger(value)&&value>=0))){
+        return {text:normalized.replace(match[0],'').trim(),visual:createCubeStack(heights)};
+      }
+    }
+    if((match=normalized.match(/\[SOLIDS\]([\s\S]*?)\[\/SOLIDS\]/i))){
+      const entries=match[1].split(';').map(item=>{
+        const parts=item.split('=');
+        return parts.length===2?{label:parts[0].trim(),type:parts[1].trim().toLowerCase()}:null;
+      }).filter(Boolean);
+      if(entries.length)return {text:normalized.replace(match[0],'').trim(),visual:createSolidGallery(entries)};
+    }
     if((match=normalized.match(/\[COORDINATES\]([\s\S]*?)\[\/COORDINATES\]/i))){
       const points=match[1].split(';').map(item=>{
         const pointMatch=item.trim().match(/^([^=]+)=(-?\d+(?:[.,]\d+)?),(-?\d+(?:[.,]\d+)?)$/);

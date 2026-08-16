@@ -1,54 +1,612 @@
 {
- "format":"cap-college-question-draft-v1","subject":"mathematics","level":"5e","domain":{"code":"cycle4_space_geometry","name":"Espace et géométrie"},"skill":{"code":"m5_space_representation","name":"Représentation de l’espace et solides"},"lot":"M5-GEO-02","status":"draft","source":"Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
- "microSkills":[
-  {"code":"m5_geo_cube_views","teacherName":"Interpréter des vues et des empilements de cubes","studentName":"Lire des vues et des empilements de cubes","lessonReminder":"Dans une vue de dessus codée, chaque case occupée indique une colonne de cubes et le nombre inscrit donne sa hauteur. Le nombre total de cubes est la somme de toutes les hauteurs.","workedExample":"Si les hauteurs sont 2, 1 et 3, l’empilement contient 2 + 1 + 3 = 6 cubes.","masteryCriteria":"Compter les cubes, lire une hauteur et relier une vue de dessus à une vue de face."},
-  {"code":"m5_geo_identify_solid","teacherName":"Reconnaître un solide en perspective cavalière","studentName":"Reconnaître les solides","lessonReminder":"On reconnaît un solide grâce à ses bases, ses faces latérales, ses arêtes et ses sommets. En perspective cavalière, les arêtes cachées sont généralement tracées en pointillés.","workedExample":"Un prisme droit possède deux bases polygonales parallèles et superposables, reliées par des faces rectangulaires.","masteryCriteria":"Identifier cubes, pavés droits, prismes, pyramides et cylindres à partir de leurs propriétés."},
-  {"code":"m5_geo_solid_net","teacherName":"Relier un solide à son patron","studentName":"Reconnaître le patron d’un solide","lessonReminder":"Un patron est une figure plane qui permet de reconstruire le solide par pliage, sans chevauchement. Il contient toutes les faces du solide.","workedExample":"Un patron de cube est formé de six carrés disposés de façon à se refermer sans superposition.","masteryCriteria":"Reconnaître ou décrire les patrons du cube, du pavé droit, d’un prisme, d’une pyramide ou d’un cylindre."},
-  {"code":"m5_geo_volume_prism","teacherName":"Calculer le volume d’un cube, d’un pavé droit ou d’un prisme droit","studentName":"Calculer le volume d’un prisme droit","lessonReminder":"Le volume d’un prisme droit est égal à l’aire de sa base multipliée par sa hauteur. Pour un pavé droit : longueur × largeur × hauteur ; pour un cube : côté³.","workedExample":"Un pavé de dimensions 5 cm, 3 cm et 2 cm a un volume de 5 × 3 × 2 = 30 cm³.","masteryCriteria":"Calculer une aire de base, un volume ou une dimension manquante avec des unités cohérentes."}
- ],
- "questions":[
-  {"code":"M5-0451","microSkill":"m5_geo_cube_views","difficulty":1,"prompt":"[TABLE]Vue de dessus|Colonne 1|Colonne 2\nRangée avant|2|1\nRangée arrière|0|3[/TABLE]\nCombien de cubes contient cet empilement ?","choices":["6","5","4","3"],"correctIndex":0,"explanation":"On additionne les hauteurs : 2 + 1 + 0 + 3 = 6."},
-  {"code":"M5-0452","microSkill":"m5_geo_cube_views","difficulty":1,"prompt":"[TABLE]Vue de dessus|Colonne 1|Colonne 2\nRangée avant|1|2\nRangée arrière|4|0[/TABLE]\nQuelle est la hauteur de la colonne la plus élevée ?","choices":["2 cubes","4 cubes","3 cubes","7 cubes"],"correctIndex":1,"explanation":"La plus grande hauteur inscrite dans le tableau est 4."},
-  {"code":"M5-0453","microSkill":"m5_geo_cube_views","difficulty":1,"prompt":"[TABLE]Vue de dessus|Colonne 1|Colonne 2|Colonne 3\nRangée avant|2|0|1\nRangée arrière|0|3|1[/TABLE]\nCombien de cases sont occupées dans la vue de dessus ?","choices":["3","5","4","7"],"correctIndex":2,"explanation":"Quatre cases portent une hauteur non nulle : 2, 1, 3 et 1."},
-  {"code":"M5-0454","microSkill":"m5_geo_cube_views","difficulty":2,"prompt":"[TABLE]Vue de dessus|Colonne 1|Colonne 2|Colonne 3\nRangée avant|1|3|0\nRangée arrière|2|1|4[/TABLE]\nDepuis l’avant, on retient dans chaque colonne la plus grande hauteur visible. Quelle suite de hauteurs obtient-on ?","choices":["1 ; 3 ; 0","2 ; 1 ; 4","3 ; 3 ; 4","2 ; 3 ; 4"],"correctIndex":3,"explanation":"Les maxima des trois colonnes sont 2, 3 et 4."},
-  {"code":"M5-0455","microSkill":"m5_geo_cube_views","difficulty":2,"prompt":"[TABLE]Vue de dessus|Colonne 1|Colonne 2\nRangée avant|2|2\nRangée arrière|1|3[/TABLE]\nQuel est le nombre total de cubes ?","choices":["8","7","6","9"],"correctIndex":0,"explanation":"2 + 2 + 1 + 3 = 8 cubes."},
-  {"code":"M5-0456","microSkill":"m5_geo_cube_views","difficulty":2,"prompt":"On ajoute un cube au sommet d’une colonne qui en contenait déjà deux. Comment évolue le nombre total de cubes ?","choices":["Il double.","Il augmente de 1.","Il augmente de 2.","Il ne change pas."],"correctIndex":1,"explanation":"Ajouter un seul cube augmente toujours le total de 1."},
-  {"code":"M5-0457","microSkill":"m5_geo_cube_views","difficulty":2,"prompt":"Deux colonnes côte à côte ont respectivement 3 cubes et 1 cube. Quelle vue de face correspond à cet empilement ?","choices":["Deux colonnes de hauteur 2.","Une colonne de hauteur 4.","Une colonne de hauteur 3 puis une de hauteur 1.","Une colonne de hauteur 1 seulement."],"correctIndex":2,"explanation":"La vue de face conserve ici les deux hauteurs : 3 puis 1."},
-  {"code":"M5-0458","microSkill":"m5_geo_cube_views","difficulty":2,"prompt":"Une vue de dessus montre cinq cases occupées. Combien de carrés voit-on dans cette vue, quelle que soit la hauteur des colonnes ?","choices":["Le nombre total de cubes.","La plus grande hauteur.","Un seul carré.","Cinq carrés."],"correctIndex":3,"explanation":"Chaque colonne occupée apparaît par un carré dans la vue de dessus."},
-  {"code":"M5-0459","microSkill":"m5_geo_cube_views","difficulty":3,"prompt":"On retire uniquement le cube supérieur d’une colonne de hauteur 4. Quelle devient sa hauteur ?","choices":["3","4","2","0"],"correctIndex":0,"explanation":"Retirer le cube supérieur diminue la hauteur de 1 : 4 − 1 = 3."},
-  {"code":"M5-0460","microSkill":"m5_geo_cube_views","difficulty":3,"prompt":"[TABLE]Vue de dessus|Colonne 1|Colonne 2\nRangée avant|0|2\nRangée arrière|1|1[/TABLE]\nCombien de cubes faut-il pour réaliser exactement cet empilement ?","choices":["3","4","5","6"],"correctIndex":1,"explanation":"0 + 2 + 1 + 1 = 4 cubes."},
-
-  {"code":"M5-0461","microSkill":"m5_geo_identify_solid","difficulty":1,"prompt":"Quel solide possède six faces rectangulaires, huit sommets et douze arêtes ?","choices":["Un cône","Un cylindre","Un pavé droit","Une pyramide"],"correctIndex":2,"explanation":"Un pavé droit possède 6 faces rectangulaires, 8 sommets et 12 arêtes."},
-  {"code":"M5-0462","microSkill":"m5_geo_identify_solid","difficulty":1,"prompt":"Quel solide possède deux bases polygonales parallèles et superposables reliées par des faces rectangulaires ?","choices":["Une pyramide","Un cylindre","Une boule","Un prisme droit"],"correctIndex":3,"explanation":"C’est la définition d’un prisme droit."},
-  {"code":"M5-0463","microSkill":"m5_geo_identify_solid","difficulty":1,"prompt":"Combien de sommets possède un cube ?","choices":["8","6","12","4"],"correctIndex":0,"explanation":"Un cube possède 8 sommets."},
-  {"code":"M5-0464","microSkill":"m5_geo_identify_solid","difficulty":1,"prompt":"Combien de faces possède un prisme droit à base triangulaire ?","choices":["4","5","6","8"],"correctIndex":1,"explanation":"Il possède 2 faces triangulaires et 3 faces rectangulaires, soit 5 faces."},
-  {"code":"M5-0465","microSkill":"m5_geo_identify_solid","difficulty":2,"prompt":"Quelles surfaces planes constituent les bases d’un cylindre ?","choices":["Deux carrés","Un rectangle et un disque","Deux disques","Deux triangles"],"correctIndex":2,"explanation":"Un cylindre possède deux bases circulaires superposables."},
-  {"code":"M5-0466","microSkill":"m5_geo_identify_solid","difficulty":2,"prompt":"En perspective cavalière, comment représente-t-on généralement une arête cachée ?","choices":["Par un trait plus épais","On ne la représente jamais","Par une flèche","Par des pointillés"],"correctIndex":3,"explanation":"Les arêtes cachées sont généralement dessinées en pointillés."},
-  {"code":"M5-0467","microSkill":"m5_geo_identify_solid","difficulty":2,"prompt":"Quel solide possède une base polygonale et des faces triangulaires qui se rejoignent en un même sommet ?","choices":["Une pyramide","Un prisme droit","Un cylindre","Un pavé droit"],"correctIndex":0,"explanation":"Les faces latérales triangulaires d’une pyramide se rejoignent à son sommet principal."},
-  {"code":"M5-0468","microSkill":"m5_geo_identify_solid","difficulty":2,"prompt":"Combien d’arêtes possède un cube ?","choices":["8","12","6","16"],"correctIndex":1,"explanation":"Un cube possède 12 arêtes."},
-  {"code":"M5-0469","microSkill":"m5_geo_identify_solid","difficulty":3,"prompt":"Dans un pavé droit, quelle est la nature de toutes les faces ?","choices":["Des triangles","Des disques","Des rectangles","Des pentagones"],"correctIndex":2,"explanation":"Toutes les faces d’un pavé droit sont rectangulaires ; certaines peuvent être carrées."},
-  {"code":"M5-0470","microSkill":"m5_geo_identify_solid","difficulty":3,"prompt":"Pourquoi un cylindre n’est-il pas un polyèdre ?","choices":["Il n’a pas de base.","Il ne possède aucun axe.","Il a trop de sommets.","Sa surface latérale n’est pas plane."],"correctIndex":3,"explanation":"Un polyèdre n’est constitué que de faces planes, contrairement au cylindre."},
-
-  {"code":"M5-0471","microSkill":"m5_geo_solid_net","difficulty":1,"prompt":"Combien de carrés doit comporter un patron de cube ?","choices":["6","4","8","12"],"correctIndex":0,"explanation":"Les six faces du cube sont six carrés."},
-  {"code":"M5-0472","microSkill":"m5_geo_solid_net","difficulty":1,"prompt":"Combien de rectangles latéraux comporte le patron d’un prisme droit à base triangulaire ?","choices":["2","3","4","5"],"correctIndex":1,"explanation":"Chaque côté de la base triangulaire correspond à une face latérale rectangulaire, donc il y en a 3."},
-  {"code":"M5-0473","microSkill":"m5_geo_solid_net","difficulty":1,"prompt":"Quelles figures trouve-t-on dans le patron d’un cylindre ?","choices":["Un disque et deux rectangles","Trois disques","Deux disques et un rectangle","Deux triangles et un rectangle"],"correctIndex":2,"explanation":"Les deux disques forment les bases et le rectangle forme la surface latérale déroulée."},
-  {"code":"M5-0474","microSkill":"m5_geo_solid_net","difficulty":1,"prompt":"De quelles faces est formé le patron d’une pyramide à base carrée ?","choices":["Deux carrés et deux triangles","Six carrés","Un rectangle et quatre triangles","Un carré et quatre triangles"],"correctIndex":3,"explanation":"Le patron contient la base carrée et les quatre faces latérales triangulaires."},
-  {"code":"M5-0475","microSkill":"m5_geo_solid_net","difficulty":2,"prompt":"Après pliage d’un patron de cube, quelle affirmation est vraie pour deux faces opposées ?","choices":["Elles ne partagent aucune arête.","Elles sont nécessairement accolées dans le patron.","Elles se superposent.","Elles deviennent triangulaires."],"correctIndex":0,"explanation":"Deux faces opposées d’un cube ne partagent aucune arête dans le solide."},
-  {"code":"M5-0476","microSkill":"m5_geo_solid_net","difficulty":2,"prompt":"Combien de rectangles comporte le patron d’un pavé droit ?","choices":["4","6","8","12"],"correctIndex":1,"explanation":"Un pavé droit possède six faces rectangulaires."},
-  {"code":"M5-0477","microSkill":"m5_geo_solid_net","difficulty":2,"prompt":"Quelle condition doit respecter un assemblage de faces pour être un patron valable ?","choices":["Toutes les faces doivent être alignées.","Les faces doivent avoir la même aire.","Le pliage doit fermer le solide sans chevauchement.","Le patron doit être un rectangle."],"correctIndex":2,"explanation":"Un patron valable reconstitue toutes les faces sans trou ni chevauchement."},
-  {"code":"M5-0478","microSkill":"m5_geo_solid_net","difficulty":2,"prompt":"Combien de triangles comporte le patron d’un tétraèdre ?","choices":["2","3","6","4"],"correctIndex":3,"explanation":"Un tétraèdre possède quatre faces triangulaires."},
-  {"code":"M5-0479","microSkill":"m5_geo_solid_net","difficulty":3,"prompt":"Un assemblage contient un rectangle et deux disques de diamètres différents. Peut-il être un patron de cylindre ?","choices":["Non, les deux bases doivent être identiques.","Oui, quelle que soit la taille des disques.","Oui, si le rectangle est carré.","Non, car un cylindre n’a qu’une base."],"correctIndex":0,"explanation":"Les deux bases d’un cylindre sont deux disques superposables, donc de même diamètre."},
-  {"code":"M5-0480","microSkill":"m5_geo_solid_net","difficulty":3,"prompt":"Dans le patron d’une pyramide à base carrée, quelle est la nature des faces latérales ?","choices":["Des rectangles","Des triangles","Des disques","Des hexagones"],"correctIndex":1,"explanation":"Les quatre faces latérales d’une pyramide à base carrée sont triangulaires."},
-
-  {"code":"M5-0481","microSkill":"m5_geo_volume_prism","difficulty":1,"prompt":"Quel est le volume d’un cube d’arête 4 cm ?","choices":["16 cm³","48 cm³","64 cm³","12 cm³"],"correctIndex":2,"explanation":"Le volume vaut 4³ = 4 × 4 × 4 = 64 cm³."},
-  {"code":"M5-0482","microSkill":"m5_geo_volume_prism","difficulty":1,"prompt":"Quel est le volume d’un pavé droit de dimensions 5 cm, 3 cm et 2 cm ?","choices":["10 cm³","15 cm³","25 cm³","30 cm³"],"correctIndex":3,"explanation":"5 × 3 × 2 = 30 cm³."},
-  {"code":"M5-0483","microSkill":"m5_geo_volume_prism","difficulty":1,"prompt":"L’aire de la base d’un prisme droit est 12 cm² et sa hauteur est 5 cm. Quel est son volume ?","choices":["60 cm³","17 cm³","24 cm³","120 cm³"],"correctIndex":0,"explanation":"12 × 5 = 60 cm³."},
-  {"code":"M5-0484","microSkill":"m5_geo_volume_prism","difficulty":2,"prompt":"Un prisme droit a pour base un triangle de base 6 cm et de hauteur 4 cm. La hauteur du prisme est 10 cm. Quel est son volume ?","choices":["240 cm³","120 cm³","60 cm³","40 cm³"],"correctIndex":1,"explanation":"L’aire de la base triangulaire vaut 6 × 4 ÷ 2 = 12 cm², puis 12 × 10 = 120 cm³."},
-  {"code":"M5-0485","microSkill":"m5_geo_volume_prism","difficulty":2,"prompt":"Un cube a un volume de 125 cm³. Quelle est la longueur de son arête ?","choices":["25 cm","15 cm","5 cm","4 cm"],"correctIndex":2,"explanation":"5³ = 125, donc l’arête mesure 5 cm."},
-  {"code":"M5-0486","microSkill":"m5_geo_volume_prism","difficulty":2,"prompt":"Quel est le volume d’un pavé droit de longueur 8 cm, largeur 4 cm et hauteur 3 cm ?","choices":["32 cm³","48 cm³","72 cm³","96 cm³"],"correctIndex":3,"explanation":"8 × 4 × 3 = 96 cm³."},
-  {"code":"M5-0487","microSkill":"m5_geo_volume_prism","difficulty":2,"prompt":"Un prisme droit a un volume de 126 cm³ et une aire de base de 18 cm². Quelle est sa hauteur ?","choices":["7 cm","6 cm","8 cm","108 cm"],"correctIndex":0,"explanation":"La hauteur vaut 126 ÷ 18 = 7 cm."},
-  {"code":"M5-0488","microSkill":"m5_geo_volume_prism","difficulty":2,"prompt":"Un prisme droit de hauteur 6 cm a un volume de 72 cm³. Quelle est l’aire de sa base ?","choices":["18 cm²","12 cm²","66 cm²","432 cm²"],"correctIndex":1,"explanation":"L’aire de base vaut 72 ÷ 6 = 12 cm²."},
-  {"code":"M5-0489","microSkill":"m5_geo_volume_prism","difficulty":3,"prompt":"Un aquarium en forme de pavé droit mesure 40 cm sur 25 cm sur 30 cm. Quelle est sa capacité maximale ? On rappelle que 1 L = 1 000 cm³.","choices":["3 L","12 L","30 L","300 L"],"correctIndex":2,"explanation":"40 × 25 × 30 = 30 000 cm³, soit 30 L."},
-  {"code":"M5-0490","microSkill":"m5_geo_volume_prism","difficulty":3,"prompt":"La base d’un prisme droit est un parallélogramme de base 8 cm et de hauteur 3 cm. La hauteur du prisme est 5 cm. Quel est son volume ?","choices":["40 cm³","75 cm³","80 cm³","120 cm³"],"correctIndex":3,"explanation":"L’aire du parallélogramme vaut 8 × 3 = 24 cm², puis 24 × 5 = 120 cm³."}
- ]
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_space_geometry",
+                   "name":  "Espace et géométrie"
+               },
+    "skill":  {
+                  "code":  "m5_space_representation",
+                  "name":  "Représentation de l’espace et solides"
+              },
+    "lot":  "M5-GEO-02",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_geo_cube_views",
+                            "teacherName":  "Interpréter des vues et des empilements de cubes",
+                            "studentName":  "Lire des vues et des empilements de cubes",
+                            "lessonReminder":  "Dans une vue de dessus codée, chaque case occupée indique une colonne de cubes et le nombre inscrit donne sa hauteur. Le nombre total de cubes est la somme de toutes les hauteurs.",
+                            "workedExample":  "Si les hauteurs sont 2, 1 et 3, l’empilement contient 2 + 1 + 3 = 6 cubes.",
+                            "masteryCriteria":  "Compter les cubes, lire une hauteur et relier une vue de dessus à une vue de face."
+                        },
+                        {
+                            "code":  "m5_geo_identify_solid",
+                            "teacherName":  "Reconnaître un solide en perspective cavalière",
+                            "studentName":  "Reconnaître les solides",
+                            "lessonReminder":  "On reconnaît un solide grâce à ses bases, ses faces latérales, ses arêtes et ses sommets. En perspective cavalière, les arêtes cachées sont généralement tracées en pointillés.",
+                            "workedExample":  "Un prisme droit possède deux bases polygonales parallèles et superposables, reliées par des faces rectangulaires.",
+                            "masteryCriteria":  "Identifier cubes, pavés droits, prismes, pyramides et cylindres à partir de leurs propriétés."
+                        },
+                        {
+                            "code":  "m5_geo_solid_net",
+                            "teacherName":  "Relier un solide à son patron",
+                            "studentName":  "Reconnaître le patron d’un solide",
+                            "lessonReminder":  "Un patron est une figure plane qui permet de reconstruire le solide par pliage, sans chevauchement. Il contient toutes les faces du solide.",
+                            "workedExample":  "Un patron de cube est formé de six carrés disposés de façon à se refermer sans superposition.",
+                            "masteryCriteria":  "Reconnaître ou décrire les patrons du cube, du pavé droit, d’un prisme, d’une pyramide ou d’un cylindre."
+                        },
+                        {
+                            "code":  "m5_geo_volume_prism",
+                            "teacherName":  "Calculer le volume d’un cube, d’un pavé droit ou d’un prisme droit",
+                            "studentName":  "Calculer le volume d’un prisme droit",
+                            "lessonReminder":  "Le volume d’un prisme droit est égal à l’aire de sa base multipliée par sa hauteur. Pour un pavé droit : longueur × largeur × hauteur ; pour un cube : côté³.",
+                            "workedExample":  "Un pavé de dimensions 5 cm, 3 cm et 2 cm a un volume de 5 × 3 × 2 = 30 cm³.",
+                            "masteryCriteria":  "Calculer une aire de base, un volume ou une dimension manquante avec des unités cohérentes."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0451",
+                          "microSkill":  "m5_geo_cube_views",
+                          "difficulty":  1,
+                          "prompt":  "[CUBESTACK]2,1;0,3[/CUBESTACK]\nObserve cet empilement. Combien contient-il de cubes ?",
+                          "choices":  [
+                                          "6",
+                                          "5",
+                                          "4",
+                                          "3"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On compte 2 + 1 + 3 = 6 cubes."
+                      },
+                      {
+                          "code":  "M5-0452",
+                          "microSkill":  "m5_geo_cube_views",
+                          "difficulty":  1,
+                          "prompt":  "[CUBESTACK]1,2;4,0[/CUBESTACK]\nQuelle est la hauteur de la colonne la plus élevée ?",
+                          "choices":  [
+                                          "2 cubes",
+                                          "4 cubes",
+                                          "3 cubes",
+                                          "7 cubes"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "La colonne la plus élevée comporte 4 cubes."
+                      },
+                      {
+                          "code":  "M5-0453",
+                          "microSkill":  "m5_geo_cube_views",
+                          "difficulty":  1,
+                          "prompt":  "[CUBESTACK]2,0,1;0,3,1[/CUBESTACK]\nCombien de colonnes de cubes cet empilement comporte-t-il ?",
+                          "choices":  [
+                                          "3",
+                                          "5",
+                                          "4",
+                                          "7"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "On repère quatre colonnes non vides dans l’empilement."
+                      },
+                      {
+                          "code":  "M5-0454",
+                          "microSkill":  "m5_geo_cube_views",
+                          "difficulty":  2,
+                          "prompt":  "[CUBESTACK]1,3,0;2,1,4[/CUBESTACK]\nLa flèche indique l’avant. Dans la vue de face, quelles hauteurs voit-on de gauche à droite ?",
+                          "choices":  [
+                                          "1 ; 3 ; 0",
+                                          "2 ; 1 ; 4",
+                                          "3 ; 3 ; 4",
+                                          "2 ; 3 ; 4"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Dans chaque direction, on retient la plus grande hauteur visible : 2, 3 et 4."
+                      },
+                      {
+                          "code":  "M5-0455",
+                          "microSkill":  "m5_geo_cube_views",
+                          "difficulty":  2,
+                          "prompt":  "[CUBESTACK]2,2;1,3[/CUBESTACK]\nCombien de cubes cet empilement contient-il au total ?",
+                          "choices":  [
+                                          "8",
+                                          "7",
+                                          "6",
+                                          "9"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "On compte 2 + 2 + 1 + 3 = 8 cubes."
+                      },
+                      {
+                          "code":  "M5-0456",
+                          "microSkill":  "m5_geo_cube_views",
+                          "difficulty":  2,
+                          "prompt":  "On ajoute un cube au sommet d’une colonne qui en contenait déjà deux. Comment évolue le nombre total de cubes ?",
+                          "choices":  [
+                                          "Il double.",
+                                          "Il augmente de 1.",
+                                          "Il augmente de 2.",
+                                          "Il ne change pas."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Ajouter un seul cube augmente toujours le total de 1."
+                      },
+                      {
+                          "code":  "M5-0457",
+                          "microSkill":  "m5_geo_cube_views",
+                          "difficulty":  2,
+                          "prompt":  "[CUBESTACK]3,1[/CUBESTACK]\nQuelle vue de face correspond à cet empilement ?",
+                          "choices":  [
+                                          "Deux colonnes de hauteur 2.",
+                                          "Une colonne de hauteur 4.",
+                                          "Une colonne de hauteur 3 puis une de hauteur 1.",
+                                          "Une colonne de hauteur 1 seulement."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "La vue de face montre une colonne de hauteur 3 puis une colonne de hauteur 1."
+                      },
+                      {
+                          "code":  "M5-0458",
+                          "microSkill":  "m5_geo_cube_views",
+                          "difficulty":  2,
+                          "prompt":  "[CUBESTACK]1,2,1;0,3,2[/CUBESTACK]\nCombien de carrés comporte la vue de dessus de cet empilement ?",
+                          "choices":  [
+                                          "Le nombre total de cubes.",
+                                          "La plus grande hauteur.",
+                                          "Un seul carré.",
+                                          "Cinq carrés."
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Cinq emplacements sont occupés : la vue de dessus comporte donc cinq carrés."
+                      },
+                      {
+                          "code":  "M5-0459",
+                          "microSkill":  "m5_geo_cube_views",
+                          "difficulty":  3,
+                          "prompt":  "On retire uniquement le cube supérieur d’une colonne de hauteur 4. Quelle devient sa hauteur ?",
+                          "choices":  [
+                                          "3",
+                                          "4",
+                                          "2",
+                                          "0"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Retirer le cube supérieur diminue la hauteur de 1 : 4 − 1 = 3."
+                      },
+                      {
+                          "code":  "M5-0460",
+                          "microSkill":  "m5_geo_cube_views",
+                          "difficulty":  3,
+                          "prompt":  "[CUBESTACK]0,2;1,1[/CUBESTACK]\nCombien de cubes faut-il pour réaliser exactement cet empilement ?",
+                          "choices":  [
+                                          "3",
+                                          "4",
+                                          "5",
+                                          "6"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "On compte 2 + 1 + 1 = 4 cubes."
+                      },
+                      {
+                          "code":  "M5-0461",
+                          "microSkill":  "m5_geo_identify_solid",
+                          "difficulty":  1,
+                          "prompt":  "[SOLIDS]A=cylinder;B=pyramid;C=cuboid;D=triangular-prism[/SOLIDS]\nQuel solide représenté est un pavé droit ?",
+                          "choices":  [
+                                          "Le solide A",
+                                          "Le solide B",
+                                          "Le solide C",
+                                          "Le solide D"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le solide C est un pavé droit : ses six faces sont rectangulaires."
+                      },
+                      {
+                          "code":  "M5-0462",
+                          "microSkill":  "m5_geo_identify_solid",
+                          "difficulty":  1,
+                          "prompt":  "[SOLIDS]A=pyramid;B=cylinder;C=cube;D=triangular-prism[/SOLIDS]\nQuel solide représenté est un prisme droit à base triangulaire ?",
+                          "choices":  [
+                                          "Le solide A",
+                                          "Le solide B",
+                                          "Le solide C",
+                                          "Le solide D"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le solide D possède deux bases triangulaires parallèles reliées par trois faces rectangulaires."
+                      },
+                      {
+                          "code":  "M5-0463",
+                          "microSkill":  "m5_geo_identify_solid",
+                          "difficulty":  1,
+                          "prompt":  "Combien de sommets possède un cube ?",
+                          "choices":  [
+                                          "8",
+                                          "6",
+                                          "12",
+                                          "4"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Un cube possède 8 sommets."
+                      },
+                      {
+                          "code":  "M5-0464",
+                          "microSkill":  "m5_geo_identify_solid",
+                          "difficulty":  1,
+                          "prompt":  "Combien de faces possède un prisme droit à base triangulaire ?",
+                          "choices":  [
+                                          "4",
+                                          "5",
+                                          "6",
+                                          "8"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Il possède 2 faces triangulaires et 3 faces rectangulaires, soit 5 faces."
+                      },
+                      {
+                          "code":  "M5-0465",
+                          "microSkill":  "m5_geo_identify_solid",
+                          "difficulty":  2,
+                          "prompt":  "Quelles surfaces planes constituent les bases d’un cylindre ?",
+                          "choices":  [
+                                          "Deux carrés",
+                                          "Un rectangle et un disque",
+                                          "Deux disques",
+                                          "Deux triangles"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Un cylindre possède deux bases circulaires superposables."
+                      },
+                      {
+                          "code":  "M5-0466",
+                          "microSkill":  "m5_geo_identify_solid",
+                          "difficulty":  2,
+                          "prompt":  "En perspective cavalière, comment représente-t-on généralement une arête cachée ?",
+                          "choices":  [
+                                          "Par un trait plus épais",
+                                          "On ne la représente jamais",
+                                          "Par une flèche",
+                                          "Par des pointillés"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Les arêtes cachées sont généralement dessinées en pointillés."
+                      },
+                      {
+                          "code":  "M5-0467",
+                          "microSkill":  "m5_geo_identify_solid",
+                          "difficulty":  2,
+                          "prompt":  "Quel solide possède une base polygonale et des faces triangulaires qui se rejoignent en un même sommet ?",
+                          "choices":  [
+                                          "Une pyramide",
+                                          "Un prisme droit",
+                                          "Un cylindre",
+                                          "Un pavé droit"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les faces latérales triangulaires d’une pyramide se rejoignent à son sommet principal."
+                      },
+                      {
+                          "code":  "M5-0468",
+                          "microSkill":  "m5_geo_identify_solid",
+                          "difficulty":  2,
+                          "prompt":  "Combien d’arêtes possède un cube ?",
+                          "choices":  [
+                                          "8",
+                                          "12",
+                                          "6",
+                                          "16"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Un cube possède 12 arêtes."
+                      },
+                      {
+                          "code":  "M5-0469",
+                          "microSkill":  "m5_geo_identify_solid",
+                          "difficulty":  3,
+                          "prompt":  "Dans un pavé droit, quelle est la nature de toutes les faces ?",
+                          "choices":  [
+                                          "Des triangles",
+                                          "Des disques",
+                                          "Des rectangles",
+                                          "Des pentagones"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Toutes les faces d’un pavé droit sont rectangulaires ; certaines peuvent être carrées."
+                      },
+                      {
+                          "code":  "M5-0470",
+                          "microSkill":  "m5_geo_identify_solid",
+                          "difficulty":  2,
+                          "prompt":  "[SOLIDS]A=cube;B=triangular-prism;C=pyramid;D=cylinder[/SOLIDS]\nQuel solide représenté ne possède aucun sommet ?",
+                          "choices":  [
+                                          "Le solide A",
+                                          "Le solide B",
+                                          "Le solide C",
+                                          "Le solide D"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le cylindre, représenté par le solide D, ne possède aucun sommet."
+                      },
+                      {
+                          "code":  "M5-0471",
+                          "microSkill":  "m5_geo_solid_net",
+                          "difficulty":  1,
+                          "prompt":  "Combien de carrés doit comporter un patron de cube ?",
+                          "choices":  [
+                                          "6",
+                                          "4",
+                                          "8",
+                                          "12"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les six faces du cube sont six carrés."
+                      },
+                      {
+                          "code":  "M5-0472",
+                          "microSkill":  "m5_geo_solid_net",
+                          "difficulty":  1,
+                          "prompt":  "Combien de rectangles latéraux comporte le patron d’un prisme droit à base triangulaire ?",
+                          "choices":  [
+                                          "2",
+                                          "3",
+                                          "4",
+                                          "5"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Chaque côté de la base triangulaire correspond à une face latérale rectangulaire, donc il y en a 3."
+                      },
+                      {
+                          "code":  "M5-0473",
+                          "microSkill":  "m5_geo_solid_net",
+                          "difficulty":  1,
+                          "prompt":  "Quelles figures trouve-t-on dans le patron d’un cylindre ?",
+                          "choices":  [
+                                          "Un disque et deux rectangles",
+                                          "Trois disques",
+                                          "Deux disques et un rectangle",
+                                          "Deux triangles et un rectangle"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Les deux disques forment les bases et le rectangle forme la surface latérale déroulée."
+                      },
+                      {
+                          "code":  "M5-0474",
+                          "microSkill":  "m5_geo_solid_net",
+                          "difficulty":  1,
+                          "prompt":  "De quelles faces est formé le patron d’une pyramide à base carrée ?",
+                          "choices":  [
+                                          "Deux carrés et deux triangles",
+                                          "Six carrés",
+                                          "Un rectangle et quatre triangles",
+                                          "Un carré et quatre triangles"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Le patron contient la base carrée et les quatre faces latérales triangulaires."
+                      },
+                      {
+                          "code":  "M5-0475",
+                          "microSkill":  "m5_geo_solid_net",
+                          "difficulty":  2,
+                          "prompt":  "Après pliage d’un patron de cube, quelle affirmation est vraie pour deux faces opposées ?",
+                          "choices":  [
+                                          "Elles ne partagent aucune arête.",
+                                          "Elles sont nécessairement accolées dans le patron.",
+                                          "Elles se superposent.",
+                                          "Elles deviennent triangulaires."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Deux faces opposées d’un cube ne partagent aucune arête dans le solide."
+                      },
+                      {
+                          "code":  "M5-0476",
+                          "microSkill":  "m5_geo_solid_net",
+                          "difficulty":  2,
+                          "prompt":  "Combien de rectangles comporte le patron d’un pavé droit ?",
+                          "choices":  [
+                                          "4",
+                                          "6",
+                                          "8",
+                                          "12"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Un pavé droit possède six faces rectangulaires."
+                      },
+                      {
+                          "code":  "M5-0477",
+                          "microSkill":  "m5_geo_solid_net",
+                          "difficulty":  2,
+                          "prompt":  "Quelle condition doit respecter un assemblage de faces pour être un patron valable ?",
+                          "choices":  [
+                                          "Toutes les faces doivent être alignées.",
+                                          "Les faces doivent avoir la même aire.",
+                                          "Le pliage doit fermer le solide sans chevauchement.",
+                                          "Le patron doit être un rectangle."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Un patron valable reconstitue toutes les faces sans trou ni chevauchement."
+                      },
+                      {
+                          "code":  "M5-0478",
+                          "microSkill":  "m5_geo_solid_net",
+                          "difficulty":  2,
+                          "prompt":  "Combien de triangles comporte le patron d’un tétraèdre ?",
+                          "choices":  [
+                                          "2",
+                                          "3",
+                                          "6",
+                                          "4"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Un tétraèdre possède quatre faces triangulaires."
+                      },
+                      {
+                          "code":  "M5-0479",
+                          "microSkill":  "m5_geo_solid_net",
+                          "difficulty":  3,
+                          "prompt":  "Un assemblage contient un rectangle et deux disques de diamètres différents. Peut-il être un patron de cylindre ?",
+                          "choices":  [
+                                          "Non, les deux bases doivent être identiques.",
+                                          "Oui, quelle que soit la taille des disques.",
+                                          "Oui, si le rectangle est carré.",
+                                          "Non, car un cylindre n’a qu’une base."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les deux bases d’un cylindre sont deux disques superposables, donc de même diamètre."
+                      },
+                      {
+                          "code":  "M5-0480",
+                          "microSkill":  "m5_geo_solid_net",
+                          "difficulty":  3,
+                          "prompt":  "Dans le patron d’une pyramide à base carrée, quelle est la nature des faces latérales ?",
+                          "choices":  [
+                                          "Des rectangles",
+                                          "Des triangles",
+                                          "Des disques",
+                                          "Des hexagones"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Les quatre faces latérales d’une pyramide à base carrée sont triangulaires."
+                      },
+                      {
+                          "code":  "M5-0481",
+                          "microSkill":  "m5_geo_volume_prism",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le volume d’un cube d’arête 4 cm ?",
+                          "choices":  [
+                                          "16 cm³",
+                                          "48 cm³",
+                                          "64 cm³",
+                                          "12 cm³"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Le volume vaut 4³ = 4 × 4 × 4 = 64 cm³."
+                      },
+                      {
+                          "code":  "M5-0482",
+                          "microSkill":  "m5_geo_volume_prism",
+                          "difficulty":  1,
+                          "prompt":  "Quel est le volume d’un pavé droit de dimensions 5 cm, 3 cm et 2 cm ?",
+                          "choices":  [
+                                          "10 cm³",
+                                          "15 cm³",
+                                          "25 cm³",
+                                          "30 cm³"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "5 × 3 × 2 = 30 cm³."
+                      },
+                      {
+                          "code":  "M5-0483",
+                          "microSkill":  "m5_geo_volume_prism",
+                          "difficulty":  1,
+                          "prompt":  "L’aire de la base d’un prisme droit est 12 cm² et sa hauteur est 5 cm. Quel est son volume ?",
+                          "choices":  [
+                                          "60 cm³",
+                                          "17 cm³",
+                                          "24 cm³",
+                                          "120 cm³"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "12 × 5 = 60 cm³."
+                      },
+                      {
+                          "code":  "M5-0484",
+                          "microSkill":  "m5_geo_volume_prism",
+                          "difficulty":  2,
+                          "prompt":  "L’aire de la base triangulaire d’un prisme droit est 12 cm². La hauteur du prisme est 10 cm. Quel est son volume ?",
+                          "choices":  [
+                                          "240 cm³",
+                                          "120 cm³",
+                                          "60 cm³",
+                                          "40 cm³"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le volume vaut aire de la base × hauteur, soit 12 × 10 = 120 cm³."
+                      },
+                      {
+                          "code":  "M5-0485",
+                          "microSkill":  "m5_geo_volume_prism",
+                          "difficulty":  2,
+                          "prompt":  "Un cube a un volume de 125 cm³. Quelle est la longueur de son arête ?",
+                          "choices":  [
+                                          "25 cm",
+                                          "15 cm",
+                                          "5 cm",
+                                          "4 cm"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "5³ = 125, donc l’arête mesure 5 cm."
+                      },
+                      {
+                          "code":  "M5-0486",
+                          "microSkill":  "m5_geo_volume_prism",
+                          "difficulty":  2,
+                          "prompt":  "Quel est le volume d’un pavé droit de longueur 8 cm, largeur 4 cm et hauteur 3 cm ?",
+                          "choices":  [
+                                          "32 cm³",
+                                          "48 cm³",
+                                          "72 cm³",
+                                          "96 cm³"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "8 × 4 × 3 = 96 cm³."
+                      },
+                      {
+                          "code":  "M5-0487",
+                          "microSkill":  "m5_geo_volume_prism",
+                          "difficulty":  3,
+                          "prompt":  "On utilise la formule V = aire de la base × hauteur. Un prisme droit a un volume de 126 cm³ et une aire de base de 18 cm². Quelle est sa hauteur ?",
+                          "choices":  [
+                                          "7 cm",
+                                          "6 cm",
+                                          "8 cm",
+                                          "108 cm"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "La hauteur vaut 126 ÷ 18 = 7 cm."
+                      },
+                      {
+                          "code":  "M5-0488",
+                          "microSkill":  "m5_geo_volume_prism",
+                          "difficulty":  2,
+                          "prompt":  "Un prisme droit a une aire de base de 12 cm² et une hauteur de 6 cm. Quel est son volume ?",
+                          "choices":  [
+                                          "18 cm³",
+                                          "72 cm³",
+                                          "66 cm³",
+                                          "432 cm³"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Le volume vaut 12 × 6 = 72 cm³."
+                      },
+                      {
+                          "code":  "M5-0489",
+                          "microSkill":  "m5_geo_volume_prism",
+                          "difficulty":  3,
+                          "prompt":  "Un aquarium en forme de pavé droit mesure 40 cm sur 25 cm sur 30 cm. Quelle est sa capacité maximale ? On rappelle que 1 L = 1 000 cm³.",
+                          "choices":  [
+                                          "3 L",
+                                          "12 L",
+                                          "30 L",
+                                          "300 L"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "40 × 25 × 30 = 30 000 cm³, soit 30 L."
+                      },
+                      {
+                          "code":  "M5-0490",
+                          "microSkill":  "m5_geo_volume_prism",
+                          "difficulty":  3,
+                          "prompt":  "La base d’un prisme droit est un parallélogramme de base 8 cm et de hauteur 3 cm. La hauteur du prisme est 5 cm. Quel est son volume ?",
+                          "choices":  [
+                                          "40 cm³",
+                                          "75 cm³",
+                                          "80 cm³",
+                                          "120 cm³"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "L’aire du parallélogramme vaut 8 × 3 = 24 cm², puis 24 × 5 = 120 cm³."
+                      }
+                  ]
 }
