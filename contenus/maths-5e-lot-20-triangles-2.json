@@ -125,7 +125,7 @@
       "code": "M5-0620",
       "microSkill": "m5_geo_triangle_area",
       "difficulty": 3,
-      "prompt": "Une voile triangulaire a une base de 3,6 m et une hauteur correspondante de 2,5 m. Quelle est son aire ?",
+      "prompt": "[TOOLS]calculator[/TOOLS] Une voile triangulaire a une base de 3,6 m et une hauteur correspondante de 2,5 m. Quelle est son aire ?",
       "choices": ["9 m²", "4,5 m²", "6,1 m²", "3,05 m²"],
       "correctIndex": 1,
       "explanation": "(3,6 × 2,5) ÷ 2 = 9 ÷ 2 = 4,5 m²."
