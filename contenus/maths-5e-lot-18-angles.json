@@ -1,0 +1,464 @@
+{
+    "format":  "cap-college-question-draft-v1",
+    "subject":  "mathematics",
+    "level":  "5e",
+    "domain":  {
+                   "code":  "cycle4_space_geometry",
+                   "name":  "Espace et géométrie"
+               },
+    "skill":  {
+                  "code":  "m5_angles",
+                  "name":  "Angles"
+              },
+    "lot":  "M5-GEO-05",
+    "status":  "draft",
+    "source":  "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+    "microSkills":  [
+                        {
+                            "code":  "m5_geo_angle_types",
+                            "teacherName":  "Reconnaître et nommer les différents types d’angles",
+                            "studentName":  "Reconnaître les types d’angles",
+                            "lessonReminder":  "Un angle nul mesure 0°, un angle aigu entre 0° et 90°, un angle droit 90°, un angle obtus entre 90° et 180°, un angle plat 180° et un angle plein 360°.",
+                            "workedExample":  "Un angle de 125° est obtus car 90° \u003c 125° \u003c 180°.",
+                            "masteryCriteria":  "Associer une mesure à un type d’angle et reconnaître les mesures caractéristiques."
+                        },
+                        {
+                            "code":  "m5_geo_angle_relations",
+                            "teacherName":  "Reconnaître des angles opposés, adjacents, complémentaires ou supplémentaires",
+                            "studentName":  "Reconnaître les relations entre angles",
+                            "lessonReminder":  "Deux angles opposés par le sommet ont la même mesure. Deux angles complémentaires ont une somme de 90° ; deux angles supplémentaires ont une somme de 180°. Deux angles adjacents ont le même sommet, un côté commun et des intérieurs disjoints.",
+                            "workedExample":  "L’angle supplémentaire d’un angle de 58° mesure 180° − 58° = 122°.",
+                            "masteryCriteria":  "Nommer la relation entre deux angles et calculer une mesure manquante."
+                        },
+                        {
+                            "code":  "m5_geo_parallel_angles",
+                            "teacherName":  "Utiliser les angles alternes-internes et correspondants",
+                            "studentName":  "Utiliser les angles formés par des parallèles",
+                            "lessonReminder":  "Lorsque deux droites parallèles sont coupées par une sécante, les angles correspondants sont égaux et les angles alternes-internes sont égaux. Les angles intérieurs du même côté de la sécante sont supplémentaires.",
+                            "workedExample":  "Si deux angles alternes-internes sont formés par deux parallèles et que l’un mesure 72°, l’autre mesure aussi 72°.",
+                            "masteryCriteria":  "Reconnaître les paires d’angles, calculer une mesure et utiliser l’égalité d’angles pour justifier le parallélisme."
+                        }
+                    ],
+    "questions":  [
+                      {
+                          "code":  "M5-0541",
+                          "microSkill":  "m5_geo_angle_types",
+                          "difficulty":  1,
+                          "prompt":  "[ANGLE]35[/ANGLE] Quelle est la nature de cet angle ?",
+                          "choices":  [
+                                          "Un angle aigu",
+                                          "Un angle droit",
+                                          "Un angle obtus",
+                                          "Un angle plat"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "35° est compris entre 0° et 90° : l’angle est aigu."
+                      },
+                      {
+                          "code":  "M5-0542",
+                          "microSkill":  "m5_geo_angle_types",
+                          "difficulty":  1,
+                          "prompt":  "[ANGLE]90[/ANGLE] Quelle est la nature de cet angle ?",
+                          "choices":  [
+                                          "Un angle aigu",
+                                          "Un angle plat",
+                                          "Un angle droit",
+                                          "Un angle obtus"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Un angle de 90° est un angle droit."
+                      },
+                      {
+                          "code":  "M5-0543",
+                          "microSkill":  "m5_geo_angle_types",
+                          "difficulty":  1,
+                          "prompt":  "[ANGLE]120[/ANGLE] Quelle est la nature de cet angle ?",
+                          "choices":  [
+                                          "Un angle aigu",
+                                          "Un angle obtus",
+                                          "Un angle droit",
+                                          "Un angle plat"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "120° est compris entre 90° et 180° : l’angle est obtus."
+                      },
+                      {
+                          "code":  "M5-0544",
+                          "microSkill":  "m5_geo_angle_types",
+                          "difficulty":  1,
+                          "prompt":  "Comment appelle-t-on un angle qui mesure 180° ?",
+                          "choices":  [
+                                          "Un angle droit",
+                                          "Un angle plein",
+                                          "Un angle obtus",
+                                          "Un angle plat"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Un angle de 180° est un angle plat."
+                      },
+                      {
+                          "code":  "M5-0545",
+                          "microSkill":  "m5_geo_angle_types",
+                          "difficulty":  1,
+                          "prompt":  "Comment appelle-t-on un angle qui mesure 360° ?",
+                          "choices":  [
+                                          "Un angle plat",
+                                          "Un angle plein",
+                                          "Un angle droit",
+                                          "Un angle nul"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Un tour complet correspond à un angle plein de 360°."
+                      },
+                      {
+                          "code":  "M5-0546",
+                          "microSkill":  "m5_geo_angle_types",
+                          "difficulty":  1,
+                          "prompt":  "Quelle est la mesure d’un angle nul ?",
+                          "choices":  [
+                                          "0°",
+                                          "45°",
+                                          "90°",
+                                          "180°"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Par définition, un angle nul mesure 0°."
+                      },
+                      {
+                          "code":  "M5-0547",
+                          "microSkill":  "m5_geo_angle_types",
+                          "difficulty":  2,
+                          "prompt":  "Un angle mesure strictement plus de 90° et strictement moins de 180°. Il est…",
+                          "choices":  [
+                                          "droit.",
+                                          "plat.",
+                                          "aigu.",
+                                          "obtus."
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Cette mesure caractérise un angle obtus."
+                      },
+                      {
+                          "code":  "M5-0548",
+                          "microSkill":  "m5_geo_angle_types",
+                          "difficulty":  2,
+                          "prompt":  "[ANGLE]89[/ANGLE] Quelle est la nature de cet angle ?",
+                          "choices":  [
+                                          "Un angle droit",
+                                          "Un angle obtus",
+                                          "Un angle aigu",
+                                          "Un angle plat"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "89° est inférieur à 90° : l’angle est aigu."
+                      },
+                      {
+                          "code":  "M5-0549",
+                          "microSkill":  "m5_geo_angle_types",
+                          "difficulty":  2,
+                          "prompt":  "Un demi-tour forme quel type d’angle ?",
+                          "choices":  [
+                                          "Un angle plat",
+                                          "Un angle droit",
+                                          "Un angle aigu",
+                                          "Un angle plein"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Un demi-tour mesure 180° : il forme un angle plat."
+                      },
+                      {
+                          "code":  "M5-0550",
+                          "microSkill":  "m5_geo_angle_types",
+                          "difficulty":  2,
+                          "prompt":  "Laquelle de ces mesures correspond à un angle droit ?",
+                          "choices":  [
+                                          "45°",
+                                          "90°",
+                                          "180°",
+                                          "360°"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Un angle droit mesure exactement 90°."
+                      },
+                      {
+                          "code":  "M5-0551",
+                          "microSkill":  "m5_geo_angle_relations",
+                          "difficulty":  1,
+                          "prompt":  "[ANGLECROSS]68[/ANGLECROSS] Les angles a et c sont opposés par le sommet. Si a mesure 68°, combien mesure c ?",
+                          "choices":  [
+                                          "112°",
+                                          "34°",
+                                          "68°",
+                                          "136°"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Deux angles opposés par le sommet ont la même mesure : c mesure 68°."
+                      },
+                      {
+                          "code":  "M5-0552",
+                          "microSkill":  "m5_geo_angle_relations",
+                          "difficulty":  1,
+                          "prompt":  "Quelle description caractérise deux angles adjacents ?",
+                          "choices":  [
+                                          "Ils ont seulement la même mesure.",
+                                          "Leur somme vaut toujours 180°.",
+                                          "Ils n’ont aucun point commun.",
+                                          "Ils ont le même sommet, un côté commun et des intérieurs disjoints."
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "C’est la définition de deux angles adjacents."
+                      },
+                      {
+                          "code":  "M5-0553",
+                          "microSkill":  "m5_geo_angle_relations",
+                          "difficulty":  1,
+                          "prompt":  "Deux angles sont supplémentaires lorsque…",
+                          "choices":  [
+                                          "la somme de leurs mesures vaut 180°.",
+                                          "ils ont la même mesure.",
+                                          "la somme de leurs mesures vaut 90°.",
+                                          "ils sont opposés par le sommet."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Deux angles supplémentaires ont une somme égale à 180°."
+                      },
+                      {
+                          "code":  "M5-0554",
+                          "microSkill":  "m5_geo_angle_relations",
+                          "difficulty":  1,
+                          "prompt":  "Deux angles sont complémentaires lorsque…",
+                          "choices":  [
+                                          "leur somme vaut 180°.",
+                                          "leur somme vaut 90°.",
+                                          "ils sont adjacents.",
+                                          "ils sont égaux."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Deux angles complémentaires ont une somme égale à 90°."
+                      },
+                      {
+                          "code":  "M5-0555",
+                          "microSkill":  "m5_geo_angle_relations",
+                          "difficulty":  2,
+                          "prompt":  "Quel est l’angle supplémentaire d’un angle de 58° ?",
+                          "choices":  [
+                                          "58°",
+                                          "32°",
+                                          "148°",
+                                          "122°"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "180° − 58° = 122°."
+                      },
+                      {
+                          "code":  "M5-0556",
+                          "microSkill":  "m5_geo_angle_relations",
+                          "difficulty":  2,
+                          "prompt":  "Quel est l’angle complémentaire d’un angle de 37° ?",
+                          "choices":  [
+                                          "143°",
+                                          "127°",
+                                          "53°",
+                                          "63°"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "90° − 37° = 53°."
+                      },
+                      {
+                          "code":  "M5-0557",
+                          "microSkill":  "m5_geo_angle_relations",
+                          "difficulty":  2,
+                          "prompt":  "[ANGLECROSS]72[/ANGLECROSS] L’angle a mesure 72°. Quelle relation permet d’affirmer que l’angle c mesure aussi 72° ?",
+                          "choices":  [
+                                          "Ils sont complémentaires.",
+                                          "Ils sont opposés par le sommet.",
+                                          "Ils sont supplémentaires.",
+                                          "Ils sont seulement adjacents."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Les angles a et c sont opposés par le sommet, donc ils ont la même mesure."
+                      },
+                      {
+                          "code":  "M5-0558",
+                          "microSkill":  "m5_geo_angle_relations",
+                          "difficulty":  2,
+                          "prompt":  "Deux angles ont le même sommet, un côté commun et ne se chevauchent pas. Ils sont…",
+                          "choices":  [
+                                          "adjacents.",
+                                          "opposés par le sommet.",
+                                          "nécessairement égaux.",
+                                          "nécessairement supplémentaires."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Ces trois propriétés définissent des angles adjacents."
+                      },
+                      {
+                          "code":  "M5-0559",
+                          "microSkill":  "m5_geo_angle_relations",
+                          "difficulty":  2,
+                          "prompt":  "Deux angles mesurent 110° et 70°. Quelle relation existe entre eux ?",
+                          "choices":  [
+                                          "Ils sont complémentaires.",
+                                          "Ils sont opposés par le sommet.",
+                                          "Ils sont supplémentaires.",
+                                          "Ils sont égaux."
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "110° + 70° = 180° : les angles sont supplémentaires."
+                      },
+                      {
+                          "code":  "M5-0560",
+                          "microSkill":  "m5_geo_angle_relations",
+                          "difficulty":  3,
+                          "prompt":  "Quelle affirmation est toujours vraie ?",
+                          "choices":  [
+                                          "Deux angles adjacents sont égaux.",
+                                          "Deux angles complémentaires sont opposés par le sommet.",
+                                          "Deux angles supplémentaires sont adjacents.",
+                                          "Deux angles opposés par le sommet ont la même mesure."
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "L’égalité des mesures est une propriété des angles opposés par le sommet."
+                      },
+                      {
+                          "code":  "M5-0561",
+                          "microSkill":  "m5_geo_parallel_angles",
+                          "difficulty":  1,
+                          "prompt":  "[PARALLELANGLES][/PARALLELANGLES] Quelle paire est formée d’angles alternes-internes ?",
+                          "choices":  [
+                                          "a et e",
+                                          "b et h",
+                                          "c et f",
+                                          "d et f"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Les angles d et f sont situés entre les parallèles et de part et d’autre de la sécante."
+                      },
+                      {
+                          "code":  "M5-0562",
+                          "microSkill":  "m5_geo_parallel_angles",
+                          "difficulty":  1,
+                          "prompt":  "[PARALLELANGLES][/PARALLELANGLES] Quel angle correspond à l’angle a ?",
+                          "choices":  [
+                                          "f",
+                                          "e",
+                                          "g",
+                                          "h"
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Les angles a et e occupent la même position aux deux intersections : ils sont correspondants."
+                      },
+                      {
+                          "code":  "M5-0563",
+                          "microSkill":  "m5_geo_parallel_angles",
+                          "difficulty":  2,
+                          "prompt":  "[PARALLELANGLES][/PARALLELANGLES] Si a mesure 65°, combien mesure l’angle correspondant e ?",
+                          "choices":  [
+                                          "65°",
+                                          "115°",
+                                          "32,5°",
+                                          "130°"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les droites étant parallèles, deux angles correspondants sont égaux."
+                      },
+                      {
+                          "code":  "M5-0564",
+                          "microSkill":  "m5_geo_parallel_angles",
+                          "difficulty":  2,
+                          "prompt":  "[PARALLELANGLES][/PARALLELANGLES] Si c mesure 112°, combien mesure l’angle alterne-interne e ?",
+                          "choices":  [
+                                          "68°",
+                                          "56°",
+                                          "112°",
+                                          "224°"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Les angles c et e sont alternes-internes ; ils ont la même mesure."
+                      },
+                      {
+                          "code":  "M5-0565",
+                          "microSkill":  "m5_geo_parallel_angles",
+                          "difficulty":  2,
+                          "prompt":  "[PARALLELANGLES][/PARALLELANGLES] Quelle relation lie les angles d et e ?",
+                          "choices":  [
+                                          "Ils sont égaux dans tous les cas.",
+                                          "Ils sont supplémentaires.",
+                                          "Ils sont opposés par le sommet.",
+                                          "Ils sont correspondants."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "Ils sont intérieurs du même côté de la sécante ; leur somme vaut 180°."
+                      },
+                      {
+                          "code":  "M5-0566",
+                          "microSkill":  "m5_geo_parallel_angles",
+                          "difficulty":  2,
+                          "prompt":  "[PARALLELANGLES][/PARALLELANGLES] Si f mesure 73°, combien mesure l’angle alterne-interne d ?",
+                          "choices":  [
+                                          "107°",
+                                          "36,5°",
+                                          "146°",
+                                          "73°"
+                                      ],
+                          "correctIndex":  3,
+                          "explanation":  "Les angles d et f sont alternes-internes, donc égaux."
+                      },
+                      {
+                          "code":  "M5-0567",
+                          "microSkill":  "m5_geo_parallel_angles",
+                          "difficulty":  2,
+                          "prompt":  "[PARALLELANGLES][/PARALLELANGLES] Quelle paire est formée d’angles correspondants ?",
+                          "choices":  [
+                                          "a et g",
+                                          "c et e",
+                                          "b et f",
+                                          "d et e"
+                                      ],
+                          "correctIndex":  2,
+                          "explanation":  "Les angles b et f occupent la même position aux deux intersections."
+                      },
+                      {
+                          "code":  "M5-0568",
+                          "microSkill":  "m5_geo_parallel_angles",
+                          "difficulty":  3,
+                          "prompt":  "[PARALLELANGLES][/PARALLELANGLES] L’angle c mesure 125°. Combien mesure l’angle intérieur f situé du même côté de la sécante ?",
+                          "choices":  [
+                                          "55°",
+                                          "125°",
+                                          "65°",
+                                          "250°"
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "Les angles intérieurs du même côté sont supplémentaires : 180° − 125° = 55°."
+                      },
+                      {
+                          "code":  "M5-0569",
+                          "microSkill":  "m5_geo_parallel_angles",
+                          "difficulty":  3,
+                          "prompt":  "Deux droites sont coupées par une sécante. Quelle information permet de démontrer qu’elles sont parallèles ?",
+                          "choices":  [
+                                          "Une paire d’angles alternes-internes est égale.",
+                                          "Deux angles adjacents sont différents.",
+                                          "Un angle est aigu.",
+                                          "Deux angles ont le même sommet."
+                                      ],
+                          "correctIndex":  0,
+                          "explanation":  "L’égalité d’une paire d’angles alternes-internes permet de conclure que les droites sont parallèles."
+                      },
+                      {
+                          "code":  "M5-0570",
+                          "microSkill":  "m5_geo_parallel_angles",
+                          "difficulty":  3,
+                          "prompt":  "Si deux droites ne sont pas parallèles, que peut-on dire de leurs angles correspondants ?",
+                          "choices":  [
+                                          "Ils sont toujours égaux.",
+                                          "Ils ne sont pas nécessairement égaux.",
+                                          "Ils sont toujours complémentaires.",
+                                          "Ils mesurent toujours 90°."
+                                      ],
+                          "correctIndex":  1,
+                          "explanation":  "L’égalité des angles correspondants est garantie lorsque les droites sont parallèles."
+                      }
+                  ]
+}

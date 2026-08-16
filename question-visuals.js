@@ -280,6 +280,60 @@
     wrapper.appendChild(svg);
     return wrapper;
   }
+  function createAngleDiagram(measure){
+    const wrapper=document.createElement('div');
+    wrapper.className='question-visual';
+    const svg=svgNode('svg',{viewBox:'0 0 420 280',role:'img','aria-label':'Angle de '+measure+' degrés'});
+    svg.classList.add('question-chart');
+    const cx=145,cy=220,length=180,angle=measure*Math.PI/180;
+    const endX=cx+length*Math.cos(-angle),endY=cy+length*Math.sin(-angle);
+    svg.appendChild(svgNode('line',{x1:cx,y1:cy,x2:cx+length,y2:cy,class:'chart-axis'}));
+    svg.appendChild(svgNode('line',{x1:cx,y1:cy,x2:endX,y2:endY,class:'chart-axis'}));
+    const radius=62,arcX=cx+radius*Math.cos(-angle),arcY=cy+radius*Math.sin(-angle);
+    svg.appendChild(svgNode('path',{d:'M '+(cx+radius)+' '+cy+' A '+radius+' '+radius+' 0 '+(measure>180?1:0)+' 0 '+arcX+' '+arcY,fill:'none',stroke:'#3158df','stroke-width':4}));
+    const labelAngle=-angle/2;
+    addSvgText(svg,measure+'°',cx+92*Math.cos(labelAngle),cy+92*Math.sin(labelAngle),{class:'chart-value','text-anchor':'middle'});
+    addSvgText(svg,'O',cx-15,cy+24,{class:'chart-value'});
+    wrapper.appendChild(svg);
+    return wrapper;
+  }
+
+  function createCrossingAngles(measure){
+    const wrapper=document.createElement('div');
+    wrapper.className='question-visual';
+    const svg=svgNode('svg',{viewBox:'0 0 460 280',role:'img','aria-label':'Deux droites sécantes formant quatre angles a, b, c et d'});
+    svg.classList.add('question-chart');
+    const cx=230,cy=140;
+    svg.appendChild(svgNode('line',{x1:55,y1:220,x2:405,y2:60,class:'chart-axis'}));
+    svg.appendChild(svgNode('line',{x1:70,y1:55,x2:390,y2:225,class:'chart-axis'}));
+    addSvgText(svg,'a',230,82,{class:'chart-value','text-anchor':'middle'});
+    addSvgText(svg,'b',310,145,{class:'chart-value','text-anchor':'middle'});
+    addSvgText(svg,'c',230,210,{class:'chart-value','text-anchor':'middle'});
+    addSvgText(svg,'d',145,145,{class:'chart-value','text-anchor':'middle'});
+    if(Number.isFinite(measure))addSvgText(svg,measure+'°',230,108,{class:'chart-label','text-anchor':'middle'});
+    wrapper.appendChild(svg);
+    return wrapper;
+  }
+
+  function createParallelAngles(){
+    const wrapper=document.createElement('div');
+    wrapper.className='question-visual';
+    const svg=svgNode('svg',{viewBox:'0 0 560 330',role:'img','aria-label':'Deux droites parallèles coupées par une sécante, avec les angles a à h'});
+    svg.classList.add('question-chart');
+    svg.appendChild(svgNode('line',{x1:55,y1:95,x2:505,y2:95,class:'chart-axis'}));
+    svg.appendChild(svgNode('line',{x1:55,y1:235,x2:505,y2:235,class:'chart-axis'}));
+    svg.appendChild(svgNode('line',{x1:155,y1:25,x2:380,y2:305,class:'chart-axis'}));
+    addSvgText(svg,'(d₁)',475,82,{class:'chart-label'});
+    addSvgText(svg,'(d₂)',475,222,{class:'chart-label'});
+    const labels=[
+      ['a',168,72],['b',235,72],['c',245,128],['d',183,128],
+      ['e',278,212],['f',342,212],['g',355,270],['h',292,270]
+    ];
+    labels.forEach(item=>addSvgText(svg,item[0],item[1],item[2],{class:'chart-value','text-anchor':'middle'}));
+    addSvgText(svg,'(d₁) ∥ (d₂)',280,315,{class:'chart-value','text-anchor':'middle'});
+    wrapper.appendChild(svg);
+    return wrapper;
+  }
   function createCurve(points){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
@@ -357,6 +411,15 @@
       if(points.length>=2)return {text:normalized.replace(match[0],'').trim(),visual:createCurve(points)};
     }
 
+    if((match=normalized.match(/\[ANGLE\]\s*(\d+(?:[.,]\d+)?)\s*\[\/ANGLE\]/i))){
+      return {text:normalized.replace(match[0],'').trim(),visual:createAngleDiagram(Number(match[1].replace(',','.')))};
+    }
+    if((match=normalized.match(/\[ANGLECROSS\]\s*(\d+(?:[.,]\d+)?)?\s*\[\/ANGLECROSS\]/i))){
+      return {text:normalized.replace(match[0],'').trim(),visual:createCrossingAngles(match[1]?Number(match[1].replace(',','.')):null)};
+    }
+    if((match=normalized.match(/\[PARALLELANGLES\]\s*\[\/PARALLELANGLES\]/i))){
+      return {text:normalized.replace(match[0],'').trim(),visual:createParallelAngles()};
+    }
     if((match=normalized.match(/\[CUBEVIEW\]([\s\S]*?)\[\/CUBEVIEW\]/i))){
       const heights=match[1].split(',').map(Number);
       if(heights.length&&heights.every(value=>Number.isInteger(value)&&value>=0)){
