@@ -436,29 +436,29 @@
                           "code":  "M5-0569",
                           "microSkill":  "m5_geo_parallel_angles",
                           "difficulty":  3,
-                          "prompt":  "Deux droites sont coupées par une sécante. Quelle information permet de démontrer qu’elles sont parallèles ?",
+                          "prompt":  "Deux droites sont coupées par une sécante. Deux angles alternes-internes ont la même mesure. Que peut-on conclure ?",
                           "choices":  [
-                                          "Une paire d’angles alternes-internes est égale.",
-                                          "Deux angles adjacents sont différents.",
-                                          "Un angle est aigu.",
-                                          "Deux angles ont le même sommet."
+                                          "Les deux droites sont parallèles.",
+                                          "Les deux droites sont perpendiculaires.",
+                                          "La sécante est une bissectrice.",
+                                          "On ne peut rien conclure."
                                       ],
                           "correctIndex":  0,
-                          "explanation":  "L’égalité d’une paire d’angles alternes-internes permet de conclure que les droites sont parallèles."
+                          "explanation":  "Si deux angles alternes-internes ont la même mesure, alors les deux droites sont parallèles."
                       },
                       {
                           "code":  "M5-0570",
                           "microSkill":  "m5_geo_parallel_angles",
                           "difficulty":  3,
-                          "prompt":  "Si deux droites ne sont pas parallèles, que peut-on dire de leurs angles correspondants ?",
+                          "prompt":  "Deux droites coupées par une sécante ne sont pas parallèles. Leurs angles correspondants sont-ils nécessairement égaux ?",
                           "choices":  [
-                                          "Ils sont toujours égaux.",
-                                          "Ils ne sont pas nécessairement égaux.",
-                                          "Ils sont toujours complémentaires.",
-                                          "Ils mesurent toujours 90°."
+                                          "Oui, ils sont toujours égaux.",
+                                          "Non, ils ne sont pas nécessairement égaux.",
+                                          "Oui, mais seulement s’ils sont aigus.",
+                                          "Oui, mais seulement s’ils mesurent 90°."
                                       ],
                           "correctIndex":  1,
-                          "explanation":  "L’égalité des angles correspondants est garantie lorsque les droites sont parallèles."
+                          "explanation":  "Non. L’égalité des angles correspondants est garantie lorsque les deux droites sont parallèles."
                       }
                   ]
 }
