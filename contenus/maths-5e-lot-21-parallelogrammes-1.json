@@ -1,0 +1,412 @@
+{
+  "format": "cap-college-question-draft-v1",
+  "subject": "mathematics",
+  "level": "5e",
+  "domain": {
+    "code": "cycle4_space_geometry",
+    "name": "Espace et géométrie"
+  },
+  "skill": {
+    "code": "m5_parallelograms",
+    "name": "Parallélogrammes"
+  },
+  "lot": "M5-GEO-08",
+  "status": "draft",
+  "source": "Programme de mathématiques du cycle 4, BO n°10 du 5 mars 2026",
+  "microSkills": [
+    {
+      "code": "m5_geo_identify_parallelogram",
+      "teacherName": "Définir et reconnaître un parallélogramme",
+      "studentName": "Reconnaître un parallélogramme",
+      "lessonReminder": "Un parallélogramme est un quadrilatère dont les côtés opposés sont parallèles deux à deux. Dans ABCD, les sommets sont nommés dans l’ordre du contour : [AB] est opposé à [CD] et [BC] est opposé à [AD].",
+      "workedExample": "Si (AB) est parallèle à (CD) et si (BC) est parallèle à (AD), alors ABCD est un parallélogramme.",
+      "masteryCriteria": "Reconnaître la définition, identifier côtés et sommets opposés et distinguer un parallélogramme d’un quadrilatère ne possédant qu’une seule paire de côtés opposés parallèles."
+    },
+    {
+      "code": "m5_geo_construct_parallelogram",
+      "teacherName": "Construire un parallélogramme",
+      "studentName": "Construire un parallélogramme",
+      "lessonReminder": "Pour construire ABCD à partir de A, B et D, on trace par B la parallèle à (AD), puis par D la parallèle à (AB). Leur intersection est C. On peut aussi utiliser l’égalité des côtés opposés avec un compas.",
+      "workedExample": "Après avoir tracé [AB] et [AD], la parallèle à (AD) passant par B et la parallèle à (AB) passant par D se coupent en C.",
+      "masteryCriteria": "Compléter un parallélogramme avec des parallèles, des longueurs reportées ou des coordonnées et vérifier la construction obtenue."
+    },
+    {
+      "code": "m5_geo_parallelogram_sides",
+      "teacherName": "Utiliser les propriétés des côtés opposés",
+      "studentName": "Utiliser les côtés opposés d’un parallélogramme",
+      "lessonReminder": "Dans un parallélogramme, les côtés opposés sont parallèles et ont la même longueur. Ainsi, dans ABCD, AB = CD et BC = AD.",
+      "workedExample": "Si ABCD est un parallélogramme, AB = 7 cm et BC = 4 cm, alors CD = 7 cm, AD = 4 cm et son périmètre vaut 22 cm.",
+      "masteryCriteria": "Utiliser l’égalité des côtés opposés pour calculer une longueur, une inconnue ou le périmètre d’un parallélogramme."
+    },
+    {
+      "code": "m5_geo_parallelogram_diagonals",
+      "teacherName": "Utiliser les propriétés des diagonales",
+      "studentName": "Utiliser les diagonales d’un parallélogramme",
+      "lessonReminder": "Les diagonales d’un parallélogramme se coupent en leur milieu. Si O est leur point d’intersection, alors AO = OC et BO = OD. Réciproquement, un quadrilatère dont les diagonales ont le même milieu est un parallélogramme.",
+      "workedExample": "Si AC = 12 cm et O est le point d’intersection des diagonales d’un parallélogramme, alors AO = OC = 6 cm.",
+      "masteryCriteria": "Identifier le milieu commun des diagonales, calculer des demi-diagonales et utiliser la propriété réciproque pour reconnaître un parallélogramme."
+    }
+  ],
+  "questions": [
+    {
+      "code": "M5-0641",
+      "microSkill": "m5_geo_identify_parallelogram",
+      "difficulty": 1,
+      "prompt": "Quelle est la définition d’un parallélogramme ?",
+      "choices": ["Un quadrilatère dont les côtés opposés sont parallèles deux à deux", "Un quadrilatère qui possède un seul angle droit", "Un quadrilatère dont les quatre côtés ont des longueurs différentes", "Un quadrilatère qui possède exactement une paire de côtés parallèles"],
+      "correctIndex": 0,
+      "explanation": "Un parallélogramme possède deux paires de côtés opposés parallèles."
+    },
+    {
+      "code": "M5-0642",
+      "microSkill": "m5_geo_identify_parallelogram",
+      "difficulty": 1,
+      "prompt": "[PARALLELOGRAM]basic[/PARALLELOGRAM] Dans le parallélogramme ABCD, quelle paire est formée de côtés opposés ?",
+      "choices": ["[AB] et [BC]", "[AB] et [CD]", "[AB] et [AD]", "[BC] et [CD]"],
+      "correctIndex": 1,
+      "explanation": "Les côtés [AB] et [CD] ne partagent aucun sommet : ils sont opposés."
+    },
+    {
+      "code": "M5-0643",
+      "microSkill": "m5_geo_identify_parallelogram",
+      "difficulty": 1,
+      "prompt": "ABCD est un parallélogramme. Quelle relation de parallélisme est nécessairement vraie ?",
+      "choices": ["(AB) est perpendiculaire à (CD)", "(AB) est parallèle à (BC)", "(AB) est parallèle à (CD)", "(AC) est parallèle à (BD)"],
+      "correctIndex": 2,
+      "explanation": "Dans un parallélogramme, les côtés opposés sont parallèles : (AB) est parallèle à (CD)."
+    },
+    {
+      "code": "M5-0644",
+      "microSkill": "m5_geo_identify_parallelogram",
+      "difficulty": 2,
+      "prompt": "On sait que (AB) est parallèle à (CD) et que (BC) est parallèle à (AD). Que peut-on conclure ?",
+      "choices": ["ABCD est forcément un triangle", "ABCD est forcément un cerf-volant", "ABCD possède exactement un angle droit", "ABCD est un parallélogramme"],
+      "correctIndex": 3,
+      "explanation": "Les deux paires de côtés opposés sont parallèles : c’est la définition d’un parallélogramme."
+    },
+    {
+      "code": "M5-0645",
+      "microSkill": "m5_geo_identify_parallelogram",
+      "difficulty": 2,
+      "prompt": "Quelle affirmation est vraie pour tous les rectangles ?",
+      "choices": ["Ce sont des parallélogrammes", "Ils ont exactement trois angles droits", "Leurs diagonales sont toujours perpendiculaires", "Leurs quatre côtés sont toujours égaux"],
+      "correctIndex": 0,
+      "explanation": "Un rectangle possède deux paires de côtés opposés parallèles : c’est donc un parallélogramme particulier."
+    },
+    {
+      "code": "M5-0646",
+      "microSkill": "m5_geo_identify_parallelogram",
+      "difficulty": 2,
+      "prompt": "Un quadrilatère possède exactement une paire de côtés opposés parallèles. Pourquoi n’est-il pas un parallélogramme ?",
+      "choices": ["Parce qu’il devrait avoir quatre côtés égaux", "Parce que ses deux paires de côtés opposés devraient être parallèles", "Parce qu’il devrait avoir quatre angles droits", "Parce que ses diagonales devraient être perpendiculaires"],
+      "correctIndex": 1,
+      "explanation": "La définition exige que les deux paires de côtés opposés soient parallèles."
+    },
+    {
+      "code": "M5-0647",
+      "microSkill": "m5_geo_identify_parallelogram",
+      "difficulty": 2,
+      "prompt": "Dans le parallélogramme ABCD, quel sommet est opposé au sommet A ?",
+      "choices": ["B", "D", "C", "A"],
+      "correctIndex": 2,
+      "explanation": "En suivant le contour A-B-C-D, le sommet qui ne partage aucun côté avec A est C."
+    },
+    {
+      "code": "M5-0648",
+      "microSkill": "m5_geo_identify_parallelogram",
+      "difficulty": 3,
+      "prompt": "Dans le parallélogramme ABCD, quels sont les deux côtés adjacents au sommet A ?",
+      "choices": ["[AB] et [BC]", "[BC] et [CD]", "[CD] et [DA]", "[AB] et [AD]"],
+      "correctIndex": 3,
+      "explanation": "Les deux côtés qui se rencontrent au sommet A sont [AB] et [AD]."
+    },
+    {
+      "code": "M5-0649",
+      "microSkill": "m5_geo_identify_parallelogram",
+      "difficulty": 3,
+      "prompt": "[PARALLELOGRAM]sides[/PARALLELOGRAM] Quelles égalités sont indiquées par les codages ?",
+      "choices": ["AB = CD et AD = BC", "AB = BC uniquement", "AC = BD", "Les quatre côtés sont égaux"],
+      "correctIndex": 0,
+      "explanation": "Un trait code AB = CD et deux traits codent AD = BC."
+    },
+    {
+      "code": "M5-0650",
+      "microSkill": "m5_geo_identify_parallelogram",
+      "difficulty": 3,
+      "prompt": "Quelle affirmation n’est pas toujours vraie dans un parallélogramme ?",
+      "choices": ["Les côtés opposés sont parallèles", "Les quatre angles sont droits", "Les diagonales se coupent en leur milieu", "Les côtés opposés ont la même longueur"],
+      "correctIndex": 1,
+      "explanation": "Seuls les rectangles et les carrés ont nécessairement quatre angles droits ; un parallélogramme quelconque n’en a pas."
+    },
+    {
+      "code": "M5-0651",
+      "microSkill": "m5_geo_construct_parallelogram",
+      "difficulty": 1,
+      "prompt": "On connaît trois sommets A, B et D du parallélogramme ABCD. Où placer C ?",
+      "choices": ["Sur la droite (AB)", "Au milieu de [BD]", "À l’intersection de la parallèle à (AD) passant par B et de la parallèle à (AB) passant par D", "N’importe où à la même distance de B et D"],
+      "correctIndex": 2,
+      "explanation": "Les côtés opposés doivent être parallèles : (BC) est parallèle à (AD) et (DC) est parallèle à (AB)."
+    },
+    {
+      "code": "M5-0652",
+      "microSkill": "m5_geo_construct_parallelogram",
+      "difficulty": 1,
+      "prompt": "Après avoir placé A, B et D, quelle construction au compas permet de trouver C ?",
+      "choices": ["Tracer seulement le cercle de centre A et de rayon AB", "Tracer la médiatrice de [BD]", "Tracer un cercle de centre A passant par D", "Couper le cercle de centre B et de rayon AD avec le cercle de centre D et de rayon AB"],
+      "correctIndex": 3,
+      "explanation": "Le point C doit vérifier BC = AD et DC = AB ; il appartient donc aux deux cercles indiqués."
+    },
+    {
+      "code": "M5-0653",
+      "microSkill": "m5_geo_construct_parallelogram",
+      "difficulty": 1,
+      "prompt": "Après avoir tracé deux côtés adjacents [AB] et [AD], quelle étape complète correctement ABCD ?",
+      "choices": ["Tracer par B la parallèle à (AD) et par D la parallèle à (AB)", "Tracer les médiatrices de [AB] et [AD]", "Tracer deux perpendiculaires à (AB)", "Choisir C sur la droite (BD)"],
+      "correctIndex": 0,
+      "explanation": "Les deux parallèles se coupent au quatrième sommet C."
+    },
+    {
+      "code": "M5-0654",
+      "microSkill": "m5_geo_construct_parallelogram",
+      "difficulty": 2,
+      "prompt": "[TOOLS]scratch[/TOOLS] Dans un repère, A(1 ; 1), B(5 ; 1) et D(2 ; 4) sont trois sommets du parallélogramme ABCD. Quelles sont les coordonnées de C ?",
+      "choices": ["(4 ; 4)", "(6 ; 4)", "(6 ; 3)", "(5 ; 5)"],
+      "correctIndex": 1,
+      "explanation": "De A à D, on avance de 1 et on monte de 3. On effectue le même déplacement depuis B : C(6 ; 4)."
+    },
+    {
+      "code": "M5-0655",
+      "microSkill": "m5_geo_construct_parallelogram",
+      "difficulty": 2,
+      "prompt": "Dans un repère, A(0 ; 0), B(4 ; 0) et D(0 ; 3) sont trois sommets du parallélogramme ABCD. Où se trouve C ?",
+      "choices": ["(0 ; 4)", "(3 ; 4)", "(4 ; 3)", "(4 ; 0)"],
+      "correctIndex": 2,
+      "explanation": "La parallèle à (AD) passant par B et la parallèle à (AB) passant par D se coupent en C(4 ; 3)."
+    },
+    {
+      "code": "M5-0656",
+      "microSkill": "m5_geo_construct_parallelogram",
+      "difficulty": 2,
+      "prompt": "Quelles données permettent de construire un unique parallélogramme ABCD ?",
+      "choices": ["La position du seul point A", "La longueur AB seulement", "Les positions de A et C seulement", "Les positions de trois sommets non alignés A, B et D, dont A est le sommet commun"],
+      "correctIndex": 3,
+      "explanation": "Avec A, B et D, les deux parallèles déterminent un unique point C."
+    },
+    {
+      "code": "M5-0657",
+      "microSkill": "m5_geo_construct_parallelogram",
+      "difficulty": 2,
+      "prompt": "Un élève trace par B la parallèle à (AD) et par D la parallèle à (AB). Ces droites se coupent en C. Pourquoi la construction est-elle correcte ?",
+      "choices": ["Parce que les côtés opposés de ABCD sont parallèles deux à deux", "Parce que AC = BD est garanti", "Parce que les quatre angles sont droits", "Parce que les quatre côtés sont égaux"],
+      "correctIndex": 0,
+      "explanation": "La construction garantit (BC) parallèle à (AD) et (CD) parallèle à (AB), donc ABCD est un parallélogramme."
+    },
+    {
+      "code": "M5-0658",
+      "microSkill": "m5_geo_construct_parallelogram",
+      "difficulty": 3,
+      "prompt": "Quel instrument permet de reporter précisément la longueur AD à partir de B lors d’une construction ?",
+      "choices": ["Un rapporteur", "Un compas", "Une calculatrice", "Une règle non graduée seule"],
+      "correctIndex": 1,
+      "explanation": "Le compas permet de reporter une longueur sans la recalculer."
+    },
+    {
+      "code": "M5-0659",
+      "microSkill": "m5_geo_construct_parallelogram",
+      "difficulty": 3,
+      "prompt": "Quelle suite d’étapes construit correctement un parallélogramme ABCD connaissant A, B et D ?",
+      "choices": ["Tracer (BD), puis choisir C sur cette droite", "Tracer deux cercles de centre A seulement", "Tracer par B la parallèle à (AD), puis par D la parallèle à (AB), et nommer C leur intersection", "Tracer la perpendiculaire à (AB) passant par D, quelle que soit la position de A"],
+      "correctIndex": 2,
+      "explanation": "Cette suite garantit les deux parallélismes exigés par la définition."
+    },
+    {
+      "code": "M5-0660",
+      "microSkill": "m5_geo_construct_parallelogram",
+      "difficulty": 3,
+      "prompt": "Quelle méthode ne garantit pas la construction d’un parallélogramme ABCD ?",
+      "choices": ["Construire deux paires de côtés opposés parallèles", "Construire C tel que BC = AD et CD = AB", "Construire les diagonales avec le même milieu", "Choisir C librement sans imposer de parallélisme ni de longueur"],
+      "correctIndex": 3,
+      "explanation": "Sans condition sur C, rien ne garantit que le quadrilatère obtenu soit un parallélogramme."
+    },
+    {
+      "code": "M5-0661",
+      "microSkill": "m5_geo_parallelogram_sides",
+      "difficulty": 1,
+      "prompt": "[PARALLELOGRAM]sides[/PARALLELOGRAM] Quelle propriété des côtés est représentée ?",
+      "choices": ["AB = CD et AD = BC", "AB = BC et CD = DA", "AC = BD", "AB = AD uniquement"],
+      "correctIndex": 0,
+      "explanation": "Les mêmes codages sont portés par les côtés opposés."
+    },
+    {
+      "code": "M5-0662",
+      "microSkill": "m5_geo_parallelogram_sides",
+      "difficulty": 1,
+      "prompt": "ABCD est un parallélogramme, AB = 8 cm et AD = 5 cm. Combien mesure CD ?",
+      "choices": ["5 cm", "8 cm", "13 cm", "16 cm"],
+      "correctIndex": 1,
+      "explanation": "Les côtés opposés [AB] et [CD] ont la même longueur : CD = 8 cm."
+    },
+    {
+      "code": "M5-0663",
+      "microSkill": "m5_geo_parallelogram_sides",
+      "difficulty": 1,
+      "prompt": "Un parallélogramme a deux côtés adjacents de 7 cm et 4 cm. Quel est son périmètre ?",
+      "choices": ["11 cm", "18 cm", "22 cm", "28 cm"],
+      "correctIndex": 2,
+      "explanation": "Les longueurs se répètent sur les côtés opposés : 2 × (7 + 4) = 22 cm."
+    },
+    {
+      "code": "M5-0664",
+      "microSkill": "m5_geo_parallelogram_sides",
+      "difficulty": 2,
+      "prompt": "Le périmètre d’un parallélogramme est 30 cm et AB = 9 cm. Combien mesure BC ?",
+      "choices": ["3 cm", "12 cm", "21 cm", "6 cm"],
+      "correctIndex": 3,
+      "explanation": "2 × (AB + BC) = 30, donc AB + BC = 15 et BC = 15 − 9 = 6 cm."
+    },
+    {
+      "code": "M5-0665",
+      "microSkill": "m5_geo_parallelogram_sides",
+      "difficulty": 2,
+      "prompt": "[TOOLS]scratch[/TOOLS] Dans le parallélogramme ABCD, AB = 3x + 1 et CD = 16. Quelle est la valeur de x ?",
+      "choices": ["5", "4", "15", "17"],
+      "correctIndex": 0,
+      "explanation": "AB = CD, donc 3x + 1 = 16, puis 3x = 15 et x = 5."
+    },
+    {
+      "code": "M5-0666",
+      "microSkill": "m5_geo_parallelogram_sides",
+      "difficulty": 2,
+      "prompt": "[TOOLS]scratch[/TOOLS] Dans le parallélogramme ABCD, BC = 2y − 3 et AD = 11. Quelle est la valeur de y ?",
+      "choices": ["4", "7", "8", "14"],
+      "correctIndex": 1,
+      "explanation": "BC = AD, donc 2y − 3 = 11, puis 2y = 14 et y = 7."
+    },
+    {
+      "code": "M5-0667",
+      "microSkill": "m5_geo_parallelogram_sides",
+      "difficulty": 2,
+      "prompt": "Les côtés d’un parallélogramme mesurent alternativement 9 cm et 6 cm. Quelle est la longueur totale des deux côtés les plus longs ?",
+      "choices": ["9 cm", "15 cm", "18 cm", "30 cm"],
+      "correctIndex": 2,
+      "explanation": "Les deux côtés les plus longs sont opposés et mesurent chacun 9 cm : 9 + 9 = 18 cm."
+    },
+    {
+      "code": "M5-0668",
+      "microSkill": "m5_geo_parallelogram_sides",
+      "difficulty": 3,
+      "prompt": "Dans un quadrilatère ABCD, on sait seulement que AB = CD. Peut-on conclure que ABCD est un parallélogramme ?",
+      "choices": ["Oui, dans tous les cas", "Oui, si AB est le plus grand côté", "Oui, car deux côtés égaux suffisent", "Non, une seule paire de côtés opposés de même longueur ne suffit pas"],
+      "correctIndex": 3,
+      "explanation": "Il faut une information supplémentaire, par exemple les deux paires de côtés opposés de même longueur."
+    },
+    {
+      "code": "M5-0669",
+      "microSkill": "m5_geo_parallelogram_sides",
+      "difficulty": 3,
+      "prompt": "ABCD est un losange de côté 6 cm. Quelle égalité est vraie ?",
+      "choices": ["AB = BC = CD = DA = 6 cm", "AB = CD seulement, sans information sur les autres côtés", "AC = BD = 6 cm", "Le périmètre vaut 12 cm"],
+      "correctIndex": 0,
+      "explanation": "Un losange a ses quatre côtés de même longueur."
+    },
+    {
+      "code": "M5-0670",
+      "microSkill": "m5_geo_parallelogram_sides",
+      "difficulty": 3,
+      "prompt": "[TOOLS]scratch[/TOOLS] Le périmètre d’un parallélogramme est 42 cm. Un côté mesure 13 cm. Combien mesure un côté adjacent ?",
+      "choices": ["16 cm", "8 cm", "21 cm", "29 cm"],
+      "correctIndex": 1,
+      "explanation": "2 × (13 + x) = 42, donc 13 + x = 21 et x = 8 cm."
+    },
+    {
+      "code": "M5-0671",
+      "microSkill": "m5_geo_parallelogram_diagonals",
+      "difficulty": 1,
+      "prompt": "[PARALLELOGRAM]diagonals[/PARALLELOGRAM] Quelles égalités sont indiquées par les codages des diagonales ?",
+      "choices": ["AC = BD uniquement", "AO = BO et CO = DO", "AO = OC et BO = OD", "AB = BC = CD = DA"],
+      "correctIndex": 2,
+      "explanation": "Chaque diagonale est partagée en deux segments de même longueur par O."
+    },
+    {
+      "code": "M5-0672",
+      "microSkill": "m5_geo_parallelogram_diagonals",
+      "difficulty": 1,
+      "prompt": "Quelle propriété possèdent les diagonales d’un parallélogramme ?",
+      "choices": ["Elles sont toujours perpendiculaires", "Elles sont toujours de même longueur", "Elles sont parallèles", "Elles se coupent en leur milieu"],
+      "correctIndex": 3,
+      "explanation": "Leur point d’intersection est le milieu de chacune des deux diagonales."
+    },
+    {
+      "code": "M5-0673",
+      "microSkill": "m5_geo_parallelogram_diagonals",
+      "difficulty": 1,
+      "prompt": "Dans le parallélogramme ABCD, les diagonales se coupent en O et AC = 12 cm. Combien mesure AO ?",
+      "choices": ["6 cm", "12 cm", "24 cm", "4 cm"],
+      "correctIndex": 0,
+      "explanation": "O est le milieu de [AC], donc AO = 12 ÷ 2 = 6 cm."
+    },
+    {
+      "code": "M5-0674",
+      "microSkill": "m5_geo_parallelogram_diagonals",
+      "difficulty": 2,
+      "prompt": "Dans un parallélogramme, O est l’intersection des diagonales et BO = 4,5 cm. Combien mesure BD ?",
+      "choices": ["4,5 cm", "9 cm", "2,25 cm", "18 cm"],
+      "correctIndex": 1,
+      "explanation": "O est le milieu de [BD], donc BD = 2 × BO = 9 cm."
+    },
+    {
+      "code": "M5-0675",
+      "microSkill": "m5_geo_parallelogram_diagonals",
+      "difficulty": 2,
+      "prompt": "[TOOLS]scratch[/TOOLS] Dans un repère, A(1 ; 2) et C(7 ; 6) sont les extrémités d’une diagonale. Quelles sont les coordonnées de son milieu O ?",
+      "choices": ["(3 ; 2)", "(8 ; 8)", "(4 ; 4)", "(6 ; 4)"],
+      "correctIndex": 2,
+      "explanation": "Les coordonnées du milieu sont ((1 + 7) ÷ 2 ; (2 + 6) ÷ 2), soit O(4 ; 4)."
+    },
+    {
+      "code": "M5-0676",
+      "microSkill": "m5_geo_parallelogram_diagonals",
+      "difficulty": 2,
+      "prompt": "Dans le quadrilatère ABCD, O est le milieu de [AC] et aussi le milieu de [BD]. Que peut-on conclure ?",
+      "choices": ["ABCD est forcément un triangle", "ABCD est forcément un losange", "ABCD possède quatre angles droits", "ABCD est un parallélogramme"],
+      "correctIndex": 3,
+      "explanation": "Un quadrilatère dont les diagonales ont le même milieu est un parallélogramme."
+    },
+    {
+      "code": "M5-0677",
+      "microSkill": "m5_geo_parallelogram_diagonals",
+      "difficulty": 2,
+      "prompt": "Quelle information sur les diagonales suffit pour prouver qu’un quadrilatère est un parallélogramme ?",
+      "choices": ["Elles se coupent en leur milieu", "Elles ont seulement la même longueur", "Elles sont seulement perpendiculaires", "Une seule diagonale est coupée en deux parties égales"],
+      "correctIndex": 0,
+      "explanation": "Le milieu commun des deux diagonales caractérise un parallélogramme."
+    },
+    {
+      "code": "M5-0678",
+      "microSkill": "m5_geo_parallelogram_diagonals",
+      "difficulty": 3,
+      "prompt": "Quelle propriété supplémentaire les diagonales d’un rectangle possèdent-elles ?",
+      "choices": ["Elles sont toujours perpendiculaires", "Elles ont la même longueur", "Elles sont parallèles", "Elles ne se coupent pas"],
+      "correctIndex": 1,
+      "explanation": "Comme dans tout parallélogramme, elles se coupent en leur milieu ; dans un rectangle, elles ont aussi la même longueur."
+    },
+    {
+      "code": "M5-0679",
+      "microSkill": "m5_geo_parallelogram_diagonals",
+      "difficulty": 3,
+      "prompt": "Quelle propriété supplémentaire les diagonales d’un losange possèdent-elles ?",
+      "choices": ["Elles ont toujours la même longueur", "Elles sont parallèles", "Elles sont perpendiculaires", "Elles ne se coupent jamais en leur milieu"],
+      "correctIndex": 2,
+      "explanation": "Les diagonales d’un losange se coupent en leur milieu et sont perpendiculaires."
+    },
+    {
+      "code": "M5-0680",
+      "microSkill": "m5_geo_parallelogram_diagonals",
+      "difficulty": 3,
+      "prompt": "Dans un carré, que peut-on affirmer sur les diagonales ?",
+      "choices": ["Elles sont seulement parallèles", "Elles ne se coupent pas en leur milieu", "Elles sont perpendiculaires mais de longueurs différentes", "Elles se coupent en leur milieu, sont perpendiculaires et ont la même longueur"],
+      "correctIndex": 3,
+      "explanation": "Un carré est à la fois un rectangle et un losange : ses diagonales réunissent ces propriétés."
+    }
+  ]
+}

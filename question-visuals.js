@@ -417,6 +417,61 @@
     wrapper.appendChild(svg);
     return wrapper;
   }
+  function createParallelogram(type){
+    const normalized=String(type||'').trim().toLowerCase();
+    const wrapper=document.createElement('div');
+    wrapper.className='question-visual';
+    const descriptions={
+      basic:'Parallélogramme ABCD',
+      sides:'Parallélogramme ABCD avec les côtés opposés codés de même longueur',
+      diagonals:'Parallélogramme ABCD dont les diagonales se coupent en O'
+    };
+    const svg=svgNode('svg',{viewBox:'0 0 480 310',role:'img','aria-label':descriptions[normalized]||'Parallélogramme ABCD'});
+    svg.classList.add('question-chart');
+    const points={A:{x:70,y:250},B:{x:330,y:250},C:{x:410,y:60},D:{x:150,y:60}};
+    [['A','B'],['B','C'],['C','D'],['D','A']].forEach(([from,to])=>{
+      svg.appendChild(svgNode('line',{x1:points[from].x,y1:points[from].y,x2:points[to].x,y2:points[to].y,class:'chart-axis'}));
+    });
+    const addTicks=(from,to,count)=>{
+      const p1=points[from],p2=points[to];
+      const dx=p2.x-p1.x,dy=p2.y-p1.y,length=Math.hypot(dx,dy)||1;
+      const ux=dx/length,uy=dy/length,px=-uy*9,py=ux*9;
+      const shifts=count===2?[-8,8]:[0];
+      shifts.forEach(shift=>{
+        const mx=(p1.x+p2.x)/2+ux*shift,my=(p1.y+p2.y)/2+uy*shift;
+        svg.appendChild(svgNode('line',{x1:mx-px,y1:my-py,x2:mx+px,y2:my+py,stroke:'#3158df','stroke-width':4}));
+      });
+    };
+    if(normalized==='sides'){
+      addTicks('A','B',1);addTicks('C','D',1);
+      addTicks('A','D',2);addTicks('B','C',2);
+    }
+    if(normalized==='diagonals'){
+      svg.appendChild(svgNode('line',{x1:points.A.x,y1:points.A.y,x2:points.C.x,y2:points.C.y,stroke:'#3158df','stroke-width':4}));
+      svg.appendChild(svgNode('line',{x1:points.B.x,y1:points.B.y,x2:points.D.x,y2:points.D.y,stroke:'#3158df','stroke-width':4}));
+      const center={x:240,y:155};
+      addSvgText(svg,'O',center.x+14,center.y-10,{class:'chart-value'});
+      const addHalfTick=(point,count)=>{
+        const x=(center.x+point.x)/2,y=(center.y+point.y)/2;
+        const dx=point.x-center.x,dy=point.y-center.y,length=Math.hypot(dx,dy)||1;
+        const px=-dy/length*8,py=dx/length*8,ux=dx/length,uy=dy/length;
+        const shifts=count===2?[-7,7]:[0];
+        shifts.forEach(shift=>{
+          const mx=x+ux*shift,my=y+uy*shift;
+          svg.appendChild(svgNode('line',{x1:mx-px,y1:my-py,x2:mx+px,y2:my+py,stroke:'#3158df','stroke-width':4}));
+        });
+      };
+      addHalfTick(points.A,1);addHalfTick(points.C,1);
+      addHalfTick(points.B,2);addHalfTick(points.D,2);
+    }
+    const offsets={A:[-16,24],B:[16,24],C:[16,-10],D:[-16,-10]};
+    Object.entries(points).forEach(([label,point])=>{
+      const offset=offsets[label];
+      addSvgText(svg,label,point.x+offset[0],point.y+offset[1],{class:'chart-value','text-anchor':'middle'});
+    });
+    wrapper.appendChild(svg);
+    return wrapper;
+  }
   function createAngleDiagram(measure){
     const wrapper=document.createElement('div');
     wrapper.className='question-visual';
@@ -569,7 +624,11 @@
     }
     if((match=normalized.match(/\[TRIANGLEAUX\]\s*([a-z-]+)\s*\[\/TRIANGLEAUX\]/i))){
       return {text:normalized.replace(match[0],'').trim(),visual:createTriangleAuxiliary(match[1])};
-    }    if((match=normalized.match(/\[ANGLECROSS\]\s*(\d+(?:[.,]\d+)?)?\s*\[\/ANGLECROSS\]/i))){
+    }
+    if((match=normalized.match(/\[PARALLELOGRAM\]\s*([a-z-]+)\s*\[\/PARALLELOGRAM\]/i))){
+      return {text:normalized.replace(match[0],'').trim(),visual:createParallelogram(match[1])};
+    }
+    if((match=normalized.match(/\[ANGLECROSS\]\s*(\d+(?:[.,]\d+)?)?\s*\[\/ANGLECROSS\]/i))){
       return {text:normalized.replace(match[0],'').trim(),visual:createCrossingAngles(match[1]?Number(match[1].replace(',','.')):null)};
     }
     if((match=normalized.match(/\[PARALLELANGLES\]\s*\[\/PARALLELANGLES\]/i))){
