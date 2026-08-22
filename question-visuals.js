@@ -424,7 +424,8 @@
     const descriptions={
       basic:'Parallélogramme ABCD',
       sides:'Parallélogramme ABCD avec les côtés opposés codés de même longueur',
-      diagonals:'Parallélogramme ABCD dont les diagonales se coupent en O'
+      diagonals:'Parallélogramme ABCD dont les diagonales se coupent en O',
+      area:'Parallélogramme ABCD avec une base et sa hauteur correspondante'
     };
     const svg=svgNode('svg',{viewBox:'0 0 480 310',role:'img','aria-label':descriptions[normalized]||'Parallélogramme ABCD'});
     svg.classList.add('question-chart');
@@ -463,6 +464,19 @@
       };
       addHalfTick(points.A,1);addHalfTick(points.C,1);
       addHalfTick(points.B,2);addHalfTick(points.D,2);
+    }
+    if(normalized==='area'){
+      const foot={x:points.D.x,y:points.A.y};
+      svg.appendChild(svgNode('line',{
+        x1:points.D.x,y1:points.D.y,x2:foot.x,y2:foot.y,
+        stroke:'#3158df','stroke-width':4,'stroke-dasharray':'9 7'
+      }));
+      svg.appendChild(svgNode('path',{
+        d:`M ${foot.x} ${foot.y-18} L ${foot.x+18} ${foot.y-18} L ${foot.x+18} ${foot.y}`,
+        fill:'none',stroke:'#3158df','stroke-width':3
+      }));
+      addSvgText(svg,'hauteur',foot.x-12,(points.D.y+foot.y)/2,{class:'chart-label','text-anchor':'end'});
+      addSvgText(svg,'base',(points.A.x+points.B.x)/2,points.A.y+42,{class:'chart-value','text-anchor':'middle'});
     }
     const offsets={A:[-16,24],B:[16,24],C:[16,-10],D:[-16,-10]};
     Object.entries(points).forEach(([label,point])=>{
